@@ -1,0 +1,20 @@
+---
+id: 197
+title: Enabling users with ESX 3.5.0
+date: 2008-03-25T18:07:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=197
+permalink: /2008/03/25/enabling-users-with-esx-350/
+---
+I&#8217;ve been playing admin on our shiny new [ESX server](http://en.wikipedia.org/wiki/VMware_ESX_Server "VMware ESX Server is an enterprise-level virtualization product offered by VMware, Inc., a division of EMC Corporation. ESX Server is a component of VMware's larger offering, VMware Infrastructure, which adds management and reliability services to the core server product") and it&#8217;s been a struggle trying to get the user accounts configured.  I wanted to give our QA staff enough rights to login through the [VMware Web Access portal](http://www.petri.co.il/5_ways_to_adminster_esx_server.htm) so that they could start and stop their virtual machines.  I figured I would just set up their accounts and put them in the &#8220;Virtual Machine User&#8221; role.  No of the accounts could login in.  They kept getting the dreaded &#8220;Login failed due to a bad username or password.&#8221;
+
+I dug around a bit and started searching the VMware forums.  Apparently everyone was using AD to authenticate their user accounts.  I wasn&#8217;t planning using [AD](http://en.wikipedia.org/wiki/Active_directory "Active Directory (AD) is an implementation of LDAP directory services by Microsoft for use primarily in Windows environments. Its main purpose is to provide central authentication and authorization services for Windows-based computers.") because we are going to be changing domains in the near future, but I figured nothing else was working, it couldn&#8217;t hurt.  This [message](http://communities.vmware.com/message/735892#735892 "VMware Comunnitoes: VIClient cannot access ESX 3.0.2 box using AD credenitals.") led me to a [very useful post](http://blog.baeke.info/blog/_archives/2006/10/13/2414173.html "baeke.info: Active Directory integration and ESX 3.0") by Geert Baeke on how to integrate Active Directory with ESX 3.   There was a lot of useful stuff in that post, but the part that I needed came down to this:
+
+> **esxcfg-auth &#8211;enablead &#8211;addomain=domain.com &#8211;addc=domain.com  
+>** 
+> 
+> The VMware document uses the [FQDN](http://en.wikipedia.org/wiki/FQDN "A fully qualified domain name (or FQDN) is an unambiguous domain name that specifies the exact location in the Domain Name System's tree hierarchy through to a top-level domain and finally to the root nameserver.") of a domain controller for the &#8211;addc parameter, but you can use the FQDN of the domain. That way, DNS is used to find domain controllers and use one of those. The command above modifies a few files like /etc/krb5.conf and also the system-auth file in /etc/pam.d. The ESX firewall is also automatically configured to open the needed ports for AD authentication. 
+> 
+> Before you can logon with an AD account, you need to create a console user on the ESX box that has the same name as your AD account. For example, if you have an AD account domain\esxadmin, you need to add a user to the ESX console called esxadmin. The command to use is **useradd esxadmin**. You can also use VI Client to create the user. You can now logon with the account and use the AD password. I tested this with ESX 3.0.1 servers against Windows 2000 and Windows 2003 domains and it worked as advertised.
+
+I did it and it worked like a charm.  Life is good.

@@ -1,0 +1,13 @@
+---
+id: 385
+title: Voices of reason in a sea of hype
+date: 2005-10-27T17:39:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=385
+permalink: /2005/10/27/voices-of-reason-in-sea-of-hype/
+---
+I am so tired of the term &#8220;Web 2.0&#8221;. When ever I see that that term bandied about, I get a mental flashback to an old Verizon commercial where a consultant is pronouncing the word paradigm as &#8220;Pair-Uh-Dig-Um&#8221;. It&#8217;s [another example](http://www.dack.com/web/bullshit.html "Web Economy Bullshit Generator") of [&#8220;buzzword bingo&#8221;](http://en.wikipedia.org/wiki/Buzzword_bingo "Buzzword Bingo - the game"). What does it mean? And I do mean that specificly. 
+
+You get the impression that there is a line drawn somewhere, that separates &#8220;Web 1.0&#8221; from &#8220;Web 2.0&#8221;. As near as I can tell, the definition [du jour](http://french.about.com/library/motdujour/bl_motdujour.htm) of &#8220;Web 2.0&#8221; is that it&#8217;s interactive web services with dynamic content and social participation. That right there is vague enough to mean anything and nothing. Now I&#8217;m starting to blog postings that describe &#8220;Web 2.0&#8221; as a [metaphysical process](http://uncyclopedia.org/wiki/Hippies "Hippies smell"). This isn&#8217;t Aug. 16, 1987, people. Let&#8217;s just look at the web for what it is, a means of communication, and leave the mumbo-jumbo stuff out of it.
+
+[Nicholas Carr](http://www.roughtype.com/ "Nicholas Carr's blog") has a great article, [&#8220;The amorality of Web 2.0&#8221;](http://www.roughtype.com/cgi-bin/mt-tb.cgi/112 "The amorality of Web 2.0"), that pretty much nails how I feel about this thing. [Joel Spolsky](http://www.joelonsoftware.com/index.html "Joel on software") (required reading for anyone in software development) has a very good rant [&#8220;Architecture Astronauts Are Back&#8221;](http://www.joelonsoftware.com/items/2005/10/21.html "Architecture Astronauts Are Back"), with a [followup](http://www.joelonsoftware.com/items/2005/10/25.html "Joel on software for 10/25/05") with the [links](http://usv.jot.com/WikiHome/PublicWiki/Sessions/Sessions1Fulltranscript/usvsessions1_fulltranscript_ref.doc/!converted/index.html "Union Square Ventures conference transcript") to see what made him crazy ([but crazy in a good way](http://www.time.com/time/archive/preview/0,10987,430834,00.html "odd reference to Crispin Glover")).

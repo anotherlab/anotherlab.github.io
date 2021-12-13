@@ -1,0 +1,27 @@
+---
+id: 244
+title: Is Microsoft Dead?
+date: 2007-05-10T18:54:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=244
+permalink: /2007/05/10/is-microsoft-dead/
+---
+I was reading Mike Gunderloy&#8217;s new blog, [A Fresh Cup](http://afreshcup.com/), and I came across a link to an article titled [&#8220;Microsoft is Dead&#8221;](http://www.paulgraham.com/microsoft.html), by [Paul Graham](http://en.wikipedia.org/wiki/Paul_Graham).  Paul&#8217;s view is that Microsoft is no longer relevant and we live in &#8220;Web 2.0&#8221; world that Microsoft doesn&#8217;t know how to play in.  He states that there are four things that killed Microsoft: Google, &#8220;the desktop is over&#8221;, broadband Internet, the rise of Apple.  He&#8217;s just plain wrong.
+
+I&#8217;ll give him Google.  Microsoft has never been able to catch up to Google in the search engine game.  I stil don&#8217;t see how Google being the king of the hill for search engines means that Microsoft is dead.  That&#8217;s like saying because apples are red, oranges suck.  It doesn&#8217;t work that way.
+
+[People](http://news.com.com/Change+is+in+the+air/2010-1071_3-5885975.html?tag=nefd.ac) have been saying that the desktop is over for years.  [Sun](http://www.sun.com/) has been saying that, in [one form](http://blogs.sun.com/jonathan/entry/the_network_is_the_computer) or [another](http://en.wikipedia.org/wiki/John_Gage), for the last 20+ years.  That has always felt like wishful thinking than future reality.  Lots of applications are well suited to run as web applications, but not all of them.  The desktop experience is just so much more richer in terms of the UI and the access to the machine than the browser experience.   Today&#8217;s PC&#8217;s have so much horsepower that it boggles the mind.  Why would you not want to use it?
+
+Paul states that the rise of broadband Internet means that you have less of a need for desktop because you will faster access to the server.  All it really means is that your applications that get data from the Internet will run faster.  I use [SourceGear](http://www.sourcegear.com/)&#8216;s [Vault](http://www.sourcegear.com/vault/index.html) for source control.  Vault runs a web service, but the client is a fat app.  When I changed my home ISP from TW RoadRunner to Verizon FiOS, I saw a decent performance boost when I used Vault from home to access files from the office.  Being a fat client, it can cache a lot of the data and save many round trip requests for data.  If it was a web only client, it would have been much slower, plus have all sorts of security headaches because the file system interaction.  
+
+I have yet to see the &#8220;Web 2.0&#8221; equivalent to PhotoShop.  Silverlight opens the door to more robust web applications, but it still has limitations.  Oh wait, that&#8217;s a Microsoft technology, better leave that one out.  What about office productivity applications.  Microsoft Office is a giant fat client, but so is Open Office.
+
+What about the rise of Apple?  With the move to Intel CPU&#8217;s and updated operating systems, the Apple Macintosh market share has increased over [38% within the last year](http://www.macdailynews.com/index.php/weblog/comments/net_applications_apple_mac_market_share_at_621_percent_returns_to_growth/).  Heady stuff and good for Apple.  Still, we are talking about going from roughly 4% of the market to around [6%](http://macdailynews.com/index.php/weblog/comments/12806/).  When you view their rise in those terms, it&#8217;s less of a threat to Windows.  He mentions Apple and then writes something that is just so wrong on many levels:
+
+> &#8230;Their victory is so complete that I&#8217;m now surprised when I come across a computer running Windows. Nearly all the people we fund at Y Combinator use Apple laptops. It was the same in the audience at startup school. All the computer people use Macs or Linux now. Windows is for grandmas, like Macs used to be in the 90s. So not only does the desktop no longer matter, no one who cares about computers uses Microsoft&#8217;s anyway.
+
+There are some seriously flawed statements there.  Just because the only people you see are using Macs, that doesn&#8217;t apply to the entire population.  It just means that your sample set is not representative of the whole population.  I&#8217;m a computer guy and I have a few Macs and some Linux boxes.  I&#8217;m also a Windows developer and that&#8217;s where most of my computer usuage occurs.  There last few lines are just insulting and are remarkably fact free.
+
+Why do people get stuck in the useless us versus them argument?  The whole &#8220;Microsoft is Evil&#8221; argument is tired as well as the monoply charges.  There&#8217;s enough room in the market place for various operating systems.  Just because you prefer one, doesn&#8217;t mean it&#8217;s the right choice for everyone else.
+
+I usually ignore these types of articles, but this guy was just so wrong, it just jumped out at me.  It&#8217;s clear he has an anti-Microsoft bias.  There&#8217;s nothing wrong with that, but his reasoning had nothing behind it.  Paul, it&#8217;s time to venture out of your &#8220;Web 2.0&#8221; bubble and see that the world is big enough everyone to play in.

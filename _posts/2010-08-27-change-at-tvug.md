@@ -1,0 +1,13 @@
+---
+id: 53
+title: A change at TVUG
+date: 2010-08-27T16:49:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=53
+permalink: /2010/08/27/change-at-tvug/
+---
+For the last couple of years, Griff Townsend has been the President of the [Tech Valley .NET Users Group (TVUG)](http://www.tvug.net/), here in Albany NY.  Griff has put in many hours with [TVUG activities](http://www.tvug.net/blogs/tvug_news_and_events/archive/2010/05/07/may-meeting-5-15-2010-launch-and-learn.aspx) and has [done](http://www.tvug.net/blogs/tvug_news_and_events/archive/2008/09/03/september-2008-meeting.aspx) [many](http://www.tvug.net/blogs/tvug_news_and_events/archive/2009/11/24/building-business-objects-with-ef-and-visual-studio.aspx) [presentations](http://www.tvug.net/blogs/tvug_news_and_events/archive/2008/12/08/december-meeting.aspx) for us.  Unfortunately for [us](http://www.techvalley.org/), Griff is moving to bigger and better things in another state.  Griff will be missed here and we wish him well as he continues his career in a warmer climate.
+
+As Vice-President of TVUG, I will be stepping up to the position of President and continue in Griff’s footsteps.  Griff will be moving before the next TVUG meeting in September, I’ll be at the next one.  We will be having elections of the executive board officer positions at the end of year, during the December meeting.  Our bylaws are posted [here](http://www.tvug.net/blogs/tvug_news_and_events/archive/2009/04/16/tvug-constitution.aspx "TVUG Constitution - Tech Valley .NET Users Group").
+
+[<img loading="lazy" title="Griff" height="84" alt="Griff" src="https://i2.wp.com/lh6.ggpht.com/_natoSxTaPFU/THfsk09v_fI/AAAAAAAAAeY/upA9rDEBqVk/Griff_thumb%5B2%5D.jpg?resize=64%2C84" width="64" align="left" border="0" data-recalc-dims="1" />](https://i0.wp.com/lh5.ggpht.com/_natoSxTaPFU/THfsjrBjYvI/AAAAAAAAAeU/IBZJLScckeY/s1600-h/Griff%5B4%5D.jpg)Griff is an experienced architect and teacher with a few Microsoft certifications under his belt. While he’s leaving this area code, you can still keep up with him.  Griff has a blog, “Bloggin from my Noggin”, at <http://grifftownsend.blogspot.com/>.  You can also follow him on Twitter at [@vidiotz](http://www.twitter.com/vidiotz).  And Griff’s LinkedIn profile is [Griffith Townsend](http://www.linkedin.com/in/griffithtownsend).

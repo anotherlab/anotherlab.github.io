@@ -1,0 +1,19 @@
+---
+id: 202
+title: Fun with changing the IP address of ESX Server 3.5
+date: 2008-02-28T21:56:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=202
+permalink: /2008/02/28/fun-with-changing-ip-address-of-esx/
+---
+We (our IT manager and myself) have been having some fun with out shiny new [VMWare ESX 3.5 server](http://en.wikipedia.org/wiki/VMware_ESX_Server).  We have had it running for about two weeks now and we decided to change it&#8217;s IP address.  The ESX server was on the same subnet as our LAN.  This meant that it the virtual machines were taking IP addresses out of a pool that was needed for our physical computers.  There were some other security issues, so we decided to put it on it&#8217;s own subnet.
+
+It was fairly easy to change the IP address address via the command line (this [site](http://www.ozvms.com/content/view/160/9/ "Changing the IP address of service console in ESX 3.x") helped a lot), the fun started with the [NFS](http://en.wikipedia.org/wiki/Network_File_System_%28protocol%29) connection.  We are using NFS to mount a folder located on a [Windows file server](http://technet.microsoft.com/en-us/interopmigration/bb380242.aspx "Windows Services for UNIX") to add some offline storage for the ESX box.  To mount with NFS, you have to create a VMKernel in the ESX networking and the VMKernel gets it&#8217;s own IP address.  That IP address must be on the same subnet as the NFS server.
+
+When we moved the ESX to it&#8217;s own subnet, we put it on it&#8217;s own physical network and that broke the NFS connection.  We tried a few things and then we checked the Windows box that was running the NFS server.  It had two network cards.  The second one was not enabled, but fully functional.  We enabled it and set it&#8217;s IP address to the subnet of the ESX box.  I had to drop and recreate the NFS mount, but it all worked.
+
+While testing the networking, the IT manager was running one of the virtual machines (XP 64-bit) and set the network adapter in the VM to a static IP address.   It turned out he set it to the IP address of the ESX server.  That&#8217;s when the fun started.  When you connected to the VM, ESX would lose it&#8217;s connection and you lost control over ESX and the VM.  After a minute or two, you could access ESX through the VMWare Infrastructure Client, but you couldn&#8217;t access the VM to change it&#8217;s IP address.
+
+We [racked our brains](http://www.cryptoys.com/pics.movie/tasty.rotting.2.jpg) trying to figure out how to get control of the VM to reset it&#8217;s IP address.  The fix turned out to be [really simple](http://uplink.space.com/attachments/392633-morans.jpg).  I powered down the VM from VIC and edited it&#8217;s hardware settings.  I added a second network adapter (it&#8217;s all virtual) and set the first one to be disconnected.  I powered the VM back up and the new adapter had a safe IP address.  I connected to the VM&#8217;s console and opened up &#8220;Network Connections&#8221; in Windows.  The first adapter was enabled, but not connected.  I opened up it&#8217;s properties and set it to grab an IP through DHCP.
+
+I powered down the VM, removed the second adapter, and reconnected the first one.  I rebooted the VM and it had a new IP address.  Peace and harmony reigned through my virtual kingdom.

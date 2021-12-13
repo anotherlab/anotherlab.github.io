@@ -1,0 +1,15 @@
+---
+id: 110
+title: DevTrack woes with build 1833 of mfc80.dll
+date: 2008-10-21T19:05:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=110
+permalink: /2008/10/21/devtrack-woes-with-build-1833-of/
+---
+We use TechExcel’s <a href="http://www.techexcel.com/products/devsuite/devtrack.html" target="_blank">DevTrack</a> tool to track our defects and project modifications.  A few weeks ago, one of our QA specialists installed SQL Server 2008 Express.  That broke DevTrack.  After SQL Express 2008 was installed, DevTrack would crash after loading.  After contacting DevTrack support, we were advised that the mfc80.dll installed with SQL Express was causing the problem.  
+
+Their suggested work around?  They asked us to overwrite the version of mfc80.dll (8.0.50727.1833) located in one of the SQL Express folders with an older one (8.0.50727.762).  Ok, there is something wrong this picture.  You don’t replace a dll in another application’s folder.  That violates the integrity of the installation of the other application.  You have no idea of what the possible consequences will be for that application.  It could work fine, it could blow up in your face, or something in between.
+
+The problem is that when DevTrack requests mfc80.dll, it’s being redirected through the <a href="http://blogs.msdn.com/martynl/archive/2005/10/13/480880.aspx" target="_blank">WinSxS</a> policy files to the latest and greatest version, version 8.0.50727.1833.  And there is something in MFC 1833 that just kills DevTrack.  The problem isn’t specific to DevTrack, apparently Corel’s WinDVD has the same problem.  I read a thread <a href="http://phpbb.ulead.com.tw/EN/viewtopic.php?t=33599&#038;start=0&#038;postdays=0&#038;postorder=asc&#038;highlight=&#038;sid=226024f303477f0f7c3ec05632a6b4d8" target="_blank">about people hacking the WinSxS policy files</a> to force calls to mfc80.dll to use an older version.  That might work under XP, but will really break things under Vista.
+
+I thought the Side-by-Side assembly model was supposed to eliminate “DLL Hell”.  For DevTrack to work, they have two choices.  They can patch their code so that it doesn’t crash with the 1833 version of mfc80.dll, or they can install their own local copy and not use the WinSxS version.  We’ve been waiting for a few weeks for a solution, that’s been a real frustrating point.
