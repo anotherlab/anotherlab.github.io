@@ -30,7 +30,7 @@ twitter_username: anotherlab
 github_username:  anotherlab
 
 # Build settings
-theme: minima
+theme: jekyll-theme-dinky
 plugins:
   - jekyll-feed
 
