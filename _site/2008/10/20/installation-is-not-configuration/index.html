@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Installation is not configuration | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Installation is not configuration" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Christopher Painter has a good post about the problems inherent with with having installers run SQL scripts.  Having an installer communicate with a database server just opens the door to all sorts of issues.  Just handling the connection to the server requires making sure that you have all of the required bits installed and that you can locate, and connect to the server.  None of that code is rocket science, we’ve been using it for years. I just don’t think having it in an installer is the right place for that type of code." />
+<meta property="og:description" content="Christopher Painter has a good post about the problems inherent with with having installers run SQL scripts.  Having an installer communicate with a database server just opens the door to all sorts of issues.  Just handling the connection to the server requires making sure that you have all of the required bits installed and that you can locate, and connect to the server.  None of that code is rocket science, we’ve been using it for years. I just don’t think having it in an installer is the right place for that type of code." />
+<link rel="canonical" href="http://localhost:4000/2008/10/20/installation-is-not-configuration/" />
+<meta property="og:url" content="http://localhost:4000/2008/10/20/installation-is-not-configuration/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-10-20T20:43:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Installation is not configuration" />
+<script type="application/ld+json">
+{"datePublished":"2008-10-20T20:43:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/10/20/installation-is-not-configuration/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/10/20/installation-is-not-configuration/"},"dateModified":"2008-10-20T20:43:00-04:00","description":"Christopher Painter has a good post about the problems inherent with with having installers run SQL scripts.  Having an installer communicate with a database server just opens the door to all sorts of issues.  Just handling the connection to the server requires making sure that you have all of the required bits installed and that you can locate, and connect to the server.  None of that code is rocket science, we’ve been using it for years. I just don’t think having it in an installer is the right place for that type of code.","headline":"Installation is not configuration","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Installation is not configuration</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-10-20T20:43:00-04:00" itemprop="datePublished">Oct 20, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Christopher Painter has a <a title="DeploymentEngineering.com - The Blog: RFC: SQL Scripts Are Almost Declared Evil" href="http://blog.deploymentengineering.com/2008/10/rfc-sql-scripts-are-almost-declared.html" target="_blank">good post about the problems inherent with with having installers run SQL scripts</a>.  Having an installer communicate with a database server just opens the door to all sorts of issues.  Just handling the connection to the server requires making sure that you have all of the required bits installed and that you can locate, and connect to the server.  None of that code is rocket science, we’ve been using it for years. I just don’t think having it in an installer is the right place for that type of code.</p>
+
+<p>The problem is that you are running that code from inside a relatively fragile box, your installer.  Most installer authoring tools provide rudimentary support for running SQL scripts at install time.  They work just fine when all of your ducks are lined up in a row.   However your clients may be missing an odd duck or two, and you end up with fragile code wrapped inside a DLL that your installer will call.</p>
+
+<p>I’ve always treated the installer package as just part of the actual installation process for the end user.  The main task of the installer is to get the bits of your application in place and handle any prerequisite runtime library your code may need.  When it comes to initializing or updating a database, I leave that to the main application and/or it’s support utilities.  if a SQL script is flawed and or doesn’t handle some edge condition that only one customer has, you can break the install.</p>
+
+<p>By using a full blown application to handle the database task, your life (and your customer’s life) becomes much easier.  By running your own application, you have (or should have) a much richer environment for developing code.  You have complete control over the UI and you do not have to be concerned with trying match the UI style of the installer.   Also the testing and debugging of the database utility code becomes much easier as no longer need to account for the installer.</p>
+
+<p>You also have the ability to run the application at any time after the install, without having to invoke the installer.  If it turns out the problem was a SQL script that didn’t work for that customer, you can immediately email or post online an updated SQL script, without forcing the user to run the installation process again.</p>
+
+<p>We use a mixture of script based installers and Windows Installers and none of them make any attempt to run a SQL script.  I wrote a database utility application that gets launched after an install.  I wrote it when our company supported the MSDE, back in the day of SQL Server 7.  Back then, Microsoft provided absolutely zero for tools to manage the MSDE.  So this utility, by necessity needed to be able to attach and detach databases, back up and restore databases, manage the server and database logins, and perform schema updates. </p>
+
+<p>Over the years, this utility has matured and is very easy for the end user to use.  We provide all of schema updates in a single, compressed file.  For the use to apply an update the database schema, they just run my utility and it reads the update file and it knows which updates have already been applied and only runs the ones it needs to.</p>
+
+<p>All very easy for the end use, but it would have been a nightmare to get that level of functionality running as part of the installer.  As soon as you add an outside dependency (in this case, the database server), you have added a point of failure that you will have absolutely no control over.</p>
+
+  </div><a class="u-url" href="/2008/10/20/installation-is-not-configuration/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

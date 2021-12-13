@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Bundling jQuery 2.x and jQuery 1.x in ASP .Net MVC and staying NuGet fresh | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Bundling jQuery 2.x and jQuery 1.x in ASP .Net MVC and staying NuGet fresh" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="If you use Nuget to install jQuery into your application, you’ll need to take some extra steps to support multiple versions of jQuery.  By default, NuGet will uninstall previous versions of a package.  The way around this is to create another folder inside the scripts folder and put the older jQuery-1.. files in it. I got the idea for doing this from a post on StackOverflow" />
+<meta property="og:description" content="If you use Nuget to install jQuery into your application, you’ll need to take some extra steps to support multiple versions of jQuery.  By default, NuGet will uninstall previous versions of a package.  The way around this is to create another folder inside the scripts folder and put the older jQuery-1.. files in it. I got the idea for doing this from a post on StackOverflow" />
+<link rel="canonical" href="http://localhost:4000/2014/03/23/bundling-jquery-2-x-and-jquery-1-x-in-asp-net-mvc-and-staying-nuget-fresh/" />
+<meta property="og:url" content="http://localhost:4000/2014/03/23/bundling-jquery-2-x-and-jquery-1-x-in-asp-net-mvc-and-staying-nuget-fresh/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-03-23T16:00:31-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Bundling jQuery 2.x and jQuery 1.x in ASP .Net MVC and staying NuGet fresh" />
+<script type="application/ld+json">
+{"datePublished":"2014-03-23T16:00:31-04:00","@type":"BlogPosting","url":"http://localhost:4000/2014/03/23/bundling-jquery-2-x-and-jquery-1-x-in-asp-net-mvc-and-staying-nuget-fresh/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2014/03/23/bundling-jquery-2-x-and-jquery-1-x-in-asp-net-mvc-and-staying-nuget-fresh/"},"dateModified":"2014-03-23T16:00:31-04:00","description":"If you use Nuget to install jQuery into your application, you’ll need to take some extra steps to support multiple versions of jQuery.  By default, NuGet will uninstall previous versions of a package.  The way around this is to create another folder inside the scripts folder and put the older jQuery-1.. files in it. I got the idea for doing this from a post on StackOverflow","headline":"Bundling jQuery 2.x and jQuery 1.x in ASP .Net MVC and staying NuGet fresh","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Bundling jQuery 2.x and jQuery 1.x in ASP .Net MVC and staying NuGet fresh</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-03-23T16:00:31-04:00" itemprop="datePublished">Mar 23, 2014
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img loading="lazy" class="aligncenter" alt="Fork in the road" src="https://i1.wp.com/www.rajapet.net/photos/i-bvJLJpj/0/L/i-bvJLJpj-L.jpg?resize=400%2C300" width="400" height="300" data-recalc-dims="1" /><br />
+If you use <a href="https://www.nuget.org/">Nuget</a> to install <a href="http://www.jquery.com/">jQuery</a> into your application, you’ll need to take some extra steps to support multiple versions of jQuery.  By default, NuGet will uninstall previous versions of a package.  The way around this is to create another folder inside the scripts folder and put the older jQuery-1.<em>.</em> files in it. I got the idea for doing this from a <a href="http://stackoverflow.com/questions/17783019/bundling-multiple-versions-of-jquery" title="Bundling multiple versions of Jquery">post</a> on StackOverflow</p>
+
+<p>Right click on the Scripts folder and select <strong>Add-&gt;New Folder</strong>.  Give the folder a name that has some meaning to you, I used “compatibility”.  Select the jquery-1.* files and move them to the new folder.  You can copy them or move them, it doesn’t really matter.</p>
+
+<p>Then install the latest version of jQuery using NuGet.  From the <strong>Tools</strong> menu, select <strong>Library Package Manager-&gt;Package Manager Console</strong>.  From the package manager window run the following:<br />
+Install-Package jQuery</p>
+
+<p>You should see something like this:</p>
+
+<div class="imgwrapper" style="width: 600px; text-align: center; float: left; margin: 0px 5px 5px 0px;">
+  <a href="https://i1.wp.com/www.rajapet.net/photos/i-F99phJw/0/L/i-F99phJw-L.png"><img loading="lazy" alt="Package Manager Console" src="https://i1.wp.com/www.rajapet.net/photos/i-F99phJw/0/M/i-F99phJw-M.png?resize=600%2C175" width="600" height="175" data-recalc-dims="1" /></a>
+</div>
+
+<div class="imgwrapper" style="width: 600px; text-align: center; float: left; margin: 0px 5px 5px 0px;">
+  Package Manager Console
+</div>
+
+<p>It installed jQuery 2.1 and then it removed the jQuery 1.10 package.  It complained that it couldn’t find the intellisense file for the previous version. That’s because I had moved it to the new folder.</p>
+
+<p>Now it’s time to update the bundles. When you create a new web project, ASP .Net will create some bundles for you. A bundle is a collection of scripts and stylesheets and does a neat little trick where at debug time you get the individual files as if you had specified each one in the web page. At runtime, the files are minified and consolidated into a single file. This compresses the payload and saves on loading time as the browser only needs to make a single request to get the files in the bundle. Any hoo, if you create a ASP .Net project in the current version of VS, you will get this bundle definition in BundleConfig.cs:</p>
+
+<pre class="brush: csharp">public class BundleConfig
+{
+    public static void RegisterBundles(BundleCollection bundles)
+    {
+        bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                    "~/Scripts/jquery-{version}.js"));
+        // Other code removed...
+    }
+}</pre>
+
+<p>This call to bundles.Add creates a new bundle named “~/bundles/jquery” and uses the {version} regex placeholder, (\d+(?:.\d+){1,3}), to match the jQuery file without having to specify the version. You don’t have to worry about your code breaking due to an invalid reference to jQuery when NuGet updates jQuery.</p>
+
+<p>What we do now is add a second bundle that will use the older version of jQuery. Since we copied those files to a new folder, NuGet is blissfully unaware of their continued existence and will not remove them. We just create a ScriptBundle with a new name and have it specify the folder that we put the old version of jQuery in.</p>
+
+<pre class="brush: csharp; highlight: [5, 6]">public class BundleConfig
+{
+    public static void RegisterBundles(BundleCollection bundles)
+    {
+        bundles.Add(new ScriptBundle("~/bundles/jqueryold").Include(
+            "~/Scripts/compatibility/jquery-{version}.js"));
+
+        bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            "~/Scripts/jquery-{version}.js"));
+        // Other code removed...
+    }
+}</pre>
+
+<p>The final step is to update the shared layout view that MVC puts the jQuery script reference in.</p>
+
+<p><img src="https://i0.wp.com/www.rajapet.net/photos/i-hbKpGgN/0/M/i-hbKpGgN-M.png?w=680" title="" alt="" data-recalc-dims="1" /></p>
+
+<p>With a new project, you will edit the Views\Shared_Layout.cshtml file. The default jquery reference will look like something this:</p>
+
+<pre class="brush: html; highlight: [1]">@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>What we need to do is the replace the @Scripts.Render line with a conditional block of code that checks for older versions of Internet Explorer.</p>
+
+<pre class="brush: html;">&lt;!--[if lt IE 9]&gt;
+    @Scripts.Render("~/bundles/jqueryold")
+    &lt;![endif]--&gt;
+    &lt;!--[if gte IE 9]&gt;&lt;!--&gt;
+    @Scripts.Render("~/bundles/jquery")
+    &lt;!--&lt;![endif]--&gt;
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>We use IE’s <a href="http://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx" title="About conditional comments">Conditional Comments</a> to detect previous versions of IE. This a feature specific to IE versions 5 through 9. All other browsers will treat the Conditional Comments as regular HTML comments.</p>
+
+<pre class="brush: html;">&lt;!--[if lt IE 9]&gt;</pre>
+
+<p>With this line, IE 5-9 (and 10 in compatibility view) will treat this as the start of a block of code. All other browsers will treat this as the start of a comment block. The block is closed when it hits “–&gt;”.</p>
+
+<pre class="brush: html;">&lt;!--[if gte IE 9]&gt;&lt;!--&gt;
+    @Scripts.Render("~/bundles/jquery")
+    &lt;!--&lt;![endif]--&gt;
+</pre>
+
+<p>With this block, we are saying if IE is greater than or equal to version 9, to use this block. The “&lt;!–&gt;” on that line tells IE 10 and the other browsers to close out this comment block which makes that block of code available to the browser. This will allow you to stay current by letting NuGet updating jQuery, while still keeping some level of compatibility with older versions. This is one of the times where IE extending HTML in a proprietary way is useful.</p>
+
+<p><small><em>The fork in the road image was modified from an creative commons licensed image posted by <a href="http://www.flickr.com/photos/ehamiter/4607728796/">Eric Hamiter</a> to his Flickr collection.</em></small></p>
+
+  </div><a class="u-url" href="/2014/03/23/bundling-jquery-2-x-and-jquery-1-x-in-asp-net-mvc-and-staying-nuget-fresh/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

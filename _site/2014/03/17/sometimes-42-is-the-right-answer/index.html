@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Sometimes 42 is the right answer | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Sometimes 42 is the right answer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/2014/03/17/sometimes-42-is-the-right-answer/" />
+<meta property="og:url" content="http://localhost:4000/2014/03/17/sometimes-42-is-the-right-answer/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-03-17T15:22:25-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Sometimes 42 is the right answer" />
+<script type="application/ld+json">
+{"datePublished":"2014-03-17T15:22:25-04:00","@type":"BlogPosting","url":"http://localhost:4000/2014/03/17/sometimes-42-is-the-right-answer/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2014/03/17/sometimes-42-is-the-right-answer/"},"dateModified":"2014-03-17T15:22:25-04:00","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Sometimes 42 is the right answer","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Sometimes 42 is the right answer</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-03-17T15:22:25-04:00" itemprop="datePublished">Mar 17, 2014
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img loading="lazy" alt="Prime Meridian" src="https://i1.wp.com/anotherlab.smugmug.com/photos/i-tL8GBSj/0/M/i-tL8GBSj-M.jpg?resize=600%2C401" width="600" height="401" data-recalc-dims="1" /></p>
+
+<p>I was skimming the <a href="http://thecodist.com/article/our_ios_app_crash_rate">Codist blog</a> when I read the following</p>
+
+<blockquote>
+  <p>One of my favorite data errors was when the latitude would be randomly in the 1000s even though the longitude was correct. MapKit would toss a fit so since I can’t know what the right value is, I just use 42 which puts the pin at the wrong location but at least it’s not crashing.</p>
+</blockquote>
+
+<p>I just started laughing. Been there, done that, want it on a t-shirt.  When collecting positional data from other sources, sometimes you just get bad data in.  And in this case, 42 is the <a href="http://en.wikipedia.org/wiki/Phrases_from_The_Hitchhiker%27s_Guide_to_the_Galaxy#Answer_to_the_Ultimate_Question_of_Life.2C_the_Universe.2C_and_Everything_.2842.29" title="Answer to the Ultimate Question of Life, the Universe, and Everything">Ultimate Answer</a>.</p>
+
+<p>A while back I had written a data collection service that was collecting vehicle positions from onboard GPS device.  Every now and then, the locations became random.  This app was running in the continental US,  any latitude/longitude values outside that range for that area were just ignored.  In my case, any wrong location was unusable data.</p>
+
+<p><em>The <a href="http://www.flickr.com/photos/auxesis/3845266113/">Prime Meridian image</a> comes from <a href="http://www.flickr.com/photos/auxesis/">Lindsay Holmwood’s Flickr feed</a>.</em></p>
+
+  </div><a class="u-url" href="/2014/03/17/sometimes-42-is-the-right-answer/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

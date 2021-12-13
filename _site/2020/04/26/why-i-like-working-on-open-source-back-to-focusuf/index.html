@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Why I like working on Open Source (back to FocusUF) | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Why I like working on Open Source (back to FocusUF)" />
+<meta name="author" content="Chris Miller" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="About a month ago, I blogged about an update to a webcam hack that I did called FocusUF.  There wasn’t much to the code and I put it all up on GitHub.  Someone came along and submitted a pull request that added some cool functionality.  " />
+<meta property="og:description" content="About a month ago, I blogged about an update to a webcam hack that I did called FocusUF.  There wasn’t much to the code and I put it all up on GitHub.  Someone came along and submitted a pull request that added some cool functionality.  " />
+<link rel="canonical" href="http://localhost:4000/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/" />
+<meta property="og:url" content="http://localhost:4000/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-26T01:52:17-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Why I like working on Open Source (back to FocusUF)" />
+<script type="application/ld+json">
+{"datePublished":"2020-04-26T01:52:17-04:00","@type":"BlogPosting","url":"http://localhost:4000/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/"},"dateModified":"2020-04-26T01:52:17-04:00","author":{"@type":"Person","name":"Chris Miller"},"description":"About a month ago, I blogged about an update to a webcam hack that I did called FocusUF.  There wasn’t much to the code and I put it all up on GitHub.  Someone came along and submitted a pull request that added some cool functionality.  ","headline":"Why I like working on Open Source (back to FocusUF)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Why I like working on Open Source (back to FocusUF)</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-04-26T01:52:17-04:00" itemprop="datePublished">Apr 26, 2020
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>About a month ago, I blogged about <a href="https://rajapet.com/2020/03/20/return-to-focusuf/">an update to a webcam hack</a> that I did called FocusUF.  There wasn’t much to the code and I put it all up on GitHub.  Someone came along and submitted a pull request that added some cool functionality.  </p>
+
+<p>My version was hardcoded to a single webcam.  Because that’s all I need it for.  At the time, I was using a Microsoft LifeCam HD-5000.  Someone else created an issue on my GitHub repo asking if I could add support for the HD-6000, which apparently suffers from the same annoyances with focus.</p>
+
+<p>I was going to add a command-line parameter to FocusUF to allow you to specify all or part of the webcam name, but someone else beat me to it.  <a href="https://github.com/cainhopwood">Cain Hopwood</a> updated my code to add that and a bunch of other useful command-line switches.  And somehow, I had missed his <a href="https://github.com/anotherlab/FocusUF/pull/2">PR</a> when it was submitted a month ago.</p>
+
+<p>So I tossed my changes out the window and accept the pull request.  It was <a href="https://www.youtube.com/watch?v=kRz8-EXlhBo">pretty good</a>.  After merging the changes, I added a couple of things.  Cain added code to list all of the webcams.  That would fail if you have any webcams that didn’t support the IAMCameraControl interface from the DirectShowLib.  If you have software that runs as a <a href="https://www.xsplit.com/vcam">virtual</a> <a href="https://www.chromacam.me/">webcam</a>, it probably doesn’t support IAMCameraControl.   Now when you run it without any parameters, you get the following usage help:</p>
+
+<div>
+  <code>FocusUF 1.2.0.0</code><br /><code>Get the source at https://github.com/anotherlab/FocusUF</code><br /><br /><code>Usage: FocusUF [--help | -?] [--list-cameras | -l]</code><br /><code>[--focus-mode-manual | -fm] [--focus-mode-auto | -fa]</code><br /><code>[--set-focus &lt;value&gt; | -f &lt;value&gt;]</code><br /><code>[--exposure-mode-manual | -em] [--exposure-mode-auto | -ea]</code><br /><code>[--set-exposure &lt;value&gt; | -e &lt;value&gt;]</code><br /><code>[--camera-name &lt;name&gt; | -n &lt;name&gt;]</code>
+</div>
+
+<p> </p>
+
+<p>Now when you ask it to list the cameras, you get the following output:</p>
+
+<!--StartFragment -->
+
+<div>
+  <code>❯ .\FocusUF.exe -l</code><br /><code>FocusUF 1.2.0.0</code><br /><code>Get the source at https://github.com/anotherlab/FocusUF</code><br /><code>Camera: c922 Pro Stream Webcam</code><br /><code>    Focus Capability: Auto, Manual</code><br /><code>    Focus Range: 0 - 250</code><br /><code>    Focus Setting: Auto, 0</code><br /><code>    Exposure Capability: Auto, Manual</code><br /><code>    Exposure Range: -11 - -2</code><br /><code>    Exposure Setting: Auto, -5</code><br /><code>Camera: XSplit VCam</code><br /><code>    Camera does not expose settings through DirectShowLib</code>
+</div>
+
+<!--EndFragment -->
+
+<p>I also made the search by name case insensitive.  That was low hanging fruit.  I also updated the compiled version of the code at <a href="https://github.com/anotherlab/FocusUF/blob/master/win32/focusuf.zip">focusuf.zip</a>.  While I don’t support this as a product, it’s useful for people who don’t have the compiler installed.  And I updated the readme file to document the new changes.</p>
+
+<p>And to go off on a tangent, I’ve been using a tool (Windows only) named <a href="https://markdownmonster.west-wind.com/">Markdown Monster</a> to edit the readme files.  Markdown Monster is written and supported by <a href="https://medium.com/@RickStrahl_13614">Rick Strahl</a>.  You can try it for free and then buy a cheap license for it.  Working in Markdown is fairly easy, but it has its own syntax to learn.  Markdown Monster gives you a <a href="https://medium.com/markdown-monster-blog/why-use-a-dedicated-markdown-editor-1aff2aaad42">nice editor</a> with full preview and it makes updating the readme file one less thing to think about.</p>
+
+<p>And that’s one of the great things about <a href="https://dev.to/danielshow/an-easy-approach-to-contribute-to-open-source-1d6i">open-source</a> software.  Other people can jump in and contribute.  I wrote a little tool to fix something that was bugging me.  It sparked joy with someone and he added some additional joy to fix something that he needed.</p>
+
+  </div><a class="u-url" href="/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

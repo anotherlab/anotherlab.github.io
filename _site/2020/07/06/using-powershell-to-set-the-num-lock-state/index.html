@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Using PowerShell to set the Num Lock state | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Using PowerShell to set the Num Lock state" />
+<meta name="author" content="Chris Miller" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A quick PowerShell script for setting the Num Lock state" />
+<meta property="og:description" content="A quick PowerShell script for setting the Num Lock state" />
+<link rel="canonical" href="http://localhost:4000/2020/07/06/using-powershell-to-set-the-num-lock-state/" />
+<meta property="og:url" content="http://localhost:4000/2020/07/06/using-powershell-to-set-the-num-lock-state/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:image" content="http://rajapet.com/wp-content/uploads/2020/07/keyboard_mono.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-06T09:36:18-04:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://rajapet.com/wp-content/uploads/2020/07/keyboard_mono.jpg" />
+<meta property="twitter:title" content="Using PowerShell to set the Num Lock state" />
+<script type="application/ld+json">
+{"datePublished":"2020-07-06T09:36:18-04:00","@type":"BlogPosting","url":"http://localhost:4000/2020/07/06/using-powershell-to-set-the-num-lock-state/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/07/06/using-powershell-to-set-the-num-lock-state/"},"dateModified":"2020-07-06T09:36:18-04:00","author":{"@type":"Person","name":"Chris Miller"},"image":"http://rajapet.com/wp-content/uploads/2020/07/keyboard_mono.jpg","description":"A quick PowerShell script for setting the Num Lock state","headline":"Using PowerShell to set the Num Lock state","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Using PowerShell to set the Num Lock state</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-07-06T09:36:18-04:00" itemprop="datePublished">Jul 6, 2020
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>During these work from home times, on the <a href="https://tenor.com/EpSG.gif">darkest timeline</a>, I spent a lot of my day using my work PC over an RDP connection. For some reason, every time I connected, the Num Lock status would be set to off. Which is silly and annoying. </p>
+
+<p>When you are connected to a remote machine and you press the Num Lock key on your keyboard, it toggles the Num Lock state for both the client and guest machine. Which can get confusing if you are working with apps on both machines and the Num Lock state is different between the machines. Ideally, you want the Num Lock state to be the same on both machines.</p>
+
+<p>For me, the preference was a command-line <span style="font-size: inherit;">option for setting Num Lock. My shell of choice on Windows is </span><a style="font-size: inherit;" href="https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7">PowerShell</a><span style="font-size: inherit;">, so I decided to write a PowerShell script to set the Num Lock Status. The Num Lock key is a toggle switch, press once to turn on, press again to turn off. The script needed to be able to check the current state to be able to set a specified state correctly.</span></p>
+
+<p>With a little trial and error, I came up with the following script. I put it on gist to make it easier to grab and make your own:</p>
+
+<div style="tab-size: 8" id="gist104147912" class="gist">
+  <div class="gist-file" translate="no">
+    <div class="gist-data">
+      <div class="js-gist-file-update-container js-task-list-container file-box">
+        <div id="file-num-lock-ps1" class="file my-2">
+          <div itemprop="text" class="Box-body p-0 blob-wrapper data type-powershell  ">
+            <div class="js-check-bidi blob-code-content">
+              <template class="js-file-alert-template"> 
+              
+              <div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg> <span> This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters. <a href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a> </span> 
+                
+                <div data-view-component="true" class="flash-action">
+                  <a href="" data-view-component="true" class="btn-sm btn"> Show hidden characters </a>
+                </div>
+              </div></template> <template class="js-line-alert-template"> 
+              
+              <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="bidi-line-alert tooltipped tooltipped-e"> <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg> </span></template> 
+              
+              <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="PowerShell" data-tagsearch-path="num-lock.ps1">
+                <tr>
+                  <td id="file-num-lock-ps1-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC1" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c"><span class="pl-c">#</span> One parameter, to set the Num Lock state to On or Off, with</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC2" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c"><span class="pl-c">#</span> On as the default</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC3" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-k">Param</span>(
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC4" class="blob-code blob-code-inner js-file-line">
+                    [<span class="pl-c1">Parameter</span>(<span class="pl-v">Mandatory</span><span class="pl-k">=</span><span class="pl-c1">$false</span>)]
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC5" class="blob-code blob-code-inner js-file-line">
+                    [<span class="pl-c1">ValidateSet</span>(<span class="pl-s"><span class="pl-pds">"</span>On<span class="pl-pds">"</span></span><span class="pl-k">,</span> <span class="pl-s"><span class="pl-pds">"</span>Off<span class="pl-pds">"</span></span>)]
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC6" class="blob-code blob-code-inner js-file-line">
+                    [<span class="pl-k">String</span>[]] <span class="pl-smi">$onoff</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>On<span class="pl-pds">'</span></span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC7" class="blob-code blob-code-inner js-file-line">
+                    )
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L8" class="blob-num js-line-number js-code-nav-line-number" data-line-number="8">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC8" class="blob-code blob-code-inner js-file-line">
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L9" class="blob-num js-line-number js-code-nav-line-number" data-line-number="9">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC9" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c"><span class="pl-c">#</span> Get the current state of the Num Lock key</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L10" class="blob-num js-line-number js-code-nav-line-number" data-line-number="10">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC10" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-smi">$CurrentState</span> <span class="pl-k">=</span> [<span class="pl-k">console</span>]::NumberLock
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L11" class="blob-num js-line-number js-code-nav-line-number" data-line-number="11">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC11" class="blob-code blob-code-inner js-file-line">
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L12" class="blob-num js-line-number js-code-nav-line-number" data-line-number="12">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC12" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c"><span class="pl-c">#</span> the RequestedState, based in the command line param. </span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L13" class="blob-num js-line-number js-code-nav-line-number" data-line-number="13">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC13" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c"><span class="pl-c">#</span> On is true, Off is false</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L14" class="blob-num js-line-number js-code-nav-line-number" data-line-number="14">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC14" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-k">if</span> (<span class="pl-smi">$onoff</span> <span class="pl-k">-eq</span> <span class="pl-s"><span class="pl-pds">'</span>On<span class="pl-pds">'</span></span>) {
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L15" class="blob-num js-line-number js-code-nav-line-number" data-line-number="15">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC15" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-smi">$RequestedState</span> <span class="pl-k">=</span> <span class="pl-c1">$true</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L16" class="blob-num js-line-number js-code-nav-line-number" data-line-number="16">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC16" class="blob-code blob-code-inner js-file-line">
+                    }
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L17" class="blob-num js-line-number js-code-nav-line-number" data-line-number="17">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC17" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-k">else</span> {
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L18" class="blob-num js-line-number js-code-nav-line-number" data-line-number="18">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC18" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-smi">$RequestedState</span> <span class="pl-k">=</span> <span class="pl-c1">$false</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L19" class="blob-num js-line-number js-code-nav-line-number" data-line-number="19">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC19" class="blob-code blob-code-inner js-file-line">
+                    }
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L20" class="blob-num js-line-number js-code-nav-line-number" data-line-number="20">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC20" class="blob-code blob-code-inner js-file-line">
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L21" class="blob-num js-line-number js-code-nav-line-number" data-line-number="21">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC21" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c"><span class="pl-c">#</span> If the requested state is the current state, we declare</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L22" class="blob-num js-line-number js-code-nav-line-number" data-line-number="22">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC22" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c"><span class="pl-c">#</span> victory and go home</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L23" class="blob-num js-line-number js-code-nav-line-number" data-line-number="23">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC23" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-k">if</span> (<span class="pl-smi">$RequestedState</span> <span class="pl-k">-eq</span> <span class="pl-smi">$CurrentState</span>) {
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L24" class="blob-num js-line-number js-code-nav-line-number" data-line-number="24">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC24" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-k">if</span> (<span class="pl-smi">$CurrentState</span> <span class="pl-k">-eq</span> <span class="pl-c1">$false</span>)
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L25" class="blob-num js-line-number js-code-nav-line-number" data-line-number="25">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC25" class="blob-code blob-code-inner js-file-line">
+                    {
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L26" class="blob-num js-line-number js-code-nav-line-number" data-line-number="26">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC26" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c1">Write-Host</span> <span class="pl-s"><span class="pl-pds">'</span>Num Lock is already off<span class="pl-pds">'</span></span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L27" class="blob-num js-line-number js-code-nav-line-number" data-line-number="27">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC27" class="blob-code blob-code-inner js-file-line">
+                    }
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L28" class="blob-num js-line-number js-code-nav-line-number" data-line-number="28">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC28" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-k">else</span> {
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L29" class="blob-num js-line-number js-code-nav-line-number" data-line-number="29">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC29" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c1">Write-Host</span> <span class="pl-s"><span class="pl-pds">'</span>Num Lock is already on<span class="pl-pds">'</span></span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L30" class="blob-num js-line-number js-code-nav-line-number" data-line-number="30">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC30" class="blob-code blob-code-inner js-file-line">
+                    }
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L31" class="blob-num js-line-number js-code-nav-line-number" data-line-number="31">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC31" class="blob-code blob-code-inner js-file-line">
+                    }
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L32" class="blob-num js-line-number js-code-nav-line-number" data-line-number="32">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC32" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-k">else</span> {
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L33" class="blob-num js-line-number js-code-nav-line-number" data-line-number="33">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC33" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-k">if</span> (<span class="pl-smi">$CurrentState</span> <span class="pl-k">-eq</span> <span class="pl-c1">$false</span>)
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L34" class="blob-num js-line-number js-code-nav-line-number" data-line-number="34">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC34" class="blob-code blob-code-inner js-file-line">
+                    {
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L35" class="blob-num js-line-number js-code-nav-line-number" data-line-number="35">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC35" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c1">Write-Host</span> <span class="pl-s"><span class="pl-pds">'</span>Num Lock is off, turning on<span class="pl-pds">'</span></span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L36" class="blob-num js-line-number js-code-nav-line-number" data-line-number="36">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC36" class="blob-code blob-code-inner js-file-line">
+                    }
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L37" class="blob-num js-line-number js-code-nav-line-number" data-line-number="37">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC37" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-k">else</span> {
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L38" class="blob-num js-line-number js-code-nav-line-number" data-line-number="38">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC38" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c1">Write-Host</span> <span class="pl-s"><span class="pl-pds">'</span>Num lock is on, turning off<span class="pl-pds">'</span></span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L39" class="blob-num js-line-number js-code-nav-line-number" data-line-number="39">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC39" class="blob-code blob-code-inner js-file-line">
+                    }
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L40" class="blob-num js-line-number js-code-nav-line-number" data-line-number="40">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC40" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c"><span class="pl-c">#</span> If the requested state is not the current state, then</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L41" class="blob-num js-line-number js-code-nav-line-number" data-line-number="41">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC41" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c"><span class="pl-c">#</span> we need to do a Num Lock press</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L42" class="blob-num js-line-number js-code-nav-line-number" data-line-number="42">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC42" class="blob-code blob-code-inner js-file-line">
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L43" class="blob-num js-line-number js-code-nav-line-number" data-line-number="43">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC43" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c"><span class="pl-c">#</span> Create a new instance of the WScript object and send</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L44" class="blob-num js-line-number js-code-nav-line-number" data-line-number="44">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC44" class="blob-code blob-code-inner js-file-line">
+                    <span class="pl-c"><span class="pl-c">#</span> the NumLock key press to it</span>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L45" class="blob-num js-line-number js-code-nav-line-number" data-line-number="45">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC45" class="blob-code blob-code-inner js-file-line">
+                    (<span class="pl-c1">New-Object</span> <span class="pl-k">&#8211;</span>ComObject WScript.Shell).SendKeys(<span class="pl-s"><span class="pl-pds">'</span>{NUMLOCK}<span class="pl-pds">'</span></span>)
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td id="file-num-lock-ps1-L46" class="blob-num js-line-number js-code-nav-line-number" data-line-number="46">
+                  </td>
+                  
+                  <td id="file-num-lock-ps1-LC46" class="blob-code blob-code-inner js-file-line">
+                    }
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="gist-meta">
+      <a href="https://gist.github.com/anotherlab/863fc3f60379c29b2ebb8478859754c8/raw/fb74599d40cf2cf639a753db4f7fba9b38709cb5/num-lock.ps1" style="float:right">view raw</a> <a href="https://gist.github.com/anotherlab/863fc3f60379c29b2ebb8478859754c8#file-num-lock-ps1"> num-lock.ps1 </a> hosted with &#10084; by <a href="https://github.com">GitHub</a>
+    </div>
+  </div>
+</div>
+
+<p> </p>
+
+<p>I put the comments inline, it should be pretty self-explanatory with the comments. While PowerShell is supported on macOS and Linux now, this is a Windows only script. The [console] ::NumberLock expression returns the following error message:</p>
+
+<p><code class="language-plaintext highlighter-rouge">OperationStopped: Operation is not supported on this platform.</code></p>
+
+<p>Which is odd, [console] is a shortcut for [<a href="https://docs.microsoft.com/en-us/dotnet/api/system.console?view=netcore-3.1">system.console</a>], a class that is accessible on the macOS Powershell. If you run the following command in a PowerShell on either Windows or macOS, you’ll get a list of static properties that should be readable from a POSH script.</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: powershell; title: ; notranslate" title="">
+&#91;system.console] | Get-Member -Static -MemberType property | Format-Table 
+</pre>
+</div>
+
+<p>And the NumberLock property is listed, but just not implemented. And that’s not even the real sticking point. This script creates an instance of a WScript object and uses it’s SendKeys method to pass in a Num Lock key press. WScript is the <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/wscript">Windows Script Host</a>, a technology that lets scripting languages make Windows API calls. A minor sticking point, I only need this Windows. You can get a list of the special keys that SendKeys can send from <a href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?view=netcore-3.1">here</a>.</p>
+
+<p>That’s the heavy lifting. Because I am lazy, I don’t want to type in the name of the script. So I created an alias for it.</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: powershell; title: ; notranslate" title="">
+Set-Alias nl d:\scripts\num-lock.ps1
+</pre>
+</div>
+
+<p>Now I can just run “nl” or “nl On” or “nl Off” to change the Num Lock state. I added the alias to the profile so it’s always available. Now when I connect to my work PC, I run “nl” and all is well.</p>
+
+  </div><a class="u-url" href="/2020/07/06/using-powershell-to-set-the-num-lock-state/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

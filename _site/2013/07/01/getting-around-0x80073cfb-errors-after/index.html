@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Getting around 0x80073cfb errors after installing Windows 8.1 Preview | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Getting around 0x80073cfb errors after installing Windows 8.1 Preview" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="As an attendee of the //build/ conference, I received a Surface Pro and an Acer Iconia W3, along with a USB drive with the Windows 8.1 Preview update for each device. After installing 8.1, Windows Store on the Surface Pro showed that there a bunch of apps that needed updates. So I updated them all and it failed to update five of the apps:" />
+<meta property="og:description" content="As an attendee of the //build/ conference, I received a Surface Pro and an Acer Iconia W3, along with a USB drive with the Windows 8.1 Preview update for each device. After installing 8.1, Windows Store on the Surface Pro showed that there a bunch of apps that needed updates. So I updated them all and it failed to update five of the apps:" />
+<link rel="canonical" href="http://localhost:4000/2013/07/01/getting-around-0x80073cfb-errors-after/" />
+<meta property="og:url" content="http://localhost:4000/2013/07/01/getting-around-0x80073cfb-errors-after/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-07-01T05:34:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Getting around 0x80073cfb errors after installing Windows 8.1 Preview" />
+<script type="application/ld+json">
+{"datePublished":"2013-07-01T05:34:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2013/07/01/getting-around-0x80073cfb-errors-after/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2013/07/01/getting-around-0x80073cfb-errors-after/"},"dateModified":"2013-07-01T05:34:00-04:00","description":"As an attendee of the //build/ conference, I received a Surface Pro and an Acer Iconia W3, along with a USB drive with the Windows 8.1 Preview update for each device. After installing 8.1, Windows Store on the Surface Pro showed that there a bunch of apps that needed updates. So I updated them all and it failed to update five of the apps:","headline":"Getting around 0x80073cfb errors after installing Windows 8.1 Preview","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Getting around 0x80073cfb errors after installing Windows 8.1 Preview</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2013-07-01T05:34:00-04:00" itemprop="datePublished">Jul 1, 2013
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>As an attendee of the <a href="http://www.buildwindows.com/">//build/</a> conference, I received a Surface Pro and an <a href="http://us.acer.com/ac/en/US/content/series/iconiaw3">Acer Iconia W3</a>, along with a USB drive with the Windows 8.1 Preview update for each device. After installing 8.1, Windows Store on the Surface Pro showed that there a bunch of apps that needed updates. So I updated them all and it failed to update five of the apps:</p>
+
+<ul>
+  <li>Reader</li>
+  <li>Windows Alarms</li>
+  <li>Windows Calculator</li>
+  <li>Windows Reading List</li>
+  <li>Windows Sound Recorder</li>
+</ul>
+
+<div>
+  Under the app name, there was the message &#8220;This app wasn&#8217;t installed &#8211; view details.&#8221;. When you click on the message, a dialog would come up with the following message:
+</div>
+
+<div>
+</div>
+
+<blockquote>
+  <p>Something happened and this app couldn’t be installed. Please try again. Error code: 0x80073cb</p>
+</blockquote>
+
+<div>
+  You got two buttons, &#8220;Try again&#8221; and &#8220;Cancel install&#8221;.
+</div>
+
+<div>
+</div>
+
+<p>Each one reported reported the same error code 0x80073cfb. That error code is defined as ERROR_PACKAGE_ALREADY_EXISTS (<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/hh973484(v=vs.85).aspx">see here</a>) and it basically means that something is wrong with the app signature. It kind of matches, but not exactly and Windows doesn’t know how to proceed.</p>
+
+<div>
+</div>
+
+<div>
+  <table align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td>
+        <a href="http://www.rajapet.net/Other/blog/4420877_ZCzCW6#!i=2607508140&#038;k=VbhsGTf&#038;lb=1&#038;s=A" title=""><img alt="" src="https://i0.wp.com/www.rajapet.net/photos/i-VbhsGTf/0/L/i-VbhsGTf-L.jpg?w=680" title="" data-recalc-dims="1" /></a>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <span>&#8220;We had to destroy the village in order to save it.&#8221;</span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  The simplest way around this is to uninstall the version that is already on the machine and then install it again from the Windows Store. It&#8217;s annoying, but doesn&#8217;t take that long. I did it the following way:&lt;/p&gt; 
+  
+  <p>
+  </p>
+  
+  <ol>
+    <li>
+      Run the Windows Store app and have it try to update the apps
+    </li>
+    <li>
+      Get the errors and while on the &#8220;Installing apps&#8221; screen, then press the Win key to get back the Metro screen
+    </li>
+    <li>
+      Start typing the app name.  When the app appears, do a long press to get the options menu and select uninstall.
+    </li>
+    <li>
+      Go back to the Windows Store app and click on the app that you deleted.  You&#8217;ll see the &#8220;Something happened&#8221; dialog, click the &#8220;Try again&#8221; button.
+    </li>
+    <li>
+      The app should install without any problems now.
+    </li>
+  </ol>
+  
+  <p>
+    I would love to find a way to script this with Power Shell. What would be nice would be if the Windows Store app would give you an uninstall/reinstall option when it encounters 0x80073cfb errors. I&#8217;m <a href="http://answers.microsoft.com/en-us/windows/forum/windows8_1_pr-windows_store/app-store-error-0x80073cfb-w-81-preview/e9dcdbc6-b618-4e4b-83c7-81229927ab0d" target="">not the only person</a> <a href="http://qnundrum.com/answer.php?q=715994">seeing this</a> and it&#8217;s happening with the Acer, just with a different set of apps. On Acer, it gets that error with these apps:
+  </p>
+  
+  <p>
+  </p>
+  
+  <ul>
+    <li>
+      Windows Alarms
+    </li>
+    <li>
+      Bing Food &amp; Drink
+    </li>
+    <li>
+      Help &amp; Tips
+    </li>
+    <li>
+      Bing Health &amp; Fitness
+    </li>
+    <li>
+      Windows Reading List
+    </li>
+  </ul>
+  
+  <p>
+    There is some overlap, but only with 2 of the apps. With the Acer, I found that if I burned Alarms, Help, and Reading List, the Bing apps installed normally. I also had the same problem with the HP Envy 23 that I bought last December. I had to burn the village to save the village on that machine too.
+  </p>
+  
+  <p>
+    The burning village image comes from <a href="http://www.flickr.com/photos/stillgray/sets/72157632889684726/with/8517902677/" target="_blank">The Witcher 3 Set</a>, from the Flickr feed of <a href="http://www.flickr.com/photos/stillgray/">Gameranx</a>.&lt;/div&gt;
+</p></div>
+
+  </div><a class="u-url" href="/2013/07/01/getting-around-0x80073cfb-errors-after/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

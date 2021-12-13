@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Using Wix for my Live Writer Plug-in | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Using Wix for my Live Writer Plug-in" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I finally have version 1 of my Smugmug gallery plug-in completed. The next step is to do the installer. To get a plug-in up on the Windows Live Gallery, it must have an installer that meets the requirements on the Gallery Developer Center page. A content plug-in has to meet these requirements:" />
+<meta property="og:description" content="I finally have version 1 of my Smugmug gallery plug-in completed. The next step is to do the installer. To get a plug-in up on the Windows Live Gallery, it must have an installer that meets the requirements on the Gallery Developer Center page. A content plug-in has to meet these requirements:" />
+<link rel="canonical" href="http://localhost:4000/2008/02/03/using-wix-for-my-live-writer-plug-in/" />
+<meta property="og:url" content="http://localhost:4000/2008/02/03/using-wix-for-my-live-writer-plug-in/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-02-03T06:35:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Using Wix for my Live Writer Plug-in" />
+<script type="application/ld+json">
+{"datePublished":"2008-02-03T06:35:00-05:00","@type":"BlogPosting","url":"http://localhost:4000/2008/02/03/using-wix-for-my-live-writer-plug-in/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/02/03/using-wix-for-my-live-writer-plug-in/"},"dateModified":"2008-02-03T06:35:00-05:00","description":"I finally have version 1 of my Smugmug gallery plug-in completed. The next step is to do the installer. To get a plug-in up on the Windows Live Gallery, it must have an installer that meets the requirements on the Gallery Developer Center page. A content plug-in has to meet these requirements:","headline":"Using Wix for my Live Writer Plug-in","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Using Wix for my Live Writer Plug-in</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-02-03T06:35:00-05:00" itemprop="datePublished">Feb 3, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I finally have version 1 of my Smugmug gallery plug-in completed. The next step is to do the installer. To get a plug-in up on the <a href="http://gallery.live.com/">Windows Live Gallery</a>, it must have an installer that meets the requirements on the Gallery Developer Center <a href="http://gallery.live.com/devcenter.aspx">page</a>. A content plug-in has to meet these requirements:</p>
+
+<ol>
+  <li>Content Plugins must be built using either the .NET 1.1 or .NET 2.0 frameworks.</li>
+  <li>Content Plugins must be packaged and submitted as a Microsoft Installer (*.msi).</li>
+  <li>If you use the .NET 2.0 framework, the installer must link to the .NET 2.0 download site or use the Visual Studio 2005 Bootstrapper. The Bootstrapper detects and downloads the correct .NET 2.0 framework.</li>
+  <li>Your installer must copy the assembly to the “Plug -ins” sub-directory of the Windows Live Writer installation directory.</li>
+</ol>
+
+<p>I have #1, my plug-in uses the .NET 2.0 framework. Number 2 is that it must be packaged using a Windows Installer .msi setup. I’m still figuring out the best way how to implement #3, but I’m not sweating it. With #4, I’m not doing it that way. The alternative method is to install the plug-in in your own folder and write a registry key to Software\Windows Live Writer\PluginAssemblies (HKLM or HKCU) with the name of your plugin and the path to it. That way you don’t have to worry about where Live Writer was installed to. In fact that page is probably obsolete, there is an MSDN <a href="http://msdn2.microsoft.com/en-us/library/aa738841.aspx" title="Distributing Plugins">article</a> that covers the registry method.</p>
+
+<p>Let’s start with the .msi requirement.</p>
+
+<p>I looked that the “Setup Project” template in VS 2008. Um, no thanks. After 30 minutes of playing with it, I started getting annoyed. It felt awkward and non-intuitive. Granted, most things with Windows Installer are awkward and non-intuitive, but I couldn’t get fast handle on “Setup Project” template. It was easy enough to get the files installed, but getting the registry written correctly was a task I just couldn’t figure out. After two years of doing .msi with Wise For Windows and now InstallAware, I have a pretty good idea of an .msi is supposed to work.</p>
+
+<p>I decided to knock out an setup with InstallAware. It took about 5 minutes and worked perfectly. But it was 1.2 MB in size. That seemed excessive to deploy 45K for two assemblies. Frankly any installer will be excessive, but I have to follow requirement #2. I have lots of love for InstallAware and it’s my tool of choice for application installs, but it still bothers me to have a setup that 26 times larger than the files being deployed.</p>
+
+<p>With VS’s “Setup Project” and InstallAware out of the picture, I decided to check out <a href="http://wix.sourceforge.net/index.html" title="Windows Installer XML (WiX) toolset">WiX</a>. WiX stands for WIndows Installer XML and is an open source toolkit for building .msi setups from an XML source file. The current version, 3, <a href="http://wix.sourceforge.net/votive.html" title="Votive is the Visual Studio package for WiX that lets you create and build WiX setup projects using the Visual Studio IDE. Votive supports syntax highlighting and IntelliSense for .wxs source files and adds a WiX setup project type to Visual Studio.">installs nicely into VS 2008</a>. It installed so nicely, I didn’t need to be concerned with how to run the <a href="http://wix.sourceforge.net/manual-wix2/candle.htm">Candle</a> (the WiX compiler) or <a href="http://wix.sourceforge.net/manual-wix2/light.htm">Light</a> (the WiX linker). There is also a .msi decompiler, named <a href="http://wix.sourceforge.net/manual-wix2/dark.htm">Dark</a>. It will emit Wix source code from a .MSI or .MSM file.</p>
+
+<p>WiX source code is pretty intimidating when you first look at it. if you have no experience with authoring Windows Installer, it will be hard to grasp at first. The WiX site has a nice <a href="http://www.tramontana.co.hu/wix/" title="ntroduction to the Windows Installer XML Toolset">tutorial</a>, but it’s for version 2 and uses syntax that’s deprecated in version 3. Fortunately, I was able to google the differences and I was able to get a working installer in about an hour. It’s not handling step 3 completely, but it is terminating the install if .NET 2.0 is not available.</p>
+
+<p>The size of the .msi is much smaller, about 220k. Still way too large, but it’s as about as small as I’m going to get for a .msi file. So far, I’m very impressed with WiX. Once you start getting the hang of the syntax, it’s very clear on how to setup a proper .msi file. There’s even a open source editor called <a href="http://wixedit.sourceforge.net/">WixEdit</a>. I didn’t need it for this task, but I think I make take at peek at it at another timer.</p>
+
+<p>Enough people are using it so that I was able to google for the bits I needed. Morten Lyhr had a great <a href="http://morten.lyhr.dk/2007/10/wix-v3-and-detection-of-iis-and-aspnet.html" title="WiX v3 and detection of IIS and ASP.NET">post</a> on how to detect the .NET Framework. I figured out how to write the registry key from a <a href="http://blogs.msdn.com/cjacks/archive/2008/01/03/stock-viewer-shim-demo-application.aspx" title="Stock Viewer Shim Demo Application">post</a> by Chris Jackson. Bonnie (one of the Live Writer developers) had a good sample <a href="http://bplo.spaces.live.com/blog/cns%21CF2831C0AE64E81B%21210.entry" title="Making an installer for your plugin">WiX file</a> for installing a plug-in. While I didn’t follow her pattern, it did give me a tour of the neighborhood. Mike Stall has a good <a href="http://blogs.msdn.com/jmstall/archive/2007/10/29/creating-msis-for-live-writer-plugins.aspx" title="Creating MSIs for Live Writer PlugIns">post</a> that covers the basics. I think I need to spend some time reading the blogs of the WiX developers, they have a build a really cool tool.</p>
+
+<div>
+  Tech Tags: <a href="http://technorati.com/tag/Windows+Live+Writer" rel="tag">Windows+Live+Writer</a> <a href="http://technorati.com/tag/plugin" rel="tag">plugin</a> <a href="http://technorati.com/tag/installer" rel="tag">installer</a> <a href="http://technorati.com/tag/msi" rel="tag">msi</a> <a href="http://technorati.com/tag/Wix" rel="tag">Wix</a>
+</div>
+
+  </div><a class="u-url" href="/2008/02/03/using-wix-for-my-live-writer-plug-in/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Work around for KB938371 disabling HID-compliant input devices | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Work around for KB938371 disabling HID-compliant input devices" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="After a few days of non-working mice, someone found a work around for KB938371. As I noted here and here, Vista Update 938371 disabled two the three mice I have I on my main home machine. Here’s the work around that actually worked for me:" />
+<meta property="og:description" content="After a few days of non-working mice, someone found a work around for KB938371. As I noted here and here, Vista Update 938371 disabled two the three mice I have I on my main home machine. Here’s the work around that actually worked for me:" />
+<link rel="canonical" href="http://localhost:4000/2008/04/13/work-around-for-kb938371-disabling-hid/" />
+<meta property="og:url" content="http://localhost:4000/2008/04/13/work-around-for-kb938371-disabling-hid/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-04-13T21:23:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Work around for KB938371 disabling HID-compliant input devices" />
+<script type="application/ld+json">
+{"datePublished":"2008-04-13T21:23:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/04/13/work-around-for-kb938371-disabling-hid/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/04/13/work-around-for-kb938371-disabling-hid/"},"dateModified":"2008-04-13T21:23:00-04:00","description":"After a few days of non-working mice, someone found a work around for KB938371. As I noted here and here, Vista Update 938371 disabled two the three mice I have I on my main home machine. Here’s the work around that actually worked for me:","headline":"Work around for KB938371 disabling HID-compliant input devices","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Work around for KB938371 disabling HID-compliant input devices</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-04-13T21:23:00-04:00" itemprop="datePublished">Apr 13, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>After a few days of non-working mice, someone found a work around for KB938371. As I noted <a href="http://anotherlab.rajapet.net/2008/04/vista-update-kb938371-disabled-my-mouse.html" title="Vista update KB938371 disabled my mouse">here</a> and <a href="http://anotherlab.rajapet.net/2008/04/kb-938371-woes-continue.html" title="KB 938371 woes continue">here</a>, <a href="http://support.microsoft.com/kb/938371">Vista Update 938371</a> disabled two the three mice I have I on my main home machine. Here’s the work around that actually worked for me:</p>
+
+<ul>
+  <li><span><span>Just go to device manager -&gt; HID-devices -&gt; Unknown Device and search for drivers. </span></span></li>
+  <li><span><span>When prompted for how to search for driver software, select “Browse my computer for driver software”</span></span></li>
+  <li><span><span>Enter “C:\windows\winsxs” for the driver location and press the “Next” button.</span></span></li>
+  <li><span><span>If you get a </span></span><span><span>popup saying “this is an unsigned driver…”, just allow Windows to install the driver.</span></span></li>
+</ul>
+
+<p><span><span>At this point, Windows should select the appropriate driver and your mouse will start working again.  When I tried this, only had one of the non-working mice plugged in.  When I followed those steps, the mouse started working.  I plugged the other mouse in and Windows enabled it without any prompting.</span></span></p>
+
+<p><span><span>I went in to Device Manage and both mice were listed as “HID-compliant mouse” under “Mice and other pointing devices”.  Just to be safe, I selected one the mice, right-clicked into “Properties, selected the “Driver” tab on the dialog that opened up.  I clicked the “Driver Details” button and the mouse was using mouclass.sys and mouhid.sys drivers, located in c:\windows\system32\drivers, which is what they were supposed to be using.</span></span></p>
+
+<p><span><span>This tip was originally posted <a title="Eggheadcafe.com:  Vista32, new driver? &#038; USB Mouse/Keyboard not working - SergeyEgoro" href="http://www.eggheadcafe.com/software/aspnet/31997463/vista32-new-driver--us.aspx">here</a> and I came across it <a title="MSDN Forums: Re: Vista bites... again" href="http://forums.microsoft.com/forums/showpost.aspx?postid=3165124&#038;siteid=1&#038;sb=0&#038;d=1&#038;at=7&#038;ft=11&#038;tf=0&#038;pageid=1">here</a>.  I’m happy that I have my mouse functionality back, but how did this get past Microsoft’s testing?  I saw too many people reporting this, it’s not an isolated case.  I have a mouse that comes with my Wacom table that wasn’t affected by this snafu, but what about the people who just had regular USB mice?  They were/are pretty much screwed by an update that can’t be uninstalled with running System Restore.  </span></span></p>
+
+<p><span><span>I still want to know what happened and why 938371 toasted my HID-compliant hardware.  Was there something broken already with my Vista installation and 938371 was just a symptom of the problem, or did 938371 actually break something?</span></span></p>
+
+<p><span><span>I’m not allowing MS to automatically update my PC anymore.  That requires a certain level of trust that MS is going to push down updates that will be beneficial.  They just blew that trust.  I’ll take the updates, but I’m going to decide if and when they get installed.</span></span></p>
+
+<p><span><span>I was asked offline why I have three mice.  It’s pretty simple (almost makes sense).  My day to day mouse is a <a title="MX™700 Cordless Optical Mouse" href="http://www.logitech.com/index.cfm/428/909">Logitech MX™700</a>.  It’s a cordless mouse that uses rechargeable batteries.  It’s been the best mouse that I have ever used and I continue to use it under Vista even though Logitech never ported the MX700 drivers to Vista.  It has a little dock that charges the batteries.  I almost always forget to put the mouse back in it’s dock and a every few days, the batteries give out.  When that happens, I place it back in it’s dock and use a Dell USB optical mouse while the MX700 is charging.   The third mouse is a digitizer mouse that comes with my <a href="http://www.wacom.com/bambootablet/bamboofun.cfm">Wacom Bamboo Fun tablet</a>.  That mouse works, but only on it’s little pad.  It was OK enough to use while tracking down this problem, but I wouldn’t want it to be my everyday mouse.</span></span></p>
+
+<p><strong>Update: 2/22/2010</strong><br />
+I repaved this machine with Windows 7 about 6 months ago and replaced the MX700 with a Logitech mouse that is supported under Windows 7.  For anyone that is still having this problem, consider Windows 7.  It’s much nicer than Vista.</p>
+
+  </div><a class="u-url" href="/2008/04/13/work-around-for-kb938371-disabling-hid/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Getting a new dev machine set up, OS X Style | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Getting a new dev machine set up, OS X Style" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="So I’m on my second Macbook. I use a Macbook Pro for iOS development and I was due for a new one.  I went from a Late 2011 MBP to a late 2014 MBP.  Except now I have a Retina display and a 512 SSD. I’ve gained an HDMI port, but lost the Ethernet port.  I’m still not sure if that was a fair trade." />
+<meta property="og:description" content="So I’m on my second Macbook. I use a Macbook Pro for iOS development and I was due for a new one.  I went from a Late 2011 MBP to a late 2014 MBP.  Except now I have a Retina display and a 512 SSD. I’ve gained an HDMI port, but lost the Ethernet port.  I’m still not sure if that was a fair trade." />
+<link rel="canonical" href="http://localhost:4000/2015/02/03/getting-a-new-dev-machine-set-up-os-x-style/" />
+<meta property="og:url" content="http://localhost:4000/2015/02/03/getting-a-new-dev-machine-set-up-os-x-style/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-02-03T11:36:51-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Getting a new dev machine set up, OS X Style" />
+<script type="application/ld+json">
+{"datePublished":"2015-02-03T11:36:51-05:00","@type":"BlogPosting","url":"http://localhost:4000/2015/02/03/getting-a-new-dev-machine-set-up-os-x-style/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2015/02/03/getting-a-new-dev-machine-set-up-os-x-style/"},"dateModified":"2015-02-03T11:36:51-05:00","description":"So I’m on my second Macbook. I use a Macbook Pro for iOS development and I was due for a new one.  I went from a Late 2011 MBP to a late 2014 MBP.  Except now I have a Retina display and a 512 SSD. I’ve gained an HDMI port, but lost the Ethernet port.  I’m still not sure if that was a fair trade.","headline":"Getting a new dev machine set up, OS X Style","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Getting a new dev machine set up, OS X Style</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2015-02-03T11:36:51-05:00" itemprop="datePublished">Feb 3, 2015
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>So I’m on my second Macbook. I use a Macbook Pro for iOS development and I was due for a new one.  I went from a Late 2011 MBP to a late 2014 MBP.  Except now I have a Retina display and a 512 SSD. I’ve gained an HDMI port, but lost the Ethernet port.  I’m still not sure if that was a fair trade.</p>
+
+<p><a href="http://www.dailyhaha.com/pictures.htm"><img title="DailyHaHa_Funny_Pictures" src="https://i0.wp.com/www.dailyhaha.com/_pics/new_mac.jpg?w=680" alt="DailyHaHa.com Funny Pictures" border="0" data-recalc-dims="1" /></a></p>
+
+<p>I no longer get laptops or PC’s with spinning rust drives.  The performance benefits of a SSD out weigh the extra cost.  The PCI Express controller is faster than SATA, even with full disk encryption (IT policy).</p>
+
+<p>Now I have to get the tools that I need onto the MBP.  I really don’t have a master list of what needs to be installed so I’m making one here.  I’ll continue to update this blog post as I come across stuff to install for development.</p>
+
+<p><a href="https://developer.apple.com/xcode/"><img loading="lazy" class="alignleft" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-4TSWxPC/0/M/xcode-M.jpg?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" />XCode</a><br />
+Even though I do my coding with the .NET stack using Xamarin, I still need to have Xcode installed.  Apple makes the Xcode compilers part of the tool chain.  Plus that’s the only way you get the iOS Simulator.<br />
+Where to get it:  Apple OS X App Store</p>
+
+<p>Xcode simulator for iOS 7<img loading="lazy" class="alignright" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-cNpkQbC/0/S/iossim-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /><br />
+A new Xcode install wiill just have the current version of iOS in the simulator.  If you want to test against an older version, you need to install it manually.<br />
+Where to get it:  Xcode, preferences, downloads</p>
+
+<p>Xcode command line tools<br />
+Xamarin needs to have the command line tools installed. That’s the easiest way to get git and svn installed.<br />
+Where to get it:  use Terminal to install Xcode Command Line Tools.</p>
+
+<pre class="brush: bash; gutter: true">$ xcode-select --install</pre>
+
+<p><img loading="lazy" class="alignleft" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-GtRVW87/0/Ti/chrome-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /> Google Chrome<br />
+I’m not looking to go a Safari Adventure…<br />
+Where to get it: http://www.google.com/chrome/</p>
+
+<p> </p>
+
+<p><a href="https://xamarin.com/">Xamarin<img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-p7bp2d9/0/Ti/xamarin-studio-icon-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /><br />
+</a> We are not animals, why use anything else?  I drank the Xamarin Koolaid 2 years ago and I can’t imagine doing mobile development any other way.<br />
+Where to get it: <a href="https://store.xamarin.com/account/my/subscription/downloads%20http://xamarin.com/platform">Subscription Downloads</a></p>
+
+<p>Right after Xamarin has finished installing, update the Android SDK. The Android installer will install the latest bits, but if you want to support previous versions of Android, you’ll want to install those SDKs too.<br />
+Where to get it: Xamarin Studion -&gt; Tools -&gt; Open Android SDK Manager</p>
+
+<p><a href="https://www.virtualbox.org/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-dgpCtwK/0/Ti/virtualbox-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" />VirtualBox</a><br />
+Both the Xamarin Android Player and Genymotion require VirtualBox. VirtualBox is a free and open source virtual machine environment.  If you install that first, it makes the Genymotion install easier.<br />
+Where to get it:  <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box Download Page</a></p>
+
+<p><a href="https://www.genymotion.com">Genymotion</a><a href="https://www.genymotion.com"><img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-PW5PPLH/0/S/genymotion-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a><br />
+Genymotion is a fast Android emulator and supports more versions of Android than any other VM based Android Emulator.  Friends don’t let friends use the Google Android Emulator.  Google’s emulator emulates the CPU on the phone, but pays a performance penalty.  Genmotion (and Xamarin and Microsoft) run a version of Android for x86, which gets you virtual machine performance.<br />
+Where to get it:  <a href="https://www.genymotion.com/#!/pricing">Get Genymotion</a></p>
+
+<p><a href="http://www.adobe.com/creativecloud.html"><img loading="lazy" class="alignleft" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-Rctgxqj/0/Ti/adobe_creative_cloud_logo-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" />Adobe Creative Cloud</a><br />
+When our graphic designers send me the artwork for our apps, they give it to me in Adobe Illustrator format.  From the AI files, I can script the rendering the images through Photoshop for all of the iOS and Android sizes that I need.<br />
+Where to get it:  <a href="http://www.adobe.com/creativecloud.html">Adobe CC</a></p>
+
+<p>Alternatives to Adobe CC:  <a href="http://www.gimp.org/">GIMP</a> is a very powerful image editor.  An open source project, GIMP is available on many plaforms.  If I didn’t have an Adobe CC subscription, GIMP would be my tool of choice.  <a href="https://inkscape.org/en/">Inkscape</a> is another open source tool, but for vector image editing.  Inkscape has the ability to export to XAML, so you have the ability to use resolution independent images on the Windows platforms,  Android 5 supports SVG for vector images and there is the <a href="https://code.google.com/p/svg-android/">svg-android</a> library for older versions of Android.  Which brings us to…</p>
+
+<p><a href="http://www.paintcodeapp.com/">PaintCode<img loading="lazy" class="alignright" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-bdxPP77/0/Ti/PaintCode-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a><br />
+PaintCode is an OS X app that will take SVG files and generate iOS drawing code in Objective-C, Swift, or Xamarin C#.  With the image as drawing code, you can manipulate it at runtime, it’s no longer a static image, but one that you can edit via.</p>
+
+<p><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-6tSRf65/0/S/Fusion-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /> VMware Fusion<br />
+I run Windows on my Macbook Pro.  When I want to carry just one machine and compile for iOS and Windows Phone, this is the simplest solution for me.  A cool thing with Fusion is that it supports Hyper-V, I can run the Windows Phone emulator in a Fusion session.<br />
+Where to get it: <a href="http://www.vmware.com/products/fusion">VMware Fusion</a></p>
+
+<p><a href="http://www.airserver.com/">Air Server<img loading="lazy" class="alignright" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-7kHTcJJ/0/S/AirServer-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a><br />
+When I want to demo an actual iOS device and be able to display on my Macbook, I use AirServer.  AirServer is an <a href="https://www.apple.com/airplay/">AirPlay</a> receiver for OS X (and Windows). This works great for demos and for sharing with WbeEx or GotoMeeting.  The only caveat is that it uses the same port as the Xamarin Build Host.  The Xamarin Build Host is the app that lets Visual Studio on Window access the Xamarin and Xcode build tools on the Mac.<br />
+Where to get it: <a href="http://www.airserver.com/Download">Airserver Download page</a></p>
+
+<p><a href="http://support.airserver.com/customer/portal/articles/1465944">AirServer uses a bunch of ports</a>, 5000 is used for audio and causes the conflict with Xamarin.  To change the audio port used by AirServer, open up Terminal and run the following command:</p>
+
+<pre class="brush: bash; gutter: false">defaults write com.pratikkumar.airserver-mac com.airserver.raopPort 5010</pre>
+
+<p><a href="http://www.paragon-software.com/home/ntfs-mac/">Paragon NTFS for OS X</a><br />
+Out of the box, OS X can read NTFS but it can’t write to it.  If you have a large capacity USB drive, it’s going to be formatted with NTFS.  Paragon makes a stable and cheap NTFS driver for OS X.<br />
+Where to get it: <a href="http://www.paragon-software.com/home/ntfs-mac/download.html">NTFS for Mac</a></p>
+
+<p><a href="http://www.sublimetext.com"><img loading="lazy" class="alignleft" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-zFkjdnk/0/S/sublime-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" />Sublime Text</a><br />
+Sublime is a very nice text editor that is available for multiple platforms.  I like being able to use the same tools on Windows and OS X where possible.  It makes for less things to learn and remember so you can concentrate on getting stuff done.<br />
+Where to get it:  <a href="http://www.sublimetext.com/2">Sublime Text Download page</a></p>
+
+<p><a href="https://balsamiq.com/">Balsamiq Mockups<img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-bntSxfH/0/S/Balsamiq-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a><br />
+Balsamiq is a great tool for doing wireframe mockups.  When doing quick designs, wireframe mockups let you walk do the basic design and flow, without getting distracted by pixel placement.  This is a other one of the multi-platform tools.<br />
+Where to get it:  <a href="https://balsamiq.com/download/">Balsamiq download page</a></p>
+
+<p><a href="https://adium.im/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-rnJrwPp/0/S/Adium-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" />Adium</a><br />
+Adium is a free instant messaging application for OS X that supports multiple chat platforms.  When I want to IM a co-worker, I use whatever platform that they prefer, AIM, Yahoo, Google, Facebook, etc.  Using Adium lets me deal with just one app.<br />
+Where to get it: <a href="https://adium.im/">Adium.im</a></p>
+
+<p>RDP<img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-KH7M39J/0/S/MSrdp-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /><br />
+Right now I’m using the Microsoft Remote Desktop app for OS X.  I used to use CoRD, but Microsoft Remote Desktop looks like it’s more up to date and I’ll stick with it.  I don’t RDP to Windows from OS X that much, the MS one should be enough.  Also CoRD doesn’t appear to support Mavericks or Yosemite.<br />
+Where to get it: Apple OS X App Store</p>
+
+<p><a href="http://sqlitebrowser.org/">Db Browser for SQLite</a><br />
+This is an open source, cross platform tool for working with SQLite databases.  When writing code that writes to a SQLite database, an external database browser can help validate that you are writing the right data.<br />
+Where to get it:  <a href="http://sqlitebrowser.org/">Github</a></p>
+
+<p>When you use the iOS Simulator, you can access files from the simulator image with Finder.  The location will vary, depending on the version of Xcode used.  This <a href="http://stackoverflow.com/questions/1567798/iphone-simulator-location">Stack Overflow post</a> is a good starting point.</p>
+
+<p><a href="http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/objective_sharpie/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-B2Sq6bm/0/S/Objectice%20Sharpie-S.png?resize=91%2C89" alt="" width="91" height="89" data-recalc-dims="1" />Objective Sharpie</a><br />
+This is a tool that Xamarin developed for building binding libraries for Objective-C libraries.  It’s not the easiest tool to use, but it greatly cuts down the amount of work needed to created a Xamarin C# binding to an Objective-C library.<br />
+Where to get it: <a href="http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/objective_sharpie/">Objective Sharpie</a></p>
+
+<p><a href="https://onedrive.live.com/">OneDrive<img loading="lazy" class="alignright" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-GtTdtT7/0/S/OneDrive-S.png?resize=89%2C83" alt="" width="89" height="83" data-recalc-dims="1" /><br />
+</a> I use OneDrive.  A lot.  Most of the documents that I work on, I tend to put into OneDrive.  It just makes it easy to not care from which machine that I used to last edit the document.  I have some PhotoShop scripts for generating different sized icons from a single source file.  I keep it in the cloud so I can use it where ever I have Adobe PhotoShop installed.  From a synching perspective, <a href="https://www.dropbox.com/">DropBox</a> is probably a better choice, OneDrive is backed into everything else that I use so I’ll stay with it.<br />
+Where to get it: Apple OS X App Store</p>
+
+<p><img loading="lazy" class="alignleft" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-HQqKp9v/0/S/snagit-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /> Snagit<br />
+TechSmith makes the best screenshot capture tool period.  I use this more often that I would have expected to.  Also falls into the category of being available for OS X and Windows.<br />
+Where to get it: <a href="http://www.techsmith.com/snagit.html">TechSmith</a></p>
+
+<p>Android File Transfer<a href="https://www.android.com/filetransfer/"><img loading="lazy" class="alignright" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-vMQJf2X/0/L/AndroidFileTransfer-L.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a><br />
+I had to move some large files from the old MBP to the new MBP and I left my thumb drives at home.  So I used my Nexus tablet as a large, awkward thumb drive.  With Windows, you can just use the tablet as a drive, with a Mac you need the Android File Transfer app.  When you run the app it will display the file system of the connected Android device in a Finder-like window.  You can drag and drop files between the Mac and the Android.<br />
+Where to get it: <a href="https://www.android.com/filetransfer/">Android.com</a></p>
+
+<p>Spectacle<br />
+I have an external monitor on the Mac and I was amazed that OS X does not include any keyboard shortcuts for resizing windows, docking to screen edges, or moving windows to other displays.  Unless you use both OS X and Windows on a day to day basis, you don’t realize how Windows has passed OS X in many areas for UX.  So I installed Spectacle, an open source app for OS X that provides the keyboard shortcuts for moving windows around.  This should be built into the OS.<br />
+Where to get it: <a href="http://spectacleapp.com/">spectacleapp.com<br />
+</a> Bonus round: Get the cheatsheet from a <a href="http://apple.stackexchange.com/questions/9659/what-window-management-options-exist-for-os-x/66936#66936">StackExchange post</a>.</p>
+
+<p>Microsoft Lync<br />
+We use Lync as our corporate IM and it’s handy to be able to use from the Mac.  There is an OS X Lync app, but I prefer to use the web application.  It requires a browser plugin, but it more or less works.<br />
+Where to get it: <a href="https://join.microsoft.com/meet/sebros/TWFQ3LYH">Lync Web App</a></p>
+
+<p>Disk Inventory X<br />
+This is the Mac equivalent to WinDirStart. It’s a disk utility app that shows file and folder usage.<br />
+Where to get it: <a href="http://www.derlien.com/">Lync Web App</a></p>
+
+<p>iStat Menus<br />
+<a href="https://bjango.com/mac/istatmenus/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-J9NXZSg/0/Ti/StatIcon-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a>This app adds an incredible amount of information to your menubar.  From motherboard sensors, world clocks, CPU &amp; drive usage rates, and detailed network information, there is more stuff than you would use.  It’s pretty cheap and is updated often.   When I’m trying to connect the Xamarin plugin in Visual Studio to the Xamarin Build Host, I often have to do it by IP address.  My Macbook’s IP address changes a lot at work, and gives me a fast way to see the Wi-Fi IP address.<br />
+Where to get it: <a href="https://bjango.com/mac/istatmenus/">bjango.com<br />
+B</a>onus round: Found about it via <a href="https://twitter.com/natfriedman">Nat Friedman</a>‘s <a href="http://tinyletter.com/natfriedman">newsletter</a></p>
+
+<p>After I get the tools installed, the next thing is to get <a href="http://support.apple.com/en-us/HT201250">Time Machine</a> set up.   I have an external 2TB USB 3 drive that I use for backing up the Macbook Pro.  Time Machine is one of those OS X features that you can set and forget, it just works.  The hard drive crashed on my previous MacBook Pro, I was able to completely recover my stuff from the Time Machine backup.</p>
+
+  </div><a class="u-url" href="/2015/02/03/getting-a-new-dev-machine-set-up-os-x-style/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>How I patched a Dell workstation with a firmware update from HP | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="How I patched a Dell workstation with a firmware update from HP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="About 18 months ago, I got a Dell Precision T5500 workstation.  A decent PC with a Xeon quad core processor which has bee a pretty decent box for doing development with." />
+<meta property="og:description" content="About 18 months ago, I got a Dell Precision T5500 workstation.  A decent PC with a Xeon quad core processor which has bee a pretty decent box for doing development with." />
+<link rel="canonical" href="http://localhost:4000/2011/02/15/how-i-patched-dell-workstation-with/" />
+<meta property="og:url" content="http://localhost:4000/2011/02/15/how-i-patched-dell-workstation-with/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-02-15T17:17:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How I patched a Dell workstation with a firmware update from HP" />
+<script type="application/ld+json">
+{"datePublished":"2011-02-15T17:17:00-05:00","@type":"BlogPosting","url":"http://localhost:4000/2011/02/15/how-i-patched-dell-workstation-with/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2011/02/15/how-i-patched-dell-workstation-with/"},"dateModified":"2011-02-15T17:17:00-05:00","description":"About 18 months ago, I got a Dell Precision T5500 workstation.  A decent PC with a Xeon quad core processor which has bee a pretty decent box for doing development with.","headline":"How I patched a Dell workstation with a firmware update from HP","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How I patched a Dell workstation with a firmware update from HP</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2011-02-15T17:17:00-05:00" itemprop="datePublished">Feb 15, 2011
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>About 18 months ago, I got a Dell <a href="http://www.dell.com/us/business/p/precision-t5500/pd">Precision T5500</a> workstation.  A decent PC with a Xeon quad core processor which has bee a pretty decent box for doing development with.</p>
+
+<p>About a month ago, it started acting very flakey.  I would be doing my work and the display would go all wonky on me.  I would see crawling vertical lines going down the display.  After a minute or two, the colors would get very dark and the computer would stop responding.</p>
+
+<p>A reboot would restore the machine.  There were no warning signs, nothing in the event logs.  One minute it was running, the next it was locked up.  This would happen about once a day or so.  Not enough to keep me from using the machine, but enough to warrant getting it fixed.</p>
+
+<p>We have Dell Priority support, which we hoped would help resolve this problem.  We bought this machine with Vista and it had the free upgrade to Windows 7.  We had bough a bunch of these machines, another one was having a strange crashing problem as well.  Because I had installed 64 bit Windows 7 on it, Dell said it was not supported. </p>
+
+<p>That annoyed our IT manager.  He then engaged Dell support to fight the good fight.  He called BS on that one and their response was for him to uninstall the current video driver and install the latest Dell approved driver.  While he was doing that, I stated doing my own research.  They had a Plan B, but that involved swapping drives without machine and wouldn’t have actually resolved anything.  We hoped to avoid Plan B.</p>
+
+<p>This T550 came with an NVIDIA <a href="http://www.nvidia.com/object/product_quadro_nvs_295_us.html">Quadro NVS 295</a> video card.  It’s a basic workstation card with enough horsepower to drive 2 displays.  I had kept the driver updates current with whatever Windows Update suggested for it.</p>
+
+<p>We downloaded the files from Dell, and ripped out the current driver.  The Dell drivers refused to install, claiming that there were no supported devices installed.  The IT guy had downloaded the recommended driver, which supports a motley crew of NVidia cards.  He found a NVS 295 specific driver on the Dell site and started downloading that.  Peachy.  While he was fighting with my machine, I had found some clues in the NVIDIA forums.</p>
+
+<p>I was not alone.  Other Dell owners had reported similar problems with that video card.  This <a href="http://forums.nvidia.com/index.php?showtopic=179731">post</a> has a screen shot that was similar to what I was seeing.  Another <a href="http://forums.nvidia.com/index.php?showtopic=168383">post</a> described applying a NVS 295 firmware update from HP’s web site.  This was posted by several Dell users as working.  Since it’s on the Internet, it must be true.  The IT guy didn’t want to flash the Dell with the HP supplied file, but I convinced him by using the following three arguments.</p>
+
+<ol>
+  <li>It’s a video card BIOS firmware, not for the motherboard.</li>
+  <li>If we brick it, Dell has to replace it as it will no longer be a software problem.</li>
+  <li>You can’t beat the entertainment value of flashing Dell supplied hardware with HP supplied updates and having it work.</li>
+</ol>
+
+<p>So I downloaded the firmware from a HP page labeled as <a href="http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareDescription.jsp?lang=en&amp;cc=ca&amp;prodTypeId=12454&amp;prodSeriesId=3718645&amp;swItem=wk-77944-1">“NVIDIA Quadro NVS 295 Video BIOS (ROM) and Flash Utilities”</a>,  and the latest driver from NVIDIA.  The Dell NVS 295 driver download completed first and we ran that.  It would not install because it couldn’t find the video card.  We then ran the HP flash updater, which immediately recognized the missing NVS card and happily flashed the BIOS.  After rebooting, we ran the NVidia supplied drivers and they installed without incident.</p>
+
+<p>It’s now been a couple of weeks and my T550 has been running non-stop without any failures.  While I don’t understand why HP is only known place in the Googleverse that has a NVIDIA firmware update, I’m just glad that someone released it.</p>
+
+<p>**Updated: 2/6/2012<br />
+** I recently had a comment on this post that I did not publish.  That person posted anonymously and put his email address in the post.  I don’t think he wanted his email address published (and you’ll see why), but I will include rest of the post:</p>
+
+<blockquote>
+  <p><em>I have the same problem, and I am unable to track down that flash utility! HP apparently doesn’t support it anymore. Would you by any chance have it still and possibly throw it up and media fire or some other site for me to download?</em></p>
+</blockquote>
+
+<p>The link I had listed no longer goes to the correct page.  HP updated the article and broke the link.  That’s how the Internet works folks, nothing is truly static.  That’s why we have search pages.  That HP link takes you to a page that has a search box.  If you type in “”Quadro NVS 295” in the search box and press the submit button, it comes back with <a href="http://h20000.www2.hp.com/bizsupport/site/search/r4_0/jsp/search.jsp?lang=en&amp;cc=ca&amp;prodTypeId=12454&amp;prodSeriesId=3718645&amp;tx=quadro%20nvs%20295" title="The following is a list of documents that match &quot;quadro nvs 295&quot;">a list of pages</a>.  At this time, the top page on the list is the <a href="http://h20000.www2.hp.com/bizsupport/TechSupport/SoftwareDescription.jsp?lang=en&amp;cc=US&amp;swItem=wk-87053-1&amp;mode=4&amp;idx=0&amp;prodTypeId=12454&amp;prodSeriesId=3718645" title="NVIDIA Quadro NVS 295 Video BIOS (ROM) and Flash Utilities">current page for the firmware download</a>.  Since HP can and will change the link, I’m not going to make any effort to keep my page in synch with HP.</p>
+
+<p>Since HP holds the copyright to that download and is still supporting, I don’t think it’s 100% kosher to put that file up on a file sharing site.  If HP abandoned it, then I can see a reason for making the file available.  But there’s no need when you can easily download it from HP.  It took less than 5 seconds to find the updated page.</p>
+
+<p>One final point. About 7 months after writing that post, the problem came back.  In all likelihood, a Windows update has a conflict with the card and/or the drivers.  Since the machine was still under warranty, I had Dell send out a replacement card.  It failed right after booting up with the same problem. I was done with that card.  I ripped the card out and replaced it with a higher end card.</p>
+
+  </div><a class="u-url" href="/2011/02/15/how-i-patched-dell-workstation-with/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Checking Hypervisor status with PowerShell | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Checking Hypervisor status with PowerShell" />
+<meta name="author" content="Chris Miller" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Image courtesy of Serge Melki" />
+<meta property="og:description" content="Image courtesy of Serge Melki" />
+<link rel="canonical" href="http://localhost:4000/2017/09/03/checking-hypervisor-status-with-powershell/" />
+<meta property="og:url" content="http://localhost:4000/2017/09/03/checking-hypervisor-status-with-powershell/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-09-03T20:23:34-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Checking Hypervisor status with PowerShell" />
+<script type="application/ld+json">
+{"datePublished":"2017-09-03T20:23:34-04:00","@type":"BlogPosting","url":"http://localhost:4000/2017/09/03/checking-hypervisor-status-with-powershell/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/09/03/checking-hypervisor-status-with-powershell/"},"dateModified":"2017-09-03T20:23:34-04:00","author":{"@type":"Person","name":"Chris Miller"},"description":"Image courtesy of Serge Melki","headline":"Checking Hypervisor status with PowerShell","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Checking Hypervisor status with PowerShell</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-09-03T20:23:34-04:00" itemprop="datePublished">Sep 3, 2017
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <div style="width: 610px" class="wp-caption alignnone">
+  <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-Gg6pZTX/0/2727179c/M/i-Gg6pZTX-M.jpg?resize=600%2C368&#038;ssl=1" width="600" height="368" data-recalc-dims="1" />
+  
+  <p class="wp-caption-text">
+    Image courtesy of <a href="https://www.flickr.com/photos/sergemelki/4662832317">Serge Melki</a>
+  </p>
+</div>
+
+<p>I needed to find a quick way to see which hypervisor was installed.  I bounce between different development machines and some have Hyper-V enabled and some have Intel’s <a href="https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager">HAXM driver</a> installed.  Both assist with virtual machines, but they can’t be used together.  I used to be 100% Hyper-V with running virtual machines and Android emulators.  The Microsoft Android Emulator used to be very good, but is suffering from a fair amount of bit rot.  In the meanwhile, Google’s Android Emulator has gone from being a great of sitting and watching something load very slowly to a tool that that you can use in real time.</p>
+
+<p>Microsoft’s Android Emulator requires Hyper-V and Google’s Emulator really needs HAXM in order to have any level of performance.  Since I bound around from machine to machine (with the occasional <a href="https://rajapet.com/2017/09/01/time-to-repave-slightly-my-work-machine/">repave</a>), I wanted a quick way to see which hypervisor is installed.  Hyper-V requires a some work to turn on and off. HAXM is a kernel driver.  So I wrote a quick PowerShell script to report the status of each Hypervisor</p>
+
+<pre class="brush:ps">$services = 'intelhaxm', 'vmicheartbeat'
+
+$d = [System.ServiceProcess.ServiceController]::GetDevices() | ? {
+  $services -contains $_.Name
+}
+
+$s = Get-Service | ? {
+  $services -contains $_.Name
+}
+
+$d
+$s
+</pre>
+
+<p>The first line just defines an array of names to match one. The next block of code uses <a href="https://msdn.microsoft.com/en-us/library/x5sy3z2a(v=vs.110).aspx">GetDevices()</a> to return the status of the HAXM driver. The block that follows returns the status of the Hyper-V Heartbeat Service. The last part just dumps out the results.</p>
+
+<p>An alternative way is to pass the service name to <a href="https://technet.microsoft.com/en-us/library/ee176858.aspx">Get-Service</a> and it will return the status for the specified service. The problem is that it will error out if the specified service does not exist. And while that error message is a status report, it’s an ugly way to get that information</p>
+
+<p>I named the script “hyper-stat.ps1” and when I run it on a machine with HAXM running, I get the following output</p>
+
+<pre>.\hyper-stat.ps1
+
+Status   Name               DisplayName                           
+------   ----               -----------                           
+Running  IntelHaxm          Intel HAXM Service 
+</pre>
+
+<p>On a machine with Hyper-V and no HAXM, I get this</p>
+
+<pre>.\hyperv-stat.ps1
+
+Status   Name               DisplayName                           
+------   ----               -----------                           
+Running  vmicheartbeat      Hyper-V Heartbeat Service    
+</pre>
+
+<p>If I disable Hyper-V, I would get the following:</p>
+
+<pre>.\hyperv-stat.ps1
+
+Status   Name               DisplayName                           
+------   ----               -----------                           
+Stopped  vmicheartbeat      Hyper-V Heartbeat Service             
+
+</pre>
+
+<p>There are few ways of scripting this task. This one was simple and I have it on the machines that I use for coding.</p>
+
+<p>Edit: Right after posting this, I realized it didn’t actually work. I was originally reporting on the status of vmms, the Hyper-V Virtual Machine Management Service. If Hyper-V is installed, that service will always be running, even when Hyper-V is not enabled. The Hyper-V Heartbeat service is a better test for seeing if Hyper-V is enabled.</p>
+
+  </div><a class="u-url" href="/2017/09/03/checking-hypervisor-status-with-powershell/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

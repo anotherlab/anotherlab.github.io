@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>A Xamarin wrapper for the ACS USB library for Android | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="A Xamarin wrapper for the ACS USB library for Android" />
+<meta name="author" content="Chris Miller" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ACS ACR122U USB NFC Reader" />
+<meta property="og:description" content="ACS ACR122U USB NFC Reader" />
+<link rel="canonical" href="http://localhost:4000/2018/07/03/a-xamarin-wrapper-for-the-acs-usb-library-for-android/" />
+<meta property="og:url" content="http://localhost:4000/2018/07/03/a-xamarin-wrapper-for-the-acs-usb-library-for-android/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-03T02:19:49-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="A Xamarin wrapper for the ACS USB library for Android" />
+<script type="application/ld+json">
+{"datePublished":"2018-07-03T02:19:49-04:00","@type":"BlogPosting","url":"http://localhost:4000/2018/07/03/a-xamarin-wrapper-for-the-acs-usb-library-for-android/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/07/03/a-xamarin-wrapper-for-the-acs-usb-library-for-android/"},"dateModified":"2018-07-03T02:19:49-04:00","author":{"@type":"Person","name":"Chris Miller"},"description":"ACS ACR122U USB NFC Reader","headline":"A Xamarin wrapper for the ACS USB library for Android","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">A Xamarin wrapper for the ACS USB library for Android</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-07-03T02:19:49-04:00" itemprop="datePublished">Jul 3, 2018
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <div style="width: 310px" class="wp-caption alignnone">
+  <a href="https://www.acs.com.hk/en/products/3/acr122u-usb-nfc-reader/"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-g4GgjFj/0/fa5e2c6c/S/i-g4GgjFj-S.png?resize=300%2C300&#038;ssl=1" alt="ACS ACR122U USB NFC Reader" width="300" height="300" data-recalc-dims="1" /></a>
+  
+  <p class="wp-caption-text">
+    ACS ACR122U USB NFC Reader
+  </p>
+</div>
+
+<p>A while back, we were using RFID readers made by ACS.  They make a number of decent readers and we used one of the USB models, <a href="https://www.acs.com.hk/en/products/3/acr122u-usb-nfc-reader/">ACR1220U</a>, with our bespoke Android tablet.  To communicate to the reader, ACS provides libraries for Windows and Android.  The Android library comes with a .jar file and some sample (but very limited) code.  The demo showed how to connect to the reader, but didn’t have that much for getting information from the reader.</p>
+
+<p>The ACS reader follows the SmartCard standards.  Their library provides the low level access to the reader.  It’s up to the consumer of the library to write the code that actual sends and receives data from the RFID reader.  If you are working with a SmartCard reader, then you’ll need to know how to create <a href="https://en.wikipedia.org/wiki/Smart_card_application_protocol_data_unit">APDU</a> packets.  An APDU, application protocol data unit, is the command packet that is sent from the reader to the card, and from the card to the reader.  When you use this reader, your code is responsible for creating and sending the packets.</p>
+
+<p>The logic that I used more or less follows this flow:</p>
+
+<ul>
+  <li>Reader signals the application that a card has been detected (or no longer detected)</li>
+  <li>Applicate tells the reader to a warm reset of the card</li>
+  <li>Application tells the reader to set the communications protocol for talking to the card</li>
+  <li>Application tells the reader to transmit the APDU command to get the unique identifier (UID) from the card</li>
+  <li>The response from the transmit command will have the UID from the card.</li>
+</ul>
+
+<p>And that’s just to get the UID from a card.  If you are trying to read a <a href="https://gototags.com/nfc/ndef/">NDEF</a> packet, then you have a lot more work to do.  NDEF records are stored differently, depending on what kind of card that you are reading.  If you are using RFID data from cards with the built-in NFC support that Android provides for hardware that comes with the device, you are benefiting by the low level code being handled for you.</p>
+
+<p>For the last .5 decade, we’ve been using Xamarin for our Android coding.  To use the ACS reader, I created a Xamarin wrapper library for their Java library.  It basically takes and embeds the .jar file and provides a nice .NET API to their library.  I then took their sample library and did a more or less straight port from Java to C#.  If you grab that repo from Github, you’ll get the library and and the demo app.  It was created with Visual Studio on Windows, but should work on the Mac.  Should being the code word for “I didn’t do anything that was platform specific, but I didn’t test it on the Mac.”</p>
+
+<p>The results of that wrapper/conversion are up on Github.  You can grab it <a href="https://github.com/anotherlab/Xamarin-ACS-Smartcard-USB">here</a>. The .jar file that the library is compiled with is included in the repository. It is part of an API kit that should be downloaded from <a href="https://www.acs.com.hk/en/mobile-support/" rel="nofollow">https://www.acs.com.hk/en/mobile-support/</a>. The API kit includes the API documentation in HTML format.</p>
+
+<p>The library does not have the APDU code to get the data from a RFID card.  I do have that code, but at the moment it’s part of some code that I can’t share.  I’ll pull the APDU code from our business code and post it later.  In the meantime, this is the code from the OnStateChange event that gets assigned to the reader.</p>
+
+<pre class="brush: csharp; title: ; notranslate" title="">public void OnStateChange(int slotNum, int prevState, int currState)
+        {
+            // If the previous state and the current state are outside the range of allowable
+            // values, then assign min/max of the range
+            if (prevState &lt; Reader.CardUnknown || prevState &gt; Reader.CardSpecific)
+            {
+                prevState = Reader.CardSpecific;
+            }
+
+            if (currState &lt; Reader.CardUnknown || currState &gt; Reader.CardSpecific)
+            {
+                currState = Reader.CardUnknown;
+            }
+
+            // Create output string
+            string outputString = "Slot " + slotNum + ": "
+                    + stateStrings[prevState] + " -&gt; "
+                    + stateStrings[currState];
+
+            // Log the status change
+            LogMsg(outputString);
+
+            // We tapped the card
+            if ((prevState == Reader.CardAbsent) &amp;&amp; (currState == Reader.CardPresent))
+            {
+                // We have the right slot - opening the reader generates a spurious StateChange event
+                if (slotNum == SlotNumber)
+                {
+                    // read the card
+
+                    // The APDU (smart card application protocol data unit) byte array to get the UID from the card
+                    // Command  | Class | INS | P1 | P2 | Le
+                    // Get Data |   FF  | CA  | 00 | 00 | 00
+                    var command = new byte[] { 0xFF, 0xCA, 0x00, 0x00, 0x00 };
+
+                    // The byte array to contain the response
+                    var response = new byte[300];
+
+                    try
+                    {
+                        // In order to set the Get Data command to the card, we need to send a warm reset, followed by setting
+                        // the communications protocol.
+                        var atr = this.Power(slotNum, Reader.CardWarmReset);
+
+                        this.SetProtocol(slotNum, Reader.ProtocolT0 | Reader.ProtocolT1);
+
+                        // Send the command to the reader
+                        var responseLength = this.Transmit(slotNum,
+                            command, command.Length, response,
+                            response.Length);
+
+                        // We appear to be getting all 9 bytes of a 7 byte identifier.  Since 9 would be considered a too
+                        // large value of 7, we drop the last 2 bytes
+
+                        if ((responseLength &gt; ForcedIdSize) &amp;&amp; (ForcedIdSize &gt; 0))
+                        {
+                            responseLength = ForcedIdSize;
+                        }
+
+                        // If we got a response, process it
+                        if (responseLength &gt; 0)
+                        {
+                            // Convert the byte array to a hex string
+                            var s = ByteArrayToString(response, responseLength);
+
+                            // Add the scan to the collection and notify any watchers
+                            AddScan(s);
+
+                            // Notify any watchers
+                            LogMsg($"UID: {responseLength} {s}");
+
+                        }
+                    }
+                    catch (Java.Lang.Exception e)
+                    {
+                        LogMsg(e.Message);
+                    }
+
+                }
+            }
+        }
+</pre>
+
+<p>This is probably as a good point as any to menton that we no longer use the ACS readers.  While their documentation is obtuse and technical support is non-existent, they do exactly what they are supposed to do.  Which is fine, but it just didn’t mesh up with our needs.</p>
+
+<p>Our use case is for scanning student and driver RFID tags for our Android tablet.  We use an external RFID reader so that the students are scanned as they get on the bus.  Our tablets are securely mounted in cradles, which tends to block RFID readers that are built in to the tablets.  We had the following problems with our use of the ACS readers</p>
+
+<ol>
+  <li>The ACS readers are NFC only.  RFID covers a multitude of sins.  NFC is just a subset of that.  Our customers may have RFID cards that use different technologies, like HID PROX or EM400.</li>
+  <li>The steps needed to get a UID were quick, but not fast.  To get the UID. there needs to be several round trip conversations between the table, the reader, and the card.  If a student getting on the bus didn’t hold the card long enough to the reader, we ended up missing some scans.</li>
+  <li>The power draw was draining school bus batteries.  The ACS readers are designed to draw power continuously from the USB port.  Because the readers are mounted to the bus, they would be drawing power all the time.  They are radios and there’s a power cost to run those radios.</li>
+</ol>
+
+<p>These issues turned up during our initial deployment.  We found a better solution with the <a href="https://www.elatec-rfid.com/en/products/rfid-readerwriter-with-antenna/multi-frequency/twn4-multitech/">Elatec RFID</a> readers, but the ACS readers are a good solution.  The ACS NFC readers are pretty much the industry standard for external FNC readers.  If I was wiring up and external RFID reader that was connected to a device with AC power, an ACS reader would be the first thing I would consider for the project.</p>
+
+  </div><a class="u-url" href="/2018/07/03/a-xamarin-wrapper-for-the-acs-usb-library-for-android/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

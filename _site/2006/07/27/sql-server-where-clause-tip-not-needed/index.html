@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>SQL Server WHERE clause tip (not needed for SQL Server 2005) | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="SQL Server WHERE clause tip (not needed for SQL Server 2005)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="One of my services logs every request to a private log table. That table mainly a diagnostic tool to provide some crude performance benchmarks. It’s not designed for historical trending, so I have code to purge older records. The service would periodically (twice a day) issue a DELETE statement to the database server to delete records older than 30 days.  Given the following schema (sample, not the actual schema):" />
+<meta property="og:description" content="One of my services logs every request to a private log table. That table mainly a diagnostic tool to provide some crude performance benchmarks. It’s not designed for historical trending, so I have code to purge older records. The service would periodically (twice a day) issue a DELETE statement to the database server to delete records older than 30 days.  Given the following schema (sample, not the actual schema):" />
+<link rel="canonical" href="http://localhost:4000/2006/07/27/sql-server-where-clause-tip-not-needed/" />
+<meta property="og:url" content="http://localhost:4000/2006/07/27/sql-server-where-clause-tip-not-needed/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2006-07-27T15:44:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SQL Server WHERE clause tip (not needed for SQL Server 2005)" />
+<script type="application/ld+json">
+{"datePublished":"2006-07-27T15:44:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2006/07/27/sql-server-where-clause-tip-not-needed/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2006/07/27/sql-server-where-clause-tip-not-needed/"},"dateModified":"2006-07-27T15:44:00-04:00","description":"One of my services logs every request to a private log table. That table mainly a diagnostic tool to provide some crude performance benchmarks. It’s not designed for historical trending, so I have code to purge older records. The service would periodically (twice a day) issue a DELETE statement to the database server to delete records older than 30 days.  Given the following schema (sample, not the actual schema):","headline":"SQL Server WHERE clause tip (not needed for SQL Server 2005)","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">SQL Server WHERE clause tip (not needed for SQL Server 2005)</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2006-07-27T15:44:00-04:00" itemprop="datePublished">Jul 27, 2006
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>One of my services logs every request to a private log table. That table mainly a diagnostic tool to provide some crude performance benchmarks. It’s not designed for historical trending, so I have code to purge older records. The service would periodically (twice a day) issue a DELETE statement to the database server to delete records older than 30 days.  Given the following schema (sample, not the actual schema):</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;span&gt;CREATE TABLE &lt;/span&gt;&lt;span&gt;[MyLog]&lt;/span&gt;&lt;span&gt;(&lt;br /&gt;       &lt;/span&gt;&lt;span&gt;[RecordID] [int] &lt;/span&gt;&lt;span&gt;IDENTITY&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;1&lt;/span&gt;&lt;span&gt;,&lt;/span&gt;&lt;span&gt;1&lt;/span&gt;&lt;span&gt;) NOT NULL,&lt;br /&gt;       &lt;/span&gt;&lt;span&gt;[LogTimeStamp] [datetime] &lt;/span&gt;&lt;span&gt;NOT NULL,&lt;br /&gt;       &lt;/span&gt;&lt;span&gt;[Duration] [decimal]&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;12&lt;/span&gt;&lt;span&gt;, &lt;/span&gt;&lt;span&gt;4&lt;/span&gt;&lt;span&gt;) NOT NULL&lt;/span&gt;&lt;span&gt;,&lt;br /&gt;       &lt;/span&gt;&lt;span&gt;[SessionID] [varchar]&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;40&lt;/span&gt;&lt;span&gt;) NOT NULL,&lt;br /&gt;       &lt;/span&gt;&lt;span&gt;[IP] [varchar]&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;24&lt;/span&gt;&lt;span&gt;) NOT NULL,&lt;br /&gt;       &lt;/span&gt;&lt;span&gt;[Request] [varchar]&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;80&lt;/span&gt;&lt;span&gt;) NULL,&lt;br /&gt;       &lt;/span&gt;&lt;span&gt;[Response] [varchar]&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;80&lt;/span&gt;&lt;span&gt;) NULL,&lt;br /&gt;       &lt;/span&gt;&lt;span&gt;[Error] [varchar]&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;255&lt;/span&gt;&lt;span&gt;) NULL,&lt;br /&gt;       &lt;/span&gt;&lt;span&gt;[Description] [varchar]&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;80&lt;/span&gt;&lt;span&gt;) NULL,&lt;br /&gt; &lt;/span&gt;&lt;span&gt;CONSTRAINT &lt;/span&gt;&lt;span&gt;[PK_MyLog] &lt;/span&gt;&lt;span&gt;PRIMARY KEY CLUSTERED &lt;br /&gt;&lt;/span&gt;&lt;span&gt;(&lt;br /&gt;       &lt;/span&gt;&lt;span&gt;[RecordID] &lt;/span&gt;&lt;span&gt;ASC&lt;br /&gt;&lt;/span&gt;&lt;span&gt;) &lt;/span&gt;&lt;span&gt;ON &lt;/span&gt;&lt;span&gt;[PRIMARY]&lt;br /&gt;&lt;/span&gt;&lt;span&gt;) &lt;/span&gt;&lt;span&gt;ON &lt;/span&gt;&lt;span&gt;[PRIMARY]&lt;br /&gt;GO&lt;br /&gt;&lt;/span&gt;&lt;span&gt;CREATE NONCLUSTERED INDEX &lt;/span&gt;&lt;span&gt;[SK_MyLog_LogTimeStamp] &lt;/span&gt;&lt;span&gt;ON &lt;/span&gt;&lt;span&gt;MyLog&lt;br /&gt;&lt;/span&gt;&lt;span&gt;(&lt;br /&gt;       &lt;/span&gt;&lt;span&gt;[LogTimeStamp] &lt;/span&gt;&lt;span&gt;ASC&lt;br /&gt;&lt;/span&gt;&lt;span&gt;) &lt;/span&gt;&lt;span&gt;ON &lt;/span&gt;&lt;span&gt;[PRIMARY]&lt;/span&gt;</code></p>
+
+<p>I would execute the following SQL statement;<br />
+<code class="language-plaintext highlighter-rouge">&lt;span&gt;&lt;br /&gt;DELETE &lt;/span&gt;&lt;span&gt;MyLog &lt;/span&gt;&lt;span&gt;WHERE &lt;/span&gt;&lt;span&gt;DATEDIFF&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;DAY&lt;/span&gt;&lt;span&gt;, &lt;/span&gt;&lt;span&gt;LogTimeStamp&lt;/span&gt;&lt;span&gt;, &lt;/span&gt;&lt;span&gt;GETDATE&lt;/span&gt;&lt;span&gt;()) &gt; &lt;/span&gt;&lt;span&gt;30&lt;/span&gt;</code></p>
+
+<p>It’s pretty simple, use the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/tsqlref/ts_da-db_5vxi.asp">DateDiff()</a> function to compare the timestamp field with the current date and if it’s older than 30 days, delete that record.  I implemented that code in the first go around of the code, about two years ago.  This week, I was in that area code for some maintenance and I took another look at that statement.  That WHERE clause jumped right out at me.  For every row in that table, both the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/tsqlref/ts_da-db_5vxi.asp">DateDiff()</a> and <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/tsqlref/ts_ga-gz_4z51.asp">GetDate()</a> functions are going to be called.  SQL Server will need to compare every value of LogTimeStamp to see if it is older than 30 days ago.  In this case, MyLog has an index on LogTimeStamp, but it will has to read the entire index.   <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/tsqlref/ts_ga-gz_4z51.asp">GetDate()</a> is a <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/createdb/cm_8_des_08_95v7.asp">nondeterministic function</a>, it’s going to get re-evaluated for each row in the database.  Since the actual date comparison is against a constant value, I decided to evaluate the comparision date first and change the WHERE clause to a simpler expression.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;span&gt;DECLARE &lt;/span&gt;&lt;span&gt;@PurgeDate &lt;/span&gt;&lt;span&gt;smalldatetime&lt;br /&gt;&lt;/span&gt;&lt;span&gt;SELECT &lt;/span&gt;&lt;span&gt;@PurgeDate &lt;/span&gt;&lt;span&gt;= &lt;/span&gt;&lt;span&gt;DATEADD&lt;/span&gt;&lt;span&gt;(&lt;/span&gt;&lt;span&gt;DAY&lt;/span&gt;&lt;span&gt;, -&lt;/span&gt;&lt;span&gt;30&lt;/span&gt;&lt;span&gt;, &lt;/span&gt;&lt;span&gt;GETDATE&lt;/span&gt;&lt;span&gt;())&lt;br /&gt;&lt;/span&gt;&lt;span&gt;DELETE &lt;/span&gt;&lt;span&gt;MyLog &lt;/span&gt;&lt;span&gt;WHERE &lt;/span&gt;&lt;span&gt;LogTimeStamp &lt;/span&gt;&lt;span&gt;&lt; &lt;/span&gt;&lt;span&gt;@PurgeDate&lt;/span&gt;</code></p>
+
+<p>I added a smalldatetime variable and assigned to it date of 30 days ago with the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/tsqlref/ts_da-db_3vtw.asp">DateAdd()</a> and <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/tsqlref/ts_ga-gz_4z51.asp">GetDate()</a> functions.  Now SQL Server can use the value of @PurgeDate to jump into the index and jump out when the date condition no longer matches the criteria.  By I implemented this on SQL Server 2005 and when I evaluated the estimated execution plans for each delete statement, I was surprised to see identical plans.  Both sets of statements spent the same percentage of time doing scanning and deleting.</p>
+
+<p>When I did the same evaluation on SQL Server 2000, I saw different results.  The first delete statement spent 73% of the time scanning the index and 27% actually deleting rows from the table.  The second delete statement spent 19% of the time scanning and 81% of the time deleting rows.  On table that could have a large number of rows, it turned out to be big performance saving on SQL Server 2000 installations.</p>
+
+<p>It’s pretty cool that the SQL Server 2005 parser is smart enough to optimize code and recognize a constant expression when it sees it.  My code would have seen a nice little performance boost by moving from SQL Server 2000 to SQL Server 2005.  It’s still a better thing to pull constant expressions out of the WHERE clause when you can do that.</p>
+
+<p>SQL formatting courtesy of <a href="http://www.simple-talk.com/prettifier/Default.aspx"><span>The Simple-Talk SQL Prettifier</span></a> <span><a href="http://www.simple-talk.com/prettifier/Default.aspx">for SQL Server</a>.</span></p>
+
+<div>
+  Tech Tags: <a href="http://technorati.com/tag/SQL" rel="tag">SQL</a> <a href="http://technorati.com/tag/SQL+Server" rel="tag">SQL Server</a> <a href="http://technorati.com/tag/SQL+Server+2005" rel="tag">SQL Server 2005</a> <a href="http://technorati.com/tag/DateAdd" rel="tag">DateAdd</a> <a href="http://technorati.com/tag/GetDate" rel="tag">GetDate</a> <a href="http://technorati.com/tag/DateDiff" rel="tag">DateDiff</a> <a href="http://technorati.com/tag/Execution+Plan" rel="tag">Execution Plan</a>
+</div>
+
+  </div><a class="u-url" href="/2006/07/27/sql-server-where-clause-tip-not-needed/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

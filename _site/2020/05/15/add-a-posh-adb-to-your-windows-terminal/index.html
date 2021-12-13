@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Add a POSH ADB to your Windows Terminal | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Add a POSH ADB to your Windows Terminal" />
+<meta name="author" content="Chris Miller" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windows Terminal is so close to being out of beta. It’s been my default CLI on Windows for about a year. I still don’t think in PowerShell, but I try to use PowerShell as my default shell. I just love how you can configure Terminal." />
+<meta property="og:description" content="Windows Terminal is so close to being out of beta. It’s been my default CLI on Windows for about a year. I still don’t think in PowerShell, but I try to use PowerShell as my default shell. I just love how you can configure Terminal." />
+<link rel="canonical" href="http://localhost:4000/2020/05/15/add-a-posh-adb-to-your-windows-terminal/" />
+<meta property="og:url" content="http://localhost:4000/2020/05/15/add-a-posh-adb-to-your-windows-terminal/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-15T09:35:19-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Add a POSH ADB to your Windows Terminal" />
+<script type="application/ld+json">
+{"datePublished":"2020-05-15T09:35:19-04:00","@type":"BlogPosting","url":"http://localhost:4000/2020/05/15/add-a-posh-adb-to-your-windows-terminal/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/05/15/add-a-posh-adb-to-your-windows-terminal/"},"dateModified":"2020-05-15T09:35:19-04:00","author":{"@type":"Person","name":"Chris Miller"},"description":"Windows Terminal is so close to being out of beta. It’s been my default CLI on Windows for about a year. I still don’t think in PowerShell, but I try to use PowerShell as my default shell. I just love how you can configure Terminal.","headline":"Add a POSH ADB to your Windows Terminal","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Add a POSH ADB to your Windows Terminal</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-05-15T09:35:19-04:00" itemprop="datePublished">May 15, 2020
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab">Windows Terminal</a> is <a href="https://devblogs.microsoft.com/commandline/windows-terminal-preview-v0-11-release/">so close</a> to being out of beta. It’s been my default CLI on Windows for about a year. I still don’t think in PowerShell, but I try to use PowerShell as my default shell. I just love how you can configure Terminal.</p>
+
+<p>The default shell for me is PowerShell <s>Core</s>, aka <a href="https://devblogs.microsoft.com/powershell/announcing-powershell-7-0/">Powershell 7.0</a>. Out of the box, it doesn’t have <a href="https://developer.android.com/studio/command-line/adb">ADB</a> on the path. When I’m doing Android stuff, I want the ADB. But I don’t want it to be on the path by default. Just like Visual Studio has the “Android ADB Command Prompt” menu option, I wanted to add shell option to Terminals so I can spin up a new PowerShell, but with ADB support. This is what I ended up with:</p>
+
+<figure class="wp-block-image size-large">
+
+<img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-VkJnhDq/0/f4461e23/L/shellabd-L.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>PowerShell with ADB goodness.</figcaption></figure>
+
+<p>The first thing I did was to create a PowerShell script that just adds the ADB tooling to the path. My first attempt was:</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: powershell; title: ; notranslate" title="">
+$NeedsAdb = $true
+
+foreach ($p in $env:Path.Split(";"))
+{
+    if ($p -match "android-sdk\\platform")
+    {
+        $NeedsAdb = $false
+        break
+    }
+}
+
+if ($NeedsAdb)
+{
+    write-host "Adding Android SDK Platform tools to path"
+    $env:Path += ";C:\Program Files (x86)\Android\android-sdk\platform-tools"
+}
+
+</pre>
+</div>
+
+<p>It walks through the path and checks to see the folder with the ADB bits is already there.  If not, it gets added. That worked but seemed like a lot. I did a quick refactor and got it down to this</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: powershell; title: ; notranslate" title="">
+$NeedsAdb = $true
+
+$env:Path.Split(";") | ForEach-Object {
+    if ($_ -match "android-sdk\\platform") {
+        $NeedsAdb = $false
+        break
+    }
+}
+
+if ($NeedsAdb) {
+    write-host "Adding Android SDK Platform tools to path"
+    $env:Path += ";C:\Program Files (x86)\Android\android-sdk\platform-tools"
+}
+
+</pre>
+</div>
+
+<p>A little cleaner, but still too much.  I was taking the path, splitting it up into an array of strings, and then testing each string.  But wait, the path is a string.  That made it simpler.  Instead of doing a string match on each folder the path, I can make one string match against the whole thing.</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: powershell; title: ; notranslate" title="">
+if ($env:Path -NotMatch "Android\\android-sdk\\platform")
+{
+    write-host "Adding Android SDK Platform tools to path"
+    $env:Path += ";${env:ProgramFiles(x86)}\Android\android-sdk\platform-tools"
+}
+
+</pre>
+</div>
+
+<p>So I called that one add-adb.ps1 and saved it to a common folder that I put scripts in.  Next, I wanted a cosmetic tweak so that I knew which shell has the power of ADB.  I went to <a href="http://materialdesignicons.com/">materialdesignicons.com</a> and did a search on “Android”.  I found an icon named “android-debug-bridge”, which was perfect.  I downloaded the .svg version of the icon and then made a .png file out of it with PhotoShop.  I named it android-debug-bridge.png.  Then I made a smaller version to be the icon. You can grab the images and the .ps1 file from the following Gist link: <a href="https://gist.github.com/anotherlab/364e3805d9ea56b574b394127acc9aa6">https://gist.github.com/anotherlab/364e3805d9ea56b574b394127acc9aa6</a></p>
+
+<p>Now that I had the script and the images, it’s time to add a new shell profile.  From within Windows Terminal, select “Settings” from the drop-down menu.  You can also press the CTRL+, shortcut.  This will load the settings.json file in the text editor of your choice.  I have Visual Studio Code registered as the default app for JSON files.  You can use a lesser editor, but that’s on you.</p>
+
+<p>There will be an array of objects named “list”.  These objects are the different shells that can be run from within Windows Terminals.  I added the following item to the list array</p>
+
+<p> </p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: jscript; title: ; notranslate" title="">
+"list":
+&#91;
+    {
+        "guid": "{50caca3f-bff1-4891-b7f7-e3a05c040003}",
+        "fontFace":  "Cascadia Code PL",
+        "backgroundImage": "d:/grfx/android-debug-bridge.png",
+        "backgroundImageStretchMode": "uniform",
+        "backgroundImageOpacity": 0.15,
+        "hidden": false,
+        "name": "ADB PowerShell",
+        "icon": "d:/grfx/adb-32.png",
+        "commandline": "pwsh.exe -noe -c D:/scripts/add-adb.ps1"
+    },
+]
+</pre>
+</div>
+
+<p>Let’s go over this line by line.<figure class="wp-block-table"></figure></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>guid</td>
+      <td>It wants a GUID, so just get one.  I used <a href="https://www.guidgenerator.com/">guidgenerator.com</a>, but any GUID generator will do.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>fontFace</td>
+      <td>I’m using the Powerline version of Cascadia.  More on that in a bit</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>backgroundImage</td>
+      <td>Grab it from my <a href="https://gist.github.com/anotherlab/364e3805d9ea56b574b394127acc9aa6#file-android-debug-bridge-png">Gist</a> or use your own.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>backgroundImageStretchMode <span style="background-color: rgba(30, 30, 30, 0.2); font-family: inherit; font-size: inherit; font-weight: inherit;"></span></td>
+      <td>Size the image to fit the Shell window</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>backgroundImageOpacity</td>
+      <td>I set it to be mostly transparent</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>hidden</td>
+      <td>If you want to hide this from the list of shells, just set it to True</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>Call it what you want</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>icon</td>
+      <td>The tab icon is optional, but you can grab it from my <a href="https://gist.github.com/anotherlab/364e3805d9ea56b574b394127acc9aa6#file-adb-32-png">Gist</a>.</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>commandline</td>
+      <td>This is what gets launched. The “-c” option says to run the next parameter and the “-noe” says not to exit after running the command</td>
+      <td>&lt;/figure&gt;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>And that lets me spin up a new PowerShell with ADB on the path.  Mixing PowerShell with ADB makes it easier to do ADB commands that would normally be clunky.  For example, I want to test some Android code that would access the photo gallery.  When you new up a new Android emulator, there are no images.   ADB lets copy files to the emulator’s filesystem, but it doesn’t do wild cards.</p>
+
+<p>You may have notice the “/” slash being used instead of “\” for file paths. Windows Terminal lets you use the “/” as the directory separator and this avoids having to use “\” to get a single “\” in.</p>
+
+<p>I have a folder with a bunch of images that I wanted to copy to an Android Emulator image.  I then run the following command from PowerShell:</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: powershell; title: ; notranslate" title="">
+Get-ChildItem .\*  -Include *.jpg,*.png | Foreach-Object {adb push $_.Name /sdcard/Pictures}
+</pre>
+</div>
+
+<p>Get-ChildItem gets a directory listing and I use the -Include parameter to only include the files that have the .jpg and .png extension. If I didn’t need to filter the files list, I could the aliases for Get-ChildItem of gci or ls. I then pipe the results into Foreach-Object. This will execute everything in the {} block for each item. $_.Name is the name of the file and that gets passed to adb push to copy that file to /sdcard/Pictures in the emulator. There’s a bit of typing, but it does save time when trying to copy a set of files over to Android.</p>
+
+<p>About that “Cascadia Code PL” font face.  I’m running a theming engine inside PowerShell called “Oh-my-posh”.  I’ll do a longer post on it in the future, but the short story is that it makes the PowerShell prompt contain the current git status for the current folder.  Read about it and get it <a href="https://github.com/JanDeDobbeleer/oh-my-posh">here</a>.  On the Mac, I use <a href="https://ohmyz.sh/">Oh-my-zsh</a> to get a souped-up zsh shell.  Scott Hanselman did a good write up of Oh-my-posh <a href="https://www.hanselman.com/blog/HowToMakeAPrettyPromptInWindowsTerminalWithPowerlineNerdFontsCascadiaCodeWSLAndOhmyposh.aspx">here</a>.</p>
+
+<p>Oh-my-posh uses Powerline Glyphs (<a href="https://github.com/powerline/powerline">originally defined here</a>) as part of the status display.  So you’ll need a font that includes the Powerline Glyphs.  Microsoft’s Cascadia Code font has a version with Powerline and you can get it <a href="https://github.com/microsoft/cascadia-code/releases">here</a>.  Here’s what that looked like when I was adding the files to the Gist<figure class="wp-block-image"></figure></p>
+
+<p><img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-6GTWwch/0/f94c4d14/M/shellposh-M.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> &lt;/figure&gt;</p>
+
+<p>You can see the color and text information change as I used git to add the icon to the Gist. When working with git, it’s very handy to easily see which branch you are working with and the current status of that branch.</p>
+
+  </div><a class="u-url" href="/2020/05/15/add-a-posh-adb-to-your-windows-terminal/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Know your SQL Server version | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Know your SQL Server version" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="There are times where you need to know what version of SQL Server is installed.  Usually you want to know which version and which service pack has been applied.  There have been a few isolated cases over the years where we saw bugs go away or significant performance boosts by merely installing the latest service pack.  It’s less of an issue with 2005, but with SQL Server 2000, we wanted to make sure the user installed the latest service packs to block against stuff like the “Slammer” worm." />
+<meta property="og:description" content="There are times where you need to know what version of SQL Server is installed.  Usually you want to know which version and which service pack has been applied.  There have been a few isolated cases over the years where we saw bugs go away or significant performance boosts by merely installing the latest service pack.  It’s less of an issue with 2005, but with SQL Server 2000, we wanted to make sure the user installed the latest service packs to block against stuff like the “Slammer” worm." />
+<link rel="canonical" href="http://localhost:4000/2008/04/16/know-your-sql-server-version/" />
+<meta property="og:url" content="http://localhost:4000/2008/04/16/know-your-sql-server-version/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-04-16T16:28:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Know your SQL Server version" />
+<script type="application/ld+json">
+{"datePublished":"2008-04-16T16:28:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/04/16/know-your-sql-server-version/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/04/16/know-your-sql-server-version/"},"dateModified":"2008-04-16T16:28:00-04:00","description":"There are times where you need to know what version of SQL Server is installed.  Usually you want to know which version and which service pack has been applied.  There have been a few isolated cases over the years where we saw bugs go away or significant performance boosts by merely installing the latest service pack.  It’s less of an issue with 2005, but with SQL Server 2000, we wanted to make sure the user installed the latest service packs to block against stuff like the “Slammer” worm.","headline":"Know your SQL Server version","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Know your SQL Server version</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-04-16T16:28:00-04:00" itemprop="datePublished">Apr 16, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>There are times where you need to know what version of SQL Server is installed.  Usually you want to know which version and which service pack has been applied.  There have been a few isolated cases over the years where we saw bugs go away or significant performance boosts by merely installing the latest service pack.  It’s less of an issue with 2005, but with SQL Server 2000, we wanted to make sure the user installed the latest service packs to block against stuff like the <a href="http://en.wikipedia.org/wiki/SQL_slammer_worm" title="Wikipedia: SQL slammer (computer worm)">“Slammer” worm</a>.</p>
+
+<p>The following bit of <a href="http://en.wikipedia.org/wiki/T-sql" title="Transact-SQL (T-SQL) is Microsoft's and Sybase's proprietary extension to the SQL language. Microsoft's implementation ships in the Microsoft SQL Server product.">T-SQL</a> will send back the version information in easy to process pieces</p>
+
+<p>SELECT</p>
+
+<p>SERVERPROPERTY(‘productversion’) AS ProductVersion, SERVERPROPERTY (‘productlevel’) AS ProductLevel, SERVERPROPERTY (‘edition’) AS Edition</p>
+
+<p>For SQL Server 2005, you could get back something like this:</p>
+
+<pre>ProductVersion  ProductLevel  Edition<br />--------------- ------------- ----------------<br />9.00.2047.00    SP1           Standard Edition<br /></pre>
+
+<p>Which indicates the Standard Edition of SQL Server 2005, with Service Pack 1 installed.  You can also get most of that information with</p>
+
+<p>select</p>
+
+<p>@@version</p>
+
+<p>But you would have to parse out the version from a block of text like this:</p>
+
+<pre>----------------------------------------------------------------------<br />Microsoft SQL Server 2005 - 9.00.2047.00 (Intel X86) <br /> Apr 14 2006 01:12:25 <br /> Copyright (c) 1988-2005 Microsoft Corporation<br /> Standard Edition on Windows NT 5.2 (Build 3790: Service Pack 2)<br /></pre>
+
+<p>Using SERVERPROPERTY (<a href="http://msdn2.microsoft.com/en-us/library/aa259183(SQL.80).aspx" title="Transact-SQL Reference (SQL Server 2000): Returns property information about the server instance.">2000</a>, <a href="http://msdn2.microsoft.com/en-us/library/ms174396.aspx" title="Returns property information about the server instance.">2005</a> or <a href="http://msdn2.microsoft.com/en-us/library/ms174396(SQL.100).aspx">2008</a>) is much easier than parsing that block of text.  To determine which version is running based just on the version number, Microsoft has a KB article that lists all of the releases under <a href="http://support.microsoft.com/kb/321185" title="How to identify your SQL Server version and edition">KB321185</a>.</p>
+
+  </div><a class="u-url" href="/2008/04/16/know-your-sql-server-version/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

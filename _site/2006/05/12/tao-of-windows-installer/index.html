@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Tao of the Windows Installer | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Tao of the Windows Installer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="There are some really good Windows Installer guidelines up on the Windows Installer Team Blog.  Part 1 went up yesterday and Part 2 went up today.  Most the rules I follow already, due to constant beating of the forehead against the wall experience that I call working with Windows Installer, but it was help to see the rest of them.  I listed them below, with my own comments.  Visit the links for Part 1 and Part 2 for the full text behind each rule." />
+<meta property="og:description" content="There are some really good Windows Installer guidelines up on the Windows Installer Team Blog.  Part 1 went up yesterday and Part 2 went up today.  Most the rules I follow already, due to constant beating of the forehead against the wall experience that I call working with Windows Installer, but it was help to see the rest of them.  I listed them below, with my own comments.  Visit the links for Part 1 and Part 2 for the full text behind each rule." />
+<link rel="canonical" href="http://localhost:4000/2006/05/12/tao-of-windows-installer/" />
+<meta property="og:url" content="http://localhost:4000/2006/05/12/tao-of-windows-installer/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2006-05-12T19:31:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tao of the Windows Installer" />
+<script type="application/ld+json">
+{"datePublished":"2006-05-12T19:31:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2006/05/12/tao-of-windows-installer/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2006/05/12/tao-of-windows-installer/"},"dateModified":"2006-05-12T19:31:00-04:00","description":"There are some really good Windows Installer guidelines up on the Windows Installer Team Blog.  Part 1 went up yesterday and Part 2 went up today.  Most the rules I follow already, due to constant beating of the forehead against the wall experience that I call working with Windows Installer, but it was help to see the rest of them.  I listed them below, with my own comments.  Visit the links for Part 1 and Part 2 for the full text behind each rule.","headline":"Tao of the Windows Installer","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Tao of the Windows Installer</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2006-05-12T19:31:00-04:00" itemprop="datePublished">May 12, 2006
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>There are some really good Windows Installer guidelines up on the <a href="http://blogs.msdn.com/windows_installer_team">Windows Installer Team Blog</a>.  <a href="http://blogs.msdn.com/windows_installer_team/archive/2006/05/01/587990.aspx">Part 1</a> went up yesterday and <a href="http://blogs.msdn.com/windows_installer_team/archive/2006/05/12/595950.aspx">Part 2</a> went up today.  Most the rules I follow already, due to constant beating of the forehead against the wall experience that I call working with Windows Installer, but it was help to see the rest of them.  I listed them below, with my own comments.  Visit the links for <a href="http://blogs.msdn.com/windows_installer_team/archive/2006/05/01/587990.aspx">Part 1</a> and <a href="http://blogs.msdn.com/windows_installer_team/archive/2006/05/12/595950.aspx">Part 2</a> for the full text behind each rule.</p>
+
+<blockquote dir="ltr">
+  <p>
+    <strong>Rule 1: Learn the Windows Installer Technology</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      This is key.  I picked up a lot from Wise’s support forums.  A really good book is <a href="http://www.amazon.com/gp/product/1590592972/qid=1147455507">The Definitive Guide to Windows Installer</a> by Phil Wilson (ISBN: 1590592972)
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 2: Know Your Way Around the Installer SDK</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      I’m just starting to get under the hood with the SDK.  I wrote a console app in Delphi that allowed me to upgrade ProductCode and Package code of .msi/.wsi files.  It was part of a plan to heav each build of our application be able to upgrade from each previous build.  Other considerations led to me to shelf that plan, but it was interesting working in the SDK
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 3: Use the “Windows Logo” Program as a Basis For Good Practices<br />Rule 4: Always Use the Latest Version of the Installer</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      Both are common sense.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 5: Build Setup Into Your Application Development from the Start</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      On my last project, I fought constantly with the project lead over this.  Having done several installer projects in the past, I knew what I was getting into and planned for the installers from the start.  This made life much easier.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 6: Get to Know ORCA</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      Simply the best tool for diagnosing problems with a .msi file.  You can get from the Windows Server Software Development Kit.  The current version is the “<a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=0BAF2B35-C656-4969-ACE8-E4C0C0716ADB&#038;displaylang=en">Windows® Server 2003 R2 Platform SDK</a>”.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 7: Work On a Copy</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      More common sense.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 8: Never Cancel a Package Build Before it Finishes</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      I never knew about that one.  With installer tool that I’m using (<a href="http://www.wise.com/wfwi.asp">Wise</a>), I don’t see that is being a real issue.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 9: Use a Clean System for Repackaging</strong><br /><strong>Rule 10: Do Not Repackage Microsoft Updates</strong><br /><strong>Rule 11: Do Not Repackage MSI-Based Applications</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      Still more common sense.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 12: Modify Vendor Packages Using Transforms</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      I may be doing this in the near future.  I haven’t had to do any package transforms, but I understand the basic concepts.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 13: Be careful with Installer GUIDS</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      It took a while to sink into my head over the Gang of Three GUIDS, but it’s in my firmware now.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 14: Use Consistent Package Naming Conventions</strong><br /><strong>Rule 15: Do Not Try to Replace Protected System Files</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      Common sense again
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 16: Follow Component Rules</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      I need to study this more.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 17: Understand File Versioning Rules</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      One of my pet peeves with Windows Installer.  Why does it ignore the last number of a version number?  If it could use all four parts of the version number, I could have my build to build upgrades and there would be much rejoicing in the land of Queue-ay.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 18: Improve Performance by Limiting System Restore During Setup<br />Rule 19: Avoid Using the SelfReg Table</strong>
+  </p>
+  
+  <p>
+    <strong></strong>
+  </p>
+</blockquote>
+
+<blockquote dir="ltr">
+  <blockquote dir="ltr">
+    <p>
+      Good tips
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 20: Avoid Nested Installs</strong>
+  </p>
+  
+  <p>
+    Having one .msi calling another .msi is something I seriously plan on avoiding.  Just follow Spengler’s warning and <a href="http://en.wikiquote.org/wiki/Ghostbusters">don’t cross the streams</a>.
+  </p>
+  
+  <p>
+    <strong>Rule 21: Avoid Using Configuration Data You Don’t Own<br />Rule 22: Differentiate Between User and Application Data<br />Rule 23: Don’t Use Resources You are Installing</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      Still more common sense.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 24: Use Cabinet Files to Reduce Package Sizes</strong>
+  </p>
+  
+  <p>
+    I need to look into that more.  I wonder how that would play with installers for web sites.  I could toss all of the .ascx files into a .cab file and the assemblys as separate files.  For Win32 executables, I usually pre-compress them using <a href="http://upx.sourceforge.net/">UPX</a> as part of the <a href="http://www.finalbuilder.com/finalbuilder/">build process</a>, putting them into .cab files would gain nothing.
+  </p>
+  
+  <p>
+    <strong>Rule 25: Follow Custom Action Rules</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      Some good tips.  I don’t use many custom actions, but it’s good know what not to do
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 26: Consider Storing User-specific Data in a File</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      This an interesting one.  Our .NET apps follow this methodology, but our Win32 apps use the registry for most user specific settings.   Something to consider going forward.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 27: Consider Maintaining Setup in Text File Format</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      I would to be able to do this with Wise’s .wsi files.  The problem is that the .wsi is actually a .msi file, and I have yet to see a tool that will reliably convert a .wsi/.msi file to text and back again. I tried <a href="http://users.cyberone.com.au/dbareis/msidiff.htm">MSIDIFF</a>, but something always gets mangled and when you convert a file from one to the other and back again, you don’t always get the same file back.  That’s not a good thing.
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 28: Think about Localisation</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      Something I don’t have to deal with…
+    </p>
+  </blockquote>
+  
+  <p>
+    <strong>Rule 29: Follow the Assembly Rules</strong>
+  </p>
+  
+  <blockquote dir="ltr">
+    <p>
+      Wise does a good job with this, I usually don’t have to worry about assemblies.
+    </p>
+  </blockquote>
+</blockquote>
+
+<p dir="ltr">
+  Tags: <a href="http://technorati.com/tag/Ghostbusters" rel="tag">Ghostbusters</a> <a href="http://technorati.com/tag/Wise" rel="tag">Wise</a> <a href="http://technorati.com/tag/Windows+Installer" rel="tag">Windows Installer</a> <a href="http://technorati.com/tag/Orca" rel="tag">Orca</a> <a href="http://technorati.com/tag/msi" rel="tag">msi</a> <a href="http://technorati.com/tag/upx" rel="tag">upx</a> <a href="http://technorati.com/tag/msidiff" rel="tag">msidiff</a>
+</p>
+
+  </div><a class="u-url" href="/2006/05/12/tao-of-windows-installer/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

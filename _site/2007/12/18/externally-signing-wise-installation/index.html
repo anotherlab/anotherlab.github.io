@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Externally signing Wise Installation System generated executables | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Externally signing Wise Installation System generated executables" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I had a problem with applying an Authenticode digital signature to installer that I had created with Wise Installation System 9.02.  Basically, it was failing with the lovely message:" />
+<meta property="og:description" content="I had a problem with applying an Authenticode digital signature to installer that I had created with Wise Installation System 9.02.  Basically, it was failing with the lovely message:" />
+<link rel="canonical" href="http://localhost:4000/2007/12/18/externally-signing-wise-installation/" />
+<meta property="og:url" content="http://localhost:4000/2007/12/18/externally-signing-wise-installation/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-12-18T16:49:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Externally signing Wise Installation System generated executables" />
+<script type="application/ld+json">
+{"datePublished":"2007-12-18T16:49:00-05:00","@type":"BlogPosting","url":"http://localhost:4000/2007/12/18/externally-signing-wise-installation/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2007/12/18/externally-signing-wise-installation/"},"dateModified":"2007-12-18T16:49:00-05:00","description":"I had a problem with applying an Authenticode digital signature to installer that I had created with Wise Installation System 9.02.  Basically, it was failing with the lovely message:","headline":"Externally signing Wise Installation System generated executables","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Externally signing Wise Installation System generated executables</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-12-18T16:49:00-05:00" itemprop="datePublished">Dec 18, 2007
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I had a problem with applying an <a href="http://www.iss.net/security_center/advice/Countermeasures/Authentication/Authenticode/default.htm">Authenticode</a> digital signature to installer that I had created with <a href="http://www.wise.com/Products/Installations.aspx">Wise Installation System 9.02</a>.  Basically, it was failing with the lovely message:</p>
+
+<p><a href="https://i0.wp.com/1.bp.blogspot.com/_natoSxTaPFU/R2f8ya7uenI/AAAAAAAAACY/ACIjygQfb5k/s1600-h/ole0.png" target="_blank"><img alt="Could not initialize installation. File size expected=3258503, size returned=3263976" src="https://i2.wp.com/1.bp.blogspot.com/_natoSxTaPFU/R2f8ya7uenI/AAAAAAAAACY/ACIjygQfb5k/s400/ole0.png?w=680" border="0" data-recalc-dims="1" /></a></p>
+
+<p>The signature was being applied outside of Wise, through our build process.  We use <a href="http://www.finalbuilder.com/finalbuilder.aspx">FinalBuilder</a> to build all of our applications and it has a handy Authenticode action for applying an Authenticode signature to the target you specify.  If I disabled that action, the installer worked.</p>
+
+<p>Wise has the ability to sign it’s executables, but that version is hard coded to use Microsoft’s signcode executable to handle the actually signing.  Microsoft has <a href="http://support.microsoft.com/kb/196220">deprecated signcode</a> in favor of <a href="http://msdn2.microsoft.com/en-us/library/aa387764.aspx" title="All about signtool.exe">signtool</a> and I didn’t have a copy of signcode laying around.  In all likelihood, the current version of Wise’s script based installer would be able to use signtool, but I can’t use the current version because they broke other, more important things.</p>
+
+<p>After a fair amount of googling, I found an <a href="http://https://www.thawte.com/dynamic/en/images/support/inetSDk5.zip">old copy of signcode</a> on Thawte’s site on this <a href="https://www.thawte.com/ssl-digital-certificates/technical-support/code/msauth.html#sr">page</a>.  I downloaded the file set and extracted signcode and placed it in my \windows folder.  I fired up Wise and went to the “Digital Signature” page in the IDE.  That’s when I saw the blindingly obvious setting that I needed to set:</p>
+
+<p><a href="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/R2f-zq7ueoI/AAAAAAAAACg/raZ85Wgenqg/s1600-h/dialog.png"><img alt="" src="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/R2f-zq7ueoI/AAAAAAAAACg/raZ85Wgenqg/s400/dialog.png?w=680" border="0" data-recalc-dims="1" /></a> </p>
+
+<p>On the “Digital Signature” in the Wise Installation System IDE, make sure that the radio button labeled “Add a digital signature externally” has been checked. Once I made that change, everything worked.</p>
+
+  </div><a class="u-url" href="/2007/12/18/externally-signing-wise-installation/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

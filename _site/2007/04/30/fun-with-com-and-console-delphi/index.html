@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Fun with COM and console Delphi applications | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Fun with COM and console Delphi applications" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I try to make my setup projects upgradeable in place through Windows Installer.  This means that if a previous application has already been installed, the installer will do a silent uninstall before installing the new version.  The fun part is saving the current user settings across the uninstall/install divide.  Depending on the application being installed, the settings could be in the registry, a web.config files, or some other location." />
+<meta property="og:description" content="I try to make my setup projects upgradeable in place through Windows Installer.  This means that if a previous application has already been installed, the installer will do a silent uninstall before installing the new version.  The fun part is saving the current user settings across the uninstall/install divide.  Depending on the application being installed, the settings could be in the registry, a web.config files, or some other location." />
+<link rel="canonical" href="http://localhost:4000/2007/04/30/fun-with-com-and-console-delphi/" />
+<meta property="og:url" content="http://localhost:4000/2007/04/30/fun-with-com-and-console-delphi/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-04-30T21:50:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Fun with COM and console Delphi applications" />
+<script type="application/ld+json">
+{"datePublished":"2007-04-30T21:50:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2007/04/30/fun-with-com-and-console-delphi/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2007/04/30/fun-with-com-and-console-delphi/"},"dateModified":"2007-04-30T21:50:00-04:00","description":"I try to make my setup projects upgradeable in place through Windows Installer.  This means that if a previous application has already been installed, the installer will do a silent uninstall before installing the new version.  The fun part is saving the current user settings across the uninstall/install divide.  Depending on the application being installed, the settings could be in the registry, a web.config files, or some other location.","headline":"Fun with COM and console Delphi applications","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Fun with COM and console Delphi applications</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-04-30T21:50:00-04:00" itemprop="datePublished">Apr 30, 2007
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I try to make my setup projects upgradeable in place through Windows Installer.  This means that if a previous application has already been installed, the installer will do a silent uninstall before installing the new version.  The fun part is saving the current user settings across the uninstall/install divide.  Depending on the application being installed, the settings could be in the registry, a web.config files, or some other location.</p>
+
+<p>What I end up doing is making a copy of the settings before the old app is removed, then restoring the settings after the new app has been installed.</p>
+
+<p>Windows Installer is pretty good about firing off the save settings and restore settings actions at the appropriate time.  It’s not so good at handling the actual save and restore bits.  I wrote a couple of Delphi console applications to handle that work.  With a just a few command line options, they know which application to save the settings from and how to restore them.  My installers write the app’s installed location to the registry to make things like this easier.</p>
+
+<p>One of the applications is an ASP.NET application.  The new version uses the .NET 2.0 Framework version, it’s replacing a .Net 1.1 version.  The web config files have changed substantially, I can’t copy the web.config from the 1.1 version and use it with the .NET 2.0 version.  Since I only need to save a couple of settings, I’m just having my Delphi console app ({$APPTYPE CONSOLE}), read those settings from the old web.config and update the new web.config.   I’m creating a couple of instances of IXMLDocument and reading from one and writing to the other.</p>
+
+<p>To keep the size of the console app down, it doesn’t use forms.  Since IXMLDocument uses the MSXML parser, it requires that the COM runtime be initialized.  That’s all and good, I just call CoInitialize(nil) and match it with CoUnitialize.  When I started testing the new code, the call to CoUnitialize would crash the app, but only outside the debugger.  Those are the fun ones to debug.</p>
+
+<p>Calling our trusty friend Google, I was able to quickly find a <a href="http://www.techvanguards.com/stepbystep/comdelphi/insideclient.asp" title="Inside the COM Client">useful link</a>.  I needed to call Application.Initialize as the first statement in the project files.  That’s standard for most applications, but not usually used for console apps.  I added that line (plus the references to forms) and the error went away.  Very nice.  It added 300k to the size of the executable. Not so nice.  I looked at the source code to Application.Initialize and it consisted of just the following line:&lt;/p&gt;</p>
+
+<pre>if InitProc &lt;&gt; nil then TProcedure(InitProc);</pre>
+
+<p>So I made that the first line of code and removed the reference to forms.pas.  Everything worked, and the file size didn’t take the 300k hit for code it really didn’t need.  There’s a lot to be said for having the source code to your runtime libraries.</p>
+
+<div>
+  Tech Tags: <a href="http://technorati.com/tag/Delphi" rel="tag">Delphi</a> <a href="http://technorati.com/tag/COM" rel="tag">COM</a> <a href="http://technorati.com/tag/CoInitialize" rel="tag">CoInitialize</a> <a href="http://technorati.com/tag/InitProc" rel="tag">InitProc</a> <a href="http://technorati.com/tag/Windows+Installer" rel="tag">Windows+Installer</a> <a href="http://technorati.com/tag/Upgrade+In+Place" rel="tag">Upgrade+In+Place</a> <a href="http://technorati.com/tag/.NET" rel="tag">.NET</a>
+</div>
+
+  </div><a class="u-url" href="/2007/04/30/fun-with-com-and-console-delphi/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

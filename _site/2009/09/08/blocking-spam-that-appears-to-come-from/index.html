@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Blocking spam that appears to come from your own email address | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Blocking spam that appears to come from your own email address" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="At work, I get a lot of email where the sender has spoofed the email address so that it appears to come my work email address.  It’s annoying and our corporate email filter doesn’t catch it.  I did find a way to block it with a close to 100% success rate.  What I did was to create an email filter in the email application that traps those messages.  I’m using Outlook 2007, but the technique should would work for any email client that has decent filtering.  Here’s how I created the rule (using an obviously fake email address of a known spammer):&lt;/p&gt;" />
+<meta property="og:description" content="At work, I get a lot of email where the sender has spoofed the email address so that it appears to come my work email address.  It’s annoying and our corporate email filter doesn’t catch it.  I did find a way to block it with a close to 100% success rate.  What I did was to create an email filter in the email application that traps those messages.  I’m using Outlook 2007, but the technique should would work for any email client that has decent filtering.  Here’s how I created the rule (using an obviously fake email address of a known spammer):&lt;/p&gt;" />
+<link rel="canonical" href="http://localhost:4000/2009/09/08/blocking-spam-that-appears-to-come-from/" />
+<meta property="og:url" content="http://localhost:4000/2009/09/08/blocking-spam-that-appears-to-come-from/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2009-09-08T16:32:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Blocking spam that appears to come from your own email address" />
+<script type="application/ld+json">
+{"datePublished":"2009-09-08T16:32:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2009/09/08/blocking-spam-that-appears-to-come-from/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2009/09/08/blocking-spam-that-appears-to-come-from/"},"dateModified":"2009-09-08T16:32:00-04:00","description":"At work, I get a lot of email where the sender has spoofed the email address so that it appears to come my work email address.  It’s annoying and our corporate email filter doesn’t catch it.  I did find a way to block it with a close to 100% success rate.  What I did was to create an email filter in the email application that traps those messages.  I’m using Outlook 2007, but the technique should would work for any email client that has decent filtering.  Here’s how I created the rule (using an obviously fake email address of a known spammer):&lt;/p&gt;","headline":"Blocking spam that appears to come from your own email address","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Blocking spam that appears to come from your own email address</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2009-09-08T16:32:00-04:00" itemprop="datePublished">Sep 8, 2009
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>At work, I get a lot of email where the sender has spoofed the email address so that it appears to come my work email address.  It’s annoying and our corporate email filter doesn’t catch it.  I did find a way to block it with a close to 100% success rate.  What I did was to create an email filter in the email application that traps those messages.  I’m using Outlook 2007, but the technique should would work for any email client that has decent filtering.  Here’s how I created the rule (using an obviously fake email address of a known spammer):&lt;/p&gt;</p>
+
+<p><span><span>1.<span>       </span></span></span>From the Tools menu, select “Rules and Alerts…”</p>
+
+<p><span><span>2.<span>       </span></span></span>From the “Rules and Alerts…” dialog, press the  “New Rule…” button.</p>
+
+<p><span><span>3.<span>       </span></span></span>Under “Start from a blank rule” section, select “Check messages when they arrive” template.</p>
+
+<p><span><span>4.<span>       </span></span></span>Under the dialog for “Which condition(s) do you want to check?”, select “with specific words in the message header”</p>
+
+<p><span><span>5.<span>       </span></span></span>Click on “specific words” to open the dialog box that allows you to enter the search criteria.  I entered the following list, you would enter what matches your junk email and each line is entered in separately:<br />
+X-Barracuda-Envelope-From: sanford.wallace@spamking.com</p>
+
+<p>From: <a href="mailto:sanford.wallace@spamking.com">sanford.wallace@spamking.com</a></p>
+
+<p><span><span>6.<span>       </span></span></span>After closing this dialog, press “Next”</p>
+
+<p><span><span>7.<span>       </span></span></span>On the “What do you want to do with the message?” dialog, select the following actions:<br />
+mark it as read</p>
+
+<p>clear the Message Flag</p>
+
+<p>move it the specified folder</p>
+
+<p><span><span>8.<span>       </span></span></span>Click on “specified” and select the “Junk E-mail” folder.</p>
+
+<p><span><span>9.<span>       </span></span></span>Click the “Next” button to the Finish rule setup dialog.</p>
+
+<p><span><span>10.<span>   </span></span></span>Name the rule and set “Turn on this rule”.  There is also a checkbox “Run this rule on messages already in “Inbox”.  You can set that checkbox to test the new rule.  If you have lots of messages in your inbox, create a new folder and copy some of the spam into that folder.  Then select that folder and edit the rule.  The “Run this rule…” checkbox will now list the name of the selected mail folder.  Your rule will run much faster on a mail folder with just a few times in it.</p>
+
+<p> &lt;/p&gt;</p>
+
+<p>As you edit the settings, Outlook will display a text representation of the rule as you configure it.  It should look something like this:&lt;/p&gt; &lt;/p&gt;</p>
+
+<blockquote>
+  <p>Apply this rule after the message arrives<br />
+with ‘X-Barracuda-Envelope-From: sanford.wallace@spamking.com or From: <a href="mailto:sanford.wallace@spamking.com">sanford.wallace@spamking.com</a>‘ in the message header<br />
+clear the message flag<br />
+  and move it to the Junk E-Mail folder<br />
+  and mark it as read&lt;/p&gt; &lt;/p&gt;</p>
+</blockquote>
+
+<p>You may need to tweak the rule a bit to match the right messages, but it’s fairly robust.  If you want to allow email from your own address, add an exception to the rule and have the exception match some specific text in your message header or your email signature.</p>
+
+  </div><a class="u-url" href="/2009/09/08/blocking-spam-that-appears-to-come-from/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Getting the most out of VMware Fusion 8.5 running Windows 10 | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Getting the most out of VMware Fusion 8.5 running Windows 10" />
+<meta name="author" content="Chris Miller" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/2017/05/26/getting-the-most-out-of-vmware-fusion-8-5-running-windows-10/" />
+<meta property="og:url" content="http://localhost:4000/2017/05/26/getting-the-most-out-of-vmware-fusion-8-5-running-windows-10/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-26T16:41:54-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Getting the most out of VMware Fusion 8.5 running Windows 10" />
+<script type="application/ld+json">
+{"datePublished":"2017-05-26T16:41:54-04:00","@type":"BlogPosting","url":"http://localhost:4000/2017/05/26/getting-the-most-out-of-vmware-fusion-8-5-running-windows-10/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/05/26/getting-the-most-out-of-vmware-fusion-8-5-running-windows-10/"},"dateModified":"2017-05-26T16:41:54-04:00","author":{"@type":"Person","name":"Chris Miller"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Getting the most out of VMware Fusion 8.5 running Windows 10","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Getting the most out of VMware Fusion 8.5 running Windows 10</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-05-26T16:41:54-04:00" itemprop="datePublished">May 26, 2017
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img loading="lazy" class="alignnone size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-KBXFdfp/0/ffff0d86/M/i-KBXFdfp-M.png?resize=600%2C409&#038;ssl=1" width="600" height="409" data-recalc-dims="1" /></p>
+
+<p>I’ve been trying to get the most performance out of my Window 10 virtual machines running on my MacBook Pro through <a href="http://www.vmware.com/products/fusion.html">VMware Fusion</a>. I have a Windows 10 virtual machine that I use for software demos and testing beta versions of Windows. It’s been running much slower than you would expect on a <del>2</del> 3 year old <a href="https://support.apple.com/kb/sp704?locale=en_US">MacBook Pro</a> with a quad core i7.  I’ve collected the following tips (the sources are listed at the end) and they have improved the performance.</p>
+
+<h3 id="from-the-macos-side">From the MacOS Side</h3>
+
+<p>Exclude the virtual disks from Time Machine backups.</p>
+
+<p>You’ll want to avoid trying to back up the virtual machines by Time Machine.  If Time Machine is trying to back up the virtual machine while it is being used, it will probably fail to perform the backup and it will definitely throttle the disk I/O.</p>
+
+<ul>
+  <li>Run the Settings App</li>
+  <li>Open “Time Machine”</li>
+  <li>Click the “Options” button</li>
+  <li>Under the “Exclude these items from backups”, click the “+” button.</li>
+  <li>Select the Virtual Machines folder.  By default, this will be located in your documents folder.  Once you have selected the folder, press the “Exclude” button.</li>
+  <li>Press the “Save” button</li>
+</ul>
+
+<p>If you are running an anti-virus application on your Mac, make sure that it is excluding the Virtual Machines folder</p>
+
+<h3 id="from-the-virtual-machine-side">From the Virtual Machine Side</h3>
+
+<p>With your virtual machine stopped, you can make some system changes to achieve better performance.  Within Fusion and with the virtual machine open (but not running), open the Settings dialog.  You’ll want to make the following changes:</p>
+
+<ul>
+  <li>Open “Display” and clear the “Accelerate 3D Graphics” checkbox.</li>
+  <li>Open “Processors &amp; Memory”
+    <ul>
+      <li>Set the number of processor cores to a value of n-1 or less, where n is the number of actual cores on your Mac.  My Macbook Pro has a quad core i7, so I run with 2 cores assigned to the virtual machine.</li>
+      <li>Give the virtual machine as much ram as you can, but without starving the host OS.  My Mac has 16 GB, so I split it 50/50.  If you have less memory, remember to leave at least 2 GB to the MacOS OS.</li>
+      <li>Open Advanced Options and select “Enable hypervisor applications in this virtual machine”</li>
+    </ul>
+  </li>
+  <li>Open “Hard Disk (SCSI)”
+    <ul>
+      <li>Open “Advanced options”</li>
+      <li>Set bus type to SCSI</li>
+      <li>Set “Pro-allocate disk space” to enabled.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>There are some settings that are not directly exposed through the settings dialog.  You’ll need to modify the .xmx file directly.  There are a couple of ways of getting at the .vmx file, the clearest technique is documented on the vmguru.com page: <a href="https://www.vmguru.com/2017/02/how-to-correctly-modify-the-vmx-file-in-vmware-fusion-8-x/">“Modifying the .vmx file step-by-step”</a>.</p>
+
+<ul>
+  <li>Change <strong>ethernet0.virtualDev = “e1000e”</strong> to <strong>ethernet0.virtualDev = “vmxnet3”</strong><br />
+This will change the default network adaptive to an enhanced driver</li>
+  <li>Add the line <strong>scsi0:0.virtualSSD = 1</strong><br />
+This will optimize disk I/O for SSD drives.  Only use this if your MacBook has a SSD drive</li>
+  <li><strong>mainMem.backing = “swap”</strong><br />
+May speed up memory swap files</li>
+  <li><strong>MemTrimRate = “0”</strong><br />
+Disable memory trimming, less overhead for the Fusion memory manager</li>
+  <li><strong>sched.mem.pshare.enable = “FALSE”</strong><br />
+Turns off memory sharing between virtual machines</li>
+  <li><strong>prefvmx.useRecommendedLockedMemSize = “TRUE”</strong><br />
+Speed up I/O at the cost of increased memory usage in the host OS</li>
+  <li><strong>MemAllowAutoScaleDown = “FALSE”</strong><br />
+Prevents Fusion from attempting to start the virtual machine with less memory than specified.  This can trigger Windows activation.</li>
+  <li><strong>logging = “FALSE”</strong><br />
+Disabling the logging should speed things up a bit</li>
+</ul>
+
+<p>If you don’t need snapshots, remove them.  When you use a snapshot, disk I/O is parsed through each snapshot.  That will show things down.</p>
+
+<p> </p>
+
+<h3 id="resources-for-these-suggestions">Resources for these suggestions</h3>
+
+<ol>
+  <li><a href="http://artykul8.com/2012/06/vmware-performance-enhancing/">VMware Performance Enhancing Tweaks (Over-the-Counter Solutions)</a></li>
+  <li><a href="https://fastchicken.co.nz/2016/05/31/making-windows-10-inside-vmware-fusion-8-x-a-bit-quicker-on-osx-10-11-el-capitan/">Making Windows 10 inside VMWare Fusion 8.x a bit quicker on OSX 10.11 El Capitan</a></li>
+  <li><a href="https://www.vmguru.com/2017/02/how-to-fix-slow-windows-vms-on-vmware-fusion-8-x/">How to Fix Slow Windows VMs on VMware Fusion 8.x<br />
+</a></li>
+  <li><a href="https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=1014046">Excluding the Virtual Machines folder from being backed up by Time Machine (1014046)</a></li>
+  <li><a href="https://kb.vmware.com/selfservice/search.do?cmd=displayKC&amp;docType=kc&amp;docTypeID=DT_KB_1_1&amp;externalId=1022625">Troubleshooting Fusion virtual machine performance for disk issues (1022625)</a></li>
+</ol>
+
+  </div><a class="u-url" href="/2017/05/26/getting-the-most-out-of-vmware-fusion-8-5-running-windows-10/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

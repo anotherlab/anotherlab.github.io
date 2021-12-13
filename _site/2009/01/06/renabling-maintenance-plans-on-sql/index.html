@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Renabling maintenance plans on SQL Server 2005 | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Renabling maintenance plans on SQL Server 2005" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="We have a couple of SQL Server boxes that we use in our department and of them has some mission critical databases.  Our defect tracking and source control databases are the big ones, but there are a few others.  We back them up and then copy them to a folder on a netwrk share.  From the network share, the files get backup up to tape and are stored offsite." />
+<meta property="og:description" content="We have a couple of SQL Server boxes that we use in our department and of them has some mission critical databases.  Our defect tracking and source control databases are the big ones, but there are a few others.  We back them up and then copy them to a folder on a netwrk share.  From the network share, the files get backup up to tape and are stored offsite." />
+<link rel="canonical" href="http://localhost:4000/2009/01/06/renabling-maintenance-plans-on-sql/" />
+<meta property="og:url" content="http://localhost:4000/2009/01/06/renabling-maintenance-plans-on-sql/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2009-01-06T15:14:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Renabling maintenance plans on SQL Server 2005" />
+<script type="application/ld+json">
+{"datePublished":"2009-01-06T15:14:00-05:00","@type":"BlogPosting","url":"http://localhost:4000/2009/01/06/renabling-maintenance-plans-on-sql/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2009/01/06/renabling-maintenance-plans-on-sql/"},"dateModified":"2009-01-06T15:14:00-05:00","description":"We have a couple of SQL Server boxes that we use in our department and of them has some mission critical databases.  Our defect tracking and source control databases are the big ones, but there are a few others.  We back them up and then copy them to a folder on a netwrk share.  From the network share, the files get backup up to tape and are stored offsite.","headline":"Renabling maintenance plans on SQL Server 2005","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Renabling maintenance plans on SQL Server 2005</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2009-01-06T15:14:00-05:00" itemprop="datePublished">Jan 6, 2009
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>We have a couple of SQL Server boxes that we use in our department and of them has some mission critical databases.  Our defect tracking and source control databases are the big ones, but there are a few others.  We back them up and then copy them to a folder on a netwrk share.  From the network share, the files get backup up to tape and are stored offsite.</p>
+
+<p>On the database server, I have a maintenance plan that runs each night and backups the critical databases.  It runs at 2am.  At 5am, I have a scheduled task run on the database server that does the following:</p>
+
+<ol>
+  <li>Purges the old backups and compresses copies of the backups.</li>
+  <li>Copies the latest backup of each database to a new folder.</li>
+  <li>Compresses the backups using <a href="http://www.7-zip.org/">7-Zip</a>.</li>
+  <li>Compresses our technical spec documents.</li>
+  <li>Backup the MSQL database that has our department’s wiki.  We are a .NET shop, but I really like how the <a href="http://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a> software works, so we use that. Getting that to work a 64-bit Windows Server is a story best left for another day.</li>
+  <li>Copy the compressed backups to the network share.</li>
+</ol>
+
+<p>So that has been working without any hitches for about 12 months.  We did a spot check of the backups last week and noticed that it stopped working a few weeks ago.  After a bit of poking around with how the scheduled task was scheduled, running it manually, and so forth, I ended up at the database server.</p>
+
+<p>I tried to view the maintenance plan that handles the backups and I was presented with the following error message:</p>
+
+<blockquote>
+  <p>‘Agent XPs’ component is turned off as part of the security configuration for this server. A system administrator can enable the use of ‘Agent XPs’ by using sp_configure. For more information about enabling ‘Agent XPs’, see “Surface Area Configuration” in SQL Server Books Online. (ObjectExplorer)</p>
+</blockquote>
+
+<p>That’s not good.  But easily fixable.  I Google’d the first sentence and found a fix on the first page <a href="http://www.treeratfishing.com/2008/01/15/enabling-agent-xps-on-sql-2005/">Enabling “Agent XPs” on SQL 2005</a> in a post by Jeff Story on the <a href="http://www.treeratfishing.com/" title="Tree Rat Fishing: Windows Administration and Development. It’s all about the tools and code.">Tree Rat Fishing</a> blog.  In short if you run the following T-SQL commands, you’ll get the functionality back:</p>
+
+<p>sp_configure ‘show advanced options’, 1;<br />
+GO<br />
+RECONFIGURE;<br />
+GO<br />
+sp_configure ‘Agent XPs’, 1;<br />
+GO<br />
+RECONFIGURE<br />
+GO</p>
+
+<p>I still don’t know what disabled Agent XPs, my guess was a Service Pack update for SQL Server or someone messing around with the server.  I’m thinking of setting up a developer dashboard page to display stuff like when were the database backups done, what projects were built for QA.  Not knowing that the backups were not performed was a giant flaw in the backup plan.  We were lucky on this one.</p>
+
+  </div><a class="u-url" href="/2009/01/06/renabling-maintenance-plans-on-sql/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

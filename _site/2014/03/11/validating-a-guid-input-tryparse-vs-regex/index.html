@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Validating a GUID input, TryParse vs RegEx | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Validating a GUID input, TryParse vs RegEx" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Once again I’m validating some text inputs, this time I need to verify that a user has entered a GUID in a valid format.  While I can’t verify that the user has entered the correct GUID, I can check to make sure that I have the right characters in the string." />
+<meta property="og:description" content="Once again I’m validating some text inputs, this time I need to verify that a user has entered a GUID in a valid format.  While I can’t verify that the user has entered the correct GUID, I can check to make sure that I have the right characters in the string." />
+<link rel="canonical" href="http://localhost:4000/2014/03/11/validating-a-guid-input-tryparse-vs-regex/" />
+<meta property="og:url" content="http://localhost:4000/2014/03/11/validating-a-guid-input-tryparse-vs-regex/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-03-11T01:03:12-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Validating a GUID input, TryParse vs RegEx" />
+<script type="application/ld+json">
+{"datePublished":"2014-03-11T01:03:12-04:00","@type":"BlogPosting","url":"http://localhost:4000/2014/03/11/validating-a-guid-input-tryparse-vs-regex/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2014/03/11/validating-a-guid-input-tryparse-vs-regex/"},"dateModified":"2014-03-11T01:03:12-04:00","description":"Once again I’m validating some text inputs, this time I need to verify that a user has entered a GUID in a valid format.  While I can’t verify that the user has entered the correct GUID, I can check to make sure that I have the right characters in the string.","headline":"Validating a GUID input, TryParse vs RegEx","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Validating a GUID input, TryParse vs RegEx</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-03-11T01:03:12-04:00" itemprop="datePublished">Mar 11, 2014
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Once again I’m validating some text inputs, this time I need <a href="#fortherecord20141103">to verify that a user has entered a GUID</a> in a valid format.  While I can’t verify that the user has entered the correct <a href="http://en.wikipedia.org/wiki/Globally_unique_identifier">GUID</a>, I can check to make sure that I have the right characters in the string.</p>
+
+<p>The choice is between a method in the .Net Framework for parsing GUID values or using a regular expression. The commonly accepted formats for a GUI are the following</p>
+
+<ul style="list-style-type: disc;">
+  <li>
+    {0C885DD3-7DD9-484B-9B20-3E6552BCA144}
+  </li>
+  <li>
+    0C885DD3-7DD9-484B-9B20-3E6552BCA144
+  </li>
+  <li>
+    0C885DD37DD9484B9B203E6552BCA144
+  </li>
+</ul>
+
+<p>You usually see it written as 32 hexadecimal characters, separated by hypens into 5 groups.  There are some other variations, but this is what you see for text representations of GUIDs.</p>
+
+<p>Going via the .Net Framework, we can use the <a href="http://msdn.microsoft.com/en-us/library/system.guid.tryparse(v=vs.110).aspx">Guid.TryParse()</a> method. This method takes two parameters, the string to parse and an out parameter that gets the parsed GUID.  TryParse() returns true if it can parse the string, false if the string input is not a valid GUID format.  It happily takes GUIDs in all three formats list above.</p>
+
+<p>The regular expression that I found for GUID validation is, as with almost all regular expressions, a hideous mess of seemingly random characters.  A well crafted regular expression should look like line noise from a <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Analogue_modem_-_acoustic_coupler.jpg/800px-Analogue_modem_-_acoustic_coupler.jpg">300 baud modem</a>.  This regular expression would validate a GUID:</p>
+
+<pre>^[{]?[0-9a-fA-F]{8}[-]?([0-9a-fA-F]{4}[-]?){3}[0-9a-fA-F]{12}[}]?$</pre>
+
+<p>That’s not very friendly when you first see it. Lets break it down:</p>
+
+<pre>^$</pre>
+
+<p>The ^ and $ characters match the start and the end of string, everything else takes place with the string to match. We are basically saying, use the entire string input to validate against.</p>
+
+<pre>[{]?</pre>
+
+<p>This says match the “{” character and the question mark states that it is optional</p>
+
+<pre>[0-9a-fA-F]{8}[-]?</pre>
+
+<p>This says match 8 characters using all of the digits and the letters from A to F. It’s case insensitive and there is an optional “-“.</p>
+
+<pre>([0-9a-fA-F]{4}[-]?){3}</pre>
+
+<p>This says match 4 characters with an optional hyphen, 3 times in a row.</p>
+
+<pre>[0-9a-fA-F]{12}</pre>
+
+<p>This matches the final block of 12 characters (with optional hyphen)</p>
+
+<pre>[\)|}]?$</pre>
+
+<p>We end with an optional match for “}”.</p>
+
+<p>The source for this regular expression <a href="http://www.regexlib.com/REDetails.aspx?regexp_id=672">was one submitted</a> by Nicolas Berardi on the <a href="http://www.regexlib.com/">RegExLib</a> site.  There were a few other GUID validation strings on that site, his looked the best. I did change his expression, it was also allowing for “(” and “)” in addition to the curvy brackets.  I don’t think that makes the GUID valid, so I removed it. The “{” and “}” are not part of the <a href="https://www.ietf.org/rfc/rfc4122.txt" title="A Universally Unique IDentifier (UUID) URN Namespace">IETF 4122 standard</a>, if you are matching UUIDs, then you may want to take out the part that allows for those characters.</p>
+
+<p>The problem is that it would validate text inputs that shouldn’t validate.  If your GUID string had a single hyphen, it would pass the regex test, but would fail when used by the .Net Framework.  It was also much slower than the TryParse() code, roughly 25 times slower on average.</p>
+
+<p>For user interaction, the performance hit would be negligible. If you were doing a batch import program and were validating the data, you’re going to take a performance penalty hit when you use regular expressions.</p>
+
+<p>The following code shows both implementations with some samples to parse:</p>
+
+<p>The last two sample strings should fail the parsing. The last one only is short one character, the one before it has only one hyphen. The TryParse method works correctly for all of the values, the RegEx fails on the one with a single hyphen. You should be able to tweak the expression by testing for 5 hyphens or for no hyphens. Then you would get <a href="http://www.regexlib.com/REDetails.aspx?regexp_id=3919">this easy to remember version</a>:</p>
+
+<pre>^[{|\(]?[0-9a-fA-F]{8}[-]([0-9a-fA-F]{4}[-]){3}[0-9a-fA-F]{12}[\)|}]?|[{|\(]?[0-9a-fA-F]{8}([0-9a-fA-F]{4}){3}[0-9a-fA-F]{12}[\)|}]?$</pre>
+
+<p>For C# code, I’ll stick with TryParse(). The RegEx version, I’ll save for Javascript.  If you wanted to validate GUID text entry in a browser, the same expression can be used.<br />
+<a name="fortherecord20141103"></a></p>
+
+<p>For the record, having the user enter in GUID values is a mind boggling UX failure. In this case, this is for an admin tool where the admin user would be copying and pasting in the GUID value from an email.</p>
+
+<p>In case dotnetfiddler falls down, <a href="https://gist.github.com/anotherlab/9479197#file-regex-validation">the source code is available</a> on Github Gist.</p>
+
+  </div><a class="u-url" href="/2014/03/11/validating-a-guid-input-tryparse-vs-regex/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

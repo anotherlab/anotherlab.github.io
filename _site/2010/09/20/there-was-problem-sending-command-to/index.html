@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>There was a problem sending the command to the program | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="There was a problem sending the command to the program" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I hate error messages like that. It’s both detailed and vague at the same. What command was being sent and what was the problem? Let me back up a few steps. A family member bought a new PC running Windows 7, for his home office. He works from home and accesses his work email account through Internet Explorer.  His email based on Domino Web Access, which I’m assuming is the web bit for Lotus Notes email." />
+<meta property="og:description" content="I hate error messages like that. It’s both detailed and vague at the same. What command was being sent and what was the problem? Let me back up a few steps. A family member bought a new PC running Windows 7, for his home office. He works from home and accesses his work email account through Internet Explorer.  His email based on Domino Web Access, which I’m assuming is the web bit for Lotus Notes email." />
+<link rel="canonical" href="http://localhost:4000/2010/09/20/there-was-problem-sending-command-to/" />
+<meta property="og:url" content="http://localhost:4000/2010/09/20/there-was-problem-sending-command-to/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-09-20T18:26:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="There was a problem sending the command to the program" />
+<script type="application/ld+json">
+{"datePublished":"2010-09-20T18:26:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2010/09/20/there-was-problem-sending-command-to/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2010/09/20/there-was-problem-sending-command-to/"},"dateModified":"2010-09-20T18:26:00-04:00","description":"I hate error messages like that. It’s both detailed and vague at the same. What command was being sent and what was the problem? Let me back up a few steps. A family member bought a new PC running Windows 7, for his home office. He works from home and accesses his work email account through Internet Explorer.  His email based on Domino Web Access, which I’m assuming is the web bit for Lotus Notes email.","headline":"There was a problem sending the command to the program","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">There was a problem sending the command to the program</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-09-20T18:26:00-04:00" itemprop="datePublished">Sep 20, 2010
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I hate error messages like that. It’s both detailed and vague at the same. What command was being sent and what was the problem? Let me back up a few steps. A family member bought a new PC running Windows 7, for his home office. He works from home and accesses his work email account through Internet Explorer.  His email based on <a href="http://www-947.ibm.com/support/entry/portal/Overview/Software/Lotus/Lotus_Domino_Web_Access">Domino Web Access</a>, which I’m assuming is the web bit for Lotus Notes email.</p>
+
+<p>When ever he was sent a document like an Excel file or Word file as an email attachment, he was unable to open the file.  He would double-click on the icon for the file, and Domino web page would spit out “There was a problem sending the command to the program”.  He has Office 2007 installed and we verified that it was working just fine.</p>
+
+<p>If he tried to save the file from Domino, he would get prompted for a folder to store the file and he would try to save it is his documents folder. It went through the motions of saving the file.  No error messages, but the file wasn’t there. I repeat, there was no error message. I took a peek at the file system and found the file in an odd location. All the files that he had been trying to launch were in “c:\users\hisname\AppData\Local\Temp\Low\Domino Web Access\80\”. The “Low” part of the folder name tells us that Internet Explorer was redirected by Windows.</p>
+
+<p>Starting with Vista, IE 7 runs with “low” privileges. The temporary files, cookies, and history folders are now in “low privilege” folders. Access to protected locations (root folder, documents, “my programs”, etc) is redirected by the operating system to the %LocalAppData%\Temp\Low folder. The folder virtualization that Vista/Win7 uses is pretty transparent the application. Unless the application checks for the file after it writes it (or knows about folder virtualization), it will not know that the file is in a different location. That explains why the files were not in the right location, but we still needed to figure out why they couldn’t be launched by the browser.</p>
+
+<p>After a bit of searching, I figured out the problem. He just needed to add the webmail server site as a “Trusted Site” in the Internet Explorer security options. With Windows 7, he needed to do the following steps in Internet Explorer 8:</p>
+
+<ol>
+  <li>From “Tools” menu, select “Internet Options”.</li>
+  <li>On the “Security” tab, click “Trusted site” in the “Select a zone to view or change security settings.” panel.</li>
+  <li>Click the “Sites” button.</li>
+  <li>Under the “Add this website to the zone:”, enter the URL for the web mail site and click the “Add” button.</li>
+  <li>If the URL starts with HTTP instead of HTTPS, make sure that the “Require server verification (https:) for all sites in this zone.” check box is cleared.</li>
+  <li>Press the “Close” button.</li>
+  <li>Press the “OK” button.</li>
+</ol>
+
+<p>That will tell Internet Explorer that it’s safe to launch binary applications from the web mail application. It’s sounds annoying, but it’s just Microsoft trying to keep rogue web sites from running nasty programs.</p>
+
+  </div><a class="u-url" href="/2010/09/20/there-was-problem-sending-command-to/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

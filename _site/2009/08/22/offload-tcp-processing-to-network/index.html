@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Offload TCP processing to the network controllers under Vista, Server 2008, and Windows 7 | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Offload TCP processing to the network controllers under Vista, Server 2008, and Windows 7" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="After upgrading my home PC to Windows 7, I was decided to see if my motherboard/CPU combination support hardware virtualization.  You need hardware virtualization support if you want to run Windows XP Mode or Windows Virtual PC.  I have an XMD Athlon X2 with an Asus M2N-SLI Deluxe and I’m not sure if that combination supports hardware virtualization.  I’m pretty sure the CPU does, but I don’t yet yet know about the motherboard." />
+<meta property="og:description" content="After upgrading my home PC to Windows 7, I was decided to see if my motherboard/CPU combination support hardware virtualization.  You need hardware virtualization support if you want to run Windows XP Mode or Windows Virtual PC.  I have an XMD Athlon X2 with an Asus M2N-SLI Deluxe and I’m not sure if that combination supports hardware virtualization.  I’m pretty sure the CPU does, but I don’t yet yet know about the motherboard." />
+<link rel="canonical" href="http://localhost:4000/2009/08/22/offload-tcp-processing-to-network/" />
+<meta property="og:url" content="http://localhost:4000/2009/08/22/offload-tcp-processing-to-network/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2009-08-22T21:28:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Offload TCP processing to the network controllers under Vista, Server 2008, and Windows 7" />
+<script type="application/ld+json">
+{"datePublished":"2009-08-22T21:28:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2009/08/22/offload-tcp-processing-to-network/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2009/08/22/offload-tcp-processing-to-network/"},"dateModified":"2009-08-22T21:28:00-04:00","description":"After upgrading my home PC to Windows 7, I was decided to see if my motherboard/CPU combination support hardware virtualization.  You need hardware virtualization support if you want to run Windows XP Mode or Windows Virtual PC.  I have an XMD Athlon X2 with an Asus M2N-SLI Deluxe and I’m not sure if that combination supports hardware virtualization.  I’m pretty sure the CPU does, but I don’t yet yet know about the motherboard.","headline":"Offload TCP processing to the network controllers under Vista, Server 2008, and Windows 7","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Offload TCP processing to the network controllers under Vista, Server 2008, and Windows 7</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2009-08-22T21:28:00-04:00" itemprop="datePublished">Aug 22, 2009
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>After upgrading my home PC to Windows 7, I was decided to see if my motherboard/CPU combination support hardware virtualization.  You need hardware virtualization support if you want to <a href="http://www.microsoft.com/windows/virtual-pc/support/configure-bios.aspx">run Windows XP Mode or Windows Virtual PC</a>.  I have an XMD Athlon X2 with an <a href="http://usa.asus.com/products.aspx?l1=3&amp;l2=101&amp;l3=301&amp;model=1160&amp;modelmenu=1">Asus M2N-SLI Deluxe</a> and I’m not sure if that combination supports hardware virtualization.  I’m pretty sure the CPU does, but I don’t yet yet know about the motherboard.</p>
+
+<p>I decided to check the  Asus support forum to see that motherboard supports hardware virtualization and while reading through the forum, I found an <a href="http://vip.asus.com/forum/view.aspx?id=20090121064406846&amp;board_id=1&amp;model=M2N-SLI+Deluxe&amp;page=1&amp;SLanguage=en-us" title="Get a faster Vista PC when using onboard LAN ports...">a post about tweaking the network settings for a boost in performance</a>.  The <a href="http://en.wikipedia.org/wiki/Internet_Protocol_Suite" title="The Internet Protocol Suite (commonly known as TCP/IP) is the set of communications protocols used for the Internet and other similar networks">TCP/IP</a> stack in Vista has the ability to offload some of the network processing to the network controller, if the network controller has that capability.  Out of the box, Vista disables that feature to prevent problems with controllers that don’t support that feature.</p>
+
+<p>From what was posted in the Asus forum, this motherboard does support that feature.  This motherboard is based on the <a href="http://www.nvidia.com/page/nforce5_amd.html">NVIDIA nForce 570 chipset</a>, which included dual Gigabit LAN controllers.  If you are doing CPU intensive tasks, you can gain some performance benefit by offloading the TCP processing to the network controllers.</p>
+
+<p>Vista refers to this setting as the “<a href="http://windowshelp.microsoft.com/Windows/en-US/Help/c6d1a24d-00e5-4ab8-bd2f-78c929203e331033.mspx">Chimney Offload State</a>”.  It’s easy to check and set this value.  if you have a newish motherboard with a Gigabit speed network controller, this should work for you.</p>
+
+<p>To change this setting, do the following:</p>
+
+<ol>
+  <li>Open an <a href="http://blogs.msdn.com/tims/archive/2006/11/02/windows-vista-secret-10-open-an-elevated-command-prompt-in-six-keystrokes.aspx" title="Tim Sneath's tip for opening an elevated command prompt">elevated command prompt</a>.  Either right-click cmd.exe and select “Run as Administrator” or press the Start button, type “cmd” and then hold the left shift and left control keys while pressing the enter key.</li>
+  <li>Check the current status of the Chimney Offload state by running the following command:<br />
+    <strong>netsh int tcp show global</strong><br />
+    The possible values for that state are: disabled, enabled, default</li>
+  <li>Run the following command to enable Chimney Offload state<br />
+    <strong>netsh int tcp set global chimney=enable</strong></li>
+</ol>
+
+<p>Before making the changes, check your current broadband speed.  I like the one at <a href="http://speedtest.net/">speedtest.net</a>, but the others are fine.  Then after making the change, check it again.  If the performance takes a hit, set the state back to it’s original value.  Not only did it work for me, I did get a slight, but measurable, download speed increase.</p>
+
+<p>Before enabling Chimney Offload:</p>
+
+<p><a href="https://i1.wp.com/lh5.ggpht.com/_natoSxTaPFU/SpBU8XJHwCI/AAAAAAAAAWU/d9TriG5Ngeg/s1600-h/546138390%5B1%5D%5B7%5D.png"><img loading="lazy" title="546138390[1]" border="0" alt="546138390[1]" src="https://i0.wp.com/lh3.ggpht.com/_natoSxTaPFU/SpBU8iasCaI/AAAAAAAAAWY/NKdKCg64Jok/546138390%5B1%5D_thumb%5B5%5D.png?resize=244%2C112" width="244" height="112" data-recalc-dims="1" /></a></p>
+
+<p>After:</p>
+
+<p><a href="https://i2.wp.com/lh3.ggpht.com/_natoSxTaPFU/SpBU9D06rnI/AAAAAAAAAWc/BICHITcO1xs/s1600-h/546142573%5B1%5D%5B2%5D.png"><img loading="lazy" title="546142573[1]" border="0" alt="546142573[1]" src="https://i0.wp.com/lh3.ggpht.com/_natoSxTaPFU/SpBU9inEKCI/AAAAAAAAAWg/qTFQnCRmrRA/546142573%5B1%5D_thumb.png?resize=244%2C112" width="244" height="112" data-recalc-dims="1" /></a></p>
+
+<p>These tests were run a few times before and after the modification.  I picked the average score each time.  That helps even out any existing network traffic that would affect the results.  Going from 17.42 MB/s to 18.70 wasn’t a huge increase, about 7%; but I’ll take it.  There are other settings that you can tweak.  Some are mentioned in the forum posting, and they are also documented in an article in <a href="http://www.speedguide.net/read_articles.php?id=2574" title="Tweaking Vista TCP/IP settings for broadband internet connections">speedguide.net</a> as well.  You don’t often get a free lunch, this is a good one to take.  This setting works for Vista, Server 2008, and Windows 7.  I still don’t know if I can get hardware virtualization, but this was an interesting diversion.</p>
+
+<p>[edited on 8/24/09]<br />
+As it turns out, my CPU and motherboard do support hardware virtualization, it just <a href="http://anotherlab.rajapet.net/2009/08/why-it-can-be-good-to-build-pc-instead.html" title="Why it can be good to build a PC instead of buying a prebuilt one">took a little work</a>.</p>
+
+  </div><a class="u-url" href="/2009/08/22/offload-tcp-processing-to-network/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

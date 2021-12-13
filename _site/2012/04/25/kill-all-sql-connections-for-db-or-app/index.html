@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Kill all the SQL connections for a DB or app | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Kill all the SQL connections for a DB or app" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="One of customers needed to be able to clear all of the connections to a database before running some maintenance tasks on the database.  So the question came my way and after searching the Internets, I ended up with the following T-SQL code" />
+<meta property="og:description" content="One of customers needed to be able to clear all of the connections to a database before running some maintenance tasks on the database.  So the question came my way and after searching the Internets, I ended up with the following T-SQL code" />
+<link rel="canonical" href="http://localhost:4000/2012/04/25/kill-all-sql-connections-for-db-or-app/" />
+<meta property="og:url" content="http://localhost:4000/2012/04/25/kill-all-sql-connections-for-db-or-app/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-04-25T19:57:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Kill all the SQL connections for a DB or app" />
+<script type="application/ld+json">
+{"datePublished":"2012-04-25T19:57:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2012/04/25/kill-all-sql-connections-for-db-or-app/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2012/04/25/kill-all-sql-connections-for-db-or-app/"},"dateModified":"2012-04-25T19:57:00-04:00","description":"One of customers needed to be able to clear all of the connections to a database before running some maintenance tasks on the database.  So the question came my way and after searching the Internets, I ended up with the following T-SQL code","headline":"Kill all the SQL connections for a DB or app","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Kill all the SQL connections for a DB or app</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2012-04-25T19:57:00-04:00" itemprop="datePublished">Apr 25, 2012
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>One of customers needed to be able to clear all of the connections to a database before running some maintenance tasks on the database.  So the question came my way and after searching the Internets, I ended up with the following T-SQL code</p>
+
+<pre name="code">DECLARE @spid INT    <br />DECLARE @getspid CURSOR    <br />declare @KillCmd nvarchar(128)<br /><br />-- create a table variable to hold the results of the call to sp_who<br />declare @k TABLE (spid INT, <br />  ecid INT, <br />  STATUS VARCHAR(150), <br />  loginame VARCHAR(150), <br />  hostname VARCHAR(150), <br />  blk INT, <br />  dbname VARCHAR(150), <br />  cmd VARCHAR(150), <br />  RequestID int)<br /><br />-- fill the table variable<br />INSERT INTO @k EXEC sp_who<br /><br />-- Create a cursor to use to walk through the table variable<br />-- that matches the database we want to filter on<br />SET @getspid = CURSOR FOR <br />	SELECT spid <br />	FROM @k <br />	where dbname = 'YourDatabaseNameHere'<br /><br />OPEN @getspid    <br /><br />FETCH NEXT FROM @getspid INTO @spid    <br /><br />-- For each row in the table, create a kill command<br />-- kill does not work with variables, we need to<br />-- execute it with sp_executeSQL<br />WHILE @@FETCH_STATUS = 0 <br />BEGIN<br />  SET @KillCmd = 'KILL ' + CAST(@SPId as nvarchar(10))<br />  print @KillCmd<br />  EXEC sp_executeSQL @KillCmd<br />  FETCH NEXT FROM @getspid INTO @spid<br />END<br /><br />-- cleanup<br />CLOSE @getspid<br /><br />DEALLOCATE @getspid</pre>
+
+<p>The way it works is that we call the <a href="http://msdn.microsoft.com/en-us/library/ms174313.aspx" title="sp_who (Transact-SQL)">sp_who</a> system stored procedure.  This procedure returns a set that lists current users, sessions, and processs.  From that set, we can get a list of all of the connections for a database. </p>
+
+<p>Since we need to work with the rows of that set, we create a table variable named @k and populate it with the result set returned from sp_who.  You need to match the number of fields and the field types (or pick field types that SQL can convert automatically).</p>
+
+<p>Next, we create a cursor and iterate through the rows that match the database name that we want to kill the connections on.  We are using the <a href="http://msdn.microsoft.com/en-us/library/ms173730.aspx" title="KILL (Transact-SQL)">kill</a> command to kill the connection.  You basically call kill with the session id to kill, and that session is terminated. In this example, we are matching on the dbname column.  You could easily match by loginame or hostname, depending on your needs.</p>
+
+<p>The kill command has a slight little kink, where you have to pass a literal value to the kill command.  It doesn’t work with variables.  If you try it, you’ll get an “incorrect syntax near…” error message.</p>
+
+<p>To get around this, we fill a string variable with the kill command and the session id.  We then call <a href="http://msdn.microsoft.com/en-us/library/ms188001.aspx" title="sp_executesql (Transact-SQL)">sp_executesql</a> to execute our dynamically generated SQL statement. It looks somewhat less than <a href="http://allthingselegant.tumblr.com/">elegant</a>, but it works just fine.</p>
+
+<p>This was written as inline SQL so the customer could add it to his maintenance script.  You could easily make sproc out of it and toss it into the master database.</p>
+
+  </div><a class="u-url" href="/2012/04/25/kill-all-sql-connections-for-db-or-app/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

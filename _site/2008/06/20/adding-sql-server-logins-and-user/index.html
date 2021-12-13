@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Adding SQL Server logins and user accounts for multiple databases in one pass | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Adding SQL Server logins and user accounts for multiple databases in one pass" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="We have a few applications that include bits that are service applications.  These applications talk to SQL Server databases and they authenticate using SQL Server logins, as opposed to using Windows Authentication.  We recently changed the account that the services were using to a new account with a more robust password.  When the services are deployed, they will have an update mechanism that will add the new login account.  For internal testing, I wanted to give our testers the ability to add the server login and database user for all of their test databases in one shot.  I ended up with a script that looked like this:" />
+<meta property="og:description" content="We have a few applications that include bits that are service applications.  These applications talk to SQL Server databases and they authenticate using SQL Server logins, as opposed to using Windows Authentication.  We recently changed the account that the services were using to a new account with a more robust password.  When the services are deployed, they will have an update mechanism that will add the new login account.  For internal testing, I wanted to give our testers the ability to add the server login and database user for all of their test databases in one shot.  I ended up with a script that looked like this:" />
+<link rel="canonical" href="http://localhost:4000/2008/06/20/adding-sql-server-logins-and-user/" />
+<meta property="og:url" content="http://localhost:4000/2008/06/20/adding-sql-server-logins-and-user/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-06-20T19:56:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Adding SQL Server logins and user accounts for multiple databases in one pass" />
+<script type="application/ld+json">
+{"datePublished":"2008-06-20T19:56:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/06/20/adding-sql-server-logins-and-user/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/06/20/adding-sql-server-logins-and-user/"},"dateModified":"2008-06-20T19:56:00-04:00","description":"We have a few applications that include bits that are service applications.  These applications talk to SQL Server databases and they authenticate using SQL Server logins, as opposed to using Windows Authentication.  We recently changed the account that the services were using to a new account with a more robust password.  When the services are deployed, they will have an update mechanism that will add the new login account.  For internal testing, I wanted to give our testers the ability to add the server login and database user for all of their test databases in one shot.  I ended up with a script that looked like this:","headline":"Adding SQL Server logins and user accounts for multiple databases in one pass","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Adding SQL Server logins and user accounts for multiple databases in one pass</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-06-20T19:56:00-04:00" itemprop="datePublished">Jun 20, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>We have a few applications that include bits that are service applications.  These applications talk to SQL Server databases and they authenticate using SQL Server logins, as opposed to using Windows Authentication.  We recently changed the account that the services were using to a new account with a more robust password.  When the services are deployed, they will have an update mechanism that will add the new login account.  For internal testing, I wanted to give our testers the ability to add the server login and database user for all of their test databases in one shot.  I ended up with a script that looked like this:</p>
+
+<div>
+  <div>
+    <pre><span>   1:</span> <span>use</span> [master]</pre>
+    
+    <pre><span>   2:</span>  </pre>
+    
+    <pre><span>   3:</span> <span>-- create server login if if does not already exist</span></pre>
+    
+    <pre><span>   4:</span> <span>if</span> <span>not</span> <span>exists</span> (<span>SELECT</span> 1 <span>FROM</span> sys.sql_logins <span>where</span> name = <span>'myservice'</span>) </pre>
+    
+    <pre><span>   5:</span> <span>create</span> login myservice <span>with</span> password = <span>'wEEzPHUxce0xhzQFEeF8OHS2KqYYkxTA'</span>, Check_expiration = <span>OFF</span></pre>
+    
+    <pre><span>   6:</span>  </pre>
+    
+    <pre><span>   7:</span> <span>-- Create a cusror that will let us iterate through a list of user </span></pre>
+    
+    <pre><span>   8:</span> <span>-- created databases, skipping over the system databases</span></pre>
+    
+    <pre><span>   9:</span> <span>declare</span> c <span>cursor</span> fast_forward <span>for</span> </pre>
+    
+    <pre><span>  10:</span>   <span>select</span> name </pre>
+    
+    <pre><span>  11:</span>   <span>from</span> master.dbo.sysdatabases </pre>
+    
+    <pre><span>  12:</span>   <span>where</span> name <span>not</span> <span>in</span> (<span>'master'</span>, <span>'tempdb'</span>, <span>'pubs'</span>, <span>'model'</span>, <span>'msdb'</span>)</pre>
+    
+    <pre><span>  13:</span>  </pre>
+    
+    <pre><span>  14:</span> <span>declare</span> @name <span>varchar</span>(128)</pre>
+    
+    <pre><span>  15:</span> <span>declare</span> @<span>sql</span> <span>varchar</span>(800)</pre>
+    
+    <pre><span>  16:</span>  </pre>
+    
+    <pre><span>  17:</span> <span>open</span> c</pre>
+    
+    <pre><span>  18:</span>  </pre>
+    
+    <pre><span>  19:</span> <span>fetch</span> <span>next</span> <span>from</span> c <span>into</span> @name</pre>
+    
+    <pre><span>  20:</span>  </pre>
+    
+    <pre><span>  21:</span> <span>while</span> <span>@@fetch_status</span> = 0</pre>
+    
+    <pre><span>  22:</span> <span>begin</span></pre>
+    
+    <pre><span>  23:</span>   <span>print</span> @name <span>-- display the name of the database</span></pre>
+    
+    <pre><span>  24:</span>  </pre>
+    
+    <pre><span>  25:</span>   <span>-- Drop the user and schema. this may need to be augmented depedning how you define your roles</span></pre>
+    
+    <pre><span>  26:</span>   <span>select</span> @<span>sql</span> = <span>'use ['</span>+@name+<span>'];if exists (select 1 from information_schema.tables where Table_name in ('</span><span>'SomeTableUniqueToMyApp'</span><span>', '</span><span>'AnotherTableUniqueToMyApp'</span><span>')) if exists (select 1 from sys.database_principals where name = '</span><span>'myservice'</span><span>') begin IF EXISTS (SELECT 1 FROM sys.schemas WHERE name = '</span><span>'myservice'</span><span>') begin DROP SCHEMA myservice end drop user myservice end'</span></pre>
+    
+    <pre><span>  27:</span>   <span>execute</span> (@<span>sql</span>)</pre>
+    
+    <pre><span>  28:</span>   </pre>
+    
+    <pre><span>  29:</span>   <span>-- Add the user</span></pre>
+    
+    <pre><span>  30:</span>   <span>select</span> @<span>sql</span> = <span>'use ['</span>+@name+<span>'];if exists (select 1 from information_schema.tables where Table_name in ('</span><span>'SomeTableUniqueToMyApp'</span><span>', '</span><span>'AnotherTableUniqueToMyApp'</span><span>')) if not exists (select 1 from sys.database_principals where name = '</span><span>'myservice'</span><span>') create user myservice for login myservice'</span></pre>
+    
+    <pre><span>  31:</span>   <span>execute</span> (@<span>sql</span>)</pre>
+    
+    <pre><span>  32:</span>  </pre>
+    
+    <pre><span>  33:</span>   <span>-- Define the user's role  </span></pre>
+    
+    <pre><span>  34:</span>   <span>select</span> @<span>sql</span> = <span>'use ['</span>+@name+<span>'];if exists (select 1 from sys.database_principals where name = '</span><span>'myservice'</span><span>') execute sp_addrolemember db_owner, myservice'</span></pre>
+    
+    <pre><span>  35:</span>   <span>execute</span> (@<span>sql</span>)</pre>
+    
+    <pre><span>  36:</span>   </pre>
+    
+    <pre><span>  37:</span>   <span>fetch</span> <span>next</span> <span>from</span> c <span>into</span> @name</pre>
+    
+    <pre><span>  38:</span> <span>end</span></pre>
+    
+    <pre><span>  39:</span>  </pre>
+    
+    <pre><span>  40:</span> <span>close</span> c</pre>
+    
+    <pre><span>  41:</span>  </pre>
+    
+    <pre><span>  42:</span> <span>deallocate</span> c</pre>
+    
+    <p>
+      &lt;/div&gt; 
+      
+      <p>
+        &lt;/div&gt; 
+        
+        <p>
+          This script starts off in the master database and will require admin access rights to the server.  If we break down the script, we can review what each section does and why it’s doing it
+        </p>
+        
+        <p>
+          Lines 4-5 will create the login if it does not already exist.  The Check_Expiration option is set to “OFF” to verify that password expiration policy will not be applied to this login account.  The BOL for SQL Server 2005 states that <a title="CREATE LOGIN (Transact-SQL)" href="http://msdn.microsoft.com/en-us/library/ms189751.aspx">this option defaults to “OFF”</a>, but I like to explicitly set that option for a couple of reasons.  One reason is that it stands out when you read the script.  Another reason would be that a future service pack or later version of SQL Server could default that setting to on.
+        </p>
+        
+        <p>
+          Lines 9-12 create a cursor that provides a list of databases.  We skip over the system tables to save some processing.
+        </p>
+        
+        <p>
+          Lines 17-22, 37-42 handle the mechanics of opening up the cursor and iterating through each row in the set of database names.
+        </p>
+        
+        <p>
+          Lines 26-27 create a dynamic SQL statement that performs the following steps and then executes that statement:
+        </p>
+        
+        <ol>
+          &lt;/p&gt; 
+          
+          <li>
+            Change the database context to the current database that was located by the cursor
+          </li>
+          <li>
+            Uses the information_schema.tables view to use this database only if contains two tables that are known to exist in my application database.  This will prevent the user from being added to the wrong database.
+          </li>
+          <li>
+            If this user has a schema, drop the schema.
+          </li>
+          <li>
+            Drop the user from the database.
+          </li>
+          <li>
+            Execute the dynamically created SQL statement.
+          </li>
+          <p>
+            &lt;/ol&gt; 
+            
+            <p>
+              Lines 30-31 create a dynamic SQL statement that performs the following steps and then executes that statement:
+            </p>
+            
+            <ol>
+              &lt;/p&gt; 
+              
+              <li>
+                Change the database context to the current database that was located by the cursor
+              </li>
+              <li>
+                Uses the information_schema.tables view to use this database only if contains two tables that are known to exist in my application database.  This will prevent the user from being added to the wrong database.
+              </li>
+              <li>
+                Create the user and map that user to the login account created at line 4
+              </li>
+              <li>
+                Execute the dynamically created SQL statement.
+              </li>
+              <p>
+                &lt;/ol&gt; 
+                
+                <p>
+                  Lines 34-35 create a dynamic SQL statement that performs the following steps and then executes that statement:
+                </p>
+                
+                <ol>
+                  &lt;/p&gt; 
+                  
+                  <li>
+                    Change the database context to the current database that was located by the cursor
+                  </li>
+                  <li>
+                    Uses the information_schema.tables view to use this database only if contains two tables that are known to exist in my application database.  This will prevent the user from being added to the wrong database.
+                  </li>
+                  <li>
+                    Adds the user to the db_owner role.  Your application may need fewer rights for the user.
+                  </li>
+                  <li>
+                    Execute the dynamically created SQL statement.
+                  </li>
+                  <p>
+                    &lt;/ol&gt; 
+                    
+                    <p>
+                      We do give our customers the ability to run with just Windows Authentication, but configuring services to run under domain accounts is an additional set of steps that most of our customers prefer not to use.  It’s a much simpler <a href="http://en.wikipedia.org/wiki/Out-Of-Box_Experience">OOBE</a> if the services use SQL Server authentication.
+                    </p>
+</p></ol></p></ol></p></ol></p></p></div></div>
+
+  </div><a class="u-url" href="/2008/06/20/adding-sql-server-logins-and-user/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

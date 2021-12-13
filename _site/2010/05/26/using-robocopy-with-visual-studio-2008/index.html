@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Using robocopy with Visual Studio 2008 Post-build events | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Using robocopy with Visual Studio 2008 Post-build events" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I have a solution that has about 15 odd projects in it.  It’s for an application that has multiple optional services with shared assemblies.  Hence the 15 projects.  I have an installer that lets the user pick from which of the optional bits to install.  For ease of maintenance, I version the installer with multiple folders.  Each version gets a folder for the installer source and a folder for the installable bits." />
+<meta property="og:description" content="I have a solution that has about 15 odd projects in it.  It’s for an application that has multiple optional services with shared assemblies.  Hence the 15 projects.  I have an installer that lets the user pick from which of the optional bits to install.  For ease of maintenance, I version the installer with multiple folders.  Each version gets a folder for the installer source and a folder for the installable bits." />
+<link rel="canonical" href="http://localhost:4000/2010/05/26/using-robocopy-with-visual-studio-2008/" />
+<meta property="og:url" content="http://localhost:4000/2010/05/26/using-robocopy-with-visual-studio-2008/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-05-26T20:11:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Using robocopy with Visual Studio 2008 Post-build events" />
+<script type="application/ld+json">
+{"datePublished":"2010-05-26T20:11:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2010/05/26/using-robocopy-with-visual-studio-2008/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2010/05/26/using-robocopy-with-visual-studio-2008/"},"dateModified":"2010-05-26T20:11:00-04:00","description":"I have a solution that has about 15 odd projects in it.  It’s for an application that has multiple optional services with shared assemblies.  Hence the 15 projects.  I have an installer that lets the user pick from which of the optional bits to install.  For ease of maintenance, I version the installer with multiple folders.  Each version gets a folder for the installer source and a folder for the installable bits.","headline":"Using robocopy with Visual Studio 2008 Post-build events","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Using robocopy with Visual Studio 2008 Post-build events</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-05-26T20:11:00-04:00" itemprop="datePublished">May 26, 2010
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I have a solution that has about 15 odd projects in it.  It’s for an application that has multiple optional services with shared assemblies.  Hence the 15 projects.  I have an installer that lets the user pick from which of the optional bits to install.  For ease of maintenance, I version the installer with multiple folders.  Each version gets a folder for the installer source and a folder for the installable bits.</p>
+
+<p>With Visual Studio, the default way of building a solution is to put the compiled assemblies and dependant files inside a bin folder for each project.  Each bin folder can multiple folders for different build options (debug, release, platform, etc).  I wanted a simple way of consolidating the files from each bin folder to a common folder for the installer.</p>
+
+<p>I didn’t want to set the output path, from the Build tab on the project options page.  While I could direct all of the compiled output to a single folder, that would send symbol and <a href="http://msdn.microsoft.com/en-us/library/ms185331(VS.80).aspx">vshost</a> files over as well.  I didn’t want those files.  I only wanted just what I actually needed for deployment.</p>
+
+<p>I decided on using the <a href="http://msdn.microsoft.com/en-us/library/ke5z92ks.aspx">Post-build event</a> for each project and copy only the files that I wanted.  I had already created a “deploy” folder from the solution root folder.  So I defined a build event with the following command line:&lt;/p&gt;</p>
+
+<pre>robocopy $(TargetDir) $(SolutionDir)Deploy *.exe *.dll</pre>
+
+<p>If you don’t know <a href="http://en.wikipedia.org/wiki/Robocopy">robocopy</a>, it’s a powerful file and folder copy command line.  It’s been around for years in one <a href="http://www.microsoft.com/downloads/details.aspx?familyid=9d467a69-57ff-4ae7-96ee-b18c4790cffd&amp;displaylang=en" title="Windows Server 2003 Resource Kit Tools">Microsoft SDK</a> or another and has been included as part of the OS since at least Vista.  In it’s simplest form, you specify the source folder, the destination folder.  It has a slew of <a href="http://ss64.com/nt/robocopy.html">options</a>.</p>
+
+<p>$(TargetDir) is a <a href="http://msdn.microsoft.com/en-us/library/42x5kfw4(VS.80).aspx">macro</a> that represents the complete path for folder that the compiled units are created in, like bin\debug\ or bin\release.  The $(SolutionDir) macro is the path to the solution folder.</p>
+
+<p>I went to build one of the projects in the solution and it failed on the Post-build event.  Error 1, it said.  I copied the robocopy command line from the error message and ran it from a cmd prompt.  It executed without any errors and did exactly wat it was suppsoed to do.  After a little digging, I found out that robocopy returns 1 as an exit code to indicate success.  Since the dawn of time (<a href="http://en.wikipedia.org/wiki/Unix_time">January 1, 1970</a>), command line programs have returned 0 for the exit code to indicate success and any other value to indicate an error.  It’s a bizarre flaw with an otherwise very useful tool.</p>
+
+<p>Visual Studio 2008 does not appear to have any way of ignoring the exit code.  Well that’s <a href="http://en.wikipedia.org/wiki/Just_Ducky">just ducky</a>.  So what I did was to bury the exit code in an <a href="http://www.ncptt.nps.gov/identification-of-unmarked-graves/">unmarked grave</a> so that Visual Studio 2008 wouldn’t be able to see or complain about it.  I created a batch file in the solution root folder and named it robopip.cmd.  Robopip has the following contents:</p>
+
+<pre>robocopy %1 %2 %3 %4 %5 %6 %7 %8 /R:1 /XF *vshost*<br />dir %TEMP% &gt;nul</pre>
+
+<p>The first line executes the robocopy command with up to 8 parameters passed in by the build process.  The “/R:1” parameter basically says try once and then die.  The “/XF *vshost*” tells robocopy to ignore any file with “vshost” in the same.  The second line is crucial, it’s basically a low impact command to clear the last exit code.  We ask for the directory listing of the user’s temp folder and then toss away the results.  There is probably a more elegant way of clearing the error code, that was the first one that worked for me.</p>
+
+<p>So now, I can use the following Post-event build command with each project.</p>
+
+<pre>$(SolutionDir)robopip $(TargetDir) $(SolutionDir)Deploy *.exe *.dll</pre>
+
+<p>I get the power of RoboCopy without Visual Studio squawking about the exit code.</p>
+
+  </div><a class="u-url" href="/2010/05/26/using-robocopy-with-visual-studio-2008/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
