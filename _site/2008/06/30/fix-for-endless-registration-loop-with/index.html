@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Fix for endless registration loop with Delphi 2006 | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Fix for endless registration loop with Delphi 2006" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="&lt;/p&gt;" />
+<meta property="og:description" content="&lt;/p&gt;" />
+<link rel="canonical" href="http://localhost:4000/2008/06/30/fix-for-endless-registration-loop-with/" />
+<meta property="og:url" content="http://localhost:4000/2008/06/30/fix-for-endless-registration-loop-with/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-06-30T20:54:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Fix for endless registration loop with Delphi 2006" />
+<script type="application/ld+json">
+{"datePublished":"2008-06-30T20:54:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/06/30/fix-for-endless-registration-loop-with/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/06/30/fix-for-endless-registration-loop-with/"},"dateModified":"2008-06-30T20:54:00-04:00","description":"&lt;/p&gt;","headline":"Fix for endless registration loop with Delphi 2006","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Fix for endless registration loop with Delphi 2006</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-06-30T20:54:00-04:00" itemprop="datePublished">Jun 30, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>&lt;/p&gt;</p>
+
+<p>With the acquisition, our login accounts are being migrated to a new domain.  We are doing this in multiple parts, with the first part changing our existing domain logins from using our last name plus first initial (millerc) to what is referred as the <a href="http://support.microsoft.com/kb/243280/EN-US/" title="MSKB Article 243280: Users Can Log On Using User Name or User Principal Name">User Principal Name</a> (basically our email addresses).  Of course, when I say “we”, I refer to our IT manager.  I’m just along for the ride and to make witty comments when it breaks.  That part went smoothly, the second step occurred last Sunday night when said IT Manager changed our logins (pre Windows 2000 format) from last name plus first initial to last name “.” first name (chris.miller).</p>
+
+<pre><p>
+  When we logged in this morning and started up Borland Developer Studio 2006 (aka Delphi 2006), something broke.  We would get errors like
+</p>
+
+<br /><br />
+
+<p>
+  The license manager reported the following error: <br /><br />License storage c:\documents and settings\millerc\.borland\borlands.lic does not apply to current user or host machine. <br /><br /><br />Please register your Borland products(s).(7006).
+</p>
+
+<br /><br />
+
+<p>
+  Do you want to run the registration wizard?
+</p></pre>
+
+<p>or</p>
+
+<pre><p>
+  Fatal error validating license for Borland Developer Studio 2006 <br /><br />The license manager reported the following error: <br /><br /><br />Missing activation file.  Please register again. (7029).
+</p>
+
+<br /><br />
+
+<p>
+  Do you want to run the registration wizard?
+</p></pre>
+
+<p>Just what I wanted to see first thing on a Monday morning.  <a href="http://en.wikiquote.org/wiki/Animal_House">Thank you, sir. May I have another?</a></p>
+
+<p>Each time we would run the registration wizard, we would go through all of the steps to register Delphi and it would report that it was successfully registered.  After closing the wizard, we would get the same error message again.  Not a good sign.</p>
+
+<p>I ran the registration wizard one more time and selected register by phone and called the number for US support.  The support representative was friendly but had no clue for what was happening.  The only thing she could was to open a support case.  I tried a few more times after completing the call and found out that you could only register 10 times, after that your registration code has been used up.  I was somewhat less than thrilled when I found that little gem.</p>
+
+<p>After four hours had passed, I decided to call that support number again.  The support representative that answered this time was much more helpful.  He immediately contacted a support engineer, who knew what the problem was and referred to it as “an endless registration loop”.  They emailed me a list of instructions and I was able to get Delphi 2006 up and running again.  He also updated my account to accept two more registrations.</p>
+
+<p>The funny part for me was that I had migrated all of my projects to Delphi 2007, which was not affected by the change in user id’s.  I jumped in to help out the other developement team, who were still on Delphi 2006. </p>
+
+<p>The following is a slightly edited version of the steps that CodeGear support had sent to me.</p>
+
+<blockquote>
+
+  <p>Sometimes the registration information on a machine can become corrupted and cause an endless registration loop. This also happens when the user login name is changed or if a machine is changed to log in to a Domain. The following steps should help to resolve the problem.</p>
+
+  <p>WARNING: These step will remove registration information for other Borland IDE products as well.</p>
+
+  <p>&lt;/p&gt;</p>
+
+  <ol>
+    <li>Close down Delphi and the Registration Wizard if they are running</li>
+    <li>Browse to the .borland directory in your user home directory. For Windows 2000 and XP this will be located at c:\documents and Settings&lt;username&gt;.borland</li>
+    <li>Open the file registry.dat and copy the <strong>SerialNumber</strong> and <strong>AuthorizationKey</strong> values stored under “[Delphi 2006]”, this save you the step of trying to remember where you had stored that information. Also make a note of either the <strong>UserName</strong> or <strong>EmailAddress</strong> values stored under “user”. You will need these values when you register Delphi.</li>
+    <li>Delete the borland.lic and registry.dat files in the .borland directory. You may also want to move those files to another location that is not on the path</li>
+    <li>Remove the .&lt;Random#A&gt; directories from your User Home (directory name will start with a . and contain 6 or 7 random numbers and letters)</li>
+    <li>Remove the .&lt;Random#&gt;.slip files from your User Home file name will start with a . and contain 6 or 7 random numbers followed by .slip)</li>
+    <li>Remove any activation files that you saved in your User Home. These will by default be in the format of reg*.txt</li>
+    <li>Launch BDS 2006 which will activate the Registration Wizard.</li>
+    <li>Cancel completely out of the Registration Wizard (This is an important step and will write new correct default information to your User Home).</li>
+    <li>Launch BDS 2006 a second time and this time register the product when the Registration Wizard comes up.</li>
+    <li>If you ran the registration wizard too many times, your serial number will get locked out. You are limited to 10 installations. If you exceed this count, you will need to call CodeGear (800-523-7070 for the US) and asked for that count to be raised. They can raise the count limit by two each time that you request it.</li>
+  </ol>
+  <p>&lt;/ol&gt;</p>
+
+  <p>&lt;/blockquote&gt;</p>
+
+  <p>This worked for me, but the usual <a href="http://www.urbandictionary.com/define.php?term=YMMV">YMMV</a> caveats apply.  I added steps 3 and 11.  Once you delete the registry.dat file, you will have deleted the cached copy of your serial number and authorization key.  By making a copy of them, it becomes one less this to have to lookup.  If you already have Delphi 2007 or RAD Studio 2007 installed, these steps will not affect them.</p>
+</blockquote>
+
+  </div><a class="u-url" href="/2008/06/30/fix-for-endless-registration-loop-with/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

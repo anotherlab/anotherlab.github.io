@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Fast way to resize a virtual disk with VMware ESX Server | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Fast way to resize a virtual disk with VMware ESX Server" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="We’re starting some SharePoint development and I needed to create a development environment on Windows Server 2003.  So I created a new virtual machine (VM) of Server 2003 on our VMware ESX box and gave it a 1GB of RAM and 8GB of disk space.  I installed the OS and configured it for Windows SharePoint Services (WSS) and then installed Visual Studio 2008.  That left us with about 1.5GB of disk space.  Oops, time to resize the drive." />
+<meta property="og:description" content="We’re starting some SharePoint development and I needed to create a development environment on Windows Server 2003.  So I created a new virtual machine (VM) of Server 2003 on our VMware ESX box and gave it a 1GB of RAM and 8GB of disk space.  I installed the OS and configured it for Windows SharePoint Services (WSS) and then installed Visual Studio 2008.  That left us with about 1.5GB of disk space.  Oops, time to resize the drive." />
+<link rel="canonical" href="http://localhost:4000/2008/11/20/fast-way-to-resize-virtual-disk-with/" />
+<meta property="og:url" content="http://localhost:4000/2008/11/20/fast-way-to-resize-virtual-disk-with/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-11-20T21:22:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Fast way to resize a virtual disk with VMware ESX Server" />
+<script type="application/ld+json">
+{"datePublished":"2008-11-20T21:22:00-05:00","@type":"BlogPosting","url":"http://localhost:4000/2008/11/20/fast-way-to-resize-virtual-disk-with/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/11/20/fast-way-to-resize-virtual-disk-with/"},"dateModified":"2008-11-20T21:22:00-05:00","description":"We’re starting some SharePoint development and I needed to create a development environment on Windows Server 2003.  So I created a new virtual machine (VM) of Server 2003 on our VMware ESX box and gave it a 1GB of RAM and 8GB of disk space.  I installed the OS and configured it for Windows SharePoint Services (WSS) and then installed Visual Studio 2008.  That left us with about 1.5GB of disk space.  Oops, time to resize the drive.","headline":"Fast way to resize a virtual disk with VMware ESX Server","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Fast way to resize a virtual disk with VMware ESX Server</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-11-20T21:22:00-05:00" itemprop="datePublished">Nov 20, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>We’re starting some <a href="http://en.wikipedia.org/wiki/Sharepoint">SharePoint</a> development and I needed to create a <a href="http://weblogs.asp.net/erobillard/archive/2007/02/23/build-a-sharepoint-development-machine.aspx">development environment</a> on Windows Server 2003.  So I created a new virtual machine (VM) of Server 2003 on our <a href="http://en.wikipedia.org/wiki/VMware_ESX">VMware ESX</a> box and gave it a 1GB of RAM and 8GB of disk space.  I installed the OS and configured it for <a href="http://en.wikipedia.org/wiki/Windows_SharePoint_Services">Windows SharePoint Services</a> (WSS) and then installed Visual Studio 2008.  That left us with about 1.5GB of disk space.  Oops, time to resize the drive.</p>
+
+<p>The beauty of working with virtual machines is that it’s relatively easy to increase or decrease the memory and disk storage.  In this case, I wanted to add another 4GB to the virtual disk.  I powered down the virtual machine and went into the “Virtual Machine Properties” from the <a href="http://www.vmware.com/products/vi/">VMware Infrastructure Client</a> (VIC).  I selected the hard drive and it provided a entry field for the new size.  I increased the size to 12GB, adding an additional 4GB.</p>
+
+<p>That takes us part way there.  I increased the size if the virtual disk from 8GB to 12GB, but it still has an 8GB partition, the OS wont see the additional space.  I saw all some <a href="http://vmware-land.com/Resizing_Virtual_Disks.html">tips</a> on that <a href="http://seriesoftubes.net/archives/2-Its-Not-A-Truck...Its-A-Series-Of-Tubes.html">Series of Tubes</a> that recommended downloading Linux boot disks and boot the the VM from the Linux CD images as an .ISO file.</p>
+
+<p><a href="http://news.yahoo.com/s/ap/20081117/ap_on_re_eu/eu_britain_new_word">Meh</a>, that’s too much work.  I took a simpler path.  I powered down another Server 2003 VM that was already running on the ESX box and added new VM’s virtual disk as a second virtual drive.  I booted up the second VM and opened up a command shell.  From the command shell, I ran the <a href="http://technet.microsoft.com/en-us/library/cc766465.aspx">diskpart</a> utility to extend the partition.  I did the following commands through diskpart:&lt;/p&gt;</p>
+
+<pre>diskpart
+
+<p>
+  
+</p>
+
+<br />
+
+<p>
+  Microsoft DiskPart version 5.1.3565
+</p>
+
+<p>
+            <br />Copyright (C) 1999-2003 Microsoft Corporation.
+</p>
+
+<p>
+  On computer: XXXXX
+</p>
+
+<br /><br />
+
+<p>
+  DISKPART&gt; list volume
+</p>
+
+<p>
+   
+</p>
+
+<p>
+    Volume ###  Ltr  Label        Fs     Type        Size     Status     Info
+</p>
+
+<p>
+    ----------  ---  -----------  -----  ----------  -------  ---------  --------
+</p>
+
+<p>
+    Volume 0     E                       DVD-ROM         0 B<br />  Volume 1     C                NTFS   Partition     12 GB  Healthy    Boot<br />  Volume 2     D                NTFS   Partition    8 GB  Healthy
+</p>
+
+<p>
+  <br /> 
+</p>
+
+<p>
+   
+</p>
+
+<p>
+  DISKPART&gt; select volume 2 <br />  <br />Volume 2 is the selected volume.<br />  <br />DISKPART&gt; extend
+</p>
+
+<p>
+   
+</p>
+
+<p>
+  DISKPART&gt; exit
+</p>
+
+<p>
+         <br />Leaving DiskPart...
+</p></pre>
+
+<p>I basically typed that in from memory, some of the numbers may be off, but it shows how to extend the size of the partition.  After exiting out of diskpart, I then shut down the second VM.  Next, I removed the virtual drive that belongs to the new VM.  Remember to select remove only and not remove and delete.  At this point I was able to power both VM’s back up.  The second VM will be slightly confused about the missing drive, but it was back to normal.  The new VM took some time to check out the resized partition after I logged back in.  With my VM, it declared it to be new hardware and wanted to reboot.  After it rebooted, it was happy and recognized that it had a 12GB partition.</p>
+
+  </div><a class="u-url" href="/2008/11/20/fast-way-to-resize-virtual-disk-with/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

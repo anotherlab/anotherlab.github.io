@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>A Disaster Recovery Plan is useless if you don’t verify that it works. | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="A Disaster Recovery Plan is useless if you don’t verify that it works." />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I was just reading a Computerworld article about how American Eagles Outfitters just went through an eight day web outage (originally covered by StorefrontBacktalk).  It started when some hardware failed, then the backup hardware failed, then the software designed to restore the data to the replacement hardware failed, and finally their disaster recovery site wasn’t ready.  They were doing the right things: backups, backups of backups, and an alternate site in case their main site is dead in the water.  It just didn’t work when it was needed.  They were flat out down for 4 days, and then only had minimal functionality for another four days." />
+<meta property="og:description" content="I was just reading a Computerworld article about how American Eagles Outfitters just went through an eight day web outage (originally covered by StorefrontBacktalk).  It started when some hardware failed, then the backup hardware failed, then the software designed to restore the data to the replacement hardware failed, and finally their disaster recovery site wasn’t ready.  They were doing the right things: backups, backups of backups, and an alternate site in case their main site is dead in the water.  It just didn’t work when it was needed.  They were flat out down for 4 days, and then only had minimal functionality for another four days." />
+<link rel="canonical" href="http://localhost:4000/2010/08/30/disaster-recovery-plan-is-useless-if/" />
+<meta property="og:url" content="http://localhost:4000/2010/08/30/disaster-recovery-plan-is-useless-if/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-08-30T14:43:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="A Disaster Recovery Plan is useless if you don’t verify that it works." />
+<script type="application/ld+json">
+{"datePublished":"2010-08-30T14:43:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2010/08/30/disaster-recovery-plan-is-useless-if/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2010/08/30/disaster-recovery-plan-is-useless-if/"},"dateModified":"2010-08-30T14:43:00-04:00","description":"I was just reading a Computerworld article about how American Eagles Outfitters just went through an eight day web outage (originally covered by StorefrontBacktalk).  It started when some hardware failed, then the backup hardware failed, then the software designed to restore the data to the replacement hardware failed, and finally their disaster recovery site wasn’t ready.  They were doing the right things: backups, backups of backups, and an alternate site in case their main site is dead in the water.  It just didn’t work when it was needed.  They were flat out down for 4 days, and then only had minimal functionality for another four days.","headline":"A Disaster Recovery Plan is useless if you don’t verify that it works.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">A Disaster Recovery Plan is useless if you don’t verify that it works.</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-08-30T14:43:00-04:00" itemprop="datePublished">Aug 30, 2010
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I was just reading a Computerworld article about how <a href="http://www.computerworld.com/s/article/9182159/American_Eagle_Outfitters_learns_a_painful_service_provider_lesson" title="American Eagle Outfitters learns a painful service provider lesson - Computerworld">American Eagles Outfitters just went through an eight day web outage</a> (originally covered by <a href="http://www.storefrontbacktalk.com/securityfraud/oracle-backup-failure-major-factor-in-american-eagle-8-day-crash/">StorefrontBacktalk</a>).  It started when some hardware failed, then the backup hardware failed, then the software designed to restore the data to the replacement hardware failed, and finally their disaster recovery site wasn’t ready.  They were doing the right things: backups, backups of backups, and an alternate site in case their main site is dead in the water.  It just didn’t work when it was needed.  They were <a href="http://storefrontbacktalk.com/e-commerce/down-for-8-days-american-eagles-site-disaster">flat out down for 4 days, and then only had minimal functionality for another four days</a>.</p>
+
+<p>Being down or not fully functional for 8 days is a huge amount of time if you are an online retailer, but it would be catastrophic for just about any company to their network down or seriously hobbled for over a week.  How effective would your company be today if you had were isolated computers, without any Internet access.  On the plus side, that means no Farmville, which would actually be a productivity gain.  But life without email, that’s another story.  For most companies, email is a basic tool of business and you can’t get by without it.</p>
+
+<p>You need to have a disaster recovery (DR) plan.  You have to plan on the basis that a meteor has taken out your building one night, and all your business tools are gone.  You need to backup the key assets of your network.  If it’s on a computer and you need it, then it should be backed up.</p>
+
+<p>Those backups need to be off site.  If your office complex is under 8 feet of water, those backup tapes are going to under 8 feet of water too.  Your IT staff needs to be taking those backups offsite.  It could as simple as taking the backups to a safe deposit box, or a live backup of your system to alternate location.</p>
+
+<p>You also need a disaster recovery site.  You need backup network equipment that you can bring online with your current data.  It could be a dedicated hosting facility or a rack of servers at another location if your company has more than one office.  The important thing is that it’s periodically tested.  A DR site is no good if it doesn’t work.  That is what was the biggest failure for American Eagles Outfitters, their final point of protection wasn’t ready and had never been tested.</p>
+
+<p>You also need to plan for the human resources.  If a disaster strikes your office, you need to have a plan to contact all of the employees and arrange for alternate office facilities.  if your DR site is up and running, it wont do you any good if none of your employees can access it.</p>
+
+<p>Being prepared with a DR plan is not a one time task or expense.  IT departments need to have the support and resources to keep the plan updated.  And they need to be able to test it on a period basis.  A plan that works today with X amount of data, could be utterly useless next year when you have Y amount of data.  You need to be able validate that your backups worked and that they can be restored in a reasonable amount of time.</p>
+
+<p>That’s the hard sell, with companies looking to keep their costs down, it’s hard to keep items like this in the IT budget.  I look at what happened to American Eagles Outfitters as a cautionary tale of what happens if you skimp on an IT budget. </p>
+
+<p>The money quote for <a href="http://www.storefrontbacktalk.com/securityfraud/oracle-backup-failure-major-factor-in-american-eagle-8-day-crash/">why the DR site was not fully functional</a>:</p>
+
+<blockquote>
+  <p>“I know they were supposed to have completed it with Oracle Data Guard, but apparently it must have fallen off the priority list in the past few months and it was not there when needed.”</p>
+</blockquote>
+
+<p>Penny wise, pound foolish.</p>
+
+  </div><a class="u-url" href="/2010/08/30/disaster-recovery-plan-is-useless-if/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Using Powershell to concatenate files and strip off the headers | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Using Powershell to concatenate files and strip off the headers" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="#185282284 / gettyimages.com &lt;/div&gt; We had a request from a client to merge some files for an import process that we have.  As part of one of our applications, we can import delimited (comma, tab, etc)  ASCII files.   The client was generating the files from 5 different processes.  Each exported file has a single line header row, and the files were from OS X.  That meant that the files were Unicode encoded and ended each line with only a carriage return. Our import process can only handle a single ASCII file with DOS style line endings (carriage return + line feed).  It&#8217;s a legacy system and it can&#8217;t be touched.  What we can do to concatenate the multiple files into a single file and strip out the header rows for every file after the first one.  And change the encoding to ASCII and use the CR+LF combination that DOS loves so much. I&#8217;ve been doing a lot of Powershell lately, so it made sense with me to continue with that Swiss Army knife of scripting languages.  I ended up with the following script: [CmdletBinding()] param( [parameter(Mandatory=$TRUE,Position=0)] [String] $Pattern, # input pattern to match, including path. Example: c:\export\*.txt [parameter(Mandatory=$TRUE,Position=1)] [String] $Destination # Destination file to write )" />
+<meta property="og:description" content="#185282284 / gettyimages.com &lt;/div&gt; We had a request from a client to merge some files for an import process that we have.  As part of one of our applications, we can import delimited (comma, tab, etc)  ASCII files.   The client was generating the files from 5 different processes.  Each exported file has a single line header row, and the files were from OS X.  That meant that the files were Unicode encoded and ended each line with only a carriage return. Our import process can only handle a single ASCII file with DOS style line endings (carriage return + line feed).  It&#8217;s a legacy system and it can&#8217;t be touched.  What we can do to concatenate the multiple files into a single file and strip out the header rows for every file after the first one.  And change the encoding to ASCII and use the CR+LF combination that DOS loves so much. I&#8217;ve been doing a lot of Powershell lately, so it made sense with me to continue with that Swiss Army knife of scripting languages.  I ended up with the following script: [CmdletBinding()] param( [parameter(Mandatory=$TRUE,Position=0)] [String] $Pattern, # input pattern to match, including path. Example: c:\export\*.txt [parameter(Mandatory=$TRUE,Position=1)] [String] $Destination # Destination file to write )" />
+<link rel="canonical" href="http://localhost:4000/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/" />
+<meta property="og:url" content="http://localhost:4000/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-07-21T12:52:32-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Using Powershell to concatenate files and strip off the headers" />
+<script type="application/ld+json">
+{"datePublished":"2014-07-21T12:52:32-04:00","@type":"BlogPosting","url":"http://localhost:4000/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/"},"dateModified":"2014-07-21T12:52:32-04:00","description":"#185282284 / gettyimages.com &lt;/div&gt; We had a request from a client to merge some files for an import process that we have.  As part of one of our applications, we can import delimited (comma, tab, etc)  ASCII files.   The client was generating the files from 5 different processes.  Each exported file has a single line header row, and the files were from OS X.  That meant that the files were Unicode encoded and ended each line with only a carriage return. Our import process can only handle a single ASCII file with DOS style line endings (carriage return + line feed).  It&#8217;s a legacy system and it can&#8217;t be touched.  What we can do to concatenate the multiple files into a single file and strip out the header rows for every file after the first one.  And change the encoding to ASCII and use the CR+LF combination that DOS loves so much. I&#8217;ve been doing a lot of Powershell lately, so it made sense with me to continue with that Swiss Army knife of scripting languages.  I ended up with the following script: [CmdletBinding()] param( [parameter(Mandatory=$TRUE,Position=0)] [String] $Pattern, # input pattern to match, including path. Example: c:\\export\\*.txt [parameter(Mandatory=$TRUE,Position=1)] [String] $Destination # Destination file to write )","headline":"Using Powershell to concatenate files and strip off the headers","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Using Powershell to concatenate files and strip off the headers</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-07-21T12:52:32-04:00" itemprop="datePublished">Jul 21, 2014
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <div style="background-color:#fff;display:inline-block;font-family:'Helvetica Neue',Arial,sans-serif;color:#a7a7a7;font-size:11px;width:100%;max-width:478px;min-width:300px;">
+  <div style="overflow:hidden;position:relative;height:0;padding:75.104603% 0 49px 0;width:100%;">
+  </div>
+  
+  <p style="margin:0;">
+    <div style="padding:0;margin:4px 0 0 10px;text-align:left;">
+      <a href="http://www.gettyimages.com/detail/185282284" target="_blank" style="color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;">#185282284</a> / <a href="http://www.gettyimages.com" target="_blank" style="color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;">gettyimages.com</a>
+    </div>&lt;/div&gt; 
+    
+    <p>
+      We had a request from a client to merge some files for an import process that we have.  As part of one of our applications, we can import delimited (comma, tab, etc)  ASCII files.   The client was generating the files from 5 different processes.  Each exported file has a single line header row, and the files were from OS X.  That meant that the files were Unicode encoded and ended each line with only a carriage return.
+    </p>
+    
+    <p>
+      Our import process can only handle a single ASCII file with DOS style line endings (carriage return + line feed).  It&#8217;s a legacy system and it can&#8217;t be touched.  What we can do to concatenate the multiple files into a single file and strip out the header rows for every file after the first one.  And change the encoding to ASCII and use the CR+LF combination that DOS loves so much.
+    </p>
+    
+    <p>
+      I&#8217;ve been doing a lot of <a href="http://technet.microsoft.com/en-us/scriptcenter/powershell.aspx">Powershell</a> lately, so it made sense with me to continue with that Swiss Army knife of scripting languages.  I ended up with the following script:
+    </p>
+    
+    <pre class="brush:ps">
+[CmdletBinding()]
+param(
+  [parameter(Mandatory=$TRUE,Position=0)]
+    [String] $Pattern, # input pattern to match, including path. Example: c:\export\*.txt
+  [parameter(Mandatory=$TRUE,Position=1)]
+    [String] $Destination # Destination file to write
+)
+
+begin {
+    $FileCount = 0
+
+    # Get all of the files that match the wildcard pattern
+
+    Get-ChildItem -path $Pattern | ForEach-Object {
+        Write-Verbose "$FileCount $_.FullName"
+
+        if ($FileCount -eq 0) {
+            # For the file, just write it out as ASCII
+            Get-Content $_.FullName | out-file -FilePath $Destination -Encoding ascii
+        }
+        else {
+            # For each additional file, skip the header line and append as ASCII to the destination
+            Get-Content $_.FullName | select -skip 1 | out-file -FilePath $Destination -Append -Encoding ascii
+        }
+
+        $FileCount++
+    }
+
+    Write-Verbose "$FileCount file(s) processed"
+}
+</pre>
+    
+    <p>
+      The first five lines take care of the parameter binding. This script only needed two parameters. $Pattern is the path to the input files, including wildcards. $Destination is the full path to the file to concatenate the source files into. The optional &#8220;-verbose&#8221; parameter is supporting for displaying some text as the files are being processed. This is a standard Powershell parameter, that&#8217;s why it&#8217;s not included in the parameter list for this command.
+    </p>
+    
+    <pre class="brush:ps">
+    Get-ChildItem -path $Pattern | ForEach-Object {
+</pre>
+    
+    <p>
+      We are using <a href="http://technet.microsoft.com/en-us/library/hh849800.aspx">Get-ChildItem</a> to get all of the files that match $Pattern and then call <a href="http://technet.microsoft.com/en-us/library/hh849731.aspx">ForEach-Object</a> to iterate through that list.
+    </p>
+    
+    <pre class="brush:ps">
+        if ($FileCount -eq 0) {
+            # For the file, just write it out as ASCII
+            Get-Content $_.FullName | out-file -FilePath $Destination -Encoding ascii
+        }
+</pre>
+    
+    <p>
+      For the first file, we just need to read it in and output it back out to the destination files. Powershell will handle the line endings and we will force it to ASCII. The $_ variable is a placeholder variable. When you are using a Foreach-Object loop, the $_ represents the current item of the loop. When you get use Get-ChildItem for a file or folder, .FileName is a property of the item or array of items being returned.
+    </p>
+    
+    <pre class="brush:ps">
+        else {
+            # For each additional file, skip the header line and append as ASCII to the destination
+            Get-Content $_.FullName | select -skip 1 | out-file -FilePath $Destination -Append -Encoding ascii
+        }
+</pre>
+    
+    <p>
+      For each additional file, we read the file in, select every line after the first line, and finally append it as ASCII to the destination file.
+    </p>
+    
+    <p>
+      The &#8220;Write-Verbose&#8221; lines will only execute when the -verbose parameter is used. So if that script had been saved as c:\scripts\convert-files.psi, you would execute it like this:
+    </p>
+    
+    <pre class="brush:ps">
+c:\scripts\convert-files.ps1 -pattern c:\export\*.csv -destination c:\import\all.csv
+
+c:\scripts\convert-files.ps1 -pattern c:\export\*.csv -destination c:\import\all.csv -verbose
+</pre>
+    
+    <p>
+      That would concatenate all files that end with &#8220;.csv&#8221; in the c:\export folder and write a single file named c:\import\all.csv. If you add the &#8220;-verbose&#8221; parameter, you will see the names of the files as they are being processed.
+    </p>
+</p></div>
+
+  </div><a class="u-url" href="/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

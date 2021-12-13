@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Binding an Enum to a DataSource | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Binding an Enum to a DataSource" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I had some code for an ASP.Net Webforms app where I need to present to the user a list of options that were define as Enum.  I want to populate a combobox with the enumerated type values and do it from code automatically.  This is the Enum in question" />
+<meta property="og:description" content="I had some code for an ASP.Net Webforms app where I need to present to the user a list of options that were define as Enum.  I want to populate a combobox with the enumerated type values and do it from code automatically.  This is the Enum in question" />
+<link rel="canonical" href="http://localhost:4000/2011/06/08/binding-enum-to-datasource/" />
+<meta property="og:url" content="http://localhost:4000/2011/06/08/binding-enum-to-datasource/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-06-08T18:56:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Binding an Enum to a DataSource" />
+<script type="application/ld+json">
+{"datePublished":"2011-06-08T18:56:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2011/06/08/binding-enum-to-datasource/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2011/06/08/binding-enum-to-datasource/"},"dateModified":"2011-06-08T18:56:00-04:00","description":"I had some code for an ASP.Net Webforms app where I need to present to the user a list of options that were define as Enum.  I want to populate a combobox with the enumerated type values and do it from code automatically.  This is the Enum in question","headline":"Binding an Enum to a DataSource","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Binding an Enum to a DataSource</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2011-06-08T18:56:00-04:00" itemprop="datePublished">Jun 8, 2011
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I had some code for an ASP.Net Webforms app where I need to present to the user a list of options that were define as Enum.  I want to populate a combobox with the enumerated type values and do it from code automatically.  This is the Enum in question</p>
+
+<pre>enum PrintColorSchema {<br />    Default = 0,<br />    FullColor = 1,<br />    GrayScale = 2,<br />    BlackAndWhite = 3,<br />}</pre>
+
+<p>To make things more interesting, I wanted to exclude the first item in the list, “Default”.  One way to do this would be to manually populate a select list with the values from the Enum.  While that would work for this Enum, I wanted to find a way where I didn’t have to hard code the values.</p>
+
+<p>I added a DropDownList control to the page and in the code behind, I added the following code:</p>
+
+<pre>ColorSchema.DataSource = <br />    Enum.GetValues(typeof(PrintColorSchema))<br />        .Cast&lt;PrintColorSchema&gt;()<br />        .Select(en =&gt; new<br />        {<br />            Value = en,<br />            Text = Wordify(en.ToString())<br />        }).Where (en =&gt; en.Value != PrintColorSchema.Default);<br /><br />ColorSchema.DataTextField = "Text";<br />ColorSchema.DataValueField = "Value";<br />ColorSchema.DataBind();</pre>
+
+<p>What we are using is a bit of <a href="http://msdn.microsoft.com/en-us/library/bb397919.aspx">LINQ</a> to convert the Enum to an IEnumerable collection of an anonymous class. That class has two members, Value and Text. Value is set to the enumerated type and Text is set to prettified version of the enumerated type. That function looks like this:</p>
+
+<pre>public static string Wordify(string pascalCaseString)<br />{<br />    System.Text.RegularExpressions.Regex r = <br />       new System.Text.RegularExpressions.Regex("(?&lt;=[a-z])(?&lt;x&gt;[A-Z])|(?&lt;=.)(?&lt;x&gt;[A-Z])(?=[a-z])");<br />    return r.Replace(pascalCaseString, " ${x}");<br />}&lt;/x&gt;&lt;/x&gt;</pre>
+
+<p>The code</p>
+
+<pre>Enum.GetValues(typeof(PrintColorSchema))</pre>
+
+<p>converts the Enum to an array of constants. The next part</p>
+
+<pre>.Cast&lt;PrintColorSchema&gt;()</pre>
+
+<p>returns an IEnumerable<printcolorschema> collecttion from the array. The code</printcolorschema></p>
+
+<pre>.Select(en =&gt; new<br />{<br />    Value = en,<br />    Text = Wordify(en.ToString())<br />})</pre>
+
+<p>returns a new IEnumerable&lt;&gt; collection of an anonymouse type. That type has the enumeration element as the Value and that element converted to a string as the Text. Since the elements were in <a href="http://msdn.microsoft.com/en-us/library/x2dbyw72%28v=vs.71%29.aspx" title="Capitalization Styles">“PascalCase”</a>, a simple RegEx function was used to split the text into multiple words, The final Where operator is used to filter out the first item from the list.</p>
+
+<p>The HTML that gets rendered:</p>
+
+<pre><select id="ColorSchema" name="ColorSchema"> <br />    &lt;option selected value="FullColor"&gt;Full Color&lt;/option&gt; <br />    &lt;option value="GrayScale"&gt;Gray Scale&lt;/option&gt; <br />    &lt;option value="BlackAndWhite"&gt;Black And White&lt;/option&gt;<br /></select> </pre>
+
+<p>Which renders like this</p>
+
+<p><select name="ColorSchema"><option value="FullColor">Full Color</option><option value="GrayScale">Gray Scale</option><option value="BlackAndWhite">Black And White</option></select></p>
+
+<p>For this Enum, all the code was overkill, adding three<option> elements to the  <select>control would have been less work.  Where this is handy is when you have Enum types with many elements or when the Enum type changes.  If the Enum type changes, no modification to your code is needed to update the combo box.  One less place in the code to fail.  And that is a good thing.&lt;/p&gt; &lt;/printcolorschema&gt;</select></option></p>
+
+  </div><a class="u-url" href="/2011/06/08/binding-enum-to-datasource/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

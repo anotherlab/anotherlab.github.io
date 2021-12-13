@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>The Lost Art of TSR Programming | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="The Lost Art of TSR Programming" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Scott Allen had a amusing post, “Talks You Won’t See At the Local Code Camp”, on his blog.  One of the talks was “The Lost Art of TSR Programming”.   That shook some memories out of the cranial storage device.  I used to write TSR programs, more formerly known as Terminate and Stay Resident." />
+<meta property="og:description" content="Scott Allen had a amusing post, “Talks You Won’t See At the Local Code Camp”, on his blog.  One of the talks was “The Lost Art of TSR Programming”.   That shook some memories out of the cranial storage device.  I used to write TSR programs, more formerly known as Terminate and Stay Resident." />
+<link rel="canonical" href="http://localhost:4000/2008/03/11/lost-art-of-tsr-programming/" />
+<meta property="og:url" content="http://localhost:4000/2008/03/11/lost-art-of-tsr-programming/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-03-11T15:44:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Lost Art of TSR Programming" />
+<script type="application/ld+json">
+{"datePublished":"2008-03-11T15:44:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/03/11/lost-art-of-tsr-programming/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/03/11/lost-art-of-tsr-programming/"},"dateModified":"2008-03-11T15:44:00-04:00","description":"Scott Allen had a amusing post, “Talks You Won’t See At the Local Code Camp”, on his blog.  One of the talks was “The Lost Art of TSR Programming”.   That shook some memories out of the cranial storage device.  I used to write TSR programs, more formerly known as Terminate and Stay Resident.","headline":"The Lost Art of TSR Programming","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">The Lost Art of TSR Programming</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-03-11T15:44:00-04:00" itemprop="datePublished">Mar 11, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Scott Allen had a <a href="http://odetocode.com/Blogs/scott/archive/2008/03/10/11882.aspx" title="Talks You Won’t See At the Local Code Camp">amusing post</a>, “Talks You Won’t See At the Local Code Camp”, on his blog.  One of the talks was “The Lost Art of TSR Programming”.   That shook some memories out of the cranial storage device.  I used to write TSR programs, more formerly known as Terminate and Stay Resident.</p>
+
+<p>This takes back to the days of DOS, when giants like <a href="http://en.wikipedia.org/wiki/DBase">dBase</a> and <a href="http://en.wikipedia.org/wiki/Lotus_123">Lotus</a> walked the land.  Your network was Novell and you feared the <a href="http://docsrv.sco.com/SDK_wcpg/wcpgC.Comparing_the_netware_bindery_a.html">Bindery</a>.  You could only run one program at a time and the 640K limitation was real and not just a <a href="http://tickletux.wordpress.com/2007/02/20/did-bill-gates-say-the-640k-line/" title="Did Bill Gates say the 640k line?">saying commonly misattributed</a> to Bill Gates.</p>
+
+<p>When I was at <a href="http://www.stochos.com/">Stochos</a>, we wrote software to do <a href="http://www.stochos.com/customzed_spc_training.htm">statistical process control</a> (SPC) in the manufacturing industry.  We would collect data from measurement devices or from the manufacturing hardware to monitor the process of making whatever was running.  Back in the late ’80s, we had hardened PC’s running DOS and our software right on the factory floor.  One of my tasks was to write the code to collect the data from the machines and get it into the PC.</p>
+
+<p>Early on, I had decided that the data collection code would run separately from the SPC application.  This allowed the user to exit our app to run other apps while still collecting data.  The way I did that was to write the data collector as a TSR.</p>
+
+<p>The whole TSR section of DOS programming was pretty much an accident.  The DOS print spooler gave DOS the ability to print in the background while your application was running.  The print spooler was the first TSR.  A TSR would load itself using INT 27H to make itself as a TSR type of programming.  Once loaded, the TSR would typically insert itself into the chain of the applications that would receive hardware and/or software events.  If the TSR wasn’t careful, it could wreck havoc with the interrupt chain.</p>
+
+<p>I would write TSR’s that would hook into the serial port or parallel port events.   Some of the time, all I needed to do was to capture data as it came in and write it to a file.  Usually, the hardware would have some sort of protocol and I would have implement it in my code.  One of the odder ones was for a machine that printed foil packets, the kind used for condiments at fast food restaurants.  This machine did not support the logging of it’s data.  But I found a way in.  It had a PC that functioned as operator console with a color screen and keyboard.  Usually the screen would be displaying the current process settings and readings from it’s own measuring devices, but not always.  The PC was connected to the machine over the serial port and was basically being used as a terminal.</p>
+
+<p>I wrote a TSR that would periodically scan the screen in memory.  Since it was running in text mode, it’s fairly easy to ready the screen from memory.  If I saw a certain sequence of characters at a specific location, I knew that I had the main console screen.  I then scanned different locations on the screen and wrote out a text file, logging each set of values as an attribute for our SPC application.</p>
+
+<p>The TSR would read a template file that listed what attributes to look for and at what locations on the screen to expect the attributes at.  The setup of the template was done by trial and error, but once it was set the client never had to touch it.  It even allowed for character translation.  For some odd reason, the console display didn’t use the number “0”, they used the letter “O”.  That took more time to track down then you would have expected.</p>
+
+<p>To keep the size of the TSR down, I used a library named CodeRunner with Microsoft C.  The Coderunner library had the housekeeping code for doing the INT 27h stuff and interrupt managing.  It also took many of the standard routines and replaced them with hard coded assembler optimized for space over performance.  It also had the ability to run most of the TSR out of EMS memory, greatly reducing the footprint in the lower 640K space.  This particuliar TSR took about 6000 bytes of conventional memory.  I remember talking to Ratko Tomic, the engineer who wrote the CodeRunner libraries.  He was genius at squeezing every extra byte of the TSR code.  It’s a lost art.</p>
+
+  </div><a class="u-url" href="/2008/03/11/lost-art-of-tsr-programming/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

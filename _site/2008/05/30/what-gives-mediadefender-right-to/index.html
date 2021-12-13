@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>What gives MediaDefender the right to launch a DoS attack against Revision3 | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="What gives MediaDefender the right to launch a DoS attack against Revision3" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I just started reading Molly Wood’s blog and that’s where I first heard about the Denial of Service (DoS) attack that Revision3 suffered from over the Memorial Day weekend.  Jim Louderback, the CEO of Revision3, wrote a detailed explanation of what happened and who was responsible for the attack on a Revision3 blog post." />
+<meta property="og:description" content="I just started reading Molly Wood’s blog and that’s where I first heard about the Denial of Service (DoS) attack that Revision3 suffered from over the Memorial Day weekend.  Jim Louderback, the CEO of Revision3, wrote a detailed explanation of what happened and who was responsible for the attack on a Revision3 blog post." />
+<link rel="canonical" href="http://localhost:4000/2008/05/30/what-gives-mediadefender-right-to/" />
+<meta property="og:url" content="http://localhost:4000/2008/05/30/what-gives-mediadefender-right-to/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-05-30T04:01:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="What gives MediaDefender the right to launch a DoS attack against Revision3" />
+<script type="application/ld+json">
+{"datePublished":"2008-05-30T04:01:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/05/30/what-gives-mediadefender-right-to/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/05/30/what-gives-mediadefender-right-to/"},"dateModified":"2008-05-30T04:01:00-04:00","description":"I just started reading Molly Wood’s blog and that’s where I first heard about the Denial of Service (DoS) attack that Revision3 suffered from over the Memorial Day weekend.  Jim Louderback, the CEO of Revision3, wrote a detailed explanation of what happened and who was responsible for the attack on a Revision3 blog post.","headline":"What gives MediaDefender the right to launch a DoS attack against Revision3","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">What gives MediaDefender the right to launch a DoS attack against Revision3</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-05-30T04:01:00-04:00" itemprop="datePublished">May 30, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I just started reading Molly Wood’s <a href="http://cultureofownership.org/?p=42" title="The Culture of Ownership: It's time to put MediaDefender out of business">blog</a> and that’s where I first heard about the Denial of Service (DoS) attack that Revision3 suffered from over the Memorial Day weekend.  Jim Louderback, the CEO of Revision3, wrote a detailed explanation of what happened and who was responsible for the attack on a Revision3 blog <a href="http://revision3.com/wp-trackback.php?p=153">post</a>.</p>
+
+<p>Before I go any further, Revision3 uses <a href="http://en.wikipedia.org/wiki/BitTorrent_%28protocol%29" title="BitTorrent is a method of distributing large amounts of data widely without the original distributor incurring the entire costs of hardware, hosting, and bandwidth resources">Bittorrent</a> (BT) to distribute their own content to their viewers so that bandwidth demands on Revision3’s site are greatly reduced.  What Revison3 is doing is legal and is what Bittorent was designed for.</p>
+
+<p>In a nutshell, an anti-piracy organization named MediaDefender had been illegally storing Bittorrent (BT) tracker files on Revision3’s BT server for months.  They used a back door into the Revision3 server.  At some point, the illegally placed files were detected by Revision3 and they closed the security hole that allowed MediaDefender to gain unauthorized access to their servers. </p>
+
+<p>That’s when the bovine excrement hit the rotating air circulation device.  The MediaDefender server lost contact with their BT Tracker files and launched a <a href="http://en.wikipedia.org/wiki/Denial-of-service_attack">DoS</a> attack.  What they did was flood the Revision3 servers with SYN requests, causing a <a href="http://en.wikipedia.org/wiki/SYN_flood" title="A SYN flood is a form of denial-of-service attack in which an attacker sends a succession of SYN requests to a target's system[">“SYN Flood”</a> type of attack.  In layman’s terms, it’s the equivalent of kids ringing your door bell and running away before you open it.  Except here it was happening to Revision3 8000 times a second.</p>
+
+<p>This attack basically stopped anything Internet related at Revision3.  Their web servers, RSS feeds, BT feeds, and everything else outwardly facing was just dead in the water.  It also took out their email.  This caused real and measurable costs to Revision3.</p>
+
+<p>I’m not a lawyer, but I’m pretty sure that it’s not legal to gain unauthorized access to another company’s servers.  The DoS attack was definitely illegal and the FBI has already been brought in.  They suffered measurable losses and MediaDefender should be held legally responsible for the damage they caused.  They should pay compensatory damages for the employee time wasted, for the extra bandwidth costs, and for the lost revenue while the Revision3 sites were down.  In addition, they should pay punitive damages to give them a strong financial incentive not to launch any more DoS attacks.</p>
+
+<p>Jim’s <a href="http://revision3.com/?p=153">description of the events</a> was well written and very even handed and should be read by everyone.  Any company using BT or other forms of P2P technology to distribute their own content is at risk being attacked by MediaDefender.  This isn’t the first time that <a href="http://arstechnica.com/news.ars/post/20070919-p2p-sites-ridicule-mediadefender-takedown-notices-in-wake-of-e-mail-leak.html">MediaDefender has been accused of launching DoS attacks</a>.  What MediaDefender did was wrong, both morally and legally.  How can this type of attack be prevented in the future?  To quote from an <a href="http://en.wikiquote.org/wiki/Star_Trek:_The_Original_Series#The_Omega_Glory">old episode of Star Trek</a>:</p>
+
+<blockquote>
+  <p>“…I’ve found that evil usually triumphs…unless good is very, very careful.” – Dr McCoy.</p>
+</blockquote>
+
+<p>You can’t beat an outfit like MediaDefender by resorting to their tactics with DoS attacks against their servers.  First of all it wouldn’t work, and more importantly it’s just as wrong as their attack.  I think Revision3 should sue for damages and we should all contact the companies that use MediaDefender.  We should tell them that we don’t want to buy products from companies that are associated with MediaDefender.</p>
+
+<p>Getting back to Molly, I first heard about her blog when she mentioned it on an episode of <a href="http://crankygeeks.com/">Cranky Geeks</a>.  I get Cranky Geeks as a <a href="http://www.tivo.com/whatistivo/tivois/videodownloads/index.html">TiVoCast</a> download to my my TiVo and I just started watching it.  After two episodes, I’ve had enough of Dvorak but it was worth listening to the viewpoints of the other debaters on the show.  Molly’s blog is well written and is focused on digital rights and copyright issues (and abuses).</p>
+
+<p><em>postscript:</em><br />
+The inspiration for the Star Trek quote came from the <a href="http://www.codinghorror.com/blog/archives/001123.html#comments">comments</a> for a <a href="http://www.codinghorror.com/blog/archives/001123.html" title="Coding Horror: Designing For Evil">post</a> on <a href="http://www.codinghorror.com/blog/">The Coding Horror blog</a>.  That post discussed the issues of how to block comment spamming on blogs and forum sites.  It’s a great quote and I hope the guy who first used it in the Coding Horror comments doesn’t mind me using it here.</p>
+
+  </div><a class="u-url" href="/2008/05/30/what-gives-mediadefender-right-to/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

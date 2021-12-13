@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Ack! The Windows Installer does not permit installation from a Remote Desktop Connection | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Ack! The Windows Installer does not permit installation from a Remote Desktop Connection" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I’m testing a installer that I had migrated from Wise For Windows to InstallAware. I testing the installer from inside a virtual machine. I used do it with VMware Workstation, but now I’m using virtual machines hosted on our ESX server. That’s usually much faster and doesn’t my bog down my development machine." />
+<meta property="og:description" content="I’m testing a installer that I had migrated from Wise For Windows to InstallAware. I testing the installer from inside a virtual machine. I used do it with VMware Workstation, but now I’m using virtual machines hosted on our ESX server. That’s usually much faster and doesn’t my bog down my development machine." />
+<link rel="canonical" href="http://localhost:4000/2008/05/27/ack-windows-installer-does-not-permit/" />
+<meta property="og:url" content="http://localhost:4000/2008/05/27/ack-windows-installer-does-not-permit/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-05-27T19:45:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Ack! The Windows Installer does not permit installation from a Remote Desktop Connection" />
+<script type="application/ld+json">
+{"datePublished":"2008-05-27T19:45:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/05/27/ack-windows-installer-does-not-permit/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/05/27/ack-windows-installer-does-not-permit/"},"dateModified":"2008-05-27T19:45:00-04:00","description":"I’m testing a installer that I had migrated from Wise For Windows to InstallAware. I testing the installer from inside a virtual machine. I used do it with VMware Workstation, but now I’m using virtual machines hosted on our ESX server. That’s usually much faster and doesn’t my bog down my development machine.","headline":"Ack! The Windows Installer does not permit installation from a Remote Desktop Connection","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Ack! The Windows Installer does not permit installation from a Remote Desktop Connection</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-05-27T19:45:00-04:00" itemprop="datePublished">May 27, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I’m testing a installer that I had migrated from Wise For Windows to <a href="http://www.installaware.com/">InstallAware</a>. I testing the installer from inside a virtual machine. I used do it with VMware Workstation, but now I’m using virtual machines hosted on our <a href="http://info.vmware.com/content/GLP_ESX_LP1">ESX</a> server. That’s usually much faster and doesn’t my bog down my development machine.</p>
+
+<p>I connected to a virtual Server 2003 session using <a href="http://www.codeplex.com/Terminals">Terminals</a>. If you spend anymore of time using Remote Desktop, then you’ll want Terminals. It lets you have multiple sessions open in a single instance of the client by displaying each session in a tab. In addition to RDP, it supports VNC, Telnet/SSH, and a few other protocols. And it’s an open source project, you can’t beat the price tag.</p>
+
+<p>With a RDP connection, you have the ability to automagically have the remote connection access your local resources (drives, printers, serial ports, etc). I was using the local access to disks to allow the remote connection to access my hard drive. I figured that would be a quick way to compile the installer on my local machine and run it remotely through the RDP connection.</p>
+
+<p>Or so I thought. As a prerequisite for this app, I need to install the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=ca9d90fa-e8c9-42e3-aa19-08e2c027f5d6&amp;displaylang=en">ASP.NET 2.0 AJAX Extensions</a>. That comes as a Windows Installer .msi files. When I ran that .msi, I got the following error message:</p>
+
+<p><a href="https://i1.wp.com/2.bp.blogspot.com/_natoSxTaPFU/SDxYaWpSIQI/AAAAAAAAAE4/EEAxORsgzoY/s1600-h/WindowsInstallerError.png"><img src="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/SDxYaWpSIQI/AAAAAAAAAE4/EEAxORsgzoY/s400/WindowsInstallerError.png?w=680" alt="" border="0" data-recalc-dims="1" /></a></p>
+
+<p><a href="http://www.blogger.com/%24WindowsInstallerError.png"><br />
+</a></p>
+
+<p>In other words: <a href="http://www.jonco48.com/blog/fail_20at_20failing.jpg">FAIL</a>. To add insult to injury, that’s not even a standard Windows error dialog. With most Windows error dialog boxes, you can press Ctrl-C and the contents of the dialog box will be copied to the clipboard. You’ll get all of the information from the dialog, something like this (from a different installer):&lt;/p&gt;</p>
+
+<pre>---------------------------<br />Microsoft .NET Framework 2.0 SP1 Setup<br />---------------------------<br />The Windows Installer package:
+
+<p>
+  
+</p>
+
+<br />
+
+<p>
+  c:\c6b28b8b6e56383fbc455e9977dd00\vs_setup.msi
+</p>
+
+<br />
+
+<p>
+  could not be opened.
+</p>
+
+<br />
+
+<p>
+  
+</p>
+
+<br />
+
+<p>
+  Choose Retry to try again. Choose Cancel for exit setup.<br />---------------------------<br />Retry   Cancel<br />---------------------------<br />
+</p></pre>
+
+<p>That’s very handy for reporting errors or for researching with the text from the dialog. I hate it when I see a bug logged in our internal bug tracking system that has embedded a screen shot of an error message. They screen shot the whole page (hello? Alt-Prtscn anyone), save the image, then attach it as a file attachment. Instead, they have press CTRL-C and then CTRL-V and be done with it. Rant over, back to original rant.</p>
+
+<p>For some reason, the AJAX installer team chose not to follow that convention. So I went to Google and manually typed in the text of the error message (<a href="http://www.flickr.com/photos/ulrichp/1362599/">Oh, the huge manatee!</a>) and start viewing the results. Sure enough, it’s in the MS Knowledge base as <a href="http://support.microsoft.com/kb/927063" title="Error message when you try to install a MSI package on a Windows Server 2003-based computer by using RDP connection: &quot;Windows Installer does not permit installation from a Remote Desktop Connection&quot;">927063</a>. Windows Installer does not allow installs in Server 2003 from a RDP connection shared drive. When you allow access to your local C: drive to the remote session, it sees it as <a href="file://%5C%5Ctsclient%5Cc/">\TSClient\c</a> and flat out disallows installs from anything in the <a href="file://%5C%5Ctsclient/">\TSClient</a> namespace. This was determined to be a security risk and the tssclient blocking was added Windows Installer 2.0 at the time of the Windows Server 2003 release.</p>
+
+<p>This KB article lists two resolutions, use the standard UNC notation to reference that drive or map a drive letter to that location. To that list, I’ll a third option. Copy the file from the <a href="file://%5C%5Ctsclient/">\tsclient</a> share to the remote desktop and run it from there. For one off tasks, that’s usually faster than accessing a UNC named object.</p>
+
+<p>Side note: While writing this post, I read on the Terminals home page on CodePlex that Microsoft will be removing the ability to connect to the console session through the RDP protocol in version 6.1. Being able to connect to the console is a little known feature of the RDP client, mstsc.exe. I use it when people leave their RDP sessions hanging on a 2003 Server box that only has the admin remote connections enabled. I can connect over the console session and blow away the left over sessions. I can <a href="http://anotherlab.rajapet.net/2008/04/how-to-identify-who-has-terminal.html" title="How to identify who has a terminal session and how to kill it">query and kill the remote sessions via the command line</a>, but sometimes you just need one session open. If you want to see this feature left in the RDP stack, place your vote <a href="https://connect.microsoft.com/WindowsServerFeedback/feedback/ViewFeedback.aspx?FeedbackID=341289" title="Feedback: RDC : ConnectToServerConsole vs ConnectToAdministerServer">here</a>.</p>
+
+  </div><a class="u-url" href="/2008/05/27/ack-windows-installer-does-not-permit/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>How (and why) to increase the Windows Desktop heap size | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="How (and why) to increase the Windows Desktop heap size" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jon Galloway had a posting about issues that he came across when he opened too many tabs in IE7.  Apparently the Desktop ran out of heap space and Bad Things happened.  Jeff Atwood came across the same problem.  I remember reading Jeff’s post back in October, but I didn’t associate it with a problem that I was having.   " />
+<meta property="og:description" content="Jon Galloway had a posting about issues that he came across when he opened too many tabs in IE7.  Apparently the Desktop ran out of heap space and Bad Things happened.  Jeff Atwood came across the same problem.  I remember reading Jeff’s post back in October, but I didn’t associate it with a problem that I was having.   " />
+<link rel="canonical" href="http://localhost:4000/2008/01/15/how-and-why-to-increase-windows-desktop/" />
+<meta property="og:url" content="http://localhost:4000/2008/01/15/how-and-why-to-increase-windows-desktop/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-01-15T17:04:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How (and why) to increase the Windows Desktop heap size" />
+<script type="application/ld+json">
+{"datePublished":"2008-01-15T17:04:00-05:00","@type":"BlogPosting","url":"http://localhost:4000/2008/01/15/how-and-why-to-increase-windows-desktop/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/01/15/how-and-why-to-increase-windows-desktop/"},"dateModified":"2008-01-15T17:04:00-05:00","description":"Jon Galloway had a posting about issues that he came across when he opened too many tabs in IE7.  Apparently the Desktop ran out of heap space and Bad Things happened.  Jeff Atwood came across the same problem.  I remember reading Jeff’s post back in October, but I didn’t associate it with a problem that I was having.   ","headline":"How (and why) to increase the Windows Desktop heap size","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How (and why) to increase the Windows Desktop heap size</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-01-15T17:04:00-05:00" itemprop="datePublished">Jan 15, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Jon Galloway had a <a href="http://weblogs.asp.net/jgalloway/archive/2008/01/14/registry-setting-keeps-windows-from-wigging-out-when-you-open-lots-of-ie7-tabs.aspx" title="Jon Galloway: Registry setting keeps Windows from wigging out when you open lots of IE7 tabs">posting about issues that he came across when he opened too many tabs in IE7</a>.  Apparently the Desktop ran out of heap space and Bad Things happened.  <a href="http://www.codinghorror.com/blog/archives/000966.html" title="Coding Horror: Pushing Operating System Limits">Jeff Atwood came across the same problem</a>.  I remember reading Jeff’s post back in October, but I didn’t associate it with a problem that I was having.   </p>
+
+<p>I was finding my self rebooting my XP dev box a couple of times a day.  The desktop was basically losing control and I couldn’t do anything with the task bar or Start Menu.  Part of the problem was due to <a href="http://www.catb.org/~esr/jargon/html/W/wonky.html">wonky</a> display drivers from Nvidia.  I updated the drivers and the problem went mostly away.   But not completely.  I have a dual monitor setup, and I have a tendency to keep lots of things open on a desktop that spans both displays.</p>
+
+<p>The longer I used Firefox, the less stable the system became.  I just became used to restarting Firefox.  One of the nicer things with Firefox is that you can restart it and come back to the same tabs loaded with the same pages.  BTW, <a href="https://addons.mozilla.org/en-US/firefox/user/6">Jed Brown</a>‘s <a href="https://addons.mozilla.org/en-US/firefox/addon/1249">Restart Firefox</a> Add-on is very helpful when you want to bounce FireFox and still have the same 12 tabs open.</p>
+
+<p>At any rate, I was seeing the same symptoms that Jon reported.  There is a registry setting that you can edit that will allow you to specify the heap size reserved for the Desktop.  The default size is 3MB, everybody seems to agree that 8MB is the way to go.  The <a href="http://support.microsoft.com/kb/126962/" title="KB 126962: &quot;Out of Memory&quot; error message appears when you have a large number of programs running">3MB number was set for NT 3.51</a>, back when we had a lot less memory in out machines.  This is only applicable for 32-bit versions of Windows, the 64-bit version do not have these memory limitations.</p>
+
+<p>Kevin Dente <a href="http://weblogs.asp.net/kdente/archive/2004/06/04/148145.aspx" title="Kevin Dente: Windows XP flakiness - solved">documented</a> how to bump this value.  To change this setting, you’ll need to edit the key <strong>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\SubSystems</strong> and edit the “Windows” value.  This value is (as Kevin put it) a “big honkin’ string” and you only want to edit one portion of it.  Look for the part that starts with “SharedSection”.  It will have three numbers, the middle one will probably be 3072.  Change that to 8192.  On my machine, that part changed from “SharedSection=1024,3072,512” to SharedSection=1024,8192,512.  The <a href="http://www.catb.org/~esr/jargon/html/Y/Your-mileage-may-vary.html" title="Your mileage may vary">YMMV</a> rule is especially applicable here.  Remember to reboot after making this change.</p>
+
+<p>The <a href="http://support.microsoft.com/default.aspx?scid=kb;en-us;184802" title="KB 184802: PRB: User32.dll or Kernel32.dll fails to initialize">first number</a> is the shared heap size common to all desktops.  The global handle table comes out of the shared heap.  The <a href="http://support.microsoft.com/default.aspx?scid=kb;EN-US;126962" title="KB 126962: &quot;Out of Memory&quot; error message appears when you have a large number of programs running">second</a> and <a href="http://support.microsoft.com/default.aspx?scid=kb;EN-US;142676" title="KB: 142676 Overcoming User32.dll Initialization Failure Errors">third numbers</a> in SharedSection represent the size of interactive and non-interactive desktop heaps (services that interact with the desktop).  If terminal services are enabled, there may be a fourth number.  You only want to change the second number.</p>
+
+<div>
+  Tech Tags: <a href="http://technorati.com/tag/SharedSection" rel="tag">SharedSection</a> <a href="http://technorati.com/tag/XP" rel="tag">XP</a> <a href="http://technorati.com/tag/Memory" rel="tag">Memory</a> <a href="http://technorati.com/tag/Desktop" rel="tag">Desktop</a> <a href="http://technorati.com/tag/Heap" rel="tag">Heap</a>
+</div>
+
+  </div><a class="u-url" href="/2008/01/15/how-and-why-to-increase-windows-desktop/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

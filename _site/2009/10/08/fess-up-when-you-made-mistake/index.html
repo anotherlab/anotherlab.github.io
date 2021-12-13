@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Fess up when you made a mistake | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Fess up when you made a mistake" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I was working on a installer project for a new tool that we will be releasing this fall when I hit the most odd error.  Right after the installer started up, it would bomb out with an error message that the some files that it need were missing.  And it only happened when I called a command line app that I wrote from within the installer.  If I commented out the code that executed that app, the installer ran as expected." />
+<meta property="og:description" content="I was working on a installer project for a new tool that we will be releasing this fall when I hit the most odd error.  Right after the installer started up, it would bomb out with an error message that the some files that it need were missing.  And it only happened when I called a command line app that I wrote from within the installer.  If I commented out the code that executed that app, the installer ran as expected." />
+<link rel="canonical" href="http://localhost:4000/2009/10/08/fess-up-when-you-made-mistake/" />
+<meta property="og:url" content="http://localhost:4000/2009/10/08/fess-up-when-you-made-mistake/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2009-10-08T03:43:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Fess up when you made a mistake" />
+<script type="application/ld+json">
+{"datePublished":"2009-10-08T03:43:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2009/10/08/fess-up-when-you-made-mistake/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2009/10/08/fess-up-when-you-made-mistake/"},"dateModified":"2009-10-08T03:43:00-04:00","description":"I was working on a installer project for a new tool that we will be releasing this fall when I hit the most odd error.  Right after the installer started up, it would bomb out with an error message that the some files that it need were missing.  And it only happened when I called a command line app that I wrote from within the installer.  If I commented out the code that executed that app, the installer ran as expected.","headline":"Fess up when you made a mistake","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Fess up when you made a mistake</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2009-10-08T03:43:00-04:00" itemprop="datePublished">Oct 8, 2009
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I was working on a installer project for a new tool that we will be releasing this fall when I hit the most odd error.  Right after the installer started up, it would bomb out with an error message that the some files that it need were missing.  And it only happened when I called a command line app that I wrote from within the installer.  If I commented out the code that executed that app, the installer ran as expected.</p>
+
+<p>Ok, so your first thought would be what is that command line app doing?  It wasn’t my first thought.  It was tested code and it worked just fine in some other installer projects.  That was a rookie mistake and I should have known better.  The app does a few things.  It was designed to cache the settings of an installed app and restore so that if you do an upgrade in place, the settings are migrated from the old version to the new version.  Plus it has code to clean up extra files left around from previous installers.</p>
+
+<p>After beating my head against the wall for day on it, I contacted the technical support for the installer.  They asked for a sample project and I sent one in.  While I was waiting for a response back tech support, I continued to play around with the installer.  This tool (<a href="http://www.installaware.com/">InstallAware</a>) has been rock solid for me since I started using it, it had to be something that I was doing wrong.</p>
+
+<p>I looked at source code for my command line app and sure enough, under the right conditions, it would delete the files that the installer was using to install the actual app.  That wasn’t good.</p>
+
+<p>Actually it <em>was</em> good, the mistake was in my code which meant I could fix it.  Which I did and my installer did what it was supposed to do.  I would rather fix my own bugs than be dependent on another vendor fixing their bugs.  I had switched from Wise For Windows to InstallAware because it forever to get fixes from Wise.  They released a new build about once a year.  if they didn’t fix the bug and you didn’t have a work around, then that bug became a feature.</p>
+
+<p>Meanwhile, I still had an open support case with InstallAware.  I immediately logged into their support site and I closed out the support request.  I added a brief note explaining that this was self-inflicted and explained why my code was turning in on itself.  A short while later I received a brief note from one of their support engineers thanking me for the explanation.</p>
+
+<p>I think the courtesy message to tech support is the right thing to do.  First of all it’s just common courtesy, it’s wrong to waste their time tracking down your bug after you have resolved it on your own.  Plus it’s going to help me if I need support from this company again.  If they had spent time tracking down a problem that was caused by my own carelessness, they would be less likely to help out with a legitimate support request.</p>
+
+  </div><a class="u-url" href="/2009/10/08/fess-up-when-you-made-mistake/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

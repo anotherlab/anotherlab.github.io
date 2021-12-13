@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Getting Hyper-V to work on a HP Envy23 | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Getting Hyper-V to work on a HP Envy23" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I finally got Hyper-V working on our HP Envy 23.  For Christmas, I had bought a new PC for our family.  We have a shared PC in a our family room that everyone uses for email, browsing, etc.  At the time I was working on a Windows Phone 8 project and I needed a machine that could handle that development.  My own PC was running Windows 7 and you need Windows 8 or better for Windows Phone development." />
+<meta property="og:description" content="I finally got Hyper-V working on our HP Envy 23.  For Christmas, I had bought a new PC for our family.  We have a shared PC in a our family room that everyone uses for email, browsing, etc.  At the time I was working on a Windows Phone 8 project and I needed a machine that could handle that development.  My own PC was running Windows 7 and you need Windows 8 or better for Windows Phone development." />
+<link rel="canonical" href="http://localhost:4000/2013/05/09/getting-hyper-v-to-work-on-hp-envy23/" />
+<meta property="og:url" content="http://localhost:4000/2013/05/09/getting-hyper-v-to-work-on-hp-envy23/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-05-09T17:57:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Getting Hyper-V to work on a HP Envy23" />
+<script type="application/ld+json">
+{"datePublished":"2013-05-09T17:57:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2013/05/09/getting-hyper-v-to-work-on-hp-envy23/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2013/05/09/getting-hyper-v-to-work-on-hp-envy23/"},"dateModified":"2013-05-09T17:57:00-04:00","description":"I finally got Hyper-V working on our HP Envy 23.  For Christmas, I had bought a new PC for our family.  We have a shared PC in a our family room that everyone uses for email, browsing, etc.  At the time I was working on a Windows Phone 8 project and I needed a machine that could handle that development.  My own PC was running Windows 7 and you need Windows 8 or better for Windows Phone development.","headline":"Getting Hyper-V to work on a HP Envy23","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Getting Hyper-V to work on a HP Envy23</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2013-05-09T17:57:00-04:00" itemprop="datePublished">May 9, 2013
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I finally got Hyper-V working on our HP Envy 23.  For Christmas, I had bought a new PC for our family.  We have a shared PC in a our family room that everyone uses for email, browsing, etc.  At the time I was working on a Windows Phone 8 project and I needed a machine that could handle that development.  My own PC was running Windows 7 and you need Windows 8 or better for Windows Phone development.</p>
+
+<p>Actually, you need better than Windows 8 for effective Windows Phone development.  To run the Windows Phone 8 emulator, you need to have <a href="http://blogs.msdn.com/b/olivnie/archive/2013/01/18/hyper-v-on-client-windows-8-pro.aspx">Hyper-V</a> installed, which requires Windows 8 Professional and a machine with the virtualization enabled in the chipset.</p>
+
+<p>We wanted an all-in-one PC.  It’s in a shared family space and a AIO will take up less room and generally look nicer.  Dell had some interesting models, but you couldn’t get one with Windows 8 Pro, just Windows 8.</p>
+
+<p>With HP, you could get a machine with Windows 8 Pro.  So I ordered an <a href="http://shopping.hp.com/en_US/home-office/-/products/Desktops/HP-ENVY-TouchSmart/C9D79AV?HP-ENVY-23-d140t-TouchSmart-All-in-One-Desktop-PC">Envy 23</a> with an i5, 6GB of RAM, and Windows 8 Pro.  It is a nice machine with a good 23” touchscreen.  We went from a huge mess of power cables, USB cables, and assorted wires, down to just a power cable and an Ethernet cable.</p>
+
+<table align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>
+      <a href="https://i2.wp.com/www.rajapet.net/photos/i-d8qNgKv/0/S/i-d8qNgKv-S.png" imageanchor="1"><img loading="lazy" border="0" height="240" src="https://i2.wp.com/www.rajapet.net/photos/i-d8qNgKv/0/S/i-d8qNgKv-S.png?resize=320%2C240" width="320" data-recalc-dims="1" /></a>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      HP Envy 23
+    </td>
+  </tr>
+</table>
+
+<blockquote>
+  <p>As a side note, while this machine has decent WiFi built in.  I prefer that ancient Ethernet technology.  Our house has so many devices using WiFi, anything networkable that’s not mobile goes on Ethernet.  I had a few rooms wired for CAT-5e years ago and I use <a href="http://www.howstuffworks.com/power-network.htm">Powerline adapters</a> where the cables don’t reach.</p>
+</blockquote>
+
+<p>As typical of a new PC designed for home use, hardware virtualization was not enabled out of the box. I had to go into the BIOS screen and after a bit of searching, I found the virtualization setting under “Security”.  I don’t know why they put it there, but that’s where it was.  So I turned it on and booted up into Windows.  Since Hyper-V is not typically installed on a new machine, I had to install it.  Pretty easy to do and took less time than trying to find the virtualization setting in the BIOS.</p>
+
+<p>I rebooted the PC and it hung on the loading Windows screen.  Turned off the virtualization setting and it rebooted just fine.  Tried uninstalling and reinstalling Hyper-V, didn’t fix it.  After trying multiple combinations, it was obvious that virtualization and Hyper-V didn’t work.  I called HP support and they said that Hyper-V was supported on this hardware and that either I had installed something that conflicted with Hyper-V or I had a hardware fault.</p>
+
+<p>I didn’t agree with either assessment, but I had to follow along with HP’s support.  When I bought the machine, I had bought 3 years of priority support.  I usually don’t bother with extended support, but it was the cheapest way to buy this machine.  They shipped out a new machine and a week later it arrived.  Fired up the new machine and enabled Hyper-V and virtualization.  Same problem.  That both ruled out a machine specific hardware fault and ruled out the installation of another app being the root cause.</p>
+
+<p>At this point, I just wrote off the problem and sent back the new machine.  Other than the Hyper-V problem, the rest of my family was very happy with the Envy 23.  I ended up building a new machine from scratch that happily runs Hyper-V, so I no longer had the pressing need for Hyper-V on the this machine.</p>
+
+<p>But not being able to run Hyper-V on a machine with the CPU and OS that clearly support virtualization bugged me.  Last night, I did a quick search on “Envy23” and “Hyper-V” and saw a few hits.  I was not the only one with this problem.  The first match was on <a href="http://ocial.technet.microsoft.com/Forums/en-US/w8itprovirt/thread/80d1caf8-0c2e-427d-b246-4161aa176288">“Enabling Hyper-V and restarting results in a hung system…”</a>.  It was posted by another developer with a similar Envy 23 machine and was seeing the same problem.</p>
+
+<p>Someone had responded to that message that he had fixed the same problem on his HP laptop by updating the Bluetooth adapter’s driver.  He had included <a href="http://h30434.www3.hp.com/t5/Desktop-Lockups-Freezes-Hangs/Cannot-boot-if-HP-ENVY-Bios-Virtualization-enabled-for-Win8/m-p/2538189#M22348">a link to another message thread</a> in a HP forum with details about the version and where to get the file.</p>
+
+<p>The problem seemed to be with the Ralink Bluetooth 4.0 Adapter.  Various people had version 9.2.10.6 of the driver installed.  When they installed to version 9.2.10.10, the problem went away.  That sounded like an option worth pursuing.</p>
+
+<p>So I decided to roll the <a href="http://now%20normally%2C%20i%27m%20not%20a%20fan%20of%20installing%20hardware%20drivers%20unless%20i%20know%20that%20they%20are%20specifically%20for%20the%20machine%20that%20i%20own.%20%20it%27s%20a%20commodity%20part%20and%20most%20likely%20uses%20a%20driver%20for%20a%20family%20of%20related%20parts./">polyhedral dice</a> and try installing that driver.  Now normally, I’m not a fan of installing hardware drivers unless I know that they are specifically for the hardware that I own.  It’s a commodity part and most likely uses a driver for a family of related parts. Also, I back up my machines to a Windows Home Server box.  The worst thing that happens is that I hose the machine and have to do a bare metal restore.</p>
+
+<p>I downloaded the driver and starting installing it. As part of the install, it uninstalled the previous version and I had an “uh oh” moment.  My mouse and keyboard connect over Bluetooth, updating the driver could affect them.  Fortunately, they worked through the process.  After installing the update, I rebooted the PC and everything seemed to work just fine.  The mouse and keyboard still did mouse and keyboardy things, so I knew that Bluetooth was still operational.</p>
+
+<p>I rebooted one more time and enabled virtualization in the BIOS and booted up the machine.  This was <a href="http://www.youtube.com/watch?v=68N-Oopdtao">the moment of truth</a>.  The PC booted up normally and I was able to verify that Hyper-V was installed and functioning normally.</p>
+
+<p>So, that brings us back to why it failed with the original driver installed.  I don’t know why a Bluetooth driver would hose the operating system when Hyper-V was enabled.  That is so random, it’s not something that I would have considered as a the root cause.  From reading the messages on the HP forum, it looks like someone had reinstalled the OS and had needed to download the Bluetooth driver.  When they installed the latest version available, they were able to boot with Hyper-V and made the connection that the Ralink driver was the root cause.</p>
+
+  </div><a class="u-url" href="/2013/05/09/getting-hyper-v-to-work-on-hp-envy23/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

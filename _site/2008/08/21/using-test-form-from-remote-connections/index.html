@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Using the test form from remote connections for .NET web services | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Using the test form from remote connections for .NET web services" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I’m working on a web service using C# and targeting the .NET 2.0 Framework.  Nothing terribly fancy, but it has some code to log the caller’s IP address (via HttpContext.Current.Request.UserHostAddress).  While testing the code, I like using the test form functionality that .NET provides with web services.  By design, it only works locally.  If you try to use the test form from a remote machine, you’ll get the error:" />
+<meta property="og:description" content="I’m working on a web service using C# and targeting the .NET 2.0 Framework.  Nothing terribly fancy, but it has some code to log the caller’s IP address (via HttpContext.Current.Request.UserHostAddress).  While testing the code, I like using the test form functionality that .NET provides with web services.  By design, it only works locally.  If you try to use the test form from a remote machine, you’ll get the error:" />
+<link rel="canonical" href="http://localhost:4000/2008/08/21/using-test-form-from-remote-connections/" />
+<meta property="og:url" content="http://localhost:4000/2008/08/21/using-test-form-from-remote-connections/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-08-21T15:16:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Using the test form from remote connections for .NET web services" />
+<script type="application/ld+json">
+{"datePublished":"2008-08-21T15:16:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/08/21/using-test-form-from-remote-connections/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/08/21/using-test-form-from-remote-connections/"},"dateModified":"2008-08-21T15:16:00-04:00","description":"I’m working on a web service using C# and targeting the .NET 2.0 Framework.  Nothing terribly fancy, but it has some code to log the caller’s IP address (via HttpContext.Current.Request.UserHostAddress).  While testing the code, I like using the test form functionality that .NET provides with web services.  By design, it only works locally.  If you try to use the test form from a remote machine, you’ll get the error:","headline":"Using the test form from remote connections for .NET web services","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Using the test form from remote connections for .NET web services</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-08-21T15:16:00-04:00" itemprop="datePublished">Aug 21, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I’m working on a web service using C# and targeting the .NET 2.0 Framework.  Nothing terribly fancy, but it has some code to log the caller’s IP address (via HttpContext.Current.Request.UserHostAddress).  While testing the code, I like using the test form functionality that .NET provides with web services.  By design, it only works locally.  If you try to use the test form from a remote machine, you’ll get the error:</p>
+
+<blockquote>
+  <p>The test form is only available for requests from the local machine</p>
+</blockquote>
+
+<p>That’s fine, when you expose a web service you don’t want to make it too easy for people to start poking at your web service methods with a pointy stick.  Still, I wanted to test it from another machine and it saves time being able to enter in different values without having to code up a test framework.  Plus, I wanted to make sure that my code was reliably picking up the caller’s IP address.</p>
+
+<p>After just a tiny bit of searching in the <a href="http://en.wikipedia.org/wiki/Series_of_tubes" target="_blank">series of tubes</a>, I found how to easily enable the web service test form for remote connections.  Juan Ignacio Gelos <a href="http://geekswithblogs.net/juang/archive/2005/11/28/61437.aspx" target="_blank">posted</a> what you need to add to the web service web.config file to enable the test form.</p>
+
+<pre><span>&lt;</span><span>configuration</span><span>&gt;</span><br /><span>&lt;</span><span>system.web</span><span>&gt;</span><br /><span>&lt;</span><span>webServices</span><span>&gt;</span><br /><span>&lt;</span><span>protocols</span><span>&gt;</span><br /><span>&lt;</span><span>add</span> <span>name</span><span>="HttpGet"</span><span>/&gt;</span><br /><span>&lt;</span><span>add</span> <span>name</span><span>="HttpPost"</span><span>/&gt;</span><br /><span>&lt;/</span><span>protocols</span><span>&gt;</span><br /><span>&lt;/</span><span>webServices</span><span>&gt;</span><br /><span>&lt;/</span><span>system.web</span><span>&gt;</span><br /><span>&lt;/</span><span>configuration</span><span>&gt;</span></pre>
+
+<p>You are still limited to run methods that have simple data types as input, but it’s very handy for testing.  Since this setting lives in web.config, it’s easy to remove it when I run a build.  I’m using <a href="http://www.finalbuilder.com/" target="_blank">FinalBuilder</a> on a dedicated build box and it’s easy to clean up .config files so that developer settings get scrubbed before the files get packages into an installer.</p>
+
+  </div><a class="u-url" href="/2008/08/21/using-test-form-from-remote-connections/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

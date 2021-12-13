@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Debugging devices without displays or debuggers | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Debugging devices without displays or debuggers" />
+<meta name="author" content="Chris Miller" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I’ve been writing firmware for an RFID reader that connects over USB to an Android device.  Our installers will need to upgrade the readers out in the field and they have no way of knowing which firmware has been installed.  The reader, an Elatec TWN4, has a pretty decent API that you write code for, using the C language.  Their API includes a wonderful function called “Beep”.  You pass in the volume, frequency, how to play the tone (in ms), and finally, how long to be quiet after the tone has been played.  So I have been setting the readers to play a few notes on power up.  This allows the installers to know which firmware has been installed." />
+<meta property="og:description" content="I’ve been writing firmware for an RFID reader that connects over USB to an Android device.  Our installers will need to upgrade the readers out in the field and they have no way of knowing which firmware has been installed.  The reader, an Elatec TWN4, has a pretty decent API that you write code for, using the C language.  Their API includes a wonderful function called “Beep”.  You pass in the volume, frequency, how to play the tone (in ms), and finally, how long to be quiet after the tone has been played.  So I have been setting the readers to play a few notes on power up.  This allows the installers to know which firmware has been installed." />
+<link rel="canonical" href="http://localhost:4000/2017/05/19/debugging-devices-without-displays-or-debuggers/" />
+<meta property="og:url" content="http://localhost:4000/2017/05/19/debugging-devices-without-displays-or-debuggers/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-19T16:56:42-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Debugging devices without displays or debuggers" />
+<script type="application/ld+json">
+{"datePublished":"2017-05-19T16:56:42-04:00","@type":"BlogPosting","url":"http://localhost:4000/2017/05/19/debugging-devices-without-displays-or-debuggers/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/05/19/debugging-devices-without-displays-or-debuggers/"},"dateModified":"2017-05-19T16:56:42-04:00","author":{"@type":"Person","name":"Chris Miller"},"description":"I’ve been writing firmware for an RFID reader that connects over USB to an Android device.  Our installers will need to upgrade the readers out in the field and they have no way of knowing which firmware has been installed.  The reader, an Elatec TWN4, has a pretty decent API that you write code for, using the C language.  Their API includes a wonderful function called “Beep”.  You pass in the volume, frequency, how to play the tone (in ms), and finally, how long to be quiet after the tone has been played.  So I have been setting the readers to play a few notes on power up.  This allows the installers to know which firmware has been installed.","headline":"Debugging devices without displays or debuggers","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Debugging devices without displays or debuggers</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-05-19T16:56:42-04:00" itemprop="datePublished">May 19, 2017
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I’ve been writing firmware for an RFID reader that connects over USB to an Android device.  Our installers will need to upgrade the readers out in the field and they have no way of knowing which firmware has been installed.  The reader, an <a href="https://www.elatec-rfid.com/en/products/multi-technology-rfid-reader/housed/hf-lf-nfc-multi-technology/">Elatec TWN4</a>, has a pretty decent API that you write code for, using the C language.  Their API includes a wonderful function called “Beep”.  You pass in the volume, frequency, how to play the tone (in ms), and finally, how long to be quiet after the tone has been played.  So I have been setting the readers to play a few notes on power up.  This allows the installers to know which firmware has been installed.</p>
+
+<p>The original firmware plays the opening notes to <a href="https://www.youtube.com/watch?v=ikGyZh0VbPQ">“Smoke On The Water”</a>.  Because anything that can produce at least 4 notes can play it.  The following C code will beep it’s way through some vintage Deep Purple</p>
+
+<div style="tab-size: 8" id="gist47849712" class="gist">
+  <div class="gist-file" translate="no">
+    <div class="gist-data">
+      <div class="js-gist-file-update-container js-task-list-container file-box">
+        <div id="file-smokeonthewater-c" class="file my-2">
+          <div itemprop="text" class="Box-body p-0 blob-wrapper data type-c  ">
+            <div class="js-check-bidi blob-code-content">
+              <template class="js-file-alert-template">&lt;/p&gt; 
+              
+              <div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg>&lt;/p&gt; 
+                
+                <p>
+                  <span><br /> This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br /> <a href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br /> </span>
+                </p>
+                
+                <div data-view-component="true" class="flash-action">
+                  <a href="" data-view-component="true" class="btn-sm btn">&lt;/p&gt; 
+                  
+                  <p>
+                    Show hidden characters
+                  </p>
+                  
+                  <p>
+                    &lt;/a&gt; &lt;/div&gt; &lt;/div&gt; 
+                    
+                    <p>
+                      &lt;/template&gt;<br /> <template class="js-line-alert-template"><br /> <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="bidi-line-alert tooltipped tooltipped-e"><br /> <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg><br /> </span></template>
+                    </p>
+                    
+                    <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="C" data-tagsearch-path="SmokeOnTheWater.c">
+                      <tr>
+                        <td id="file-smokeonthewater-c-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC1" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-k">void</span> <span class="pl-en">Smoke</span>()
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC2" class="blob-code blob-code-inner js-file-line">
+                          {
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC3" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-k">int</span> v = <span class="pl-c1">50</span>;
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC4" class="blob-code blob-code-inner js-file-line">
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC5" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-k">int</span> duration = <span class="pl-c1">500</span>;
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC6" class="blob-code blob-code-inner js-file-line">
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC7" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">2940</span>, duration, <span class="pl-c1">10</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L8" class="blob-num js-line-number js-code-nav-line-number" data-line-number="8">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC8" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">3490</span>, duration, <span class="pl-c1">10</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L9" class="blob-num js-line-number js-code-nav-line-number" data-line-number="9">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC9" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">3920</span>, duration * <span class="pl-c1">1.5</span>, <span class="pl-c1">150</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L10" class="blob-num js-line-number js-code-nav-line-number" data-line-number="10">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC10" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">2940</span>, duration, <span class="pl-c1">10</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L11" class="blob-num js-line-number js-code-nav-line-number" data-line-number="11">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC11" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">3490</span>, duration, <span class="pl-c1">10</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L12" class="blob-num js-line-number js-code-nav-line-number" data-line-number="12">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC12" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">4150</span>, duration * <span class="pl-c1">0.5</span>, <span class="pl-c1">10</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L13" class="blob-num js-line-number js-code-nav-line-number" data-line-number="13">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC13" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">3920</span>, duration * <span class="pl-c1">2</span>, <span class="pl-c1">150</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L14" class="blob-num js-line-number js-code-nav-line-number" data-line-number="14">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC14" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">2940</span>, duration, <span class="pl-c1">10</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L15" class="blob-num js-line-number js-code-nav-line-number" data-line-number="15">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC15" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">3490</span>, duration, <span class="pl-c1">10</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L16" class="blob-num js-line-number js-code-nav-line-number" data-line-number="16">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC16" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">3920</span>, duration * <span class="pl-c1">1.5</span>, <span class="pl-c1">150</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L17" class="blob-num js-line-number js-code-nav-line-number" data-line-number="17">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC17" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">3490</span>, duration, <span class="pl-c1">10</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L18" class="blob-num js-line-number js-code-nav-line-number" data-line-number="18">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC18" class="blob-code blob-code-inner js-file-line">
+                          <span class="pl-c1">Beep</span>(v, <span class="pl-c1">2940</span>, duration * <span class="pl-c1">2.5</span>, <span class="pl-c1">10</span>);
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-smokeonthewater-c-L19" class="blob-num js-line-number js-code-nav-line-number" data-line-number="19">
+                        </td>
+                        
+                        <td id="file-smokeonthewater-c-LC19" class="blob-code blob-code-inner js-file-line">
+                          }
+                        </td>
+                      </tr>
+                    </table>&lt;/div&gt;&lt;/div&gt;
+                  </p>&lt;/div&gt; &lt;/div&gt;&lt;/div&gt; 
+                  
+                  <div class="gist-meta">
+                    <a href="https://gist.github.com/anotherlab/43e59d75423bba23673c834ce1d1f9d1/raw/6baa2d0dd5be304cdeb2885d08a8ef5fbbb93008/SmokeOnTheWater.c" style="float:right">view raw</a><br /> <a href="https://gist.github.com/anotherlab/43e59d75423bba23673c834ce1d1f9d1#file-smokeonthewater-c"><br /> SmokeOnTheWater.c<br /> </a><br /> hosted with &#10084; by <a href="https://github.com">GitHub</a>
+                  </div>&lt;/p&gt;&lt;/div&gt; &lt;/div&gt; 
+                  
+                  <p>
+                    We added some code to the firmware to allow our app to put the reader is a sleep mode.  Our installers will need to upgrade a few devices out in the field, so it was time to change that tune.  By checking a few different sites, we found simplified chord progressions for some recognizable songs.  My choices were restricted to simple note changes, you can&#8217;t generated complicated chords from a device that only knows how to beep.  It does that beep very well, but at the end of the day it&#8217;s only a beep.
+                  </p>
+                  
+                  <p>
+                    I needed to play something else to let the installers know that the firmware had been updated.  Something short, something simple, something simple.  One of my musically inclined co-workers worked out the opening notes of <a href="https://www.youtube.com/watch?v=9jK-NcRmVcw">&#8220;The Final Countdown&#8221;</a> by Europe.  That song has a distinctive opening riff.  <a href="https://www.youtube.com/watch?v=wITDyljrWuA">And</a> <a href="https://www.youtube.com/watch?v=vawrp_gMXJs">many</a> <a href="https://www.youtube.com/watch?v=S5AsyuNia5Y">cover</a> <a href="https://www.youtube.com/watch?v=6GRHANmafp0">versions</a>.  <a href="https://www.youtube.com/watch?v=FjeMDvCdrtc">Some</a> <a href="https://www.youtube.com/watch?v=3U36zas52wk">might</a> <a href="https://www.youtube.com/watch?v=W80X2KzRBFE">say</a> <a href="https://www.youtube.com/watch?v=bJJcrRstHBE">too</a> <a href="https://www.youtube.com/watch?v=fdlB_-2pBTo">many</a>,
+                  </p>
+                  
+                  <p>
+                    I found a <a href="https://www.audiology.org/sites/default/files/ChasinConversionChart.pdf">note to frequency conversion table</a> and used that to create a set of constants for the notes I needed.  That allowed me to specify the beeps with readable note constants, instead of the frequency values. You can get those constants <a href="https://gist.github.com/anotherlab/180855ddcb4c71a11d7ad4c0c243942b">here</a>.  With the use of those constants, you can play the opening notes of &#8220;The Final Countdown&#8221; with the following code:
+                  </p>
+                  
+                  <div style="tab-size: 8" id="gist47847775" class="gist">
+                    <div class="gist-file" translate="no">
+                      <div class="gist-data">
+                        <div class="js-gist-file-update-container js-task-list-container file-box">
+                          <div id="file-finalcountdown-c" class="file my-2">
+                            <div itemprop="text" class="Box-body p-0 blob-wrapper data type-c  ">
+                              <div class="js-check-bidi blob-code-content">
+                                <template class="js-file-alert-template">&lt;/p&gt; 
+                                
+                                <div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+                                  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg>&lt;/p&gt; 
+                                  
+                                  <p>
+                                    <span><br /> This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br /> <a href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br /> </span>
+                                  </p>
+                                  
+                                  <div data-view-component="true" class="flash-action">
+                                    <a href="" data-view-component="true" class="btn-sm btn">&lt;/p&gt; 
+                                    
+                                    <p>
+                                      Show hidden characters
+                                    </p>
+                                    
+                                    <p>
+                                      &lt;/a&gt; &lt;/div&gt; &lt;/div&gt; 
+                                      
+                                      <p>
+                                        &lt;/template&gt;<br /> <template class="js-line-alert-template"><br /> <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="bidi-line-alert tooltipped tooltipped-e"><br /> <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg><br /> </span></template>
+                                      </p>
+                                      
+                                      <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip="" data-tagsearch-lang="C" data-tagsearch-path="FinalCountDown.c">
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC1" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-k">void</span> <span class="pl-en">FinalCountDown</span>(<span class="pl-k">void</span>)
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC2" class="blob-code blob-code-inner js-file-line">
+                                            {
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC3" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-k">int</span> v = <span class="pl-c1">100</span>;
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC4" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-k">int</span> duration = <span class="pl-c1">125</span>;
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC5" class="blob-code blob-code-inner js-file-line">
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC6" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-c1">Beep</span>(v, CS5, duration, <span class="pl-c1">10</span>);
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC7" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-c1">Beep</span>(v, B4, duration, <span class="pl-c1">10</span>);
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L8" class="blob-num js-line-number js-code-nav-line-number" data-line-number="8">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC8" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-c1">Beep</span>(v, CS5, duration*<span class="pl-c1">4</span>, <span class="pl-c1">10</span>);
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L9" class="blob-num js-line-number js-code-nav-line-number" data-line-number="9">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC9" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-c1">Beep</span>(v, FS3, duration*<span class="pl-c1">5</span>, duration*<span class="pl-c1">5</span>);
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L10" class="blob-num js-line-number js-code-nav-line-number" data-line-number="10">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC10" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-c1">Beep</span>(v, D5, duration, <span class="pl-c1">10</span>);
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L11" class="blob-num js-line-number js-code-nav-line-number" data-line-number="11">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC11" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-c1">Beep</span>(v, CS5, duration, <span class="pl-c1">10</span>);
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L12" class="blob-num js-line-number js-code-nav-line-number" data-line-number="12">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC12" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-c1">Beep</span>(v, D5, duration*<span class="pl-c1">2</span>, <span class="pl-c1">10</span>);
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L13" class="blob-num js-line-number js-code-nav-line-number" data-line-number="13">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC13" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-c1">Beep</span>(v, CS5, duration*<span class="pl-c1">2</span>, <span class="pl-c1">10</span>);
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L14" class="blob-num js-line-number js-code-nav-line-number" data-line-number="14">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC14" class="blob-code blob-code-inner js-file-line">
+                                            <span class="pl-c1">Beep</span>(v, B4, duration*<span class="pl-c1">3</span>, <span class="pl-c1">10</span>);
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-finalcountdown-c-L15" class="blob-num js-line-number js-code-nav-line-number" data-line-number="15">
+                                          </td>
+                                          
+                                          <td id="file-finalcountdown-c-LC15" class="blob-code blob-code-inner js-file-line">
+                                            }
+                                          </td>
+                                        </tr>
+                                      </table>&lt;/div&gt;&lt;/div&gt;
+                                    </p>&lt;/div&gt; &lt;/div&gt;&lt;/div&gt; 
+                                    
+                                    <div class="gist-meta">
+                                      <a href="https://gist.github.com/anotherlab/c3e2ebe72020a6df44902434e614687a/raw/6356de0648e0c3a20c518da6ace8588b4e045166/FinalCountDown.c" style="float:right">view raw</a><br /> <a href="https://gist.github.com/anotherlab/c3e2ebe72020a6df44902434e614687a#file-finalcountdown-c"><br /> FinalCountDown.c<br /> </a><br /> hosted with &#10084; by <a href="https://github.com">GitHub</a>
+                                    </div>&lt;/p&gt;&lt;/div&gt; &lt;/div&gt; 
+                                    
+                                    <p>
+                                      When using the constants, the code is much easier to read.  And it becomes much easier to create new song intros. With that in place, the installers can quickly check the firmware version by powering up the RFID reader.  At some point I&#8217;ll refactor the code to just read the values from an array.  The current design is easy to setup and read, I may just stay with what works.
+                                    </p>
+                                    
+                                    <p>
+                                      Right now, I need to use Elatec&#8217;s development tools to push the firrmware out via a simple GUI.  If I could get a command line tool for pushing the firmware out, I could add code to the firmware to return the version number from a query sent over USB.  That would allow me to write a simple app or Powershell script to identify a connected reader, query the version, and then push the update out.  If anyone from Elatec ever reads this, a command line firmware updater would be very helpful.
+                                    </p>
+                                    
+                                    <p>
+                                      Decades of using development tools like Visual Studio has accustomed me to being able to use a debugger to step through the code.  Writing code where you can&#8217;t visually debug it, requires thinking out side the box.  I can test much of the code by having the reader send back text, but when testing with the device that it will be hooked up to, that would interfere with how they work.  Sometimes you just have to use a different path out of the machine to see what it&#8217;s doing.
+                                    </p>
+                                    
+                                    <p>
+                                      &nbsp;
+                                    </p>
+</a></div></div></template></div></div></div></div></div></div></div></a></div></div></template></div></div></div></div></div></div></div>
+
+  </div><a class="u-url" href="/2017/05/19/debugging-devices-without-displays-or-debuggers/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

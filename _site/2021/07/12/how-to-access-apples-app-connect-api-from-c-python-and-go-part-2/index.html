@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>How to access Apple’s App Connect API from C#, Python, and Go. – Part 2 | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="How to access Apple’s App Connect API from C#, Python, and Go. – Part 2" />
+<meta name="author" content="Chris Miller" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/" />
+<meta property="og:url" content="http://localhost:4000/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-12T09:02:52-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to access Apple’s App Connect API from C#, Python, and Go. – Part 2" />
+<script type="application/ld+json">
+{"datePublished":"2021-07-12T09:02:52-04:00","@type":"BlogPosting","url":"http://localhost:4000/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/"},"dateModified":"2021-07-12T09:02:52-04:00","author":{"@type":"Person","name":"Chris Miller"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"How to access Apple’s App Connect API from C#, Python, and Go. – Part 2","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How to access Apple&amp;#8217;s App Connect API from C#, Python, and Go. &amp;#8211; Part 2</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2021-07-12T09:02:52-04:00" itemprop="datePublished">Jul 12, 2021
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <div class="wp-block-image">
+  <figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-rMG2ZL4/0/c712e41f/L/Apple%20Lock%20Green-L.jpg?resize=680%2C510&#038;ssl=1" alt="" width="680" height="510" data-recalc-dims="1" /></figure>
+</div>
+
+<p>In my <a href="https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">previous post</a>, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API.  In this installment, we’ll cover how to accomplish the same task with Python.  The <a href="https://rajapet.com/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/">final post</a> will cover a Go version.</p>
+
+<p>As with the C# version, we’ll need to create a signed Javascript Web Token (JWT) and then make some API calls.  As with the C# version, I have the code in a Github repository. You can clone it from <a href="https://github.com/anotherlab/IsUserInApple-python">here</a>. The code is in a script named <a href="https://github.com/anotherlab/IsUserInApple-python/blob/main/IsUserInApple.py">IsUserInApple.py</a>. You can name your script anything that the OS and Python allows, I’ll be referring to my script as IsUserInApple.py.</p>
+
+<p>I wrote the code using Python 3, version 3.9.2. Unless you are running Windows, the odds are that you have Python 3 installed. If not, you can get it from the good people at <a href="https://www.python.org/downloads/">python.org</a>. This code should work on any platform that supports Python 3. It should also work (potentially with some changes) with Python 2, but I haven’t tested that. </p>
+
+<p>This script will use a couple of libraries that you will need to install. To make the HTTPS web requests, we’ll be using the <a href="https://docs.python-requests.org/en/master/">Requests</a> library. It <a href="https://youtu.be/OkGaq9xiQZY">does exactly what it says on the tin</a>, “Requests is an elegant and simple HTTP library for Python, built for human beings”. It makes the code for calling Apple’ API simple and easy to follow.</p>
+
+<p>The other library is <a href="https://docs.authlib.org/en/stable/">Authlib</a>, a library for working with OAuth and OpenID Connect. It has everything we need to <a href="https://docs.authlib.org/en/stable/jose/jwt.html">create and sign our JWT</a>.  While we need to install all of Authlib, we’ll only being using the jwt module.  To install the libraries, you just need to run the pip command like this:</p>
+
+<pre class="wp-block-code"><code>pip install requests authlib</code></pre>
+
+<p>If you are not familar with pip. it’s the package manager for Python and will be installed when you install Python. If you already have Python installed, then you already have pip installed.</p>
+
+<p>In the folder that you will have the Python script, you will need a configuration file. It performs the same function as the IsUserInApple.json file did in the C# code. It will contain the path to your private key file, the key id, and the issuer id for your account. Please refer back to <a href="https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">Part 1</a> for how to define these values. Instead of using JSON, I used a simple key/value file and it’s named IsUserInApple.config. It should use the following format:</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: bash; title: ; notranslate" title="">
+&#91;settings]
+private_key = c:/scripts/AuthKey.p8
+KEY_ID = ABCDEF1234
+ISSUER_ID = d88b7c23-4c26-48fb-9d62-5649f27a25a2
+</pre>
+</div>
+
+<p>Now we can go through the code. I’m going to jump around a bit, you may want to have <a href="https://github.com/anotherlab/IsUserInApple-python/blob/main/IsUserInApple.py">the script</a> open in another window. After some comments, we start with the following lines:</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: python; title: ; notranslate" title="">
+import requests, time, json, sys, tempfile, os, configparser
+from authlib.jose import jwt
+</pre>
+</div>
+
+<p>The first line imports the libraries that we’ll need. The requests library was the 3rd party library that we installed via pip, the rest are libraries included with Python. The next line imports the jwt model from the authlib.jose library. The “jose” part of the library name is an acronym for <strong>J</strong>avascript <strong>O</strong>bject <strong>S</strong>igning and <strong>E</strong>ncryption.</p>
+
+<p>The next part of the code are the methods we’ll define and use to call the API. We’ll dive into them in a bit. For now, we’ll jump down to the bottom of the script.  We start with</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: python; title: ; notranslate" title="">
+if len(sys.argv) &gt; 1:
+    config = configparser.ConfigParser()
+    try:
+        configPath = os.path.dirname(os.path.abspath(__file__)) + "/IsUserInApple.config"
+        config.read(configPath)
+    except Exception as e :
+        print(str(e))
+</pre>
+</div>
+
+<p>Line 1 is saying “if we have at least one command line parameter after the name of the script…”. The next line creates an instance of the <a href="https://docs.python.org/3/library/configparser.html">ConfigParser</a> class, which will allow us to easily read contents from the IsUserInApple.config configuation file. Starting at line 3, we’ll use a try/except block to read the config file. We want to read the config file from the same folder as the script. To get that folder name, we call the <a href="https://docs.python.org/3/library/os.path.html?highlight=abspath#os.path.abspath">abspath</a> method on the __file__ variable. The __file__variable is a “<a href="https://www.geeksforgeeks.org/dunder-magic-methods-python/">dunder</a>” variable in Python and represents the name of the currently running module. <a href="https://docs.python.org/3/reference/datamodel.html#special-method-names">A list of dunder variables</a> can be found in the Python Docs. The <a href="https://docs.python.org/3/library/os.path.html#os.path.dirname">dirname</a> method will return the folder part of the file name and then we concatenate that with the name of the config file. And at line 5, we read the config file.</p>
+
+<p>Next, we read the settings into variables with the following code. It’s pretty much self explanatory.</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: python; title: ; notranslate" title="">
+try:
+    private_key = config&#91;'settings']&#91;'private_key']    
+    KEY_ID = config&#91;'settings']&#91;'KEY_ID']    
+    ISSUER_ID = config&#91;'settings']&#91;'ISSUER_ID']    
+except Exception as e :
+    print(str(e))
+</pre>
+</div>
+
+<p>Next, we have the following code:</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: python; title: ; notranslate" title="">
+if not os.path.isfile(private_key):
+    sys.exit("Error missing private key file for JWT")
+
+UserEmail = sys.argv&#91;1].lower()
+
+print('Looking for a match on ' + UserEmail)
+
+token = getToken(KEY_ID, ISSUER_ID, private_key)
+</pre>
+</div>
+
+<p>First we check to see if the value provided for private_key is actually a file. Then we set UserEmail to the command line parameter (while converting it to lowercase) and echo that back to the shell. The last line is where we call our getToken method in the script to generate the signed JWT. Now, we’ll jump to that getToken method.</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: python; title: ; notranslate" title="">
+def getToken(KEY_ID, ISSUER_ID, PATH_TO_KEY):
+    EXPIRATION_TIME = int(round(time.time() + (20.0 * 60.0))) # 20 minutes timestamp
+
+    with open(PATH_TO_KEY, 'r') as f:
+        PRIVATE_KEY = f.read()
+
+    header = {
+        "alg": "ES256",
+        "kid": KEY_ID,
+        "typ": "JWT"
+    }
+
+    payload = {
+        "iss": ISSUER_ID,
+        "exp": EXPIRATION_TIME,
+        "aud": "appstoreconnect-v1"
+    }
+
+    # Create and return the JWT
+    return jwt.encode(header, payload, PRIVATE_KEY)
+</pre>
+</div>
+
+<p>Line 1 defines the name of the method and the parameter names. <a href="https://tenor.com/EVNQ.gif">No big whoop</a>. Line 2 generates the expiration time, <a href="https://youtu.be/8Y7McIX_m-I">20 minutes into the future</a>. At line 4, we read in the private key file. The jwt module <a href="https://efangelist.wordpress.com/2014/07/29/why-smart-young-people-grok-the-word-grok-do-you-grok-grok/">groks</a> the PEM format, we don’t have to clean it up like <a href="https://github.com/anotherlab/IsUserinApple-dotnet/blob/main/Program.cs#L79">we did in the C# code</a>. Then line 7 creates the header and line 13 creates the payload. This is nearly identical to the code from the C# version. At line 20, we create and sign the JWT and return to the code that called it. It follows the same logic as the code in the GetToken method from <a href="https://github.com/anotherlab/IsUserinApple-dotnet/blob/main/AppleJWT.cs">AppleJWT.cs</a>. Jumping back to where we called getTokem, we have the following line:</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: python; title: ; notranslate" title="">
+members = getAllUsers(token)
+</pre>
+</div>
+
+<p>Now we’ll dive into the getAllUsers method.</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: python; title: ; notranslate" title="">
+def getAllUsers(token):
+    JWT = 'Bearer ' + token.decode()
+    URL = 'https://api.appstoreconnect.apple.com/v1/users?limit=100'
+    HEAD = {'Authorization': JWT}
+
+    teamMembers = &#91;]
+
+    nextURL = URL
+    keepGoing = True
+
+    while keepGoing:
+        r = requests.get(nextURL, params={}, headers=HEAD)
+
+        y = r.json()
+
+        if 'errors' in y:
+            errorCode = y&#91;'errors']&#91;0]
+            print('Apple returned an HTTP ' + errorCode&#91;'status'] + ' code')
+            print(errorCode&#91;'detail'])
+            sys.exit('whoops')
+
+        for i in y&#91;'data']:
+            teamMembers.append({'username':i&#91;'attributes']&#91;'username'].lower(), 'roles': ','.join(i&#91;'attributes']&#91;'roles'])})
+
+        if 'next' in y&#91;'links']:
+            nextURL = y&#91;'links']&#91;'next']
+        else:
+             keepGoing = False
+
+    return teamMembers
+</pre>
+</div>
+
+<p>Line 1 defines the method name and parameters. Lines 2-4 sets the <a href="https://swagger.io/docs/specification/authentication/bearer-authentication/">bearer (token) authorization</a> and the inital URL to call. The next few lines just initialize a few variables and the fun begins at line 11 where we’ll loop until we are done. At line 12, we use the requests library to make a HTTPS get call. Line 14 assigns the JSON results to our Y variable. The next block of code checks the JSON document for “errors”. If Apple’s API falls down, it will fall down this way.</p>
+
+<p>If there are no errors, we just walk through the “data” member of JSON document and add the username and roles for each user to the teamMembers array. When we append the username, we convert it to lowercase. That was we don’t have to worry about case when we match on the email address. Then we check the see if the “links” member of the document has a field named “next”. If it does, we use that as the new URL and keep looping. When we don’t have a “next” url, we return the teamMembers array to caller. That takes us back to the bottom of our script again.</p>
+
+<div class="wp-block-syntaxhighlighter-code ">
+  <pre class="brush: python; title: ; notranslate" title="">
+    for i in members:
+        if i&#91;'username'] == UserEmail:
+            HasMatch = True
+            print('Match on ' + i&#91;'username'] + ', Roles: ' + i&#91;'roles'])
+
+    if HasMatch == False:
+        print('No match')
+
+else:
+    sys.exit("Error: Please specify an email address")
+</pre>
+</div>
+
+<p>Now we just iterate through the members array and see if the user name matches. We report back on whether we foiund it or not.  The last lines are the error message that would be reported if you ran the script without a email address to match on.</p>
+
+<p>That’s basically all there is to this script. This version doesn’t deserialize the JSON data into objects, it just parses it as is. It’s a trade off. Doing it this way uses less code, but you lose some of the discoverability of having the data in object form.</p>
+
+<p>To run it, you would just do something like:</p>
+
+<pre class="wp-block-code"><code>python IsUserInApple.py some.email@company.com</code></pre>
+
+<p>You’ll either the following if that use is a member of the account:</p>
+
+<pre class="wp-block-code"><code>Looking for a match on some.email@company.com
+Match on some.email@company.com, Roles: ADMIN,ACCOUNT_HOLDER</code></pre>
+
+<p>Or the following if that email doesn’t provide a match</p>
+
+<pre class="wp-block-code"><code>Looking for a match on some.email@company.com
+No match</code></pre>
+
+<p>Coming up next will be the Go version of this script.</p>
+
+<hr class="wp-block-separator" />
+
+<p class="has-small-font-size">
+  <em data-rich-text-format-boundary="true">About the image: <br data-rich-text-line-break="true" />This image was derived from some open-source images.&nbsp;The image of the wall comes from <a href="https://unsplash.com/@impatrickt">Patrick Tomasso via Unsplash</a>.&nbsp;The Apple lock logo comes from Apple, which retains all rights to its artwork. The people icon was created by <a href="https://thenounproject.com/search/?q=people&amp;i=165313">Monika from the Noun Project</a>.</em>
+</p>
+
+  </div><a class="u-url" href="/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
