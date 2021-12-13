@@ -28,7 +28,8 @@ twitter_username: anotherlab
 github_username:  anotherlab
 
 # Build settings
-theme: jekyll-theme-midnight
+# theme: jekyll-theme-midnight
+theme: minima
 plugins:
   - jekyll-feed
 
