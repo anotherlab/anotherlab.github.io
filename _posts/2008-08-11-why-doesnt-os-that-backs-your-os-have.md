@@ -1,0 +1,15 @@
+---
+id: 120
+title: Why doesn’t an OS that backs your OS have any means of backing itself up?
+date: 2008-08-11T21:07:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=120
+permalink: /2008/08/11/why-doesnt-os-that-backs-your-os-have/
+---
+</p> 
+
+Steve Tibbets has been writing about <a href="http://blog.stevex.net/index.php/2008/08/11/recovering-whs-from-system-drive-failure/" target="_blank">his troubles with Windows Home Server</a>.  His homebrew <a href="http://en.wikipedia.org/wiki/Windows_Home_Server" target="_blank">Windows Home Server</a> box had a failing power supply and it hosed the registry on the way out.  When he replaced the power supply, he was forced to reinstall Windows Home Server and he’s facing the fun task of trying to recover the data across 4 drives.   Windows Home Server is based on Windows Server 2003, which has the <a href="http://en.wikipedia.org/wiki/System_Restore" target="_blank">System Restore</a> functionality.  He should have been able reboot the Windows Home Server in recovery mode and restore the OS from the last good system backup.  But that was not the case.
+
+That stuff kind freaks me out about Windows Home Server.  I was in the beta and I had taken my last development machine at home and configured it for Windows Home Server.  The machine had motherboard issues and went to the land where DOS is eternally blessed after a few weeks.  While it was running, I have to say Windows Home Server is pretty cool.  It has a set and and forget it approach for doing bare metal backups of your home machines.  Since it’s Server 2003 based, you get some of the Server 2003 functionality, like a full blown version of IIS.
+
+I’ve been running a <a href="http://en.wikipedia.org/wiki/FreeBSD" target="_blank">FreeBSD</a> solution called <a href="http://en.wikipedia.org/wiki/Freenas" target="_blank">FreeNAS</a> to back key files on my home machines.  It doesn’t have the cool features of Windows Home Server, but <a href="http://anotherlab.rajapet.net/2007/06/51-server.html" target="_blank">the price was right and it just works</a>.  FreeNAS will boot from a CD, if the current FreeNAS box dies, I can just slap the drives in another box and install FreeNAS in just a few minutes.  I’ve been toying with the idea of buying one of the HP [MediaSmart Home Server](http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2FEX470-MediaSmart-Server-Windows-Drive%2Fdp%2FB000UY1WSK%3Fie%3DUTF8%26s%3Delectronics%26s9r%3D8a585b431588ae070115f9650cd90da1%26itemPosition%3D3%26qid%3D1218487914%26sr%3D8-3&tag=christmillers-20&linkCode=ur2&camp=1789&creative=9325)<img loading="lazy" height="1" alt="" src="http://www.assoc-amazon.com/e/ir?t=christmillers-20&#038;l=ur2&#038;o=1" width="1" border="0" /> with Windows Home Server, but for the amount of money one of those boxes cost, I can hang 1TB external drivers off each machine at home and run scripts every night to <a href="http://en.wikipedia.org/wiki/Robocopy" target="_blank">RoboCopy</a> every thing to the external drives.

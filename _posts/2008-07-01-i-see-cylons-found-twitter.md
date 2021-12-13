@@ -1,0 +1,15 @@
+---
+id: 139
+title: I see the Cylons found Twitter
+date: 2008-07-01T19:56:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=139
+permalink: /2008/07/01/i-see-cylons-found-twitter/
+---
+Maybe they can [fix](http://www.twittown.com/twitter-outage) it?  You can get the list of Cylons and associated BSG characters from the Hybrid’s [Friends list](http://twitter.com/cylonhybrid/friends "The Hybrid follows 13 people.").
+
+If you know [BSG](http://en.battlestarwiki.org/wiki/Main_Page) and are on [Twitter](http://twitter.com/), it’s pretty funny.  Some random excerpts…
+
+[**galentyrol**](http://twitter.com/galentyrol "galentyrol") <span>I am Cylon, but I will never be able to download into a fresh body. Apparently I can grow old & get fat, too. Being Cylon pretty much sucks </span><span><a href="http://twitter.com/galentyrol/statuses/847331074" rel="bookmark"><abbr title="2008-07-01T02:35:47+00:00">about 17 hours</abbr> ago</a> from web <br /></span>[**leoben**](http://twitter.com/leoben "Leoben Conoy") <span>Bored today&#8230;. If the Hub was still around I&#8217;d airlock myself. You know&#8230;for fun. </span><span><a href="http://twitter.com/leoben/statuses/844355092" rel="bookmark"><abbr title="2008-06-26T18:59:53+00:00">11:59 AM June 26, 2008</abbr></a> from <a href="http://www.twhirl.org/">twhirl</a> <br /><a title="Leoben Conoy" href="http://twitter.com/leoben"><strong>leoben</strong></a> <span>Some wonder why I am so obsessed with coffee. Haven&#8217;t any of you had Starbuck&#8217;s coffee before? </span><span><a href="http://twitter.com/leoben/statuses/843418575" rel="bookmark"><abbr title="2008-06-25T16:45:30+00:00">09:45 AM June 25, 2008</abbr></a> from <a href="http://www.twhirl.org/">twhirl</a> <br /><a title="saultigh" href="http://twitter.com/saultigh"><strong>saultigh</strong></a> <span>@<a href="http://twitter.com/capricasix">capricasix</a> I know what love is! I loved @<a href="http://twitter.com/billadama">billadama</a> and @<a href="http://twitter.com/ellentigh">ellentigh</a> and look where it got me! I mean them! I mean me! Can I call you &#8220;ellen&#8221;? </span><span><a href="http://twitter.com/saultigh/statuses/834975122" rel="bookmark"><abbr title="2008-06-15T01:10:59+00:00">08:10 PM June 14, 2008</abbr></a> from web <a href="http://twitter.com/capricasix/statuses/834974109">in reply to capricasix</a>  <br /><a title="William Adama" href="http://twitter.com/billadama"><strong>billadama</strong></a> <span>Breakfasting on a Basestar, and discovering that these new Centurians do a really, really good job at preparing toast. Ironic. </span><span><a href="http://twitter.com/billadama/statuses/834017600" rel="bookmark"><abbr title="2008-06-13T16:47:32+00:00">09:47 AM June 13, 2008</abbr></a> from web </span></span></span></span>
+
+<span> </span>

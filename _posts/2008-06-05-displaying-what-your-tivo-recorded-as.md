@@ -1,0 +1,17 @@
+---
+id: 161
+title: Displaying what your TiVo recorded as a blog badge
+date: 2008-06-05T19:16:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=161
+permalink: /2008/06/05/displaying-what-your-tivo-recorded-as/
+---
+There have been some [people](http://www.louisgray.com/live/2008/06/tivo-is-zero-on-social-web-its-time.html "louisgray.com: TiVo Is a Zero On the Social Web. It's Time They Fast Forward.") [blogging](http://www.tivoblog.com/archives/2008/06/03/tivo-and-the-social-web/ "TiVo Blog: TiVo And The Social Web") about having what was recorded on [TiVo](http://www.tivo.com/) being displayed on their blog.  Something like how you have display what you have been listening to with [Last.FM](http://www.last.fm/).  Personally, I wouldn&#8217;t want the world to know what was just recorded on my TiVos.  One TiVo gets filled up with cooking shows and NY Mets baseball, the other one gets an eclectic collection of kid shows and the SciFi channel, with some Animal Planet for extra seasoning.
+
+The programmer in me keeps thinking about from a how to build it viewpoint.  There are some [scripts](http://www.xml.com/pub/a/2006/02/15/hacking-the-xml-in-your-tivo.html "XML.com: Hacking the XML in Your TiVo") out there that will pull the recorded show information from the TiVo mini web server.  That part is pretty easy.  Getting it to your blog is another story.  Unless you host your own blog, you need some place to store the data so a blog widget can render it in Web 2.0 approved colors (plus the bottom reflection with alpha channel blending goodness).  Since your TiVo is behind a firewall (well, it should be behind one), your blog can&#8217;t pull the data directly form the TiVo.  And you really don&#8217;t want to pull the data, that&#8217;s too much traffic.
+
+What you want to do is to push the data up once you find a place to host the data.  Since we don&#8217;t want to hack the TiVo, the TiVo wont be pushing the data.  You&#8217;ll need a home PC to query the recorded show history and push the data up.  A pretty simple task, but if you step back and think a little more about the whole TiVo experience, there is a better way.
+
+Your TiVo box is connecting back to the TiVo mothership on a regular basis.  It gets program updates, verifies that it&#8217;s subscription is still good, sends usage data back to TiVo.  Other than creating the infrastructure, it would be pretty easy for the TiVo company to supply to you what your TiVo has recorded.  That&#8217;s where Louis Gray was heading with his [article](http://www.louisgray.com/live/2008/06/tivo-is-zero-on-social-web-its-time.html) about TiVo adding social network related functionality.
+
+I wonder if anyone at TiVo has thought of doing this.  They already have the hardware and networking stuff in place.  It&#8217;s basically just taking the data that TiVo is already sending back and allowing the users to display and share that data.  It adds a coolness factor that you wont get with a cable company DVR.  I mean TiVo spent resources enabling you to program your TiVo from a mobile phone, why not social networking?

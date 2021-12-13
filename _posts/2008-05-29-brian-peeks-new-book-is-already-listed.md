@@ -1,0 +1,11 @@
+---
+id: 165
+title: Brian Peeks new book is already listed on Amazon
+date: 2008-05-29T15:31:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=165
+permalink: /2008/05/29/brian-peeks-new-book-is-already-listed/
+---
+Brian Peek (probably the most well known member of our [TVUG](http://tvug.net/) user group) has a book coming out, &#8220;[10 Coding4Fun Projects with .NET for Programmers, Hobbyists, and Game Developers&#8221;](http://www.amazon.com/exec/obidos/ASIN/0596520743), and it&#8217;s listed on Amazon for pre-orders.  Brian is probably best known for his [managed code API](http://blogs.msdn.com/coding4fun/archive/2007/03/14/1879033.aspx) for working with the Nintendo Wiimote.  You can get the current version of the code from it&#8217;s CodePlex [page](http://www.codeplex.com/WiimoteLib).  His [blog](http://www.brianpeek.com/blog/) is worth reading if you want to control hardware devices with .NET.
+
+Not too long ago Brian demonstrated his code at a [TVUG meeting](http://tvug.net/Events/tabid/56/Default.aspx?PageContentID=46 "Interfacing External Hardware Using Managed Code").  He used the Wiimote to control a radio controlled car.  It was pretty cool watching the car turn when he rotated the Wiimote.  You can download the code from his presentation from his blog at this [page](http://www.brianpeek.com/files/folders/2008/default.aspx).  Other people have used his library to do some interesting [things](http://www.cs.cmu.edu/~johnny/projects/wii/).  It sounds like this book would be a cool Christmas gift.

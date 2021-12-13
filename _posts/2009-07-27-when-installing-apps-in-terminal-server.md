@@ -1,0 +1,15 @@
+---
+id: 88
+title: When installing apps in a Terminal Server or Citrix environment
+date: 2009-07-27T16:02:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=88
+permalink: /2009/07/27/when-installing-apps-in-terminal-server/
+---
+When you install an application on a Windows Server running Terminal Services or a Citrix server, the user should go into Add/Remove programs and run the installer through “Add New Programs”.  It sounds clunky, but there is a reason for this.  Microsoft virtualizes the location of the Windows directory under terminal services.  Each user has a private copy of the Windows folder.  This allows applications that assume they are the only user to see only their own copy of the folder.
+
+If an application calls [GetWindowsDirectory()](http://msdn.microsoft.com/en-us/library/ms724454%28VS.85%29.aspx "MSDN: GetWindowsDirectory Function"), you usually C:\WINDOWS or C:\WINNT.  Under Terminal Services, a call the GetWindowsDirectory will return something like C:\Documents and Settings\currentusername\Windows.  If you need to install a shared component in a folder off of the Windows folder, then you will not want the virtualized folder.  You want to use the actual C:\WINDOWS folder.
+
+Installer authoring tools like InstallAware use GetWindowsDirectory().  This is by design, in a multi-user environment, you want to make sure that the users don’t installed components that could adversely affect other users.  If you want to get the actual Windows directory, you can call [GetSystemWindowsDirectory()](http://msdn.microsoft.com/en-us/library/ms724403%28VS.85%29.aspx "MSDN: GetSystemWindowsDirectory Function"), it will return the actual Windows directory.  When you run the installer through “Add New Programs”, Terminal Services is place into install mode and GetWindowsDirectory will return the actual directory instead of the virtualized directory.
+
+If your installer requires that you have the correct folder for the GetWindowsDirectory, I would suggest comparing the results of GetWindowsDirectory and GetSystemWindowsDirectory.  if they do not evaluate to the same folder, then you know that you are running under Terminal Services and that Terminal Services is not in install mode.  At the point, you can display a dialog and suggest to the user to run the installer under “Add New Programs” and then exit gracefully.

@@ -1,0 +1,19 @@
+---
+id: 136
+title: Google is making Ratproxy freely available
+date: 2008-07-07T16:34:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=136
+permalink: /2008/07/07/google-is-making-ratproxy-freely/
+---
+Google has just released the source code to one of their internal testing tools.  [Ratproxy](http://code.google.com/p/ratproxy/ "ratproxy - passive web application security assessment tool") is a web proxy that is designed to scan for and log potential problems and “security-relevant design patterns” as you (the user) test your site or web service.
+
+It’s not an automated test tool, it follows the actions of a user and examines the pages that the user would hit during a test run.  By following the user, ratproxy sees the same payload the user receives.  All of the login authentication is handled by the user, ratproxy only observes the data as it goes back and forth.  That allows the user to use any browser and browser specific behavior can be tracked by ratproxy.
+
+Since the actions are directed by the browser, AJAX related traffic is picked up and ratproxy will check for cross-domain script inclusion.  It also has the ability to decompile Flash applets, as there are a few Flash security holes that could allow cross-site script injections.  If you are testing your own code, that shouldn’t be a problem, but if you have some 3rd party Flash applets it&#8217;s always a good idea to check them.
+
+To install ratproxy, you have to download it as a compressed [tarball](http://en.wikipedia.org/wiki/Tarball) from it&#8217;s Google Code download [page](http://code.google.com/p/ratproxy/downloads/list).  You have to compile it yourself with the included source code.  For Windows, you&#8217;ll need to have [Cygwin](http://www.cygwin.com/) installed.  If you are not familiar with Cygwin, it&#8217;s a collection of tools that provide a Linux-like environment under Windows.  From what I read on the [ratproxy documentation page](http://code.google.com/p/ratproxy/wiki/RatproxyDoc), you may need to tweak the makefile to get it compile with the Cygwin [GCC compiler](http://gcc.gnu.org/).  Someone mentioned that ratproxy was written for GCC 3.4 and the version that is bundled with Cygwin is version 3.4.4.  If that is the case, version 4.3.1 can be downloaded directly from [gcc.gnu.org](http://gcc.gnu.org/) or from one its mirror sites.  If you want to use 4.3 under Windows,you &#8216;ll have to install Cygwin first and build it with the version of GCC that comes with Cygwin.
+
+I don&#8217;t have Cygwin installed (yet).  I plan on doing so in the near future and I want to compile ratproxy and see how it works.  The idea sounds cool and if it&#8217;s not too painful to build under Windows, I would like to add it to the test arsenal.  The cool part of ratproxy is that you can use it with your existing test methods, all you need to do is to direct your browser or test tool to use the ratproxy as a proxy server.
+
+Ratproxy was written by and is maintained by [Michal Zalewski](http://en.wikipedia.org/wiki/Michal_Zalewski), a computer security expert on the &#8220;[white hat](http://en.wikipedia.org/wiki/White_hat)&#8221; side.  [His personal site](http://lcamtuf.coredump.cx/) has some [interesting](http://lcamtuf.coredump.cx/blog.shtml "Blog generator is a variant of Catty, hand-fed on thousands of blogs. Give it a subject to start with. It will then recursively fuel itself and spawn an elaborate blog entry on any subject.") [side](http://lcamtuf.coredump.cx/evilfinder/ "Evil finder is a cool hack that employs numerology to conclusively prove the evilness of a given subject.") [projects](http://lcamtuf.coredump.cx/robot/ "Robots!").
