@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Jack of all trades, master of none. | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Jack of all trades, master of none." />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jeff Atwood has a good rant about people asking for web sites that scale to devices like PDA’s or crackberry’s.  He takes the view that it would be nice if every web site could scale from cell phone size to desktop, but that it’s not always a realistic request. " />
+<meta property="og:description" content="Jeff Atwood has a good rant about people asking for web sites that scale to devices like PDA’s or crackberry’s.  He takes the view that it would be nice if every web site could scale from cell phone size to desktop, but that it’s not always a realistic request. " />
+<link rel="canonical" href="http://localhost:4000/2006/01/24/jack-of-all-trades-master-of-none/" />
+<meta property="og:url" content="http://localhost:4000/2006/01/24/jack-of-all-trades-master-of-none/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2006-01-24T15:02:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jack of all trades, master of none." />
+<script type="application/ld+json">
+{"datePublished":"2006-01-24T15:02:00-05:00","@type":"BlogPosting","url":"http://localhost:4000/2006/01/24/jack-of-all-trades-master-of-none/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2006/01/24/jack-of-all-trades-master-of-none/"},"dateModified":"2006-01-24T15:02:00-05:00","description":"Jeff Atwood has a good rant about people asking for web sites that scale to devices like PDA’s or crackberry’s.  He takes the view that it would be nice if every web site could scale from cell phone size to desktop, but that it’s not always a realistic request. ","headline":"Jack of all trades, master of none.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Jack of all trades, master of none.</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2006-01-24T15:02:00-05:00" itemprop="datePublished">Jan 24, 2006
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="http://www.codinghorror.com/blog/">Jeff Atwood</a> has a good <a href="http://www.codinghorror.com/mtype/mt-tb-renamed.cgi/496">rant</a> about people asking for web sites that scale to devices like PDA’s or crackberry’s.  He takes the view that it would be nice if every web site could scale from cell phone size to desktop, but that it’s not always a realistic request. </p>
+
+<p>I’m with Jeff on this.  While it’s fairly straight forward to parse a browser’s user agent string and redirect to the appropriate destination, you have to make a risk/reward assessment on the cost of implementing your site that way.  Just because it’s posible to do something, it doesn’t mean that it’s a practical thing to do.  A site like Google, that’s an obvious choice to run at any size.  You can use a search engine without any graphics and a minimal amount of actual typing.</p>
+
+<p>That choice doesn’t always make sense.  For example, our <a href="http://www.versatrans.com/">company’s</a> new product is a web based school bus tracking application.  <a href="http://en.wikipedia.org/wiki/Microbrowser">Microbrowser</a> compatibility was not even on the radar.  We know who our initial client base will be and what they will be using. And viewing live feeds of where their fleet currently is really doesn’t play well at 176×220.  And we know that this application will be run from transportation and administration offices, not out in field.  The time it would take to develop an alternate presentation layer would take away from the development time needed for other parts of the application. </p>
+
+<p>I’m not buying the argument that you can handle the grunt work with CSS, it’s a non-trivial task to support handheld browsers.  That market is very fragmented right now with the choices of browers.  Add handhelds to the testing mix, and your QA costs just suddenly became a lot more expensive.  You have usage plan costs to eat, various models of handhelds that have to be available for testing, etc.</p>
+
+<blockquote dir="ltr">
+  <p>
+    <em>Millions of Web users are out there with cell phones. If you don’t get your site to work properly with a cell phone, you’re turning away customers and that sucks. It’ll get called out.</em>
+  </p>
+</blockquote>
+
+<p>Comments like that are why I stopped reading <a href="http://scobleizer.wordpress.com/2006/01/01/one-wish-for-2006/">Scoble</a> too.</p>
+
+<p>If we had actual demand from our customers for microbrowser support, of course we would consider implementing that level of functionality.  It boils down that we are not going to lose customers right now if we only support desktop browsers.</p>
+
+  </div><a class="u-url" href="/2006/01/24/jack-of-all-trades-master-of-none/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

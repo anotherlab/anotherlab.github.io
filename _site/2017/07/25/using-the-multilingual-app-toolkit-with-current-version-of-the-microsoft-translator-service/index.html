@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Using the Multilingual App Toolkit with the Microsoft Translator service from Azure’s Cognitive Services | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Using the Multilingual App Toolkit with the Microsoft Translator service from Azure’s Cognitive Services" />
+<meta name="author" content="Chris Miller" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Image courtesy of M. Adiputra via Wikimedia Commons" />
+<meta property="og:description" content="Image courtesy of M. Adiputra via Wikimedia Commons" />
+<link rel="canonical" href="http://localhost:4000/2017/07/25/using-the-multilingual-app-toolkit-with-current-version-of-the-microsoft-translator-service/" />
+<meta property="og:url" content="http://localhost:4000/2017/07/25/using-the-multilingual-app-toolkit-with-current-version-of-the-microsoft-translator-service/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-07-25T16:04:41-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Using the Multilingual App Toolkit with the Microsoft Translator service from Azure’s Cognitive Services" />
+<script type="application/ld+json">
+{"datePublished":"2017-07-25T16:04:41-04:00","@type":"BlogPosting","url":"http://localhost:4000/2017/07/25/using-the-multilingual-app-toolkit-with-current-version-of-the-microsoft-translator-service/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/07/25/using-the-multilingual-app-toolkit-with-current-version-of-the-microsoft-translator-service/"},"dateModified":"2017-07-25T16:04:41-04:00","author":{"@type":"Person","name":"Chris Miller"},"description":"Image courtesy of M. Adiputra via Wikimedia Commons","headline":"Using the Multilingual App Toolkit with the Microsoft Translator service from Azure’s Cognitive Services","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Using the Multilingual App Toolkit with the Microsoft Translator service from Azure&amp;#8217;s Cognitive Services</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-07-25T16:04:41-04:00" itemprop="datePublished">Jul 25, 2017
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <div style="width: 609px" class="wp-caption alignnone">
+  <img loading="lazy" src="https://i2.wp.com/photos.smugmug.com/photos/i-D66Lc4v/0/e3f9e64e/M/i-D66Lc4v-M.png?resize=599%2C316&#038;ssl=1" alt="" width="599" height="316" data-recalc-dims="1" />
+  
+  <p class="wp-caption-text">
+    Image courtesy of M. Adiputra via Wikimedia Commons
+  </p>
+</div>
+
+<p>The <a href="https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit">Multilingual App Toolkit</a> (MAT) is a great tool for managing your localization workflow with Visual Studio projects.  One of the features is the ability to machine translate your string resources into another language.  You would not want to ship an application that was machine translated, but it provides a jumping off point for the actual translators that will work on your text.  When it was originally released, MAT included support for the Microsoft Translator service,  It just worked right out of the box.</p>
+
+<p>Back in April (2017), the Microsoft Translator service that was part of <a href="https://datamarket.azure.com/home">Microsoft Datamarket</a> was retired.  The replacement is part of <a href="https://azure.microsoft.com/en-us/services/cognitive-services/">Cognitive Services</a> and is hosted in Azure.  The <a href="https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit">Multilingual App Toolkit</a> (MAT) was using the Microsoft Translator service as the default translation provider for doing machine translations.  If you are using MAT to manage your language resource files and wish to use Microsoft’s translation services, you’ll need to make some changes.  They are documented <a href="https://multilingualapptoolkit.uservoice.com/knowledgebase/articles/1167898">here</a>, but I’ll mirror the text.</p>
+
+<p>Make sure that you have the latest version of MAT installed.  For VS 2017, you’ll need 4.0.6810.0 as the minimum version.  For VS 2015 or 2013, you’ll need 4.0.180.0 as the minimum version.</p>
+
+<p>Then, you’ll need an Azure subscription.  When you use the Translator Text API, you can pick from a number of <a href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator-text-api/">pricing plans</a>.  The free plan lets you translate 2 million characters a month, but does not allow overages.  The next plan charges  $10/month per million characters. And it moves up from there.  For most projects, the free tier should be sufficient</p>
+
+<p>You can sign up for an Azure account at <a href="http://azure.com">http://azure.com</a>.  You’ll need a credit card, but you wont be charged unless you go beyond the free plans.</p>
+
+<p>Once you have an Azure account, sign in to the portal and click the <strong>New</strong> button.</p>
+
+<p>Type “Translation” into the “Search the marketplace” entry field.  Then select the Translator Text API.</p>
+
+<p>Click the <strong>Create</strong> button</p>
+
+<p>Select the free pricing tier and fill out the rest of the fields and then press the create button.</p>
+
+<div style="width: 118px" class="wp-caption alignnone">
+  <a href="https://i1.wp.com/photos.smugmug.com/photos/i-LrKS2cS/0/1b236708/XL/i-LrKS2cS-XL.png?ssl=1"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-LrKS2cS/0/1b236708/S/i-LrKS2cS-S.png?resize=108%2C300&#038;ssl=1" width="108" height="300" data-recalc-dims="1" /></a>
+  
+  <p class="wp-caption-text">
+    Click on image for larger version
+  </p>
+</div>
+
+<p>After Azure deploys the service, it will take you to the service page.</p>
+
+<p>Under “Resource Management”, click “Keys”.  Copy the value for “Key 1”.  This will be the authorization key that enables MAT to use the translation services.  Azure defines two keys, Key 1 and Key 2.  They will both work.  If you plan on sharing the service to let other people translate your code, you can revoke the key at a later date.</p>
+
+<p>Open the Credential Manager in Windows.  The easiest way to launch this is to press the Windows key or Start Menu button and then start typing “Credential”.  You should see the app in the list of matching items</p>
+
+<p>Select “Windows Credentials”</p>
+
+<p>Click “Add a generic credential” and then fill in the fields.</p>
+
+<p>For Internet or network address, enter <strong>Multilingual/MicrosoftTranslator</strong></p>
+
+<p>For User name, enter <strong>Multilingual App Toolkit</strong></p>
+
+<p>For Password, enter the authorization key that you copied from Azure.</p>
+
+<p>If you copied and pasted the text, make sure that the text does not have trailing spaces at the end.</p>
+
+<p>Click the <strong>OK</strong> button.</p>
+
+<div style="width: 610px" class="wp-caption alignnone">
+  <img loading="lazy" src="https://i2.wp.com/photos.smugmug.com/photos/i-D4cGxtT/0/5b7c4039/M/i-D4cGxtT-M.png?resize=600%2C235&#038;ssl=1" alt="" width="600" height="235" data-recalc-dims="1" />
+  
+  <p class="wp-caption-text">
+    Entering the Azure key as a generic credential
+  </p>
+</div>
+
+<p>Once you have added the credentials, the Multilingual App Toolkit editor will now use the translation services from Azure.</p>
+
+<p> </p>
+
+  </div><a class="u-url" href="/2017/07/25/using-the-multilingual-app-toolkit-with-current-version-of-the-microsoft-translator-service/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

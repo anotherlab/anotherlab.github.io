@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>How to log the TIDSmtp component | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="How to log the TIDSmtp component" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I have some Delphi code that needs to send a quick mail message so I was using the Indy 10 TIdSmtp component.  The code was working just fine for a few months, but this week it would fail with an EIdSMTPReplyError exception.  The message property of the exception was a empty string, not terribly useful.  After a bit of googling, I found references to using one of the Indy TIdLogXXXX components.  Sure enough, there is a TIdLogFile component that will log messages to a file.  That sounded like what I needed, but the help file did not make it clear on how to hook up a TIdLogFile to a TIdSmtp component." />
+<meta property="og:description" content="I have some Delphi code that needs to send a quick mail message so I was using the Indy 10 TIdSmtp component.  The code was working just fine for a few months, but this week it would fail with an EIdSMTPReplyError exception.  The message property of the exception was a empty string, not terribly useful.  After a bit of googling, I found references to using one of the Indy TIdLogXXXX components.  Sure enough, there is a TIdLogFile component that will log messages to a file.  That sounded like what I needed, but the help file did not make it clear on how to hook up a TIdLogFile to a TIdSmtp component." />
+<link rel="canonical" href="http://localhost:4000/2008/08/07/how-to-log-tidsmtp-component/" />
+<meta property="og:url" content="http://localhost:4000/2008/08/07/how-to-log-tidsmtp-component/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-08-07T21:23:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to log the TIDSmtp component" />
+<script type="application/ld+json">
+{"datePublished":"2008-08-07T21:23:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/08/07/how-to-log-tidsmtp-component/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/08/07/how-to-log-tidsmtp-component/"},"dateModified":"2008-08-07T21:23:00-04:00","description":"I have some Delphi code that needs to send a quick mail message so I was using the Indy 10 TIdSmtp component.  The code was working just fine for a few months, but this week it would fail with an EIdSMTPReplyError exception.  The message property of the exception was a empty string, not terribly useful.  After a bit of googling, I found references to using one of the Indy TIdLogXXXX components.  Sure enough, there is a TIdLogFile component that will log messages to a file.  That sounded like what I needed, but the help file did not make it clear on how to hook up a TIdLogFile to a TIdSmtp component.","headline":"How to log the TIDSmtp component","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How to log the TIDSmtp component</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-08-07T21:23:00-04:00" itemprop="datePublished">Aug 7, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I have some Delphi code that needs to send a quick mail message so I was using the <a href="http://www.indyproject.org/index.en.aspx" target="_blank">Indy</a> 10 <a href="http://www.indyproject.org/docsite/html/frames.html?frmname=topic&#038;frmfile=TIdSMTP.html" target="_blank">TIdSmtp</a> component.  The code was working just fine for a few months, but this week it would fail with an EIdSMTPReplyError exception.  The message property of the exception was a empty string, not terribly useful.  After a bit of googling, I found references to using one of the Indy TIdLogXXXX components.  Sure enough, there is a <a href="http://www.indyproject.org/docsite/html/TIdLogFile.html" target="_blank">TIdLogFile</a> component that will log messages to a file.  That sounded like what I needed, but the help file did not make it clear on how to hook up a TIdLogFile to a TIdSmtp component.</p>
+
+<p>I did some searching and found a <a href="http://ruminatedrumblings.blogspot.com/2008/04/smtp-mail-and-indy-again.html" target="_blank">blog post</a> by Marshall Fryman on his <a href="http://ruminatedrumblings.blogspot.com/" target="_blank">Ruminated Rumblings</a> blog that a great example of how to hook up one of the Indy logging components.  What I needed to do was to create an instance of the TIdSmtp’s <a href="http://www.indyproject.org/docsite/html/TIdIOHandler.html" target="_blank">IOHandler</a> property and assign the TIdLogFile to the <a href="http://www.indyproject.org/docsite/html/TIdIOHandler_Intercept.html" target="_blank">IOHandler.Intercept</a> property.  He also recommended assigning the IOHandler.OnStatus event to TIdLogFile.OnStatus event &lt;/p&gt;</p>
+
+<p>The way my code ended up was something like this:</p>
+
+<p>      try<br />
+        try<br />
+          IdLogFile.Active := true;<br />
+          fsmtp.IOHandler := TIdIOHandler.MakeDefaultIOHandler(fsmtp);<br />
+          fsmtp.IOHandler.Intercept := IdLogFile;<br />
+          fsmtp.IOHandler.OnStatus  := fsmtp.OnStatus;<br />
+          fSMTP.Connect;<br />
+          fSMTP.Send(fMessage);<br />
+        except<br />
+          on e: exception do begin<br />
+            MessageDlg(‘Error sending message: ‘ + e.Message, mtError, [mbOK], 0);<br />
+          end;<br />
+        end;<br />
+      finally<br />
+        if fSMTP.Connected then<br />
+          fSMTP.Disconnect(true);<br />
+        IdLogFile.Active := false;<br />
+      end;</p>
+
+  </div><a class="u-url" href="/2008/08/07/how-to-log-tidsmtp-component/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

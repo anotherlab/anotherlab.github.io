@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Delphi 2006 quirks | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Delphi 2006 quirks" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="As I move over to Delphi 2006, I came across an odd new behavior.  In Delphi 7 and prior versions, it was very easy to view/edit the project (*.dpr) file.  Usually you let Delphi manage that file, but sometimes you want to edit it directly.    The “View Unit” button (or CTRL-F12) would include the .dpr file in the list of source code units that belonged to the project.  You would select that file and it would open up inside the Delphi IDE." />
+<meta property="og:description" content="As I move over to Delphi 2006, I came across an odd new behavior.  In Delphi 7 and prior versions, it was very easy to view/edit the project (*.dpr) file.  Usually you let Delphi manage that file, but sometimes you want to edit it directly.    The “View Unit” button (or CTRL-F12) would include the .dpr file in the list of source code units that belonged to the project.  You would select that file and it would open up inside the Delphi IDE." />
+<link rel="canonical" href="http://localhost:4000/2006/05/25/delphi-2006-quirks/" />
+<meta property="og:url" content="http://localhost:4000/2006/05/25/delphi-2006-quirks/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2006-05-25T17:30:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Delphi 2006 quirks" />
+<script type="application/ld+json">
+{"datePublished":"2006-05-25T17:30:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2006/05/25/delphi-2006-quirks/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2006/05/25/delphi-2006-quirks/"},"dateModified":"2006-05-25T17:30:00-04:00","description":"As I move over to Delphi 2006, I came across an odd new behavior.  In Delphi 7 and prior versions, it was very easy to view/edit the project (*.dpr) file.  Usually you let Delphi manage that file, but sometimes you want to edit it directly.    The “View Unit” button (or CTRL-F12) would include the .dpr file in the list of source code units that belonged to the project.  You would select that file and it would open up inside the Delphi IDE.","headline":"Delphi 2006 quirks","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Delphi 2006 quirks</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2006-05-25T17:30:00-04:00" itemprop="datePublished">May 25, 2006
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>As I move over to <a href="http://www.borland.com/us/products/delphi/index.html">Delphi 2006</a>, I came across an odd new behavior.  In Delphi 7 and prior versions, it was very easy to view/edit the project (*.dpr) file.  Usually you let Delphi manage that file, but sometimes you want to edit it directly.    The “View Unit” button (or CTRL-F12) would include the .dpr file in the list of source code units that belonged to the project.  You would select that file and it would open up inside the Delphi IDE.</p>
+
+<p>In Delphi 2006, it doesn’t work that way.  The only way you can get access to the .dpr file is to select “View Source” from the “Project” menu.  I wonder why they made that change in the behavior.  I don’t have to directly edit the .dpr files that often, but there are times where I do need to do so.</p>
+
+<p>The other oddity is the lack of the support for the SCC API fo using your preference for source control.  It’s 2006 people, there’s no reason why you can’t pick your own SCC provider for use from within the Delphi IDE.  I have no interest in the <a href="http://www.borland.com/us/products/starteam/">StarTeam</a> source control bundled with Delphi.  We dumped <a href="http://www.highprogrammer.com/alan/windev/sourcesafe.html">VSS</a> for <a href="http://www.sourcegear.com/">SourceGear</a>‘s <a href="http://www.sourcegear.com/vault/index.html">Vault</a> and we have been very pleased it.  And I want to use if within Delphi like I can with Visual Studio.  While there’s no mysterious force preventing me from running the Vault IDE along side the Delphi IDE, it’s a concentration killer to leave the coding IDE just to check out the file I need to work on.  On small projects that I am the sole owner, I’ll just check all of the code out, but on the team projects, you just don’t do that.  VS spoiled me by prompting me to check a file out as soon as I started editing it.</p>
+
+<p>I’ve been playing with the 30 trial of <a href="http://www.epocalipse.com/index.htm">EPocalipse</a>‘s <a href="http://www.epocalipse.com/scx.htm">SourceConnXion 3</a> for that last few days.  It provides source control integration for Delphi 2005/2006 and so far, so good.   I’ve added it to the list things for the boss to buy as part of our migration to Delphi 2006.</p>
+
+<div>
+  Tech Tags: <a href="http://technorati.com/tag/SCC" rel="tag">SCC</a> <a href="http://technorati.com/tag/SCCI" rel="tag">SCCI</a> <a href="http://technorati.com/tag/SourceConnXion" rel="tag">SourceConnXion</a> <a href="http://technorati.com/tag/Delphi" rel="tag">Delphi</a> <a href="http://technorati.com/tag/Delphi+2006" rel="tag">Delphi 2006</a> <a href="http://technorati.com/tag/SourceGear" rel="tag">SourceGear</a> <a href="http://technorati.com/tag/Vault" rel="tag">Vault</a>
+</div>
+
+  </div><a class="u-url" href="/2006/05/25/delphi-2006-quirks/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

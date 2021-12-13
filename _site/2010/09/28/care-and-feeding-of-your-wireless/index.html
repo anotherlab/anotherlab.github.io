@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Care and feeding of your wireless router | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Care and feeding of your wireless router" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This morning I went to check my email from my iPad and had a unpleasant surprise.  No Internet.  I have the Wi-Fi only version of the iPad and it usually has a nice solid connection to my wireless router.  On the iPad, I fired up the Settings app and sure enough, under “Wi-Fi”, it displayed not connected. I tapped “Wi-Fi” and let it scan for networks.  No sign of mine.  I tried my iPod Touch, same thing." />
+<meta property="og:description" content="This morning I went to check my email from my iPad and had a unpleasant surprise.  No Internet.  I have the Wi-Fi only version of the iPad and it usually has a nice solid connection to my wireless router.  On the iPad, I fired up the Settings app and sure enough, under “Wi-Fi”, it displayed not connected. I tapped “Wi-Fi” and let it scan for networks.  No sign of mine.  I tried my iPod Touch, same thing." />
+<link rel="canonical" href="http://localhost:4000/2010/09/28/care-and-feeding-of-your-wireless/" />
+<meta property="og:url" content="http://localhost:4000/2010/09/28/care-and-feeding-of-your-wireless/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-09-28T16:34:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Care and feeding of your wireless router" />
+<script type="application/ld+json">
+{"datePublished":"2010-09-28T16:34:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2010/09/28/care-and-feeding-of-your-wireless/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2010/09/28/care-and-feeding-of-your-wireless/"},"dateModified":"2010-09-28T16:34:00-04:00","description":"This morning I went to check my email from my iPad and had a unpleasant surprise.  No Internet.  I have the Wi-Fi only version of the iPad and it usually has a nice solid connection to my wireless router.  On the iPad, I fired up the Settings app and sure enough, under “Wi-Fi”, it displayed not connected. I tapped “Wi-Fi” and let it scan for networks.  No sign of mine.  I tried my iPod Touch, same thing.","headline":"Care and feeding of your wireless router","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Care and feeding of your wireless router</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-09-28T16:34:00-04:00" itemprop="datePublished">Sep 28, 2010
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>This morning I went to check my email from my iPad and had a unpleasant surprise.  No Internet.  I have the Wi-Fi only version of the iPad and it usually has a nice solid connection to my wireless router.  On the iPad, I fired up the Settings app and sure enough, under “Wi-Fi”, it displayed not connected. I tapped “Wi-Fi” and let it scan for networks.  No sign of mine.  I tried my iPod Touch, same thing.</p>
+
+<p>That pretty much rules out the iPad as being the problem, time to move up the chain of command.  My router is an ancient (by home router standards) Linksys, the WRT54GS.  It’s your basic work horse router with 802.11b (11 Mbit/s) and <a href="http://en.wikipedia.org/wiki/802.11g">802.11g</a> (54 Mbit/s) support.  I run a 3rd party firmware on it called <a href="http://www.dd-wrt.com/site/index" title="DD-WRT is a Linux based alternative OpenSource firmware suitable for a great variety of WLAN routers and embedded systems. The main emphasis lies on providing the easiest possible handling while at the same time supporting a great number of functionalities within the framework of the respective hardware platform used.">DD-WRT</a>.  DD-WRT greatly enhances the functionality of the router and lets you do <a href="http://en.wikipedia.org/wiki/DD-WRT#Features">a lot of cool things</a>.  It’s about 99.9% cool and 0.1% flakey.  The flakey bit means that I need to reboot it every now and then.  I don’t know if it’s a memory leak, or something is getting confused, but a reboot every once in a while clears the cobwebs out.</p>
+
+<p>From my PC with a wired connection to the router, I was able to access both the Internet and the administrative web pages on the router.  So the router wasn’t completely borked, just the wireless part.  From the admin pages on the router, I could get the router to do a wireless scan.  That’s where the router goes looking to see what other wireless hotspots are nearby.  This is very useful for picking the right <a href="http://en.wikipedia.org/wiki/802.11g#Channels_and_Frequencies">channel</a>. </p>
+
+<p>With 802.11b and 802.11g, the router uses a narrow range of frequencies at 2.4ghz.  In the US, this range is divided up into 11 channels.  It’s kind of fuzzy how they divided the channels, they all overlap the next channel on each side.  So you really want to think of it as 3 channels, 1, 6, and 11.  Since channel 1 only bleeds up with channel 2, and channel 11 only bleeds down with 10, you really want to use channel 1 or 11 if you can.  Most routers default to channel 6, in a crowded neighborhood so you should see less traffic on 1 or 11 than on 6.</p>
+
+<p>So I unplugged the router and waited about 20 seconds.  It came back up and my PC could hit the Internet.  But still no Wi-Fi.  Since a power cycle didn’t fix it, I moved up to the nuclear option: the <a href="http://www.dd-wrt.com/wiki/index.php/Hard_reset_or_30/30/30">30/30/30 reset</a>.  The 30/30/30 reset is the best way to clear out all of the router settings to the firmware default values.  When you <a href="http://www.dd-wrt.com/wiki/index.php/Installation">upgrade the firmware</a> on the router, you should do the 30/30/30 before you flash the router and one more time again after you have flashed the router to the new firmware.</p>
+
+<p>There are 3 steps to the 30/30/30 reset:</p>
+
+<ol>
+  <li>Press and hold the reset button on the router and wait 30 seconds.</li>
+  <li>While keeping the reset button pressed, unplug the power from the router and wait 30 more seconds</li>
+  <li>Plug the power back in while keeping the reset button pressed and wait for another 30 seconds.</li>
+</ol>
+
+<p>Before you do the reset, you’ll want to write down any custom settings that you have performed. I use the following features added by DD-WRT:</p>
+
+<ol>
+  <li>Configured the <a href="http://www.dyndns.com/">http://www.dyndns.com/</a> client.  This assigns the current IP address of the router to domain name provided by DynDNS.  When my ISP changes the IP address assigned to the router, DD-WRT passes the new IP address to DynDNS and they update the record for that domain name.  This makes it easy to use my VPN to connect to my home network.</li>
+  <li>Configured the <a href="http://en.wikipedia.org/wiki/Vpn">VPN</a> server.  DD-WRT provides both <a href="http://en.wikipedia.org/wiki/Point-to-Point_Tunneling_Protocol" title="The Point-to-Point Tunneling Protocol (PPTP) is a method for implementing virtual private networks. PPTP uses a control channel over TCP and a GRE tunnel operating to encapsulate PPP packets.">PPTP</a> and <a href="http://openvpn.net/index.php/open-source/333-what-is-openvpn.html" title="OpenVPN is a free and open source software application that implements virtual private network (VPN) solutions for creating secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities. It uses SSL/TLS security for encryption and is capable of traversing network address translators (NATs) and firewalls. It was written by James Yonan and is published under the GNU General Public License (GPL)">OpenVPN</a>.  PPTP is simpler the configure and works for me, so that’s what I use. I’ll use the VPN if I’m a location that blocks sites that I want to access from my iPad.  I can also use the VPN if I need to open a Remote Desktop (RDP) connection to my home PC.</li>
+  <li>Changed the default login account on the router.  Most routers let you change just the admin password, DD-WRT lets you change the login name as well.</li>
+  <li>Set the router to use <a href="http://www.opendns.com/">OpenDNS</a>.  This isn’t a DD-WRT feature, most routers will let you set the DNS servers.  I use OpenDNS for their fast <a href="http://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> servers and for their content filtering.</li>
+  <li>Sell the router to reboot itself once a week.  In a perfect world, your computer would never need to be rebooted. In this world, it doesn’t hurt for the router to get rebooted automatically once a week.  Mine is set to reboot ever Wednesday at 5:30am.  Not much is going on at that hour.</li>
+  <li>Enable <a href="http://en.wikipedia.org/wiki/Universal_Plug_and_Play" title="Universal Plug and Play (UPnP) is a set of networking protocols for primarily residential networks without expert administrators that permits networked devices, such as personal computers, printers, Internet gateways, Wi-Fi access points, mobile device, to seamlessly discover each others presence on the network and establish functional network services for data sharing, communications, and entertainment">UPnP</a>.  I missed that one at first.  Windows Home Server uses UPnP to punch a secure hole through your firewall to allow remote access to your network through Windows Home Server.  I have a HP Media Smart Server and I will access my home network from work by going through it’s Remote Access.</li>
+</ol>
+
+<p>After the reset, I set the Wi-Fi settings and after a few seconds, my iPad was back on the Internet.  Since I had already reset the settings, I decided to update the DD-WRT version on my router.  The DD-WRT web site has an interactive <a href="http://www.dd-wrt.com/site/support/router-database">Router Database</a>, where you can pick your router and it will tell you which versions of DD-WRT will work with your router.  It’s pretty handy, there are multiple versions of DD-WRT available, and different builds of each versions.</p>
+
+<p>Unless you have a large pile of routers to play with, you really want to use the suggested version of DD-WRT.  If you install the wrong version or get an unstable development build, you could brick the router.  I grabbed the standard set and installed it without blowing anything up.  Then I put back my custom settings.</p>
+
+<p>So now I have full Wi-Fi back, but I don’t know why it failed.  It was working the evening before, but stopped sometime last night.  MY WRT45GS is about 4 years old and has been on 24/7 the entire time.  It could be just wearing out.  My iPad supports <a href="http://en.wikipedia.org/wiki/802.11n">802.11n</a>, it may be time to upgrade to a newer router.  The Buffalo Technology Nfiniti Wireless-N High Power Router (<a href="http://www.buffalotech.com/products/wireless/nfiniti-wireless-n/nfiniti-wireless-n-high-power-router-access-point-wzr-hp-g300nh/">WZR-HP-G300NH</a>) works very well with DD-WRT and the people at <a href="http://www.smallnetbuilder.com/wireless/wireless-reviews/30889-buffalo-nfiniti-wireless-n-high-power-router-a-access-point-reviewed">SmallNetBuilder like it</a>.  <a href="http://www.codinghorror.com/blog/2010/09/because-everyone-needs-a-router.html">Jeff Atwood just picked one up too</a>, and he’s programmer with the hardware tweak bit set to on.  It would also be nice to have a router that supports gigabit speed WAN connections for the small set of the devices that I own that support gigabit. </p>
+
+<p>The Nfiniti is a single band router, everything is broadcast over the 2.4ghz range.  I may look at a dual band router, like the <a href="http://www.myopenrouter.com/category/40/WNR3500L-Open-Source-Router">Netgear WNR3500L</a>.  With a dual band router, you can have 802.11g devices on the 2.4ghz band and the 802.11n devices on the 5ghz band.  As far as I can tell, my iPad supports 802.11a/b/g/n on either band. It may be worth it to get the heavy duty Netgear router over the Buffalo one.</p>
+
+<p><em>Some additional notes</em>:<br />
+Resetting the router evidently disabled my Windows Home Server’s Remote Access functionality.  I was able to repair that by performing the following steps:</p>
+
+<ol>
+  <li>Launch the Windows Home Console</li>
+  <li>Click on “Settings”</li>
+  <li>Click on “Remote Access”</li>
+  <li>Click on the “Repair…” button.  This launched the “Repairing Remote Access Configuration” wizard. Which told me that UPnP was not enabled on the router. Sure enough, I went into the UPnP page (under NAT / QoS) in dd-qrt and saw that UPnP was not enabled.  I enabled UPnP, rebooted the router, and let the wizard repair the Remote Access settings. </li>
+</ol>
+
+<p>The fun part was that I did this from my office PC.  I created opened a VPN connection to my router and changed the UPnP settings remotely.</p>
+
+  </div><a class="u-url" href="/2010/09/28/care-and-feeding-of-your-wireless/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

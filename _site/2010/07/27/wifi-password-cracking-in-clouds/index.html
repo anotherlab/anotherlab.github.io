@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Wifi password cracking in the clouds | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Wifi password cracking in the clouds" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Bruce Schneier posted an article on his blog about wpacracker.com, a service for cracking WPA and other passwords.  Basically, you send them a dump of network traffic from a WiFi network and they will use a brute force algorithm to guess the password.  With a massive dictionary and brute force computing. they claim to be able to crack most WPA passwords in 20 minutes.  Once they have the WPA password, your home network wide open to the outside world." />
+<meta property="og:description" content="Bruce Schneier posted an article on his blog about wpacracker.com, a service for cracking WPA and other passwords.  Basically, you send them a dump of network traffic from a WiFi network and they will use a brute force algorithm to guess the password.  With a massive dictionary and brute force computing. they claim to be able to crack most WPA passwords in 20 minutes.  Once they have the WPA password, your home network wide open to the outside world." />
+<link rel="canonical" href="http://localhost:4000/2010/07/27/wifi-password-cracking-in-clouds/" />
+<meta property="og:url" content="http://localhost:4000/2010/07/27/wifi-password-cracking-in-clouds/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-07-27T22:02:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Wifi password cracking in the clouds" />
+<script type="application/ld+json">
+{"datePublished":"2010-07-27T22:02:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2010/07/27/wifi-password-cracking-in-clouds/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2010/07/27/wifi-password-cracking-in-clouds/"},"dateModified":"2010-07-27T22:02:00-04:00","description":"Bruce Schneier posted an article on his blog about wpacracker.com, a service for cracking WPA and other passwords.  Basically, you send them a dump of network traffic from a WiFi network and they will use a brute force algorithm to guess the password.  With a massive dictionary and brute force computing. they claim to be able to crack most WPA passwords in 20 minutes.  Once they have the WPA password, your home network wide open to the outside world.","headline":"Wifi password cracking in the clouds","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Wifi password cracking in the clouds</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-07-27T22:02:00-04:00" itemprop="datePublished">Jul 27, 2010
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Bruce Schneier posted <a href="http://www.schneier.com/blog/archives/2010/07/wpa_cracking_in.html">an article on his blog about wpacracker.com</a>, a service for cracking <a href="http://en.wikipedia.org/wiki/Wi-Fi_Protected_Access">WPA</a> and other passwords.  Basically, you send them a dump of network traffic from a WiFi network and they will use a brute force algorithm to guess the password.  With a massive dictionary and brute force computing. they claim to be able to crack most WPA passwords in 20 minutes.  Once they have the WPA password, your home network wide open to the outside world.</p>
+
+<p>Some say that with <a href="http://www.angelfire.com/in/hypnosonic/Parable_of_the_Monkeys.html">enough monkeys typing at random on a keyboard</a>, eventually you would get the complete works of <a href="http://www.npr.org/templates/story/story.php?storyId=92142217">Shakespeare</a>.  Actually you wouldn’t (the universe would come to the end first), but that is the general idea of a brute force password attack.  First you use a large dictionary of words, then after exhausting that list you go for a random series of letters and number combinations.  With this company, they are using a 400 CPU cluster and a database of 135 million words.  They are claiming about 20 minutes to crack a password.  That works out to about 7 words a minute per CPU, using from their dictionary.</p>
+
+<p>Processing 7 words a minutes per CPU to test a world from a dictionary doesn’t sound very fast at all.  It does take a lot of computer horsepower to crack WPA passwords. WPA passwords are case sensitive, which means each letter in a password could be either upper or lower case.  An 8 letter word would have 2<sup>8</sup> possible combinations.  It can take a while to work through the iterations, but with enough CPU power, you’ll work though most common words.</p>
+
+<p>The way it works is that someone can park in front of your house and use commonly available software to capture the wireless data being broadcast through your house.  If you are using WPA encryption, then all of the data will be encrypted.  They can then send a copy of that data to the wonderful people at wpacracker and pay them $35.  They will get back your WPA password, if the wpacracker people were able to crack it.</p>
+
+<p>You can make it much,much harder for the password to be cracked.  Just use long passwords and use numbers with the letters.  WPA passwords are case sensitive, so if you limit the characters to just the upper and lower case letters, plus the numbers, you have 62 possible choices for each character in the password.  If you pick an eight character password, you would 62<sup>8</sup> possible passwords.  That’s a pretty big number.  With 16 characters, you get 62<sup>16</sup>, which is 4.something , followed by 28 zeros.  That’s a number beyond big.  A brute force attack with today’s hardware would take centuries to process. </p>
+
+<p>I use a 32 character password, brute force attempts will fail on that one. But I cheat a little.  I’m not going to remember a 32 character sequence, and it would just take forever when someone visited my home and we had to type in a random 32 character sequence.  What I did was to make up a random 8 character sequence using a 4 letter family name and 4 digits and then repeat that sequence 4 times.  It’s easy to remember and easy to type.  Something like “Doug2112”. It wont show up in the dictionary and it’s not going to get cracked.  When I’m letting someone on our network, I just have them open up notepad and type in the 8 characters and then copy and paste it 4 times into WPA password dialog.</p>
+
+<p>Update:<br />
+If you want to quickly test your password to see how long it would take for a desktop PC to crack it, try <a href="http://howsecureismypassword.net/">http://howsecureismypassword.net/</a>.  On that site, they estimate that a desktop PC would crack the “Doug2112” password in 252 days. For that phrase repeated 4 times, they came up with 32 octillion years.  Take that with a grain of salt, but it shows how much harder it is to crack longer passwords.</p>
+
+  </div><a class="u-url" href="/2010/07/27/wifi-password-cracking-in-clouds/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

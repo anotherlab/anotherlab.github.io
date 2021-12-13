@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Notes on installing FinalBuilder 7 | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Notes on installing FinalBuilder 7" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="VSoft Technologies just released a new version of their build automation tool, FinalBuilder.  Version 7 gets a new look to their IDE and you can finally have multiple projects open at the same time.  Among other things, they added support for Hg and Git, plus full support for Visual Studio 2010.  It also supports Team Foundation Build 2010." />
+<meta property="og:description" content="VSoft Technologies just released a new version of their build automation tool, FinalBuilder.  Version 7 gets a new look to their IDE and you can finally have multiple projects open at the same time.  Among other things, they added support for Hg and Git, plus full support for Visual Studio 2010.  It also supports Team Foundation Build 2010." />
+<link rel="canonical" href="http://localhost:4000/2010/08/06/notes-on-installing-finalbuilder-7/" />
+<meta property="og:url" content="http://localhost:4000/2010/08/06/notes-on-installing-finalbuilder-7/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-08-06T21:50:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Notes on installing FinalBuilder 7" />
+<script type="application/ld+json">
+{"datePublished":"2010-08-06T21:50:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2010/08/06/notes-on-installing-finalbuilder-7/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2010/08/06/notes-on-installing-finalbuilder-7/"},"dateModified":"2010-08-06T21:50:00-04:00","description":"VSoft Technologies just released a new version of their build automation tool, FinalBuilder.  Version 7 gets a new look to their IDE and you can finally have multiple projects open at the same time.  Among other things, they added support for Hg and Git, plus full support for Visual Studio 2010.  It also supports Team Foundation Build 2010.","headline":"Notes on installing FinalBuilder 7","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Notes on installing FinalBuilder 7</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-08-06T21:50:00-04:00" itemprop="datePublished">Aug 6, 2010
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>VSoft Technologies just released a new version of their build automation tool, <a href="http://www.finalbuilder.com/home.aspx">FinalBuilder</a>.  Version 7 gets a new look to their IDE and you can finally have multiple projects open at the same time.  Among other things, they added support for <a href="http://mercurial.selenic.com/">Hg</a> and <a href="http://git-scm.com/">Git</a>, plus full support for Visual Studio 2010.  It also <a href="http://www.finalbuilder.com/articles.aspx?ID=38">supports</a> Team Foundation Build 2010.</p>
+
+<p><a href="https://i1.wp.com/lh3.ggpht.com/_natoSxTaPFU/TFx1kDpq1iI/AAAAAAAAAdo/IBVA4EJUSG8/s1600-h/FB7_IDE_14.png"><img loading="lazy" title="FB7_IDE_1" height="170" alt="FB7_IDE_1" src="https://i2.wp.com/lh5.ggpht.com/_natoSxTaPFU/TFx1kkdOBmI/AAAAAAAAAds/OnVHMufQ0w0/FB7_IDE_1_thumb2.png?resize=244%2C170" width="244" border="0" data-recalc-dims="1" /></a></p>
+
+<p>Along with FinalBuilder, you get a single user license for FinalBuilder Server.  FinalBuilder Server provides a nice web frontend so that you can remotely start a build process from a web browser.  We use this a lot. This tool does a lot and it will save you time.</p>
+
+<p>After installing FinalBuilder, I loaded in an existing build project that had been created with FinalBuilder 6.  It complained about not being able to find the user variables.   User variables are variables defined with FinalBuilder and are global to all projects. We use them to define some settings shared by all our projects.  Within FinalBuilder IDE, you can cut and paste variables from one project to another.  It only works with the same version of the IDE.  I could cut and paste variables a project loaded in one instance of FinalBuilder 6 to another project loaded in a separate instance of FinalBuilder 6.  I could not copy variables from FinalBuilder 6 to FinalBuilder 7. </p>
+
+<p>Which is really odd, the properties of the variables in FinalBuilder 7 are a superset of what is available in FinalBuilder 6.  Fortunately, this is easy to fix.  The FinalBuilder 6 user variables are stored in a file named FBUserVariables.ini, located in Documents and %USREPROFILE\Application Data\FinalBuilder6.  FinalBuilder 7 follows the same pattern so all I needed to was to copy that file to the %USREPROFILE\Application Data\FinalBuilder7 folder.  Once I did that, the variables were all defined.</p>
+
+<p>User variables are specific to the Windows user account running FinalBuilder.  When we set up our build machine, we created a user account specific to that machine.  All of the compilers and component sets are installed as that user.  FinalBuilder Server is set to run the projects as that user.  This makes life much simpler.  We completely avoid the issue of stuff getting installed under one user and not being available to another user.</p>
+
+<p>I did have to replace a deprecated action with it’s replacement.  <a href="http://help.finalbuilder.com/Index.htm?actionsreference.htm">Actions</a> are what FinalBuilder uses to implement a single task.  Copy a file, compile a project, get from source control, each would be considered a distinct action.  A build project is a series of actions, with some flow control.</p>
+
+<p>The “Text Replace” action has been replaced with the “Text Find / Replace” action.  Not a big deal, but it threw me when I tried running the script.  I had run the “Batch Project Upgrade…” option from the IDE, but that only copies a previous version project as new version.  It does not replace deprecated actions.  I can understand not changing the actions, but it would be helpful if deprecated actions could be identified.  It was a quick change to make, took about 30 seconds.</p>
+
+<p>I found another odd glitch with FinalBuilder 7.  A really useful feature of FinalBuilder is that it can update the AssemblyInfo.cs files for every project in a .NET C# solution.  This makes it very easy to set the version number and other attributes for every assembly.  I built a multiple project solution with FinalBuilder 7 and only some of the projects had their AssemblyInfo.cs file updated.  After some peeking and poking, I saw that it was only updating the AssemblyInfo.cs files located in the project’s Properties folder.  If the file was in the project root folder, then it didn’t get updated.  I reported this as a bug on the FinalBuilder forums and moved the offending files to the Properties folder.  Built the project again and everything was updated.  <a href="http://www.motherofconfusion.com/2010/07/double-rainbow-guy-mariposa-youtube-celeb-goes-mainstream/">Double rainbows</a> all around for everyone. [<strong>Update</strong>: After reporting this bug, <a href="http://www.finalbuilder.com/forum.aspx?aft=10059">they fixed it</a> a few hours later.]</p>
+
+<p>I had one more glitch, this time with FinalBuilder Server.  I added a project to the server and it threw an “type initializer exception” error.  This is a known issue with FinalBuilder 7.  FinalBuilder Server uses <a href="http://www.microsoft.com/windowsserver2003/technologies/management/powershell/default.mspx">PowerShell</a> for some of it’s tasks.  If PowerShell is not installed, you will get the “type initializer exception” error.  The solution was easy, just install PowerShell.  Windows Update wanted to push it down anyways.  I did suggest to VSoft that they add a prerequisite check for PowerShell in the FinalBuilder installers.  This is easy to do and well is <a href="http://blogs.msdn.com/b/powershell/archive/2009/06/25/detection-logic-poweshell-installation.aspx">documented</a>. </p>
+
+<ul>
+  <li>To check if any version of PowerShell is installed, check for the following value in the registry:
+    <ul>
+      <li>Key Location: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1</li>
+      <li>Value Name: Install</li>
+      <li>Value Type: REG_DWORD</li>
+      <li>Value Data: 0x00000001 (1)</li>
+    </ul>
+  </li>
+  <li>To check whether version 1.0 or 2.0 of PowerShell is installed, check for the following value in the registry:
+    <ul>
+      <li>Key Location: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\PowerShellEngine</li>
+      <li>Value Name: PowerShellVersion</li>
+      <li>Value Type: REG_SZ</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Value Data: &lt;1.0</td>
+              <td>2.0&gt;</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Version 2 of PowerShell is backwards compatible with version 1, as long as you have either version, FinalBuilder Server will be happy.  Even with these glitches, I really like using FinalBuilder.  If you are looking for an automated build tool with a decent IDE and debugging, you should consider FinalBuilder.</p>
+
+  </div><a class="u-url" href="/2010/08/06/notes-on-installing-finalbuilder-7/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

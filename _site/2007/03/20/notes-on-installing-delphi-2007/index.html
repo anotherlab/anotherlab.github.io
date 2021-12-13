@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Notes on installing Delphi 2007 | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Notes on installing Delphi 2007" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I got the email yesterday from CodeGear. It was a link to download the newly released Delphi 2007. I will be getting the DVD from CodeGear as part of the Software Assurance that I have, but I wanted to try the new installer. This is their first release using installer technology from InstallAware. As it happens, I’m considering switching from Wise For Windows Installer (WFWI) to InstallAware, so it’s a good oppourtunity to see their installer in action." />
+<meta property="og:description" content="I got the email yesterday from CodeGear. It was a link to download the newly released Delphi 2007. I will be getting the DVD from CodeGear as part of the Software Assurance that I have, but I wanted to try the new installer. This is their first release using installer technology from InstallAware. As it happens, I’m considering switching from Wise For Windows Installer (WFWI) to InstallAware, so it’s a good oppourtunity to see their installer in action." />
+<link rel="canonical" href="http://localhost:4000/2007/03/20/notes-on-installing-delphi-2007/" />
+<meta property="og:url" content="http://localhost:4000/2007/03/20/notes-on-installing-delphi-2007/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-03-20T21:58:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Notes on installing Delphi 2007" />
+<script type="application/ld+json">
+{"datePublished":"2007-03-20T21:58:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2007/03/20/notes-on-installing-delphi-2007/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2007/03/20/notes-on-installing-delphi-2007/"},"dateModified":"2007-03-20T21:58:00-04:00","description":"I got the email yesterday from CodeGear. It was a link to download the newly released Delphi 2007. I will be getting the DVD from CodeGear as part of the Software Assurance that I have, but I wanted to try the new installer. This is their first release using installer technology from InstallAware. As it happens, I’m considering switching from Wise For Windows Installer (WFWI) to InstallAware, so it’s a good oppourtunity to see their installer in action.","headline":"Notes on installing Delphi 2007","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Notes on installing Delphi 2007</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-03-20T21:58:00-04:00" itemprop="datePublished">Mar 20, 2007
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I got the email yesterday from <a href="http://www.codegear.com/" title="Where developers matter">CodeGear</a>. It was a link to download the newly released <a href="http://www.codegear.com/Products/Delphi/Delphi2007forWin32/tabid/236/Default.aspx" title="Delphi® 2007 for Win32®">Delphi 2007</a>. I will be getting the DVD from CodeGear as part of the Software Assurance that I have, but I wanted to try the new installer. This is their first release using installer technology from <a href="http://www.installaware.com/">InstallAware</a>. As it happens, I’m considering switching from <a href="http://www.wise.com/">Wise For Windows Installer</a> (WFWI) to InstallAware, so it’s a good oppourtunity to see their installer in action.</p>
+
+<p>The installer is a minimal (4MB) installer. It grabs the bits that it needs from the Internet from the bits that it needs and the bits that you want. It took a while to download the installer. There were three options, HTTP, FTP, and Galileo. From my office, none of them worked. Once again, our <a href="http://chris.pirillo.com/2005/01/10/sonicwall-content-filter-service/">SonicWall</a> firewall has safely protected me from downloading stuff that I need. After a few attempts, I went to Plan B. That was my home PC. I remoted into that box, immediately downloaded the installer without any grief and copied the file back to my office PC.</p>
+
+<p>Once I had the installer, I ran it on my Vista box. The Vista box is my backup PC and I just put Vista in it to test our apps under a <a href="http://www.geonet.org.nz/whiteisland.html">hostile environment</a>. The first thing installer did (after I answered “Continue” to the ever present UAC) was to announce that it needed the .NET 2.0 SDK and it was going out to get them. It transferred about 360MB or so of .NET parts and then installed them.</p>
+
+<p>After about 30 minutes or so, I got the “Welcome to the InstallAware Wizard for RAD Studio Setup” page in the setup dialog. Which led to the EULA and registration pages. Oddly enough, it defaulted to “CodeGear” as the company name. Come on folks, that value can be read from the registry. The “Next” button flickered as I typed into each field. I don’t know that that’s Vista, Windows Installer, or InstallAware. I’m guessing it’s Vista’s non-support for my ancient NVIDIA TNT2 card that it treats as a standard VGA device.</p>
+
+<p>Then I was prompted for what features to install. I have the Enterprise version, there were many features. It wanted about 1GB and called itself “CodeGear RAD Studio”. After one more confirmation prompt, the installer went back to the mothership to download the bits it needed.</p>
+
+<p>It was done after 90 minutes. Now comes the fun part. How many of the Delphi 2006 components will work as advertised?</p>
+
+<div>
+  Tech Tags: <a href="http://technorati.com/tag/Codegear" rel="tag">Codegear</a> <a href="http://technorati.com/tag/Delphi+2007" rel="tag">Delphi+2007</a> <a href="http://technorati.com/tag/Sonicwall" rel="tag">Sonicwall</a> <a href="http://technorati.com/tag/Vista" rel="tag">Vista</a>
+</div>
+
+  </div><a class="u-url" href="/2007/03/20/notes-on-installing-delphi-2007/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

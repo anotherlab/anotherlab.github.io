@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>What to do when Firefox displays multiple versions of the Java Console in the Add-ons list | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="What to do when Firefox displays multiple versions of the Java Console in the Add-ons list" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I upgraded to Firefox 3.6.3 the other day and at the same time, upgraded one of the add-ons I use (Xmarks).  I love Xmarks, but that’s for another time.  When Firefox upgrades an add-on, it displays the Add-ons list, which is a dialog box that lists all of the add-ons that are registered with Firefox.  You can use that dialog to enable or to disable an add-on or see if a newer version of an add-on is available. " />
+<meta property="og:description" content="I upgraded to Firefox 3.6.3 the other day and at the same time, upgraded one of the add-ons I use (Xmarks).  I love Xmarks, but that’s for another time.  When Firefox upgrades an add-on, it displays the Add-ons list, which is a dialog box that lists all of the add-ons that are registered with Firefox.  You can use that dialog to enable or to disable an add-on or see if a newer version of an add-on is available. " />
+<link rel="canonical" href="http://localhost:4000/2010/04/23/what-to-do-when-firefox-displays/" />
+<meta property="og:url" content="http://localhost:4000/2010/04/23/what-to-do-when-firefox-displays/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-04-23T16:09:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="What to do when Firefox displays multiple versions of the Java Console in the Add-ons list" />
+<script type="application/ld+json">
+{"datePublished":"2010-04-23T16:09:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2010/04/23/what-to-do-when-firefox-displays/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2010/04/23/what-to-do-when-firefox-displays/"},"dateModified":"2010-04-23T16:09:00-04:00","description":"I upgraded to Firefox 3.6.3 the other day and at the same time, upgraded one of the add-ons I use (Xmarks).  I love Xmarks, but that’s for another time.  When Firefox upgrades an add-on, it displays the Add-ons list, which is a dialog box that lists all of the add-ons that are registered with Firefox.  You can use that dialog to enable or to disable an add-on or see if a newer version of an add-on is available. ","headline":"What to do when Firefox displays multiple versions of the Java Console in the Add-ons list","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">What to do when Firefox displays multiple versions of the Java Console in the Add-ons list</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-04-23T16:09:00-04:00" itemprop="datePublished">Apr 23, 2010
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I upgraded to <a href="http://www.mozilla.com/firefox">Firefox</a> 3.6.3 the other day and at the same time, upgraded one of the add-ons I use (Xmarks).  I love <a href="http://anotherlab.rajapet.net/%7BCAFEEFAC-0016-0000-0010-ABCDEFFEDCBA%7D" title="Bookmark sync and search">Xmarks</a>, but that’s for another time.  When Firefox upgrades an add-on, it displays the Add-ons list, which is a dialog box that lists all of the add-ons that are registered with Firefox.  You can use that dialog to enable or to disable an add-on or see if a newer version of an add-on is available. </p>
+
+<p>Firefox has two terms for add-ons.  They refer to them as either an add-on or an extension.  They mean pretty much the same thing with Firefox and I’m going with the term that appears in their own documentation, which is extension.</p>
+
+<p>Something was changed in Firefox with the 3.6 release.  I saw a bunch of extensions that were not there before.  I was seeing multiple versions of something called the “Java Console”.</p>
+
+<p><a href="https://i0.wp.com/lh3.ggpht.com/_natoSxTaPFU/S9G4BBuxxXI/AAAAAAAAAcU/qgSKb1EcxlQ/s1600-h/Add-ons%20with%20Java%20Console%5B9%5D.png"><img loading="lazy" title="Add-ons with Java Console" height="244" alt="Add-ons with Java Console" src="https://i2.wp.com/lh4.ggpht.com/_natoSxTaPFU/S9G4CrosxPI/AAAAAAAAAcY/RBxhO1KLWSk/Add-ons%20with%20Java%20Console_thumb%5B7%5D.png?resize=227%2C244" width="227" border="0" data-recalc-dims="1" /></a></p>
+
+<p>This add-on is a <a href="http://www.java.com/en/download/help/javaconsole.xml">Java development tool</a>.  You can use it display error messages from Java applets running on a page.  I never use it and I didn’t want every old version in that list. If you search on “firefox java console multiple” with your favorite search site, you’ll get over 100,000 hits.  So I figured that it wasn’t me, it was Java causing the problem.  One the higher ranked hits for the search took me me to an <a href="http://kb.mozillazine.org/Java#Multiple_Java_Console_extensions" title="Multiple Java Console extensions">article about Java</a> in the Mozilla (people behind Firefox) knowledge base.</p>
+
+<p>It appears that when the Java installer is upgrading from a previous version of Java, it’s smart enough to remove or overwrite the previous version of the Java runtime, but not smart enough to remove the previous version of the Java Console extension. The KB article about Java has a link for how to <a href="http://kb.mozillazine.org/Uninstalling_add-ons#Global_extension">manually uninstall a add-on</a>.  You can do it manually or from within Firefox.  I was unable to remove it through Firefox, so I decided to remove it manually with <a href="http://en.wikipedia.org/wiki/Terminate_with_extreme_prejudice">extreme prejudice</a>.</p>
+
+<p>You can register an extension with Firefox in multiple ways.  With Java, the extensions are stored in the following folder:  “%ProgramFiles%\Mozilla Firefox\extensions”.</p>
+
+<p>On my XP machine, a listing of that folder displayed the following:</p>
+
+<pre>Volume in drive C is JOHNSONWAX     Serial number is 00a4:443c<br /> Directory of  C:\Program Files\Mozilla Firefox\extensions\*</pre>
+
+<pre>4/23/2010   9:42         
+
+<DIR>
+      .<br /> 4/23/2010   9:42         
+  
+  <DIR>
+        ..<br /> 4/16/2010  10:57         
+    
+    <DIR>
+          {972ce4c6-7e08-4474-a285-3208198ce6fd}<br />11/18/2008  12:37         
+      
+      <DIR>
+            <strong>{CAFEEFAC-0016-0000-0010-ABCDEFFEDCBA}</strong><br /> 2/18/2009  16:52         
+        
+        <DIR>
+              <strong>{CAFEEFAC-0016-0000-0011-ABCDEFFEDCBA}</strong><br /> 5/28/2009  10:31         
+          
+          <DIR>
+                <strong>{CAFEEFAC-0016-0000-0013-ABCDEFFEDCBA}</strong><br /> 8/10/2009  14:35         
+            
+            <DIR>
+                  <strong>{CAFEEFAC-0016-0000-0015-ABCDEFFEDCBA}<br /></strong>11/23/2009  10:29         
+              
+              <DIR>
+                    <strong>{CAFEEFAC-0016-0000-0017-ABCDEFFEDCBA}<br /></strong> 3/31/2010  13:57         
+                
+                <DIR>
+                      <strong>{CAFEEFAC-0016-0000-0019-ABCDEFFEDCBA}<br /></strong> 4/22/2010  11:33         
+                  
+                  <DIR>
+                        <strong>{CAFEEFAC-0016-0000-0020-ABCDEFFEDCBA}<br /></strong>10/09/2009  14:17              49  {E0B8C461-F8FB-49b4-8373-FE32E9252800}<br />             49 bytes in 1 file and 10 dirs    4,096 bytes allocated<br /> 20,867,198,976 bytes free<br />&lt;/pre&gt;
+                    
+                    
+                    <p>
+                      From this listing, the multiple Java Console entries jump out as because of the multiple folder names that start with “{CAFEEFAC-0016”.  The folder names are <a title="Globally Unique Identifier" href="http://en.wikipedia.org/wiki/Globally_Unique_Identifier">GUIDs</a>, and it looks like Sun has embedded the version number in to the GUID name.
+                    </p>
+                    
+                    
+                    <p>
+                      You typically will not see the name of the extension in the folder or in any of the file names in the extension folder.  You need to check the folder and read either the chrome.manifast or the install.rdf, files typically found in an extension folder.  When I opened the install.rdf (this file tells FireFox how to register the extension) in the {CAFEEFAC-0016-0000-0010-ABCDEFFEDCBA} folder, this is what I saw.
+                    </p>
+                    
+                    
+                    <pre>&lt;RDF xmlns="<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns">http://www.w3.org/1999/02/22-rdf-syntax-ns</a>#"<br />     xmlns:em="<a href="http://www.mozilla.org/2004/em-rdf">http://www.mozilla.org/2004/em-rdf</a>#"&gt;<br />  <Description about="urn:mozilla:install-manifest"><br />    <strong><em:name>Java Console</em:name><br /></strong>    <em:id>{CAFEEFAC-0016-0000-0010-ABCDEFFEDCBA}</em:id> <br />    <strong><em:version>6.0.10</em:version><br /></strong>    <em:type>2</em:type> <br />    <em:hidden>true</em:hidden><br />    <em:targetApplication><br />      <Description><br />        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id><br />        <em:minVersion>1.0</em:minVersion><br />        <em:maxVersion>5.0+</em:maxVersion><br />      </Description><br />    </em:targetApplication><br />  </Description>      <br />&lt;/RDF&gt;</pre>
+
+
+<p>
+  The fourth line down lists the extension name as the value of the em:name element and two lines down, you’ll see the version number as the value of the em:version element. Since I could tell that the “{CAFEEFAC-0016” folders belong to the Java Console, all I had to was to delete all of the “{CAFEEFAC-0016” folders, except for the last one.  Once I did that, all I needed to do was to restart Firefox and the extra extensions were gone.
+</p>
+
+
+<p>
+  This appears to be a bug with the Java installer when you upgrade over an existing version.  If it’s smart enough to remove the previous runtime, it should be able to remove the previous version of the console.  It would not have been that hard, all they had to to was look at all the extension folders that started with “{CAFEEFAC-0016-0000” and remove the one that was not the current one.
+</p>
+</DIR></DIR></DIR></DIR></DIR></DIR></DIR></DIR></DIR></DIR></pre>
+
+  </div><a class="u-url" href="/2010/04/23/what-to-do-when-firefox-displays/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

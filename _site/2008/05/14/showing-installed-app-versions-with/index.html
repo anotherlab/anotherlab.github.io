@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Showing installed app versions with BgInfo | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Showing installed app versions with BgInfo" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I love it when you can use one cool tool to enhance another cool tool.  Duncan Epping posted an English translation of a Arne Fokkema post about how to use BgInfo to display the version number of VMware Tools that has been installed inside a VMWare virtual machine." />
+<meta property="og:description" content="I love it when you can use one cool tool to enhance another cool tool.  Duncan Epping posted an English translation of a Arne Fokkema post about how to use BgInfo to display the version number of VMware Tools that has been installed inside a VMWare virtual machine." />
+<link rel="canonical" href="http://localhost:4000/2008/05/14/showing-installed-app-versions-with/" />
+<meta property="og:url" content="http://localhost:4000/2008/05/14/showing-installed-app-versions-with/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-05-14T15:54:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Showing installed app versions with BgInfo" />
+<script type="application/ld+json">
+{"datePublished":"2008-05-14T15:54:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/05/14/showing-installed-app-versions-with/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/05/14/showing-installed-app-versions-with/"},"dateModified":"2008-05-14T15:54:00-04:00","description":"I love it when you can use one cool tool to enhance another cool tool.  Duncan Epping posted an English translation of a Arne Fokkema post about how to use BgInfo to display the version number of VMware Tools that has been installed inside a VMWare virtual machine.","headline":"Showing installed app versions with BgInfo","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Showing installed app versions with BgInfo</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-05-14T15:54:00-04:00" itemprop="datePublished">May 14, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I love it when you can use one cool tool to enhance another cool tool.  Duncan Epping <a href="http://www.yellow-bricks.com/2008/04/29/show-vmware-tools-version-with-bginfo/" title="Show VMware Tools version with BGInfo">posted an English translation</a> of a Arne Fokkema <a href="http://ictfreak.wordpress.com/2008/04/28/vmware-show-vmware-tools-version-with-bginfo/">post</a> about how to use BgInfo to display the version number of VMware Tools that has been installed inside a VMWare virtual machine.</p>
+
+<p>If you have never used <a href="http://technet.microsoft.com/en-us/sysinternals/bb897557.aspx" title="BgInfo home page">BgInfo</a>, it’s a great little utility written by Bryce Cogswell of <a href="http://technet.microsoft.com/en-us/sysinternals/default.aspx">Sysinternals</a> fame.  BgInfo will write a desktop bitmap that will contain useful information about the machine: machine name, ip address, version stuff, free space, etc.  You can set BgInfo to run when you login by placing a shortcut to it in the user’s or shared startup folder.</p>
+
+<p>When you work with multiple servers, real or virtual, their desktops all tend to look alike.  BgInfo makes it easy to see at glance which machine you are currently connected to.</p>
+
+<p>What Arne wrote about was that in addition to displaying predefined variable, BgInfo can display version information from any file that has version information.  You point BgInfo to the location of the VMWareServer executable and select version formation and you are done.  The screen shot from Arne’s blog shows how simple it is:</p>
+
+<p><a href="http://ictfreak.wordpress.com/2008/04/28/vmware-show-vmware-tools-version-with-bginfo/"><img src="http://ictfreak.files.wordpress.com/2008/04/show-vmware-tools-version-with-bginfo.png?w=680" data-recalc-dims="1" /></a></p>
+
+<p>BgInfo is very handy for displaying static information.  Since the desktop background is only being rendered when you login in, you wouldn’t want to use it to display a dynamic variable, like CPU load.  I can see where you would use this to display other version type of information.  If you are testing against multiple service pack versions of SQL Server, you could display that information.   While I’ve been talking about using this for a VMware virtual image, this is handy for Virtual PC images or any server that you would remote in to.</p>
+
+  </div><a class="u-url" href="/2008/05/14/showing-installed-app-versions-with/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

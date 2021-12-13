@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Does knowing C make you a better programmer? | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Does knowing C make you a better programmer?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Joel and Jeff had a conversation about the merits of knowing how to program in C.  Joel’s take was knowing how to program in C makes you a better program.  I’m in that camp, with some other people (Darren and Eric)." />
+<meta property="og:description" content="Joel and Jeff had a conversation about the merits of knowing how to program in C.  Joel’s take was knowing how to program in C makes you a better program.  I’m in that camp, with some other people (Darren and Eric)." />
+<link rel="canonical" href="http://localhost:4000/2008/05/27/does-knowing-c-make-you-better/" />
+<meta property="og:url" content="http://localhost:4000/2008/05/27/does-knowing-c-make-you-better/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-05-27T21:26:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Does knowing C make you a better programmer?" />
+<script type="application/ld+json">
+{"datePublished":"2008-05-27T21:26:00-04:00","@type":"BlogPosting","url":"http://localhost:4000/2008/05/27/does-knowing-c-make-you-better/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2008/05/27/does-knowing-c-make-you-better/"},"dateModified":"2008-05-27T21:26:00-04:00","description":"Joel and Jeff had a conversation about the merits of knowing how to program in C.  Joel’s take was knowing how to program in C makes you a better program.  I’m in that camp, with some other people (Darren and Eric).","headline":"Does knowing C make you a better programmer?","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Does knowing C make you a better programmer?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-05-27T21:26:00-04:00" itemprop="datePublished">May 27, 2008
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="http://www.joelonsoftware.com/AboutMe.html">Joel</a> and <a href="http://www.codinghorror.com/blog/archives/000021.html">Jeff</a> had a <a href="http://blog.stackoverflow.com/index.php/2008/04/podcast-3/">conversation</a> about the merits of knowing how to program in C.  Joel’s take was knowing how to program in C makes you a better program.  I’m in that camp, with some <a href="http://blog.darrenstokes.com/2008/05/22/do-you-really-need-to-know-c-i-think-so/">other</a> <a href="http://www.ericsink.com/entries/c_morse_code.html">people</a> (Darren and Eric).</p>
+
+<p>After college, I did mostly C programming.  That was back in the days when 640K wasn’t the punch-line to a joke, but a real limit that drove you nuts.  Having a good working knowledge of C gave you a better understanding how memory was allocated and how it was used.  <a href="http://en.wikipedia.org/wiki/Pointer_arithmetic">Pointer arithmetic</a> was part of the natural order of programming.  It made you a careful with what you allocated and how you managed it.</p>
+
+<p>There’s a still a place for unmanaged code, whether it’s C, C++, Delphi, or some other language.  You get a lot functionality with managed code (more ways of accessing data, garbage collection, etc), but there’s no free lunch and there’s a substantial footprint for each process that uses the .NET Framework.  I’m typing this with Windows Live Writer, an app that’s written for the .NET Framework.  It’s using 54MB right now as I type.  That’s a lot of memory for a WYSIWG blog tool.  Just because you have a garbage collector doesn’t mean that it’s being used effectively.  It’s still good to clean up after yourself and a good C/C++ programmer does that.</p>
+
+<p>Eric Sink compared knowing C with knowing Morse code.  It’s a flawed argument in that Morse code is not the underpinnings of the technology that came after it, but it’s close enough to the spirit of the argument to have some merit.  My dad learned Morse code 30+ years ago when he got his ham license.  It was a big deal back then and you couldn’t get your ham license with being able to demonstrate your proficiency with Morse.</p>
+
+<p>Once he got his license, he rarely if ever used Morse to send out a message.  But every now and then, he would pick up a faint signal that had bounced around the ionosphere and it would be in Morse.  He would sit at his radio and pick out the words that of the dashes and dots.  </p>
+
+<p>But how can you use that analogy to demonstrate the value of C to a managed code programmer?  For many programmers, I’m sure it doesn’t mean anything to them.  If you are just doing web programming for some giant <a href="http://en.wikipedia.org/wiki/Pointer_arithmetic">LOB</a> app, only knowing VB.NET or C# probably isn’t much a of a liability.</p>
+
+<p>On the other hand, If you do any <a href="http://www.pinvoke.net/">P/Invoke</a> work, you’ll calling DLLs that were mostly written in C or C++.  Having a knowledge of those languages makes it a little easier to understand the data structures and calling conventions used by the DLL.  If you working with binary data that came from unmanaged code, knowing how that data is represented in it’s native environment will make it easier to understand what it is and how to use it.</p>
+
+<p>Darren Stokes made the assertion that programmers who know C seem to solve complicated problems faster than those who don’t know C.  I don’t know of you can make that case.  With the push to teach only managed code at school, the programmers that came up knowing C are a bit older than the programmers who don’t know C.  That programmer who has the C experience is probably someone who has been around longer and has that much more experience to draw from.  I wonder if anyone has down any actual studies that compare the level of productivity from programmers with C experience compared with programmers that only know only managed code.</p>
+
+  </div><a class="u-url" href="/2008/05/27/does-knowing-c-make-you-better/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

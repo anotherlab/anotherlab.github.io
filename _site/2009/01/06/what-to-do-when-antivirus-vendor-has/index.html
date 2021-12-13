@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>What to do when an antivirus vendor has flagged your software as a virus | Chris Miller’s 4th Blog</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="What to do when an antivirus vendor has flagged your software as a virus" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I usually don’t talk about where I work, this is my personal blog and where I work really doesn’t matter to the content of blog posts.  This post is a little different, it’s work related and knowing where I work adds some needed context.  I’m a senior software engineer for Tyler Technologies, in their VersaTrans Solution. The VersaTrans product line provides school transportation software and services for the K-12 schools." />
+<meta property="og:description" content="I usually don’t talk about where I work, this is my personal blog and where I work really doesn’t matter to the content of blog posts.  This post is a little different, it’s work related and knowing where I work adds some needed context.  I’m a senior software engineer for Tyler Technologies, in their VersaTrans Solution. The VersaTrans product line provides school transportation software and services for the K-12 schools." />
+<link rel="canonical" href="http://localhost:4000/2009/01/06/what-to-do-when-antivirus-vendor-has/" />
+<meta property="og:url" content="http://localhost:4000/2009/01/06/what-to-do-when-antivirus-vendor-has/" />
+<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2009-01-06T16:55:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="What to do when an antivirus vendor has flagged your software as a virus" />
+<script type="application/ld+json">
+{"datePublished":"2009-01-06T16:55:00-05:00","@type":"BlogPosting","url":"http://localhost:4000/2009/01/06/what-to-do-when-antivirus-vendor-has/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2009/01/06/what-to-do-when-antivirus-vendor-has/"},"dateModified":"2009-01-06T16:55:00-05:00","description":"I usually don’t talk about where I work, this is my personal blog and where I work really doesn’t matter to the content of blog posts.  This post is a little different, it’s work related and knowing where I work adds some needed context.  I’m a senior software engineer for Tyler Technologies, in their VersaTrans Solution. The VersaTrans product line provides school transportation software and services for the K-12 schools.","headline":"What to do when an antivirus vendor has flagged your software as a virus","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">What to do when an antivirus vendor has flagged your software as a virus</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2009-01-06T16:55:00-05:00" itemprop="datePublished">Jan 6, 2009
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I usually don’t talk about where I work, this is my personal blog and where I work really doesn’t matter to the content of blog posts.  This post is a little different, it’s work related and knowing where I work adds some needed context.  I’m a senior software engineer for <a href="http://www.tylertech.com/">Tyler Technologies</a>, in their <a href="http://www.versatrans.com/">VersaTrans Solution</a>. The <a href="http://www.versatrans.com/products/versatrans_rp.cfm">VersaTrans product line</a> provides school transportation software and services for the K-12 schools.</p>
+
+<p>About a month ago, I came into work to find people waiting at my cubical.  That’s usually not a good way to start off a morning, and it wasn’t.  Apparently McAfee pushed out a virus definition file out the night before and it was flagging our software as a trojan.  Two of our executable files were being flagged.  Our customers were calling in to our technical support department, and they were understandably concerned.  The McAfee antivirus software wanted to quarantine our applications.  That would prevent our customers from using our applications, which is not a good thing.  They use our bus routing and planning software on a daily basis.  Not being able to use our software can cause a lot of problems for a school’s transportation department.  We needed to immediately resolve this.  I usually don’t get involved with technical support issues, but I had the bandwidth to immediately jump on this problem.</p>
+
+<p>The immediate order of business was to replicate the actions of the A/V software.  We wanted to make sure that our software was being actually being flagged before we reported it to McAfee.  We don’t use any of the McAfee products in house, so one of our QA specialists (David) started downloading a trial copy of McAfee’s Enterprise solution.  This is the application that our clients were reporting that they were using.  David would install that copy into a virtual machine and test it in an isolated environment.</p>
+
+<p><strong>Thursday, 10:00am</strong>.  I decided to save some time and upload a copy of our application to my home PC.  I have a copy of the home version of the McAfee A/V product.  It comes free as part of my FiOs package.  I’ve been planning on removing it and replacing it with one of the free A/V products, but fortunately it was still installed.  Sure enough, the app was flagged as <a href="http://vil.nai.com/vil/content/v_153569.htm">“BackDoor-AWQ.svr.gen.e”</a>, which is some type of generic server type of trojan that was added to version 5460 of the McAfee A/V database.  Version 5460 was the one that had been just pushed out to all of McAfee’s clients.  David would eventually duplicate the A/V hit, but it would take a while.  Armed with immediate proof from my home PC, I could proceed to the next step.  By the way, it can be very handy to be able securely access your home PC from your office PC.</p>
+
+<p><strong>10:15am.</strong>  I made my initial call to McAfee.  I went was passed to several CSRs, most of them refused to provide any identification other than their first name.  With each CSR, I was asked for a “grant number”, which was some form of customer identifier.  With each CSR I needed to explain that I was not calling as a McAfee customer, but as a representative of Tyler Technologies and they were false identifying our software as malware.  Each CSR tried to redirect me to their home product support.  With each CSR, I would request to speak with their supervisor when it became obvious that I would not get the support.</p>
+
+<p><strong>10:30am.</strong> I spoke with “Mike”, who identified himself as Corporate Service Program Supervisor.  He refused to escalate the issue or provide a last name and phone number.  Once again, I asked to speak to his supervisor.  He did not want to do this and we went back and forth a few times and I was persistent.  He finally transferred me to their Consumer Customer Department and provided that phone number (866-622-3911) with great reluctance.</p>
+
+<p><strong>10:30-10:42am.</strong>  Waited on hold.</p>
+
+<p>While I was on hold, our sales department sent out a mass email to all of our clients.  The email explained that McAfee was falsely identifying our application as a virus and they should not be alarmed and that we were working with McAfee to remedy the situation.  As soon as you can reliably identify that some version of your software is being falsely flagged as a virus, contact your customers.  Trust me, they will appreciate it.</p>
+
+<p><strong>10:42am.</strong> Spoke to another CSR who couldn’t help resolve the problem, but could transfer me to someone who would be able to help.</p>
+
+<p><strong>10:45-11:00am.</strong>  Waited on hold.</p>
+
+<p><strong>11:01-11:30am.</strong> I reached a CSR named Juan at the Dallas office of McAfee.  Juan’s title is Tier III Customer Service and he provided me with his direct phone number and email address.  He asked me to submit a copy of the file being flagged to a web site that they provide for online scanning of files.  This is McAfee Avert® Labs WebImmune and is located at <a href="https://www.webimmune.net/default.asp">https://www.webimmune.net/default.asp</a>.   I registered an account on their site and tried to upload the Routing and Planning (RP) executable known to trigger the McAfee scanner.  I was unable to upload the file because the RP executable is 7.7MB in size and WebImmue would only accept files up to 3MB in size.  Our executable is pre-compressed and there isn’t any other method of shrinking the size down to below 3MB.  This 3MB limitation basically defeats the purpose of having that site.</p>
+
+<p>I then tried emailing the file to Juan, but our own email server blocked the email because of the file attachment.  That’s bad on our part, but there is more than one way to email a file.</p>
+
+<p><strong>11:45am.</strong>  I emailed the file to Juan via my personal Hotmail account.  It took a while to make it to Juan, but by 3:00PM, I had an email confirmation from Juan that he had received the file.</p>
+
+<p><strong>11:58am.</strong>  I received an email from Juan with the following text:</p>
+
+<blockquote>
+  <p>Mr. Miller,</p>
+
+  <p>I just received an email in regards to the issue that you are currently facing.</p>
+
+  <p>An issue that was incorrectly indentifying some large applications executables files as Backdoor.awq.svr.gen.e has been resolved.</p>
+
+  <p>Attached is an ED to suppress this detection. We have tested the ED against the limited number of files we have received thus far. If the ED doesn’t work and DAT 5461 hasn’t shipped then please gather a sample (FTP site in pwd protected zip if larger than 3mb) and escalate via MSTeg.</p>
+</blockquote>
+
+<p>I forwarded the message to David in QA.  David had set up a virtual machine with a trial version of the McAfee Enterprise virus scanner and could duplicate the problem using the 5460 DAT file.  The “ED” supplied by Juan did not fix the problem, but I am not 100% certain that we had installed it correctly.  Their ED file did not come with any instructions on how to install it and we I promptly notified Juan that it was still a problem for us.</p>
+
+<p><strong>3:00pm.</strong>  Juan emailed me to notify me that he had received the RP executable from my Hotmail account and he requested a copy of the other executable that was being falsely identified (Ascii Scheduler).  I immediately sent him that file from my Hotmail account.  I did not receive emails from Juan (or any other McAfee representative) after that point.  Both files share about 98% of the same code, I was pretty sure if they fixed the scanner for one of them, it would be fixed for the other.  Especially since we were not the only company affected.  Juan wouldn’t tell me who else had been false identified, but he hinted that they were big companies and they were not happy.</p>
+
+<p><strong>Friday 9:00am.</strong>  I was told by our QA Manage that DAT version 5461 was pushed out by McAfee overnight and it no longer flags our files as false positives.  We received many happy emails from clients thanking us for the prompt attention paid to the matter.</p>
+
+<p>So what do you do if this happens to you?  I recommend doing the following when a customer reports that your software is being flagged as a virus:</p>
+
+<ul>
+  <li>Ask the customer for the product name and version number of the antivirus software.  If possible, get the version number and date of the virus database used by the software.  Start taking detailed notes during this process.  You want an audit trail to give your boss to explain where your day went, plus it gives you ammunition when you get stuck with a CSR that wont help your or escalate your call.</li>
+  <li>Ask for the name of the virus or trojan that your software is being flagged as.</li>
+  <li>Get the version number of your executable that is being flagged as a virus.</li>
+  <li>Get a trial version of the A/V software and attempt to duplicate the false positive match.  If you can not duplicate the results, ask the client to send a password encrypted zip archive of the executable being flagged.  You have to consider the possibility that the client’s machine has been infected with a virus and that your application was infected on the client’s machine.  By sending it in a password encrypted zip file, it should pass through the client’s email server and your server without flagging any additional virus checks.</li>
+  <li>Submit your executable to the A/V vendors online support.  Most of them have a web page for submitting a questionable file.  You wont get a fast response back, but when you call their support, they will ask you to do this step so you might as well get it out of the way.</li>
+  <li>Call the A/V vendor and ask for support.  Do not identify yourself as a customer of their A/V software, but as an ISV who has been falsely identified by their software.  If you identify yourself as a customer, you may get shunted down lower priority support queue.  If you have an expensive support contract, that would be different.  Basically, just use the best tools at your disposal.</li>
+  <li>Ask for the CSR’s name and phone number, with extension.  Tell them that you need this information to provide an audit trail for your supervisor.  Be polite but persistent.  If they can not help you, ask for their supervisor and just work your way up their chain of command until you get a CSR that can help you.</li>
+  <li>Stay polite and professional with the CSR.  It’s not their fault that their software is falsely identifying your software as a virus.  They are more likely to expedite a remedy if you are not beating up on them.  It’s likely that you are not the only one being affected by this.</li>
+  <li>When you have a CSR that can help you, work out a plan with target times for how to resolve this.  Let them know that you will be in phone and email contact with them until the matter is resolved.  Basically, you want to get the file or files to them and have enough time for them to test the files and work out a solution.  You do not want to be waiting for hours just to get them the file.  You will want acknowledgement when they have received the file and when they have duplicated the problem.  Your goal is to get them to issue out a new virus update file on the same day.</li>
+  <li>Once you get the problem resolved, send a “thank you” email to the CSR that helped resolve the problem.  If the problem ever occurs again, you want to be able to start with that CSR and not have to waste time going up the CSR tree.</li>
+</ul>
+
+<p>Having to go through all of this was not how I planned on spending my day. I lost the better part of the day dealing with McAfee’s mistake when I could have been working on my own mistakes.  This kind of stuff happens and it’s good to have a plan for dealing with it.</p>
+
+  </div><a class="u-url" href="/2009/01/06/what-to-do-when-antivirus-vendor-has/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
