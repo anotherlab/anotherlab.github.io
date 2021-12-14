@@ -1,3101 +1,620 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Chris Miller’s 4th Blog | Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</title>
-<meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="Chris Miller’s 4th Blog" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="Chris Miller’s 4th Blog" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Chris Miller’s 4th Blog" />
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Chris Miller's 4th Blog</title>
+<meta name="description" content="My personal blog, 4th version">
+
+
+  <meta name="author" content="Chris Miller">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 4th Blog">
+<meta property="og:title" content="Chris Miller’s 4th Blog">
+<meta property="og:url" content="http://localhost:4000/">
+
+
+  <meta property="og:description" content="My personal blog, 4th version">
+
+
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="Chris Miller’s 4th Blog">
+  <meta name="twitter:description" content="My personal blog, 4th version">
+  <meta name="twitter:url" content="http://localhost:4000/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/">
+
+
+
+  <link rel="next" href="http://localhost:4000/page2/">
+
+
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Chris Miller’s 4th Blog","name":"Chris Miller’s 4th Blog","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Chris Miller's 4th Blog" /></head>
-<body><header class="site-header" role="banner">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Chris Miller",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">Chris Miller&#39;s 4th Blog</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
 
-        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
-      </nav></div>
-</header>
-<main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <div class="home">
-<h2 class="post-list-heading">Posts</h2>
-    <ul class="post-list"><li><span class="post-meta">Dec 13, 2021</span>
-        <h3>
-          <a class="post-link" href="/jekyll/update/2021/12/13/welcome-to-jekyll.html">
-            Welcome to Jekyll!
-          </a>
-        </h3></li><li><span class="post-meta">Oct 21, 2021</span>
-        <h3>
-          <a class="post-link" href="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
-            Resolving the .NET MAUI &amp;#8220;VersionCode 1.0 is invalid. It must be an integer value.&amp;#8221; error when updating Visual Studio 2022 Preview
-          </a>
-        </h3></li><li><span class="post-meta">Oct 19, 2021</span>
-        <h3>
-          <a class="post-link" href="/2021/10/18/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/">
-            Controlling a WSL installation of redis-server from the Windows command line
-          </a>
-        </h3></li><li><span class="post-meta">Sep 1, 2021</span>
-        <h3>
-          <a class="post-link" href="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/">
-            How to access Apple&amp;#8217;s App Connect API from C#, Python, and Go. &amp;#8211; Part 4
-          </a>
-        </h3></li><li><span class="post-meta">Jul 28, 2021</span>
-        <h3>
-          <a class="post-link" href="/2021/07/28/a-quick-powershell-tip/">
-            A quick PowerShell tip
-          </a>
-        </h3></li><li><span class="post-meta">Jul 19, 2021</span>
-        <h3>
-          <a class="post-link" href="/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/">
-            How to access Apple&amp;#8217;s App Connect API from C#, Python, and Go. &amp;#8211; Part 3
-          </a>
-        </h3></li><li><span class="post-meta">Jul 12, 2021</span>
-        <h3>
-          <a class="post-link" href="/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/">
-            How to access Apple&amp;#8217;s App Connect API from C#, Python, and Go. &amp;#8211; Part 2
-          </a>
-        </h3></li><li><span class="post-meta">Jul 9, 2021</span>
-        <h3>
-          <a class="post-link" href="/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">
-            How to access Apple&amp;#8217;s App Connect API from C#, Python, and Go. &amp;#8211; Part 1
-          </a>
-        </h3></li><li><span class="post-meta">Aug 8, 2020</span>
-        <h3>
-          <a class="post-link" href="/2020/08/08/quick-and-cheap-audio-editing-for-online-courses/">
-            Quick and cheap audio editing for online courses
-          </a>
-        </h3></li><li><span class="post-meta">Jul 6, 2020</span>
-        <h3>
-          <a class="post-link" href="/2020/07/06/using-powershell-to-set-the-num-lock-state/">
-            Using PowerShell to set the Num Lock state
-          </a>
-        </h3></li><li><span class="post-meta">May 23, 2020</span>
-        <h3>
-          <a class="post-link" href="/2020/05/23/colored-notes-in-onenote/">
-            Colored notes in OneNote
-          </a>
-        </h3></li><li><span class="post-meta">May 15, 2020</span>
-        <h3>
-          <a class="post-link" href="/2020/05/15/add-a-posh-adb-to-your-windows-terminal/">
-            Add a POSH ADB to your Windows Terminal
-          </a>
-        </h3></li><li><span class="post-meta">May 9, 2020</span>
-        <h3>
-          <a class="post-link" href="/2020/05/09/some-quick-improvements-for-the-home-video-conferencing-experience/">
-            Some quick improvements for the home video conferencing experience
-          </a>
-        </h3></li><li><span class="post-meta">Apr 28, 2020</span>
-        <h3>
-          <a class="post-link" href="/2020/04/28/bag-man/">
-            Bag man
-          </a>
-        </h3></li><li><span class="post-meta">Apr 26, 2020</span>
-        <h3>
-          <a class="post-link" href="/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/">
-            Why I like working on Open Source (back to FocusUF)
-          </a>
-        </h3></li><li><span class="post-meta">Mar 20, 2020</span>
-        <h3>
-          <a class="post-link" href="/2020/03/20/return-to-focusuf/">
-            Return to FocusUF
-          </a>
-        </h3></li><li><span class="post-meta">Aug 30, 2019</span>
-        <h3>
-          <a class="post-link" href="/2019/08/30/getting-a-new-dev-machine-set-up-macos-style/">
-            Getting a new dev machine set up, macOS Style
-          </a>
-        </h3></li><li><span class="post-meta">Aug 26, 2019</span>
-        <h3>
-          <a class="post-link" href="/2019/08/26/when-your-apple-device-refuses-to-be-trusted/">
-            When your Apple device refuses to be trusted
-          </a>
-        </h3></li><li><span class="post-meta">Feb 13, 2019</span>
-        <h3>
-          <a class="post-link" href="/2019/02/13/opportunity-has-ended-its-mission/">
-            Opportunity has ended it&amp;#8217;s mission
-          </a>
-        </h3></li><li><span class="post-meta">Dec 10, 2018</span>
-        <h3>
-          <a class="post-link" href="/2018/12/10/that-time-i-taught-that-dog-a-trick/">
-            That time I taught that dog a trick
-          </a>
-        </h3></li><li><span class="post-meta">Dec 6, 2018</span>
-        <h3>
-          <a class="post-link" href="/2018/12/06/microsoft-edge-to-adopt-the-chromium-project/">
-            Microsoft Edge to adopt the Chromium project
-          </a>
-        </h3></li><li><span class="post-meta">Oct 16, 2018</span>
-        <h3>
-          <a class="post-link" href="/2018/10/16/fix-for-network-virtual-switch-failed-to-update-ddns-myqnapcloud/">
-            Fix for  &amp;#8220;[Network &amp;#038; Virtual Switch] Failed to update DDNS &amp;#8220;myQNAPcloud&amp;#8221;
-          </a>
-        </h3></li><li><span class="post-meta">Aug 4, 2018</span>
-        <h3>
-          <a class="post-link" href="/2018/08/03/planning-for-wi-fi/">
-            Planning for Wi-Fi
-          </a>
-        </h3></li><li><span class="post-meta">Jul 3, 2018</span>
-        <h3>
-          <a class="post-link" href="/2018/07/03/a-xamarin-wrapper-for-the-acs-usb-library-for-android/">
-            A Xamarin wrapper for the ACS USB library for Android
-          </a>
-        </h3></li><li><span class="post-meta">Apr 5, 2018</span>
-        <h3>
-          <a class="post-link" href="/2018/04/05/focusuf-or-how-to-turn-off-the-autofocus-setting-of-the-lifecam-hd-5000-webcam/">
-            FocusUF or how to turn off the autofocus setting of the LifeCam HD-5000 webcam
-          </a>
-        </h3></li><li><span class="post-meta">Jan 2, 2018</span>
-        <h3>
-          <a class="post-link" href="/2018/01/02/its-2018-time-to-join-that-david-bowie-book-club-that-his-son-has-started/">
-            It&amp;#8217;s 2018, time to join that David Bowie Book Club that his son has started
-          </a>
-        </h3></li><li><span class="post-meta">Nov 29, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/11/29/what-not-to-do-on-a-job-interview-dont-play-the-arrogant-card/">
-            What not to do on a job interview: Don&amp;#8217;t play the arrogant card
-          </a>
-        </h3></li><li><span class="post-meta">Oct 21, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/10/21/that-time-i-took-a-group-of-people-to-boston-for-the-azure-red-shirt-dev-tour/">
-            That time I took a group of people to Boston for the Azure Red Shirt Dev Tour
-          </a>
-        </h3></li><li><span class="post-meta">Sep 3, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/09/03/checking-hypervisor-status-with-powershell/">
-            Checking Hypervisor status with PowerShell
-          </a>
-        </h3></li><li><span class="post-meta">Sep 1, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/09/01/time-to-repave-slightly-my-work-machine/">
-            Time to repave (slightly) my work machine
-          </a>
-        </h3></li><li><span class="post-meta">Aug 26, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/08/26/vermont-code-camp-2017/">
-            Vermont Code Camp 2017
-          </a>
-        </h3></li><li><span class="post-meta">Jul 25, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/07/25/using-the-multilingual-app-toolkit-with-current-version-of-the-microsoft-translator-service/">
-            Using the Multilingual App Toolkit with the Microsoft Translator service from Azure&amp;#8217;s Cognitive Services
-          </a>
-        </h3></li><li><span class="post-meta">Jun 30, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/06/30/you-can-now-register-for-the-dream-build-play-2017-challenge/">
-            You can now register for the Dream.Build.Play 2017 Challenge
-          </a>
-        </h3></li><li><span class="post-meta">May 26, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/05/26/getting-the-most-out-of-vmware-fusion-8-5-running-windows-10/">
-            Getting the most out of VMware Fusion 8.5 running Windows 10
-          </a>
-        </h3></li><li><span class="post-meta">May 25, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/05/25/free-event-at-union-college-out-thinking-old-school-the-intersection-of-play-and-ai/">
-            Free event at Union College: Out-thinking Old School: the Intersection of Play and AI
-          </a>
-        </h3></li><li><span class="post-meta">May 19, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/05/19/debugging-devices-without-displays-or-debuggers/">
-            Debugging devices without displays or debuggers
-          </a>
-        </h3></li><li><span class="post-meta">Apr 11, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/04/11/what-not-to-do-on-a-job-interview-pressing-the-self-destruct-button/">
-            What not to do on a job interview: Pressing the Self-Destruct Button
-          </a>
-        </h3></li><li><span class="post-meta">Mar 16, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/03/16/using-console-jquery-to-scrape-lists-from-apples-developer-portal/">
-            Using console jQuery to scrape lists from Apple&amp;#8217;s developer portal.
-          </a>
-        </h3></li><li><span class="post-meta">Mar 5, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/03/05/xamarin-dev-days-latham-ny-dec-2nd/">
-            Xamarin Dev Days &amp;#8211; Latham, NY &amp;#8211; Dec 2nd
-          </a>
-        </h3></li><li><span class="post-meta">Mar 2, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/03/02/a-xamarin-port-of-the-usb-serial-for-android-library/">
-            A Xamarin port of the usb-serial-for-android library
-          </a>
-        </h3></li><li><span class="post-meta">Feb 21, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/02/21/and-then-my-blog-was-defaced/">
-            And then my blog was defaced
-          </a>
-        </h3></li><li><span class="post-meta">Jan 19, 2017</span>
-        <h3>
-          <a class="post-link" href="/2017/01/19/my-book-about-localization-with-xamarin-is-out/">
-            My book about localization with Xamarin is out
-          </a>
-        </h3></li><li><span class="post-meta">Dec 18, 2016</span>
-        <h3>
-          <a class="post-link" href="/2016/12/18/quick-powershell-tip-for-avoiding-file-name-collisions-when-you-have-images-from-multiple-cameras/">
-            Quick Powershell tip for avoiding file name collisions when you have images from multiple cameras
-          </a>
-        </h3></li><li><span class="post-meta">May 18, 2016</span>
-        <h3>
-          <a class="post-link" href="/2016/05/18/modifying-test-data-for-privacy/">
-            Modifying test data for privacy
-          </a>
-        </h3></li><li><span class="post-meta">May 6, 2016</span>
-        <h3>
-          <a class="post-link" href="/2016/05/06/found-the-cause-for-adb-error-message-could-not-open-interface-e00002c5/">
-            Found the cause for ADB error message &amp;#8220;Could not open interface: e00002c5&amp;#8221;
-          </a>
-        </h3></li><li><span class="post-meta">Mar 16, 2016</span>
-        <h3>
-          <a class="post-link" href="/2016/03/16/adding-google-play-services-to-visual-studio-android-emulator/">
-            Adding Google Play Services to Visual Studio Android Emulator
-          </a>
-        </h3></li><li><span class="post-meta">Feb 26, 2016</span>
-        <h3>
-          <a class="post-link" href="/2016/02/26/thoughts-on-one-trick-ponies/">
-            Thoughts on One Trick Ponies
-          </a>
-        </h3></li><li><span class="post-meta">Feb 25, 2016</span>
-        <h3>
-          <a class="post-link" href="/2016/02/25/get-amped-for-faster-page-loading-on-mobile/">
-            Get AMPed for faster page loading on mobile
-          </a>
-        </h3></li><li><span class="post-meta">Feb 22, 2016</span>
-        <h3>
-          <a class="post-link" href="/2016/02/22/generating-new-row-numbers-in-sql-based-on-a-starting-value/">
-            Generating new row numbers in SQL based on a starting value
-          </a>
-        </h3></li><li><span class="post-meta">Feb 18, 2016</span>
-        <h3>
-          <a class="post-link" href="/2016/02/18/fbi-vs-apple-vs-the-consequences/">
-            FBI vs Apple vs the Consequences
-          </a>
-        </h3></li><li><span class="post-meta">Feb 14, 2016</span>
-        <h3>
-          <a class="post-link" href="/2016/02/14/use-powershell-to-batch-rename-files-from-digital-cameras/">
-            Use Powershell to batch rename files from digital cameras
-          </a>
-        </h3></li><li><span class="post-meta">Jan 29, 2016</span>
-        <h3>
-          <a class="post-link" href="/2016/01/29/what-would-you-do-to-revive-windows-phone/">
-            &amp;#8220;What would you do to revive Windows Phone?&amp;#8221;
-          </a>
-        </h3></li><li><span class="post-meta">Dec 9, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/12/09/live-writer-is-dead-long-live-open-live-writer/">
-            Windows Live Writer is dead, Long Live Open Live Writer
-          </a>
-        </h3></li><li><span class="post-meta">Nov 16, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/11/16/marvin-gaye-as-antidote-for-road-rage/">
-            Marvin Gaye as an antidote for Road Rage
-          </a>
-        </h3></li><li><span class="post-meta">Nov 12, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/11/12/microsofts-privacy-manifesto/">
-            Microsoft&amp;#8217;s Privacy Manifesto
-          </a>
-        </h3></li><li><span class="post-meta">Oct 19, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/10/19/on-sharing-media-files-between-windows-phone-and-os-x/">
-            On sharing media files between Windows Phone and OS X
-          </a>
-        </h3></li><li><span class="post-meta">Oct 5, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/10/05/when-a-ux-hack-has-unexpected-consequences-or-why-did-my-ios-app-name-get-truncated-when-i-used-testflight/">
-            When a UX hack has unexpected consequences or &amp;#8220;Why did my iOS app name get truncated when I used TestFlight?&amp;#8221;
-          </a>
-        </h3></li><li><span class="post-meta">Oct 4, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/10/03/waiting-for-microsofts-hardware-event-on-the-6th/">
-            Waiting for Microsoft&amp;#8217;s hardware event on the 6th
-          </a>
-        </h3></li><li><span class="post-meta">Aug 19, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/08/19/send-your-name-to-mars/">
-            Send your name to Mars
-          </a>
-        </h3></li><li><span class="post-meta">Jun 24, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/06/24/why-the-virtual-keyboard-on-the-microsoft-band-doesnt-work-with-android-and-ios/">
-            Why the Virtual Keyboard on the Microsoft Band doesn&amp;#8217;t work with Android and iOS
-          </a>
-        </h3></li><li><span class="post-meta">Jun 6, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/06/06/exporting-smsmms-messages-from-windows-phone-8/">
-            Exporting SMS/MMS messages from Windows Phone 8
-          </a>
-        </h3></li><li><span class="post-meta">May 31, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/05/30/my-mvp-v-conf-session-on-localization-for-mobile-apps-is-out/">
-            My MVP V-Conf session on localization for mobile apps is out
-          </a>
-        </h3></li><li><span class="post-meta">Apr 19, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/04/19/yes-you-can-judge-a-book-its-cover/">
-            Yes, you can judge a book it&amp;#8217;s cover
-          </a>
-        </h3></li><li><span class="post-meta">Apr 9, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/04/09/trying-to-get-apple-testflight-to-send-new-build-notifications/">
-            Trying to get Apple Testflight to send new build notifications
-          </a>
-        </h3></li><li><span class="post-meta">Apr 6, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/04/06/registration-is-now-open-for-the-2015-microsoft-mvp-virtual-conference/">
-            Registration is now open for the 2015 Microsoft MVP Virtual Conference.
-          </a>
-        </h3></li><li><span class="post-meta">Apr 1, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/04/01/the-first-us-mvp-open-days-was-a-success/">
-            The first US MVP Open Days was a success
-          </a>
-        </h3></li><li><span class="post-meta">Mar 22, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/03/22/a-little-late-to-the-band-party/">
-            A little late to the Band Party
-          </a>
-        </h3></li><li><span class="post-meta">Feb 20, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/02/20/the-coolest-tool-that-you-are-not-yet-using-xamarin-edition/">
-            The coolest tool that you are not yet using (Xamarin edition)
-          </a>
-        </h3></li><li><span class="post-meta">Feb 4, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/02/04/taking-care-of-a-pet-peeve-with-the-xamarin-build-host/">
-            Taking care of a pet peeve with the Xamarin Build Host
-          </a>
-        </h3></li><li><span class="post-meta">Feb 3, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/02/03/getting-a-new-dev-machine-set-up-os-x-style/">
-            Getting a new dev machine set up, OS X Style
-          </a>
-        </h3></li><li><span class="post-meta">Jan 31, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/01/31/ignite-your-it-and-enterprise-dev-skills-this-may/">
-            Ignite your IT and Enterprise Dev skills this May
-          </a>
-        </h3></li><li><span class="post-meta">Jan 23, 2015</span>
-        <h3>
-          <a class="post-link" href="/2015/01/23/quick-work-around-for-unresolved-xamarin-components-in-visual-studio/">
-            Quick work around for unresolved Xamarin components in Visual Studio
-          </a>
-        </h3></li><li><span class="post-meta">Oct 15, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/10/15/looking-back-on-xamarin-evolve-2014/">
-            Looking back on Xamarin Evolve 2014
-          </a>
-        </h3></li><li><span class="post-meta">Oct 8, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/10/08/and-then-they-added-xamarin-support-to-the-multilingual-app-toolkit/">
-            And then they added Xamarin support to the Multilingual App Toolkit
-          </a>
-        </h3></li><li><span class="post-meta">Sep 5, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/09/05/booked-my-flight-for-the-mvp-summit-in-november/">
-            Booked my flight for the MVP Summit in November
-          </a>
-        </h3></li><li><span class="post-meta">Sep 5, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/09/05/just-got-a-nice-bump-in-speed-from-verizon-fios/">
-            Just got a nice bump in speed from Verizon FiOS
-          </a>
-        </h3></li><li><span class="post-meta">Aug 22, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/08/22/my-hallway-conversations-interview-is-out/">
-            My Hallway Conversations interview is out
-          </a>
-        </h3></li><li><span class="post-meta">Jul 21, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/">
-            Using Powershell to concatenate files and strip off the headers
-          </a>
-        </h3></li><li><span class="post-meta">Jun 11, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/06/11/comcast-did-what-in-houston-you-are-now-a-public-hotspot/">
-            Comcast did WHAT in Houston?  You are now a public hotspot.
-          </a>
-        </h3></li><li><span class="post-meta">Jun 9, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/06/09/been-reading-ios-development-with-xamarin-cookbook/">
-            Been reading &amp;#8220;iOS Development with Xamarin Cookbook&amp;#8221;
-          </a>
-        </h3></li><li><span class="post-meta">May 11, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/05/11/this-one-is-for-your-grandparents-aka-im-calling-you-from-windows-and-you-a-have-virus/">
-            This one is for your grandparents (aka &amp;#8220;I&amp;#8217;m calling you from Windows and you a have virus&amp;#8221;
-          </a>
-        </h3></li><li><span class="post-meta">Apr 16, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/04/16/using-the-windows-phone-8-1-start-background-to-personalize-your-phone/">
-            Using the Windows Phone 8.1 Start Background to personalize your phone
-          </a>
-        </h3></li><li><span class="post-meta">Apr 13, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/04/13/resolving-the-the-cctsharedpackage-package-did-not-load-correctly-error-message/">
-            Resolving the &amp;#8220;The &amp;#8216;CctSharedPackage&amp;#8217; package did not load correctly.&amp;#8221; error message
-          </a>
-        </h3></li><li><span class="post-meta">Apr 12, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/04/12/best-single-source-for-dealing-with-ios-battery-drain/">
-            Best single source for dealing with iOS battery drain
-          </a>
-        </h3></li><li><span class="post-meta">Mar 23, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/03/23/bundling-jquery-2-x-and-jquery-1-x-in-asp-net-mvc-and-staying-nuget-fresh/">
-            Bundling jQuery 2.x and jQuery 1.x in ASP .Net MVC and staying NuGet fresh
-          </a>
-        </h3></li><li><span class="post-meta">Mar 17, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/03/17/sometimes-42-is-the-right-answer/">
-            Sometimes 42 is the right answer
-          </a>
-        </h3></li><li><span class="post-meta">Mar 14, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/03/14/a-file-versioning-helper-class-in-c-to-make-a-backup-copy-of-a-file-and-keep-the-last-n-copies-of-that-file/">
-            A file versioning helper class in C# to make a backup copy of a file and keep the last N copies of that file
-          </a>
-        </h3></li><li><span class="post-meta">Mar 13, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/03/12/we-had-a-great-tvug-meeting-this-week/">
-            We had a great TVUG meeting this week
-          </a>
-        </h3></li><li><span class="post-meta">Mar 11, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/03/11/validating-a-guid-input-tryparse-vs-regex/">
-            Validating a GUID input, TryParse vs RegEx
-          </a>
-        </h3></li><li><span class="post-meta">Mar 6, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/03/06/getty-images-now-providing-a-huge-selection-of-images-free-for-non-commercial-use/">
-            Getty Images now providing a huge selection of images free for non-commercial use
-          </a>
-        </h3></li><li><span class="post-meta">Mar 3, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/03/03/today-i-remembered-that-every-url-is-an-uri-but-not-vice-versa/">
-            Today I remembered that every URL is an URI, but not vice versa
-          </a>
-        </h3></li><li><span class="post-meta">Feb 28, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/02/28/assigning-adorners-with-dynamically-created-controls/">
-            Assigning adorners with dynamically created controls
-          </a>
-        </h3></li><li><span class="post-meta">Feb 26, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/02/26/converting-enums-and-camel-case-text-to-words/">
-            Converting enums and Camel case text to words
-          </a>
-        </h3></li><li><span class="post-meta">Feb 22, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/02/22/and-then-i-stuck-shipping-tape-on-the-back-of-the-sim-card/">
-            And then I stuck shipping tape on the back of the SIM card
-          </a>
-        </h3></li><li><span class="post-meta">Feb 17, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/02/17/how-to-use-bing-code-search-when-resharper-is-installed/">
-            How to use Bing Code Search when ReSharper is installed
-          </a>
-        </h3></li><li><span class="post-meta">Feb 15, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/02/15/when-the-editorpackage-does-not-load-correctly/">
-            When the EditorPackage does not load correctly
-          </a>
-        </h3></li><li><span class="post-meta">Feb 6, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/02/06/locating-the-right-web-config-file-at-runtime/">
-            Locating the right web.config file at runtime
-          </a>
-        </h3></li><li><span class="post-meta">Jan 16, 2014</span>
-        <h3>
-          <a class="post-link" href="/2014/01/16/while-i-dont-recommend-messing-with-scammers-it-can-be-entertaining/">
-            While I don&amp;#8217;t recommend messing with scammers, it can be entertaining
-          </a>
-        </h3></li><li><span class="post-meta">Dec 21, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/12/21/when-windows-phone-mail-cant-display-an-image-attachment/">
-            When Windows Phone Mail can&amp;#8217;t display an image attachment
-          </a>
-        </h3></li><li><span class="post-meta">Dec 18, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/12/18/its-2013-stop-trying-to-write-to-the-program-files-folder-already/">
-            It&amp;#8217;s 2013, stop trying to write to the Program Files folder already
-          </a>
-        </h3></li><li><span class="post-meta">Dec 14, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/12/14/cross-platform-localization-for-mobile-apps-in-code-magazine/">
-            Cross-Platform Localization for Mobile Apps in CODE Magazine
-          </a>
-        </h3></li><li><span class="post-meta">Dec 11, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/12/11/moved-this-blog-from-blogger-to-an-azure-colored-wordpress/">
-            Moved this blog from Blogger to an Azure colored WordPress
-          </a>
-        </h3></li><li><span class="post-meta">Dec 8, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/12/08/just-ordered-our-christmas-cards/">
-            Just ordered our Christmas cards
-          </a>
-        </h3></li><li><span class="post-meta">Dec 5, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/12/05/a-work-around-for-files-in-use-bug-with/">
-            A work around for the files in use bug with HeatDirectory in MSBuild
-          </a>
-        </h3></li><li><span class="post-meta">Oct 7, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/10/07/taking-acer-w3-from-preview-to-rtm/">
-            Taking the Acer W3 from Preview to RTM
-          </a>
-        </h3></li><li><span class="post-meta">Sep 25, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/09/25/todays-lesson-in-voice-mail-etiquette/">
-            Today&amp;#8217;s lesson in voice mail etiquette
-          </a>
-        </h3></li><li><span class="post-meta">Aug 23, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/08/23/increasing-target-area-of-tables/">
-            Increasing the target area of a table&amp;#8217;s DetailDisclose button with Xamarin.iOS
-          </a>
-        </h3></li><li><span class="post-meta">Jul 1, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/07/01/getting-around-0x80073cfb-errors-after/">
-            Getting around 0x80073cfb errors after installing Windows 8.1 Preview
-          </a>
-        </h3></li><li><span class="post-meta">May 24, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/05/24/certified-xamarin-mobile-developer/">
-            Certified Xamarin Mobile Developer
-          </a>
-        </h3></li><li><span class="post-meta">May 15, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/05/15/there-should-be-blue-rhino-for-electric/">
-            There should be a Blue Rhino for Electric Cars
-          </a>
-        </h3></li><li><span class="post-meta">May 13, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/05/13/i-git-it-now/">
-            I git it now
-          </a>
-        </h3></li><li><span class="post-meta">May 9, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/05/09/getting-hyper-v-to-work-on-hp-envy23/">
-            Getting Hyper-V to work on a HP Envy23
-          </a>
-        </h3></li><li><span class="post-meta">May 6, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/05/06/my-journey-into-center-of-gravity/">
-            My journey into the Center of Gravity
-          </a>
-        </h3></li><li><span class="post-meta">Apr 23, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/04/23/notes-on-attending-xamarin-evolve-2013/">
-            Notes on attending Xamarin Evolve 2013
-          </a>
-        </h3></li><li><span class="post-meta">Mar 18, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/03/18/why-was-microphone-button-on-ipad/">
-            Why was microphone button on the iPad virtual keyboard disabled?
-          </a>
-        </h3></li><li><span class="post-meta">Feb 10, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/02/10/today-i-learned-that-my-daughter-has/">
-            Today I learned that my daughter has never seen a 3.5” disk
-          </a>
-        </h3></li><li><span class="post-meta">Jan 17, 2013</span>
-        <h3>
-          <a class="post-link" href="/2013/01/17/a-quick-photobook-order-on-shutterfly/">
-            A quick photobook order on Shutterfly
-          </a>
-        </h3></li><li><span class="post-meta">Sep 14, 2012</span>
-        <h3>
-          <a class="post-link" href="/2012/09/14/the-hp-printer-display-hack-with_14/">
-            The HP Printer Display Hack (with financial goodness)
-          </a>
-        </h3></li><li><span class="post-meta">Aug 22, 2012</span>
-        <h3>
-          <a class="post-link" href="/2012/08/22/taking-office-365-for-spin/">
-            Taking Office 365 for a spin
-          </a>
-        </h3></li><li><span class="post-meta">Jul 17, 2012</span>
-        <h3>
-          <a class="post-link" href="/2012/07/17/every-30-seconds-cursor-would-turning/">
-            Every 30 seconds, the cursor would turning into the spinning donut of death
-          </a>
-        </h3></li><li><span class="post-meta">Jun 22, 2012</span>
-        <h3>
-          <a class="post-link" href="/2012/06/22/thinking-about-windows-phone-8/">
-            Thinking about Windows Phone 8
-          </a>
-        </h3></li><li><span class="post-meta">May 2, 2012</span>
-        <h3>
-          <a class="post-link" href="/2012/05/02/need-to-kick-my-windows-home-server/">
-            Need to kick my Windows Home Server every now and then
-          </a>
-        </h3></li><li><span class="post-meta">Apr 25, 2012</span>
-        <h3>
-          <a class="post-link" href="/2012/04/25/kill-all-sql-connections-for-db-or-app/">
-            Kill all the SQL connections for a DB or app
-          </a>
-        </h3></li><li><span class="post-meta">Mar 13, 2012</span>
-        <h3>
-          <a class="post-link" href="/2012/03/13/im-bothered-by-idea-of-using-homeless/">
-            I’m bothered by the idea of using the homeless as office infrastructure
-          </a>
-        </h3></li><li><span class="post-meta">Jan 24, 2012</span>
-        <h3>
-          <a class="post-link" href="/2012/01/24/ratcheting-up-scroll-with-my-logitech/">
-            Ratcheting up the scroll with my Logitech mouse
-          </a>
-        </h3></li><li><span class="post-meta">Jan 14, 2012</span>
-        <h3>
-          <a class="post-link" href="/2012/01/14/open-letter-to-newport-television/">
-            An open letter to Newport Television
-          </a>
-        </h3></li><li><span class="post-meta">Nov 10, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/11/10/replacing-gethostbyname-with/">
-            Replacing GetHostByName with GetHostAddresses
-          </a>
-        </h3></li><li><span class="post-meta">Oct 1, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/10/01/odd-way-to-post/">
-            An odd way to post
-          </a>
-        </h3></li><li><span class="post-meta">Jul 13, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/07/13/how-to-set-devexpress-aspxscheduler/">
-            How to set the DevExpress ASPxScheduler current time line marker to only appear for the current date
-          </a>
-        </h3></li><li><span class="post-meta">Jun 8, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/06/08/binding-enum-to-datasource/">
-            Binding an Enum to a DataSource
-          </a>
-        </h3></li><li><span class="post-meta">May 3, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/05/03/there-was-time-warner-cable-disconnect/">
-            There was a Time Warner Cable Disconnect Technician in my yard this morning.
-          </a>
-        </h3></li><li><span class="post-meta">Apr 5, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/04/05/one-week-with-fios-tv/">
-            One week with FiOS TV
-          </a>
-        </h3></li><li><span class="post-meta">Feb 17, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/02/17/initial-impressions-of-netgear-wndr3700/">
-            Initial impressions of the Netgear WNDR3700
-          </a>
-        </h3></li><li><span class="post-meta">Feb 15, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/02/15/how-i-patched-dell-workstation-with/">
-            How I patched a Dell workstation with a firmware update from HP
-          </a>
-        </h3></li><li><span class="post-meta">Feb 4, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/02/04/reflections-on-red-gate-and-their/">
-            Reflections on Red Gate and their decision to charge for .NET Reflector
-          </a>
-        </h3></li><li><span class="post-meta">Jan 23, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/01/23/price-chopper-robodeli-is-great-idea/">
-            Price Chopper&amp;#8217;s RoboDeli is great idea, but flawed
-          </a>
-        </h3></li><li><span class="post-meta">Jan 11, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/01/11/random-vegas-observation/">
-            A Random Vegas Observation
-          </a>
-        </h3></li><li><span class="post-meta">Jan 5, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/01/05/scrolling-listviews-edititemtemplate/">
-            Scrolling a ListView’s EditItemTemplate with some help from jQuery
-          </a>
-        </h3></li><li><span class="post-meta">Jan 2, 2011</span>
-        <h3>
-          <a class="post-link" href="/2011/01/02/cable-tv-competition-coming-to/">
-            Cable TV Competition coming to Bethlehem? (FiOS TV vs Time Warner Cable)
-          </a>
-        </h3></li><li><span class="post-meta">Dec 1, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/12/01/one-final-migration-from-vista-to/">
-            One final migration from Vista to Windows 7
-          </a>
-        </h3></li><li><span class="post-meta">Oct 18, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/10/18/how-tweevo-survived-oauthcalypse/">
-            How TweeVo survived the OAuthcalypse
-          </a>
-        </h3></li><li><span class="post-meta">Sep 28, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/09/28/care-and-feeding-of-your-wireless/">
-            Care and feeding of your wireless router
-          </a>
-        </h3></li><li><span class="post-meta">Sep 20, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/09/20/there-was-problem-sending-command-to/">
-            There was a problem sending the command to the program
-          </a>
-        </h3></li><li><span class="post-meta">Sep 17, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/09/17/all-about-f-and-you/">
-            All about “F# and You”
-          </a>
-        </h3></li><li><span class="post-meta">Aug 30, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/08/30/resolving-to-webpage-was-canceled-with/">
-            Resolving &amp;quot;Navigation to the webpage was canceled&amp;quot; with Compiled HTML Help files (.chm)
-          </a>
-        </h3></li><li><span class="post-meta">Aug 30, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/08/30/disaster-recovery-plan-is-useless-if/">
-            A Disaster Recovery Plan is useless if you don’t verify that it works.
-          </a>
-        </h3></li><li><span class="post-meta">Aug 27, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/08/27/dyndns-is-making-making-changes-to/">
-            DynDNS is making making changes to their free Dynamic DNS accounts
-          </a>
-        </h3></li><li><span class="post-meta">Aug 27, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/08/27/change-at-tvug/">
-            A change at TVUG
-          </a>
-        </h3></li><li><span class="post-meta">Aug 23, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/08/23/you-should-have-winpatrol-on-your/">
-            You should have WinPatrol on your system
-          </a>
-        </h3></li><li><span class="post-meta">Aug 23, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/08/23/why-are-there-randomly-named-folders/">
-            Why are there randomly named folders with mpavdlta.vdm files on my C: drive?
-          </a>
-        </h3></li><li><span class="post-meta">Aug 11, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/08/11/new-windows-live-writer-plug-in/">
-            New Windows Live Writer Plug-in Submission Process
-          </a>
-        </h3></li><li><span class="post-meta">Aug 10, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/08/10/how-to-shoot-yourself-in-foot-writing/">
-            How to shoot yourself in the foot writing installer upgrades
-          </a>
-        </h3></li><li><span class="post-meta">Aug 6, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/08/06/notes-on-installing-finalbuilder-7/">
-            Notes on installing FinalBuilder 7
-          </a>
-        </h3></li><li><span class="post-meta">Jul 27, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/07/27/wifi-password-cracking-in-clouds/">
-            Wifi password cracking in the clouds
-          </a>
-        </h3></li><li><span class="post-meta">Jul 22, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/07/22/delmar-kid-chaser/">
-            The Delmar Kid Chaser
-          </a>
-        </h3></li><li><span class="post-meta">Jun 24, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/06/24/enjoy-some-bar-b-que-for-good-cause/">
-            Enjoy some Bar-B-Que for a good cause
-          </a>
-        </h3></li><li><span class="post-meta">May 26, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/05/26/using-robocopy-with-visual-studio-2008/">
-            Using robocopy with Visual Studio 2008 Post-build events
-          </a>
-        </h3></li><li><span class="post-meta">Apr 29, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/04/29/suppressing-repeated-column-value-in/">
-            Suppressing a repeated column value in SQL
-          </a>
-        </h3></li><li><span class="post-meta">Apr 23, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/04/23/what-to-do-when-firefox-displays/">
-            What to do when Firefox displays multiple versions of the Java Console in the Add-ons list
-          </a>
-        </h3></li><li><span class="post-meta">Apr 18, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/04/18/twitter-time-warner-cable-gets-it/">
-            Twitter? Time Warner Cable gets it
-          </a>
-        </h3></li><li><span class="post-meta">Feb 25, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/02/25/what-to-do-when-windows-7-desktop-icon/">
-            What to do when a Windows 7 desktop icon has the wrong image
-          </a>
-        </h3></li><li><span class="post-meta">Feb 14, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/02/14/this-connection-is-untrusted-another/">
-            This connection is Untrusted (another ID10T error)
-          </a>
-        </h3></li><li><span class="post-meta">Feb 14, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/02/14/what-do-you-mean-computer-wont-turn-on/">
-            What do you mean the computer wont turn on?
-          </a>
-        </h3></li><li><span class="post-meta">Jan 4, 2010</span>
-        <h3>
-          <a class="post-link" href="/2010/01/04/just-watched-movie-in-hd-using-amazon/">
-            Just watched a movie in HD using Amazon Video On Demand through my Tivo
-          </a>
-        </h3></li><li><span class="post-meta">Dec 25, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/12/25/there-is-no-sense-of-humor-on-north/">
-            There is no sense of humor on the North Face
-          </a>
-        </h3></li><li><span class="post-meta">Dec 18, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/12/18/getting-list-of-databases-that-user-has/">
-            Getting the list of databases that a user has rights to from SQL Server
-          </a>
-        </h3></li><li><span class="post-meta">Nov 9, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/11/09/this-day-in-epic-fail-november-9th-1876/">
-            This Day in Epic Fail: November 9th, 1876
-          </a>
-        </h3></li><li><span class="post-meta">Oct 29, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/10/29/im-now-mcp/">
-            I’m now a MCP
-          </a>
-        </h3></li><li><span class="post-meta">Oct 29, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/10/29/when-html-encoding-can-bite-you/">
-            When HTML encoding can bite you
-          </a>
-        </h3></li><li><span class="post-meta">Oct 8, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/10/08/fess-up-when-you-made-mistake/">
-            Fess up when you made a mistake
-          </a>
-        </h3></li><li><span class="post-meta">Oct 1, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/10/01/i-dont-care-who-signs-petition-roman/">
-            I don’t care who signs a petition, Roman Polanski is a convicted sexual predator who needs to do his time.
-          </a>
-        </h3></li><li><span class="post-meta">Sep 17, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/09/17/you-always-have-read-your-bank-and/">
-            You always need to read your bank and credit statements
-          </a>
-        </h3></li><li><span class="post-meta">Sep 10, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/09/10/wireshark-work-around-for-windows-7/">
-            Wireshark work around for Windows 7
-          </a>
-        </h3></li><li><span class="post-meta">Sep 8, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/09/08/blocking-spam-that-appears-to-come-from/">
-            Blocking spam that appears to come from your own email address
-          </a>
-        </h3></li><li><span class="post-meta">Aug 29, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/08/29/when-page-up-and-page-down-behave-odd/">
-            When Page Up and Page Down behave oddly in FireFox
-          </a>
-        </h3></li><li><span class="post-meta">Aug 27, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/08/27/looking-forward-to-delphi-2010/">
-            Looking forward to Delphi 2010
-          </a>
-        </h3></li><li><span class="post-meta">Aug 26, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/08/26/i-havent-seen-gas-that-cheap-since/">
-            I haven’t seen gas that cheap since the Carter administration
-          </a>
-        </h3></li><li><span class="post-meta">Aug 24, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/08/24/why-it-can-be-good-to-build-pc-instead/">
-            Why it can be good to build a PC instead of buying a prebuilt one.
-          </a>
-        </h3></li><li><span class="post-meta">Aug 23, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/08/23/using-uberoptions-to-extend/">
-            Using uberOptions to extend the functionality of Logitech devices
-          </a>
-        </h3></li><li><span class="post-meta">Aug 22, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/08/22/offload-tcp-processing-to-network/">
-            Offload TCP processing to the network controllers under Vista, Server 2008, and Windows 7
-          </a>
-        </h3></li><li><span class="post-meta">Aug 19, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/08/19/work-around-for-delphi-20072009-with/">
-            A work around for Delphi 2007/2009 with Windows 7 64 bit
-          </a>
-        </h3></li><li><span class="post-meta">Jul 27, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/07/27/when-installing-apps-in-terminal-server/">
-            When installing apps in a Terminal Server or Citrix environment
-          </a>
-        </h3></li><li><span class="post-meta">Jun 18, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/06/18/facebook-does-not-need-dislike-button/">
-            Facebook does not need a “dislike” button
-          </a>
-        </h3></li><li><span class="post-meta">Jun 15, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/06/15/checking-to-see-microsoft-report-viewer/">
-            Checking to see Microsoft Report Viewer 2008 SP1 has been installed
-          </a>
-        </h3></li><li><span class="post-meta">May 26, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/05/26/if-this-isnt-first-sign-of-apocalypse/">
-            If this isn’t the first sign of the apocalypse, nothing is. (Jon &amp;amp; Kate &amp;amp; American Chopper)
-          </a>
-        </h3></li><li><span class="post-meta">May 11, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/05/11/tag-your-junk-mail-before-it-gets-sent/">
-            Tag your junk mail before it gets sent to you.
-          </a>
-        </h3></li><li><span class="post-meta">Apr 30, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/04/30/followup-to-my-post-about-sc-johnson/">
-            A followup to my post about SC Johnson not manning a customer hotline.
-          </a>
-        </h3></li><li><span class="post-meta">Apr 28, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/04/28/if-you-sell-poison-i-think-your/">
-            If you sell poison, I think your customer hotline should be manned 24/7
-          </a>
-        </h3></li><li><span class="post-meta">Apr 21, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/04/21/remembering-alivia-lovell/">
-            Remembering Alivia Lovell
-          </a>
-        </h3></li><li><span class="post-meta">Mar 19, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/03/19/natasha-richardson/">
-            Natasha Richardson
-          </a>
-        </h3></li><li><span class="post-meta">Mar 18, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/03/18/what-to-do-before-your-camera-is-stolen/">
-            What to do before your camera is stolen
-          </a>
-        </h3></li><li><span class="post-meta">Mar 12, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/03/12/getting-back-ctrl-n-shortcut-with-sql/">
-            Getting back the Ctrl-N shortcut with SQL Server 2008’s SSMS
-          </a>
-        </h3></li><li><span class="post-meta">Mar 1, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/03/01/and-chess-king-is-gone/">
-            And the Chess King is gone
-          </a>
-        </h3></li><li><span class="post-meta">Feb 18, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/02/18/have-you-had-any-bizarre-im-messages/">
-            Have you had any bizarre IM messages from a person with “coho” in his screen name?
-          </a>
-        </h3></li><li><span class="post-meta">Feb 12, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/02/12/on-this-episode-of-jon-and-kate-and/">
-            On this episode of “Jon and Kate and an American Chopper”…
-          </a>
-        </h3></li><li><span class="post-meta">Feb 10, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/02/10/resetting-mouse-cursor/">
-            Resetting the mouse cursor
-          </a>
-        </h3></li><li><span class="post-meta">Feb 10, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/02/10/sorry-it-didnt-work-out/">
-            Sorry it didn’t work out
-          </a>
-        </h3></li><li><span class="post-meta">Jan 15, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/01/15/dealing-with-static-electricity-during/">
-            Dealing with static electricity during winter
-          </a>
-        </h3></li><li><span class="post-meta">Jan 6, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/01/06/what-to-do-when-antivirus-vendor-has/">
-            What to do when an antivirus vendor has flagged your software as a virus
-          </a>
-        </h3></li><li><span class="post-meta">Jan 6, 2009</span>
-        <h3>
-          <a class="post-link" href="/2009/01/06/renabling-maintenance-plans-on-sql/">
-            Renabling maintenance plans on SQL Server 2005
-          </a>
-        </h3></li><li><span class="post-meta">Dec 3, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/12/03/dealing-with-meetings-that-run-late-and/">
-            Dealing with meetings that run late and run into your meeting
-          </a>
-        </h3></li><li><span class="post-meta">Nov 23, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/11/23/some-odd-tivo-issues/">
-            Some odd TiVo issues
-          </a>
-        </h3></li><li><span class="post-meta">Nov 20, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/11/20/fast-way-to-resize-virtual-disk-with/">
-            Fast way to resize a virtual disk with VMware ESX Server
-          </a>
-        </h3></li><li><span class="post-meta">Oct 21, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/10/21/devtrack-woes-with-build-1833-of/">
-            DevTrack woes with build 1833 of mfc80.dll
-          </a>
-        </h3></li><li><span class="post-meta">Oct 20, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/10/20/installation-is-not-configuration/">
-            Installation is not configuration
-          </a>
-        </h3></li><li><span class="post-meta">Oct 17, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/10/17/strange-64-bit-error-with/">
-            Strange 64-bit error with LayoutKind.Explicit
-          </a>
-        </h3></li><li><span class="post-meta">Oct 14, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/10/14/restoring-missing-build-events-in/">
-            Restoring missing Build Events in Delphi 2007
-          </a>
-        </h3></li><li><span class="post-meta">Sep 6, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/09/06/that-happens-will-happen-today-by-byrne/">
-            &amp;quot;Everything That Happens Will Happen Today&amp;quot; by Byrne and Eno
-          </a>
-        </h3></li><li><span class="post-meta">Sep 5, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/09/05/old-school-modeming/">
-            Old School modeming
-          </a>
-        </h3></li><li><span class="post-meta">Aug 21, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/08/21/refreshing-soap-wsdl-import-file-with/">
-            Refreshing a SOAP WSDL import file with Delphi
-          </a>
-        </h3></li><li><span class="post-meta">Aug 21, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/08/21/using-test-form-from-remote-connections/">
-            Using the test form from remote connections for .NET web services
-          </a>
-        </h3></li><li><span class="post-meta">Aug 13, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/08/13/using-delphi-in-team/">
-            Using Delphi in a team
-          </a>
-        </h3></li><li><span class="post-meta">Aug 12, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/08/12/get-ready-to-say-good-bye-to-google/">
-            Get ready to say good bye to Google Page Creator
-          </a>
-        </h3></li><li><span class="post-meta">Aug 11, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/08/11/why-doesnt-os-that-backs-your-os-have/">
-            Why doesn’t an OS that backs your OS have any means of backing itself up?
-          </a>
-        </h3></li><li><span class="post-meta">Aug 11, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/08/11/why-wwwnbccom-wont-load-with-ie7-on/">
-            Why www.nbc.com wont load with IE7 on Vista (and how to get around it)
-          </a>
-        </h3></li><li><span class="post-meta">Aug 7, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/08/07/how-to-log-tidsmtp-component/">
-            How to log the TIDSmtp component
-          </a>
-        </h3></li><li><span class="post-meta">Aug 4, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/08/04/how-to-disable-windows-shutdown-tracker/">
-            How to disable the Windows Shutdown Tracker Dialog
-          </a>
-        </h3></li><li><span class="post-meta">Jul 29, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/29/delphi-win32-gets-tstringbuilder-class/">
-            Delphi Win32 gets a TStringBuilder class
-          </a>
-        </h3></li><li><span class="post-meta">Jul 25, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/25/how-to-shoot-yourself-in-foot-with/">
-            How to shoot yourself in the foot with regular expressions
-          </a>
-        </h3></li><li><span class="post-meta">Jul 24, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/24/black-crayons-and-school-psychologist/">
-            Black Crayons and the school psychologist, a true story (just not mine)
-          </a>
-        </h3></li><li><span class="post-meta">Jul 23, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/23/playing-with-new-toy-gps-device/">
-            Playing with a new toy, a GPS device
-          </a>
-        </h3></li><li><span class="post-meta">Jul 22, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/22/live-from-daryl-hall-house/">
-            Live from Daryl Hall&amp;#8217;s House
-          </a>
-        </h3></li><li><span class="post-meta">Jul 13, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/13/bonus-tvug-presentation-by-john-papa/">
-            Bonus TVUG presentation by John Papa
-          </a>
-        </h3></li><li><span class="post-meta">Jul 11, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/11/drhorribles-sing-along-blog-is-coming/">
-            Dr. Horrible’s Sing-Along Blog is coming to an Internet near you.
-          </a>
-        </h3></li><li><span class="post-meta">Jul 10, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/10/handling-collation-sequences-with/">
-            Handling collation sequences with temporary tables and table variables with SQL Server
-          </a>
-        </h3></li><li><span class="post-meta">Jul 9, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/09/nice-article-about-using-custom/">
-            A nice article about using Custom Attributes in your own code
-          </a>
-        </h3></li><li><span class="post-meta">Jul 8, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/08/still-time-to-enter-darwin-race-of/">
-            Still time to enter the Darwin Race of Languages
-          </a>
-        </h3></li><li><span class="post-meta">Jul 8, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/08/installing-copy-as-plain-text-add-in-in/">
-            Installing the “Copy as Plain Text” add-in in Firefox 3
-          </a>
-        </h3></li><li><span class="post-meta">Jul 7, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/07/valleywag-10-things-twitter-users/">
-            Valleywag: 10 things Twitter users should not do
-          </a>
-        </h3></li><li><span class="post-meta">Jul 7, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/07/google-is-making-ratproxy-freely/">
-            Google is making Ratproxy freely available
-          </a>
-        </h3></li><li><span class="post-meta">Jul 3, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/03/where-are-kibos-of-yesteryear/">
-            Where are the Kibos of yesteryear?
-          </a>
-        </h3></li><li><span class="post-meta">Jul 2, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/02/its-not-tivo-its-just-dvr/">
-            It’s not a TiVo, it’s just a DVR
-          </a>
-        </h3></li><li><span class="post-meta">Jul 1, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/01/i-see-cylons-found-twitter/">
-            I see the Cylons found Twitter
-          </a>
-        </h3></li><li><span class="post-meta">Jul 1, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/07/01/why-i-like-owning-tivo/">
-            Why I like owning a TiVo
-          </a>
-        </h3></li><li><span class="post-meta">Jun 30, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/30/fix-for-endless-registration-loop-with/">
-            Fix for endless registration loop with Delphi 2006
-          </a>
-        </h3></li><li><span class="post-meta">Jun 27, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/27/resizing-bookmark-this-page-dialog-in/">
-            Resizing the “Bookmark this page” dialog in Firefox 3
-          </a>
-        </h3></li><li><span class="post-meta">Jun 26, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/26/new-user-to-delphi-reports-on-his/">
-            A new user to Delphi reports on his annoyances
-          </a>
-        </h3></li><li><span class="post-meta">Jun 26, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/26/understanding-locking-issues-with/">
-            Understanding locking issues with multithreaded code
-          </a>
-        </h3></li><li><span class="post-meta">Jun 24, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/24/evans-datas-2008-ide-user-satisfaction/">
-            Evans Data’s 2008 IDE User Satisfaction Survey
-          </a>
-        </h3></li><li><span class="post-meta">Jun 24, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/24/good-help-delphi-programmers-is-hard-to/">
-            Good help (Delphi programmers) is hard to find
-          </a>
-        </h3></li><li><span class="post-meta">Jun 23, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/23/i-really-want-dalek-surveillance-cam/">
-            I really want a Dalek surveillance cam for my office
-          </a>
-        </h3></li><li><span class="post-meta">Jun 23, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/23/is-there-ever-good-reason-to-google/">
-            Is there ever a good reason to “Google Bomb”?
-          </a>
-        </h3></li><li><span class="post-meta">Jun 20, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/20/adding-sql-server-logins-and-user/">
-            Adding SQL Server logins and user accounts for multiple databases in one pass
-          </a>
-        </h3></li><li><span class="post-meta">Jun 18, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/18/sign-boyd-proper-case-petition/">
-            Sign the &amp;quot;danah boyd proper case&amp;quot; petition
-          </a>
-        </h3></li><li><span class="post-meta">Jun 17, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/17/migrating-delphi-versions-with/">
-            Migrating Delphi versions with DevExpress
-          </a>
-        </h3></li><li><span class="post-meta">Jun 17, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/17/proof-by-lack-of-evidence/">
-            Proof by lack of evidence
-          </a>
-        </h3></li><li><span class="post-meta">Jun 16, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/16/whats-deal-with-idiots-wearing/">
-            What’s the deal with the idiots wearing Bluetooth earpieces at a dance recital?
-          </a>
-        </h3></li><li><span class="post-meta">Jun 16, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/16/tim-russert-1950-2008/">
-            Tim Russert, 1950-2008
-          </a>
-        </h3></li><li><span class="post-meta">Jun 12, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/12/at-least-i-passed-robot-test/">
-            At least I passed the robot test
-          </a>
-        </h3></li><li><span class="post-meta">Jun 12, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/12/unblocking-attachments-with-outlook/">
-            Unblocking attachments with Outlook
-          </a>
-        </h3></li><li><span class="post-meta">Jun 12, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/12/when-chicken-bombs-are-outlawed-only/">
-            When chicken bombs are outlawed, only outlaws will have chicken bombs
-          </a>
-        </h3></li><li><span class="post-meta">Jun 11, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/11/backing-up-your-blogger-hosted-posts/">
-            Backing up your Blogger hosted posts
-          </a>
-        </h3></li><li><span class="post-meta">Jun 11, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/11/photrade-has-updated-their-license/">
-            Photrade has updated their license agreement for everyone&amp;#8217;s benefit
-          </a>
-        </h3></li><li><span class="post-meta">Jun 10, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/10/photrade-lets-you-sell-your-photos/">
-            Photrade lets you sell your photos online but retains perpetual and royalty-free license to your images
-          </a>
-        </h3></li><li><span class="post-meta">Jun 5, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/05/displaying-what-your-tivo-recorded-as/">
-            Displaying what your TiVo recorded as a blog badge
-          </a>
-        </h3></li><li><span class="post-meta">Jun 5, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/05/not-fan-of-vibrant-media-intellitxt/">
-            Not a fan of Vibrant Media&amp;#8217;s intellitxt popups (and how to get rid of them)
-          </a>
-        </h3></li><li><span class="post-meta">Jun 4, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/06/04/one-more-reason-why-i-never-go-back-to/">
-            One more reason why I&amp;#8217;ll never go back to Time Warner Road Runner
-          </a>
-        </h3></li><li><span class="post-meta">May 30, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/30/what-gives-mediadefender-right-to/">
-            What gives MediaDefender the right to launch a DoS attack against Revision3
-          </a>
-        </h3></li><li><span class="post-meta">May 29, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/29/brian-peeks-new-book-is-already-listed/">
-            Brian Peeks new book is already listed on Amazon
-          </a>
-        </h3></li><li><span class="post-meta">May 27, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/27/does-knowing-c-make-you-better/">
-            Does knowing C make you a better programmer?
-          </a>
-        </h3></li><li><span class="post-meta">May 27, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/27/ack-windows-installer-does-not-permit/">
-            Ack! The Windows Installer does not permit installation from a Remote Desktop Connection
-          </a>
-        </h3></li><li><span class="post-meta">May 24, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/24/ipv6-and-vista/">
-            IPv6 and Vista
-          </a>
-        </h3></li><li><span class="post-meta">May 22, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/22/checking-for-presence-of-net-framework/">
-            Checking for the presence of .Net Framework 2.0 SP1
-          </a>
-        </h3></li><li><span class="post-meta">May 22, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/22/installaware-doesn-automatically-remove/">
-            InstallAware doesn&amp;#8217;t automatically remove assemblies from the GAC at uninstall time
-          </a>
-        </h3></li><li><span class="post-meta">May 14, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/14/showing-installed-app-versions-with/">
-            Showing installed app versions with BgInfo
-          </a>
-        </h3></li><li><span class="post-meta">May 8, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/08/uninstall-ie8-beta-before-installing-xp/">
-            Uninstall IE8 Beta before installing XP SP3
-          </a>
-        </h3></li><li><span class="post-meta">May 6, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/06/dealing-with-duplicate-resource-type-24/">
-            Dealing with the Duplicate Resource: Type 24 when enabling theme support in Delphi 2007
-          </a>
-        </h3></li><li><span class="post-meta">May 5, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/05/identity-hijacking-on-twitter/">
-            Identity hijacking on Twitter.
-          </a>
-        </h3></li><li><span class="post-meta">May 2, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/05/02/how-to-rename-database-objects-to/">
-            How to rename database objects to comply with naming conventions
-          </a>
-        </h3></li><li><span class="post-meta">Apr 30, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/30/more-robust-way-of-converting-string-to/">
-            A more robust way of converting a string to an enumerated value (enum)
-          </a>
-        </h3></li><li><span class="post-meta">Apr 30, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/30/troubleshooting-sql-server-connectivity/">
-            Troubleshooting SQL Server connectivity issues
-          </a>
-        </h3></li><li><span class="post-meta">Apr 29, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/29/i-just-installed-powercommands-for/">
-            I just installed the PowerCommands for Visual Studio 2008
-          </a>
-        </h3></li><li><span class="post-meta">Apr 29, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/29/my-feedback-copy-of-office-2007/">
-            My &amp;quot;Windows Feedback&amp;quot; copy of Office 2007 Ultimate just came in
-          </a>
-        </h3></li><li><span class="post-meta">Apr 25, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/25/how-to-identify-who-has-terminal/">
-            How to identify who has a terminal session and how to kill it
-          </a>
-        </h3></li><li><span class="post-meta">Apr 20, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/20/system-restore-and-vista/">
-            System Restore and Vista
-          </a>
-        </h3></li><li><span class="post-meta">Apr 18, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/18/dealing-with-generate-sspi-context/">
-            Dealing with the &amp;quot;Cannot generate SSPI context&amp;quot; error message
-          </a>
-        </h3></li><li><span class="post-meta">Apr 18, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/18/looking-forward-to-stackoverflow/">
-            Looking forward to stackoverflow
-          </a>
-        </h3></li><li><span class="post-meta">Apr 18, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/18/there-no-privacy-with-infant-video/">
-            There&amp;#8217;s no privacy with infant video monitors
-          </a>
-        </h3></li><li><span class="post-meta">Apr 16, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/16/handy-tip-for-debugging-windows-service/">
-            Handy tip for debugging a Windows Service
-          </a>
-        </h3></li><li><span class="post-meta">Apr 16, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/16/microsoft-admits-that-kb-938371-kills/">
-            Microsoft admits that KB 938371 kills USB Devices
-          </a>
-        </h3></li><li><span class="post-meta">Apr 16, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/16/know-your-sql-server-version/">
-            Know your SQL Server version
-          </a>
-        </h3></li><li><span class="post-meta">Apr 13, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/13/work-around-for-kb938371-disabling-hid/">
-            Work around for KB938371 disabling HID-compliant input devices
-          </a>
-        </h3></li><li><span class="post-meta">Apr 11, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/11/kb-938371-woes-continue/">
-            KB 938371 woes continue
-          </a>
-        </h3></li><li><span class="post-meta">Apr 10, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/10/vista-update-kb938371-disabled-my-mouse/">
-            Vista update KB938371 disabled my mouse
-          </a>
-        </h3></li><li><span class="post-meta">Apr 7, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/07/fun-with-coinitialize/">
-            Fun with CoInitialize
-          </a>
-        </h3></li><li><span class="post-meta">Apr 3, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/03/wireshark-reaches-10/">
-            Wireshark reaches 1.0
-          </a>
-        </h3></li><li><span class="post-meta">Apr 1, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/04/01/saving-application-settings-over/">
-            Saving application settings over installs
-          </a>
-        </h3></li><li><span class="post-meta">Mar 30, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/03/30/playing-with-firefox-3-beta-4/">
-            Playing with Firefox 3 Beta 4
-          </a>
-        </h3></li><li><span class="post-meta">Mar 28, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/03/28/when-will-visual-studio-ide-catchup-to/">
-            When will the Visual Studio IDE catchup to the Delphi IDE?
-          </a>
-        </h3></li><li><span class="post-meta">Mar 26, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/03/26/miss-bimbo-is-not-welcome-in-my-house/">
-            Miss Bimbo is not welcome in my house
-          </a>
-        </h3></li><li><span class="post-meta">Mar 25, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/03/25/enabling-users-with-esx-350/">
-            Enabling users with ESX 3.5.0
-          </a>
-        </h3></li><li><span class="post-meta">Mar 17, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/03/17/link-rot-and-ascendance-of-wikipedia/">
-            Link rot and the ascendance of Wikipedia
-          </a>
-        </h3></li><li><span class="post-meta">Mar 14, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/03/14/two-of-my-favorite-geek-toys-powershell/">
-            Two of my favorite geek toys (PowerShell and VMWare) playing together
-          </a>
-        </h3></li><li><span class="post-meta">Mar 11, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/03/11/lost-art-of-tsr-programming/">
-            The Lost Art of TSR Programming
-          </a>
-        </h3></li><li><span class="post-meta">Mar 10, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/03/10/i-like-having-build-box/">
-            I like having a build box
-          </a>
-        </h3></li><li><span class="post-meta">Feb 28, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/02/28/fun-with-changing-ip-address-of-esx/">
-            Fun with changing the IP address of ESX Server 3.5
-          </a>
-        </h3></li><li><span class="post-meta">Feb 26, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/02/26/just-when-i-thought-my-smugmug-plugin/">
-            Just when I thought my SmugMug plugin was finished&amp;#8230;
-          </a>
-        </h3></li><li><span class="post-meta">Feb 21, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/02/21/i-hate-spam-that-comes-in-under-my-own/">
-            I hate spam that comes in under my own name
-          </a>
-        </h3></li><li><span class="post-meta">Feb 9, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/02/09/nvidia-nforce-network-driver-problem/">
-            Nvidia nForce network driver problem under Vista
-          </a>
-        </h3></li><li><span class="post-meta">Feb 3, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/02/03/using-wix-for-my-live-writer-plug-in/">
-            Using Wix for my Live Writer Plug-in
-          </a>
-        </h3></li><li><span class="post-meta">Jan 29, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/01/29/when-clipboard-doesn-work-across-remote/">
-            When the clipboard doesn&amp;#8217;t work across Remote Desktop
-          </a>
-        </h3></li><li><span class="post-meta">Jan 24, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/01/24/copying-files-with-vs-2008-port-build/">
-            Copying files with VS 2008&amp;#8217;s port-build event under Vista
-          </a>
-        </h3></li><li><span class="post-meta">Jan 19, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/01/19/what-do-you-mean-my-router-has-upnp/">
-            What do you mean my router has a UPnP security hole?
-          </a>
-        </h3></li><li><span class="post-meta">Jan 15, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/01/15/how-and-why-to-increase-windows-desktop/">
-            How (and why) to increase the Windows Desktop heap size
-          </a>
-        </h3></li><li><span class="post-meta">Jan 8, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/01/08/what-deal-with-this-rbf-file/">
-            What&amp;#8217;s the deal with this .rbf file?
-          </a>
-        </h3></li><li><span class="post-meta">Jan 5, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/01/05/npr-broke-podcasting-machinery/">
-            NPR broke the podcasting machinery
-          </a>
-        </h3></li><li><span class="post-meta">Jan 4, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/01/04/windows-live-writer-change-from-beta-to/">
-            Windows Live Writer change from beta to 1.0 that affects plugin development
-          </a>
-        </h3></li><li><span class="post-meta">Jan 1, 2008</span>
-        <h3>
-          <a class="post-link" href="/2008/01/01/zero-in/">
-            Zero! In!
-          </a>
-        </h3></li><li><span class="post-meta">Dec 30, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/12/30/thoughts-on-trading-town-country-for/">
-            Thoughts on trading the Town &amp;amp; Country for the Odyssey
-          </a>
-        </h3></li><li><span class="post-meta">Dec 28, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/12/28/citizens-bank-debit-card-security/">
-            Citizens Bank Debit card security worries me
-          </a>
-        </h3></li><li><span class="post-meta">Dec 18, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/12/18/externally-signing-wise-installation/">
-            Externally signing Wise Installation System generated executables
-          </a>
-        </h3></li><li><span class="post-meta">Dec 17, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/12/17/just-listened-to-great-interview-with/">
-            Just listened to a great interview with Dan Appleman over on Hanselminutes
-          </a>
-        </h3></li><li><span class="post-meta">Dec 12, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/12/12/how-can-you-give-away-eight-year-old/">
-            How can you give away a eight year old?
-          </a>
-        </h3></li><li><span class="post-meta">Dec 7, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/12/07/converting-delphi-enumerated-values-to/">
-            Converting Delphi enumerated values to strings
-          </a>
-        </h3></li><li><span class="post-meta">Dec 6, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/12/06/little-bobby-tables/">
-            Little Bobby Tables
-          </a>
-        </h3></li><li><span class="post-meta">Dec 3, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/12/03/i-used-to-use-yahoo/">
-            I used to use Yahoo&amp;#8230;
-          </a>
-        </h3></li><li><span class="post-meta">Nov 28, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/11/28/what-happened-after-i-emailed-sears/">
-            What happened after I emailed Sears
-          </a>
-        </h3></li><li><span class="post-meta">Nov 27, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/11/27/how-not-to-handle-black-friday-searscom/">
-            How not to handle Black Friday: Sears.com
-          </a>
-        </h3></li><li><span class="post-meta">Nov 20, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/11/20/digital-versus-paper-books/">
-            Digital versus paper books
-          </a>
-        </h3></li><li><span class="post-meta">Nov 19, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/11/19/when-memes-escape-out-of-series-of/">
-            When memes escape out of the series of tubes
-          </a>
-        </h3></li><li><span class="post-meta">Oct 28, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/10/28/my-doppelgnger-is-wont-let-me-give/">
-            My doppelgänger is preventing me from giving blood
-          </a>
-        </h3></li><li><span class="post-meta">Oct 7, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/10/07/technical-support-verizon-fios-vs/">
-            Technical Support: Verizon FiOS vs McAfee
-          </a>
-        </h3></li><li><span class="post-meta">Jul 24, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/07/24/file-sharing-with-vista-home-without/">
-            File sharing with Vista Home without passwords
-          </a>
-        </h3></li><li><span class="post-meta">Jul 20, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/07/20/allowing-comments-on-blogs/">
-            Allowing Comments on Blogs
-          </a>
-        </h3></li><li><span class="post-meta">Jul 5, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/07/05/implementing-sortable-tcollection-in/">
-            Implementing a sortable TCollection in Delphi
-          </a>
-        </h3></li><li><span class="post-meta">Jul 3, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/07/03/rest-vs-soap/">
-            REST vs SOAP
-          </a>
-        </h3></li><li><span class="post-meta">Jul 3, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/07/03/blast-from-past-forth/">
-            Blast from the past: Forth
-          </a>
-        </h3></li><li><span class="post-meta">Jun 15, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/06/15/i-gots-my-favicon-back/">
-            I gots my favicon back
-          </a>
-        </h3></li><li><span class="post-meta">Jun 14, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/06/14/enabling-database-diagrams-in-sql/">
-            Enabling Database Diagrams in SQL Server 2005
-          </a>
-        </h3></li><li><span class="post-meta">Jun 12, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/06/12/when-other-people-host-your-data/">
-            When other people host your data&amp;#8230;.
-          </a>
-        </h3></li><li><span class="post-meta">Jun 12, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/06/12/51-server/">
-            The $51 server.
-          </a>
-        </h3></li><li><span class="post-meta">Jun 8, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/06/08/user-specific-connection-strings/">
-            User specific connection strings
-          </a>
-        </h3></li><li><span class="post-meta">Jun 8, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/06/08/shawn-is-dragged-kicking-and-screaming/">
-            Shawn is dragged kicking and screaming into the year 2004
-          </a>
-        </h3></li><li><span class="post-meta">Jun 5, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/06/05/testdrivennet-and-visual-studio-express/">
-            TestDriven.NET and Visual Studio Express
-          </a>
-        </h3></li><li><span class="post-meta">May 18, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/05/18/why-is-this-man-laughing/">
-            Why is this man laughing?
-          </a>
-        </h3></li><li><span class="post-meta">May 18, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/05/18/time-to-get-new-pc/">
-            Time to get a new PC
-          </a>
-        </h3></li><li><span class="post-meta">May 10, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/05/10/is-microsoft-dead/">
-            Is Microsoft Dead?
-          </a>
-        </h3></li><li><span class="post-meta">May 7, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/05/07/jeremy-clarkson-does-more-than-laugh-at/">
-            Jeremy Clarkson does more than laugh at rice
-          </a>
-        </h3></li><li><span class="post-meta">May 4, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/05/04/ed-dague-blog-has-new-home/">
-            Ed Dague&amp;#8217;s blog has a new home
-          </a>
-        </h3></li><li><span class="post-meta">May 4, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/05/04/domain-name-change/">
-            Domain name change
-          </a>
-        </h3></li><li><span class="post-meta">Apr 30, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/04/30/fun-with-com-and-console-delphi/">
-            Fun with COM and console Delphi applications
-          </a>
-        </h3></li><li><span class="post-meta">Apr 14, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/04/14/sql-update-from-another-row-in-same/">
-            SQL UPDATE from another row in the same table
-          </a>
-        </h3></li><li><span class="post-meta">Apr 10, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/04/10/understanding-sql-server-error-18456/">
-            Understanding SQL Server error 18456
-          </a>
-        </h3></li><li><span class="post-meta">Mar 23, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/03/23/aero-glass-on-my-ancient-gx400/">
-            Aero Glass on my ancient GX400
-          </a>
-        </h3></li><li><span class="post-meta">Mar 22, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/03/22/fixing-wise-installation-system-9/">
-            Fixing Wise Installation System 9 problem with shortcuts in Vista
-          </a>
-        </h3></li><li><span class="post-meta">Mar 21, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/03/21/i-not-impressed-with-diamond-multimedia/">
-            I&amp;#8217;m not impressed with Diamond Multimedia support
-          </a>
-        </h3></li><li><span class="post-meta">Mar 20, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/03/20/notes-on-installing-delphi-2007/">
-            Notes on installing Delphi 2007
-          </a>
-        </h3></li><li><span class="post-meta">Mar 20, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/03/20/john-backus-rip/">
-            John Backus, RIP
-          </a>
-        </h3></li><li><span class="post-meta">Mar 13, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/03/13/why-i-looking-forward-to/">
-            Why I&amp;#8217;m looking forward to &amp;quot;Orcas&amp;quot;
-          </a>
-        </h3></li><li><span class="post-meta">Mar 12, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/03/12/julie-lerman-coming-to-town/">
-            Julie Lerman&amp;#8217;s coming to town
-          </a>
-        </h3></li><li><span class="post-meta">Mar 12, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/03/12/thinking-about-wais-gopher-and-execpc/">
-            Thinking about WAIS, Gopher, and ExecPC
-          </a>
-        </h3></li><li><span class="post-meta">Mar 7, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/03/07/where-is-putersoftcom/">
-            Where is puterSoft.com?
-          </a>
-        </h3></li><li><span class="post-meta">Feb 23, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/02/23/finalbuilder-to-rescue-again/">
-            FinalBuilder to the rescue (again)
-          </a>
-        </h3></li><li><span class="post-meta">Feb 13, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/02/13/windows-home-server-goes-beta-2/">
-            Windows Home Server goes Beta 2
-          </a>
-        </h3></li><li><span class="post-meta">Feb 5, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/02/05/i-hate-macs/">
-            I hate Macs
-          </a>
-        </h3></li><li><span class="post-meta">Feb 5, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/02/05/yet-another-rebuild-part-2/">
-            Yet another rebuild (Part 2)
-          </a>
-        </h3></li><li><span class="post-meta">Feb 5, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/02/05/yet-another-rebuild-part-1/">
-            Yet another rebuild (Part 1)
-          </a>
-        </h3></li><li><span class="post-meta">Feb 5, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/02/05/new-title-for-eliot-spitzer/">
-            A new title for Eliot Spitzer
-          </a>
-        </h3></li><li><span class="post-meta">Feb 5, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/02/05/generating-utf-8-string-s-with-out-byte/">
-            Generating UTF-8 string s with out Byte Order Marks
-          </a>
-        </h3></li><li><span class="post-meta">Jan 31, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/01/31/snap-preview-anywhere-is-annoying/">
-            Snap Preview Anywhere is annoying
-          </a>
-        </h3></li><li><span class="post-meta">Jan 8, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/01/08/about-year-ago-i-put-together-pc-to/">
-            About Year Ago I Put Together Pc To
-          </a>
-        </h3></li><li><span class="post-meta">Jan 8, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/01/08/what-to-install-what-to-leave-out/">
-            What to install, what to leave out&amp;#8230;
-          </a>
-        </h3></li><li><span class="post-meta">Jan 5, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/01/05/blog-tagged/">
-            Blog Tagged
-          </a>
-        </h3></li><li><span class="post-meta">Jan 4, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/01/04/removing-language-toolbar-in-windows-xp/">
-            Removing the Language Toolbar in Windows XP
-          </a>
-        </h3></li><li><span class="post-meta">Jan 3, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/01/03/ed-dague-is-more-than-floating-head/">
-            Ed Dague is more than a floating head
-          </a>
-        </h3></li><li><span class="post-meta">Jan 2, 2007</span>
-        <h3>
-          <a class="post-link" href="/2007/01/02/sybase-has-left-building/">
-            Sybase has left the building
-          </a>
-        </h3></li><li><span class="post-meta">Dec 14, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/12/14/tivo-now-placing-ads-on-delete-screen/">
-            TiVo now placing ads on the delete screen
-          </a>
-        </h3></li><li><span class="post-meta">Nov 9, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/11/09/it-looks-like-genesis-is-going-back-out/">
-            It Looks Like Genesis Is Going Back Out
-          </a>
-        </h3></li><li><span class="post-meta">Nov 8, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/11/08/sometimes-there-is-free-lunch/">
-            Sometimes there is a free lunch
-          </a>
-        </h3></li><li><span class="post-meta">Oct 31, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/10/31/why-doesnt-region-work-above-interface/">
-            Why doesn&amp;#8217;t {$REGION} work above the interface?
-          </a>
-        </h3></li><li><span class="post-meta">Oct 4, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/10/04/best-description-of-vmwarevirtual-pc/">
-            Best description of VMware/Virtual PC ever&amp;#8230;.
-          </a>
-        </h3></li><li><span class="post-meta">Sep 22, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/09/22/terra-cotta-army-1000-chinese-statues/">
-            The Terra Cotta Army: 1000 Chinese statues + 1 German art student
-          </a>
-        </h3></li><li><span class="post-meta">Sep 15, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/09/15/how-to-be-programmer/">
-            How to be a programmer
-          </a>
-        </h3></li><li><span class="post-meta">Sep 14, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/09/14/where-is-on-my-visual-studio-2005/">
-            Where is &amp;quot;Step Into&amp;quot; on my Visual Studio 2005 Debug menu?
-          </a>
-        </h3></li><li><span class="post-meta">Sep 12, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/09/12/surfing-with-takeshi-terauchi-and/">
-            Surfing with Takeshi Terauchi and the Bunnys
-          </a>
-        </h3></li><li><span class="post-meta">Sep 8, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/09/08/this-is-your-replacement-tag/">
-            THIS IS YOUR REPLACEMENT TAG
-          </a>
-        </h3></li><li><span class="post-meta">Sep 7, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/09/07/why-you-wont-see-linux-on-corporate/">
-            Why you wont see Linux on Corporate America&amp;#8217;s desktops just yet
-          </a>
-        </h3></li><li><span class="post-meta">Sep 4, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/09/04/project-bluemoon/">
-            Project Bluemoon
-          </a>
-        </h3></li><li><span class="post-meta">Sep 2, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/09/02/tivo-series-3-looks-cool-pretty-costly/">
-            TiVo Series 3: Looks cool, pretty costly
-          </a>
-        </h3></li><li><span class="post-meta">Sep 1, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/09/01/diagnostic-mode-for-ipod-shuffle/">
-            Diagnostic mode for Ipod Shuffle
-          </a>
-        </h3></li><li><span class="post-meta">Aug 31, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/08/31/i-just-took-msdart-to-head-and-i-dont/">
-            I just took a MSDart to the head and I don&amp;#8217;t feel so well right now.
-          </a>
-        </h3></li><li><span class="post-meta">Aug 31, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/08/31/leave-that-thread-priority-alone/">
-            Leave that thread priority alone
-          </a>
-        </h3></li><li><span class="post-meta">Aug 24, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/08/24/stream-reading-in-c/">
-            Stream reading in C#
-          </a>
-        </h3></li><li><span class="post-meta">Aug 24, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/08/24/vista-performance-or-lack-of/">
-            Vista performance (or lack of)
-          </a>
-        </h3></li><li><span class="post-meta">Aug 18, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/08/18/back-from-vacation/">
-            Back from vacation
-          </a>
-        </h3></li><li><span class="post-meta">Aug 18, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/08/18/dates-are-not-numbers/">
-            Dates are not numbers
-          </a>
-        </h3></li><li><span class="post-meta">Aug 1, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/08/01/hidden-gotcha-in-freeandnil/">
-            Hidden gotcha in FreeAndNil()
-          </a>
-        </h3></li><li><span class="post-meta">Jul 29, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/07/29/poor-mans-guide-to-memory-usage/">
-            Poor man&amp;#8217;s guide to memory usage tracking
-          </a>
-        </h3></li><li><span class="post-meta">Jul 27, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/07/27/sql-server-where-clause-tip-not-needed/">
-            SQL Server WHERE clause tip (not needed for SQL Server 2005)
-          </a>
-        </h3></li><li><span class="post-meta">Jul 14, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/07/14/migrating-to-delphi-2006/">
-            Migrating to Delphi 2006
-          </a>
-        </h3></li><li><span class="post-meta">Jul 13, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/07/13/following-could-have-been-coming-from/">
-            Following Could Have Been Coming From
-          </a>
-        </h3></li><li><span class="post-meta">Jul 7, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/07/07/i-dont-care-about-rocketboom/">
-            I don&amp;#8217;t care about RocketBoom
-          </a>
-        </h3></li><li><span class="post-meta">Jun 27, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/06/27/what-do-following-have-in-common/">
-            What do the following have in common?
-          </a>
-        </h3></li><li><span class="post-meta">Jun 27, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/06/27/tomato-funeral/">
-            Tomato funeral
-          </a>
-        </h3></li><li><span class="post-meta">Jun 13, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/06/13/fun-with-scripted-load-tests/">
-            Fun with scripted load tests
-          </a>
-        </h3></li><li><span class="post-meta">Jun 6, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/06/06/self-installing-services-in-net/">
-            Self installing services in .NET
-          </a>
-        </h3></li><li><span class="post-meta">May 30, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/05/30/leaky-abstractions-in-wise-for-windows/">
-            Leaky Abstractions in Wise for Windows
-          </a>
-        </h3></li><li><span class="post-meta">May 26, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/05/26/samsung-bans-its-own-product/">
-            Samsung bans its own product
-          </a>
-        </h3></li><li><span class="post-meta">May 26, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/05/26/visual-studio-net-2005-keyboard/">
-            Visual Studio .NET 2005 Keyboard Shortcuts
-          </a>
-        </h3></li><li><span class="post-meta">May 26, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/05/26/rants-against-machine-are-stored/">
-            Rants against the machine: Are stored procedures inherently evil?
-          </a>
-        </h3></li><li><span class="post-meta">May 25, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/05/25/diy-mosquite-trap/">
-            DIY Mosquite Trap
-          </a>
-        </h3></li><li><span class="post-meta">May 25, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/05/25/best-buy-prank/">
-            Best Buy prank
-          </a>
-        </h3></li><li><span class="post-meta">May 25, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/05/25/delphi-2006-quirks/">
-            Delphi 2006 quirks
-          </a>
-        </h3></li><li><span class="post-meta">May 18, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/05/18/using-cache-in-your-winforms/">
-            Using Cache in Your WinForms Applications
-          </a>
-        </h3></li><li><span class="post-meta">May 15, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/05/15/playing-with-firefox-again_15/">
-            Playing with Firefox again
-          </a>
-        </h3></li><li><span class="post-meta">May 12, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/05/12/tao-of-windows-installer/">
-            Tao of the Windows Installer
-          </a>
-        </h3></li><li><span class="post-meta">Apr 22, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/04/22/spring-cleaning/">
-            Spring cleaning
-          </a>
-        </h3></li><li><span class="post-meta">Apr 13, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/04/13/tivo-one-year-later/">
-            Tivo, one year later
-          </a>
-        </h3></li><li><span class="post-meta">Apr 12, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/04/12/demoed-finalbuilder-at-tvug/">
-            Demoed FinalBuilder at TVUG
-          </a>
-        </h3></li><li><span class="post-meta">Mar 23, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/03/23/enhanced-version-of-spwho/">
-            Enhanced version of sp_who
-          </a>
-        </h3></li><li><span class="post-meta">Mar 1, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/03/01/my-web-application-is-running-at-98-of/">
-            My web application is running at 98% of the CPU
-          </a>
-        </h3></li><li><span class="post-meta">Feb 28, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/02/28/when-to-use-cursors/">
-            When to use cursors
-          </a>
-        </h3></li><li><span class="post-meta">Feb 17, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/02/17/get-just-date-from-sql-server-datetime/">
-            Get just the date from a SQL Server datetime column
-          </a>
-        </h3></li><li><span class="post-meta">Feb 14, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/02/14/mini-primer-on-handling-exceptions-in/">
-            Mini-primer on handling exceptions in .NET
-          </a>
-        </h3></li><li><span class="post-meta">Feb 13, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/02/13/preventing-automatic-update-from/">
-            Preventing Automatic Update from rebooting your machine
-          </a>
-        </h3></li><li><span class="post-meta">Jan 31, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/31/how-to-drum-up-consulting-business/">
-            How to drum up consulting business
-          </a>
-        </h3></li><li><span class="post-meta">Jan 31, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/31/this-should-be-against-law/">
-            This should be against the law&amp;#8230;
-          </a>
-        </h3></li><li><span class="post-meta">Jan 26, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/26/firefox-myths/">
-            FireFox myths
-          </a>
-        </h3></li><li><span class="post-meta">Jan 26, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/26/is-soaptcp-with-wse-singleton/">
-            Is soap.tcp with WSE a singleton?
-          </a>
-        </h3></li><li><span class="post-meta">Jan 26, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/26/viewing-local-xml-files-with-ie/">
-            Viewing local XML files with IE without that idiot warning
-          </a>
-        </h3></li><li><span class="post-meta">Jan 24, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/24/jack-of-all-trades-master-of-none/">
-            Jack of all trades, master of none.
-          </a>
-        </h3></li><li><span class="post-meta">Jan 23, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/23/how-expensive-are-net-exceptions/">
-            How expensive are .NET exceptions?
-          </a>
-        </h3></li><li><span class="post-meta">Jan 17, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/17/repaving-xp-box/">
-            Repaving an XP box
-          </a>
-        </h3></li><li><span class="post-meta">Jan 17, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/17/history-of-c-family-of-languages/">
-            History of the C family of languages
-          </a>
-        </h3></li><li><span class="post-meta">Jan 12, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/12/keyboard-shortcuts-for-outlook/">
-            Keyboard shortcuts for Outlook
-          </a>
-        </h3></li><li><span class="post-meta">Jan 9, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/09/testing-to-see-if-your-mail-server/">
-            Testing to see if your mail server allows relaying
-          </a>
-        </h3></li><li><span class="post-meta">Jan 5, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/05/fun-with-80211/">
-            Fun with 802.11
-          </a>
-        </h3></li><li><span class="post-meta">Jan 4, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/04/paged-recordsets-from-sql-server-for/">
-            Paged recordsets from SQL Server for web pages
-          </a>
-        </h3></li><li><span class="post-meta">Jan 3, 2006</span>
-        <h3>
-          <a class="post-link" href="/2006/01/03/argh-now-i-have-to-keep-track-of/">
-            Argh! Now I have to keep track of Remote Desktop
-          </a>
-        </h3></li><li><span class="post-meta">Dec 27, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/27/how-to-replace-installed-buggy-msi/">
-            How to replace a installed buggy .MSI file with a fixed one.
-          </a>
-        </h3></li><li><span class="post-meta">Dec 27, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/27/prototype-vs-atlas/">
-            Prototype vs. Atlas
-          </a>
-        </h3></li><li><span class="post-meta">Dec 22, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/22/great-now-they-are-targetting-vmware/">
-            Great, now they are targetting VMWare
-          </a>
-        </h3></li><li><span class="post-meta">Dec 21, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/21/joy-of-editing-mac-os-x-hosts-file/">
-            The joy of editing the Mac OS X hosts file
-          </a>
-        </h3></li><li><span class="post-meta">Dec 19, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/19/jon-galloway-has-quick-consise-post-on/">
-            Jon Galloway Has Quick Consise Post On
-          </a>
-        </h3></li><li><span class="post-meta">Dec 16, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/16/i-i-started-out-with-linksys-usb/">
-            I I Started Out With Linksys Usb
-          </a>
-        </h3></li><li><span class="post-meta">Dec 16, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/16/adding-install-as-to-context-menu/">
-            Adding &amp;quot;Install as&amp;#8230;&amp;quot; to context menu
-          </a>
-        </h3></li><li><span class="post-meta">Dec 14, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/14/disabling-vmware-network-adapters/">
-            Disabling the VMWare network adapters
-          </a>
-        </h3></li><li><span class="post-meta">Dec 14, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/14/exceptions-and-threads/">
-            Exceptions and Threads
-          </a>
-        </h3></li><li><span class="post-meta">Dec 12, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/12/saving-and-restoring-forms-location-on/">
-            Saving and restoring a forms location on
-          </a>
-        </h3></li><li><span class="post-meta">Dec 12, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/12/multiple-remote-connections-to-xp-sp2/">
-            Multiple remote connections to XP SP2
-          </a>
-        </h3></li><li><span class="post-meta">Dec 10, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/10/i-love-nerd-humor/">
-            I love nerd humor
-          </a>
-        </h3></li><li><span class="post-meta">Dec 10, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/10/this-is-worse-than-star-trek/">
-            &amp;quot;This is worse than a Star Trek convention.&amp;quot;
-          </a>
-        </h3></li><li><span class="post-meta">Dec 9, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/09/set-wayback-machine-to-late-1980s/">
-            Set the wayback machine to late 1980&amp;#8217;s
-          </a>
-        </h3></li><li><span class="post-meta">Dec 9, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/09/cool-site-for-sysadmins/">
-            Cool site for sysadmins
-          </a>
-        </h3></li><li><span class="post-meta">Dec 6, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/06/vmware-authdexe-slowing-down-my-pc/">
-            VMware-authd.exe slowing down my PC
-          </a>
-        </h3></li><li><span class="post-meta">Dec 6, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/06/keytools/">
-            Keytools
-          </a>
-        </h3></li><li><span class="post-meta">Dec 6, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/06/delphi-interview-questions/">
-            Delphi Interview Questions
-          </a>
-        </h3></li><li><span class="post-meta">Dec 5, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/05/free-icon-sets-from-iconbuffet/">
-            Free icon sets from IconBuffet
-          </a>
-        </h3></li><li><span class="post-meta">Dec 5, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/05/from-department-of-people-with-way-too/">
-            From the Department of People with way too much time on their hands&amp;#8230;
-          </a>
-        </h3></li><li><span class="post-meta">Dec 5, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/12/05/scott-allen-list-of-asp-1-to-asp-2/">
-            Scott Allen list of ASP 1 to ASP 2 resources
-          </a>
-        </h3></li><li><span class="post-meta">Nov 29, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/29/how-to-pre-populate-assemblies-to-add/">
-            How to pre-populate assemblies to the Add References dialog in Visual Studio 2005
-          </a>
-        </h3></li><li><span class="post-meta">Nov 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/28/installing-sql-server-express/">
-            Installing SQL Server Express
-          </a>
-        </h3></li><li><span class="post-meta">Nov 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/28/counterstrings/">
-            Counterstrings
-          </a>
-        </h3></li><li><span class="post-meta">Nov 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/25/fun-with-msde-installing/">
-            Fun with the MSDE: installing
-          </a>
-        </h3></li><li><span class="post-meta">Nov 23, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/23/rehow-to-determine-if-current-user-is/">
-            RE:How to determine if the current user is an administrator
-          </a>
-        </h3></li><li><span class="post-meta">Nov 21, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/21/why-you-wont-find-c-example-code-for/">
-            Why you wont find C# example code for writing Shell Extension handlers
-          </a>
-        </h3></li><li><span class="post-meta">Nov 21, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/21/interesting-scientific-study-about/">
-            Interesting scientific study about font usage on web pages.
-          </a>
-        </h3></li><li><span class="post-meta">Nov 21, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/21/client-vs-developer/">
-            Client vs Developer
-          </a>
-        </h3></li><li><span class="post-meta">Nov 17, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/17/grimmy-weighs-in-on-blogs/">
-            Grimmy weighs in on blogs
-          </a>
-        </h3></li><li><span class="post-meta">Nov 16, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/16/that-pesky-sql-server-express/">
-            That Pesky Sql Server Express
-          </a>
-        </h3></li><li><span class="post-meta">Nov 16, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/16/new-tool-bar-icons-for-vs-2005/">
-            New tool bar icons for VS 2005
-          </a>
-        </h3></li><li><span class="post-meta">Nov 15, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/15/file-this-one-under-huh/">
-            File this one under &amp;quot;Huh?&amp;quot;
-          </a>
-        </h3></li><li><span class="post-meta">Nov 15, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/15/building-aspnet-2-projects/">
-            Building ASP.NET 2 projects
-          </a>
-        </h3></li><li><span class="post-meta">Nov 14, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/14/test-drive-of-writelycom/">
-            Test drive of writely.com
-          </a>
-        </h3></li><li><span class="post-meta">Nov 14, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/14/suggestion-for-just-think-of-canada-as/">
-            A suggestion for &amp;quot;Just Think of Canada as 11 More States&amp;quot;
-          </a>
-        </h3></li><li><span class="post-meta">Nov 14, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/14/allen-bauer-has-cool-post-on-reporting/">
-            Allen Bauer Has Cool Post On Reporting
-          </a>
-        </h3></li><li><span class="post-meta">Nov 11, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/11/re-better-backgroundworker/">
-            RE: A better BackgroundWorker : CancelImmediately and other goodies
-          </a>
-        </h3></li><li><span class="post-meta">Nov 11, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/11/another-way-of-deleting-data-in-chunks/">
-            Another way of deleting data in chunks
-          </a>
-        </h3></li><li><span class="post-meta">Nov 10, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/10/who-was-microsoft-kidding-when-they/">
-            Who Was Microsoft Kidding When They
-          </a>
-        </h3></li><li><span class="post-meta">Nov 9, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/09/see-what-services-are-associated-with/">
-            See What Services Are Associated with a Process?
-          </a>
-        </h3></li><li><span class="post-meta">Nov 9, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/09/bender-smender-i-want-robbie_09/">
-            Bender, Smender. I want Robbie!
-          </a>
-        </h3></li><li><span class="post-meta">Nov 7, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/07/more-news-on-sonys-rootkit/">
-            More news on Sony&amp;#8217;s rootkit
-          </a>
-        </h3></li><li><span class="post-meta">Nov 3, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/03/arrival-of-delphi-man-and-doctor/">
-            The arrival of Delphi Man and Doctor Deadline
-          </a>
-        </h3></li><li><span class="post-meta">Nov 2, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/02/chinas-little-green-book/">
-            China&amp;#8217;s Little Green Book
-          </a>
-        </h3></li><li><span class="post-meta">Nov 1, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/01/sony-now-installs-flawed-rootkit/">
-            Sony now installs a flawed rootkit
-          </a>
-        </h3></li><li><span class="post-meta">Nov 1, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/11/01/debugging-services/">
-            Debugging services
-          </a>
-        </h3></li><li><span class="post-meta">Oct 31, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/31/10-free-net-development-tools/">
-            10 Free .NET Development Tools
-          </a>
-        </h3></li><li><span class="post-meta">Oct 27, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/27/voices-of-reason-in-sea-of-hype/">
-            Voices of reason in a sea of hype
-          </a>
-        </h3></li><li><span class="post-meta">Oct 26, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/26/re-yet-another-command-line-parsing/">
-            RE: Yet another command line parsing system
-          </a>
-        </h3></li><li><span class="post-meta">Oct 26, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/26/re-todont-use-windows-service-just-to/">
-            RE: //TODONT: Use a Windows Service just to run a scheduled process
-          </a>
-        </h3></li><li><span class="post-meta">Oct 26, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/26/fun-with-bcp/">
-            Fun with BCP
-          </a>
-        </h3></li><li><span class="post-meta">Oct 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/25/whither-daab/">
-            Whither DAAB?
-          </a>
-        </h3></li><li><span class="post-meta">Oct 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/25/how-much-is-your-blog-worth/">
-            How much is your blog worth?
-          </a>
-        </h3></li><li><span class="post-meta">Oct 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/25/blast-from-past/">
-            A blast from the past
-          </a>
-        </h3></li><li><span class="post-meta">Oct 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/25/quick-lesson-on-how-to-strip-text-out/">
-            Quick lesson on how to strip text out using RexEx
-          </a>
-        </h3></li><li><span class="post-meta">Oct 24, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/24/new-device-detected-boeing-747/">
-            New device detected: Boeing 747
-          </a>
-        </h3></li><li><span class="post-meta">Oct 24, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/24/deleting-lots-of-data-in-batches/">
-            Deleting lots of data in batches
-          </a>
-        </h3></li><li><span class="post-meta">Oct 24, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/24/regular-expression-tools/">
-            Regular Expression Tools
-          </a>
-        </h3></li><li><span class="post-meta">Oct 24, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/24/re-another-blast-of-cold-water-in-face/">
-            RE: Another Blast of Cold Water in the face &amp;#8211; &amp;quot;The Build Master&amp;quot; by Vincent Maraia
-          </a>
-        </h3></li><li><span class="post-meta">Oct 23, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/23/prangstgrp/">
-            PRANGSTGRÜP
-          </a>
-        </h3></li><li><span class="post-meta">Oct 21, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/21/internet-health-report/">
-            Internet Health Report
-          </a>
-        </h3></li><li><span class="post-meta">Oct 20, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/20/re-sqldependency-changes-for-rtm/">
-            RE: SqlDependency changes for RTM [Sushil Chordia]
-          </a>
-        </h3></li><li><span class="post-meta">Oct 20, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/20/just-say-no-to-clr-udts/">
-            Just say no to CLR UDTs
-          </a>
-        </h3></li><li><span class="post-meta">Oct 20, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/20/spam-weasels/">
-            Spam weasels
-          </a>
-        </h3></li><li><span class="post-meta">Oct 20, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/20/nine-reasons-not-to-use-serialization/">
-            Nine reasons not to use serialization
-          </a>
-        </h3></li><li><span class="post-meta">Oct 13, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/13/reoldest-noodles-unearthed-in-china/">
-            RE:Oldest noodles unearthed in China
-          </a>
-        </h3></li><li><span class="post-meta">Oct 12, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/12/re-october-12-2005/">
-            RE: October 12, 2005
-          </a>
-        </h3></li><li><span class="post-meta">Oct 12, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/12/re-why-do-login-dialogs-have-user/">
-            RE: Why do login dialogs have a &amp;quot;User&amp;quot; field?
-          </a>
-        </h3></li><li><span class="post-meta">Oct 7, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/07/re-performance-analysis-tools-from/">
-            RE: Performance Analysis Tools from Microsoft (Free)
-          </a>
-        </h3></li><li><span class="post-meta">Oct 5, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/10/05/re-if-all-movies-ever-made-were-really/">
-            RE: If All Movies Ever Made Were Really About Software&amp;#8230;
-          </a>
-        </h3></li><li><span class="post-meta">Sep 20, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/09/20/writing-sensible-email-messages/">
-            Writing sensible email messages
-          </a>
-        </h3></li><li><span class="post-meta">Sep 15, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/09/15/re-stupid-registry-tricks/">
-            RE: Stupid Registry Tricks
-          </a>
-        </h3></li><li><span class="post-meta">Sep 14, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/09/14/converting-vintage-cassette-recorder/">
-            Converting a vintage cassette recorder into an external Hard Drive
-          </a>
-        </h3></li><li><span class="post-meta">Sep 8, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/09/08/re-pod-replaces-tripods-and-has/">
-            RE: The Pod Replaces Tripods (And has Nothing to do with iPod, Thank God)
-          </a>
-        </h3></li><li><span class="post-meta">Sep 7, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/09/07/updating-browsercaps-to-support-down/">
-            Updating BrowserCaps to support &amp;quot;down level&amp;quot; browsers
-          </a>
-        </h3></li><li><span class="post-meta">Sep 6, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/09/06/10-things-you-shouldnt-do-with-sql/">
-            10 Things You Shouldn&amp;#8217;t Do with SQL Server
-          </a>
-        </h3></li><li><span class="post-meta">Sep 6, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/09/06/re-dynamic-behavior-with-decorator/">
-            RE: Dynamic Behavior with the Decorator Pattern
-          </a>
-        </h3></li><li><span class="post-meta">Sep 1, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/09/01/when-going-gets-tough-tough-fire-up/">
-            When the going gets tough, the tough fire up the generator.
-          </a>
-        </h3></li><li><span class="post-meta">Aug 31, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/08/31/re-disabling-windows-authentication-in/">
-            RE: Disabling Windows Authentication in Visual Studio 2005&amp;#8217;s built-in ASP.NET server
-          </a>
-        </h3></li><li><span class="post-meta">Aug 29, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/08/29/re-thread-safe-format/">
-            RE: Thread-safe Format
-          </a>
-        </h3></li><li><span class="post-meta">Aug 24, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/08/24/re-strings-are-immutable/">
-            RE: Strings are immutable
-          </a>
-        </h3></li><li><span class="post-meta">Aug 11, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/08/11/re-great-list-of-free-windows-software/">
-            RE: Great List of Free Windows Software
-          </a>
-        </h3></li><li><span class="post-meta">Aug 11, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/08/11/string-formatting-in-c/">
-            String formatting in C#
-          </a>
-        </h3></li><li><span class="post-meta">Aug 5, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/08/05/delphi-basics/">
-            Delphi Basics
-          </a>
-        </h3></li><li><span class="post-meta">Aug 3, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/08/03/and-now-word-from-phil/">
-            And now, a word from Phil&amp;#8230;
-          </a>
-        </h3></li><li><span class="post-meta">Jul 27, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/07/27/re-importexport-to-excel/">
-            RE: Import/Export to Excel
-          </a>
-        </h3></li><li><span class="post-meta">Jul 15, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/07/15/ive-been-looking-for-way-to-hack/">
-            I&amp;#8217;ve been looking for a way to hack Google Earth
-          </a>
-        </h3></li><li><span class="post-meta">Jul 14, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/07/14/re-skype-and-port-80/">
-            RE: Skype and Port 80
-          </a>
-        </h3></li><li><span class="post-meta">Jul 12, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/07/12/erics-advice-for-first-time-technical/">
-            Eric&amp;#8217;s Advice For First-Time Technical Presenters
-          </a>
-        </h3></li><li><span class="post-meta">Jul 12, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/07/12/keyboard-shortcuts-in-remote-desktop/">
-            Keyboard Shortcuts in a Remote Desktop Session
-          </a>
-        </h3></li><li><span class="post-meta">Jul 8, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/07/08/re-observer-pattern/">
-            RE: The Observer Pattern
-          </a>
-        </h3></li><li><span class="post-meta">Jul 7, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/07/07/free-advice-from-lawyer/">
-            Free advice from a lawyer
-          </a>
-        </h3></li><li><span class="post-meta">Jul 6, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/07/06/re-speed-surfer-get-local-homepage/">
-            RE: Speed Surfer? Get a &amp;#8216;Local&amp;#8217; Homepage
-          </a>
-        </h3></li><li><span class="post-meta">Jun 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/28/soda-blew-out-of-nose-while-reading/">
-            The soda blew out of nose while reading this&amp;#8230;
-          </a>
-        </h3></li><li><span class="post-meta">Jun 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/28/polaroid-o-nizer/">
-            The Polaroid-o-nizer™
-          </a>
-        </h3></li><li><span class="post-meta">Jun 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/28/wwwdumpsterworldcom/">
-            www.dumpsterworld.com
-          </a>
-        </h3></li><li><span class="post-meta">Jun 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/28/wse-soap-tracing/">
-            WSE SOAP tracing
-          </a>
-        </h3></li><li><span class="post-meta">Jun 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/28/king-king-trailer-online/">
-            King King Trailer online
-          </a>
-        </h3></li><li><span class="post-meta">Jun 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/28/lemmings-in-dhtml/">
-            Lemmings in DHTML
-          </a>
-        </h3></li><li><span class="post-meta">Jun 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/28/uncrippling-windows-xps-iis-51/">
-            Uncrippling Windows XP&amp;#8217;s IIS 5.1
-          </a>
-        </h3></li><li><span class="post-meta">Jun 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/28/re-special-directories-in-aspnet-20/">
-            RE: Special Directories in ASP.NET 2.0
-          </a>
-        </h3></li><li><span class="post-meta">Jun 27, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/27/re-why-is-dos-path-character/">
-            RE: Why is the DOS path character &amp;quot;\&amp;quot;?
-          </a>
-        </h3></li><li><span class="post-meta">Jun 22, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/22/scott-hanselmans-2005-ultimate/">
-            Scott Hanselman&amp;#8217;s 2005 Ultimate Developer and Power Users Tool List
-          </a>
-        </h3></li><li><span class="post-meta">Jun 17, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/17/autoruns-must-have-utility/">
-            Autoruns, a must have utility
-          </a>
-        </h3></li><li><span class="post-meta">Jun 17, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/17/why-i-use-delphi/">
-            Why I use Delphi
-          </a>
-        </h3></li><li><span class="post-meta">Jun 16, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/16/upsert/">
-            Upsert
-          </a>
-        </h3></li><li><span class="post-meta">Jun 9, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/09/how-to-pick-lock-with-common-house/">
-            How to pick a lock with a common house hold hard drive
-          </a>
-        </h3></li><li><span class="post-meta">Jun 7, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/07/55-optical-illusions-visual-phenomena/">
-            55 Optical Illusions &amp;amp; Visual Phenomena
-          </a>
-        </h3></li><li><span class="post-meta">Jun 6, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/06/slip-n-slide/">
-            Slip &amp;#8216;N&amp;#8217; Slide
-          </a>
-        </h3></li><li><span class="post-meta">Jun 3, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/03/hot-net-tip-this-will-save-you-lot-of/">
-            Hot .Net Tip: This will save you a lot of time
-          </a>
-        </h3></li><li><span class="post-meta">Jun 2, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/02/causes-of-colors-why-are-things/">
-            Causes of Colors &amp;#8211; Why are things colored?
-          </a>
-        </h3></li><li><span class="post-meta">Jun 2, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/02/coding-horror-recursive/">
-            Coding Horror: Recursive Page.FindControl
-          </a>
-        </h3></li><li><span class="post-meta">Jun 2, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/06/02/net-framework-developer-center-new/">
-            .NET Framework Developer Center: New Recommendations for Using Strings in .NET 2.0
-          </a>
-        </h3></li><li><span class="post-meta">May 31, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/31/preview-copies-of-programming-net/">
-            Preview copies of &amp;quot;Programming the .Net Compact Framework&amp;quot;
-          </a>
-        </h3></li><li><span class="post-meta">May 31, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/31/mooreislesss-law/">
-            MooreIsLess’s Law
-          </a>
-        </h3></li><li><span class="post-meta">May 27, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/27/event-log-rss-feed-generator/">
-            Event Log RSS Feed Generator
-          </a>
-        </h3></li><li><span class="post-meta">May 27, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/27/more-fun-with-threading/">
-            More fun with threading
-          </a>
-        </h3></li><li><span class="post-meta">May 26, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/26/in-new-york-no-one-can-hear-you-scream/">
-            In New York, no one can hear you scream
-          </a>
-        </h3></li><li><span class="post-meta">May 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/25/hosted-source-control/">
-            Hosted source control
-          </a>
-        </h3></li><li><span class="post-meta">May 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/25/geek-joke/">
-            Geek Joke
-          </a>
-        </h3></li><li><span class="post-meta">May 18, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/18/human-journey/">
-            The Human Journey
-          </a>
-        </h3></li><li><span class="post-meta">May 16, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/16/poor-mans-steadicam/">
-            The Poor Man&amp;#8217;s Steadicam
-          </a>
-        </h3></li><li><span class="post-meta">May 13, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/13/monopoly-is-so-20th-century/">
-            Monopoly is so 20th century
-          </a>
-        </h3></li><li><span class="post-meta">May 13, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/13/net-tools-ten-must-have-tools-every/">
-            .NET Tools: Ten Must-Have Tools Every Developer Should Download Now &amp;#8212; MSDN Magazine, July 2004
-          </a>
-        </h3></li><li><span class="post-meta">May 12, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/12/charles-manson-explains-static-routing/">
-            Charles Manson explains static routing
-          </a>
-        </h3></li><li><span class="post-meta">May 11, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/11/15-things-you-can-do-with-rss-it-was/">
-            15 things you can do with RSS (it was supposed to be 10, but I got carried away) &amp;#8211; Tim Yang&amp;#8217;s Geek Blog
-          </a>
-        </h3></li><li><span class="post-meta">May 9, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/09/it-cheat-sheets-for-all/">
-            IT cheat sheets for all
-          </a>
-        </h3></li><li><span class="post-meta">May 9, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/09/one-albany-aqua-ducks-entering-into/">
-            One Albany Aqua Ducks Entering Into
-          </a>
-        </h3></li><li><span class="post-meta">May 8, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/08/letter-to-doctor-laura-plasticbagorg/">
-            A letter to Doctor Laura&amp;#8230; (plasticbag.org)
-          </a>
-        </h3></li><li><span class="post-meta">May 6, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/06/how-lightsabers-work/">
-            &amp;quot;How Lightsabers Work&amp;quot;
-          </a>
-        </h3></li><li><span class="post-meta">May 5, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/05/worlds-funniest-joke/">
-            The world&amp;#8217;s funniest joke?
-          </a>
-        </h3></li><li><span class="post-meta">May 5, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/05/unlocker-15-freeware-app-that-allows/">
-            UNLOCKER 1.5 &amp;#8211; Freeware app that allows you to delete files that are in use.
-          </a>
-        </h3></li><li><span class="post-meta">May 2, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/02/mom-you-can-take-that-box-of-baking/">
-            Mom, you can take that box of baking soda out of the fridge
-          </a>
-        </h3></li><li><span class="post-meta">May 1, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/01/how-photoshop-and-copiers-detect/">
-            How Photoshop and copiers detect currency
-          </a>
-        </h3></li><li><span class="post-meta">May 1, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/05/01/dui-dialing-under-influence/">
-            DUI &amp;#8211; Dialing under the influence
-          </a>
-        </h3></li><li><span class="post-meta">May 1, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/30/in-space-no-one-can-hear-you-scream/">
-            &amp;quot;In space, no one can hear you scream.&amp;quot;
-          </a>
-        </h3></li><li><span class="post-meta">Apr 29, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/29/alcohol-makes-your-brain-grow/">
-            &amp;#8216;Alcohol makes your brain grow
-          </a>
-        </h3></li><li><span class="post-meta">Apr 29, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/29/total-illusions-forums-dangerous/">
-            Total Illusions &amp;#8211; The Forums -&amp;gt; Dangerous Hacker!
-          </a>
-        </h3></li><li><span class="post-meta">Apr 29, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/29/rss-and-atom/">
-            RSS and Atom
-          </a>
-        </h3></li><li><span class="post-meta">Apr 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/28/ten-rules-of-performance/">
-            The Ten Rules of Performance
-          </a>
-        </h3></li><li><span class="post-meta">Apr 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/28/code-project-complete-comparison-for/">
-            The Code Project &amp;#8211; Complete Comparison for VB.NET and C# &amp;#8211; .NET
-          </a>
-        </h3></li><li><span class="post-meta">Apr 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/28/cliff-yablonski-hates-you/">
-            Cliff Yablonski hates you
-          </a>
-        </h3></li><li><span class="post-meta">Apr 28, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/28/everyone-has-blog-now/">
-            Everyone has a blog now.
-          </a>
-        </h3></li><li><span class="post-meta">Apr 26, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/26/whats-wrong-with-large-values-of-zero/">
-            What&amp;#8217;s wrong with large values of zero?
-          </a>
-        </h3></li><li><span class="post-meta">Apr 26, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/26/and-now-random-fact-about-vin-diesel/">
-            &amp;#8230;and now a random fact about Vin Diesel:
-          </a>
-        </h3></li><li><span class="post-meta">Apr 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/25/free-ajax-library-for-microsoft-net/">
-            Free AJAX library for the Microsoft .NET Framework
-          </a>
-        </h3></li><li><span class="post-meta">Apr 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/25/how-to-handle-unhandled-exceptions-in/">
-            How to handle unhandled exceptions in Windows Forms
-          </a>
-        </h3></li><li><span class="post-meta">Apr 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/25/eric-gunnersons-c-compendium-visual/">
-            Eric Gunnerson&amp;#8217;s C# Compendium : Visual Studio Debugging Slowness &amp;#8211; Solved
-          </a>
-        </h3></li><li><span class="post-meta">Apr 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/25/performance-of-nullable-types/">
-            Performance of Nullable types
-          </a>
-        </h3></li><li><span class="post-meta">Apr 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/25/is-handwriting-on-wall-for-delphi-net/">
-            Is the handwriting on the wall for Delphi .Net?
-          </a>
-        </h3></li><li><span class="post-meta">Apr 22, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/22/how-to-download-install-and-remove-iis/">
-            HOW TO: Download, Install, and Remove the IIS MetaEdit 2.2 Utility
-          </a>
-        </h3></li><li><span class="post-meta">Apr 22, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/22/daring-fireball-translation-from-pr/">
-            Daring Fireball: Translation From PR-Speak to English of Selected Portions of Adobe&amp;#8217;s &amp;#8216;FAQ&amp;#8217; Regarding Their Acquisition of Macromedia
-          </a>
-        </h3></li><li><span class="post-meta">Apr 22, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/22/old-new-thing-itaniums-so-called-stack/">
-            The Old New Thing : The Itanium&amp;#8217;s so-called stack
-          </a>
-        </h3></li><li><span class="post-meta">Apr 21, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/21/download-details-windows-malicious/">
-            Download details: Windows Malicious Software Removal Tool
-          </a>
-        </h3></li><li><span class="post-meta">Apr 21, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/21/download-details-log-parser-22/">
-            Download details: Log Parser 2.2
-          </a>
-        </h3></li><li><span class="post-meta">Apr 20, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/20/hit-me-with-your-rhythm-stick/">
-            Hit me with your rhythm stick
-          </a>
-        </h3></li><li><span class="post-meta">Apr 18, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/18/query-analyzer-tips-and-tricks/">
-            Query Analyzer Tips and Tricks
-          </a>
-        </h3></li><li><span class="post-meta">Apr 18, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/18/bug-details-arithmetic-operation/">
-            Bug Details: Arithmetic operation resulted in an overflow with Int32.
-          </a>
-        </h3></li><li><span class="post-meta">Apr 15, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/15/acrobat-reader-7-phoning-home/">
-            Acrobat Reader 7 phoning home
-          </a>
-        </h3></li><li><span class="post-meta">Apr 15, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/15/why-did-multithreaded-chicken-cross/">
-            Why did the multithreaded chicken cross the road?
-          </a>
-        </h3></li><li><span class="post-meta">Apr 15, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/15/build-numbers/">
-            Build numbers
-          </a>
-        </h3></li><li><span class="post-meta">Apr 11, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/11/prb-access-denied-error-when-you-make/">
-            PRB: Access Denied Error When You Make Code Modifications with Index Services Running
-          </a>
-        </h3></li><li><span class="post-meta">Apr 7, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/07/convert-string-to-enumerated-enum/">
-            Convert a string to an enumerated (enum) value.
-          </a>
-        </h3></li><li><span class="post-meta">Apr 7, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/07/string-date-validator/">
-            String Date Validator
-          </a>
-        </h3></li><li><span class="post-meta">Apr 7, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/07/sqldatareader-performance-tips/">
-            SqlDataReader performance tips
-          </a>
-        </h3></li><li><span class="post-meta">Apr 7, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/07/fbi-show-how-to-crack-wlan-in-3/">
-            FBI show how to crack a WLAN in 3 minutes.
-          </a>
-        </h3></li><li><span class="post-meta">Apr 6, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/04/06/download-details-microsoft-usb-flash/">
-            Download details: Microsoft USB Flash Drive Manager (Standard)
-          </a>
-        </h3></li><li><span class="post-meta">Mar 25, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/03/25/bookpool-discount-computer-books/">
-            Bookpool: Discount Computer Books.
-          </a>
-        </h3></li><li><span class="post-meta">Mar 22, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/03/22/doublelistbox-nintharray/">
-            DoubleListBox &amp;#8211; NinthArray
-          </a>
-        </h3></li><li><span class="post-meta">Mar 22, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/03/22/podguides/">
-            PodGuides
-          </a>
-        </h3></li><li><span class="post-meta">Mar 22, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/03/22/odd-windows-sounds-mashup/">
-            Odd Windows sounds mashup
-          </a>
-        </h3></li><li><span class="post-meta">Mar 22, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/03/22/clickable-map-of-sql-server-2000/">
-            A clickable map of SQL Server 2000 system tables
-          </a>
-        </h3></li><li><span class="post-meta">Mar 17, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/03/17/shenoy-at-work-soap-bug-fix-changes-to/">
-            Shenoy At Work: SOAP bug fix: changes to request don&amp;#8217;t get recorded.
-          </a>
-        </h3></li><li><span class="post-meta">Mar 15, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/03/15/whats-on-your-usb/">
-            What&amp;#8217;s on your USB?
-          </a>
-        </h3></li><li><span class="post-meta">Mar 15, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/03/15/sharing-hintpath-with-multiple/">
-            Sharing the Hintpath with multiple programmers
-          </a>
-        </h3></li><li><span class="post-meta">Mar 15, 2005</span>
-        <h3>
-          <a class="post-link" href="/2005/03/15/my-first-entry/">
-            My first entry
-          </a>
-        </h3></li></ul>
 
-    <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
 
-      </div>
-    </main><footer class="site-footer h-card">
-  <data class="u-url" href="/"></data>
 
-  <div class="wrapper">
 
-    <h2 class="footer-heading">Chris Miller&#39;s 4th Blog</h2>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">Chris Miller&#39;s 4th Blog</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
-      </div>
+<!-- end _includes/seo.html -->
 
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">anotherlab</span></a></li><li><a href="https://www.twitter.com/anotherlab"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">anotherlab</span></a></li></ul>
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 4th Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--home">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 4th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
 </div>
 
-      <div class="footer-col footer-col-3">
-        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
-      </div>
-    </div>
 
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Chris Miller</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Microsoft MVP, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
+
+      </div>
+    
   </div>
 
-</footer>
-</body>
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
+        </li>
+      
 
+      
+        
+          
+            <li><a href="https://" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title"></h1>
+    
+    
+
+<h3 class="archive__subtitle">Recent Posts</h3>
+
+
+
+
+<div class="entries-list">
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="permalink">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I hit the “VersionCode 1.0 is invalid” error with .NET MAUI and resolved it.
+</p>
+  </article>
+</div>
+
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/10/18/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="permalink">Controlling a WSL installation of redis-server from the Windows command line
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Some shortcuts accessing redis-server running under WSL via PowerShell
+</p>
+  </article>
+</div>
+
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/" rel="permalink">How to access Apple’s App Connect API from C#, Python, and Go. – Part 4
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C...</p>
+  </article>
+</div>
+
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/07/28/a-quick-powershell-tip/" rel="permalink">A quick PowerShell tip
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Simple tip for adding your own memory aid to your PowerShell profile.
+</p>
+  </article>
+</div>
+
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/" rel="permalink">How to access Apple’s App Connect API from C#, Python, and Go. – Part 3
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          12 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+  
+</div>
+
+
+<nav class="pagination">
+  
+  <ul>
+    
+    
+    <li><a href="#" class="disabled"><span aria-hidden="true">Previous</span></a></li>
+    
+
+    
+    
+      <li><a href="#" class="disabled current">1</a></li>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+        
+        
+        
+        <li><a href="/page2/">2</a></li>
+      
+    
+      
+        
+        
+        
+        <li><a href="/page3/">3</a></li>
+      
+    
+
+    
+    
+      <li><a href="#" class="disabled">&hellip;</a></li>
+    
+
+    
+      <li><a href="/page121/">121</a></li>
+    
+
+    
+    
+      <li><a href="/page2/">Next</a></li>
+    
+  </ul>
+</nav>
+
+
+
+  </div>
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Chris Miller. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
 </html>
