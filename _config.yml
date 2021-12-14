@@ -26,23 +26,32 @@ description: >- # this means to ignore newlines until "baseurl:"
   My personal blog, 4th version
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: anotherlab
-github_username:  anotherlab
-minimal_mistakes_skin: sunrise
+#twitter_username: anotherlab
+#github_username:  anotherlab
 search: true
+words_per_minute         : 200
 comments:
   provider: "utterances"
   utterances:
-    them: "github-light"
+    theme                : # "github-light" (default), "github-dark"
+    issue_term           : # "pathname" (default)
 
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: sunrise
+
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: US/Eastern
+
+# Social
+twitter:
+  username               : anotherlab
+github:             anotherlab
+stackoverflow:      206/chris-miller   #from a "http://stackoverflow.com/users/123456/username" link
 
 include:
   - _pages
@@ -55,11 +64,14 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
+# Site Author
 author:
   name   : *name
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+#  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg"
+  bio    : "I am a Microsoft MVP, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group."
   location : "Albany, NY"
+  email            :
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -91,6 +103,38 @@ footer:
 include:
   - .htaccess
   - _pages      
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 category_archive:
   type: liquid
