@@ -28,8 +28,12 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: anotherlab
 github_username:  anotherlab
-minimal_mistakes_skin: mint
+minimal_mistakes_skin: sunrise
 search: true
+comments:
+  provider: "utterances"
+  utterances:
+    them: "github-light"
 
 # Build settings
 markdown: kramdown
@@ -133,6 +137,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      show_date: true
 
 # Sass/SCSS
 sass:
