@@ -6,3 +6,14 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+body {
+    margin: 0 8px 0 8px;
+    line-height: 1.0;
+  }
+
+@media screen and (max-width: 600px) {
+    body {
+        margin: 0;
+    }
+}  
