@@ -78,25 +78,31 @@ author:
       url: "https://"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/anotherlab"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/anotherlab"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://instagram.com/anotherlab"
+    - label: "Microsoft MVP"
+      icon: "fas fa-fw fa-award"
+      url: "https://mvp.microsoft.com/en-us/PublicProfile/5000200"
 
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/anotherlab"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/anotherlab"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://instagram.com/anotherlab"
+    - label: "Microsoft MVP"
+      icon: "fas fa-fw fa-award"
+      url: "https://mvp.microsoft.com/en-us/PublicProfile/5000200"
 
 
 # Reading Files
@@ -168,7 +174,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
+#      layout: single
       author_profile: true
       read_time: true
       comments: true

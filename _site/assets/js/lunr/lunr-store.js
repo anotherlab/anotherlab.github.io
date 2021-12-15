@@ -3623,9 +3623,15 @@ var store = [{
         "url": "/2021/10/18/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/",
         "teaser": null
       },{
-        "title": "Resolving the .NET MAUI &#8220;VersionCode 1.0 is invalid. It must be an integer value.&#8221; error when updating Visual Studio 2022 Preview",
+        "title": "Resolving the .NET MAUI \"VersionCode 1.0 is invalid. It must be an integer value.\" error when updating Visual Studio 2022 Preview",
         "excerpt":"I installed the Visual Studio 2022 Preview 6 this evening. I had been using Preview 4. I installed Preview 5, but didn’t have a chance to play with it. I have a simple demo app that I have working with, a basic stopwatch type of app. That app had been...","categories": ["Android","MAUI"],
         "tags": ["android","maui"],
         "url": "/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/",
+        "teaser": null
+      },{
+        "title": "Moved the blog from WordPress to Jekyll",
+        "excerpt":"First post under the new regime. For a long time, this blog has been created with WordPress. It’s now a Jekyll site. The blog started as a free blog hosted on Google’s Blogger platform. It’s still there, but hasn’t been touched in 8 years. It was fine, but I felt...","categories": ["jekyll","update"],
+        "tags": [],
+        "url": "/jekyll/update/Migrated-to-jekyll/",
         "teaser": null
       }]
