@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Quick Powershell tip for avoiding file name collisions when you have images from multiple cameras">
-<meta property="og:url" content="/2016/12/18/quick-powershell-tip-for-avoiding-file-name-collisions-when-you-have-images-from-multiple-cameras/">
+<meta property="og:url" content="http://localhost:4000/2016/12/18/quick-powershell-tip-for-avoiding-file-name-collisions-when-you-have-images-from-multiple-cameras/">
 
 
   <meta property="og:description" content="Embed from Getty Images                       &lt;/div&gt;                  My wife and I both have Sony mirrorless cameras. She has an Alpha 5000 and I have a NEX-6. I back up all of our images to my home dev box, and then to a QNAP NAS server. The images are stored in folders based on year and month.                      The date based filing makes it somewhat easy to find the images, but when you have images from multiple cameras, you run the slight (but real) risk of having both cameras save an image with the same file name. Both camera use the standard DSCXXXXX naming scheme, where XXXXX is number that is being incremented by the camera.  It&#8217;s also a little difficult to quickly separate her images from mine.                      So what I do is to use a quick Powershell command to rename my wife&#8217;s images. I replace the &#8220;DSC&#8221; part of the file name with her initials. So lets say that you wanted to replace the &#8220;DSC&#8221; with &#8220;ABC&#8221;, a simple way would be with the following command:               Get-ChildItem -Filter “DSC*.*” |    Rename-Item -NewName {$_.name -replace ‘DSC’,’ABC’ }">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Quick Powershell tip for avoiding file name collisions when you have images from multiple cameras">
   <meta name="twitter:description" content="Embed from Getty Images                       &lt;/div&gt;                  My wife and I both have Sony mirrorless cameras. She has an Alpha 5000 and I have a NEX-6. I back up all of our images to my home dev box, and then to a QNAP NAS server. The images are stored in folders based on year and month.                      The date based filing makes it somewhat easy to find the images, but when you have images from multiple cameras, you run the slight (but real) risk of having both cameras save an image with the same file name. Both camera use the standard DSCXXXXX naming scheme, where XXXXX is number that is being incremented by the camera.  It&#8217;s also a little difficult to quickly separate her images from mine.                      So what I do is to use a quick Powershell command to rename my wife&#8217;s images. I replace the &#8220;DSC&#8221; part of the file name with her initials. So lets say that you wanted to replace the &#8220;DSC&#8221; with &#8220;ABC&#8221;, a simple way would be with the following command:               Get-ChildItem -Filter “DSC*.*” |    Rename-Item -NewName {$_.name -replace ‘DSC’,’ABC’ }">
-  <meta name="twitter:url" content="/2016/12/18/quick-powershell-tip-for-avoiding-file-name-collisions-when-you-have-images-from-multiple-cameras/">
+  <meta name="twitter:url" content="http://localhost:4000/2016/12/18/quick-powershell-tip-for-avoiding-file-name-collisions-when-you-have-images-from-multiple-cameras/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="/2016/12/18/quick-powershell-tip-for-avoiding-file-name-collisions-when-you-have-images-from-multiple-cameras/">
+<link rel="canonical" href="http://localhost:4000/2016/12/18/quick-powershell-tip-for-avoiding-file-name-collisions-when-you-have-images-from-multiple-cameras/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -241,15 +241,19 @@
     
       
         
-          <li><a href="https://twitter.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+          <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
         
       
         
-          <li><a href="https://github.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
         
       
         
-          <li><a href="https://instagram.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
         
       
     

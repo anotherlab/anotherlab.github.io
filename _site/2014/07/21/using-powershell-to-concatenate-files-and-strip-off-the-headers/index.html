@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Using Powershell to concatenate files and strip off the headers">
-<meta property="og:url" content="/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/">
+<meta property="og:url" content="http://localhost:4000/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/">
 
 
   <meta property="og:description" content="#185282284 / gettyimages.com     &lt;/div&gt;                  We had a request from a client to merge some files for an import process that we have.  As part of one of our applications, we can import delimited (comma, tab, etc)  ASCII files.   The client was generating the files from 5 different processes.  Each exported file has a single line header row, and the files were from OS X.  That meant that the files were Unicode encoded and ended each line with only a carriage return.                      Our import process can only handle a single ASCII file with DOS style line endings (carriage return + line feed).  It&#8217;s a legacy system and it can&#8217;t be touched.  What we can do to concatenate the multiple files into a single file and strip out the header rows for every file after the first one.  And change the encoding to ASCII and use the CR+LF combination that DOS loves so much.                      I&#8217;ve been doing a lot of Powershell lately, so it made sense with me to continue with that Swiss Army knife of scripting languages.  I ended up with the following script:                [CmdletBinding()] param(   [parameter(Mandatory=$TRUE,Position=0)]     [String] $Pattern, # input pattern to match, including path. Example: c:\export\*.txt   [parameter(Mandatory=$TRUE,Position=1)]     [String] $Destination # Destination file to write )">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Using Powershell to concatenate files and strip off the headers">
   <meta name="twitter:description" content="#185282284 / gettyimages.com     &lt;/div&gt;                  We had a request from a client to merge some files for an import process that we have.  As part of one of our applications, we can import delimited (comma, tab, etc)  ASCII files.   The client was generating the files from 5 different processes.  Each exported file has a single line header row, and the files were from OS X.  That meant that the files were Unicode encoded and ended each line with only a carriage return.                      Our import process can only handle a single ASCII file with DOS style line endings (carriage return + line feed).  It&#8217;s a legacy system and it can&#8217;t be touched.  What we can do to concatenate the multiple files into a single file and strip out the header rows for every file after the first one.  And change the encoding to ASCII and use the CR+LF combination that DOS loves so much.                      I&#8217;ve been doing a lot of Powershell lately, so it made sense with me to continue with that Swiss Army knife of scripting languages.  I ended up with the following script:                [CmdletBinding()] param(   [parameter(Mandatory=$TRUE,Position=0)]     [String] $Pattern, # input pattern to match, including path. Example: c:\export\*.txt   [parameter(Mandatory=$TRUE,Position=1)]     [String] $Destination # Destination file to write )">
-  <meta name="twitter:url" content="/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/">
+  <meta name="twitter:url" content="http://localhost:4000/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/">
+<link rel="canonical" href="http://localhost:4000/2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -298,15 +298,19 @@ c:\scripts\convert-files.ps1 -pattern c:\export\*.csv -destination c:\import\all
     
       
         
-          <li><a href="https://twitter.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+          <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
         
       
         
-          <li><a href="https://github.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
         
       
         
-          <li><a href="https://instagram.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
         
       
     

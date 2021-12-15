@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview">
-<meta property="og:url" content="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
+<meta property="og:url" content="http://localhost:4000/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
 
 
   <meta property="og:description" content="I hit the “VersionCode 1.0 is invalid” error with .NET MAUI and resolved it.">
@@ -30,7 +30,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview">
   <meta name="twitter:description" content="I hit the “VersionCode 1.0 is invalid” error with .NET MAUI and resolved it.">
-  <meta name="twitter:url" content="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
+  <meta name="twitter:url" content="http://localhost:4000/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
 
   
     <meta name="twitter:card" content="summary">
@@ -48,7 +48,7 @@
 
 
 
-<link rel="canonical" href="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
+<link rel="canonical" href="http://localhost:4000/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
 
 
 
@@ -59,7 +59,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -153,7 +153,7 @@
       <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Resolving the .NET MAUI &amp;#8220;VersionCode 1.0 is invalid. It must be an integer value.&amp;#8221; error when updating Visual Studio 2022 Preview</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Resolving the .NET MAUI &quot;VersionCode 1.0 is invalid. It must be an integer value.&quot; error when updating Visual Studio 2022 Preview</h1>
     <p class="post-meta"><time class="dt-published" datetime="2021-10-21T00:19:33-04:00" itemprop="datePublished">
         Oct 21, 2021
       </time>• 
@@ -164,13 +164,9 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>I installed the Visual Studio 2022 Preview 6 this evening. I had been using Preview 4. I installed Preview 5, but didn’t have a chance to play with it. I have a simple demo app that I have working with, a basic stopwatch type of app. That app had been created with Preview 4 and it more or less worked fine (unless you counted Mac Catalyst and Windows). After I installed Preview 6, I tried to run the project on Android. It failed to compile with the following error message:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-Severity	Code	Description	Project	File	Line	Suppression State
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Severity	Code	Description	Project	File	Line	Suppression State
 Error	XA0003	VersionCode 1.0 is invalid. It must be an integer value.
-Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-android\android\AndroidManifest.xml
-</pre>
-</div>
+Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-android\android\AndroidManifest.xml</code></pre></figure>
 
 <p>As a test, I created a new .NET MAUI app from Preview 6. It compiled and ran just fine.</p>
 
@@ -180,77 +176,92 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 
 <p>And we take a look at the file, it’s pretty standard, pretty boring AndroidManifest.xml</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: xml; title: ; notranslate" title="">
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"&gt;
-	&lt;uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" /&gt;
-	&lt;application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true"&gt;&lt;/application&gt;
-	&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
-&lt;/manifest&gt;
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;uses-sdk</span> <span class="na">android:minSdkVersion=</span><span class="s">"21"</span> <span class="na">android:targetSdkVersion=</span><span class="s">"31"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;application</span> <span class="na">android:allowBackup=</span><span class="s">"true"</span> <span class="na">android:icon=</span><span class="s">"@mipmap/appicon"</span> <span class="na">android:roundIcon=</span><span class="s">"@mipmap/appicon_round"</span> <span class="na">android:supportsRtl=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/application&gt;</span>
+	<span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.ACCESS_NETWORK_STATE"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span></code></pre></figure>
 
 <p>No versionCode there. What’s going on? So I went back and actually read the error message and it was complaining about a version of AndroidManifest.xml located in obj\Debug\net6.0-android. That little fellow looks like this:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: xml; title: ; notranslate" title="">
-&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;!--
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="code"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!--
     This code was generated by a tool.
     It was generated from ....\StopwatchMaui\Platforms\Android\AndroidManifest.xml
     Changes to this file may cause incorrect behavior and will be lost if
     the contents are regenerated.
-    --&gt;
-&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1.0" package="com.companyname.StopwatchMaui" android:versionName="1.0.0"&gt;
-  &lt;uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" /&gt;
-  &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
-  &lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
-  &lt;application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true" android:name="crc64c1104ba8f6ea44b3.MainApplication" android:label="StopwatchMaui" android:debuggable="true" android:extractNativeLibs="true"&gt;
-    &lt;activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:theme="@style/Maui.SplashTheme" android:name="crc64c1104ba8f6ea44b3.MainActivity" android:exported="true"&gt;
-      &lt;intent-filter&gt;
-        &lt;action android:name="android.intent.action.MAIN" /&gt;
-        &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
-      &lt;/intent-filter&gt;
-    &lt;/activity&gt;
-    &lt;receiver android:enabled="true" android:exported="false" android:label="Essentials Battery Broadcast Receiver" android:name="crc64192d9de59b079c6d.BatteryBroadcastReceiver" /&gt;
-    &lt;receiver android:enabled="true" android:exported="false" android:label="Essentials Energy Saver Broadcast Receiver" android:name="crc64192d9de59b079c6d.EnergySaverBroadcastReceiver" /&gt;
-    &lt;receiver android:enabled="true" android:exported="false" android:label="Essentials Connectivity Broadcast Receiver" android:name="crc64192d9de59b079c6d.ConnectivityBroadcastReceiver" /&gt;
-    &lt;activity android:configChanges="orientation|screenSize" android:name="crc64192d9de59b079c6d.IntermediateActivity" /&gt;
-    &lt;provider android:authorities="com.companyname.StopwatchMaui.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="xamarin.essentials.fileProvider"&gt;
-      &lt;meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/xamarin_essentials_fileprovider_file_paths" /&gt;
-    &lt;/provider&gt;
-    &lt;activity android:configChanges="orientation|screenSize" android:name="crc64192d9de59b079c6d.WebAuthenticatorIntermediateActivity" /&gt;
-    &lt;service android:name="crc64396a3fe5f8138e3f.KeepAliveService" /&gt;
-    &lt;provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999999" android:authorities="com.companyname.StopwatchMaui.mono.MonoRuntimeProvider.__mono_init__" /&gt;
-  &lt;/application&gt;
-&lt;/manifest&gt;
-</pre>
-</div>
+    --&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">android:versionCode=</span><span class="s">"1.0"</span> <span class="na">package=</span><span class="s">"com.companyname.StopwatchMaui"</span> <span class="na">android:versionName=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;uses-sdk</span> <span class="na">android:minSdkVersion=</span><span class="s">"21"</span> <span class="na">android:targetSdkVersion=</span><span class="s">"31"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.ACCESS_NETWORK_STATE"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;application</span> <span class="na">android:allowBackup=</span><span class="s">"true"</span> <span class="na">android:icon=</span><span class="s">"@mipmap/appicon"</span> <span class="na">android:roundIcon=</span><span class="s">"@mipmap/appicon_round"</span> <span class="na">android:supportsRtl=</span><span class="s">"true"</span> <span class="na">android:name=</span><span class="s">"crc64c1104ba8f6ea44b3.MainApplication"</span> <span class="na">android:label=</span><span class="s">"StopwatchMaui"</span> <span class="na">android:debuggable=</span><span class="s">"true"</span> <span class="na">android:extractNativeLibs=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;activity</span> <span class="na">android:configChanges=</span><span class="s">"orientation|smallestScreenSize|screenLayout|screenSize|uiMode"</span> <span class="na">android:theme=</span><span class="s">"@style/Maui.SplashTheme"</span> <span class="na">android:name=</span><span class="s">"crc64c1104ba8f6ea44b3.MainActivity"</span> <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/intent-filter&gt;</span>
+    <span class="nt">&lt;/activity&gt;</span>
+    <span class="nt">&lt;receiver</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:label=</span><span class="s">"Essentials Battery Broadcast Receiver"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.BatteryBroadcastReceiver"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;receiver</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:label=</span><span class="s">"Essentials Energy Saver Broadcast Receiver"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.EnergySaverBroadcastReceiver"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;receiver</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:label=</span><span class="s">"Essentials Connectivity Broadcast Receiver"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.ConnectivityBroadcastReceiver"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;activity</span> <span class="na">android:configChanges=</span><span class="s">"orientation|screenSize"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.IntermediateActivity"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;provider</span> <span class="na">android:authorities=</span><span class="s">"com.companyname.StopwatchMaui.fileProvider"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:grantUriPermissions=</span><span class="s">"true"</span> <span class="na">android:name=</span><span class="s">"xamarin.essentials.fileProvider"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"android.support.FILE_PROVIDER_PATHS"</span> <span class="na">android:resource=</span><span class="s">"@xml/xamarin_essentials_fileprovider_file_paths"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/provider&gt;</span>
+    <span class="nt">&lt;activity</span> <span class="na">android:configChanges=</span><span class="s">"orientation|screenSize"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.WebAuthenticatorIntermediateActivity"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;service</span> <span class="na">android:name=</span><span class="s">"crc64396a3fe5f8138e3f.KeepAliveService"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;provider</span> <span class="na">android:name=</span><span class="s">"mono.MonoRuntimeProvider"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:initOrder=</span><span class="s">"1999999999"</span> <span class="na">android:authorities=</span><span class="s">"com.companyname.StopwatchMaui.mono.MonoRuntimeProvider.__mono_init__"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>If we look at line 8, we see the culprit</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: xml; gutter: false; highlight: [3]; title: ; notranslate" title="">
-&lt;manifest 
-    xmlns:android="http://schemas.android.com/apk/res/android" 
-    android:versionCode="1.0" 
-    package="com.companyname.StopwatchMaui" 
-    android:versionName="1.0.0"&gt;
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> 
+    <span class="na">android:versionCode=</span><span class="s">"1.0"</span> 
+    <span class="na">package=</span><span class="s">"com.companyname.StopwatchMaui"</span> 
+    <span class="na">android:versionName=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span></code></pre></figure>
 
 <p>In the new app that was created in Preview 6, the same file had the following line:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: xml; gutter: false; highlight: [3]; title: ; notranslate" title="">
-&lt;manifest 
-    xmlns:android="http://schemas.android.com/apk/res/android" 
-    android:versionCode="1" 
-    package="com.companyname.StopwatchMaui" 
-    android:versionName="1.0.0"&gt;
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> 
+    <span class="na">android:versionCode=</span><span class="s">"1"</span> 
+    <span class="na">package=</span><span class="s">"com.companyname.StopwatchMaui"</span> 
+    <span class="na">android:versionName=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span></code></pre></figure>
 
 <div class="wp-block-image">
   <figure class="aligncenter size-large"><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-mF3bHJm/0/4ebec4dc/O/badgood.jpg?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /></figure>
@@ -262,22 +273,14 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 
 <p>So I took a look at the .csproj files for the working and non-working apps. In the .csproj file generated by Preview 4, the version information was defined with the following two lines</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: xml; gutter: false; highlight: [2]; title: ; notranslate" title="">
-&lt;!-- Versions --&gt;
-&lt;ApplicationVersion&gt;1.0&lt;/ApplicationVersion&gt;
-&lt;AndroidVersionCode&gt;1&lt;/AndroidVersionCode&gt;
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- Versions --&gt;</span>
+<span class="nt">&lt;ApplicationVersion&gt;</span>1.0<span class="nt">&lt;/ApplicationVersion&gt;</span>
+<span class="nt">&lt;AndroidVersionCode&gt;</span>1<span class="nt">&lt;/AndroidVersionCode&gt;</span></code></pre></figure>
 
 <p>With the new project freshly generated by Release 6, the same two lines were now a single line, with the ApplicationVersion now set with an integer value.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: xml; gutter: false; highlight: [2]; title: ; notranslate" title="">
-&lt;!-- Versions --&gt;
-&lt;ApplicationVersion&gt;1&lt;/ApplicationVersion&gt;
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- Versions --&gt;</span>
+<span class="nt">&lt;ApplicationVersion&gt;</span>1<span class="nt">&lt;/ApplicationVersion&gt;</span></code></pre></figure>
 
 <p>When I changed the “Versions” lines .csproj to match the single line used in the new .csproj Preview 6, the app compiled and deployed to Android. My best guess is that AndroidVersionCode was being used in Preview 4 and sometime after that, they made the breaking change to ApplicationVersion and jettisoned the AndroidVersionCode setting. It’s a preview release of Visual Studio and they are still baking .NET MAUI. This <a href="https://developercommunity.visualstudio.com/t/versioncode-10-is-invalid/1553498">kind of stuff happens</a> and the end result is a better product.</p>
 
@@ -311,15 +314,19 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
     
       
         
-          <li><a href="https://twitter.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+          <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
         
       
         
-          <li><a href="https://github.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
         
       
         
-          <li><a href="https://instagram.com/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
         
       
     
