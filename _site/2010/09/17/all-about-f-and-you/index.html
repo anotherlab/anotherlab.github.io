@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="All about “F# and You”">
-<meta property="og:url" content="http://localhost:4000/2010/09/17/all-about-f-and-you/">
+<meta property="og:url" content="/2010/09/17/all-about-f-and-you/">
 
 
   <meta property="og:description" content="Last night at our monthly Tech Valley .NET User Group (TVUG) meeting, we had Rick Minerich come in and do a presentation on F#.  It was a very good presentation.  Rick was enthusiastic and knows F# cold.  One of the cool things that he showed in his presentation were examples in both F# and C#.  It looked like you could replace every 5-10 lines of C# code with F# code.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="All about “F# and You”">
   <meta name="twitter:description" content="Last night at our monthly Tech Valley .NET User Group (TVUG) meeting, we had Rick Minerich come in and do a presentation on F#.  It was a very good presentation.  Rick was enthusiastic and knows F# cold.  One of the cool things that he showed in his presentation were examples in both F# and C#.  It looked like you could replace every 5-10 lines of C# code with F# code.">
-  <meta name="twitter:url" content="http://localhost:4000/2010/09/17/all-about-f-and-you/">
+  <meta name="twitter:url" content="/2010/09/17/all-about-f-and-you/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2010/09/17/all-about-f-and-you/">
+<link rel="canonical" href="/2010/09/17/all-about-f-and-you/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -251,25 +251,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

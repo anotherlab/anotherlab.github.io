@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="When the clipboard doesn’t work across Remote Desktop">
-<meta property="og:url" content="http://localhost:4000/2008/01/29/when-clipboard-doesn-work-across-remote/">
+<meta property="og:url" content="/2008/01/29/when-clipboard-doesn-work-across-remote/">
 
 
   <meta property="og:description" content="Every now and then, when I have a remote desktop connection open, the clipboard fails to copy across the sessions.  It’s usually the remote to local copy that’s borked.  It’s pretty easy to fix, but I can never remember what I need to do to fix the connection.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="When the clipboard doesn’t work across Remote Desktop">
   <meta name="twitter:description" content="Every now and then, when I have a remote desktop connection open, the clipboard fails to copy across the sessions.  It’s usually the remote to local copy that’s borked.  It’s pretty easy to fix, but I can never remember what I need to do to fix the connection.">
-  <meta name="twitter:url" content="http://localhost:4000/2008/01/29/when-clipboard-doesn-work-across-remote/">
+  <meta name="twitter:url" content="/2008/01/29/when-clipboard-doesn-work-across-remote/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2008/01/29/when-clipboard-doesn-work-across-remote/">
+<link rel="canonical" href="/2008/01/29/when-clipboard-doesn-work-across-remote/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -258,25 +258,27 @@ There is a command line way of resetting rdpclip, so you can roll up both steps 
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Vista update KB938371 disabled my mouse">
-<meta property="og:url" content="http://localhost:4000/2008/04/10/vista-update-kb938371-disabled-my-mouse/">
+<meta property="og:url" content="/2008/04/10/vista-update-kb938371-disabled-my-mouse/">
 
 
   <meta property="og:description" content="Windows Update just pushed down an update, KB938371 on to my main home PC, as a prerequisite for Vista Service Pack 1.  After that update was installed and Vista rebooted, I lost all mouse functionality.  The only way I could get mouse functionality back was to run System Restore and restore the OS to the point to just before 938371 was installed.  For me, selecting the recommended restore point was as far back as I needed to go.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Vista update KB938371 disabled my mouse">
   <meta name="twitter:description" content="Windows Update just pushed down an update, KB938371 on to my main home PC, as a prerequisite for Vista Service Pack 1.  After that update was installed and Vista rebooted, I lost all mouse functionality.  The only way I could get mouse functionality back was to run System Restore and restore the OS to the point to just before 938371 was installed.  For me, selecting the recommended restore point was as far back as I needed to go.">
-  <meta name="twitter:url" content="http://localhost:4000/2008/04/10/vista-update-kb938371-disabled-my-mouse/">
+  <meta name="twitter:url" content="/2008/04/10/vista-update-kb938371-disabled-my-mouse/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2008/04/10/vista-update-kb938371-disabled-my-mouse/">
+<link rel="canonical" href="/2008/04/10/vista-update-kb938371-disabled-my-mouse/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -252,25 +252,27 @@ If this is your first visit to my blog, please read this <a href="http://another
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

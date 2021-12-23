@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="DevTrack woes with build 1833 of mfc80.dll">
-<meta property="og:url" content="http://localhost:4000/2008/10/21/devtrack-woes-with-build-1833-of/">
+<meta property="og:url" content="/2008/10/21/devtrack-woes-with-build-1833-of/">
 
 
   <meta property="og:description" content="We use TechExcel’s DevTrack tool to track our defects and project modifications.  A few weeks ago, one of our QA specialists installed SQL Server 2008 Express.  That broke DevTrack.  After SQL Express 2008 was installed, DevTrack would crash after loading.  After contacting DevTrack support, we were advised that the mfc80.dll installed with SQL Express was causing the problem. ">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="DevTrack woes with build 1833 of mfc80.dll">
   <meta name="twitter:description" content="We use TechExcel’s DevTrack tool to track our defects and project modifications.  A few weeks ago, one of our QA specialists installed SQL Server 2008 Express.  That broke DevTrack.  After SQL Express 2008 was installed, DevTrack would crash after loading.  After contacting DevTrack support, we were advised that the mfc80.dll installed with SQL Express was causing the problem. ">
-  <meta name="twitter:url" content="http://localhost:4000/2008/10/21/devtrack-woes-with-build-1833-of/">
+  <meta name="twitter:url" content="/2008/10/21/devtrack-woes-with-build-1833-of/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2008/10/21/devtrack-woes-with-build-1833-of/">
+<link rel="canonical" href="/2008/10/21/devtrack-woes-with-build-1833-of/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -247,25 +247,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

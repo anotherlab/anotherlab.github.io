@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="That time I taught that dog a trick">
-<meta property="og:url" content="http://localhost:4000/2018/12/10/that-time-i-taught-that-dog-a-trick/">
+<meta property="og:url" content="/2018/12/10/that-time-i-taught-that-dog-a-trick/">
 
 
   <meta property="og:description" content="Image by FiveRings [CC BY 3.0], from Wikimedia Commons     Many, many years ago, I used to work with Jack*.  Jack is a musician and at the time was in band with two other guys.  Jack was renting this little cottage and that was where the band would rehearse.">
@@ -30,7 +30,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="That time I taught that dog a trick">
   <meta name="twitter:description" content="Image by FiveRings [CC BY 3.0], from Wikimedia Commons     Many, many years ago, I used to work with Jack*.  Jack is a musician and at the time was in band with two other guys.  Jack was renting this little cottage and that was where the band would rehearse.">
-  <meta name="twitter:url" content="http://localhost:4000/2018/12/10/that-time-i-taught-that-dog-a-trick/">
+  <meta name="twitter:url" content="/2018/12/10/that-time-i-taught-that-dog-a-trick/">
 
   
     <meta name="twitter:card" content="summary">
@@ -48,7 +48,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2018/12/10/that-time-i-taught-that-dog-a-trick/">
+<link rel="canonical" href="/2018/12/10/that-time-i-taught-that-dog-a-trick/">
 
 
 
@@ -59,7 +59,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -265,25 +265,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

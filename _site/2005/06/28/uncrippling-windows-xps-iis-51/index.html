@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Uncrippling Windows XP’s IIS 5.1">
-<meta property="og:url" content="http://localhost:4000/2005/06/28/uncrippling-windows-xps-iis-51/">
+<meta property="og:url" content="/2005/06/28/uncrippling-windows-xps-iis-51/">
 
 
   <meta property="og:description" content="Testing an ASP.NET application on an XP box can be a royal pain in the ass sometimes (Ok, most of the time). It’s version of IIS is the idiot brother of the IIS that comes with Windows Server. It only supports a single site. That’s kind of annoying, but doesn’t impact the stuff that I work on. The true joy of XP’s IIS is the limit of 10 concurrent connections. I’ve hit that wall before. The Coding Horror has some tips on how to bypass that limitation">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Uncrippling Windows XP’s IIS 5.1">
   <meta name="twitter:description" content="Testing an ASP.NET application on an XP box can be a royal pain in the ass sometimes (Ok, most of the time). It’s version of IIS is the idiot brother of the IIS that comes with Windows Server. It only supports a single site. That’s kind of annoying, but doesn’t impact the stuff that I work on. The true joy of XP’s IIS is the limit of 10 concurrent connections. I’ve hit that wall before. The Coding Horror has some tips on how to bypass that limitation">
-  <meta name="twitter:url" content="http://localhost:4000/2005/06/28/uncrippling-windows-xps-iis-51/">
+  <meta name="twitter:url" content="/2005/06/28/uncrippling-windows-xps-iis-51/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2005/06/28/uncrippling-windows-xps-iis-51/">
+<link rel="canonical" href="/2005/06/28/uncrippling-windows-xps-iis-51/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -241,25 +241,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="There was a Time Warner Cable Disconnect Technician in my yard this morning.">
-<meta property="og:url" content="http://localhost:4000/2011/05/03/there-was-time-warner-cable-disconnect/">
+<meta property="og:url" content="/2011/05/03/there-was-time-warner-cable-disconnect/">
 
 
   <meta property="og:description" content="I had an interesting conversation this morning with a Time Warner Cable (TWC) Disconnect Technician.  I went out to get my paper and he had the cable junction box open.  He was clipping the wires going my house and my neighbor’s house.  We had both switched to Verizon FiOS TV and were no longer paying for any TWC services.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="There was a Time Warner Cable Disconnect Technician in my yard this morning.">
   <meta name="twitter:description" content="I had an interesting conversation this morning with a Time Warner Cable (TWC) Disconnect Technician.  I went out to get my paper and he had the cable junction box open.  He was clipping the wires going my house and my neighbor’s house.  We had both switched to Verizon FiOS TV and were no longer paying for any TWC services.">
-  <meta name="twitter:url" content="http://localhost:4000/2011/05/03/there-was-time-warner-cable-disconnect/">
+  <meta name="twitter:url" content="/2011/05/03/there-was-time-warner-cable-disconnect/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2011/05/03/there-was-time-warner-cable-disconnect/">
+<link rel="canonical" href="/2011/05/03/there-was-time-warner-cable-disconnect/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -251,25 +251,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

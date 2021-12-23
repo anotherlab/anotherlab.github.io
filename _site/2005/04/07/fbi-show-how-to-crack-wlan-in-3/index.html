@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="FBI show how to crack a WLAN in 3 minutes.">
-<meta property="og:url" content="http://localhost:4000/2005/04/07/fbi-show-how-to-crack-wlan-in-3/">
+<meta property="og:url" content="/2005/04/07/fbi-show-how-to-crack-wlan-in-3/">
 
 
   <meta property="og:description" content="At a recent ISSA meeting, a team of FBI agents demonstated how to crack the 128 bit WEP encryption used by wireless routers. They used freely available tools and accomplished their task in about 3 minutes. Over at Tom’s networking, they have an article that covers how the FBI did this in great detail.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="FBI show how to crack a WLAN in 3 minutes.">
   <meta name="twitter:description" content="At a recent ISSA meeting, a team of FBI agents demonstated how to crack the 128 bit WEP encryption used by wireless routers. They used freely available tools and accomplished their task in about 3 minutes. Over at Tom’s networking, they have an article that covers how the FBI did this in great detail.">
-  <meta name="twitter:url" content="http://localhost:4000/2005/04/07/fbi-show-how-to-crack-wlan-in-3/">
+  <meta name="twitter:url" content="/2005/04/07/fbi-show-how-to-crack-wlan-in-3/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2005/04/07/fbi-show-how-to-crack-wlan-in-3/">
+<link rel="canonical" href="/2005/04/07/fbi-show-how-to-crack-wlan-in-3/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -243,25 +243,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

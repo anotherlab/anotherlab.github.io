@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="I don’t care who signs a petition, Roman Polanski is a convicted sexual predator who needs to do his time.">
-<meta property="og:url" content="http://localhost:4000/2009/10/01/i-dont-care-who-signs-petition-roman/">
+<meta property="og:url" content="/2009/10/01/i-dont-care-who-signs-petition-roman/">
 
 
   <meta property="og:description" content="I’ve never subscribed to the “Hollywood Elite” theory about radical liberals being in charge of Tinseltown, but I do think more attention is paid to people who lean to the left.  And too much attention is being paid to the people who signed the petition demanding the release of convicted child molester Roman Polanski.  Would they do the same thing if his name was Roman Ray Polan and was a Dade County dish washer?  I don’t think so.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="I don’t care who signs a petition, Roman Polanski is a convicted sexual predator who needs to do his time.">
   <meta name="twitter:description" content="I’ve never subscribed to the “Hollywood Elite” theory about radical liberals being in charge of Tinseltown, but I do think more attention is paid to people who lean to the left.  And too much attention is being paid to the people who signed the petition demanding the release of convicted child molester Roman Polanski.  Would they do the same thing if his name was Roman Ray Polan and was a Dade County dish washer?  I don’t think so.">
-  <meta name="twitter:url" content="http://localhost:4000/2009/10/01/i-dont-care-who-signs-petition-roman/">
+  <meta name="twitter:url" content="/2009/10/01/i-dont-care-who-signs-petition-roman/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2009/10/01/i-dont-care-who-signs-petition-roman/">
+<link rel="canonical" href="/2009/10/01/i-dont-care-who-signs-petition-roman/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -263,25 +263,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

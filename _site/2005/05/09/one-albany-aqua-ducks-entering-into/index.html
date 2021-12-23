@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="One Albany Aqua Ducks Entering Into">
-<meta property="og:url" content="http://localhost:4000/2005/05/09/one-albany-aqua-ducks-entering-into/">
+<meta property="og:url" content="/2005/05/09/one-albany-aqua-ducks-entering-into/">
 
 
   <meta property="og:description" content="One the Albany Aqua Ducks entering into the Hudson river. Anne’s 3rd grade class got to go on a free field trip on one of the Albany Aqua Ducks. I tagged along and took pictures. Eventually every 3rd grade class in Albany will get to go, but Anne’s class was the first.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="One Albany Aqua Ducks Entering Into">
   <meta name="twitter:description" content="One the Albany Aqua Ducks entering into the Hudson river. Anne’s 3rd grade class got to go on a free field trip on one of the Albany Aqua Ducks. I tagged along and took pictures. Eventually every 3rd grade class in Albany will get to go, but Anne’s class was the first.">
-  <meta name="twitter:url" content="http://localhost:4000/2005/05/09/one-albany-aqua-ducks-entering-into/">
+  <meta name="twitter:url" content="/2005/05/09/one-albany-aqua-ducks-entering-into/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2005/05/09/one-albany-aqua-ducks-entering-into/">
+<link rel="canonical" href="/2005/05/09/one-albany-aqua-ducks-entering-into/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -246,25 +246,27 @@ One the <a href="http://www.albanyaquaducks.com/">Albany Aqua Ducks</a> entering
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Wireshark work around for Windows 7">
-<meta property="og:url" content="http://localhost:4000/2009/09/10/wireshark-work-around-for-windows-7/">
+<meta property="og:url" content="/2009/09/10/wireshark-work-around-for-windows-7/">
 
 
   <meta property="og:description" content="I do a fair amount of programming at the socket level and Wireshark is one the tools that I use to test the data going over the wire.  Wireshark is a free application that analyzes packets going across the network.  It knows about the different protocols and can display the data with a nice GUI front end.  It’s a cross platform tool, and I hit a small snag when I went to Windows 7.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Wireshark work around for Windows 7">
   <meta name="twitter:description" content="I do a fair amount of programming at the socket level and Wireshark is one the tools that I use to test the data going over the wire.  Wireshark is a free application that analyzes packets going across the network.  It knows about the different protocols and can display the data with a nice GUI front end.  It’s a cross platform tool, and I hit a small snag when I went to Windows 7.">
-  <meta name="twitter:url" content="http://localhost:4000/2009/09/10/wireshark-work-around-for-windows-7/">
+  <meta name="twitter:url" content="/2009/09/10/wireshark-work-around-for-windows-7/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2009/09/10/wireshark-work-around-for-windows-7/">
+<link rel="canonical" href="/2009/09/10/wireshark-work-around-for-windows-7/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -263,25 +263,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

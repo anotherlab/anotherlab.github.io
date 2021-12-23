@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Saving application settings over installs">
-<meta property="og:url" content="http://localhost:4000/2008/04/01/saving-application-settings-over/">
+<meta property="og:url" content="/2008/04/01/saving-application-settings-over/">
 
 
   <meta property="og:description" content="We have been using Windows Installer (WI) based setups for all of our newer applications.  I used to use Wise, but I have migrated our installers to InstallAware.  Why I made that change will be another blog post, but needless to say I had very good reasons to make the switch.  When we release a new version or upgrade for one of our applications, we do full installs.  We don’t do patches.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Saving application settings over installs">
   <meta name="twitter:description" content="We have been using Windows Installer (WI) based setups for all of our newer applications.  I used to use Wise, but I have migrated our installers to InstallAware.  Why I made that change will be another blog post, but needless to say I had very good reasons to make the switch.  When we release a new version or upgrade for one of our applications, we do full installs.  We don’t do patches.">
-  <meta name="twitter:url" content="http://localhost:4000/2008/04/01/saving-application-settings-over/">
+  <meta name="twitter:url" content="/2008/04/01/saving-application-settings-over/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2008/04/01/saving-application-settings-over/">
+<link rel="canonical" href="/2008/04/01/saving-application-settings-over/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -257,25 +257,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Using console jQuery to scrape lists from Apple’s developer portal.">
-<meta property="og:url" content="http://localhost:4000/2017/03/16/using-console-jquery-to-scrape-lists-from-apples-developer-portal/">
+<meta property="og:url" content="/2017/03/16/using-console-jquery-to-scrape-lists-from-apples-developer-portal/">
 
 
   <meta property="og:description" content="I needed to grab the lists of registered devices and developers from our company’s Apple Developer portal. Unless I’m being particularly obtuse (an outcome that I never rule out), Apple does not provide any means of exporting the lists.">
@@ -30,7 +30,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Using console jQuery to scrape lists from Apple’s developer portal.">
   <meta name="twitter:description" content="I needed to grab the lists of registered devices and developers from our company’s Apple Developer portal. Unless I’m being particularly obtuse (an outcome that I never rule out), Apple does not provide any means of exporting the lists.">
-  <meta name="twitter:url" content="http://localhost:4000/2017/03/16/using-console-jquery-to-scrape-lists-from-apples-developer-portal/">
+  <meta name="twitter:url" content="/2017/03/16/using-console-jquery-to-scrape-lists-from-apples-developer-portal/">
 
   
     <meta name="twitter:card" content="summary">
@@ -48,7 +48,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2017/03/16/using-console-jquery-to-scrape-lists-from-apples-developer-portal/">
+<link rel="canonical" href="/2017/03/16/using-console-jquery-to-scrape-lists-from-apples-developer-portal/">
 
 
 
@@ -59,7 +59,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -307,25 +307,27 @@ The aria-describedby attribute is a commonly used accessibility element used to 
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 
