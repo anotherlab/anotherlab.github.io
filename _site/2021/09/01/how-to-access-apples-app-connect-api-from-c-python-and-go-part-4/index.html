@@ -1,0 +1,279 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>How to access Apple’s App Connect API from C#, Python, and Go. - Part 4 - Chris Miller’s 4th Blog</title>
+<meta name="description" content="Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C#, Go, and Python. This was code I was actually using myself and after I wrote it, it stopped working. The API calls were returning an HTTP 401 error. But only on Windows, on the Mac the code worked.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 4th Blog">
+<meta property="og:title" content="How to access Apple’s App Connect API from C#, Python, and Go. - Part 4">
+<meta property="og:url" content="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/">
+
+
+  <meta property="og:description" content="Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C#, Go, and Python. This was code I was actually using myself and after I wrote it, it stopped working. The API calls were returning an HTTP 401 error. But only on Windows, on the Mac the code worked.">
+
+
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="How to access Apple’s App Connect API from C#, Python, and Go. - Part 4">
+  <meta name="twitter:description" content="Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C#, Go, and Python. This was code I was actually using myself and after I wrote it, it stopped working. The API calls were returning an HTTP 401 error. But only on Windows, on the Mac the code worked.">
+  <meta name="twitter:url" content="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2021-09-01T07:56:57-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Chris Miller",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 4th Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--post">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 4th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How to access Apple&#39;s App Connect API from C#, Python, and Go. - Part 4</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2021-09-01T07:56:57-04:00" itemprop="datePublished">
+        Sep 1, 2021
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using <a href="https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">C#</a>, <a href="https://rajapet.com/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/">Go</a>, and <a href="https://rajapet.com/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/">Python</a>. This was code I was actually using myself and after I wrote it, it stopped working. The API calls were returning an HTTP 401 error. But only on Windows, on the Mac the code worked.</p>
+
+<p>That was an odd one to track down. It turned out to be a bug with how I was generating the expiration timestamp for the JWT payload.  Apple documents that you can specify up to 20 minutes into the future for the exp value. Don’t do the full 20 minutes. That works most of time. Until it doesn’t. Just set the timeout to 10 minutes into the future and Bob’s your uncle. </p>
+
+<p>I went back to the repo’s and changed the expiration timeout to 10 minutes for the <a href="https://github.com/anotherlab/IsUserinApple-dotnet">C#</a>, <a href="https://github.com/anotherlab/IsUserInApple-golang">Go</a>, and <a href="https://github.com/anotherlab/IsUserInApple-python">Python</a> repos. The C# code was set to 30 minutes, that should have never worked. If you tried the C# code and wondered why it wasn’t working, that was my mistake.</p>
+
+<p>While I was updating the code, I changed the Go version so that you could validate multiple user names by placing them in a line delimited file and pass that file in with a “-userlist” command line parameter.  The code now reads all of the usernames and stores them in an array.  It then gets all of the team members and checks to see if any of the user names in the array match the team member list.  If you need to validate multiple users, this makes it a one and done task.</p>
+
+<p>The “-username” parameter can still be used if you just have one user to check. In that case, it’s treated as an array with just one item in it. If you use both “-username” and “-userlist”, the code will use the user list and ignore the user name passed on the command line.</p>
+
+<p>I’m not sure why the code worked when I originally wrote the posts a couple of months ago. My guess is that Apple used to allow timestamps longer than 20 minutes but made a change that now enforces the expiration to their published specification. Test for edge conditions, but avoid using them.</p>
+
+  </div><a class="u-url" href="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/" hidden></a>
+</article>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Chris Miller. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+  
+
+
+
+
+
+  </body>
+</html>
