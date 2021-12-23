@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Go donate blood"
+date:   2021-12-15 10:31:33 -0500
+---
+I donated blood a few days ago to the <a href="https://www.redcrossblood.org/" target="_blank">American Red Cross</a>. If you can, you should donate too. It’s a way to give back to the community that only costs you time. Only 38% of the population in the United State are eligible to donate blood, but only 3% donate (<a href="https://www.redcrossblood.org/donate-blood/blood-types/o-blood-type.html" target="_blank">source</a>). That’s the only important part of the post. But I have an odd little story about it.
+
+A few years back, I went to give blood at temporary blood donation station at the office park where I work. While I had given blood years earlier, I didn’t have my Red Cross blood donor card on me. They took my information and told me that I was unable to donate blood because my account was flagged. Apparently I had spent time in a country that would disqualify me from giving me.
+
+Except that wasn’t me. That was a different Chris Miller. We shared the same first name, last name, and date of birth. Everything else was different.  Different middle initial, different part of country, etc. The system they were using was only looking at first name, last name, and DOB. So that was frustrating. I figured one day they would straighten it out.
+
+Fast forward to July 3rd, 2021. My wife and I made appointments to donate blood at a donation station at a local shopping mall. We go, my wife checks. No problem for her. For me, it’s a problem. They scan my license and up pops the Chris Miller. The staff made phone calls, tried looking me up in others. But no success. The staff gave me some incorrect information. They said my drivers license ID was associated to the record for the other Chris Miller. Which made no sense at all. And was a little concerning as a potential identity theft issue.
+
+A couple of days later, I called the American Red Cross and was passed along to their data management people. They said that my license was not associated with the other account. They scan the card as a shortcut to get the name and DOB and then the system searches on that. It was a mistake on the part of the people at the donation station, they should have been able to see both records. They said they would ship out a new donor card in the mail and wait until it came in before trying to donate again. The other Chris Miller was deceased, whatever reason he was unable to give blood was no longer important.
+
+They said it could take 6-10 weeks for the new card to arrive. That’s a long time, I could give blood twice before the new card arrived. They did give me my donor ID number. So I made an appointment to give blood at an actual Red Cross office. I figured the odds were better that they could correctly identify me. I made an appointment last week and it was fine.  They had my name as “Miller109”, but close enough. I gave a pint, had juice, and went home. In 8 weeks, I’ll be eligible to donate blood again.

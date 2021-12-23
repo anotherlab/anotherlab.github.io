@@ -167,7 +167,9 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>First post under the new regime.</p>
 
-<p>For a long time, this blog has been created with WordPress.  It’s now a Jekyll site.</p>
+<h1 id="back-story">Back story</h1>
+
+<p>For a long time, this blog has been created with WordPress.  It’s now a <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> site.</p>
 
 <p>The blog started as a free blog hosted on Google’s Blogger platform. It’s <a href="http://anotherlab.blogspot.com/" target="_blank">still there</a>, but hasn’t been touched in 8 years. It was fine, but I felt limited by the platform.</p>
 
@@ -175,34 +177,40 @@
 
 <p>It was fine until a few years ago when there was a serious attack on WordPress sites.  It was a vulnerability with man of the plugins used on WordPress sites.  My site was one the ones that was taken down.</p>
 
-<p>With a fair amount of work, I was able to restore the site. I viewed the entire VM as compromised and generated a new VM in Azure. This time I used a Bitnami WordPress image so there was a lot less work to get it up and running. I still had to add my own SSL certificate through Let’s Encryt.  I also signed up for a Jetpack subscription to let them manage the backups of the site.</p>
+<p>With a bit of amount of work, I was able to restore the site. I viewed the entire VM as compromised and generated a new VM in Azure. This time I used a <a href="https://bitnami.com/stack/wordpress" target="_blank">Bitnami WordPress</a> image so there was a lot less work to get it up and running. I still had to add my own SSL certificate through <a href="https://letsencrypt.org/" target="_blank">Let’s Encryt</a>.  I also signed up for a <a href="jetpack.com/upgrade/backup/" target="_blank">Jetpack</a> subscription to let them manage the backups of the site.</p>
 
 <p>Because this is a self-hosted WordPress site, I am responsible for updating the various moving parts. That was easy to do with the old system, annoying to do with the Bitnami image. It seems that the preferred way to do updates was to create a new VM and migrate the WordPress data over. That’s a little too much work.</p>
 
-<p>WordPress is a great platform, but it’s overkill for what I need, which is just a blog host.  So I decided to migrate it over to Jekyll.  I edit the blog on my own machine, in Ubuntu on Windows 10. It uses Markdown for the posts, which is handy for just knocking out stuff. The Jekyll tooling will bundle the files to a static set of pages that can be hosted by just about anything.</p>
+<h1 id="new-boss-in-town">New Boss in Town</h1>
+<p>WordPress is a great platform, but it’s overkill for what I need, which is just a blog host.  So I decided to migrate it over to Jekyll.  I edit the blog on my own machine, in Ubuntu on Windows 10. It uses <a href="https://www.markdownguide.org/" target="_blank">Markdown</a> for the posts, which is handy for just knocking out stuff. The Jekyll tooling will bundle the files to a static set of pages that can be hosted by just about anything. In this case, it’s hosted under <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
 
-<p>Since it’s a static site, it has a tiny footprint and has much exposure to being hacked. If it did get hacked, it would be fixed the next time I pushed out an update. I was able to install a WordPress plugin that exported the site to Jekyll formatted Markdown files. I’ll have to tweak some of posts. The content is all there, but there are some CSS styling issues to resolve.  The source code was using a WordPress plugin for doing syntax highlighting on code snippets.</p>
+<p>Since it’s a static site, it has a tiny footprint and has much less exposure to being hacked. If it did get hacked, it would be fixed the next time I pushed out an update. I was able to install a WordPress plugin that exported the existing site to Jekyll formatted Markdown files. I’ll have to tweak some of posts. The content is all there, but there are some CSS styling issues to resolve.  The source code was using a WordPress plugin for doing syntax highlighting on code snippets. Jekyll has the equivalent feature, it’s just a matter of going back and editing the old posts.</p>
 
 <p>And since Jekyll is a static site engine, dynamic features like comments are not included out of the box. There are options for that and I’ll get that working at some point.</p>
 
-<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<p>The Jekyll tooling is very Linux oriented. I’m running Windows 10, so I used Ubuntu running on WSL2. This gave me the power of the Linux command line tools while still leaving over the option of using Windows tools for file editing. It’s easy to access the Windows file system from Linux on WSL2 and vice versa. There’s a really cool Markdown editor called <a href="markdownmonster.west-wind.com" target="_blank">Markdown Monster</a> that makes editing a breeze. I highly recommend it.</p>
 
-<p>Jekyll requires blog post files to be named according to the following format:</p>
+<h1 id="the-process">The process</h1>
+<p>So writing and updating posts is very different than the traditional WordPress experience. With the WordPress site, I would create posts in the site, using the WordPress web tools. Until it was was posted, it would be a draft. Their <a href="https://wordpress.org/gutenberg/" target="_blank">Gutenberg editor</a> was a block based editor that I was never comfortable with.</p>
 
-<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+<p>With Jekyll, I just create a Markdown file with the right tags and in the right folder. Then I use git to push it to the repo for the site. Between the git command and the <a href="https://github.com/cli/cli" target="_blank">GitHub CLI</a>, I can do the workflow right from the command line.</p>
 
-<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>As for backing up the site, it’s backed up and versioned by being a GitHub repository. If I need to rebuild the Ubuntu environment, I would need to reinstall a few things (brew, Jekyll, gh), but it’s not rocket science. I can also backup and restore the Ubuntu environment. It’s as simple as:</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">wsl --export Ubuntu c:\data\ubuntu.tar</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<p>Then to restore it, you need to provide a distribution name and a location for the distribution.</p>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">wsl --import UbuntuBlog c:\data\UbuntuBlog c:\data\ubuntu.tar</code></pre></figure>
 
+<h1 id="whats-next">What’s next</h1>
+<p>By the time this post is public, I’ll have already transferred the domain name over.  I have a few images in the WordPress site, I’ll need to grab them. When I move from Blogger to WordPress, I made the decision to not host the images in WordPress. Almost all of my blog post images are hosted on my SmugMug site. I figured if I ever moved the blog again, that would be one less thing to worry about.</p>
+
+<p>I also have some draft posts. I had a handful of stuff that I was going to blog about, but never finished. They were not exported, but that’s OK. Jekyll has a concept of <a href="https://jekyllrb.com/docs/posts/" target="_blank">draft posts</a> and I’ll just put them all in there.</p>
+
+<p>There is some cleanup that I need to do. For some reason, Jekyll doesn’t like HTML escape sequences in the post meta data. I’ll need to fix that. I use using WordPress’s mechanisms for source code highlighting, that will need to be changed to what Jekyll uses. And there is some funkiness in how the images are displayed.</p>
+
+<p>I can fix some of that by doing some CSS overrides on the theme being used. The rest will need to edited. I plan on writing some code to fix some of the more annoying stuff. This will be a work in progress.</p>
 
   </div><a class="u-url" href="/jekyll/update/Migrated-to-jekyll/" hidden></a>
 </article>
@@ -287,7 +295,7 @@
 
     var script = document.createElement('script');
     script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', '');
+    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
     script.setAttribute('issue-term', 'pathname');
     
     script.setAttribute('theme', 'github-light');
