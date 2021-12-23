@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="VMware-authd.exe slowing down my PC">
-<meta property="og:url" content="http://localhost:4000/2005/12/06/vmware-authdexe-slowing-down-my-pc/">
+<meta property="og:url" content="/2005/12/06/vmware-authdexe-slowing-down-my-pc/">
 
 
   <meta property="og:description" content="I was doing some work on one of my PC’s and I had the processes list open in Task Manager. Out of the corner of my eye, I noticed that one process, VMware-authd.exe, was going from 0 to 10% of the CPU. I didn’t know what that process did, I went out on a limb and assumed that it was somehow related to VMWare. VMware is one of my favorite tools, but I wasn’t running any VMWare sessions. Time to go Googling. Apparently it’s a service that provides administrator priviledges to to a running VMWare session if the host use isn’t logged in with administrator access rights">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="VMware-authd.exe slowing down my PC">
   <meta name="twitter:description" content="I was doing some work on one of my PC’s and I had the processes list open in Task Manager. Out of the corner of my eye, I noticed that one process, VMware-authd.exe, was going from 0 to 10% of the CPU. I didn’t know what that process did, I went out on a limb and assumed that it was somehow related to VMWare. VMware is one of my favorite tools, but I wasn’t running any VMWare sessions. Time to go Googling. Apparently it’s a service that provides administrator priviledges to to a running VMWare session if the host use isn’t logged in with administrator access rights">
-  <meta name="twitter:url" content="http://localhost:4000/2005/12/06/vmware-authdexe-slowing-down-my-pc/">
+  <meta name="twitter:url" content="/2005/12/06/vmware-authdexe-slowing-down-my-pc/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2005/12/06/vmware-authdexe-slowing-down-my-pc/">
+<link rel="canonical" href="/2005/12/06/vmware-authdexe-slowing-down-my-pc/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -251,25 +251,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

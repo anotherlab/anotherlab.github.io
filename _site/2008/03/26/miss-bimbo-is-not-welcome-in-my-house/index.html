@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Miss Bimbo is not welcome in my house">
-<meta property="og:url" content="http://localhost:4000/2008/03/26/miss-bimbo-is-not-welcome-in-my-house/">
+<meta property="og:url" content="/2008/03/26/miss-bimbo-is-not-welcome-in-my-house/">
 
 
   <meta property="og:description" content="There have been a few articles posted on the Internet about a web site called www.missbimbo.com.  It’s supposed to be fashion game for young girls, but it sounds pretty trashy.  It’s aimed at girls between the ages of 9 to 16 and it purports to be a virtual fashion games.  It’s widely condemned as the users are encouraged to compete against each other to become the “hottest, coolest, most famous bimbo in the whole world.” by buy chest implants.  CNN had a good write up of it and here’s a direct quote:">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Miss Bimbo is not welcome in my house">
   <meta name="twitter:description" content="There have been a few articles posted on the Internet about a web site called www.missbimbo.com.  It’s supposed to be fashion game for young girls, but it sounds pretty trashy.  It’s aimed at girls between the ages of 9 to 16 and it purports to be a virtual fashion games.  It’s widely condemned as the users are encouraged to compete against each other to become the “hottest, coolest, most famous bimbo in the whole world.” by buy chest implants.  CNN had a good write up of it and here’s a direct quote:">
-  <meta name="twitter:url" content="http://localhost:4000/2008/03/26/miss-bimbo-is-not-welcome-in-my-house/">
+  <meta name="twitter:url" content="/2008/03/26/miss-bimbo-is-not-welcome-in-my-house/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2008/03/26/miss-bimbo-is-not-welcome-in-my-house/">
+<link rel="canonical" href="/2008/03/26/miss-bimbo-is-not-welcome-in-my-house/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -263,25 +263,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

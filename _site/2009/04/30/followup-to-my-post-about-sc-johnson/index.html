@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="A followup to my post about SC Johnson not manning a customer hotline.">
-<meta property="og:url" content="http://localhost:4000/2009/04/30/followup-to-my-post-about-sc-johnson/">
+<meta property="og:url" content="/2009/04/30/followup-to-my-post-about-sc-johnson/">
 
 
   <meta property="og:description" content="A few days ago, I posted about my experience trying to get a hold of customer support after my dog ate some ant bait.  SC Johnson has a contract with a health and safety clearinghouse that is manned 24/7.  I have spoken to those people and they are very professional.  Their phone number is not listed on the ant traps.  The number that is listed, goes directly to SC Johnson.  When I called that number, I got a recorded messaged that they were closed and to call back Monday through Friday, between the hours of 8am and 6pm (CST).  That’s all I remembered hearing when I called that number.  When I called SC Johnson on Tuesday, they insisted that the emergency contact number was on the message.  I don’t remember hearing that at all.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="A followup to my post about SC Johnson not manning a customer hotline.">
   <meta name="twitter:description" content="A few days ago, I posted about my experience trying to get a hold of customer support after my dog ate some ant bait.  SC Johnson has a contract with a health and safety clearinghouse that is manned 24/7.  I have spoken to those people and they are very professional.  Their phone number is not listed on the ant traps.  The number that is listed, goes directly to SC Johnson.  When I called that number, I got a recorded messaged that they were closed and to call back Monday through Friday, between the hours of 8am and 6pm (CST).  That’s all I remembered hearing when I called that number.  When I called SC Johnson on Tuesday, they insisted that the emergency contact number was on the message.  I don’t remember hearing that at all.">
-  <meta name="twitter:url" content="http://localhost:4000/2009/04/30/followup-to-my-post-about-sc-johnson/">
+  <meta name="twitter:url" content="/2009/04/30/followup-to-my-post-about-sc-johnson/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2009/04/30/followup-to-my-post-about-sc-johnson/">
+<link rel="canonical" href="/2009/04/30/followup-to-my-post-about-sc-johnson/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -245,25 +245,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

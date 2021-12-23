@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Poor man’s guide to memory usage tracking">
-<meta property="og:url" content="http://localhost:4000/2006/07/29/poor-mans-guide-to-memory-usage/">
+<meta property="og:url" content="/2006/07/29/poor-mans-guide-to-memory-usage/">
 
 
   <meta property="og:description" content="I have a service and I need to make sure that it doesn’t have a memory leak after running for a sustained length of time.  I’m doing all the good stuff in code to manage the garbage collection and I have the right tools to check for leaks in my code.  But I still want to monitor an instance of the service during regular usage.  I don’t need anything too finely grained, I just want to see if the memory usage is trending upwards.  There’s a good chance that I might have to deploy this out in the field, so I want something simple.  I could have used the Performance console, but I wanted something very simple to explain.  You can probably do this with a CScript batch file and WMI, but I wanted something fast to load and fast to exit.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Poor man’s guide to memory usage tracking">
   <meta name="twitter:description" content="I have a service and I need to make sure that it doesn’t have a memory leak after running for a sustained length of time.  I’m doing all the good stuff in code to manage the garbage collection and I have the right tools to check for leaks in my code.  But I still want to monitor an instance of the service during regular usage.  I don’t need anything too finely grained, I just want to see if the memory usage is trending upwards.  There’s a good chance that I might have to deploy this out in the field, so I want something simple.  I could have used the Performance console, but I wanted something very simple to explain.  You can probably do this with a CScript batch file and WMI, but I wanted something fast to load and fast to exit.">
-  <meta name="twitter:url" content="http://localhost:4000/2006/07/29/poor-mans-guide-to-memory-usage/">
+  <meta name="twitter:url" content="/2006/07/29/poor-mans-guide-to-memory-usage/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2006/07/29/poor-mans-guide-to-memory-usage/">
+<link rel="canonical" href="/2006/07/29/poor-mans-guide-to-memory-usage/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -273,25 +273,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

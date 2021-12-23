@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Suppressing a repeated column value in SQL">
-<meta property="og:url" content="http://localhost:4000/2010/04/29/suppressing-repeated-column-value-in/">
+<meta property="og:url" content="/2010/04/29/suppressing-repeated-column-value-in/">
 
 
   <meta property="og:description" content="I was asked by one of my co-workers for some SQL help. He needed a SQL statement that would suppress repeated column values for the result set. Basically the value would be shown for the first row and blanked for each successful row that had the same value. Typically you would handle this in the application code, we had a case where we had to pass data to another application and we needed to do this within a single SQL select statement.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Suppressing a repeated column value in SQL">
   <meta name="twitter:description" content="I was asked by one of my co-workers for some SQL help. He needed a SQL statement that would suppress repeated column values for the result set. Basically the value would be shown for the first row and blanked for each successful row that had the same value. Typically you would handle this in the application code, we had a case where we had to pass data to another application and we needed to do this within a single SQL select statement.">
-  <meta name="twitter:url" content="http://localhost:4000/2010/04/29/suppressing-repeated-column-value-in/">
+  <meta name="twitter:url" content="/2010/04/29/suppressing-repeated-column-value-in/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2010/04/29/suppressing-repeated-column-value-in/">
+<link rel="canonical" href="/2010/04/29/suppressing-repeated-column-value-in/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -271,25 +271,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

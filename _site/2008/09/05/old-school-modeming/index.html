@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Old School modeming">
-<meta property="og:url" content="http://localhost:4000/2008/09/05/old-school-modeming/">
+<meta property="og:url" content="/2008/09/05/old-school-modeming/">
 
 
   <meta property="og:description" content="The always entertaining DadHacker has a great post on how he used to write code in the old days at 300 baud.   When he was in school, he had to submit course source code by punch card.  That’s a death by a thousand paper cuts.  To avoid having to use punch cards, he would dial in over the ancestor to the Internet and edit the code at 300 baud.   You should read his post to see all the steps he had to do.  It would have made Rube Goldberg proud.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Old School modeming">
   <meta name="twitter:description" content="The always entertaining DadHacker has a great post on how he used to write code in the old days at 300 baud.   When he was in school, he had to submit course source code by punch card.  That’s a death by a thousand paper cuts.  To avoid having to use punch cards, he would dial in over the ancestor to the Internet and edit the code at 300 baud.   You should read his post to see all the steps he had to do.  It would have made Rube Goldberg proud.">
-  <meta name="twitter:url" content="http://localhost:4000/2008/09/05/old-school-modeming/">
+  <meta name="twitter:url" content="/2008/09/05/old-school-modeming/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2008/09/05/old-school-modeming/">
+<link rel="canonical" href="/2008/09/05/old-school-modeming/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -249,25 +249,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

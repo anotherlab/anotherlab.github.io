@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="RE: If All Movies Ever Made Were Really About Software…">
-<meta property="og:url" content="http://localhost:4000/2005/10/05/re-if-all-movies-ever-made-were-really/">
+<meta property="og:url" content="/2005/10/05/re-if-all-movies-ever-made-were-really/">
 
 
   <meta property="og:description" content="_A Few Good Objects _ Col. Jessup: You want destructors? Kaffe: I think I’m entitled. Col. Jessup: You want destructors? Kaffe: I want deterministic finalization. Col Jessup: You can’t handle deterministic finalization!    Click here for Pulp Compilers, Full Metal Packet, and the rest.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="RE: If All Movies Ever Made Were Really About Software…">
   <meta name="twitter:description" content="_A Few Good Objects _ Col. Jessup: You want destructors? Kaffe: I think I’m entitled. Col. Jessup: You want destructors? Kaffe: I want deterministic finalization. Col Jessup: You can’t handle deterministic finalization!    Click here for Pulp Compilers, Full Metal Packet, and the rest.">
-  <meta name="twitter:url" content="http://localhost:4000/2005/10/05/re-if-all-movies-ever-made-were-really/">
+  <meta name="twitter:url" content="/2005/10/05/re-if-all-movies-ever-made-were-really/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2005/10/05/re-if-all-movies-ever-made-were-really/">
+<link rel="canonical" href="/2005/10/05/re-if-all-movies-ever-made-were-really/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -252,25 +252,27 @@ _ <strong>Col. Jessup</strong>: You want destructors?<br />
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

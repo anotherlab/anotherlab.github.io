@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="NPR broke the podcasting machinery">
-<meta property="og:url" content="http://localhost:4000/2008/01/05/npr-broke-podcasting-machinery/">
+<meta property="og:url" content="/2008/01/05/npr-broke-podcasting-machinery/">
 
 
   <meta property="og:description" content="I like listening to podcasts on my Zen Vision:M player.  The Zen comes with a decent enough podcast tool called Zencast.  Zencast has an option to convert audio podcasts to video format.  They take the description of the podcast and display it as text in the podcast.  This makes it handy to see what is on a podcast by playing it for a few seconds.  The other advantage is that it categorizes them separately from the music, making it easier to drill down and locate the file to play.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="NPR broke the podcasting machinery">
   <meta name="twitter:description" content="I like listening to podcasts on my Zen Vision:M player.  The Zen comes with a decent enough podcast tool called Zencast.  Zencast has an option to convert audio podcasts to video format.  They take the description of the podcast and display it as text in the podcast.  This makes it handy to see what is on a podcast by playing it for a few seconds.  The other advantage is that it categorizes them separately from the music, making it easier to drill down and locate the file to play.">
-  <meta name="twitter:url" content="http://localhost:4000/2008/01/05/npr-broke-podcasting-machinery/">
+  <meta name="twitter:url" content="/2008/01/05/npr-broke-podcasting-machinery/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2008/01/05/npr-broke-podcasting-machinery/">
+<link rel="canonical" href="/2008/01/05/npr-broke-podcasting-machinery/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -249,25 +249,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

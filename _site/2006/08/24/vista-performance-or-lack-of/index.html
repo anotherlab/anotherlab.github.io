@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Vista performance (or lack of)">
-<meta property="og:url" content="http://localhost:4000/2006/08/24/vista-performance-or-lack-of/">
+<meta property="og:url" content="/2006/08/24/vista-performance-or-lack-of/">
 
 
   <meta property="og:description" content="I just installed the Beta 2 of Vista on one of my dev boxes.  It used to be my primary development box until I got a bright shiny new one last year.  About two weeks ago, the hard drive had a massive failure (it needs to be defraggled at this point) and I needed to rebuild the box.  Since we had the Vista DVD, I figured why not.  We set it up as a dual boot, with XP as the “other” OS.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Vista performance (or lack of)">
   <meta name="twitter:description" content="I just installed the Beta 2 of Vista on one of my dev boxes.  It used to be my primary development box until I got a bright shiny new one last year.  About two weeks ago, the hard drive had a massive failure (it needs to be defraggled at this point) and I needed to rebuild the box.  Since we had the Vista DVD, I figured why not.  We set it up as a dual boot, with XP as the “other” OS.">
-  <meta name="twitter:url" content="http://localhost:4000/2006/08/24/vista-performance-or-lack-of/">
+  <meta name="twitter:url" content="/2006/08/24/vista-performance-or-lack-of/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2006/08/24/vista-performance-or-lack-of/">
+<link rel="canonical" href="/2006/08/24/vista-performance-or-lack-of/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -264,25 +264,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

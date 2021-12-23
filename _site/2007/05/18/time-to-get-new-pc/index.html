@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Time to get a new PC">
-<meta property="og:url" content="http://localhost:4000/2007/05/18/time-to-get-new-pc/">
+<meta property="og:url" content="/2007/05/18/time-to-get-new-pc/">
 
 
   <meta property="og:description" content="My home PC died last Friday and I’m waiting for it’s replacement to show up. I’ve had the machine for years and it’s been running 24/7, something was bound to fail. The fan on the video card was starting to lock up and I’m pretty sure that the main hard drive is toast. It was a decent machine back in 2002, an Athlon XP 2000 with fast memory and drives.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Time to get a new PC">
   <meta name="twitter:description" content="My home PC died last Friday and I’m waiting for it’s replacement to show up. I’ve had the machine for years and it’s been running 24/7, something was bound to fail. The fan on the video card was starting to lock up and I’m pretty sure that the main hard drive is toast. It was a decent machine back in 2002, an Athlon XP 2000 with fast memory and drives.">
-  <meta name="twitter:url" content="http://localhost:4000/2007/05/18/time-to-get-new-pc/">
+  <meta name="twitter:url" content="/2007/05/18/time-to-get-new-pc/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2007/05/18/time-to-get-new-pc/">
+<link rel="canonical" href="/2007/05/18/time-to-get-new-pc/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -265,25 +265,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

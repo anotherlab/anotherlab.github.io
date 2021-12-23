@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="When a UX hack has unexpected consequences or “Why did my iOS app name get truncated when I used TestFlight?”">
-<meta property="og:url" content="http://localhost:4000/2015/10/05/when-a-ux-hack-has-unexpected-consequences-or-why-did-my-ios-app-name-get-truncated-when-i-used-testflight/">
+<meta property="og:url" content="/2015/10/05/when-a-ux-hack-has-unexpected-consequences-or-why-did-my-ios-app-name-get-truncated-when-i-used-testflight/">
 
 
   <meta property="og:description" content="While testing a iOS app with TestFlight, we noticed that the app name was being truncated.  The name was just under the length where iOS truncates it and adds the ellipses.  When we compiled the app and deployed it a device, the name displayed normally.  When we put a test build up for QA through TestFlight, the name was truncated.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="When a UX hack has unexpected consequences or “Why did my iOS app name get truncated when I used TestFlight?”">
   <meta name="twitter:description" content="While testing a iOS app with TestFlight, we noticed that the app name was being truncated.  The name was just under the length where iOS truncates it and adds the ellipses.  When we compiled the app and deployed it a device, the name displayed normally.  When we put a test build up for QA through TestFlight, the name was truncated.">
-  <meta name="twitter:url" content="http://localhost:4000/2015/10/05/when-a-ux-hack-has-unexpected-consequences-or-why-did-my-ios-app-name-get-truncated-when-i-used-testflight/">
+  <meta name="twitter:url" content="/2015/10/05/when-a-ux-hack-has-unexpected-consequences-or-why-did-my-ios-app-name-get-truncated-when-i-used-testflight/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2015/10/05/when-a-ux-hack-has-unexpected-consequences-or-why-did-my-ios-app-name-get-truncated-when-i-used-testflight/">
+<link rel="canonical" href="/2015/10/05/when-a-ux-hack-has-unexpected-consequences-or-why-did-my-ios-app-name-get-truncated-when-i-used-testflight/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -257,25 +257,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

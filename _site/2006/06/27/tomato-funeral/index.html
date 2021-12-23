@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Tomato funeral">
-<meta property="og:url" content="http://localhost:4000/2006/06/27/tomato-funeral/">
+<meta property="og:url" content="/2006/06/27/tomato-funeral/">
 
 
   <meta property="og:description" content="I saw a reference to “tomato funeral” on a .Net developer’s blog.  I had to click through the link and ended up somewhere deep in the bowels of Wil Wheaton’s blog….">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Tomato funeral">
   <meta name="twitter:description" content="I saw a reference to “tomato funeral” on a .Net developer’s blog.  I had to click through the link and ended up somewhere deep in the bowels of Wil Wheaton’s blog….">
-  <meta name="twitter:url" content="http://localhost:4000/2006/06/27/tomato-funeral/">
+  <meta name="twitter:url" content="/2006/06/27/tomato-funeral/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2006/06/27/tomato-funeral/">
+<link rel="canonical" href="/2006/06/27/tomato-funeral/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -265,25 +265,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

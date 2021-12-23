@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Handling collation sequences with temporary tables and table variables with SQL Server">
-<meta property="og:url" content="http://localhost:4000/2008/07/10/handling-collation-sequences-with/">
+<meta property="og:url" content="/2008/07/10/handling-collation-sequences-with/">
 
 
   <meta property="og:description" content="When building complex stored procedures that span multiple tables, you will probably need to store some intermediate results in a local buffer and process them before returning the final output.  SQL Server lets you do this through temporary table and table variables.  ">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Handling collation sequences with temporary tables and table variables with SQL Server">
   <meta name="twitter:description" content="When building complex stored procedures that span multiple tables, you will probably need to store some intermediate results in a local buffer and process them before returning the final output.  SQL Server lets you do this through temporary table and table variables.  ">
-  <meta name="twitter:url" content="http://localhost:4000/2008/07/10/handling-collation-sequences-with/">
+  <meta name="twitter:url" content="/2008/07/10/handling-collation-sequences-with/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2008/07/10/handling-collation-sequences-with/">
+<link rel="canonical" href="/2008/07/10/handling-collation-sequences-with/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -275,25 +275,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

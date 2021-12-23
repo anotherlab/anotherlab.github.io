@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="If you sell poison, I think your customer hotline should be manned 24/7">
-<meta property="og:url" content="http://localhost:4000/2009/04/28/if-you-sell-poison-i-think-your/">
+<meta property="og:url" content="/2009/04/28/if-you-sell-poison-i-think-your/">
 
 
   <meta property="og:description" content="A couple of weeks ago, we had some unwanted visitors coming in from under the front door.  Pavement ants.  You know, Tetramorium caespitum.  They are tiny and they come from under the door frame.  It usually happens every year at about this time.  I usually spray around the outside of the house with a pesticide and the problem goes away.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="If you sell poison, I think your customer hotline should be manned 24/7">
   <meta name="twitter:description" content="A couple of weeks ago, we had some unwanted visitors coming in from under the front door.  Pavement ants.  You know, Tetramorium caespitum.  They are tiny and they come from under the door frame.  It usually happens every year at about this time.  I usually spray around the outside of the house with a pesticide and the problem goes away.">
-  <meta name="twitter:url" content="http://localhost:4000/2009/04/28/if-you-sell-poison-i-think-your/">
+  <meta name="twitter:url" content="/2009/04/28/if-you-sell-poison-i-think-your/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2009/04/28/if-you-sell-poison-i-think-your/">
+<link rel="canonical" href="/2009/04/28/if-you-sell-poison-i-think-your/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -271,25 +271,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

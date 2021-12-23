@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Windows Live Writer change from beta to 1.0 that affects plugin development">
-<meta property="og:url" content="http://localhost:4000/2008/01/04/windows-live-writer-change-from-beta-to/">
+<meta property="og:url" content="/2008/01/04/windows-live-writer-change-from-beta-to/">
 
 
   <meta property="og:description" content="I’ve been working on a SmugMug plugin for Windows Live Writer on and off for the last few months.  The code is nearly complete, some other things came up and I had to put that code a way for a while.  Now I’m back on the code and I’m almost done.  While I was off doing other things, two things changed in my development environment.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Windows Live Writer change from beta to 1.0 that affects plugin development">
   <meta name="twitter:description" content="I’ve been working on a SmugMug plugin for Windows Live Writer on and off for the last few months.  The code is nearly complete, some other things came up and I had to put that code a way for a while.  Now I’m back on the code and I’m almost done.  While I was off doing other things, two things changed in my development environment.">
-  <meta name="twitter:url" content="http://localhost:4000/2008/01/04/windows-live-writer-change-from-beta-to/">
+  <meta name="twitter:url" content="/2008/01/04/windows-live-writer-change-from-beta-to/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2008/01/04/windows-live-writer-change-from-beta-to/">
+<link rel="canonical" href="/2008/01/04/windows-live-writer-change-from-beta-to/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -251,25 +251,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

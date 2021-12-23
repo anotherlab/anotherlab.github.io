@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="When Windows Phone Mail can’t display an image attachment">
-<meta property="og:url" content="http://localhost:4000/2013/12/21/when-windows-phone-mail-cant-display-an-image-attachment/">
+<meta property="og:url" content="/2013/12/21/when-windows-phone-mail-cant-display-an-image-attachment/">
 
 
   <meta property="og:description" content="I came across a strange little problem reported in answers.microsoft.com with Windows Phone 8 Mail. It wasn’t downloading  jpg images.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="When Windows Phone Mail can’t display an image attachment">
   <meta name="twitter:description" content="I came across a strange little problem reported in answers.microsoft.com with Windows Phone 8 Mail. It wasn’t downloading  jpg images.">
-  <meta name="twitter:url" content="http://localhost:4000/2013/12/21/when-windows-phone-mail-cant-display-an-image-attachment/">
+  <meta name="twitter:url" content="/2013/12/21/when-windows-phone-mail-cant-display-an-image-attachment/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2013/12/21/when-windows-phone-mail-cant-display-an-image-attachment/">
+<link rel="canonical" href="/2013/12/21/when-windows-phone-mail-cant-display-an-image-attachment/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -288,25 +288,27 @@ Content-Transfer-Encoding: base64</pre>
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Opportunity has ended it’s mission">
-<meta property="og:url" content="http://localhost:4000/2019/02/13/opportunity-has-ended-its-mission/">
+<meta property="og:url" content="/2019/02/13/opportunity-has-ended-its-mission/">
 
 
   <meta property="og:description" content="NASA&#8217;s Opportunity Rover looks back over its own tracks on Aug. 4, 2010. Image credit: NASA/JPL-Caltech">
@@ -30,7 +30,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Opportunity has ended it’s mission">
   <meta name="twitter:description" content="NASA&#8217;s Opportunity Rover looks back over its own tracks on Aug. 4, 2010. Image credit: NASA/JPL-Caltech">
-  <meta name="twitter:url" content="http://localhost:4000/2019/02/13/opportunity-has-ended-its-mission/">
+  <meta name="twitter:url" content="/2019/02/13/opportunity-has-ended-its-mission/">
 
   
     <meta name="twitter:card" content="summary">
@@ -48,7 +48,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2019/02/13/opportunity-has-ended-its-mission/">
+<link rel="canonical" href="/2019/02/13/opportunity-has-ended-its-mission/">
 
 
 
@@ -59,7 +59,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -247,25 +247,27 @@ Opportunity on February 12th, 2019 <a href="https://mars.nasa.gov/news/8413/nasa
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

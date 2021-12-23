@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Sony now installs a flawed rootkit">
-<meta property="og:url" content="http://localhost:4000/2005/11/01/sony-now-installs-flawed-rootkit/">
+<meta property="og:url" content="/2005/11/01/sony-now-installs-flawed-rootkit/">
 
 
   <meta property="og:description" content="This is lovely. Sony is now putting a rootkit installer on their Music CD’s. Mark Russinovich discovered a root kit on his machine while testing a rootkit detection tool (RootKitRevealer   ) that is was working on. He documented the process on his blog and it’s required reading. He cleary documents what he found, how badly written it was, and what he had to go through to remove. The rootkit installed by Sony is a Digital Right Management service, but is so badly written it will have all sorts of nasty side affects. This thing will really mess up your computer. If you don’t remove it correctly, you will lose access to the CD/DVD drive in your PC.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Sony now installs a flawed rootkit">
   <meta name="twitter:description" content="This is lovely. Sony is now putting a rootkit installer on their Music CD’s. Mark Russinovich discovered a root kit on his machine while testing a rootkit detection tool (RootKitRevealer   ) that is was working on. He documented the process on his blog and it’s required reading. He cleary documents what he found, how badly written it was, and what he had to go through to remove. The rootkit installed by Sony is a Digital Right Management service, but is so badly written it will have all sorts of nasty side affects. This thing will really mess up your computer. If you don’t remove it correctly, you will lose access to the CD/DVD drive in your PC.">
-  <meta name="twitter:url" content="http://localhost:4000/2005/11/01/sony-now-installs-flawed-rootkit/">
+  <meta name="twitter:url" content="/2005/11/01/sony-now-installs-flawed-rootkit/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2005/11/01/sony-now-installs-flawed-rootkit/">
+<link rel="canonical" href="/2005/11/01/sony-now-installs-flawed-rootkit/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -241,25 +241,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

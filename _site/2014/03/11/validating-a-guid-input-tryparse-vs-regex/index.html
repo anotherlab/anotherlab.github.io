@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Validating a GUID input, TryParse vs RegEx">
-<meta property="og:url" content="http://localhost:4000/2014/03/11/validating-a-guid-input-tryparse-vs-regex/">
+<meta property="og:url" content="/2014/03/11/validating-a-guid-input-tryparse-vs-regex/">
 
 
   <meta property="og:description" content="Once again I’m validating some text inputs, this time I need to verify that a user has entered a GUID in a valid format.  While I can’t verify that the user has entered the correct GUID, I can check to make sure that I have the right characters in the string.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Validating a GUID input, TryParse vs RegEx">
   <meta name="twitter:description" content="Once again I’m validating some text inputs, this time I need to verify that a user has entered a GUID in a valid format.  While I can’t verify that the user has entered the correct GUID, I can check to make sure that I have the right characters in the string.">
-  <meta name="twitter:url" content="http://localhost:4000/2014/03/11/validating-a-guid-input-tryparse-vs-regex/">
+  <meta name="twitter:url" content="/2014/03/11/validating-a-guid-input-tryparse-vs-regex/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2014/03/11/validating-a-guid-input-tryparse-vs-regex/">
+<link rel="canonical" href="/2014/03/11/validating-a-guid-input-tryparse-vs-regex/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -308,25 +308,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

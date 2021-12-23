@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Argh! Now I have to keep track of Remote Desktop">
-<meta property="og:url" content="http://localhost:4000/2006/01/03/argh-now-i-have-to-keep-track-of/">
+<meta property="og:url" content="/2006/01/03/argh-now-i-have-to-keep-track-of/">
 
 
   <meta property="og:description" content="Raymond Chen has a great article that explains why your program may look different under a Remote Desktop or Terminal Services session. If you do double buffering to eliminate screen flickering, you’ll pay a performance penalty when running over a remote connection. His tip is to have the app’s code detect if it’s running in a remote session and disable the double buffering. You get some flickering, but it will be much faster than shoving a large bitmap down the pipe.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Argh! Now I have to keep track of Remote Desktop">
   <meta name="twitter:description" content="Raymond Chen has a great article that explains why your program may look different under a Remote Desktop or Terminal Services session. If you do double buffering to eliminate screen flickering, you’ll pay a performance penalty when running over a remote connection. His tip is to have the app’s code detect if it’s running in a remote session and disable the double buffering. You get some flickering, but it will be much faster than shoving a large bitmap down the pipe.">
-  <meta name="twitter:url" content="http://localhost:4000/2006/01/03/argh-now-i-have-to-keep-track-of/">
+  <meta name="twitter:url" content="/2006/01/03/argh-now-i-have-to-keep-track-of/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2006/01/03/argh-now-i-have-to-keep-track-of/">
+<link rel="canonical" href="/2006/01/03/argh-now-i-have-to-keep-track-of/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -241,25 +241,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

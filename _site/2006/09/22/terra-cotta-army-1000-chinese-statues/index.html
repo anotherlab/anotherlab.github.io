@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="The Terra Cotta Army: 1000 Chinese statues + 1 German art student">
-<meta property="og:url" content="http://localhost:4000/2006/09/22/terra-cotta-army-1000-chinese-statues/">
+<meta property="og:url" content="/2006/09/22/terra-cotta-army-1000-chinese-statues/">
 
 
   <meta property="og:description" content="This story off of the AP wire I found greatly amusing. A 26 year old art student named Pablo Wendel joined the Terra Cotta warriors in Xi’an. His home made costume was so convincing it took a while for the security guards to find him. ">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="The Terra Cotta Army: 1000 Chinese statues + 1 German art student">
   <meta name="twitter:description" content="This story off of the AP wire I found greatly amusing. A 26 year old art student named Pablo Wendel joined the Terra Cotta warriors in Xi’an. His home made costume was so convincing it took a while for the security guards to find him. ">
-  <meta name="twitter:url" content="http://localhost:4000/2006/09/22/terra-cotta-army-1000-chinese-statues/">
+  <meta name="twitter:url" content="/2006/09/22/terra-cotta-army-1000-chinese-statues/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2006/09/22/terra-cotta-army-1000-chinese-statues/">
+<link rel="canonical" href="/2006/09/22/terra-cotta-army-1000-chinese-statues/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -241,25 +241,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 

@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Uninstall IE8 Beta before installing XP SP3">
-<meta property="og:url" content="http://localhost:4000/2008/05/08/uninstall-ie8-beta-before-installing-xp/">
+<meta property="og:url" content="/2008/05/08/uninstall-ie8-beta-before-installing-xp/">
 
 
   <meta property="og:description" content="If you running the beta version of Internet Explorer 8 (IE8) under Windows XP, the word is to uninstall IE8 before installing Windows XP Service Pack 3 (SP3).  Once SP3 has been installed, you will be unable to remove IE8 (and IE7).  The reason for this is documented on the IEBlog with this post.  Basically, when you install IE7 or IE8, the existing IE6 (version of IE that comes with XP) is backed up to an uninstall folder.  SP3 includes an updated set pf IE6 files.  If you were to uninstall IE7 or IE8 after installing SP3, you would have a mixture of IE6 files from pre-SP3 and the bits installed as part of SP3.  That would cause all sorts of problems and Microsoft disables the uninstall option for IE7 and IE8 after SP3 is installed.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Uninstall IE8 Beta before installing XP SP3">
   <meta name="twitter:description" content="If you running the beta version of Internet Explorer 8 (IE8) under Windows XP, the word is to uninstall IE8 before installing Windows XP Service Pack 3 (SP3).  Once SP3 has been installed, you will be unable to remove IE8 (and IE7).  The reason for this is documented on the IEBlog with this post.  Basically, when you install IE7 or IE8, the existing IE6 (version of IE that comes with XP) is backed up to an uninstall folder.  SP3 includes an updated set pf IE6 files.  If you were to uninstall IE7 or IE8 after installing SP3, you would have a mixture of IE6 files from pre-SP3 and the bits installed as part of SP3.  That would cause all sorts of problems and Microsoft disables the uninstall option for IE7 and IE8 after SP3 is installed.">
-  <meta name="twitter:url" content="http://localhost:4000/2008/05/08/uninstall-ie8-beta-before-installing-xp/">
+  <meta name="twitter:url" content="/2008/05/08/uninstall-ie8-beta-before-installing-xp/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2008/05/08/uninstall-ie8-beta-before-installing-xp/">
+<link rel="canonical" href="/2008/05/08/uninstall-ie8-beta-before-installing-xp/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -243,25 +243,27 @@
     <script>
   'use strict';
 
-  (function() {
-    var commentContainer = document.querySelector('#utterances-comments');
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
 
     if (!commentContainer) {
       return;
     }
 
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://utteranc.es/client.js');
-    script.setAttribute('repo', 'anotherlab/anotherlab.github.io');
-    script.setAttribute('issue-term', 'pathname');
-    
-    script.setAttribute('theme', 'github-light');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
     script.setAttribute('crossorigin', 'anonymous');
 
     commentContainer.appendChild(script);
   })();
 </script>
-
   
 
 
