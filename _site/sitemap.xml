@@ -2409,10 +2409,6 @@
 <lastmod>2021-07-28T16:19:08-04:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/</loc>
-<lastmod>2021-09-01T07:56:57-04:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/2021/10/18/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/</loc>
 <lastmod>2021-10-19T00:53:13-04:00</lastmod>
 </url>
@@ -2423,6 +2419,10 @@
 <url>
 <loc>http://localhost:4000/jekyll/update/Migrated-to-jekyll/</loc>
 <lastmod>2021-12-15T10:31:33-05:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2021-09-01-how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/</loc>
+<lastmod>2021-12-23T15:58:54-05:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
