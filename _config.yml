@@ -28,9 +28,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: anotherlab
 #github_username:  anotherlab
-repository: anotherlab/anotherlab.github.io
 search: true
 words_per_minute         : 200
+repository: "anotherlab/anotherlab.github.io"
 comments:
   provider: "giscus"
   giscus:
@@ -89,6 +89,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/anotherlab"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedind"
+      url: "https://www.linkedin.com/in/christophermiller/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/anotherlab"
