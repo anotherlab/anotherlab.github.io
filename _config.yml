@@ -90,7 +90,7 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/anotherlab"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedind"
+      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/christophermiller/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
