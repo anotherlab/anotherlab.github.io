@@ -3611,12 +3611,6 @@ var store = [{
         "url": "/2021/07/28/a-quick-powershell-tip/",
         "teaser": null
       },{
-        "title": "How to access Apple&#8217;s App Connect API from C#, Python, and Go. &#8211; Part 4",
-        "excerpt":"Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C#, Go, and Python. This was code I was actually using myself and after I wrote it, it...","categories": ["Apple"],
-        "tags": ["Apple","C","C#","Python"],
-        "url": "/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/",
-        "teaser": null
-      },{
         "title": "Controlling a WSL installation of redis-server from the Windows command line",
         "excerpt":"If you like using redis for web site caching and you are writing and testing code locally from Windows, you’ll want to figure out how to run a local instance of redis-server. You have a few options. You can run it from another machine that’s running something vaguely Linux-like or...","categories": ["Coding","Linux"],
         "tags": ["linux","Powershell","redis","wsl"],
@@ -3633,5 +3627,11 @@ var store = [{
         "excerpt":"First post under the new regime. Back story For a long time, this blog has been created with WordPress. It’s now a Jekyll site. The blog started as a free blog hosted on Google’s Blogger platform. It’s still there, but hasn’t been touched in 8 years. It was fine, but...","categories": ["jekyll","update"],
         "tags": [],
         "url": "/jekyll/update/Migrated-to-jekyll/",
+        "teaser": null
+      },{
+        "title": null,
+        "excerpt":"Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C#, Go, and Python. This was code I was actually using myself and after I wrote it, it...","categories": [],
+        "tags": null,
+        "url": "/2021-09-01-how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/",
         "teaser": null
       }]
