@@ -32,10 +32,16 @@ repository: anotherlab/anotherlab.github.io
 search: true
 words_per_minute         : 200
 comments:
-  provider: "utterances"
-  utterances:
-    theme                : # "github-light" (default), "github-dark"
-    issue_term           : # "pathname" (default)
+  provider: "giscus"
+  giscus:
+    repo:                "anotherlab/anotherlab.github.io"
+    repo-id:             "R_kgDOGhtM_w"
+    category:            "Comments"
+    category-id:         "DIC_kwDOGhtM_84CAZ93"
+    mapping:             "pathname"
+    reactions-enabled:    "1"
+    theme:               "light"
+    crossorigin:         "anonymous"    
 
 # Build settings
 markdown: kramdown
