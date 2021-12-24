@@ -11,7 +11,7 @@ collect_box_size:
 categories:
   - Uncategorized
 ---
-<img loading="lazy" class="alignnone size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-xCHHc6k/0/7a2f8fc9/M/i-xCHHc6k-M.png?resize=599%2C209&#038;ssl=1" width="599" height="209" data-recalc-dims="1" />
+<img loading="lazy" class="alignnone size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-xCHHc6k/0/7a2f8fc9/M/i-xCHHc6k-M.png?resize=599%2C209&#038;ssl=1" width="599" height="209"  />
 
 Microsoft has revived it&#8217;s indie game dev contest &#8211; Dream.Build.Play and you can [register now](https://developer.microsoft.com/windows/projects/campaigns/dream-build-play-registration).
 

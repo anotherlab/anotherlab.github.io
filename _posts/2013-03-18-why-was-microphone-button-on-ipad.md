@@ -14,7 +14,7 @@ I had a good WiFi connection and I didn’t have a Settings > General > Keyboard
 
 I saw the Bluetooth icon on the status bar.  It was not lit up, so it wasn’t connected to any devices.  So I went into the Bluetooth settings and saw this:
 
-[<img loading="lazy" title="image" border="0" alt="image" src="https://i2.wp.com/lh4.ggpht.com/-wxyK8dxlXl0/UUaEDTQUEpI/AAAAAAAAAEQ/eDu2dv0iCWM/image_thumb%25255B2%25255D.jpg?resize=644%2C484" width="644" height="484"  data-recalc-dims="1" />](https://i2.wp.com/lh6.ggpht.com/-yy35MSx5tVs/UUaEDOf_SoI/AAAAAAAAAEI/va-9jR_BD7w/s1600-h/image%25255B4%25255D.jpg)
+[<img loading="lazy" title="image" border="0" alt="image" src="https://i2.wp.com/lh4.ggpht.com/-wxyK8dxlXl0/UUaEDTQUEpI/AAAAAAAAAEQ/eDu2dv0iCWM/image_thumb%25255B2%25255D.jpg?resize=644%2C484" width="644" height="484"   />](https://i2.wp.com/lh6.ggpht.com/-yy35MSx5tVs/UUaEDOf_SoI/AAAAAAAAAEI/va-9jR_BD7w/s1600-h/image%25255B4%25255D.jpg)
 
 I don’t have ZAGG Keyboard, but someone else must have paired this iPad to one.  In between the demos, I had borrowed another iPad that was in a ZAGG keyboard case.  It must have been in close enough proximity to the one that I was using so that my iPad picked up the other keyboard.  I turned off Bluetooth and the microphone button was back on the iPad keyboard.
 

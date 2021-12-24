@@ -29,7 +29,7 @@ I was looking for a folder on a PC at home (Vista, 32 bit) when I saw a bunch of
         
         
         <p>
-          <a href="https://i1.wp.com/lh3.ggpht.com/_natoSxTaPFU/THHxJ-9OeYI/AAAAAAAAAd8/FSsTkSA1ndg/s1600-h/YouDontHaveAccess%5B2%5D.png"><img loading="lazy" alt="You don't currently have permission to access this folder" border="0" height="118" src="https://i2.wp.com/lh5.ggpht.com/_natoSxTaPFU/THHxKLQvsHI/AAAAAAAAAeA/MzgzYAF9Lho/YouDontHaveAccess_thumb.png?resize=244%2C118" title="You don't currently have permission to access this folder" width="244"  data-recalc-dims="1" /></a> 
+          <a href="https://i1.wp.com/lh3.ggpht.com/_natoSxTaPFU/THHxJ-9OeYI/AAAAAAAAAd8/FSsTkSA1ndg/s1600-h/YouDontHaveAccess%5B2%5D.png"><img loading="lazy" alt="You don't currently have permission to access this folder" border="0" height="118" src="https://i2.wp.com/lh5.ggpht.com/_natoSxTaPFU/THHxKLQvsHI/AAAAAAAAAeA/MzgzYAF9Lho/YouDontHaveAccess_thumb.png?resize=244%2C118" title="You don't currently have permission to access this folder" width="244"   /></a> 
         </p>
         
         
@@ -54,7 +54,7 @@ I was looking for a folder on a PC at home (Vista, 32 bit) when I saw a bunch of
         
         
         <p>
-          <a href="https://i2.wp.com/lh3.ggpht.com/_natoSxTaPFU/THHxKtGXSBI/AAAAAAAAAeE/RAL5Q3HJoBA/s1600-h/mse%5B2%5D.png"><img loading="lazy" alt="mse" border="0" height="172" src="https://i0.wp.com/lh5.ggpht.com/_natoSxTaPFU/THHxK1D8N0I/AAAAAAAAAeI/fAhCB_fEJbc/mse_thumb.png?resize=244%2C172" title="mse" width="244"  data-recalc-dims="1" /></a> 
+          <a href="https://i2.wp.com/lh3.ggpht.com/_natoSxTaPFU/THHxKtGXSBI/AAAAAAAAAeE/RAL5Q3HJoBA/s1600-h/mse%5B2%5D.png"><img loading="lazy" alt="mse" border="0" height="172" src="https://i0.wp.com/lh5.ggpht.com/_natoSxTaPFU/THHxK1D8N0I/AAAAAAAAAeI/fAhCB_fEJbc/mse_thumb.png?resize=244%2C172" title="mse" width="244"   /></a> 
         </p>
         
         

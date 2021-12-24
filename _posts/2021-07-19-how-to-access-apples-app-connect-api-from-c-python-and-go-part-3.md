@@ -16,7 +16,7 @@ tags:
   - Go
   - Python
 ---
-<figure class="wp-block-image size-large"><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MdwkwLM/0/e733f438/L/Apple%20Lock%20Purple-L.jpg?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /></figure> 
+<figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MdwkwLM/0/e733f438/L/Apple%20Lock%20Purple-L.jpg?" alt=""  /></figure> 
 
 In my [first post](https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/), I wrote about a need to query my company&#8217;s membership list from our Apple app store development account. In that post, I used C# to query Apple&#8217;s API. [Part 2](https://rajapet.com/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/) covered the Python version. For our final installment, we&#8217;ll cover how to accomplish the same task with [Go](https://golang.org/).
 

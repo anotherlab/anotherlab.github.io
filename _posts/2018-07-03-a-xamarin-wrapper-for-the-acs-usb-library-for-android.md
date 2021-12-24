@@ -11,7 +11,7 @@ categories:
   - Xamarin
 ---
 <div style="width: 310px" class="wp-caption alignnone">
-  <a href="https://www.acs.com.hk/en/products/3/acr122u-usb-nfc-reader/"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-g4GgjFj/0/fa5e2c6c/S/i-g4GgjFj-S.png?resize=300%2C300&#038;ssl=1" alt="ACS ACR122U USB NFC Reader" width="300" height="300" data-recalc-dims="1" /></a>
+  <a href="https://www.acs.com.hk/en/products/3/acr122u-usb-nfc-reader/"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-g4GgjFj/0/fa5e2c6c/S/i-g4GgjFj-S.png?resize=300%2C300&#038;ssl=1" alt="ACS ACR122U USB NFC Reader" width="300" height="300"  /></a>
   
   <p class="wp-caption-text">
     ACS ACR122U USB NFC Reader

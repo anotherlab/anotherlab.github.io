@@ -6,7 +6,7 @@ layout: post
 guid: http://www.rajapet.com/?p=1337
 permalink: /2015/10/19/on-sharing-media-files-between-windows-phone-and-os-x/
 ---
-<img loading="lazy" class="aligncenter" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-KPZnLnc/0/S/Windows-Phone-File-Transfer-for-Mac-S.png?resize=400%2C158" alt="" width="400" height="158" data-recalc-dims="1" />There used to be a Windows Phone Connector app in the Mac App store.  It was the way to directly copy music and images to and from a Windows Phone and a Mac.  That app apparently stopped working when [Yosemite](https://en.wikipedia.org/wiki/OS_X_Yosemite) was released and some time ago Microsoft pulled the app from the Mac App store.
+<img loading="lazy" class="aligncenter" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-KPZnLnc/0/S/Windows-Phone-File-Transfer-for-Mac-S.png?resize=400%2C158" alt="" width="400" height="158"  />There used to be a Windows Phone Connector app in the Mac App store.  It was the way to directly copy music and images to and from a Windows Phone and a Mac.  That app apparently stopped working when [Yosemite](https://en.wikipedia.org/wiki/OS_X_Yosemite) was released and some time ago Microsoft pulled the app from the Mac App store.
 
 The question of how sync music from a Mac to a Windows Phone comes up in the forums every now and then.  Well, not that often.  The Venn diagram of OS X and Windows Phone users has a very tiny overlap area.  I reached out the Windows Phone account on Twitter and had the following exchange:
 

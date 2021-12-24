@@ -12,7 +12,7 @@ categories:
  After 20 years in our existing home, we are getting ready to move to a new home.  The new house is still being built and I had CAT6 run to the places where I thought it would matter.  Time to plan for Wi-Fi. The new house is a single floor design, with a decent sized basement.  Once again, Fios will be our ISP.  The [ONT](https://www.verizon.com/support/residential/homephone/service-equipment/ont) will be installed in the basement and at some point, I will build (or hire someone to build) an office in the basement.  The plan is to have the Fios router in the basement and run the CAT6 cables to the router. I need the [Fios router](https://www.verizon.com/home/accessories/fios-quantum-gateway/) because cable boxes need it there in order to get their channel guides.  The current plan is use a Mesh router setup on the main floor to provide the Wi-Fi.  As a router, the Fios router is fine, but for Wi-Fi it&#8217;s pretty much &#8220;meh&#8221;. 
 
 <div style="width: 160px" class="wp-caption alignnone">
-  <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-3J83drS/0/38776266/Th/i-3J83drS-Th.jpg?resize=150%2C150&#038;ssl=1" width="150" height="150" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-3J83drS/0/38776266/Th/i-3J83drS-Th.jpg?resize=150%2C150&#038;ssl=1" width="150" height="150"  />
   
   <p class="wp-caption-text">
     Meh
@@ -22,7 +22,7 @@ categories:
 [Eero Pro](https://eero.com/shop/pro-wifi-system) package.  You get three Eero routers that work together to provide a true mesh network.  The user just sees a single SSID and the device connects to the Eero device that has the best signal.  It&#8217;s a tri-band system, using three radios.  You have your standard 2.4 and 5 Ghz radios that handle the typical alphabet of 802.11 Wi-Fi channels.  And one more 5 Ghz radio that works as a back channel for the Eero devices to talk to each other. 
 
 <div style="width: 410px" class="wp-caption alignnone">
-  <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-z6mhmn2/0/a0ebfc49/S/i-z6mhmn2-S.jpg?resize=400%2C229&#038;ssl=1" width="400" height="229" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-z6mhmn2/0/a0ebfc49/S/i-z6mhmn2-S.jpg?resize=400%2C229&#038;ssl=1" width="400" height="229"  />
   
   <p class="wp-caption-text">
     Eero Pro
@@ -30,7 +30,7 @@ categories:
 </div> With the Eero Pro, one of the routers is defined as the master and the other two are the satellites. If you only have the master wired to the modem (or other ISP provided device), the other two units connect to the master over the back channel.  The Pro system can use a wired connection for the back channel.  Wired beats wireless for speed and dealing with pesky things like walls. 
 
 <div style="width: 610px" class="wp-caption alignnone">
-  <img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-rDRtBVW/0/9693233c/M/i-rDRtBVW-M.jpg?resize=600%2C389&#038;ssl=1" width="600" height="389" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-rDRtBVW/0/9693233c/M/i-rDRtBVW-M.jpg?resize=600%2C389&#038;ssl=1" width="600" height="389"  />
   
   <p class="wp-caption-text">
     I like to go fast
@@ -44,7 +44,7 @@ categories:
 [Netgear Orbi](https://www.netgear.com/orbi/) devices tend to be the fastest.  But your mileage may vary.  The Orbi devices tended to be bigger and their support, well, didn&#8217;t get rated as high as the Eero devices. 
 
 <div style="width: 310px" class="wp-caption alignnone">
-  <img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-CfHG6PQ/0/9558db8e/S/i-CfHG6PQ-S.png?resize=300%2C300&#038;ssl=1" width="300" height="300" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-CfHG6PQ/0/9558db8e/S/i-CfHG6PQ-S.png?resize=300%2C300&#038;ssl=1" width="300" height="300"  />
   
   <p class="wp-caption-text">
     The Netgear Orbi
@@ -52,7 +52,7 @@ categories:
 </div> The Orbi was probably my second choice, but I think the Eero will work better for my setup.  The Orbi router and satellite do come with a generous number of Ethernet ports.  That would be the only thing that I would ding the Eero on.  More importantly, frrom what I saw on in the Eero support forum and on Reddit, it looked like people were happy with them. 
 
 <div style="width: 460px" class="wp-caption alignnone">
-  <img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-zD7bnGr/0/2efa301c/M/i-zD7bnGr-M.jpg?resize=450%2C450&#038;ssl=1" width="450" height="450" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-zD7bnGr/0/2efa301c/M/i-zD7bnGr-M.jpg?resize=450%2C450&#038;ssl=1" width="450" height="450"  />
   
   <p class="wp-caption-text">
     It&#8217;s the Borg, with rabbit ears
@@ -60,7 +60,7 @@ categories:
 </div> Some of my more technically bent friends suggested that I look at the Ubiquiti product line.  There are two separate and very different consumer product lines.  The Amplifi system is a router in the shape of small cube and two satellites.  The satellites are ugly little things with antennas that need to oriented for best reception.  The performance didn&#8217;t come anywhere near the Netgear or Eero offerings. 
 
 <div style="width: 381px" class="wp-caption alignnone">
-  <img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-mVznhQn/0/43a443dd/S/i-mVznhQn-S.png?resize=371%2C300&#038;ssl=1" width="371" height="300" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-mVznhQn/0/43a443dd/S/i-mVznhQn-S.png?resize=371%2C300&#038;ssl=1" width="371" height="300"  />
   
   <p class="wp-caption-text">
     Glowing Frisbee mounted to ceiling

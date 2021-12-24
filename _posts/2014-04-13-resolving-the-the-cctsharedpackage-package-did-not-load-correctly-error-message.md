@@ -6,11 +6,11 @@ layout: post
 guid: http://www.rajapet.com/?p=801
 permalink: /2014/04/13/resolving-the-the-cctsharedpackage-package-did-not-load-correctly-error-message/
 ---
-<img loading="lazy" alt="&quot;'a' stands for headache&quot; by Eduardo Ortiz" src="https://i0.wp.com/anotherlab.smugmug.com/photos/i-F8z5MhD/0/L/i-F8z5MhD-L.jpg?resize=400%2C266" width="400" height="266" data-recalc-dims="1" />
+<img loading="lazy" alt="&quot;'a' stands for headache&quot; by Eduardo Ortiz" src="https://i0.wp.com/anotherlab.smugmug.com/photos/i-F8z5MhD/0/L/i-F8z5MhD-L.jpg?resize=400%2C266" width="400" height="266"  />
 
 After launching an Azure project in Visual Studio 2013, I was handed a &#8220;The &#8216;CctSharedPackage&#8217; package did not load correctly.&#8221; error message.
 
-<img loading="lazy" title="The &quot;The 'CctSharedPackage' package did not load correctly.&quot; error" alt="The 'CctSharedPackage' package did not load correctly." src="https://i2.wp.com/anotherlab.smugmug.com/photos/i-PSdHf9H/0/L/i-PSdHf9H-L.png?resize=400%2C221" width="400" height="221" data-recalc-dims="1" /> 
+<img loading="lazy" title="The &quot;The 'CctSharedPackage' package did not load correctly.&quot; error" alt="The 'CctSharedPackage' package did not load correctly." src="https://i2.wp.com/anotherlab.smugmug.com/photos/i-PSdHf9H/0/L/i-PSdHf9H-L.png?resize=400%2C221" width="400" height="221"  /> 
 
 I was unfamiliar with that one, and a quick check of the forums showed that a few people had reported this happening after installing the latest Windows 8.1 update. An update that I had installed two nights ago.
 
@@ -39,7 +39,7 @@ Something in the Windows 8.1 April Update blew out at least one assembly that Vi
 
 Double-click that item to bring up the modify setup dialog. On that dialog select &#8220;Repair&#8221;.
 
-<img loading="lazy" alt="Azure Tools Modify Setup dialog" src="https://i2.wp.com/anotherlab.smugmug.com/photos/i-jSgBGL4/0/L/i-jSgBGL4-L.png?resize=400%2C230" width="400" height="230" data-recalc-dims="1" /> 
+<img loading="lazy" alt="Azure Tools Modify Setup dialog" src="https://i2.wp.com/anotherlab.smugmug.com/photos/i-jSgBGL4/0/L/i-jSgBGL4-L.png?resize=400%2C230" width="400" height="230"  /> 
 
 That will churn for a minute or two. After that completes, you should be back in business. If you are using the Azure Tools with other versions of Visual Studio, you may may to repair them as well.
 

@@ -6,7 +6,7 @@ layout: post
 guid: http://www.rajapet.com/?p=378
 permalink: /2005/11/09/bender-smender-i-want-robbie_09/
 ---
-[<img src="https://i1.wp.com/photos1.blogger.com/blogger/7711/622/400/RobbieSmall.1.jpeg?w=680" border="0" alt="" data-recalc-dims="1" />](https://i1.wp.com/photos1.blogger.com/blogger/7711/622/1600/RobbieSmall.1.jpeg)  
+[<img src="https://i1.wp.com/photos1.blogger.com/blogger/7711/622/400/RobbieSmall.1.jpeg?w=680" border="0" alt=""  />](https://i1.wp.com/photos1.blogger.com/blogger/7711/622/1600/RobbieSmall.1.jpeg)  
 [Forbidden Planet](http://www.imdb.com/title/tt0049223/ "A starship crew goes to investigate the silence of a planet's colony only to find two survivors and a deadly secret that one of them has.") has always been one of my favorite movies. As a kid, I always wanted my very own [&#8220;Robbie the Robot&#8221;](http://www.the-robotman.com/nv_fs.html "Welcome to Altair 4..."). If I start playing the lottery, I can now [order one](http://www.hammacher.com/publish/10921.asp "Please allow 4 to 6 weeks for delivery") from the [Hammacher Schlemmer catalo](http://www.hammacher.com/ "As seen on airline flights")g for the mere sum of $49,999.95. 
 
 Robbie was a cool robot. None of this [wimpy C-3PO](http://en.wikipedia.org/wiki/C-3PO "Wimpy robot") nonsense. Robbie embodied the cutting edge of 1950&#8217;s computer technology. Vacuum tubes glowing, relays clacking, and don&#8217;t forget little metal spinning things on the side of his head. That&#8217;s a man&#8217;s robot.

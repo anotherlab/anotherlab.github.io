@@ -14,7 +14,7 @@ I finally got around to ordering our Christmas cards.  We&#8217;ve been using [
   
   <div class="sflyProductPreviewWidgetCenter" style="height: 482px; padding: 0 6px 0 6px; background-image: url('http://cdn.staticsfly.com/img_/share/preview/msc/widget/bg.gif'); background-repeat: repeat-y;">
     <div class="sflyProductPreviewLogo" style="width: 105px; height: 34px; padding: 14px 0 0 14px;">
-      <img style="padding: 0; background: #ffffff; border: none; box-shadow: none;" alt="" src="https://i0.wp.com/cdn.staticsfly.com/img_/share/preview/msc/widget/logo.gif?w=680" data-recalc-dims="1" />
+      <img style="padding: 0; background: #ffffff; border: none; box-shadow: none;" alt="" src="https://i0.wp.com/cdn.staticsfly.com/img_/share/preview/msc/widget/logo.gif?w=680"  />
     </div>
     
     <div class="sflyProductPreviewContainer" style="height: 350px; text-align: center; padding: 0;">

@@ -25,7 +25,7 @@ For what I needed to try, Sketches would work just fine.  I created a new Sketc
 I created a string variable with some text and included the unicode escape sequence &#8220;\u25BE&#8221;.  That is code for something called [&#8220;BLACK DOWN-POINTING TRIANGLE&#8221;](http://www.fileformat.info/info/unicode/char/25bc/index.htm).  I then created a UILabel and set the text to my string variable.  That was enough to generate the proof of concept that I needed:
 
 <div style="width: 410px" class="wp-caption alignnone">
-  <a href="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-86f6jG4/0/XL/Sketches-XL.png"><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-86f6jG4/0/S/Sketches-S.png?resize=400%2C202" alt="" width="400" height="202" data-recalc-dims="1" /></a>
+  <a href="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-86f6jG4/0/XL/Sketches-XL.png"><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-86f6jG4/0/S/Sketches-S.png?resize=400%2C202" alt="" width="400" height="202"  /></a>
   
   <p class="wp-caption-text">
     Xamarin Sketches (click the picture to embiggen it)

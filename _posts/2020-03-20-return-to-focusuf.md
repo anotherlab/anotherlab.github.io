@@ -100,9 +100,9 @@ With the repo updated, it&#8217;s time to see what is our little null friend. If
 
 Going with the path of least resistance, I fired up Device Manager to see if something looked unfamilair or out of place. Sure enough, under &#8220;Cameras&#8221;, there was a new item named &#8220;Personify Virtual Camera Universal&#8221;. The Personify name was vaguely familiar [SPOILER ALERT] and I had a pretty good idea of what was going on, but I decided to double click on it and drill into the details.
 
-[Literally](https://tenor.com/uMmi.gif) into the details. I selected the Details tab and select Device Instance Path from the drop-down list. That gave us this:<figure class="wp-block-image size-large">
+[Literally](https://tenor.com/uMmi.gif) into the details. I selected the Details tab and select Device Instance Path from the drop-down list. That gave us this:<figure>
 
-<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-pF6Z8M7/0/53d4ae95/L/psycamera-L.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> </figure> 
+<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-pF6Z8M7/0/53d4ae95/L/psycamera-L.png" alt=""  /> </figure> 
 
 And there is the mystery psycamera. Going back to the LINQPad dump, the third item that the list returned by GetDevicesOfCat was named ChromaCam. [ChromaCam](https://www.chromacam.me/) is a virtual webcam. It lets you replace your background with an image. And ChromaCam is made by a company named Personify. I&#8217;m not sure exactly what they are doing with the psycamera device, but it&#8217;s fairly innocuous. When I wrote the code two years ago, I did not have ChromaCam, so my code back then only had to deal with a single item in the devs list.
 

@@ -6,7 +6,7 @@ layout: post
 guid: http://www.rajapet.com/?p=1360
 permalink: /2015/12/09/live-writer-is-dead-long-live-open-live-writer/
 ---
-<img src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-QnXkb6F/0/O/openlivewriter-purpleheader.png?w=680" data-recalc-dims="1" />
+<img src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-QnXkb6F/0/O/openlivewriter-purpleheader.png?w=680"  />
 
 In case you missed it, Microsoft has allowed Windows Live Writer (WLW) to go open source.&nbsp; The new project is called <a href="http://www.openlivewriter.org/" target="_blank">Open Live Writer</a> (OLW) and it’s taking the current version and breathing new life into it.&nbsp; WLW has been basically in a coma since 2012
 

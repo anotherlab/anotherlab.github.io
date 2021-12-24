@@ -7,7 +7,7 @@ guid: http://www.rajapet.com/?p=1288
 permalink: /2015/06/06/exporting-smsmms-messages-from-windows-phone-8/
 ---
 <div style="width: 810px" class="wp-caption alignnone">
-  <img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-9Sk9kxF/0/L/Windows%20Phone%20Message%20Backup-L.png?resize=680%2C383" alt="" width="680" height="383" data-recalc-dims="1" />
+  <img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-9Sk9kxF/0/L/Windows%20Phone%20Message%20Backup-L.png?resize=680%2C383" alt="" width="680" height="383"  />
   
   <p class="wp-caption-text">
     Windows Phone Message Backup as displayed in the Windows Store

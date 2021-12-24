@@ -14,7 +14,7 @@ When it&#8217;s running, you&#8217;ll see a window that looks like this:
   <area href="http://www.photrade.com/forwardAd.php?photo_id=30016" />
 </map>
 
-[<img src="https://i1.wp.com/www.photrade.com/photos/personal_30016_430x350_0_0_1_0.jpg?w=680" usemap="#phoMap_30016" data-recalc-dims="1" />](http://www.photrade.com/ChrisMiller?photo_id=30016)  
+[<img src="https://i1.wp.com/www.photrade.com/photos/personal_30016_430x350_0_0_1_0.jpg?w=680" usemap="#phoMap_30016"  />](http://www.photrade.com/ChrisMiller?photo_id=30016)  
 _[Sell photos on photrade](http://www.photrade.com/) | [By Chris Miller](http://www.photrade.com/ChrisMiller)_ 
 
 You save each post as it&#8217;s own file, or put them all inside one big, honkin&#8217; file.  The posts are saved as XML to make it easier to process.  You can use Blogger Backup to restore the posts back to your blog.  That would be handy if you accidentally delete a blog post.  You could also use the saved XML files to port your blog to another platform.  While I have no intention of moving this blog off of Blogger, it&#8217;s good to know that I would have a way of migrating all of my posts to a new platform.

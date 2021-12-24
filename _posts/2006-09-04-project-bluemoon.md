@@ -6,7 +6,7 @@ layout: post
 guid: http://www.rajapet.com/?p=285
 permalink: /2006/09/04/project-bluemoon/
 ---
-[<img alt="" src="https://i0.wp.com/photos1.blogger.com/blogger/7711/622/400/TiVoBluemoon.jpg?w=680" border="0" data-recalc-dims="1" />](http://www.youtube.com/watch?v=gsXUPmWAfhY)[Dave Zatz](http://www.zatznotfunny.com/) uploaded to YouTube a file that&#8217;s relatively hidden on TiVo&#8217;s web site which details the mysterious orgins of the TiVo device.  Tune and watch [&#8220;Project Bluemoon&#8221;](http://www.youtube.com/watch?v=gsXUPmWAfhY).
+[<img alt="" src="https://i0.wp.com/photos1.blogger.com/blogger/7711/622/400/TiVoBluemoon.jpg?w=680" border="0"  />](http://www.youtube.com/watch?v=gsXUPmWAfhY)[Dave Zatz](http://www.zatznotfunny.com/) uploaded to YouTube a file that&#8217;s relatively hidden on TiVo&#8217;s web site which details the mysterious orgins of the TiVo device.  Tune and watch [&#8220;Project Bluemoon&#8221;](http://www.youtube.com/watch?v=gsXUPmWAfhY).
 
 You can also download the file as an .mp4 video directly from TiVo&#8217;s web site (50 mb) from [www.tivo.com/bluemoon](http://www.tivo.com/bluemoon).  
 

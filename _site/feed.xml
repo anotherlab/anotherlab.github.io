@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-23T16:05:39-05:00</updated><id>/feed.xml</id><title type="html">Chris Miller’s 4th Blog</title><subtitle>My personal blog, 4th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">Moved the blog from WordPress to Jekyll</title><link href="/jekyll/update/Migrated-to-jekyll/" rel="alternate" type="text/html" title="Moved the blog from WordPress to Jekyll" /><published>2021-12-15T10:31:33-05:00</published><updated>2021-12-15T10:31:33-05:00</updated><id>/jekyll/update/Migrated-to-jekyll</id><content type="html" xml:base="/jekyll/update/Migrated-to-jekyll/">&lt;p&gt;First post under the new regime.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-24T00:17:06-05:00</updated><id>/feed.xml</id><title type="html">Chris Miller’s 4th Blog</title><subtitle>My personal blog, 4th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">Moved the blog from WordPress to Jekyll</title><link href="/jekyll/update/Migrated-to-jekyll/" rel="alternate" type="text/html" title="Moved the blog from WordPress to Jekyll" /><published>2021-12-15T10:31:33-05:00</published><updated>2021-12-15T10:31:33-05:00</updated><id>/jekyll/update/Migrated-to-jekyll</id><content type="html" xml:base="/jekyll/update/Migrated-to-jekyll/">&lt;p&gt;First post under the new regime.&lt;/p&gt;
 
 &lt;h1 id=&quot;back-story&quot;&gt;Back story&lt;/h1&gt;
 
@@ -8,7 +8,7 @@
 
 &lt;p&gt;The second incarnation was on WordPress. I did it the hard way.  I created a Linux VM on Azure and manually wired up the &lt;a href=&quot;https://en.wikipedia.org/wiki/LAMP_(software_bundle)&quot; target=&quot;_blank&quot;&gt;LAMP stack&lt;/a&gt;.  It was a good learning experience with Linux and WordPress.&lt;/p&gt;
 
-&lt;p&gt;It was fine until a few years ago when there was a serious attack on WordPress sites.  It was a vulnerability with man of the plugins used on WordPress sites.  My site was one the ones that was taken down.&lt;/p&gt;
+&lt;p&gt;It was fine until a few years ago when there was a serious attack on WordPress sites.  It was a vulnerability with many of the plugins used on WordPress sites.  My site was one the ones that was taken down.&lt;/p&gt;
 
 &lt;p&gt;With a bit of amount of work, I was able to restore the site. I viewed the entire VM as compromised and generated a new VM in Azure. This time I used a &lt;a href=&quot;https://bitnami.com/stack/wordpress&quot; target=&quot;_blank&quot;&gt;Bitnami WordPress&lt;/a&gt; image so there was a lot less work to get it up and running. I still had to add my own SSL certificate through &lt;a href=&quot;https://letsencrypt.org/&quot; target=&quot;_blank&quot;&gt;Let’s Encryt&lt;/a&gt;.  I also signed up for a &lt;a href=&quot;jetpack.com/upgrade/backup/&quot; target=&quot;_blank&quot;&gt;Jetpack&lt;/a&gt; subscription to let them manage the backups of the site.&lt;/p&gt;
 
@@ -51,9 +51,9 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 
 &lt;p&gt;As a test, I created a new .NET MAUI app from Preview 6. It compiled and ran just fine.&lt;/p&gt;
 
-&lt;p&gt;So who now, what now? When I first saw the error, I didn’t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;So who now, what now? When I first saw the error, I didn’t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png&quot; alt=&quot;&quot; /&gt; &amp;lt;/figure&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;And we take a look at the file, it’s pretty standard, pretty boring AndroidManifest.xml&lt;/p&gt;
 
@@ -145,7 +145,7 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
     &lt;span class=&quot;na&quot;&gt;android:versionName=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div class=&quot;wp-block-image&quot;&gt;
-  &lt;figure class=&quot;aligncenter size-large&quot;&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-mF3bHJm/0/4ebec4dc/O/badgood.jpg?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;aligncenter size-large&quot;&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-mF3bHJm/0/4ebec4dc/O/badgood.jpg?&quot; alt=&quot;&quot; /&gt;&lt;/figure&gt;
 &lt;/div&gt;
 
 &lt;p&gt;So why is the first one bad and the second one good? In the wacky world of Android, android:versionCode has to have an integer value. This is documented &lt;a href=&quot;https://developer.android.com/guide/topics/manifest/manifest-element&quot;&gt;here&lt;/a&gt;. So now we know what is the actual error, the next question is why that error occurred.&lt;/p&gt;
@@ -167,104 +167,78 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 
 &lt;p&gt;For the last few years, Windows (10, 11, Server 2019) comes with a compatibility layer that lets you run Linux binary executables. The current version is WSL 2, but I’m just going to refer to it as WSL.  If you don’t have installed already, just run the following command from an elevated shell (run as administrator)&lt;/p&gt;
 
-&lt;div class=&quot;wp-block-syntaxhighlighter-code &quot;&gt;
-  &lt;pre class=&quot;brush: powershell; gutter: false; title: ; notranslate&quot; title=&quot;&quot;&gt;
-wsl --install
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;figure class=&quot;wp-block-image size-large&quot;&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;wsl --install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-pTtQzxz/0/0a5988c8/L/02%20-%20wsl-install-L.png?w=680&amp;#038;ssl=1&quot; alt=&quot;Installing WSl via command line&quot; data-recalc-dims=&quot;1&quot; /&gt; &lt;figcaption&gt;Installing WSl via command line&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt; 
+&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-pTtQzxz/0/0a5988c8/L/02%20-%20wsl-install-L.png&quot; alt=&quot;Installing WSl via command line&quot; /&gt; &lt;figcaption&gt;Installing WSl via command line&lt;/figcaption&gt;&lt;/figure&gt;
 
 &lt;p&gt;It will install the bits that you need and then ask you to reboot your machine. For more information about installing and configuring WSL, Microsoft has some really good documentation at &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/wsl/install&quot;&gt;Install WSL&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The default Linux distribution for WSL is Ubuntu. After you reboot, you may see a Ubuntu shell for a while as Windows installs the bits that you need. It will churn for a bit and then ask you for a username and password. That password will be your sudo (user root) password. One that is done, you should see something like this.&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The default Linux distribution for WSL is Ubuntu. After you reboot, you may see a Ubuntu shell for a while as Windows installs the bits that you need. It will churn for a bit and then ask you for a username and password. That password will be your sudo (user root) password. One that is done, you should see something like this.&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-43gLWHP/0/54984ae6/L/02%20-%20ubuntu-install-L.png?w=680&amp;#038;ssl=1&quot; alt=&quot;Final step of installing WSL is configuring the default Linux distribution&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;Final step of installing WSL is configuring the default Linux distribution&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-43gLWHP/0/54984ae6/L/02%20-%20ubuntu-install-L.png&quot; alt=&quot;Final step of installing WSL is configuring the default Linux distribution&quot; /&gt; &lt;figcaption&gt;Final step of installing WSL is configuring the default Linux distribution&lt;/figcaption&gt;&lt;/figure&gt;
 
 &lt;p&gt;The next thing to do is to install redis-server. We can install redis vis &lt;a href=&quot;https://en.wikipedia.org/wiki/APT_(software)&quot;&gt;apt-get&lt;/a&gt;, but before we do that, we need to update apt-get and remove some of the new install shininess off.&lt;/p&gt;
 
-&lt;div class=&quot;wp-block-syntaxhighlighter-code &quot;&gt;
-  &lt;pre class=&quot;brush: bash; gutter: false; title: ; notranslate&quot; title=&quot;&quot;&gt;
-sudo apt-get update
-sudo apt-get upgrade
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get update
+sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;After updating apt-get, you’ll want to upgrade it. Confusing? Sort of. Update is updating the instance of apt-get, upgrade is updating all of the packages that were installed via apt-get. After that has finished, you can install redis-server&lt;/p&gt;
 
-&lt;div class=&quot;wp-block-syntaxhighlighter-code &quot;&gt;
-  &lt;pre class=&quot;brush: bash; gutter: false; title: ; notranslate&quot; title=&quot;&quot;&gt;
-sudo apt-get install redis-server
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get install redis-server&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;There will be some churn and finally, it be installed. Out of the box, redis will not be running. My personal preference is to only run redis when I’m actually using it for development. So I Iike to start and stop it from the command line. Here are commands that you need to know:&lt;/p&gt;
 
-&lt;div class=&quot;wp-block-syntaxhighlighter-code &quot;&gt;
-  &lt;pre class=&quot;brush: bash; gutter: false; title: ; notranslate&quot; title=&quot;&quot;&gt;
-sudo service redis-server status
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo service redis-server status
 sudo service redis-server start
-sudo service redis-server stop
-&lt;/pre&gt;
-&lt;/div&gt;
+sudo service redis-server stop&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;I’ll start up redis with the service start command, and it will come back with a message that redis is starting. And you can use the service status command to verify that it’s running. The acid test is to connect to redis and see if it’s working. You can use the redis-cli tool to set and get a cache value. You should see something like this.&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;I’ll start up redis with the service start command, and it will come back with a message that redis is starting. And you can use the service status command to verify that it’s running. The acid test is to connect to redis and see if it’s working. You can use the redis-cli tool to set and get a cache value. You should see something like this.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-vLhVGKK/0/6aaf4c9d/O/04%20-%20redis-cli.png?w=680&amp;#038;ssl=1&quot; alt=&quot;Running redis-cli from the Ubuntu shell&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;Running redis-cli from the Ubuntu shell&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-vLhVGKK/0/6aaf4c9d/O/04%20-%20redis-cli.png&quot; alt=&quot;Running redis-cli from the Ubuntu shell&quot; /&gt; &lt;figcaption&gt;Running redis-cli from the Ubuntu shell&lt;/figcaption&gt;&lt;/figure&gt;
 
 &lt;p&gt;So now redis-server is running. If you close the shell and open up a new one, it will still be running. If you restart WSL or Windows, then it wont be running. Now you can always pop open an Ubuntu shell and start redis-server, but you can do it from a Windows command line&lt;/p&gt;
 
-&lt;div class=&quot;wp-block-syntaxhighlighter-code &quot;&gt;
-  &lt;pre class=&quot;brush: powershell; gutter: false; title: ; notranslate&quot; title=&quot;&quot;&gt;
-wsl sudo service redis-server status
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;figure class=&quot;wp-block-image size-large&quot;&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;wsl sudo service redis-server status&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-ffr3dZN/0/71f62819/O/05%20-%20redis-pwsh.png?w=680&amp;#038;ssl=1&quot; alt=&quot;Running redis commands from PowerShell&quot; data-recalc-dims=&quot;1&quot; /&gt; &lt;figcaption&gt;Running redis commands from PowerShell&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-ffr3dZN/0/71f62819/O/05%20-%20redis-pwsh.png&quot; alt=&quot;Running redis commands from PowerShell&quot; /&gt;&lt;figcaption&gt;Running redis commands from PowerShell&lt;/figcaption&gt;&lt;/figure&gt;
 
 &lt;p&gt;From the screenshot, you can see that WSL passed along the sudo service command to Ubunto. And because I used sudo, I was prompted for the root password. And it returned the same message that I would see from the Ubuntu shell. Since I only have Ubunto installed, that was the default Linux that received the command. If you have multiple distributions installed, you would use “wsl -d DistributionName”. You can get the names of the installed distributions with the “wsl -l” command. Unlike from the Linux shell, each time I invoke “sudo”, I’m prompted for the password. In the Linux shell, you are prompted just the first time you call sudo in a terminal session.&lt;/p&gt;
 
 &lt;p&gt;Having to use the root password over and over again can be tedious on a development box. There is a way around that. You can add a file to the /etc/sudoers.d folder in the Linux distribution and remove the root password requirement for the redis-server service. From the Linux shell do the following&lt;/p&gt;
 
-&lt;div class=&quot;wp-block-syntaxhighlighter-code &quot;&gt;
-  &lt;pre class=&quot;brush: bash; gutter: false; title: ; notranslate&quot; title=&quot;&quot;&gt;
-cd /etc/sudoers.d
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /etc/sudoers.d
 sudo sh
-echo &quot;%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service redis-server *&quot; &amp;gt;&amp;gt; allowed-services
+echo &quot;%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service redis-server *&quot; &amp;amp;gt;&amp;amp;gt; allowed-services
 sudo chmod 0440 allowed-services
-exit
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;figure class=&quot;wp-block-image size-large&quot;&gt;
+exit&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;img src=&quot;https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-bdhLSQW/0/003b70be/O/06%20-%20sudoers.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &lt;/figure&gt;
+&lt;figure&gt;&lt;img src=&quot;https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-bdhLSQW/0/003b70be/O/06%20-%20sudoers.png&quot; alt=&quot;&quot; /&gt; &lt;/figure&gt;
 
 &lt;p&gt;The first thing we do is make /etc/sudoers.d the current folder. Then we use “sudo sh” to gain root access. You need root access to work with this folder. The echo line basically says that you can invoke sudo with no password for redis-server and writes that setting to a file named allowed-services. The file name allowed-services is arbitrary, I picked it because it made sense to me. There is a file in the sudoers.d folder named README, it will explain what the file name restrictions are.&lt;/p&gt;
 
 &lt;p&gt;The chmod 0440 command sets the permissions to read-only for the root account and is required for sudoers.d. This allows us to remove the sudo password requirement for redis-server and only for redis-server. Now we can go back to the Windows shell and run the wsl commands without being prompted.&lt;/p&gt;
 
-&lt;p&gt;You can even run the redis-cli tool from powershell…&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;You can even run the redis-cli tool from powershell…&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-5jWGFRF/0/c4e9ba5e/O/07%20-%20redis-pwsh.png?w=680&amp;#038;ssl=1&quot; alt=&quot;Redis from PowerShell, no password&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;Redis from PowerShell, no password&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-5jWGFRF/0/c4e9ba5e/O/07%20-%20redis-pwsh.png&quot; alt=&quot;Redis from PowerShell, no password&quot; /&gt;
+&lt;figcaption&gt;Redis from PowerShell, no password&lt;/figcaption&gt;
+&lt;/figure&gt;
 
-&lt;p&gt;The WIndows Subsystem for Linux is one of the hidden gems for developers. And this gem sparkles…&lt;/p&gt;
+&lt;p&gt;The Windows Subsystem for Linux is one of the hidden gems for developers. And this gem sparkles…&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Bonus Round!&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Because I’m lazy, I created shortcuts in my PowerShell profile. I added the following functions:&lt;/p&gt;
 
-&lt;div class=&quot;wp-block-syntaxhighlighter-code &quot;&gt;
-  &lt;pre class=&quot;brush: powershell; gutter: false; title: ; notranslate&quot; title=&quot;&quot;&gt;
-function redstat {wsl sudo service redis-server status}
-function redstart {wsl sudo service redis-server start}
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function redstat {wsl sudo service redis-server status}
+function redstart {wsl sudo service redis-server start}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;And now I can just check the redis-server status via “redstat”&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MBk5v8J/0/afa5b1b0/O/08-redstat.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;/figure&amp;gt;&lt;/p&gt;</content><author><name>Chris Miller</name></author><category term="Coding" /><category term="Linux" /><category term="linux" /><category term="Powershell" /><category term="redis" /><category term="wsl" /><summary type="html">Some shortcuts accessing redis-server running under WSL via PowerShell</summary></entry><entry><title type="html">How to access Apple’s App Connect API from C#, Python, and Go. - Part 4</title><link href="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/" rel="alternate" type="text/html" title="How to access Apple’s App Connect API from C#, Python, and Go. - Part 4" /><published>2021-09-01T07:56:57-04:00</published><updated>2021-09-01T07:56:57-04:00</updated><id>/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4</id><content type="html" xml:base="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/">&lt;p&gt;Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using &lt;a href=&quot;https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/&quot;&gt;C#&lt;/a&gt;, &lt;a href=&quot;https://rajapet.com/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/&quot;&gt;Go&lt;/a&gt;, and &lt;a href=&quot;https://rajapet.com/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/&quot;&gt;Python&lt;/a&gt;. This was code I was actually using myself and after I wrote it, it stopped working. The API calls were returning an HTTP 401 error. But only on Windows, on the Mac the code worked.&lt;/p&gt;
+&lt;p&gt;And now I can just check the redis-server status via “redstat”&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MBk5v8J/0/afa5b1b0/O/08-redstat.png&quot; alt=&quot;&quot; /&gt; 
+&lt;/figure&gt;</content><author><name>Chris Miller</name></author><category term="Coding" /><category term="Linux" /><category term="linux" /><category term="Powershell" /><category term="redis" /><category term="wsl" /><summary type="html">Some shortcuts accessing redis-server running under WSL via PowerShell</summary></entry><entry><title type="html">How to access Apple’s App Connect API from C#, Python, and Go. - Part 4</title><link href="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/" rel="alternate" type="text/html" title="How to access Apple’s App Connect API from C#, Python, and Go. - Part 4" /><published>2021-09-01T07:56:57-04:00</published><updated>2021-09-01T07:56:57-04:00</updated><id>/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4</id><content type="html" xml:base="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/">&lt;p&gt;Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using &lt;a href=&quot;https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/&quot;&gt;C#&lt;/a&gt;, &lt;a href=&quot;https://rajapet.com/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/&quot;&gt;Go&lt;/a&gt;, and &lt;a href=&quot;https://rajapet.com/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/&quot;&gt;Python&lt;/a&gt;. This was code I was actually using myself and after I wrote it, it stopped working. The API calls were returning an HTTP 401 error. But only on Windows, on the Mac the code worked.&lt;/p&gt;
 
 &lt;p&gt;That was an odd one to track down. It turned out to be a bug with how I was generating the expiration timestamp for the JWT payload.  Apple documents that you can specify up to 20 minutes into the future for the exp value. Don’t do the full 20 minutes. That works most of time. Until it doesn’t. Just set the timeout to 10 minutes into the future and Bob’s your uncle. &lt;/p&gt;
 
@@ -276,120 +250,108 @@ function redstart {wsl sudo service redis-server start}
 
 &lt;p&gt;I’m not sure why the code worked when I originally wrote the posts a couple of months ago. My guess is that Apple used to allow timestamps longer than 20 minutes but made a change that now enforces the expiration to their published specification. Test for edge conditions, but avoid using them.&lt;/p&gt;</content><author><name>Chris Miller</name></author><category term="Apple" /><category term="Apple" /><category term="C" /><category term="C#" /><category term="Python" /><summary type="html">Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C#, Go, and Python. This was code I was actually using myself and after I wrote it, it stopped working. The API calls were returning an HTTP 401 error. But only on Windows, on the Mac the code worked.</summary></entry><entry><title type="html">A quick PowerShell tip</title><link href="/2021/07/28/a-quick-powershell-tip/" rel="alternate" type="text/html" title="A quick PowerShell tip" /><published>2021-07-28T16:19:08-04:00</published><updated>2021-07-28T16:19:08-04:00</updated><id>/2021/07/28/a-quick-powershell-tip</id><content type="html" xml:base="/2021/07/28/a-quick-powershell-tip/">&lt;p&gt;I have a bunch of PowerShell functions that I stick in my $profile file. Simple stuff, things to make my day to day development work easier. With my sieve-like memory, I need a quick way to see the functions. So I wrote a script named “mine.ps1” and it’s basically a tiny help file.  It has stuff like this&lt;/p&gt;
 
-&lt;div class=&quot;wp-block-syntaxhighlighter-code &quot;&gt;
-  &lt;pre class=&quot;brush: powershell; title: ; notranslate&quot; title=&quot;&quot;&gt;
-write-host Commands -ForegroundColor White
-write-host &quot;get-guid-clipboard&quot; -ForegroundColor Yellow
-write-host &quot;set-alias lsd get-by-date&quot; -ForegroundColor Yellow
-write-host &quot;Set-Alias touch Set-FileTime&quot; -ForegroundColor Yellow
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;n&quot;&gt;write-host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Commands&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-ForegroundColor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;White&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write-host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;get-guid-clipboard&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-ForegroundColor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Yellow&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write-host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;set-alias lsd get-by-date&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-ForegroundColor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Yellow&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write-host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Set-Alias touch Set-FileTime&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-ForegroundColor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Yellow&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;In my $profile, I define those functions. They could (and should) be in a separate file, but I’m lazy. This is part of my PowerShell profile:&lt;/p&gt;
 
-&lt;div class=&quot;wp-block-syntaxhighlighter-code &quot;&gt;
-  &lt;pre class=&quot;brush: powershell; title: ; notranslate&quot; title=&quot;&quot;&gt;
-function Set-FileTime{
-    param(
-      &amp;#91;string&amp;#91;]]$paths,
-      &amp;#91;bool]$only_modification = $false,
-      &amp;#91;bool]$only_access = $false
-    )
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Set-FileTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$paths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$only_modification&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;$false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$only_access&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;$false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
   
-    begin {
-      function updateFileSystemInfo(&amp;#91;System.IO.FileSystemInfo]$fsInfo) {
-        $datetime = get-date
-        if ( $only_access )
-        {
-           $fsInfo.LastAccessTime = $datetime
-        }
-        elseif ( $only_modification )
-        {
-           $fsInfo.LastWriteTime = $datetime
-        }
-        else
-        {
-           $fsInfo.CreationTime = $datetime
-           $fsInfo.LastWriteTime = $datetime
-           $fsInfo.LastAccessTime = $datetime
-         }
-      }
+    &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;updateFileSystemInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System.IO.FileSystemInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fsInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$datetime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get-date&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$only_access&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+           &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fsInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;LastAccessTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$datetime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;elseif&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$only_modification&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+           &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fsInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;LastWriteTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$datetime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+           &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fsInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;CreationTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$datetime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+           &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fsInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;LastWriteTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$datetime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+           &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fsInfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;LastAccessTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$datetime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+         &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
      
-      function touchExistingFile($arg) {
-        if ($arg -is &amp;#91;System.IO.FileSystemInfo]) {
-          updateFileSystemInfo($arg)
-        }
-        else {
-          $resolvedPaths = resolve-path $arg
-          foreach ($rpath in $resolvedPaths) {
-            if (test-path -type Container $rpath) {
-              $fsInfo = new-object System.IO.DirectoryInfo($rpath)
-            }
-            else {
-              $fsInfo = new-object System.IO.FileInfo($rpath)
-            }
-            updateFileSystemInfo($fsInfo)
-          }
-        }
-      }
+      &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;touchExistingFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$arg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$arg&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-is&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System.IO.FileSystemInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;updateFileSystemInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$arg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$resolvedPaths&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resolve-path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$arg&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;foreach&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$rpath&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$resolvedPaths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test-path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-type&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Container&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$rpath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fsInfo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new-object&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;System.IO.DirectoryInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$rpath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+              &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fsInfo&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new-object&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;System.IO.FileInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$rpath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;updateFileSystemInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$fsInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
      
-      function touchNewFile(&amp;#91;string]$path) {
-        #$null &amp;gt; $path
-        Set-Content -Path $path -value $null;
-      }
-    }
+      &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;touchNewFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;#$null &amp;amp;gt; $path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Set-Content&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-value&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;$null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
    
-    process {
-      if ($_) {
-        if (test-path $_) {
-          touchExistingFile($_)
-        }
-        else {
-          touchNewFile($_)
-        }
-      }
-    }
+    &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;process&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test-path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;touchExistingFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;touchNewFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
    
-    end {
-      if ($paths) {
-        foreach ($path in $paths) {
-          if (test-path $path) {
-            touchExistingFile($path)
-          }
-          else {
-            touchNewFile($path)
-          }
-        }
-      }
-    }
-  }
+    &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$paths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;foreach&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$paths&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test-path&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;touchExistingFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;touchNewFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
-function get-by-date {get-childitem | sort LastWriteTime }
-function get-guid-clipboard { &amp;#91;guid]::NewGuid() | Set-Clipboard }
-set-alias lsd get-by-date
-Set-Alias touch Set-FileTime
-Set-Alias -Name guidc -Value get-guid-clipboard -Description &quot;Get a GUID and copy it to the clipboard&quot;
-function get-mine {. d:\\scripts\mine.ps1}
-write-host &quot;Type 'get-mine' for my local functions&quot;
-&amp;#91;System.Net.Dns]::GetHostByName($env:computerName).HostName.ToLower()
-&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get-by-date&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get-childitem&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LastWriteTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get-guid-clipboard&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;guid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NewGuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Set-Clipboard&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set-alias&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lsd&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get-by-date&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Set-Alias&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;touch&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Set-FileTime&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Set-Alias&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Name&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;guidc&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Value&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get-guid-clipboard&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-Description&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Get a GUID and copy it to the clipboard&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get-mine&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d:\\scripts\mine.ps1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write-host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Type 'get-mine' for my local functions&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System.Net.Dns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetHostByName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;computerName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;HostName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ToLower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The touch functions came from the &lt;a href=&quot;https://ss64.com/ps/syntax-touch.html&quot;&gt;ss64.com site&lt;/a&gt;. I end by displaying the current machine name. When you remote into a box of boxes, it’s good to know where you currently are. Now when I fire up a new shell, I’ll see something like this:&lt;/p&gt;
 
-&lt;div class=&quot;wp-block-syntaxhighlighter-code &quot;&gt;
-  &lt;pre class=&quot;brush: plain; gutter: false; title: ; notranslate&quot; title=&quot;&quot;&gt;
-PowerShell 7.1.3
-Copyright (c) Microsoft Corporation.
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;n&quot;&gt;PowerShell&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;7.1.3&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Copyright&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Microsoft&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Corporation.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
-https://aka.ms/powershell
-Type 'help' to get help.
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;https://aka.ms/powershell&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'help'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;help.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 
-Type 'get-mine' for my local functions
-uberbox
-Loading personal and system profiles took 929ms.
-&lt;/pre&gt;
-&lt;/div&gt;</content><author><name>Chris Miller</name></author><category term="PowerShell" /><category term="Powershell" /><category term="tips" /><summary type="html">Simple tip for adding your own memory aid to your PowerShell profile.</summary></entry><entry><title type="html">How to access Apple’s App Connect API from C#, Python, and Go. – Part 3</title><link href="/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/" rel="alternate" type="text/html" title="How to access Apple’s App Connect API from C#, Python, and Go. – Part 3" /><published>2021-07-19T09:28:15-04:00</published><updated>2021-07-19T09:28:15-04:00</updated><id>/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3</id><content type="html" xml:base="/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/">&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;img src=&quot;https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MdwkwLM/0/e733f438/L/Apple%20Lock%20Purple-L.jpg?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;/figure&gt;
+&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'get-mine'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;local&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;functions&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uberbox&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Loading&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;personal&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;profiles&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;took&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;929ms.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Chris Miller</name></author><category term="PowerShell" /><category term="Powershell" /><category term="tips" /><summary type="html">Simple tip for adding your own memory aid to your PowerShell profile.</summary></entry><entry><title type="html">How to access Apple’s App Connect API from C#, Python, and Go. – Part 3</title><link href="/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/" rel="alternate" type="text/html" title="How to access Apple’s App Connect API from C#, Python, and Go. – Part 3" /><published>2021-07-19T09:28:15-04:00</published><updated>2021-07-19T09:28:15-04:00</updated><id>/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3</id><content type="html" xml:base="/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/">&lt;figure&gt;&lt;img src=&quot;https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MdwkwLM/0/e733f438/L/Apple%20Lock%20Purple-L.jpg?&quot; alt=&quot;&quot; /&gt;&lt;/figure&gt;
 
 &lt;p&gt;In my &lt;a href=&quot;https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/&quot;&gt;first post&lt;/a&gt;, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API. &lt;a href=&quot;https://rajapet.com/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/&quot;&gt;Part 2&lt;/a&gt; covered the Python version. For our final installment, we’ll cover how to accomplish the same task with &lt;a href=&quot;https://golang.org/&quot;&gt;Go&lt;/a&gt;.&lt;/p&gt;
 
@@ -868,7 +830,7 @@ Usage of C:\Users\anoth\AppData\Local\Temp\go-build2936985627\b001\exe\IsUserInA
 &lt;/div&gt;
 
 &lt;p&gt;That wraps up this series. You can do more than get the team list from the &lt;a href=&quot;https://developer.apple.com/documentation/appstoreconnectapi&quot;&gt;App Connect API&lt;/a&gt;. For example, if you want to track how many devices have been provisioned, there is a Devices API. Lots of access points for DevOps functionality.&lt;/p&gt;</content><author><name>Chris Miller</name></author><category term="Apple" /><category term="Apple" /><category term="C#" /><category term="Go" /><category term="Python" /><summary type="html"></summary></entry><entry><title type="html">How to access Apple’s App Connect API from C#, Python, and Go. – Part 2</title><link href="/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/" rel="alternate" type="text/html" title="How to access Apple’s App Connect API from C#, Python, and Go. – Part 2" /><published>2021-07-12T09:02:52-04:00</published><updated>2021-07-12T09:02:52-04:00</updated><id>/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2</id><content type="html" xml:base="/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/">&lt;div class=&quot;wp-block-image&quot;&gt;
-  &lt;figure class=&quot;aligncenter size-large is-resized&quot;&gt;&lt;img loading=&quot;lazy&quot; src=&quot;https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-rMG2ZL4/0/c712e41f/L/Apple%20Lock%20Green-L.jpg?resize=680%2C510&amp;#038;ssl=1&quot; alt=&quot;&quot; width=&quot;680&quot; height=&quot;510&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;aligncenter size-large is-resized&quot;&gt;&lt;img loading=&quot;lazy&quot; src=&quot;https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-rMG2ZL4/0/c712e41f/L/Apple%20Lock%20Green-L.jpg?resize=680%2C510&amp;#038;ssl=1&quot; alt=&quot;&quot; width=&quot;680&quot; height=&quot;510&quot; /&gt;&lt;/figure&gt;
 &lt;/div&gt;
 
 &lt;p&gt;In my &lt;a href=&quot;https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/&quot;&gt;previous post&lt;/a&gt;, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API.  In this installment, we’ll cover how to accomplish the same task with Python.  The &lt;a href=&quot;https://rajapet.com/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/&quot;&gt;final post&lt;/a&gt; will cover a Go version.&lt;/p&gt;
@@ -1066,7 +1028,7 @@ No match&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p class=&quot;has-small-font-size&quot;&gt;
   &lt;em data-rich-text-format-boundary=&quot;true&quot;&gt;About the image: &lt;br data-rich-text-line-break=&quot;true&quot; /&gt;This image was derived from some open-source images.&amp;nbsp;The image of the wall comes from &lt;a href=&quot;https://unsplash.com/@impatrickt&quot;&gt;Patrick Tomasso via Unsplash&lt;/a&gt;.&amp;nbsp;The Apple lock logo comes from Apple, which retains all rights to its artwork. The people icon was created by &lt;a href=&quot;https://thenounproject.com/search/?q=people&amp;amp;i=165313&quot;&gt;Monika from the Noun Project&lt;/a&gt;.&lt;/em&gt;
-&lt;/p&gt;</content><author><name>Chris Miller</name></author><category term="Apple" /><category term="Apple" /><category term="C#" /><category term="Go" /><category term="Python" /><summary type="html"></summary></entry><entry><title type="html">How to access Apple’s App Connect API from C#, Python, and Go. – Part 1</title><link href="/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/" rel="alternate" type="text/html" title="How to access Apple’s App Connect API from C#, Python, and Go. – Part 1" /><published>2021-07-09T20:04:41-04:00</published><updated>2021-07-09T20:04:41-04:00</updated><id>/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1</id><content type="html" xml:base="/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">&lt;p&gt;&lt;img loading=&quot;lazy&quot; class=&quot;aligncenter size-medium&quot; src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-CrcmsQz/0/311d8c2f/L/Apple%20Lock-L.jpg?resize=680%2C510&amp;#038;ssl=1&quot; width=&quot;680&quot; height=&quot;510&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;/p&gt;
+&lt;/p&gt;</content><author><name>Chris Miller</name></author><category term="Apple" /><category term="Apple" /><category term="C#" /><category term="Go" /><category term="Python" /><summary type="html"></summary></entry><entry><title type="html">How to access Apple’s App Connect API from C#, Python, and Go. – Part 1</title><link href="/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/" rel="alternate" type="text/html" title="How to access Apple’s App Connect API from C#, Python, and Go. – Part 1" /><published>2021-07-09T20:04:41-04:00</published><updated>2021-07-09T20:04:41-04:00</updated><id>/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1</id><content type="html" xml:base="/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">&lt;p&gt;&lt;img loading=&quot;lazy&quot; class=&quot;aligncenter size-medium&quot; src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-CrcmsQz/0/311d8c2f/L/Apple%20Lock-L.jpg?resize=680%2C510&amp;#038;ssl=1&quot; width=&quot;680&quot; height=&quot;510&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As the &lt;a href=&quot;https://developer.apple.com/support/roles/&quot;&gt;Account Holder&lt;/a&gt; for my employer’s Apple App Store account, I get to keep track of who has access to the account. Apple does not do federated logins. Which means no linkage between our Active Directory store and the user accounts associated with the App Store account.&lt;/p&gt;
 
@@ -1236,7 +1198,7 @@ public string GetToken(string keyId, string issuerID, string privateKey)
 &lt;p&gt;Lines 11-16 create the header. We set the expiration date at line 19 to 30 minutes into the future with the “exp” field. The issuer ID at line 25 comes from your account in App Store Connect. Apple’s instructions for getting the issuer ID are fairly easy to follow: log in to &lt;a href=&quot;https://appstoreconnect.apple.com/&quot;&gt;App Store Connect&lt;/a&gt; and: &lt;a href=&quot;https://appstoreconnect.apple.com/access/users&quot;&gt;Select Users and Access&lt;/a&gt;, then Select the &lt;a href=&quot;https://appstoreconnect.apple.com/access/api&quot;&gt;API Keys&lt;/a&gt; tab. The issuer ID appears near the top of the page. To copy the issuer ID, click Copy next to the ID. The key ID will also come from that page. It will be the key that we described how to create earlier.&lt;/p&gt;
 
 &lt;div class=&quot;wp-block-image&quot;&gt;
-  &lt;figure class=&quot;aligncenter size-large&quot;&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-4scN9mR/0/8d4a88a7/M/App%20Store%20Connect%20Keys-M.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;figcaption&gt;The ID values that you will need&lt;/figcaption&gt;&lt;/figure&gt;
+  &lt;figure class=&quot;aligncenter size-large&quot;&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-4scN9mR/0/8d4a88a7/M/App%20Store%20Connect%20Keys-M.png&quot; alt=&quot;&quot; /&gt;&lt;figcaption&gt;The ID values that you will need&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;/div&gt;
 
 &lt;p&gt;The private key will come from the contents of the .p8 file that you downloaded when you created the API key. The .p8 file will have your private key in PEM format. We generate the signing key from the private key at line 29 and then generate a JWT and sign it with that key at line 32.&lt;/p&gt;
@@ -1434,9 +1396,9 @@ User: some.email@company.com not found
 
 &lt;p&gt;You’ll want to deaden the sound, basically remove any echos. If your room has bare walls, your voice will bounce around a bit. I have acoustic panels in my office, they help a lot. You can make your own, it’s basically linen fabric wrapped around insulation, inside a wood frame.  If you are doing a lot of recording, you may want to look into doing that as a DIY project. &lt;/p&gt;
 
-&lt;p&gt;If you can hang up blankets or quilts around you, that will work just as well. And quilts hanging on the wall will look much better than acoustic panels.&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;If you can hang up blankets or quilts around you, that will work just as well. And quilts hanging on the wall will look much better than acoustic panels.&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-tCS4jHP/0/9cf820f9/M/quiltingroom-M.jpg?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;The quilting wall in my wife’s home office helps dampen the sound for her Zoom calls.&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-tCS4jHP/0/9cf820f9/M/quiltingroom-M.jpg?&quot; alt=&quot;&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;The quilting wall in my wife’s home office helps dampen the sound for her Zoom calls.&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;Get in the habit of speaking into the microphone at the same location and angle. That will help get a consistent sound.&lt;/p&gt;
 
@@ -1448,39 +1410,39 @@ User: some.email@company.com not found
 
 &lt;p&gt;If you recorded the audio and video together, you can separate the audio and video tracks from within Camtasia. Once you have the clip loaded on the timeline, right-click on the clip and select “Separate Audio and Video”. You’ll now have individual audio and video tracks. &lt;/p&gt;
 
-&lt;p&gt;If you go to the Share menu, you can select “Export Audio Only…”. Save the file as a .wav file. Now you can open the file in Audacity. When you open the file i&lt;span style=&quot;font-size: inherit;&quot;&gt;t may give you a warning about choosing an import method. Audacity can either work with a copy of the file or edit it directly. Either way will work.&lt;/span&gt;&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;If you go to the Share menu, you can select “Export Audio Only…”. Save the file as a .wav file. Now you can open the file in Audacity. When you open the file i&lt;span style=&quot;font-size: inherit;&quot;&gt;t may give you a warning about choosing an import method. Audacity can either work with a copy of the file or edit it directly. Either way will work.&lt;/span&gt;&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-FDs3XxV/0/219afa5d/L/warning-L.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;Warning message from Audacity&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-FDs3XxV/0/219afa5d/L/warning-L.png&quot; alt=&quot;&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;Warning message from Audacity&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
 
-&lt;p&gt;Once you have the file opened in Audacity, we can reduce the background noise. Select a section of the file where you are not talking. From the Effect menu, select “Noise Reduction…”.&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Once you have the file opened in Audacity, we can reduce the background noise. Select a section of the file where you are not talking. From the Effect menu, select “Noise Reduction…”.&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-RQc5csK/0/ab7d95d5/L/pick-noise-reduction-L.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;Selecting the Noise Reduction effect for the selected audio&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-RQc5csK/0/ab7d95d5/L/pick-noise-reduction-L.png&quot; alt=&quot;&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;Selecting the Noise Reduction effect for the selected audio&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;Once you have the file opened in Audacity, we can reduce the background noise. If you don’t have a lot of background noise, you can skip this step. Select a section of the file where you are not talking. From the Effect menu, select “Noise Reduction…”.&lt;/p&gt;
 
-&lt;p&gt;A dialog will open up. Click the “Get Noise Profile” button. It will scan the selected clip and build a noise profile. Then, select the entire clip (press Ctrl-A) and select “Noise Reduction…” from the Effect menu. This time, press the “Ok” button.&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;A dialog will open up. Click the “Get Noise Profile” button. It will scan the selected clip and build a noise profile. Then, select the entire clip (press Ctrl-A) and select “Noise Reduction…” from the Effect menu. This time, press the “Ok” button.&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-mgH7DWg/0/78409178/L/noise-reduction-L.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;The Noise Reduction effect&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-mgH7DWg/0/78409178/L/noise-reduction-L.png&quot; alt=&quot;&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;The Noise Reduction effect&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
 
-&lt;p&gt;Now you can normalize the volume in Audacity. This will allow your narration to have the same volume for every clip. You can select Normalize from the effects menu. You set it at a maximum db level. Your peak should be at -6 db. You can go lower, like -8 db, but you once you pick that level, that’s the level you want to use for the entire video. If someone else will be mastering the audio afterward, find out what level they want you to use.&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Now you can normalize the volume in Audacity. This will allow your narration to have the same volume for every clip. You can select Normalize from the effects menu. You set it at a maximum db level. Your peak should be at -6 db. You can go lower, like -8 db, but you once you pick that level, that’s the level you want to use for the entire video. If someone else will be mastering the audio afterward, find out what level they want you to use.&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-wN8fVCC/0/00f88adc/L/normalize-L.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;The Normalize effect&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-wN8fVCC/0/00f88adc/L/normalize-L.png&quot; alt=&quot;&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;The Normalize effect&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
 
-&lt;p&gt;And that is the peak level, the overall audio should be in the range from -9db to -18 db. You can use the normalize filter to set the level so that the peak is at -6db. This will raise all of the levels, including pops, clicks, and other noises in the recording in between your words. That makes it easier to find and remove them.&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;And that is the peak level, the overall audio should be in the range from -9db to -18 db. You can use the normalize filter to set the level so that the peak is at -6db. This will raise all of the levels, including pops, clicks, and other noises in the recording in between your words. That makes it easier to find and remove them.&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-bdpCV8T/0/4054a35f/L/hard-limit-L.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;The Hard Limit option of the Limiter effect&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-bdpCV8T/0/4054a35f/L/hard-limit-L.png&quot; alt=&quot;&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;The Hard Limit option of the Limiter effect&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;If your voice has a lot of dynamic range, you may find that setting the peaks to -6db doesn’t raise the rest of your voice enough. What you can do is to raise the level higher, to say -3db. Then run the hard limiter filter at -6db. That will clip the peaks to -6db and the net effect is that your voice will sounder louder.&lt;/p&gt;
 
 &lt;p&gt;Once you have the audio level set, you want to remove any and all sounds in between your words  Not every word, just in the pauses. Select that section so that it’s highlighted and press the Ctrl-L key combination  That will silence that section. You still want to do this after running the noise reduction filter.&lt;/p&gt;
 
-&lt;p&gt;To make your time more efficient in Audacity, you can assign keyboard shortcuts to the filters that you used the most. If you open up the Audacity preferences, from the Edit menu or by pressing CTRL-P, you can select “Keyboard” and edit the key bindings. I assigned the CTRL-8, CTRL-9, and CTRL-0 shortcuts to the Noise Reduction, Normalize, and Limiter filters. Those shortcuts were not being used, and they are easy to remember.&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;To make your time more efficient in Audacity, you can assign keyboard shortcuts to the filters that you used the most. If you open up the Audacity preferences, from the Edit menu or by pressing CTRL-P, you can select “Keyboard” and edit the key bindings. I assigned the CTRL-8, CTRL-9, and CTRL-0 shortcuts to the Noise Reduction, Normalize, and Limiter filters. Those shortcuts were not being used, and they are easy to remember.&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-9S8K5Lh/0/de9e342d/M/audacity-keyboard-prefs-M.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;Keyboard shortcuts, use them&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-9S8K5Lh/0/de9e342d/M/audacity-keyboard-prefs-M.png&quot; alt=&quot;&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;Keyboard shortcuts, use them&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
 
-&lt;p&gt;If you find that your voice has “click” sounds, you’ll want to remove as many of them as you can. There is a de-click effect with Audacity, but I haven’t had much luck with it. I use a program called &lt;a href=&quot;https://www.izotope.com/en/shop/rx-elements.html&quot;&gt;RX 7 Essentials&lt;/a&gt; from Izotrope that does a nice job of removing the clicks out of my voice. It retails for $129, but they run sales from time to time. Two weeks ago, I paid $29 for it. There is &lt;a href=&quot;https://www.izotope.com/en/academic/store-listing.html&quot;&gt;50% education discount&lt;/a&gt; on their site. If you are doing a lot of videos, this can save you a lot of time. If you have this tool, you may not even need to use Audacity.&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;If you find that your voice has “click” sounds, you’ll want to remove as many of them as you can. There is a de-click effect with Audacity, but I haven’t had much luck with it. I use a program called &lt;a href=&quot;https://www.izotope.com/en/shop/rx-elements.html&quot;&gt;RX 7 Essentials&lt;/a&gt; from Izotrope that does a nice job of removing the clicks out of my voice. It retails for $129, but they run sales from time to time. Two weeks ago, I paid $29 for it. There is &lt;a href=&quot;https://www.izotope.com/en/academic/store-listing.html&quot;&gt;50% education discount&lt;/a&gt; on their site. If you are doing a lot of videos, this can save you a lot of time. If you have this tool, you may not even need to use Audacity.&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-PmrtLCb/0/221d167a/XL/rx%20editor-XL.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;RX Essentials with the De-click dialog&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-PmrtLCb/0/221d167a/XL/rx%20editor-XL.png&quot; alt=&quot;&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;RX Essentials with the De-click dialog&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;Once you are done cleaning up the audio, you can import it into Camtasia as a media file. Drop it on the timeline in a track above the existing audio track. That will make it easier to line it up in place. Once you have it in the right place, you can just delete the original audio track from the timeline.&lt;/p&gt;
 
@@ -1496,9 +1458,9 @@ User: some.email@company.com not found
 
 &lt;p&gt;Another thing that you do is to pause during the sentence that is killing you. Say part of the sentence, pause, then continue with the rest. You can use the audio editing tools to clip out the pauses so it sounds more natural.&lt;/p&gt;
 
-&lt;p&gt;If you need to embed a link in your video and you just have a video file, use a &lt;a href=&quot;https://en.wikipedia.org/wiki/QR_code&quot;&gt;QR code&lt;/a&gt; and let them scan the code with their phone. There are tons of free QR code generators on the Internet. I used QRCode Monkey to create the following QR code and placed into a Powerpoint slide.&lt;figure class=&quot;wp-block-image size-large&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;If you need to embed a link in your video and you just have a video file, use a &lt;a href=&quot;https://en.wikipedia.org/wiki/QR_code&quot;&gt;QR code&lt;/a&gt; and let them scan the code with their phone. There are tons of free QR code generators on the Internet. I used QRCode Monkey to create the following QR code and placed into a Powerpoint slide.&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-xQvn9LK/0/bffc3486/XL/ppt%20qrcode-XL.png?w=680&amp;#038;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;Scan it with your phone’s camera, it’s just my Twitter timeline&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-xQvn9LK/0/bffc3486/XL/ppt%20qrcode-XL.png&quot; alt=&quot;&quot; /&gt; &amp;lt;figcaption&amp;gt;&lt;em&gt;Scan it with your phone’s camera, it’s just my Twitter timeline&lt;/em&gt;&amp;lt;/figcaption&amp;gt;&amp;lt;/figure&amp;gt;&lt;/p&gt;
 
 &lt;p&gt;They give you a fair amount of tweaking to the QR code format. If you do something like this, add a 5-second pause and tell people to pause the video while they scan the code with their phone.&lt;/p&gt;
 

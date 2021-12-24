@@ -21,7 +21,7 @@ A big reason to attend conferences like Evolve is to meet and share experiences 
 During the keynote, Miguel de Icaza launched the Google Android Emulator.   While it was loading, he went on a long and funny rant about how it was.   At the end of the rant, he presented the Xamarin Android Player, their own emulator that uses hardware virtualization to run as fast (or faster) as an actual Android device.
 
 <div style="width: 307px" class="wp-caption aligncenter">
-  <a href="https://i0.wp.com/www.rajapet.net/photos/i-NJB39ph/0/L/i-NJB39ph-L.png"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/photos/i-NJB39ph/0/S/i-NJB39ph-S.png?resize=297%2C300" alt="Xamarin Android Player on OS X" width="297" height="300" data-recalc-dims="1" /></a>
+  <a href="https://i0.wp.com/www.rajapet.net/photos/i-NJB39ph/0/L/i-NJB39ph-L.png"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/photos/i-NJB39ph/0/S/i-NJB39ph-S.png?resize=297%2C300" alt="Xamarin Android Player on OS X" width="297" height="300"  /></a>
   
   <p class="wp-caption-text">
     Xamarin Android Player on OS X
@@ -35,7 +35,7 @@ Android Player is a developer preview release and only has a couple of Android i
 ##### Xamarin.Insights
 
 <div style="width: 410px" class="wp-caption alignnone">
-  <a href="https://i2.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-SNQPWzm/0/L/DSC08028-L.jpg"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-SNQPWzm/0/S/DSC08028-S.jpg?resize=400%2C266" alt="" width="400" height="266" data-recalc-dims="1" /></a>
+  <a href="https://i2.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-SNQPWzm/0/L/DSC08028-L.jpg"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-SNQPWzm/0/S/DSC08028-S.jpg?resize=400%2C266" alt="" width="400" height="266"  /></a>
   
   <p class="wp-caption-text">
     James Montemagno and Nat Friedman with Xamarin Insights
@@ -53,7 +53,7 @@ Also in beta is the new [Xamarin Profiler](http://xamarin.com/profiler) for iOS 
 ##### Xamarin Sketches
 
 <div style="width: 410px" class="wp-caption alignnone">
-  <a href="https://i1.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-3Gqh4cG/0/L/WP_20141008_10_26_06_Pro-L.jpg"><img loading="lazy" class="" src="https://i2.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-3Gqh4cG/0/S/WP_20141008_10_26_06_Pro-S.jpg?resize=400%2C225" alt="" width="400" height="225" data-recalc-dims="1" /></a>
+  <a href="https://i1.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-3Gqh4cG/0/L/WP_20141008_10_26_06_Pro-L.jpg"><img loading="lazy" class="" src="https://i2.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-3Gqh4cG/0/S/WP_20141008_10_26_06_Pro-S.jpg?resize=400%2C225" alt="" width="400" height="225"  /></a>
   
   <p class="wp-caption-text">
     Xamarin CTO Miguel de Icaza using Sketches
@@ -71,7 +71,7 @@ You can run the scripts locally and deploy them to test cloud.  UITest with Nun
 ##### Xamarin Insights
 
 <div style="width: 410px" class="wp-caption alignnone">
-  <a href="https://i2.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-86XLjZv/0/L/WP_20141008_09_56_38_Pro-L.jpg"><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-86XLjZv/0/S/WP_20141008_09_56_38_Pro-S.jpg?resize=400%2C225" alt="" width="400" height="225" data-recalc-dims="1" /></a>
+  <a href="https://i2.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-86XLjZv/0/L/WP_20141008_09_56_38_Pro-L.jpg"><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-86XLjZv/0/S/WP_20141008_09_56_38_Pro-S.jpg?resize=400%2C225" alt="" width="400" height="225"  /></a>
   
   <p class="wp-caption-text">
     Xamarin CTO Miguel de Icaza demoing the new profile

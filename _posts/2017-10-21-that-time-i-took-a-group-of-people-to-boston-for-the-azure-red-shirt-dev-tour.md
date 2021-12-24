@@ -17,7 +17,7 @@ tags:
 ---
 I had tweeted out the hashtag #BostonOrBust.  Seriously, don&#8217;t do that.  I tempted [Fate](http://web.mit.edu/humor/www/Generic/what.is.fate), and Fate called me out on it.
 
-<img loading="lazy" class="alignnone size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-fBXqVCf/0/c2af1b63/M/i-fBXqVCf-M.png?resize=599%2C124&#038;ssl=1" width="599" height="124" data-recalc-dims="1" /> 
+<img loading="lazy" class="alignnone size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-fBXqVCf/0/c2af1b63/M/i-fBXqVCf-M.png?resize=599%2C124&#038;ssl=1" width="599" height="124"  /> 
 
 A couple of weeks ago, Microsoft&#8217;s Mary Baker reached out to me to see if there would be any interest for people in the Albany area to take a chartered bus to the [Azure Red Shirt Dev Tour in Boston](http://aka.ms/bostonrst?wt.mc_id=owned_AzureEvents_Copy). I set up [a poll](https://www.meetup.com/TechValleyNETUserGroup/polls/1255415/) on the TVUG Meetup site and emailed the members to get a feel of who would go. The numbers were high enough for Microsoft to reserve a charter bus and they asked if I would be the point of contact. This would mean keeping track of people and arranging to bring breakfast on board. Since we would be leaving from the [Amtrak train station in Rennselaer](https://www.amtrak.com/content/amtrak/en-us/stations/alb.html) at 5am, this would be a morning that would start much earlier than by my usual standards.
 
@@ -60,7 +60,7 @@ While the mechanic was performing various coolant related activities with the bu
 As it turns out, he was another driver for the company who just happened to be driving by and he had pulled over to see if he could be of any assistance.   When he heard that we had one too many people for the taxis, he offered to drive one of us to the destination.  So I had everyone else get in the taxis and I rode with this bus driver.  He knew Boston better than the taxi drivers and gave them detailed directions to the destination.  The taxis took off and we followed in the Cruze.
 
 <div style="width: 609px" class="wp-caption aligncenter">
-  <img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-88jjGVn/0/0d170b88/M/i-88jjGVn-M.jpg?resize=599%2C427&#038;ssl=1" width="599" height="427" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-88jjGVn/0/0d170b88/M/i-88jjGVn-M.jpg?resize=599%2C427&#038;ssl=1" width="599" height="427"  />
   
   <p class="wp-caption-text">
     Load&#8217;em up, move&#8217;em out
@@ -78,7 +78,7 @@ We had a nice lunch and we had a couple of hours more of Good Stuff.  Seriously
 &nbsp;
 
 <div style="width: 610px" class="wp-caption aligncenter">
-  <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-XVNrvrL/0/106e31f4/M/i-XVNrvrL-M.jpg?resize=600%2C360&#038;ssl=1" width="600" height="360" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-XVNrvrL/0/106e31f4/M/i-XVNrvrL-M.jpg?resize=600%2C360&#038;ssl=1" width="600" height="360"  />
   
   <p class="wp-caption-text">
     Scott Guthrie doing a cognitive services demo
@@ -90,7 +90,7 @@ We had a nice lunch and we had a couple of hours more of Good Stuff.  Seriously
 At the very end, we were brought up to the stage to meet the [Man in the Red Shirt](https://twitter.com/scottgu).  This was actually a really big deal as he had to leave right after the Boston event to fly to NYC for the next day&#8217;s event.  The one that I keep telling you to watch.  Scott Guthrie was very gracious and took the time to greet each one of us and then we posed for pictures.
 
 <div style="width: 610px" class="wp-caption aligncenter">
-  <a href="https://i2.wp.com/photos.smugmug.com/photos/i-FqmcPdd/0/31f184ac/X3/i-FqmcPdd-X3.jpg?ssl=1"><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-FqmcPdd/0/31f184ac/M/i-FqmcPdd-M.jpg?resize=600%2C450&#038;ssl=1" width="600" height="450" data-recalc-dims="1" /></a>
+  <a href="https://i2.wp.com/photos.smugmug.com/photos/i-FqmcPdd/0/31f184ac/X3/i-FqmcPdd-X3.jpg?ssl=1"><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-FqmcPdd/0/31f184ac/M/i-FqmcPdd-M.jpg?resize=600%2C450&#038;ssl=1" width="600" height="450"  /></a>
   
   <p class="wp-caption-text">
     Scott Guthrie with the Lost Bus Riders
@@ -100,7 +100,7 @@ At the very end, we were brought up to the stage to meet the [Man in the Red Shi
 After taking the pictures, the Microsoft event crew gave us some cool swag to take back home.  They also arranged for a better ride home.  We went back in a nice luxurious Mercedes Sprinter passenger van.  This met with the general approval of the group.
 
 <div style="width: 410px" class="wp-caption aligncenter">
-  <a href="https://i0.wp.com/photos.smugmug.com/photos/i-S8Z5BW2/0/2bb233c8/X3/i-S8Z5BW2-X3.jpg?ssl=1"><img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-S8Z5BW2/0/2bb233c8/S/i-S8Z5BW2-S.jpg?resize=400%2C271&#038;ssl=1" width="400" height="271" data-recalc-dims="1" /></a>
+  <a href="https://i0.wp.com/photos.smugmug.com/photos/i-S8Z5BW2/0/2bb233c8/X3/i-S8Z5BW2-X3.jpg?ssl=1"><img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-S8Z5BW2/0/2bb233c8/S/i-S8Z5BW2-S.jpg?resize=400%2C271&#038;ssl=1" width="400" height="271"  /></a>
   
   <p class="wp-caption-text">
     Riding home in the rich lap of luxury. It lived up to the M-B motto, &#8220;The Best or Nothing&#8221;

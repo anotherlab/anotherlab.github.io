@@ -12,7 +12,7 @@ categories:
   - Employment
 ---
 <div style="width: 610px" class="wp-caption alignnone">
-  <a href="http://amtec.us.com/creative-commons"><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-T9TJ6Pr/1/18726755/M/i-T9TJ6Pr-M.png?resize=600%2C352&#038;ssl=1" width="600" height="352" data-recalc-dims="1" /></a>
+  <a href="http://amtec.us.com/creative-commons"><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-T9TJ6Pr/1/18726755/M/i-T9TJ6Pr-M.png?resize=600%2C352&#038;ssl=1" width="600" height="352"  /></a>
   
   <p class="wp-caption-text">
     <span style="font-size: 8pt;"><em>Original image courtesy of Amtec Staffing</em></span>

@@ -16,4 +16,30 @@ body {
     body {
         margin: 0;
     }
-}  
+}
+
+.masthead {
+    background: rgb(233,220,190);
+    background: linear-gradient(0deg, rgba(233,220,190,1) 0%, rgba(186,170,146,1) 5%, rgba(255,240,205,1) 100%);
+}
+
+.greedy-nav {
+    background: transparent;
+    background-color: transparent;
+}
+
+figcaption {
+    border-top: 2px solid rgb(169, 13, 94);
+    border-bottom: 2px solid rgb(169, 13, 94);
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+
+figure {
+    // display: inline-block;
+    // text-align: center;
+    flex-flow: column;
+    img {
+       width: auto; 
+    }
+}

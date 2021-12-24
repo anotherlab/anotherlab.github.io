@@ -20,7 +20,7 @@ In Tweetdeck, it displays as:
 
 A screenshot of that tweet:
 
-[<img loading="lazy" title="td" border="0" alt="td" src="https://i0.wp.com/lh6.ggpht.com/_natoSxTaPFU/SukjUH7I66I/AAAAAAAAAXI/Lbc7UlNYT6k/td_thumb%5B1%5D.png?resize=332%2C189" width="332" height="189"  data-recalc-dims="1" />](https://i0.wp.com/lh6.ggpht.com/_natoSxTaPFU/SukjT4LJoPI/AAAAAAAAAXE/HUVDdDrbalI/s1600-h/td%5B3%5D.png) 
+[<img loading="lazy" title="td" border="0" alt="td" src="https://i0.wp.com/lh6.ggpht.com/_natoSxTaPFU/SukjUH7I66I/AAAAAAAAAXI/Lbc7UlNYT6k/td_thumb%5B1%5D.png?resize=332%2C189" width="332" height="189"   />](https://i0.wp.com/lh6.ggpht.com/_natoSxTaPFU/SukjT4LJoPI/AAAAAAAAAXE/HUVDdDrbalI/s1600-h/td%5B3%5D.png) 
 
 If you view the link on Twitter, you’ll see the text the “right” way.  I couldn’t figure out what was wrong.  I posted a message in the TweetDeck support site and they couldn’t replicate the problem.  Then I looked at bottom line of the tweet.  It has been posted to Twitter from [TwitterFeed](http://twitterfeed.com/).  I had never heard of TwitterFeed, so I signed up for an account.
 

@@ -30,7 +30,7 @@ tags:
     
     <p>
       <div style="width: 347px" class="wp-caption alignnone">
-        <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-2GtTbXb/0/S/i-2GtTbXb-S.jpg?resize=337%2C300&#038;ssl=1" width="337" height="300" data-recalc-dims="1" />
+        <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-2GtTbXb/0/S/i-2GtTbXb-S.jpg?resize=337%2C300&#038;ssl=1" width="337" height="300"  />
         
         <p class="wp-caption-text">
           Hacked message
@@ -78,7 +78,7 @@ tags:
     
     <p>
       <div style="width: 610px" class="wp-caption alignnone">
-        <a href="https://letsencrypt.org/"><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-KvZhFDs/0/M/i-KvZhFDs-M.jpg?resize=600%2C400&#038;ssl=1" width="600" height="400" data-recalc-dims="1" /></a>
+        <a href="https://letsencrypt.org/"><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-KvZhFDs/0/M/i-KvZhFDs-M.jpg?resize=600%2C400&#038;ssl=1" width="600" height="400"  /></a>
         
         <p class="wp-caption-text">
           Let’s Encrypt is a free, automated, and open Certificate Authority.

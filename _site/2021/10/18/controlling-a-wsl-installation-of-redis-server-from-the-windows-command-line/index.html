@@ -166,104 +166,78 @@
 
 <p>For the last few years, Windows (10, 11, Server 2019) comes with a compatibility layer that lets you run Linux binary executables. The current version is WSL 2, but I’m just going to refer to it as WSL.  If you don’t have installed already, just run the following command from an elevated shell (run as administrator)</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: powershell; gutter: false; title: ; notranslate" title="">
-wsl --install
-</pre>
-</div>
-<figure class="wp-block-image size-large">
+<figure class="highlight"><pre><code class="language-text" data-lang="text">wsl --install</code></pre></figure>
 
-<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-pTtQzxz/0/0a5988c8/L/02%20-%20wsl-install-L.png?w=680&#038;ssl=1" alt="Installing WSl via command line" data-recalc-dims="1" /> <figcaption>Installing WSl via command line</figcaption></figure>
+<figure> 
+<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-pTtQzxz/0/0a5988c8/L/02%20-%20wsl-install-L.png" alt="Installing WSl via command line" /> <figcaption>Installing WSl via command line</figcaption></figure>
 
 <p>It will install the bits that you need and then ask you to reboot your machine. For more information about installing and configuring WSL, Microsoft has some really good documentation at <a href="https://docs.microsoft.com/en-us/windows/wsl/install">Install WSL</a>.</p>
 
-<p>The default Linux distribution for WSL is Ubuntu. After you reboot, you may see a Ubuntu shell for a while as Windows installs the bits that you need. It will churn for a bit and then ask you for a username and password. That password will be your sudo (user root) password. One that is done, you should see something like this.<figure class="wp-block-image size-large"></figure></p>
+<p>The default Linux distribution for WSL is Ubuntu. After you reboot, you may see a Ubuntu shell for a while as Windows installs the bits that you need. It will churn for a bit and then ask you for a username and password. That password will be your sudo (user root) password. One that is done, you should see something like this.<figure></figure></p>
 
-<p><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-43gLWHP/0/54984ae6/L/02%20-%20ubuntu-install-L.png?w=680&#038;ssl=1" alt="Final step of installing WSL is configuring the default Linux distribution" data-recalc-dims="1" /> &lt;figcaption&gt;Final step of installing WSL is configuring the default Linux distribution&lt;/figcaption&gt;&lt;/figure&gt;</p>
+<figure><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-43gLWHP/0/54984ae6/L/02%20-%20ubuntu-install-L.png" alt="Final step of installing WSL is configuring the default Linux distribution" /> <figcaption>Final step of installing WSL is configuring the default Linux distribution</figcaption></figure>
 
 <p>The next thing to do is to install redis-server. We can install redis vis <a href="https://en.wikipedia.org/wiki/APT_(software)">apt-get</a>, but before we do that, we need to update apt-get and remove some of the new install shininess off.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: bash; gutter: false; title: ; notranslate" title="">
-sudo apt-get update
-sudo apt-get upgrade
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get update
+sudo apt-get upgrade</code></pre></figure>
 
 <p>After updating apt-get, you’ll want to upgrade it. Confusing? Sort of. Update is updating the instance of apt-get, upgrade is updating all of the packages that were installed via apt-get. After that has finished, you can install redis-server</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: bash; gutter: false; title: ; notranslate" title="">
-sudo apt-get install redis-server
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get install redis-server</code></pre></figure>
 
 <p>There will be some churn and finally, it be installed. Out of the box, redis will not be running. My personal preference is to only run redis when I’m actually using it for development. So I Iike to start and stop it from the command line. Here are commands that you need to know:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: bash; gutter: false; title: ; notranslate" title="">
-sudo service redis-server status
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo service redis-server status
 sudo service redis-server start
-sudo service redis-server stop
-</pre>
-</div>
+sudo service redis-server stop</code></pre></figure>
 
-<p>I’ll start up redis with the service start command, and it will come back with a message that redis is starting. And you can use the service status command to verify that it’s running. The acid test is to connect to redis and see if it’s working. You can use the redis-cli tool to set and get a cache value. You should see something like this.<figure class="wp-block-image size-large"></figure></p>
+<p>I’ll start up redis with the service start command, and it will come back with a message that redis is starting. And you can use the service status command to verify that it’s running. The acid test is to connect to redis and see if it’s working. You can use the redis-cli tool to set and get a cache value. You should see something like this.</p>
 
-<p><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-vLhVGKK/0/6aaf4c9d/O/04%20-%20redis-cli.png?w=680&#038;ssl=1" alt="Running redis-cli from the Ubuntu shell" data-recalc-dims="1" /> &lt;figcaption&gt;Running redis-cli from the Ubuntu shell&lt;/figcaption&gt;&lt;/figure&gt;</p>
+<figure><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-vLhVGKK/0/6aaf4c9d/O/04%20-%20redis-cli.png" alt="Running redis-cli from the Ubuntu shell" /> <figcaption>Running redis-cli from the Ubuntu shell</figcaption></figure>
 
 <p>So now redis-server is running. If you close the shell and open up a new one, it will still be running. If you restart WSL or Windows, then it wont be running. Now you can always pop open an Ubuntu shell and start redis-server, but you can do it from a Windows command line</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: powershell; gutter: false; title: ; notranslate" title="">
-wsl sudo service redis-server status
-</pre>
-</div>
-<figure class="wp-block-image size-large">
+<figure class="highlight"><pre><code class="language-text" data-lang="text">wsl sudo service redis-server status</code></pre></figure>
 
-<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-ffr3dZN/0/71f62819/O/05%20-%20redis-pwsh.png?w=680&#038;ssl=1" alt="Running redis commands from PowerShell" data-recalc-dims="1" /> <figcaption>Running redis commands from PowerShell</figcaption></figure>
+<figure><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-ffr3dZN/0/71f62819/O/05%20-%20redis-pwsh.png" alt="Running redis commands from PowerShell" /><figcaption>Running redis commands from PowerShell</figcaption></figure>
 
 <p>From the screenshot, you can see that WSL passed along the sudo service command to Ubunto. And because I used sudo, I was prompted for the root password. And it returned the same message that I would see from the Ubuntu shell. Since I only have Ubunto installed, that was the default Linux that received the command. If you have multiple distributions installed, you would use “wsl -d DistributionName”. You can get the names of the installed distributions with the “wsl -l” command. Unlike from the Linux shell, each time I invoke “sudo”, I’m prompted for the password. In the Linux shell, you are prompted just the first time you call sudo in a terminal session.</p>
 
 <p>Having to use the root password over and over again can be tedious on a development box. There is a way around that. You can add a file to the /etc/sudoers.d folder in the Linux distribution and remove the root password requirement for the redis-server service. From the Linux shell do the following</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: bash; gutter: false; title: ; notranslate" title="">
-cd /etc/sudoers.d
+<figure class="highlight"><pre><code class="language-text" data-lang="text">cd /etc/sudoers.d
 sudo sh
-echo "%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service redis-server *" &gt;&gt; allowed-services
+echo "%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service redis-server *" &amp;gt;&amp;gt; allowed-services
 sudo chmod 0440 allowed-services
-exit
-</pre>
-</div>
-<figure class="wp-block-image size-large">
+exit</code></pre></figure>
 
-<img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-bdhLSQW/0/003b70be/O/06%20-%20sudoers.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> </figure>
+<figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-bdhLSQW/0/003b70be/O/06%20-%20sudoers.png" alt="" /> </figure>
 
 <p>The first thing we do is make /etc/sudoers.d the current folder. Then we use “sudo sh” to gain root access. You need root access to work with this folder. The echo line basically says that you can invoke sudo with no password for redis-server and writes that setting to a file named allowed-services. The file name allowed-services is arbitrary, I picked it because it made sense to me. There is a file in the sudoers.d folder named README, it will explain what the file name restrictions are.</p>
 
 <p>The chmod 0440 command sets the permissions to read-only for the root account and is required for sudoers.d. This allows us to remove the sudo password requirement for redis-server and only for redis-server. Now we can go back to the Windows shell and run the wsl commands without being prompted.</p>
 
-<p>You can even run the redis-cli tool from powershell…<figure class="wp-block-image size-large"></figure></p>
+<p>You can even run the redis-cli tool from powershell…</p>
 
-<p><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-5jWGFRF/0/c4e9ba5e/O/07%20-%20redis-pwsh.png?w=680&#038;ssl=1" alt="Redis from PowerShell, no password" data-recalc-dims="1" /> &lt;figcaption&gt;Redis from PowerShell, no password&lt;/figcaption&gt;&lt;/figure&gt;</p>
+<figure>
+<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-5jWGFRF/0/c4e9ba5e/O/07%20-%20redis-pwsh.png" alt="Redis from PowerShell, no password" />
+<figcaption>Redis from PowerShell, no password</figcaption>
+</figure>
 
-<p>The WIndows Subsystem for Linux is one of the hidden gems for developers. And this gem sparkles…</p>
+<p>The Windows Subsystem for Linux is one of the hidden gems for developers. And this gem sparkles…</p>
 
 <p><strong>Bonus Round!</strong></p>
 
 <p>Because I’m lazy, I created shortcuts in my PowerShell profile. I added the following functions:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: powershell; gutter: false; title: ; notranslate" title="">
-function redstat {wsl sudo service redis-server status}
-function redstart {wsl sudo service redis-server start}
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">function redstat {wsl sudo service redis-server status}
+function redstart {wsl sudo service redis-server start}</code></pre></figure>
 
-<p>And now I can just check the redis-server status via “redstat”<figure class="wp-block-image size-large"></figure></p>
-
-<p><img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MBk5v8J/0/afa5b1b0/O/08-redstat.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> &lt;/figure&gt;</p>
+<p>And now I can just check the redis-server status via “redstat”</p>
+<figure>
+<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MBk5v8J/0/afa5b1b0/O/08-redstat.png" alt="" /> 
+</figure>
 
   </div><a class="u-url" href="/2021/10/18/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" hidden></a>
 </article>
@@ -300,6 +274,10 @@ function redstart {wsl sudo service redis-server start}
       
         
           <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
         
       
         

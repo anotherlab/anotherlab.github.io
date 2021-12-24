@@ -6,7 +6,7 @@ layout: post
 guid: http://www.rajapet.com/?p=493
 permalink: /2005/04/20/hit-me-with-your-rhythm-stick/
 ---
-[<img alt="Ian Dury, NYC 1978" src="https://i2.wp.com/img244.echo.cx/img244/4243/r308iandury19782kp.jpg?w=245" border="0" data-recalc-dims="1" />](http://www.iandury.co.uk/biogfrm.html)  
+[<img alt="Ian Dury, NYC 1978" src="https://i2.wp.com/img244.echo.cx/img244/4243/r308iandury19782kp.jpg?w=245" border="0"  />](http://www.iandury.co.uk/biogfrm.html)  
 __  
 _In the deserts of Sudan and the gardens of Japan,  
 From Milan to Yucatan, ev&#8217;ry woman, ev&#8217;ry man.  

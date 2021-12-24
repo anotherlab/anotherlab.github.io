@@ -7,7 +7,7 @@ guid: http://www.rajapet.com/?p=565
 permalink: /2013/12/18/its-2013-stop-trying-to-write-to-the-program-files-folder-already/
 ---
 <div style="width: 235px" class="wp-caption alignleft">
-  <a href="http://ttl4.sunburst.com/"><img loading="lazy" class=" " alt="Type To Learn" src="https://i2.wp.com/www.rajapet.net/photos/i-Hxz98hj/0/S/i-Hxz98hj-S.jpg?resize=225%2C180" width="225" height="180" data-recalc-dims="1" /></a>
+  <a href="http://ttl4.sunburst.com/"><img loading="lazy" class=" " alt="Type To Learn" src="https://i2.wp.com/www.rajapet.net/photos/i-Hxz98hj/0/S/i-Hxz98hj-S.jpg?resize=225%2C180" width="225" height="180"  /></a>
   
   <p class="wp-caption-text">
     Type to Learn&#8217;s login screen
@@ -19,7 +19,7 @@ My daughter asked if I could install [Type to Learn 4](http://ttl4.sunburst.com/
 She, of course, had not told me any of this.  I went to the web site for Type To Learn and saw that there were two versions.  A School Login Portal, and the home version.  So I clicked on the home version which took me to Amazon.
 
 <div style="width: 129px" class="wp-caption alignleft">
-  <a href="http://www.amazon.com/dp/B004LC3VCW"><img loading="lazy" alt="" src="https://i0.wp.com/www.rajapet.net/photos/i-GsjhW8Z/0/O/i-GsjhW8Z.png?resize=119%2C121" width="119" height="121" data-recalc-dims="1" /></a>
+  <a href="http://www.amazon.com/dp/B004LC3VCW"><img loading="lazy" alt="" src="https://i0.wp.com/www.rajapet.net/photos/i-GsjhW8Z/0/O/i-GsjhW8Z.png?resize=119%2C121" width="119" height="121"  /></a>
   
   <p class="wp-caption-text">
     No middle ground
@@ -52,7 +52,7 @@ Here&#8217;s what you need to know:
 
 Run cmd.exe as administrator.  With Windows 8/8.1, this is easy.  From the Metro screen (Yes, I know. I still call it Metro), just type &#8220;cmd&#8221; and right click on &#8220;Command Prompt&#8221; and select &#8220;Run as administrator.  It should look like this:
 
-<img loading="lazy" class="aligncenter" alt="Run as adminitratpr" src="https://i2.wp.com/www.rajapet.net/photos/i-M4kjZMP/0/S/i-M4kjZMP-S.png?resize=243%2C300" width="243" height="300" data-recalc-dims="1" /> 
+<img loading="lazy" class="aligncenter" alt="Run as adminitratpr" src="https://i2.wp.com/www.rajapet.net/photos/i-M4kjZMP/0/S/i-M4kjZMP-S.png?resize=243%2C300" width="243" height="300"  /> 
 
 When that cmd window opens up, CD into &#8220;**c:\program files (x86)**&#8220;. That will save you from having to type &#8220;c:\program files (x86)&#8221; over and over again.
 
@@ -67,7 +67,7 @@ Now run
 
 Sunburst is the company that makes or sells Type To Learn, all of the files are in that folder.  You should see the following:
 
-[<img loading="lazy" class="aligncenter" alt="" src="https://i0.wp.com/www.rajapet.net/photos/i-LhvQXRC/0/M/i-LhvQXRC-M.png?resize=600%2C304" width="600" height="304" data-recalc-dims="1" />](https://i1.wp.com/www.rajapet.net/photos/i-LhvQXRC/0/O/i-LhvQXRC.png)
+[<img loading="lazy" class="aligncenter" alt="" src="https://i0.wp.com/www.rajapet.net/photos/i-LhvQXRC/0/M/i-LhvQXRC-M.png?resize=600%2C304" width="600" height="304"  />](https://i1.wp.com/www.rajapet.net/photos/i-LhvQXRC/0/O/i-LhvQXRC.png)
 
 That tells us that the TrustedInstaller (i.e. setup programs) and admins have full rights to that folder, every one else has read access
 
@@ -77,6 +77,6 @@ Now run
 
 In human speak, that means give (**/grant**) everyone full access (**F**) to the sunburst folder and all of the files (**(OI)**) in that folder and all of the folders (**(CI)**) in the sunburst folder. Then run &#8220;icacls sunburst&#8221; again to verify that the change took effect.  It should look like this
 
-[<img loading="lazy" class="aligncenter" alt="" src="https://i2.wp.com/www.rajapet.net/photos/i-wwzKrMP/0/M/i-wwzKrMP-M.png?resize=600%2C304" width="600" height="304" data-recalc-dims="1" />](https://i2.wp.com/www.rajapet.net/photos/i-wwzKrMP/0/O/i-wwzKrMP.png)
+[<img loading="lazy" class="aligncenter" alt="" src="https://i2.wp.com/www.rajapet.net/photos/i-wwzKrMP/0/M/i-wwzKrMP-M.png?resize=600%2C304" width="600" height="304"  />](https://i2.wp.com/www.rajapet.net/photos/i-wwzKrMP/0/O/i-wwzKrMP.png)
 
 You should see that everone has full rights to that folder. Now you can run Type To Learn as  standard user.

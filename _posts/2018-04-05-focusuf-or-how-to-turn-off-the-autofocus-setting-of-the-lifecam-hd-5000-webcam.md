@@ -17,7 +17,7 @@ tags:
   - Webcam
 ---
 <div style="width: 409px" class="wp-caption alignnone">
-  <img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-BgcrnZW/0/7d3ad5c8/S/i-BgcrnZW-S.jpg?resize=399%2C225&#038;ssl=1" width="399" height="225" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-BgcrnZW/0/7d3ad5c8/S/i-BgcrnZW-S.jpg?resize=399%2C225&#038;ssl=1" width="399" height="225"  />
   
   <p class="wp-caption-text">
     Welcome to the FuzzyCam
@@ -52,7 +52,7 @@ Now that I have a DirectShow  sDevice that represents the webcam, I create a fi
 Launch the app that will be using the webcam. Wait until it is in focus and then run FocusUF. It will detect the webcam and flip the autofocus setting to manual and lock it to the current focus setting. The setting will persist until the webcam is reset or another app changes the focus setting.
 
 <div style="width: 409px" class="wp-caption alignnone">
-  <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-8ZMBJkS/0/07d4a10a/S/i-8ZMBJkS-S.jpg?resize=399%2C225&#038;ssl=1" width="399" height="225" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-8ZMBJkS/0/07d4a10a/S/i-8ZMBJkS-S.jpg?resize=399%2C225&#038;ssl=1" width="399" height="225"  />
   
   <p class="wp-caption-text">
     I probably looked better out of focus&#8230;

@@ -8,7 +8,7 @@ permalink: /2010/08/06/notes-on-installing-finalbuilder-7/
 ---
 VSoft Technologies just released a new version of their build automation tool, [FinalBuilder](http://www.finalbuilder.com/home.aspx).  Version 7 gets a new look to their IDE and you can finally have multiple projects open at the same time.  Among other things, they added support for [Hg](http://mercurial.selenic.com/) and [Git](http://git-scm.com/), plus full support for Visual Studio 2010.  It also [supports](http://www.finalbuilder.com/articles.aspx?ID=38) Team Foundation Build 2010.
 
-[<img loading="lazy" title="FB7_IDE_1" height="170" alt="FB7_IDE_1" src="https://i2.wp.com/lh5.ggpht.com/_natoSxTaPFU/TFx1kkdOBmI/AAAAAAAAAds/OnVHMufQ0w0/FB7_IDE_1_thumb2.png?resize=244%2C170" width="244" border="0" data-recalc-dims="1" />](https://i1.wp.com/lh3.ggpht.com/_natoSxTaPFU/TFx1kDpq1iI/AAAAAAAAAdo/IBVA4EJUSG8/s1600-h/FB7_IDE_14.png) 
+[<img loading="lazy" title="FB7_IDE_1" height="170" alt="FB7_IDE_1" src="https://i2.wp.com/lh5.ggpht.com/_natoSxTaPFU/TFx1kkdOBmI/AAAAAAAAAds/OnVHMufQ0w0/FB7_IDE_1_thumb2.png?resize=244%2C170" width="244" border="0"  />](https://i1.wp.com/lh3.ggpht.com/_natoSxTaPFU/TFx1kDpq1iI/AAAAAAAAAdo/IBVA4EJUSG8/s1600-h/FB7_IDE_14.png) 
 
 Along with FinalBuilder, you get a single user license for FinalBuilder Server.  FinalBuilder Server provides a nice web frontend so that you can remotely start a build process from a web browser.  We use this a lot. This tool does a lot and it will save you time.
 

@@ -14,7 +14,7 @@ With a RDP connection, you have the ability to automagically have the remote con
 
 Or so I thought. As a prerequisite for this app, I need to install the [ASP.NET 2.0 AJAX Extensions](http://www.microsoft.com/downloads/details.aspx?FamilyID=ca9d90fa-e8c9-42e3-aa19-08e2c027f5d6&displaylang=en). That comes as a Windows Installer .msi files. When I ran that .msi, I got the following error message:
 
-[<img src="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/SDxYaWpSIQI/AAAAAAAAAE4/EEAxORsgzoY/s400/WindowsInstallerError.png?w=680" alt="" border="0" data-recalc-dims="1" />](https://i1.wp.com/2.bp.blogspot.com/_natoSxTaPFU/SDxYaWpSIQI/AAAAAAAAAE4/EEAxORsgzoY/s1600-h/WindowsInstallerError.png)
+[<img src="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/SDxYaWpSIQI/AAAAAAAAAE4/EEAxORsgzoY/s400/WindowsInstallerError.png?w=680" alt="" border="0"  />](https://i1.wp.com/2.bp.blogspot.com/_natoSxTaPFU/SDxYaWpSIQI/AAAAAAAAAE4/EEAxORsgzoY/s1600-h/WindowsInstallerError.png)
 
 [  
 ](http://www.blogger.com/%24WindowsInstallerError.png) 

@@ -170,9 +170,9 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 
 <p>As a test, I created a new .NET MAUI app from Preview 6. It compiled and ran just fine.</p>
 
-<p>So who now, what now? When I first saw the error, I didn’t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.<figure class="wp-block-image size-large"></figure></p>
+<p>So who now, what now? When I first saw the error, I didn’t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.<figure></figure></p>
 
-<p><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> &lt;/figure&gt;</p>
+<p><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png" alt="" /> &lt;/figure&gt;</p>
 
 <p>And we take a look at the file, it’s pretty standard, pretty boring AndroidManifest.xml</p>
 
@@ -264,7 +264,7 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
     <span class="na">android:versionName=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span></code></pre></figure>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-mF3bHJm/0/4ebec4dc/O/badgood.jpg?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /></figure>
+  <figure class="aligncenter size-large"><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-mF3bHJm/0/4ebec4dc/O/badgood.jpg?" alt="" /></figure>
 </div>
 
 <p>So why is the first one bad and the second one good? In the wacky world of Android, android:versionCode has to have an integer value. This is documented <a href="https://developer.android.com/guide/topics/manifest/manifest-element">here</a>. So now we know what is the actual error, the next question is why that error occurred.</p>
@@ -319,6 +319,10 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
       
         
           <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
         
       
         

@@ -11,10 +11,10 @@ permalink: /2005/11/03/arrival-of-delphi-man-and-doctor/
   
   <tr>
     <td valign="top">
-      <a href="http://img47.imageshack.us/my.php?image=delphiman2gm.jpg" title="Delphi Man" target="_blank"><img src="https://i2.wp.com/img47.imageshack.us/img47/2687/delphiman2gm.th.jpg?w=680" border="0" data-recalc-dims="1" /></a></p> 
+      <a href="http://img47.imageshack.us/my.php?image=delphiman2gm.jpg" title="Delphi Man" target="_blank"><img src="https://i2.wp.com/img47.imageshack.us/img47/2687/delphiman2gm.th.jpg?w=680" border="0"  /></a></p> 
       
       <p>
-        <a href="http://img47.imageshack.us/my.php?image=doctordeadline7ev.jpg" title="Doctor Deadline" target="_blank"><img src="https://i0.wp.com/img47.imageshack.us/img47/8756/doctordeadline7ev.th.jpg?w=680" border="0" data-recalc-dims="1" /></a></td> 
+        <a href="http://img47.imageshack.us/my.php?image=doctordeadline7ev.jpg" title="Doctor Deadline" target="_blank"><img src="https://i0.wp.com/img47.imageshack.us/img47/8756/doctordeadline7ev.th.jpg?w=680" border="0"  /></a></td> 
         
         <p>
         </p>

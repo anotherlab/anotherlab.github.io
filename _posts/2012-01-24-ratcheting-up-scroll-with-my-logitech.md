@@ -8,7 +8,7 @@ permalink: /2012/01/24/ratcheting-up-scroll-with-my-logitech/
 ---
 With the PC that gets used by the family, we use a wireless Logitech mouse. It’s the [VX Revolution](http://www.logitech.com/en-us/428/165?softwareid=671&osid=14). It’s a few years old, but it has all the functionality that we need. 
 
-[<img loading="lazy" title="vx-revolution" border="0" alt="vx-revolution" align="left" src="https://i2.wp.com/lh5.ggpht.com/-a7RiZ-kFBH4/Tx4xELzmqMI/AAAAAAAAAkk/TKmVz-8Tnuk/vx-revolution_thumb.png?resize=87%2C118" width="87" height="118"  data-recalc-dims="1" />](https://i2.wp.com/lh4.ggpht.com/-auRfGrFKPVM/Tx4xD_QGNRI/AAAAAAAAAkc/u2328dhrPUM/s1600-h/vx-revolution%25255B2%25255D.png)I was using it tonight and the scrolling was, for the lack of a better word, wrong.  The wheel usually scrolled with a nice ratchet.  You moved the wheel, and you would feel a nice soft click as it scroll.
+[<img loading="lazy" title="vx-revolution" border="0" alt="vx-revolution" align="left" src="https://i2.wp.com/lh5.ggpht.com/-a7RiZ-kFBH4/Tx4xELzmqMI/AAAAAAAAAkk/TKmVz-8Tnuk/vx-revolution_thumb.png?resize=87%2C118" width="87" height="118"   />](https://i2.wp.com/lh4.ggpht.com/-auRfGrFKPVM/Tx4xD_QGNRI/AAAAAAAAAkc/u2328dhrPUM/s1600-h/vx-revolution%25255B2%25255D.png)I was using it tonight and the scrolling was, for the lack of a better word, wrong.  The wheel usually scrolled with a nice ratchet.  You moved the wheel, and you would feel a nice soft click as it scroll.
 
 Tonight, it had stopped clicking and the scrolling was too sensitive.  You would scroll down a page and when you lifted your finger off the mouse wheel, it would roll back a tiny bit.  This would cause the page on the screen to jump back a bit.  It was very jarring and annoying.  What did I do to this thing and how do I fix it?
 
@@ -24,7 +24,7 @@ When in doubt, RTFM.  I took a peek at the user guide for the VX, from the Logi
   <tr>
     <td valign="top" width="400">
       <p align="center">
-        <a href="https://i1.wp.com/lh6.ggpht.com/-mLMUvihYVME/Tx4xETCWJQI/AAAAAAAAAks/6OzgjdGm7-s/s1600-h/OddlyShaped%25255B4%25255D.png"><img loading="lazy" title="OddlyShaped" border="0" alt="OddlyShaped" src="https://i1.wp.com/lh5.ggpht.com/-yCOxCH7ZPc8/Tx4xEiykf5I/AAAAAAAAAk0/HhFZkP1iJLI/OddlyShaped_thumb%25255B2%25255D.png?resize=198%2C244" width="198" height="244"  data-recalc-dims="1" /></a>Figure 1 – An oddly shaped control
+        <a href="https://i1.wp.com/lh6.ggpht.com/-mLMUvihYVME/Tx4xETCWJQI/AAAAAAAAAks/6OzgjdGm7-s/s1600-h/OddlyShaped%25255B4%25255D.png"><img loading="lazy" title="OddlyShaped" border="0" alt="OddlyShaped" src="https://i1.wp.com/lh5.ggpht.com/-yCOxCH7ZPc8/Tx4xEiykf5I/AAAAAAAAAk0/HhFZkP1iJLI/OddlyShaped_thumb%25255B2%25255D.png?resize=198%2C244" width="198" height="244"   /></a>Figure 1 – An oddly shaped control
       </p>
     </td>
   </tr>

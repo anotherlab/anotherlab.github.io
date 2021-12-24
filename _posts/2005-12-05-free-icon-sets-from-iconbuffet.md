@@ -10,7 +10,7 @@ Thanks to a [tip posted](http://forevergeek.com/news/iconbuffet_now_offers_free_
 
 I just signed up and I have the “Oslo Finance” set.  There are about 10 or 11 different images, in a wide variety of formats: BMP, GIF, Mac ICNS, Win ICO, TIFF, and PNG.
 
-<img alt="" src="https://i2.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_oslo_finance.gif?w=680" border="0" data-recalc-dims="1" /> 
+<img alt="" src="https://i2.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_oslo_finance.gif?w=680" border="0"  /> 
 
 If anyone with an IconBuffet account wants this one, just leave a comment here or email me at anotherlab{at}gmail{dot}com.  I’m looking for the other sets, with my eye on the Shanghai Tech and Shanghai Tech Vector sets.
 
@@ -18,11 +18,11 @@ If anyone with an IconBuffet account wants this one, just leave a comment here o
 
 I just got my first deliveries (thanks Dan!).  It’s the Shanghai Tech Vector and Shanghai Tech sets.  Duncan sent me all 5, I now have a complete set.  I’m not sure what I’m going to do with them, but they are cool.
 
-<img alt="" src="https://i1.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_shanghai_tech_vector.gif?w=680" border="0" data-recalc-dims="1" />  
-<img alt="" src="https://i2.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_shanghai_tech.gif?w=680" border="0" data-recalc-dims="1" />  
-<img alt="" src="https://i1.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_oslo_atmosphere.gif?w=680" border="0" data-recalc-dims="1" />  
-<img alt="" src="https://i2.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_manhattan_night_life.gif?w=680" border="0" data-recalc-dims="1" />  
-<img alt="" src="https://i0.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_taipei_night_market.gif?w=680" border="0" data-recalc-dims="1" /> 
+<img alt="" src="https://i1.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_shanghai_tech_vector.gif?w=680" border="0"  />  
+<img alt="" src="https://i2.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_shanghai_tech.gif?w=680" border="0"  />  
+<img alt="" src="https://i1.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_oslo_atmosphere.gif?w=680" border="0"  />  
+<img alt="" src="https://i2.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_manhattan_night_life.gif?w=680" border="0"  />  
+<img alt="" src="https://i0.wp.com/raja.homeip.net/rajapet/images/blg/prev_ltd_taipei_night_market.gif?w=680" border="0"  /> 
 
    
 [Edited on 12/7/05]  I have the following sets left

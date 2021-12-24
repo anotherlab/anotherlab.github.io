@@ -8,7 +8,7 @@ permalink: /2014/02/15/when-the-editorpackage-does-not-load-correctly/
 ---
 I had this &#8220;The &#8216;Microsoft.VisualStudio.Editor.Implementation.EditorPackage&#8217; package did not load correctly.&#8221; error message when I started up Visual Studio 2013.  My PC had rebooted earlier in the day as a result of some Windows Updates.  Now I was getting this error dialog:
 
-<img style="margin: 5px auto; display: block; text-align: center;" title="The 'Microsoft.VisualStudio.Editor.Implementation.EditorPackage' package did not load correctly." alt="The 'Microsoft.VisualStudio.Editor.Implementation.EditorPackage' package did not load correctly." src="https://i2.wp.com/www.rajapet.net/photos/i-bp7gmZL/0/O/i-bp7gmZL.png?w=497" data-recalc-dims="1" /> 
+<img style="margin: 5px auto; display: block; text-align: center;" title="The 'Microsoft.VisualStudio.Editor.Implementation.EditorPackage' package did not load correctly." alt="The 'Microsoft.VisualStudio.Editor.Implementation.EditorPackage' package did not load correctly." src="https://i2.wp.com/www.rajapet.net/photos/i-bp7gmZL/0/O/i-bp7gmZL.png?w=497"  /> 
 
 This is telling me to open ActivityLog.xml, and hopefully an answer will be found.  So I opened up that file and found some error entries
 

@@ -12,7 +12,7 @@ I already had FiOS Internet, bundled with the Verizon Phone service.  I had TWC
 
 I upgraded to the FiOS Extreme Triple Play package.  This gave me a selection of channels a little better than the selection that I had TWC digital cable.  I also gained a faster Internet connection, rated at 25MB/s in both directions.  Over the last week, I did spot tests at different times and I was getting results like this:
 
-<img src="https://i1.wp.com/www.speedtest.net/result/1224347137.png?w=680" data-recalc-dims="1" /> 
+<img src="https://i1.wp.com/www.speedtest.net/result/1224347137.png?w=680"  /> 
 
 If you use any online service for printing digital pictures, you’ll appreciate that upload speed.  On the days where I need to work from home, the connection to my office network is fast enough that I feel like I am at the office.
 

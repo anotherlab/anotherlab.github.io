@@ -52,7 +52,7 @@ permalink: /2016/01/29/what-would-you-do-to-revive-windows-phone/
     
     <p>
       <div style="width: 345px" class="wp-caption aligncenter">
-        <a href="http://www.syfy.com/theexpanse"><img loading="lazy" class="" src="https://i1.wp.com/photos.smugmug.com/photos/i-xR8QxnG/0/S/i-xR8QxnG-S.jpg?resize=335%2C300&#038;ssl=1" alt="" width="335" height="300" data-recalc-dims="1" /></a>
+        <a href="http://www.syfy.com/theexpanse"><img loading="lazy" class="" src="https://i1.wp.com/photos.smugmug.com/photos/i-xR8QxnG/0/S/i-xR8QxnG-S.jpg?resize=335%2C300&#038;ssl=1" alt="" width="335" height="300"  /></a>
         
         <p class="wp-caption-text">
           This is the type of device that resets the playing field. It&#8217;s a 23rd century mobile phone/tablet device, as envisioned in the &#8220;The Expanse&#8221; TV series. Notice the crack in the upper part of the screen. Some things never change.

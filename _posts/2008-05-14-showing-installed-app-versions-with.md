@@ -14,6 +14,6 @@ When you work with multiple servers, real or virtual, their desktops all tend to
 
 What Arne wrote about was that in addition to displaying predefined variable, BgInfo can display version information from any file that has version information.  You point BgInfo to the location of the VMWareServer executable and select version formation and you are done.  The screen shot from Arne&#8217;s blog shows how simple it is:
 
-[<img src="http://ictfreak.files.wordpress.com/2008/04/show-vmware-tools-version-with-bginfo.png?w=680" data-recalc-dims="1" />](http://ictfreak.wordpress.com/2008/04/28/vmware-show-vmware-tools-version-with-bginfo/) 
+[<img src="http://ictfreak.files.wordpress.com/2008/04/show-vmware-tools-version-with-bginfo.png?w=680"  />](http://ictfreak.wordpress.com/2008/04/28/vmware-show-vmware-tools-version-with-bginfo/) 
 
 BgInfo is very handy for displaying static information.  Since the desktop background is only being rendered when you login in, you wouldn&#8217;t want to use it to display a dynamic variable, like CPU load.  I can see where you would use this to display other version type of information.  If you are testing against multiple service pack versions of SQL Server, you could display that information.   While I&#8217;ve been talking about using this for a VMware virtual image, this is handy for Virtual PC images or any server that you would remote in to.

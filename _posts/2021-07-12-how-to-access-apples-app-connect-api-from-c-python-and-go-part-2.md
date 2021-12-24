@@ -15,7 +15,7 @@ tags:
   - Python
 ---
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-rMG2ZL4/0/c712e41f/L/Apple%20Lock%20Green-L.jpg?resize=680%2C510&#038;ssl=1" alt="" width="680" height="510" data-recalc-dims="1" /></figure>
+  <figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-rMG2ZL4/0/c712e41f/L/Apple%20Lock%20Green-L.jpg?resize=680%2C510&#038;ssl=1" alt="" width="680" height="510"  /></figure>
 </div>
 
 In my [previous post](https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/), I wrote about a need to query my company&#8217;s membership list from our Apple app store development account. In that post, I used C# to query Apple&#8217;s API.  In this installment, we&#8217;ll cover how to accomplish the same task with Python.  The [final post](https://rajapet.com/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/) will cover a Go version.

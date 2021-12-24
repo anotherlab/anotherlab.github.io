@@ -167,17 +167,17 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>So I’m on my second Macbook. I use a Macbook Pro for iOS development and I was due for a new one.  I went from a Late 2011 MBP to a late 2014 MBP.  Except now I have a Retina display and a 512 SSD. I’ve gained an HDMI port, but lost the Ethernet port.  I’m still not sure if that was a fair trade.</p>
 
-<p><a href="http://www.dailyhaha.com/pictures.htm"><img title="DailyHaHa_Funny_Pictures" src="https://i0.wp.com/www.dailyhaha.com/_pics/new_mac.jpg?w=680" alt="DailyHaHa.com Funny Pictures" border="0" data-recalc-dims="1" /></a></p>
+<p><a href="http://www.dailyhaha.com/pictures.htm"><img title="DailyHaHa_Funny_Pictures" src="https://i0.wp.com/www.dailyhaha.com/_pics/new_mac.jpg?w=680" alt="DailyHaHa.com Funny Pictures" border="0" /></a></p>
 
 <p>I no longer get laptops or PC’s with spinning rust drives.  The performance benefits of a SSD out weigh the extra cost.  The PCI Express controller is faster than SATA, even with full disk encryption (IT policy).</p>
 
 <p>Now I have to get the tools that I need onto the MBP.  I really don’t have a master list of what needs to be installed so I’m making one here.  I’ll continue to update this blog post as I come across stuff to install for development.</p>
 
-<p><a href="https://developer.apple.com/xcode/"><img loading="lazy" class="alignleft" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-4TSWxPC/0/M/xcode-M.jpg?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" />XCode</a><br />
+<p><a href="https://developer.apple.com/xcode/"><img loading="lazy" class="alignleft" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-4TSWxPC/0/M/xcode-M.jpg?resize=100%2C100" alt="" width="100" height="100" />XCode</a><br />
 Even though I do my coding with the .NET stack using Xamarin, I still need to have Xcode installed.  Apple makes the Xcode compilers part of the tool chain.  Plus that’s the only way you get the iOS Simulator.<br />
 Where to get it:  Apple OS X App Store</p>
 
-<p>Xcode simulator for iOS 7<img loading="lazy" class="alignright" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-cNpkQbC/0/S/iossim-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /><br />
+<p>Xcode simulator for iOS 7<img loading="lazy" class="alignright" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-cNpkQbC/0/S/iossim-S.png?resize=100%2C100" alt="" width="100" height="100" /><br />
 A new Xcode install wiill just have the current version of iOS in the simulator.  If you want to test against an older version, you need to install it manually.<br />
 Where to get it:  Xcode, preferences, downloads</p>
 
@@ -187,41 +187,41 @@ Where to get it:  use Terminal to install Xcode Command Line Tools.</p>
 
 <pre class="brush: bash; gutter: true">$ xcode-select --install</pre>
 
-<p><img loading="lazy" class="alignleft" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-GtRVW87/0/Ti/chrome-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /> Google Chrome<br />
+<p><img loading="lazy" class="alignleft" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-GtRVW87/0/Ti/chrome-Ti.png?resize=100%2C100" alt="" width="100" height="100" /> Google Chrome<br />
 I’m not looking to go a Safari Adventure…<br />
 Where to get it: http://www.google.com/chrome/</p>
 
 <p> </p>
 
-<p><a href="https://xamarin.com/">Xamarin<img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-p7bp2d9/0/Ti/xamarin-studio-icon-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /><br />
+<p><a href="https://xamarin.com/">Xamarin<img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-p7bp2d9/0/Ti/xamarin-studio-icon-Ti.png?resize=100%2C100" alt="" width="100" height="100" /><br />
 </a> We are not animals, why use anything else?  I drank the Xamarin Koolaid 2 years ago and I can’t imagine doing mobile development any other way.<br />
 Where to get it: <a href="https://store.xamarin.com/account/my/subscription/downloads%20http://xamarin.com/platform">Subscription Downloads</a></p>
 
 <p>Right after Xamarin has finished installing, update the Android SDK. The Android installer will install the latest bits, but if you want to support previous versions of Android, you’ll want to install those SDKs too.<br />
 Where to get it: Xamarin Studion -&gt; Tools -&gt; Open Android SDK Manager</p>
 
-<p><a href="https://www.virtualbox.org/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-dgpCtwK/0/Ti/virtualbox-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" />VirtualBox</a><br />
+<p><a href="https://www.virtualbox.org/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-dgpCtwK/0/Ti/virtualbox-Ti.png?resize=100%2C100" alt="" width="100" height="100" />VirtualBox</a><br />
 Both the Xamarin Android Player and Genymotion require VirtualBox. VirtualBox is a free and open source virtual machine environment.  If you install that first, it makes the Genymotion install easier.<br />
 Where to get it:  <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box Download Page</a></p>
 
-<p><a href="https://www.genymotion.com">Genymotion</a><a href="https://www.genymotion.com"><img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-PW5PPLH/0/S/genymotion-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a><br />
+<p><a href="https://www.genymotion.com">Genymotion</a><a href="https://www.genymotion.com"><img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-PW5PPLH/0/S/genymotion-S.png?resize=100%2C100" alt="" width="100" height="100" /></a><br />
 Genymotion is a fast Android emulator and supports more versions of Android than any other VM based Android Emulator.  Friends don’t let friends use the Google Android Emulator.  Google’s emulator emulates the CPU on the phone, but pays a performance penalty.  Genmotion (and Xamarin and Microsoft) run a version of Android for x86, which gets you virtual machine performance.<br />
 Where to get it:  <a href="https://www.genymotion.com/#!/pricing">Get Genymotion</a></p>
 
-<p><a href="http://www.adobe.com/creativecloud.html"><img loading="lazy" class="alignleft" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-Rctgxqj/0/Ti/adobe_creative_cloud_logo-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" />Adobe Creative Cloud</a><br />
+<p><a href="http://www.adobe.com/creativecloud.html"><img loading="lazy" class="alignleft" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-Rctgxqj/0/Ti/adobe_creative_cloud_logo-Ti.png?resize=100%2C100" alt="" width="100" height="100" />Adobe Creative Cloud</a><br />
 When our graphic designers send me the artwork for our apps, they give it to me in Adobe Illustrator format.  From the AI files, I can script the rendering the images through Photoshop for all of the iOS and Android sizes that I need.<br />
 Where to get it:  <a href="http://www.adobe.com/creativecloud.html">Adobe CC</a></p>
 
 <p>Alternatives to Adobe CC:  <a href="http://www.gimp.org/">GIMP</a> is a very powerful image editor.  An open source project, GIMP is available on many plaforms.  If I didn’t have an Adobe CC subscription, GIMP would be my tool of choice.  <a href="https://inkscape.org/en/">Inkscape</a> is another open source tool, but for vector image editing.  Inkscape has the ability to export to XAML, so you have the ability to use resolution independent images on the Windows platforms,  Android 5 supports SVG for vector images and there is the <a href="https://code.google.com/p/svg-android/">svg-android</a> library for older versions of Android.  Which brings us to…</p>
 
-<p><a href="http://www.paintcodeapp.com/">PaintCode<img loading="lazy" class="alignright" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-bdxPP77/0/Ti/PaintCode-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a><br />
+<p><a href="http://www.paintcodeapp.com/">PaintCode<img loading="lazy" class="alignright" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-bdxPP77/0/Ti/PaintCode-Ti.png?resize=100%2C100" alt="" width="100" height="100" /></a><br />
 PaintCode is an OS X app that will take SVG files and generate iOS drawing code in Objective-C, Swift, or Xamarin C#.  With the image as drawing code, you can manipulate it at runtime, it’s no longer a static image, but one that you can edit via.</p>
 
-<p><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-6tSRf65/0/S/Fusion-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /> VMware Fusion<br />
+<p><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-6tSRf65/0/S/Fusion-S.png?resize=100%2C100" alt="" width="100" height="100" /> VMware Fusion<br />
 I run Windows on my Macbook Pro.  When I want to carry just one machine and compile for iOS and Windows Phone, this is the simplest solution for me.  A cool thing with Fusion is that it supports Hyper-V, I can run the Windows Phone emulator in a Fusion session.<br />
 Where to get it: <a href="http://www.vmware.com/products/fusion">VMware Fusion</a></p>
 
-<p><a href="http://www.airserver.com/">Air Server<img loading="lazy" class="alignright" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-7kHTcJJ/0/S/AirServer-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a><br />
+<p><a href="http://www.airserver.com/">Air Server<img loading="lazy" class="alignright" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-7kHTcJJ/0/S/AirServer-S.png?resize=100%2C100" alt="" width="100" height="100" /></a><br />
 When I want to demo an actual iOS device and be able to display on my Macbook, I use AirServer.  AirServer is an <a href="https://www.apple.com/airplay/">AirPlay</a> receiver for OS X (and Windows). This works great for demos and for sharing with WbeEx or GotoMeeting.  The only caveat is that it uses the same port as the Xamarin Build Host.  The Xamarin Build Host is the app that lets Visual Studio on Window access the Xamarin and Xcode build tools on the Mac.<br />
 Where to get it: <a href="http://www.airserver.com/Download">Airserver Download page</a></p>
 
@@ -233,19 +233,19 @@ Where to get it: <a href="http://www.airserver.com/Download">Airserver Download 
 Out of the box, OS X can read NTFS but it can’t write to it.  If you have a large capacity USB drive, it’s going to be formatted with NTFS.  Paragon makes a stable and cheap NTFS driver for OS X.<br />
 Where to get it: <a href="http://www.paragon-software.com/home/ntfs-mac/download.html">NTFS for Mac</a></p>
 
-<p><a href="http://www.sublimetext.com"><img loading="lazy" class="alignleft" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-zFkjdnk/0/S/sublime-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" />Sublime Text</a><br />
+<p><a href="http://www.sublimetext.com"><img loading="lazy" class="alignleft" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-zFkjdnk/0/S/sublime-S.png?resize=100%2C100" alt="" width="100" height="100" />Sublime Text</a><br />
 Sublime is a very nice text editor that is available for multiple platforms.  I like being able to use the same tools on Windows and OS X where possible.  It makes for less things to learn and remember so you can concentrate on getting stuff done.<br />
 Where to get it:  <a href="http://www.sublimetext.com/2">Sublime Text Download page</a></p>
 
-<p><a href="https://balsamiq.com/">Balsamiq Mockups<img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-bntSxfH/0/S/Balsamiq-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a><br />
+<p><a href="https://balsamiq.com/">Balsamiq Mockups<img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-bntSxfH/0/S/Balsamiq-S.png?resize=100%2C100" alt="" width="100" height="100" /></a><br />
 Balsamiq is a great tool for doing wireframe mockups.  When doing quick designs, wireframe mockups let you walk do the basic design and flow, without getting distracted by pixel placement.  This is a other one of the multi-platform tools.<br />
 Where to get it:  <a href="https://balsamiq.com/download/">Balsamiq download page</a></p>
 
-<p><a href="https://adium.im/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-rnJrwPp/0/S/Adium-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" />Adium</a><br />
+<p><a href="https://adium.im/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-rnJrwPp/0/S/Adium-S.png?resize=100%2C100" alt="" width="100" height="100" />Adium</a><br />
 Adium is a free instant messaging application for OS X that supports multiple chat platforms.  When I want to IM a co-worker, I use whatever platform that they prefer, AIM, Yahoo, Google, Facebook, etc.  Using Adium lets me deal with just one app.<br />
 Where to get it: <a href="https://adium.im/">Adium.im</a></p>
 
-<p>RDP<img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-KH7M39J/0/S/MSrdp-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /><br />
+<p>RDP<img loading="lazy" class="alignright" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-KH7M39J/0/S/MSrdp-S.png?resize=100%2C100" alt="" width="100" height="100" /><br />
 Right now I’m using the Microsoft Remote Desktop app for OS X.  I used to use CoRD, but Microsoft Remote Desktop looks like it’s more up to date and I’ll stick with it.  I don’t RDP to Windows from OS X that much, the MS one should be enough.  Also CoRD doesn’t appear to support Mavericks or Yosemite.<br />
 Where to get it: Apple OS X App Store</p>
 
@@ -255,19 +255,19 @@ Where to get it:  <a href="http://sqlitebrowser.org/">Github</a></p>
 
 <p>When you use the iOS Simulator, you can access files from the simulator image with Finder.  The location will vary, depending on the version of Xcode used.  This <a href="http://stackoverflow.com/questions/1567798/iphone-simulator-location">Stack Overflow post</a> is a good starting point.</p>
 
-<p><a href="http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/objective_sharpie/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-B2Sq6bm/0/S/Objectice%20Sharpie-S.png?resize=91%2C89" alt="" width="91" height="89" data-recalc-dims="1" />Objective Sharpie</a><br />
+<p><a href="http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/objective_sharpie/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-B2Sq6bm/0/S/Objectice%20Sharpie-S.png?resize=91%2C89" alt="" width="91" height="89" />Objective Sharpie</a><br />
 This is a tool that Xamarin developed for building binding libraries for Objective-C libraries.  It’s not the easiest tool to use, but it greatly cuts down the amount of work needed to created a Xamarin C# binding to an Objective-C library.<br />
 Where to get it: <a href="http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/objective_sharpie/">Objective Sharpie</a></p>
 
-<p><a href="https://onedrive.live.com/">OneDrive<img loading="lazy" class="alignright" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-GtTdtT7/0/S/OneDrive-S.png?resize=89%2C83" alt="" width="89" height="83" data-recalc-dims="1" /><br />
+<p><a href="https://onedrive.live.com/">OneDrive<img loading="lazy" class="alignright" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-GtTdtT7/0/S/OneDrive-S.png?resize=89%2C83" alt="" width="89" height="83" /><br />
 </a> I use OneDrive.  A lot.  Most of the documents that I work on, I tend to put into OneDrive.  It just makes it easy to not care from which machine that I used to last edit the document.  I have some PhotoShop scripts for generating different sized icons from a single source file.  I keep it in the cloud so I can use it where ever I have Adobe PhotoShop installed.  From a synching perspective, <a href="https://www.dropbox.com/">DropBox</a> is probably a better choice, OneDrive is backed into everything else that I use so I’ll stay with it.<br />
 Where to get it: Apple OS X App Store</p>
 
-<p><img loading="lazy" class="alignleft" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-HQqKp9v/0/S/snagit-S.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /> Snagit<br />
+<p><img loading="lazy" class="alignleft" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-HQqKp9v/0/S/snagit-S.png?resize=100%2C100" alt="" width="100" height="100" /> Snagit<br />
 TechSmith makes the best screenshot capture tool period.  I use this more often that I would have expected to.  Also falls into the category of being available for OS X and Windows.<br />
 Where to get it: <a href="http://www.techsmith.com/snagit.html">TechSmith</a></p>
 
-<p>Android File Transfer<a href="https://www.android.com/filetransfer/"><img loading="lazy" class="alignright" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-vMQJf2X/0/L/AndroidFileTransfer-L.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a><br />
+<p>Android File Transfer<a href="https://www.android.com/filetransfer/"><img loading="lazy" class="alignright" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-vMQJf2X/0/L/AndroidFileTransfer-L.png?resize=100%2C100" alt="" width="100" height="100" /></a><br />
 I had to move some large files from the old MBP to the new MBP and I left my thumb drives at home.  So I used my Nexus tablet as a large, awkward thumb drive.  With Windows, you can just use the tablet as a drive, with a Mac you need the Android File Transfer app.  When you run the app it will display the file system of the connected Android device in a Finder-like window.  You can drag and drop files between the Mac and the Android.<br />
 Where to get it: <a href="https://www.android.com/filetransfer/">Android.com</a></p>
 
@@ -285,7 +285,7 @@ This is the Mac equivalent to WinDirStart. It’s a disk utility app that shows 
 Where to get it: <a href="http://www.derlien.com/">Lync Web App</a></p>
 
 <p>iStat Menus<br />
-<a href="https://bjango.com/mac/istatmenus/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-J9NXZSg/0/Ti/StatIcon-Ti.png?resize=100%2C100" alt="" width="100" height="100" data-recalc-dims="1" /></a>This app adds an incredible amount of information to your menubar.  From motherboard sensors, world clocks, CPU &amp; drive usage rates, and detailed network information, there is more stuff than you would use.  It’s pretty cheap and is updated often.   When I’m trying to connect the Xamarin plugin in Visual Studio to the Xamarin Build Host, I often have to do it by IP address.  My Macbook’s IP address changes a lot at work, and gives me a fast way to see the Wi-Fi IP address.<br />
+<a href="https://bjango.com/mac/istatmenus/"><img loading="lazy" class="alignleft" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-J9NXZSg/0/Ti/StatIcon-Ti.png?resize=100%2C100" alt="" width="100" height="100" /></a>This app adds an incredible amount of information to your menubar.  From motherboard sensors, world clocks, CPU &amp; drive usage rates, and detailed network information, there is more stuff than you would use.  It’s pretty cheap and is updated often.   When I’m trying to connect the Xamarin plugin in Visual Studio to the Xamarin Build Host, I often have to do it by IP address.  My Macbook’s IP address changes a lot at work, and gives me a fast way to see the Wi-Fi IP address.<br />
 Where to get it: <a href="https://bjango.com/mac/istatmenus/">bjango.com<br />
 B</a>onus round: Found about it via <a href="https://twitter.com/natfriedman">Nat Friedman</a>‘s <a href="http://tinyletter.com/natfriedman">newsletter</a></p>
 
@@ -326,6 +326,10 @@ B</a>onus round: Found about it via <a href="https://twitter.com/natfriedman">Na
       
         
           <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
         
       
         

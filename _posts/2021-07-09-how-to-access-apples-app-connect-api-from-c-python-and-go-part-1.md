@@ -14,7 +14,7 @@ tags:
   - Go
   - Python
 ---
-<img loading="lazy" class="aligncenter size-medium" src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-CrcmsQz/0/311d8c2f/L/Apple%20Lock-L.jpg?resize=680%2C510&#038;ssl=1" width="680" height="510"  data-recalc-dims="1" />
+<img loading="lazy" class="aligncenter size-medium" src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-CrcmsQz/0/311d8c2f/L/Apple%20Lock-L.jpg?resize=680%2C510&#038;ssl=1" width="680" height="510"   />
 
 As the [Account Holder](https://developer.apple.com/support/roles/) for my employer&#8217;s Apple App Store account, I get to keep track of who has access to the account. Apple does not do federated logins. Which means no linkage between our Active Directory store and the user accounts associated with the App Store account.
 
@@ -180,7 +180,7 @@ public string GetToken(string keyId, string issuerID, string privateKey)
 Lines 11-16 create the header. We set the expiration date at line 19 to 30 minutes into the future with the &#8220;exp&#8221; field. The issuer ID at line 25 comes from your account in App Store Connect. Apple&#8217;s instructions for getting the issuer ID are fairly easy to follow: log in to [App Store Connect](https://appstoreconnect.apple.com/) and: [Select Users and Access](https://appstoreconnect.apple.com/access/users), then Select the [API Keys](https://appstoreconnect.apple.com/access/api) tab. The issuer ID appears near the top of the page. To copy the issuer ID, click Copy next to the ID. The key ID will also come from that page. It will be the key that we described how to create earlier.
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-4scN9mR/0/8d4a88a7/M/App%20Store%20Connect%20Keys-M.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /><figcaption>The ID values that you will need</figcaption></figure>
+  <figure class="aligncenter size-large"><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-4scN9mR/0/8d4a88a7/M/App%20Store%20Connect%20Keys-M.png" alt=""  /><figcaption>The ID values that you will need</figcaption></figure>
 </div>
 
 The private key will come from the contents of the .p8 file that you downloaded when you created the API key. The .p8 file will have your private key in PEM format. We generate the signing key from the private key at line 29 and then generate a JWT and sign it with that key at line 32.

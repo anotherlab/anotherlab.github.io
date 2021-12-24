@@ -13,7 +13,7 @@ For the most part, I just need to replace the first and last names from student 
 What I end up is writing some sort of reubenizer code.  The reubenizer changes the first and last names to some variation of &#8220;Reuben&#8221;.
 
 <div style="width: 160px" class="wp-caption aligncenter">
-  <a href="https://en.wikipedia.org/wiki/Dave_Madden"><img loading="lazy" class="" src="https://i0.wp.com/photos.smugmug.com/photos/i-jQWQ4m4/0/Th/i-jQWQ4m4-Th.jpg?resize=150%2C150&#038;ssl=1" width="150" height="150" data-recalc-dims="1" /></a>
+  <a href="https://en.wikipedia.org/wiki/Dave_Madden"><img loading="lazy" class="" src="https://i0.wp.com/photos.smugmug.com/photos/i-jQWQ4m4/0/Th/i-jQWQ4m4-Th.jpg?resize=150%2C150&#038;ssl=1" width="150" height="150"  /></a>
   
   <p class="wp-caption-text">
     The Patron Saint of all that is Reuben.  Dave Madden as Reuben Kincaid

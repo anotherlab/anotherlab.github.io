@@ -22,7 +22,7 @@ I talked about the why and the how of localization.  I concentrated on how to 
 That will launch the Emulator manager and let you install different virtual Android device images and run them.
 
 <div style="width: 648px" class="wp-caption alignnone">
-  <img loading="lazy" class="" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-kWXgN4p/0/L/Visual%20Studio%20Emulator%20Manager-L.png?resize=638%2C600" alt="Visual Studio Emulator for Android" width="638" height="600" data-recalc-dims="1" />
+  <img loading="lazy" class="" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-kWXgN4p/0/L/Visual%20Studio%20Emulator%20Manager-L.png?resize=638%2C600" alt="Visual Studio Emulator for Android" width="638" height="600"  />
   
   <p class="wp-caption-text">
     Visual Studio Emulator for Android
@@ -40,7 +40,7 @@ As a presenter, I would log into a Lync/Skype for Business session and when it 
 I run two identical monitors on my home machine, at 1920&#215;1080.  Knocking one of them down to 1280 was jarring.  The nice thing about using the Microsoft emulators is that they have a &#8220;Fit to Screen&#8221; button on the floating taskbar that comes with the emulator
 
 <div style="width: 182px" class="wp-caption alignnone">
-  <img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-nmnKXvh/0/L/size%20to%20screen-L.png?resize=172%2C300" alt="The Fit to Screen button" width="172" height="300" data-recalc-dims="1" />
+  <img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-nmnKXvh/0/L/size%20to%20screen-L.png?resize=172%2C300" alt="The Fit to Screen button" width="172" height="300"  />
   
   <p class="wp-caption-text">
     The Fit to Screen button
@@ -50,7 +50,7 @@ I run two identical monitors on my home machine, at 1920&#215;1080.  Knocking o
 Clicking the Fit to Screen button would scale the emulator to fit the height of the current screen resolution.  It also kept the emulators more or less equally sized on the screen.  I had enough room to run three emulators side by size.
 
 <div style="width: 1610px" class="wp-caption alignnone">
-  <img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-dqVb9Fh/0/X3/side%20by%20side-X3.png?resize=680%2C393" alt="" width="680" height="393" data-recalc-dims="1" />
+  <img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-dqVb9Fh/0/X3/side%20by%20side-X3.png?resize=680%2C393" alt="" width="680" height="393"  />
   
   <p class="wp-caption-text">
     Two instances of Android and one of Windows Phone.  All three running the same app.

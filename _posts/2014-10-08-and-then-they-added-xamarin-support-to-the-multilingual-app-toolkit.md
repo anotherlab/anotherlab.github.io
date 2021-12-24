@@ -17,7 +17,7 @@ Last fall, [I played around with that version](http://www.rajapet.com/2013/12/cr
 Microsoft&#8217;s Cameron Lerum has been working on MAT and has brought it with him to Xamarin&#8217;s Evolve conference. I&#8217;ve had early access to beta builds of MAT 4 and it works much better than my mess of T4 scripts.
 
 <div style="width: 546px" class="wp-caption aligncenter">
-  <img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-zJ4RzQb/0/M/CameronMiguelDemoCropped-M.jpg?resize=536%2C450" alt="" width="536" height="450" data-recalc-dims="1" />
+  <img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Category/Xamarin-Evolve-2014/i-zJ4RzQb/0/M/CameronMiguelDemoCropped-M.jpg?resize=536%2C450" alt="" width="536" height="450"  />
   
   <p class="wp-caption-text">
     Microsoft&#8217;s Cameron Lerum demoing the Multilingual App Toolkit with Xamarin.iOS for Xamarin CTO Miguel de Icaza
