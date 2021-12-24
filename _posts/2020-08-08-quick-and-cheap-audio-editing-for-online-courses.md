@@ -46,9 +46,9 @@ You&#8217;ll want to deaden the sound, basically remove any echos. If your room 
 
 
 
-If you can hang up blankets or quilts around you, that will work just as well. And quilts hanging on the wall will look much better than acoustic panels.<figure class="wp-block-image size-large">
+If you can hang up blankets or quilts around you, that will work just as well. And quilts hanging on the wall will look much better than acoustic panels.<figure>
 
-<img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-tCS4jHP/0/9cf820f9/M/quiltingroom-M.jpg?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>_The quilting wall in my wife&#8217;s home office helps dampen the sound for her Zoom calls._</figcaption></figure> 
+<img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-tCS4jHP/0/9cf820f9/M/quiltingroom-M.jpg?" alt=""  /> <figcaption>_The quilting wall in my wife&#8217;s home office helps dampen the sound for her Zoom calls._</figcaption></figure> 
 
 Get in the habit of speaking into the microphone at the same location and angle. That will help get a consistent sound.
 
@@ -60,39 +60,39 @@ You can record your audio directly with Audacity or you can take existing audio 
 
 If you recorded the audio and video together, you can separate the audio and video tracks from within Camtasia. Once you have the clip loaded on the timeline, right-click on the clip and select &#8220;Separate Audio and Video&#8221;. You&#8217;ll now have individual audio and video tracks.&nbsp;
 
-If you go to the Share menu, you can select &#8220;Export Audio Only&#8230;&#8221;. Save the file as a .wav file. Now you can open the file in Audacity. When you open the file i<span style="font-size: inherit;">t may give you a warning about choosing an import method. Audacity can either work with a copy of the file or edit it directly. Either way will work.</span><figure class="wp-block-image size-large">
+If you go to the Share menu, you can select &#8220;Export Audio Only&#8230;&#8221;. Save the file as a .wav file. Now you can open the file in Audacity. When you open the file i<span style="font-size: inherit;">t may give you a warning about choosing an import method. Audacity can either work with a copy of the file or edit it directly. Either way will work.</span><figure>
 
-<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-FDs3XxV/0/219afa5d/L/warning-L.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>_Warning message from Audacity_</figcaption></figure> 
+<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-FDs3XxV/0/219afa5d/L/warning-L.png" alt=""  /> <figcaption>_Warning message from Audacity_</figcaption></figure> 
 
-Once you have the file opened in Audacity, we can reduce the background noise. Select a section of the file where you are not talking. From the Effect menu, select &#8220;Noise Reduction&#8230;&#8221;.<figure class="wp-block-image size-large">
+Once you have the file opened in Audacity, we can reduce the background noise. Select a section of the file where you are not talking. From the Effect menu, select &#8220;Noise Reduction&#8230;&#8221;.<figure>
 
-<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-RQc5csK/0/ab7d95d5/L/pick-noise-reduction-L.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>_Selecting the Noise Reduction effect for the selected audio_</figcaption></figure> 
+<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-RQc5csK/0/ab7d95d5/L/pick-noise-reduction-L.png" alt=""  /> <figcaption>_Selecting the Noise Reduction effect for the selected audio_</figcaption></figure> 
 
 Once you have the file opened in Audacity, we can reduce the background noise.&nbsp;If you don&#8217;t have a lot of background noise, you can skip this step. Select a section of the file where you are not talking. From the Effect menu, select &#8220;Noise Reduction&#8230;&#8221;.
 
-A dialog will open up. Click the &#8220;Get Noise Profile&#8221; button. It will scan the selected clip and build a noise profile.&nbsp;Then, select the entire clip (press Ctrl-A) and select &#8220;Noise Reduction&#8230;&#8221; from the Effect menu. This time, press the &#8220;Ok&#8221; button.<figure class="wp-block-image size-large">
+A dialog will open up. Click the &#8220;Get Noise Profile&#8221; button. It will scan the selected clip and build a noise profile.&nbsp;Then, select the entire clip (press Ctrl-A) and select &#8220;Noise Reduction&#8230;&#8221; from the Effect menu. This time, press the &#8220;Ok&#8221; button.<figure>
 
-<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-mgH7DWg/0/78409178/L/noise-reduction-L.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>_The Noise Reduction effect_</figcaption></figure> 
+<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-mgH7DWg/0/78409178/L/noise-reduction-L.png" alt=""  /> <figcaption>_The Noise Reduction effect_</figcaption></figure> 
 
-Now you can normalize the volume in Audacity.&nbsp;This will allow your narration to have the same volume for every clip. You can select Normalize from the effects menu. You set it at a maximum db level. Your peak should be at -6 db.&nbsp;You can go lower, like -8 db, but you once you pick that level, that&#8217;s the level you want to use for the entire video.&nbsp;If someone else will be mastering the audio afterward, find out what level they want you to use.<figure class="wp-block-image size-large">
+Now you can normalize the volume in Audacity.&nbsp;This will allow your narration to have the same volume for every clip. You can select Normalize from the effects menu. You set it at a maximum db level. Your peak should be at -6 db.&nbsp;You can go lower, like -8 db, but you once you pick that level, that&#8217;s the level you want to use for the entire video.&nbsp;If someone else will be mastering the audio afterward, find out what level they want you to use.<figure>
 
-<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-wN8fVCC/0/00f88adc/L/normalize-L.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>_The Normalize effect_</figcaption></figure> 
+<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-wN8fVCC/0/00f88adc/L/normalize-L.png" alt=""  /> <figcaption>_The Normalize effect_</figcaption></figure> 
 
-And that is the peak level, the overall audio should be in the range from -9db to -18 db. You can use the normalize filter to set the level so that the peak is at -6db.&nbsp;This will raise all of the levels, including pops, clicks, and other noises in the recording in between your words. That makes it easier to find and remove them.<figure class="wp-block-image size-large">
+And that is the peak level, the overall audio should be in the range from -9db to -18 db. You can use the normalize filter to set the level so that the peak is at -6db.&nbsp;This will raise all of the levels, including pops, clicks, and other noises in the recording in between your words. That makes it easier to find and remove them.<figure>
 
-<img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-bdpCV8T/0/4054a35f/L/hard-limit-L.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>_The Hard Limit option of the Limiter effect_</figcaption></figure> 
+<img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-bdpCV8T/0/4054a35f/L/hard-limit-L.png" alt=""  /> <figcaption>_The Hard Limit option of the Limiter effect_</figcaption></figure> 
 
 If your voice has a lot of dynamic range, you may find that setting the peaks to -6db doesn&#8217;t raise the rest of your voice enough. What you can do is to raise the level higher, to say -3db. Then run the hard limiter filter at -6db. That will clip the peaks to -6db and the net effect is that your voice will sounder louder.
 
 Once you have the audio level set, you want to remove any and all sounds in between your words&nbsp; Not every word, just in the pauses. Select that section so that it&#8217;s highlighted and press the Ctrl-L key combination&nbsp; That will silence that section.&nbsp;You still want to do this after running the noise reduction filter.
 
-To make your time more efficient in Audacity, you can assign keyboard shortcuts to the filters that you used the most. If you open up the Audacity preferences, from the Edit menu or by pressing CTRL-P, you can select &#8220;Keyboard&#8221; and edit the key bindings. I assigned the CTRL-8, CTRL-9, and CTRL-0 shortcuts to the Noise Reduction, Normalize, and Limiter filters. Those shortcuts were not being used, and they are easy to remember.<figure class="wp-block-image size-large">
+To make your time more efficient in Audacity, you can assign keyboard shortcuts to the filters that you used the most. If you open up the Audacity preferences, from the Edit menu or by pressing CTRL-P, you can select &#8220;Keyboard&#8221; and edit the key bindings. I assigned the CTRL-8, CTRL-9, and CTRL-0 shortcuts to the Noise Reduction, Normalize, and Limiter filters. Those shortcuts were not being used, and they are easy to remember.<figure>
 
-<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-9S8K5Lh/0/de9e342d/M/audacity-keyboard-prefs-M.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>_Keyboard shortcuts, use them_</figcaption></figure> 
+<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-9S8K5Lh/0/de9e342d/M/audacity-keyboard-prefs-M.png" alt=""  /> <figcaption>_Keyboard shortcuts, use them_</figcaption></figure> 
 
-If you find that your voice has &#8220;click&#8221; sounds, you&#8217;ll want to remove as many of them as you can. There is a de-click effect with Audacity, but I haven&#8217;t had much luck with it. I use a program called [RX 7 Essentials](https://www.izotope.com/en/shop/rx-elements.html) from Izotrope that does a nice job of removing the clicks out of my voice.&nbsp;It retails for $129, but they run sales from time to time.&nbsp;Two weeks ago, I paid $29 for it.&nbsp;There is [50% education discount](https://www.izotope.com/en/academic/store-listing.html) on their site. If you are doing a lot of videos, this can save you a lot of time. If you have this tool, you may not even need to use Audacity.<figure class="wp-block-image size-large">
+If you find that your voice has &#8220;click&#8221; sounds, you&#8217;ll want to remove as many of them as you can. There is a de-click effect with Audacity, but I haven&#8217;t had much luck with it. I use a program called [RX 7 Essentials](https://www.izotope.com/en/shop/rx-elements.html) from Izotrope that does a nice job of removing the clicks out of my voice.&nbsp;It retails for $129, but they run sales from time to time.&nbsp;Two weeks ago, I paid $29 for it.&nbsp;There is [50% education discount](https://www.izotope.com/en/academic/store-listing.html) on their site. If you are doing a lot of videos, this can save you a lot of time. If you have this tool, you may not even need to use Audacity.<figure>
 
-<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-PmrtLCb/0/221d167a/XL/rx%20editor-XL.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>_RX Essentials with the De-click dialog_</figcaption></figure> 
+<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-PmrtLCb/0/221d167a/XL/rx%20editor-XL.png" alt=""  /> <figcaption>_RX Essentials with the De-click dialog_</figcaption></figure> 
 
 Once you are done cleaning up the audio, you can import it into Camtasia as a media file. Drop it on the timeline in a track above the existing audio track.&nbsp;That will make it easier to line it up in place.&nbsp;Once you have it in the right place, you can just delete the original audio track from the timeline.
 
@@ -108,9 +108,9 @@ If you are following your own script and you have a sentence that you keeping ma
 
 Another thing that you do is to pause during the sentence that is killing you. Say part of the sentence, pause, then continue with the rest. You can use the audio editing tools to clip out the pauses so it sounds more natural.
 
-If you need to embed a link in your video and you just have a video file, use a [QR code](https://en.wikipedia.org/wiki/QR_code) and let them scan the code with their phone. There are tons of free QR code generators on the Internet. I used QRCode Monkey to create the following QR code and placed into a Powerpoint slide.<figure class="wp-block-image size-large">
+If you need to embed a link in your video and you just have a video file, use a [QR code](https://en.wikipedia.org/wiki/QR_code) and let them scan the code with their phone. There are tons of free QR code generators on the Internet. I used QRCode Monkey to create the following QR code and placed into a Powerpoint slide.<figure>
 
-<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-xQvn9LK/0/bffc3486/XL/ppt%20qrcode-XL.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>_Scan it with your phone&#8217;s camera, it&#8217;s just my Twitter timeline_</figcaption></figure> 
+<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-xQvn9LK/0/bffc3486/XL/ppt%20qrcode-XL.png" alt=""  /> <figcaption>_Scan it with your phone&#8217;s camera, it&#8217;s just my Twitter timeline_</figcaption></figure> 
 
 They give you a fair amount of tweaking to the QR code format. If you do something like this, add a 5-second pause and tell people to pause the video while they scan the code with their phone.
 

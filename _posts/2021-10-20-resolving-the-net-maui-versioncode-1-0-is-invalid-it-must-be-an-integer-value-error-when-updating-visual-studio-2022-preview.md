@@ -26,9 +26,9 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 
 As a test, I created a new .NET MAUI app from Preview 6. It compiled and ran just fine.
 
-So who now, what now? When I first saw the error, I didn&#8217;t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.<figure class="wp-block-image size-large">
+So who now, what now? When I first saw the error, I didn&#8217;t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.<figure>
 
-<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> </figure> 
+<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png" alt=""  /> </figure> 
 
 And we take a look at the file, it&#8217;s pretty standard, pretty boring AndroidManifest.xml
 
@@ -99,7 +99,7 @@ In the new app that was created in Preview 6, the same file had the following li
 
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-mF3bHJm/0/4ebec4dc/O/badgood.jpg?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /></figure>
+  <figure class="aligncenter size-large"><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-mF3bHJm/0/4ebec4dc/O/badgood.jpg?" alt=""  /></figure>
 </div>
 
 So why is the first one bad and the second one good? In the wacky world of Android, android:versionCode has to have an integer value. This is documented [here](https://developer.android.com/guide/topics/manifest/manifest-element). So now we know what is the actual error, the next question is why that error occurred. 

@@ -6,7 +6,7 @@ layout: post
 guid: http://www.rajapet.com/?p=770
 permalink: /2014/03/23/bundling-jquery-2-x-and-jquery-1-x-in-asp-net-mvc-and-staying-nuget-fresh/
 ---
-<img loading="lazy" class="aligncenter" alt="Fork in the road" src="https://i1.wp.com/www.rajapet.net/photos/i-bvJLJpj/0/L/i-bvJLJpj-L.jpg?resize=400%2C300" width="400" height="300" data-recalc-dims="1" />  
+<img loading="lazy" class="aligncenter" alt="Fork in the road" src="https://i1.wp.com/www.rajapet.net/photos/i-bvJLJpj/0/L/i-bvJLJpj-L.jpg?resize=400%2C300" width="400" height="300"  />  
 If you use [Nuget](https://www.nuget.org/) to install [jQuery](http://www.jquery.com/) into your application, you&#8217;ll need to take some extra steps to support multiple versions of jQuery.  By default, NuGet will uninstall previous versions of a package.  The way around this is to create another folder inside the scripts folder and put the older jQuery-1._._ files in it. I got the idea for doing this from a [post](http://stackoverflow.com/questions/17783019/bundling-multiple-versions-of-jquery "Bundling multiple versions of Jquery") on StackOverflow
 
 Right click on the Scripts folder and select **Add->New Folder**.  Give the folder a name that has some meaning to you, I used &#8220;compatibility&#8221;.  Select the jquery-1.* files and move them to the new folder.  You can copy them or move them, it doesn&#8217;t really matter.
@@ -17,7 +17,7 @@ Install-Package jQuery
 You should see something like this:
 
 <div class="imgwrapper" style="width: 600px; text-align: center; float: left; margin: 0px 5px 5px 0px;">
-  <a href="https://i1.wp.com/www.rajapet.net/photos/i-F99phJw/0/L/i-F99phJw-L.png"><img loading="lazy" alt="Package Manager Console" src="https://i1.wp.com/www.rajapet.net/photos/i-F99phJw/0/M/i-F99phJw-M.png?resize=600%2C175" width="600" height="175" data-recalc-dims="1" /></a>
+  <a href="https://i1.wp.com/www.rajapet.net/photos/i-F99phJw/0/L/i-F99phJw-L.png"><img loading="lazy" alt="Package Manager Console" src="https://i1.wp.com/www.rajapet.net/photos/i-F99phJw/0/M/i-F99phJw-M.png?resize=600%2C175" width="600" height="175"  /></a>
 </div>
 
 <div class="imgwrapper" style="width: 600px; text-align: center; float: left; margin: 0px 5px 5px 0px;">
@@ -57,7 +57,7 @@ What we do now is add a second bundle that will use the older version of jQuery.
 
 The final step is to update the shared layout view that MVC puts the jQuery script reference in.
 
-<img src="https://i0.wp.com/www.rajapet.net/photos/i-hbKpGgN/0/M/i-hbKpGgN-M.png?w=680" title="" alt="" data-recalc-dims="1" /> 
+<img src="https://i0.wp.com/www.rajapet.net/photos/i-hbKpGgN/0/M/i-hbKpGgN-M.png?w=680" title="" alt=""  /> 
 
 With a new project, you will edit the Views\Shared&#95;Layout.cshtml file. The default jquery reference will look like something this:
 

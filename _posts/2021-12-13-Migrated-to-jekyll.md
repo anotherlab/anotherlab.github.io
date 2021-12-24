@@ -14,7 +14,7 @@ The blog started as a free blog hosted on Google's Blogger platform. It's <a hre
 
 The second incarnation was on WordPress. I did it the hard way.  I created a Linux VM on Azure and manually wired up the <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)" target="_blank">LAMP stack</a>.  It was a good learning experience with Linux and WordPress.
 
-It was fine until a few years ago when there was a serious attack on WordPress sites.  It was a vulnerability with man of the plugins used on WordPress sites.  My site was one the ones that was taken down.
+It was fine until a few years ago when there was a serious attack on WordPress sites.  It was a vulnerability with many of the plugins used on WordPress sites.  My site was one the ones that was taken down.
 
 With a bit of amount of work, I was able to restore the site. I viewed the entire VM as compromised and generated a new VM in Azure. This time I used a <a href="https://bitnami.com/stack/wordpress" target="_blank">Bitnami WordPress</a> image so there was a lot less work to get it up and running. I still had to add my own SSL certificate through <a href="https://letsencrypt.org/" target="_blank">Let's Encryt</a>.  I also signed up for a <a href="jetpack.com/upgrade/backup/" target="_blank">Jetpack</a> subscription to let them manage the backups of the site.
 

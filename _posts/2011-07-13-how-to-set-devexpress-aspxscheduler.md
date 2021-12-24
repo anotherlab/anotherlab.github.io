@@ -10,7 +10,7 @@ I’ve been using the [DevExpress](http://www.devexpress.com/) [ASPxScheduler](h
 
 One feature is that it displays a marker on the scheduler to represent the current time.  This is a feature that Outlook does on its calendar and the ASPxScheduler by and large is trying to mirror that experience.  In this case, they behave slightly differently than Outlook.  In Outlook, the time line marker only appears when the calendar time span includes the current date.  If the calendar view does not include the current date, you don’t see that line.
 
-[<img border="0" src="https://i1.wp.com/www.rajapet.net/photos/i-bxbpLgD/0/O/i-bxbpLgD.png?w=680" data-recalc-dims="1" />](http://documentation.devexpress.com/#AspNet/DevExpressWebASPxSchedulerASPxSchedulerOptionsBehavior_ShowTimeMarkertopic "Time line marker documentation")
+[<img border="0" src="https://i1.wp.com/www.rajapet.net/photos/i-bxbpLgD/0/O/i-bxbpLgD.png?w=680"  />](http://documentation.devexpress.com/#AspNet/DevExpressWebASPxSchedulerASPxSchedulerOptionsBehavior_ShowTimeMarkertopic "Time line marker documentation")
 
 (Image of the scheduler control showing the time marker taken from the online documentation)
 

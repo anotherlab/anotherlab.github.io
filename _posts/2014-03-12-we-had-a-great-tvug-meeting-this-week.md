@@ -6,7 +6,7 @@ layout: post
 guid: http://www.rajapet.com/?p=735
 permalink: /2014/03/12/we-had-a-great-tvug-meeting-this-week/
 ---
-<img loading="lazy" title="Peter Lanoie" alt="Peter" src="https://i1.wp.com/www.rajapet.net/photos/i-DNZcF9p/1/M/i-DNZcF9p-M.jpg?resize=600%2C322" width="600" height="322" data-recalc-dims="1" />
+<img loading="lazy" title="Peter Lanoie" alt="Peter" src="https://i1.wp.com/www.rajapet.net/photos/i-DNZcF9p/1/M/i-DNZcF9p-M.jpg?resize=600%2C322" width="600" height="322"  />
 
 A couple of nights ago, [@PeterLanoie](https://twitter.com/@peterlanoie) did a great presentation on [IIS](http://www.iis.net/) administration.  This was at the [March TVUG meeting](http://tvug.net/post/March-Meeting-IIS-Administration-Tricks-Tips-and-Pitfalls).  We had a good sized crowd and there were plenty of questions and discussions from the audience.  Peter had some cool tricks to show off.  Like how to use an [App_Offline.htm](http://weblogs.asp.net/scottgu/archive/2006/04/09/442332.aspx) file to take a site offline while making updates.
 
@@ -14,6 +14,6 @@ We spent a lot of time going over session management, multiple levels of configu
 
 Peter spent over two hours drilling in deep on these topics.  It&#8217;s great when a user group member can step up to the plate and Peter knocked this one out of the park.
 
-<img loading="lazy" alt="TVUG" src="https://i0.wp.com/www.rajapet.net/photos/i-4NvDvnh/1/M/i-4NvDvnh-M.jpg?resize=600%2C281" width="600" height="281" data-recalc-dims="1" /> 
+<img loading="lazy" alt="TVUG" src="https://i0.wp.com/www.rajapet.net/photos/i-4NvDvnh/1/M/i-4NvDvnh-M.jpg?resize=600%2C281" width="600" height="281"  /> 
 
 If you are in the Albany, NY area, check out [TVUG](http://tvug.net/).  That&#8217;s the Tech Valley .Net User Group, located right in the middle of Tech Valley, NY.  We usually meet on the second Tuesday of the month.  We have a [mailing list](http://eepurl.com/pfe2v) that you can sign up for and we have a [MeetUp page](http://www.meetup.com/TechValleyNETUserGroup/).  You can also find us on [Facebook](https://www.facebook.com/TechValleyUserGroup) and [Twitter](https://twitter.com/TVUG).

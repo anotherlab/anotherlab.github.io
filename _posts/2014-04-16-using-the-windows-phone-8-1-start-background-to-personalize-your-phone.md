@@ -14,7 +14,7 @@ This allows you to personalize your phone even more to your tastes.  You can us
 
 You can select the image under &#8220;start+theme&#8221;, in the settings app. You should see something like this:
 
-[<img loading="lazy" alt="start+theme, under settings" src="https://i2.wp.com/www.rajapet.net/photos/i-QN7GgB4/0/S/i-QN7GgB4-S.jpg?resize=169%2C300" width="169" height="300" data-recalc-dims="1" />](https://i0.wp.com/www.rajapet.net/photos/i-QN7GgB4/0/L/i-QN7GgB4-L.jpg)
+[<img loading="lazy" alt="start+theme, under settings" src="https://i2.wp.com/www.rajapet.net/photos/i-QN7GgB4/0/S/i-QN7GgB4-S.jpg?resize=169%2C300" width="169" height="300"  />](https://i0.wp.com/www.rajapet.net/photos/i-QN7GgB4/0/L/i-QN7GgB4-L.jpg)
 
 When you click **choose photo**, you get the standard image picker and you can select an image that is on your phone or in your OneDrive account.
 
@@ -22,8 +22,8 @@ The image that I used here is from the [DeviantART](http://www.deviantart.com/)
 
 After selecting the picture, you will then select which area of the picture to use as the background.  Since the image will mostly likely not match the aspect ratio of your phone, you select which part to use.
 
-<img loading="lazy" alt="Clip the image" src="https://i2.wp.com/www.rajapet.net/photos/i-6WXBD64/0/S/i-6WXBD64-S.jpg?resize=169%2C300" width="169" height="300" data-recalc-dims="1" /> 
+<img loading="lazy" alt="Clip the image" src="https://i2.wp.com/www.rajapet.net/photos/i-6WXBD64/0/S/i-6WXBD64-S.jpg?resize=169%2C300" width="169" height="300"  /> 
 
 <span style="line-height: 1.5;">With the final result, you get a much cooler looking start page.  And it looks more like your phone than just another Windows Phone.</span>
 
-<img loading="lazy" alt="My Phone" src="https://i0.wp.com/www.rajapet.net/photos/i-rnF9KvT/0/S/i-rnF9KvT-S.jpg?resize=169%2C300" width="169" height="300" data-recalc-dims="1" />
+<img loading="lazy" alt="My Phone" src="https://i0.wp.com/www.rajapet.net/photos/i-rnF9KvT/0/S/i-rnF9KvT-S.jpg?resize=169%2C300" width="169" height="300"  />

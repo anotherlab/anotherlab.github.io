@@ -10,7 +10,7 @@ Last October, our company [constructed 8 playhouses that were donated to some pa
 
 While we were assembling the playhouses, the children were brought in to see the playhouses.  It was a pretty emotional scene for all of us.  I remember one little girl, cute as button. She was very shy and but she was excited about getting a new playhouse.  We just found out that Alivia Lowell passed away from leukemia last week at the age of 4. 
 
-[<img title="Alivia's Clubhouse." alt="Alivia's Clubhouse." src="https://i2.wp.com/www.cotaforalivial.com/files/active/0/244_small.jpg?w=680" data-recalc-dims="1" />](http://cotaforalivial.com/node/35) 
+[<img title="Alivia's Clubhouse." alt="Alivia's Clubhouse." src="https://i2.wp.com/www.cotaforalivial.com/files/active/0/244_small.jpg?w=680"  />](http://cotaforalivial.com/node/35) 
 
 <p align="center">
   (click on the picture for more information about Alivia)

@@ -13,7 +13,7 @@ I&#8217;m finishing up an iPad app for our fall release schedule. One of the com
 What we are talking about is the standard blue circle with a white &#8220;>&#8221; in the center. Something like this:
 
 <div>
-  <a href="https://i2.wp.com/3.bp.blogspot.com/-WqB3F0hGE5Q/UhemEMh4W_I/AAAAAAAAAIQ/zEGL6Ae8wSc/s1600/DetailDisclosureButton.png" imageanchor="1"><img loading="lazy" border="0" height="320" src="https://i2.wp.com/3.bp.blogspot.com/-WqB3F0hGE5Q/UhemEMh4W_I/AAAAAAAAAIQ/zEGL6Ae8wSc/s320/DetailDisclosureButton.png?resize=222%2C320" width="222"  data-recalc-dims="1" /></a>
+  <a href="https://i2.wp.com/3.bp.blogspot.com/-WqB3F0hGE5Q/UhemEMh4W_I/AAAAAAAAAIQ/zEGL6Ae8wSc/s1600/DetailDisclosureButton.png" imageanchor="1"><img loading="lazy" border="0" height="320" src="https://i2.wp.com/3.bp.blogspot.com/-WqB3F0hGE5Q/UhemEMh4W_I/AAAAAAAAAIQ/zEGL6Ae8wSc/s320/DetailDisclosureButton.png?resize=222%2C320" width="222"   /></a>
 </div>
 
 The target area that responds to finger touches is about 44&#215;44 pixels, centered around the button. We wanted to increase that target area to make it easier to reach. My first pass was to create new button that was a larger size. That worked, but it didn&#8217;t look like the standard detail disclosure button (actually, it looked hideous, but that&#8217;s another story). I prefer to use the standard iOS imagery unless I have a good reason not to. If you have spent any amount of time with an iPhone or an iPad, you have seen that button before and you know that touching it will provide you with more details. The more familiar a UI is, the less training the user will need.

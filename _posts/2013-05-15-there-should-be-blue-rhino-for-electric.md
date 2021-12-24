@@ -8,13 +8,13 @@ permalink: /2013/05/15/there-should-be-blue-rhino-for-electric/
 ---
 What if the car companies came together and come up with a standard for replaceable electric car batteries?  It takes [hours to charge](http://www.fueleconomy.gov/feg/evtech.shtml) an electric car battery.  That just pretty much limits the use of an all electric car to local use for small amounts of time. It also limits the number of vehicles that could be charged at any time.
 
-<img src="https://i1.wp.com/www.rajapet.net/photos/i-7Fwztzd/0/S/i-7Fwztzd-S.jpg?w=680" data-recalc-dims="1" /> 
+<img src="https://i1.wp.com/www.rajapet.net/photos/i-7Fwztzd/0/S/i-7Fwztzd-S.jpg?w=680"  /> 
 
 I’m starting to see charging stations around here where you can let your car charge up during the day.  But it doesn’t help if you do errands all day and you are not parked in any single location.  At some point, you’ll have to call it day and head home to your own charging station.
 
 What if you could get around the charging period by using swappable batteries? You could go a gas station and they would swap out your depleted battery with one with a full charge.  It would be like the “[Blue Rhino](http://www.bluerhino.com/BRWEB/)” model for swapping gas grill tanks.  That’s where you bring your propane tank in the hardware store, the grocery store, etc.  And they give you a different one already filled.  You are in and out in a few minutes and the store can service many more customers at peak times.  The Blue Rhino people come in and swap the tanks with fresh ones.  It’s a good model and works pretty well.
 
-<img src="https://i1.wp.com/www.rajapet.net/photos/i-GBDvgKz/0/O/i-GBDvgKz.jpg?w=680" data-recalc-dims="1" /> 
+<img src="https://i1.wp.com/www.rajapet.net/photos/i-GBDvgKz/0/O/i-GBDvgKz.jpg?w=680"  /> 
 
 For electric car batteries, this is not a trivial problem to solve.  The biggest one is that every car has a different layout for their batteries and they are not designed to be swappable.  This would require major design changes for the car companies.  Plus you would have to have the infrastructure to support a network of batteries.  There would have to be away to easily remove the exiting battery pack and attach the new one.  The filling stations could recharge the batteries overnight when the rates are lower.  
 

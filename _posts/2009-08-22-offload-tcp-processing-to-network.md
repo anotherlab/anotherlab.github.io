@@ -27,11 +27,11 @@ Before making the changes, check your current broadband speed.  I like the one 
 
 Before enabling Chimney Offload:
 
-[<img loading="lazy" title="546138390[1]" border="0" alt="546138390[1]" src="https://i0.wp.com/lh3.ggpht.com/_natoSxTaPFU/SpBU8iasCaI/AAAAAAAAAWY/NKdKCg64Jok/546138390%5B1%5D_thumb%5B5%5D.png?resize=244%2C112" width="244" height="112"  data-recalc-dims="1" />](https://i1.wp.com/lh5.ggpht.com/_natoSxTaPFU/SpBU8XJHwCI/AAAAAAAAAWU/d9TriG5Ngeg/s1600-h/546138390%5B1%5D%5B7%5D.png) 
+[<img loading="lazy" title="546138390[1]" border="0" alt="546138390[1]" src="https://i0.wp.com/lh3.ggpht.com/_natoSxTaPFU/SpBU8iasCaI/AAAAAAAAAWY/NKdKCg64Jok/546138390%5B1%5D_thumb%5B5%5D.png?resize=244%2C112" width="244" height="112"   />](https://i1.wp.com/lh5.ggpht.com/_natoSxTaPFU/SpBU8XJHwCI/AAAAAAAAAWU/d9TriG5Ngeg/s1600-h/546138390%5B1%5D%5B7%5D.png) 
 
 After:
 
-[<img loading="lazy" title="546142573[1]" border="0" alt="546142573[1]" src="https://i0.wp.com/lh3.ggpht.com/_natoSxTaPFU/SpBU9inEKCI/AAAAAAAAAWg/qTFQnCRmrRA/546142573%5B1%5D_thumb.png?resize=244%2C112" width="244" height="112"  data-recalc-dims="1" />](https://i2.wp.com/lh3.ggpht.com/_natoSxTaPFU/SpBU9D06rnI/AAAAAAAAAWc/BICHITcO1xs/s1600-h/546142573%5B1%5D%5B2%5D.png) 
+[<img loading="lazy" title="546142573[1]" border="0" alt="546142573[1]" src="https://i0.wp.com/lh3.ggpht.com/_natoSxTaPFU/SpBU9inEKCI/AAAAAAAAAWg/qTFQnCRmrRA/546142573%5B1%5D_thumb.png?resize=244%2C112" width="244" height="112"   />](https://i2.wp.com/lh3.ggpht.com/_natoSxTaPFU/SpBU9D06rnI/AAAAAAAAAWc/BICHITcO1xs/s1600-h/546142573%5B1%5D%5B2%5D.png) 
 
 These tests were run a few times before and after the modification.  I picked the average score each time.  That helps even out any existing network traffic that would affect the results.  Going from 17.42 MB/s to 18.70 wasn’t a huge increase, about 7%; but I’ll take it.  There are other settings that you can tweak.  Some are mentioned in the forum posting, and they are also documented in an article in [speedguide.net](http://www.speedguide.net/read_articles.php?id=2574 "Tweaking Vista TCP/IP settings for broadband internet connections") as well.  You don’t often get a free lunch, this is a good one to take.  This setting works for Vista, Server 2008, and Windows 7.  I still don’t know if I can get hardware virtualization, but this was an interesting diversion.
 

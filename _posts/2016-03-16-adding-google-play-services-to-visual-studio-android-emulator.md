@@ -6,7 +6,7 @@ layout: post
 guid: http://www.rajapet.com/?p=1419
 permalink: /2016/03/16/adding-google-play-services-to-visual-studio-android-emulator/
 ---
-<img loading="lazy" class="alignnone" src="https://i1.wp.com/www.rajapet.net/photos/i-R5kKSrR/0/S/i-R5kKSrR-S.jpg?resize=400%2C251" alt="" width="400" height="251" data-recalc-dims="1" />
+<img loading="lazy" class="alignnone" src="https://i1.wp.com/www.rajapet.net/photos/i-R5kKSrR/0/S/i-R5kKSrR-S.jpg?resize=400%2C251" alt="" width="400" height="251"  />
 
 Out of the box, the [Visual Studio Android Emulator](https://www.visualstudio.com/en-us/features/msft-android-emulator-vs.aspx) (and the [Genymotion emulator](https://www.genymotion.com/), and the [Xamarin Android Player](https://xamarin.com/android-player)) does not support Google Cloud Messaging (GCM) push notifications.  The reason for this is that GCM is part of the Google Play Services.  And the Google Play Services are not included in the virtual machine (VM) images that the Visual Studio Android Emulator uses.
 
@@ -17,7 +17,7 @@ Google does not allow Microsoft/Genymotion/Xamarin to include the Google Play Se
 Run the Visual Studio Emulator for Android from the Start Menu.  If you run it from VS, you may not be able to install firmware packages.  Then create a new VM.  For this example, we&#8217;ll create an Android 5.1 VM.  I tried this with Android 6 and it did not work with the GApps packages that I was able to obtain.
 
 <div style="width: 329px" class="wp-caption alignnone">
-  <a href="https://i1.wp.com/www.rajapet.net/photos/i-2Zkg8TJ/0/L/i-2Zkg8TJ-L.png"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/photos/i-2Zkg8TJ/0/S/i-2Zkg8TJ-S.png?resize=319%2C300" alt="" width="319" height="300" data-recalc-dims="1" /></a>
+  <a href="https://i1.wp.com/www.rajapet.net/photos/i-2Zkg8TJ/0/L/i-2Zkg8TJ-L.png"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/photos/i-2Zkg8TJ/0/S/i-2Zkg8TJ-S.png?resize=319%2C300" alt="" width="319" height="300"  /></a>
   
   <p class="wp-caption-text">
     Emulation Manager
@@ -40,7 +40,7 @@ While we are checking stuff with ADB, the following command will return the SDK 
 <pre class="brush:powershell">adb shell getprop ro.build.version.sdk</pre>
 
 <div style="width: 410px" class="wp-caption alignnone">
-  <a href="https://i0.wp.com/www.rajapet.net/photos/i-6S78rKq/0/M/i-6S78rKq-M.png"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/photos/i-6S78rKq/0/S/i-6S78rKq-S.png?resize=400%2C289" alt="Results from the ADB commands" width="400" height="289" data-recalc-dims="1" /></a>
+  <a href="https://i0.wp.com/www.rajapet.net/photos/i-6S78rKq/0/M/i-6S78rKq-M.png"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/photos/i-6S78rKq/0/S/i-6S78rKq-S.png?resize=400%2C289" alt="Results from the ADB commands" width="400" height="289"  /></a>
   
   <p class="wp-caption-text">
     Results from the ADB commands
@@ -52,7 +52,7 @@ First up is the installation of an ARM translator. The VS Android Emulator gets
 Installing is easy, drag the .zip on to a running Android VM and follow the prompts.
 
 <div style="width: 244px" class="wp-caption alignnone">
-  <a href="https://i1.wp.com/www.rajapet.net/photos/i-Dfp2FZc/0/XL/i-Dfp2FZc-XL.png"><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/photos/i-Dfp2FZc/0/M/i-Dfp2FZc-M.png?resize=234%2C450" alt="" width="234" height="450" data-recalc-dims="1" /></a>
+  <a href="https://i1.wp.com/www.rajapet.net/photos/i-Dfp2FZc/0/XL/i-Dfp2FZc-XL.png"><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/photos/i-Dfp2FZc/0/M/i-Dfp2FZc-M.png?resize=234%2C450" alt="" width="234" height="450"  /></a>
   
   <p class="wp-caption-text">
     The dialog that appears after drag and drop the ARM Translator package onto the Android VM
@@ -62,7 +62,7 @@ Installing is easy, drag the .zip on to a running Android VM and follow the prom
 If it didn&#8217;t reboot the VM, reboot it to be safe.  Multiple web sites have a copy of this file.  I downloaded one from the [Tech Bae](http://www.techbae.com/download-install-arm-translation-v1-1-zip-genymotion/) blog.
 
 <div style="width: 362px" class="wp-caption alignnone">
-  <img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/photos/i-B54p3Pb/0/O/i-B54p3Pb.png?resize=352%2C179" alt="" width="352" height="179" data-recalc-dims="1" />
+  <img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/photos/i-B54p3Pb/0/O/i-B54p3Pb.png?resize=352%2C179" alt="" width="352" height="179"  />
   
   <p class="wp-caption-text">
     ARM Translator installed
@@ -75,11 +75,11 @@ The file sets available from [TeamAndroid](http://www.teamandroid.com/gapps/) sh
 
 Drag the gapps package and drop it on your Android VM.  You should get a dialog like this:
 
-<img loading="lazy" class="alignnone" src="https://i2.wp.com/www.rajapet.net/photos/i-WRKdg93/1/O/i-WRKdg93.png?resize=426%2C179" alt="" width="426" height="179" data-recalc-dims="1" /> 
+<img loading="lazy" class="alignnone" src="https://i2.wp.com/www.rajapet.net/photos/i-WRKdg93/1/O/i-WRKdg93.png?resize=426%2C179" alt="" width="426" height="179"  /> 
 
 Click the install button and let it do it&#8217;s thing.  After it completes, it should shutdown.  Restart it from the Emulator Manager.  After Android starts up, you may see a &#8220;Optimizing app X of Y&#8221; dialog.  When Android versions upgrade, the apps all need to tuned for the new version.  This is normal.
 
-<img loading="lazy" class="alignnone" src="https://i1.wp.com/www.rajapet.net/photos/i-fwHkhXr/2/O/i-fwHkhXr.png?resize=403%2C160" alt="" width="403" height="160" data-recalc-dims="1" /> 
+<img loading="lazy" class="alignnone" src="https://i1.wp.com/www.rajapet.net/photos/i-fwHkhXr/2/O/i-fwHkhXr.png?resize=403%2C160" alt="" width="403" height="160"  /> 
 
 When that is all done, you should see  the Google Play icon in the app drawer.  Launch the app and provide your Google account information.  If you see an endless busy indicator, let it go for a minute, then close and restart Google Play.
 
@@ -87,7 +87,7 @@ You may see an error message about Google Play services having stopped.  That 
 
 After installing GApps, some (many) Google apps and services will probably crash. Do not be alarmed, that is perfectly normal. Most of the files are out of date.
 
-<img loading="lazy" class="alignnone" src="https://i1.wp.com/www.rajapet.net/photos/i-NXxS8Tp/2/O/i-NXxS8Tp.png?resize=403%2C165" alt="" width="403" height="165" data-recalc-dims="1" /> 
+<img loading="lazy" class="alignnone" src="https://i1.wp.com/www.rajapet.net/photos/i-NXxS8Tp/2/O/i-NXxS8Tp.png?resize=403%2C165" alt="" width="403" height="165"  /> 
 
 Get the Google Play app to run long enough for you to login and it will start updating.  To force Google Play to update itself, do the following (from [Android Central](http://www.androidcentral.com/how-update-your-google-play-store-without-sideloading-savage)):
 
@@ -98,7 +98,7 @@ Get the Google Play app to run long enough for you to login and it will start up
 
 If a newer version is a available, you&#8217;ll see a dialog with that information.
 
-<img loading="lazy" class="alignnone" src="https://i0.wp.com/www.rajapet.net/photos/i-G92qSgW/1/O/i-G92qSgW.png?resize=403%2C717" alt="" width="403" height="717" data-recalc-dims="1" /> 
+<img loading="lazy" class="alignnone" src="https://i0.wp.com/www.rajapet.net/photos/i-G92qSgW/1/O/i-G92qSgW.png?resize=403%2C717" alt="" width="403" height="717"  /> 
 
 At that point, your Android VM will support push notifications.  You can install of Google Play apps like the Maps application.  These steps were tested with Visual Studio Android Emulator but they should work more or less in the same way with the Genymotion and Xamarin emulators.
 

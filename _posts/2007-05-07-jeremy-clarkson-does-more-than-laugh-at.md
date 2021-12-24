@@ -11,7 +11,7 @@ I really wish I could get [&#8220;Top Gear&#8221;](http://www.topgear.com/) here
  
 
 <div>
-  <a href="http://www.youtube.com/watch?v=kIf-0S48WM0"><img loading="lazy" height="90" src="https://i2.wp.com/img.youtube.com/vi/kIf-0S48WM0/2.jpg?resize=120%2C90" width="120" border="1" data-recalc-dims="1" /></a> </p> 
+  <a href="http://www.youtube.com/watch?v=kIf-0S48WM0"><img loading="lazy" height="90" src="https://i2.wp.com/img.youtube.com/vi/kIf-0S48WM0/2.jpg?resize=120%2C90" width="120" border="1"  /></a> </p> 
   
   <div>
     <a href="http://www.youtube.com/watch?v=kIf-0S48WM0">watch video</a>

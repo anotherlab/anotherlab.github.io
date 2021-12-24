@@ -15,9 +15,9 @@ categories:
 
 The default shell for me is PowerShell <s>Core</s>, aka [Powershell 7.0](https://devblogs.microsoft.com/powershell/announcing-powershell-7-0/). Out of the box, it doesn&#8217;t have [ADB](https://developer.android.com/studio/command-line/adb) on the path. When I&#8217;m doing Android stuff, I want the ADB. But I don&#8217;t want it to be on the path by default. Just like Visual Studio has the &#8220;Android ADB Command Prompt&#8221; menu option, I wanted to add shell option to Terminals so I can spin up a new PowerShell, but with ADB support. This is what I ended up with:
 
-<figure class="wp-block-image size-large">
+<figure>
 
-<img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-VkJnhDq/0/f4461e23/L/shellabd-L.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> <figcaption>PowerShell with ADB goodness.</figcaption></figure> 
+<img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-VkJnhDq/0/f4461e23/L/shellabd-L.png" alt=""  /> <figcaption>PowerShell with ADB goodness.</figcaption></figure> 
 
 The first thing I did was to create a PowerShell script that just adds the ADB tooling to the path. My first attempt was:
 
@@ -136,6 +136,6 @@ About that &#8220;Cascadia Code PL&#8221; font face.&nbsp; I&#8217;m running a t
 
 Oh-my-posh uses Powerline Glyphs ([originally defined here](https://github.com/powerline/powerline)) as part of the status display.&nbsp; So you&#8217;ll need a font that includes the Powerline Glyphs.&nbsp; Microsoft&#8217;s Cascadia Code font has a version with Powerline and you can get it [here](https://github.com/microsoft/cascadia-code/releases).&nbsp; Here&#8217;s what that looked like when I was adding the files to the Gist<figure class="wp-block-image">
 
-<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-6GTWwch/0/f94c4d14/M/shellposh-M.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /> </figure> 
+<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-6GTWwch/0/f94c4d14/M/shellposh-M.png" alt=""  /> </figure> 
 
 You can see the color and text information change as I used git to add the icon to the Gist. When working with git, it&#8217;s very handy to easily see which branch you are working with and the current status of that branch.

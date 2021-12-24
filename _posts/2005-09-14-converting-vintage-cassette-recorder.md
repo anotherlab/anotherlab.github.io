@@ -8,4 +8,4 @@ permalink: /2005/09/14/converting-vintage-cassette-recorder/
 ---
 This is a [clever little hack](http://www.terrik.com/wordpress/archives/2005/09/05/usb-hd/ "Kaufman's lab"). Some guy gutted an old cassette player and made an external USB drive enclosure out of it.
 
-<img loading="lazy" src="https://i1.wp.com/static.flickr.com/32/41695170_63d2ac9d09_o.jpg?resize=200%2C150" width="200" height="150" title="Cassette Hack" border="0" data-recalc-dims="1" />
+<img loading="lazy" src="https://i1.wp.com/static.flickr.com/32/41695170_63d2ac9d09_o.jpg?resize=200%2C150" width="200" height="150" title="Cassette Hack" border="0"  />

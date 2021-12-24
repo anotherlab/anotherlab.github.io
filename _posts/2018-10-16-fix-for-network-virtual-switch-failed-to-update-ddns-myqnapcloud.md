@@ -28,7 +28,7 @@ Message: [Network & Virtual Switch] Failed to update DDNS "myQNAPcloud".
 
 OK, that&#8217;s a new one.  I took a cursory look at the settings and apps, but didn&#8217;t see anything amiss.  Fortunately, the Internet is now on computers and I pasted that error message into my browser and it found stuff.  I found a [message thread](https://forum.qnap.com/viewtopic.php?f=313&t=134697&p=688649#p688308) on the QNAP forum (you are not a real product unless you have a support forum) that mentioned the problem.  Misery loves company and when it comes to computers, seeing other people with the same problem means that it&#8217;s probably [Not Your Fault](https://www.youtube.com/watch?v=GtkST5-ZFHw).
 
-<img loading="lazy" class="size-medium aligncenter" src="https://i1.wp.com/photos.smugmug.com/photos/i-hrzcJzX/0/2a225af1/S/i-hrzcJzX-S.png?resize=300%2C300&#038;ssl=1" width="300" height="300" data-recalc-dims="1" /> 
+<img loading="lazy" class="size-medium aligncenter" src="https://i1.wp.com/photos.smugmug.com/photos/i-hrzcJzX/0/2a225af1/S/i-hrzcJzX-S.png?resize=300%2C300&#038;ssl=1" width="300" height="300"  /> 
 
 Other people had posted that this problem started after installing the 4.3.5 firmware upgrade.  I posted a &#8220;me too&#8221; post (not a #metoo post).  I then decided to see if there was something obvious that I could fix.  Under My Apps, I had a MyQNAPCloud app and it wasn&#8217;t running.  What this app provided was a mechanism where the QNAP box would punch a hole through your router and get you a domain name that would route down to your server.  With SSL via [Lets Encrypt](https://letsencrypt.org/).  All in all, pretty cool.
 
@@ -44,6 +44,6 @@ The [thick plottens](https://dancingwithfools.files.wordpress.com/2013/06/1a20.j
 
 After futzing around with the myNAPCloud settings, I let the QNAP box do it&#8217;s own thing while I sent back to CAT6 things.  After 20 minutes, I noticed that the warning messages had stopped.  This is a good thing, I had addressed whatever the problem was.
 
-<img loading="lazy" class="size-medium aligncenter" src="https://i1.wp.com/photos.smugmug.com/photos/i-SjbXFc2/0/64b3eb01/M/i-SjbXFc2-M.png?resize=600%2C309&#038;ssl=1" width="600" height="309" data-recalc-dims="1" /> 
+<img loading="lazy" class="size-medium aligncenter" src="https://i1.wp.com/photos.smugmug.com/photos/i-SjbXFc2/0/64b3eb01/M/i-SjbXFc2-M.png?resize=600%2C309&#038;ssl=1" width="600" height="309"  /> 
 
 This was one of the times where poking the beast with a sharp stick actually worked.  I like the QNAP boxes.  They are easy to work with, [up-gradable](http://www.crucial.com/usa/en/compatible-upgrade-for/QNAP/ts-451), and the UI is actually useful.

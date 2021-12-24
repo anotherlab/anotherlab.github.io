@@ -14,7 +14,7 @@ tags:
   - Repave
   - Reset
 ---
-<img loading="lazy" class="alignnone size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-knxjknW/0/2d8e6a0d/L/i-knxjknW-L.jpg?resize=680%2C509&#038;ssl=1" width="680" height="509" data-recalc-dims="1" />
+<img loading="lazy" class="alignnone size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-knxjknW/0/2d8e6a0d/L/i-knxjknW-L.jpg?resize=680%2C509&#038;ssl=1" width="680" height="509"  />
 
 After lunch on Wednesday, I rebooted my work PC and it did not come back.  [ADB](https://developer.android.com/studio/command-line/adb.html) had somehow lost the ability to see my actual Android devices.  I had tried a few things and was at the &#8220;[Have you turned it off and on again](https://www.youtube.com/watch?v=nn2FB1P_Mn8)&#8221; step.  I shutdown it and restarted it.   Windows 10 was not very happy.  I got the light blue screen of death.  It had a useless QR code and the ever so helpful message &#8220;critical service failure&#8221; message.
 

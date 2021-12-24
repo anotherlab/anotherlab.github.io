@@ -14,7 +14,7 @@ So the first thought was to check puterSoft&#8217;s [web site](http://www.puters
 
 I can&#8217;t tell if puterSoft is gone or something is all [fracked](http://en.wikipedia.org/wiki/Frack) up with DiscountAsp.net&#8217;s DNS records.  I&#8217;ve emailed Sergiy at puterSoft to see if they are still around.  I also fired off an email to DiscountAsp to see if they can tell me anything.  After 20 minutes, I got a reply back from DiscountASP.NET that the account has been cancelled.  That&#8217;s **Not Good<sup>tm</sup>**.
 
-<a href="http://img50.imageshack.us/my.php?image=churchsignyc2.jpg" target="_blank"><img src="https://i2.wp.com/img50.imageshack.us/img50/4026/churchsignyc2.th.jpg?w=680" border="0" data-recalc-dims="1" /></a> 
+<a href="http://img50.imageshack.us/my.php?image=churchsignyc2.jpg" target="_blank"><img src="https://i2.wp.com/img50.imageshack.us/img50/4026/churchsignyc2.th.jpg?w=680" border="0"  /></a> 
 
 Since I&#8217;m not going to get any resolution from puterSoft in the immediate future, I decided to take a whack at it and see if it was a simple fix.  And it looks like it is.
 

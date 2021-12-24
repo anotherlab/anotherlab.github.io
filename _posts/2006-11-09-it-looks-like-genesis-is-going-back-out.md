@@ -5,7 +5,7 @@ layout: post
 guid: http://www.rajapet.com/?p=275
 permalink: /2006/11/09/it-looks-like-genesis-is-going-back-out/
 ---
-[<img alt="" src="https://i2.wp.com/photos1.blogger.com/blogger2/6636/1399/320/image4.png?w=680" border="0" data-recalc-dims="1" />](https://i2.wp.com/photos1.blogger.com/blogger2/6636/1399/1600/image4.png)
+[<img alt="" src="https://i2.wp.com/photos1.blogger.com/blogger2/6636/1399/320/image4.png?w=680" border="0"  />](https://i2.wp.com/photos1.blogger.com/blogger2/6636/1399/1600/image4.png)
 
 <div>
 </div>
@@ -16,4 +16,4 @@ It looks like [Genesis](http://en.wikipedia.org/wiki/Genesis_(band)) is going ba
 
 With just 20 shows in the US, I don&#8217;t have my hopes up for a [local](http://www.pepsiarena.com/) [appearance](http://www.spac.org/).</p> 
 
-[<img alt="" src="https://i0.wp.com/photos1.blogger.com/blogger2/6636/1399/320/image3.png?w=680" border="0" data-recalc-dims="1" />](https://i2.wp.com/photos1.blogger.com/blogger2/6636/1399/1600/image3.png)
+[<img alt="" src="https://i0.wp.com/photos1.blogger.com/blogger2/6636/1399/320/image3.png?w=680" border="0"  />](https://i2.wp.com/photos1.blogger.com/blogger2/6636/1399/1600/image3.png)

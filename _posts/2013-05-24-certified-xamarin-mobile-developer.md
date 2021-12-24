@@ -9,7 +9,7 @@ permalink: /2013/05/24/certified-xamarin-mobile-developer/
 I just received the email notification from [Xamarin](http://xamarin.com/) that I successfully passed their Mobile Developer certification exam. I was given a free pass for the exam for attending the [Xamarin Evolve Developer conference](http://xamarin.com/evolve/2013#home) back in April.
 
 <div>
-  <a href="https://i1.wp.com/www.rajapet.net/photos/i-MzSgcGd/0/S/i-MzSgcGd-S.png" imageanchor="1"><img border="0" src="https://i1.wp.com/www.rajapet.net/photos/i-MzSgcGd/0/S/i-MzSgcGd-S.png?w=680" data-recalc-dims="1" /></a>
+  <a href="https://i1.wp.com/www.rajapet.net/photos/i-MzSgcGd/0/S/i-MzSgcGd-S.png" imageanchor="1"><img border="0" src="https://i1.wp.com/www.rajapet.net/photos/i-MzSgcGd/0/S/i-MzSgcGd-S.png?w=680"  /></a>
 </div>
 
 It was a tough exam, it went pretty deep on some of the internals and covered a lot of iOS and Android territory. Passing grade was 50% correct of 100 questions. I hit 90% and the exam software showed me what the correct answers were for what I got wrong. Does it make me a better developer? No, but it shows that I have the knowledge and skill set to create iOS and Android apps using C# with Xamarin technology.

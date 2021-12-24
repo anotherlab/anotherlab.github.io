@@ -52,7 +52,7 @@ As much as I could do so, I followed the code structure&#8217;s of the Java libr
 The TWN4 has become my favorite RFID reader.  It&#8217;s very good at reading different card types and you can write custom firmware for it in C.  I used it in another project where it had to work with a custom protocol to with the host device.
 
 <div style="width: 160px" class="wp-caption alignnone">
-  <a href="https://www.elatec-rfid.com/en/products/multi-technology-rfid-reader/housed/hf-lf-nfc-multi-technology/"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-kWhkjqX/0/Th/i-kWhkjqX-Th.png?resize=150%2C101&#038;ssl=1" width="150" height="101" data-recalc-dims="1" /></a>
+  <a href="https://www.elatec-rfid.com/en/products/multi-technology-rfid-reader/housed/hf-lf-nfc-multi-technology/"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-kWhkjqX/0/Th/i-kWhkjqX-Th.png?resize=150%2C101&#038;ssl=1" width="150" height="101"  /></a>
   
   <p class="wp-caption-text">
     TWN4 reader

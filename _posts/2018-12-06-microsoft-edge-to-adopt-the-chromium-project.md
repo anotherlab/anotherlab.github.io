@@ -16,7 +16,7 @@ tags:
   - Edge
   - V8
 ---
-<img loading="lazy" class="aligncenter size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-VdCPZTk/0/e0b15d46/M/i-VdCPZTk-M.jpg?resize=600%2C292&#038;ssl=1" width="600" height="292" data-recalc-dims="1" />
+<img loading="lazy" class="aligncenter size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-VdCPZTk/0/e0b15d46/M/i-VdCPZTk-M.jpg?resize=600%2C292&#038;ssl=1" width="600" height="292"  />
 
 After a week of rumors, Microsoft has just [publicly announced](https://blogs.windows.com/windowsexperience/2018/12/06/microsoft-edge-making-the-web-better-through-more-open-source-collaboration/) that they will be adopting the [Chromium project](https://www.chromium.org/Home) for their Edge Browser.  They actually announced three things today:
 
@@ -26,7 +26,7 @@ After a week of rumors, Microsoft has just [publicly announced](https://blogs.wi
 
 What does that mean?
 
-<img loading="lazy" class="aligncenter size-medium" src="https://i1.wp.com/i.imgflip.com/2ocl0y.jpg?resize=552%2C414&#038;ssl=1" width="552" height="414" data-recalc-dims="1" />  
+<img loading="lazy" class="aligncenter size-medium" src="https://i1.wp.com/i.imgflip.com/2ocl0y.jpg?resize=552%2C414&#038;ssl=1" width="552" height="414"  />  
 This is A Good Thing
 
 Chromium is an open source project that Google started.  It is the basis for the Google Chrome browser. For better or worse, Chrome is considered to be the standard that web developers use for measuring compatibility.  There are things that Edge handles better than Chrome.  Touch gestures and battery life are better on Edge.  Microsoft has done a lot of work on accessibility and assisted reading devices.

@@ -12,7 +12,7 @@ categories:
   - Uncategorized
 ---
 <div style="width: 220px" class="wp-caption alignleft">
-  <a href="http://amzn.to/2i0Ssik"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-5kXLPwC/0/S/i-5kXLPwC-S.jpg?resize=210%2C299&#038;ssl=1" alt="Cross-platform Localization for Native Mobile Apps with Xamarin" width="210" height="299" data-recalc-dims="1" /></a>
+  <a href="http://amzn.to/2i0Ssik"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-5kXLPwC/0/S/i-5kXLPwC-S.jpg?resize=210%2C299&#038;ssl=1" alt="Cross-platform Localization for Native Mobile Apps with Xamarin" width="210" height="299"  /></a>
   
   <p class="wp-caption-text">
     Cross-platform Localization for Native Mobile Apps with Xamarin
@@ -26,7 +26,7 @@ It&#8217;s not a long book, about 110 pages.  It provides the basic information
 After discussing the basics of localization, the book covers how to get your text translated.  There is a chapter that covers the [Multilingual App Toolkit](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit) (aka MAT), which is Visual Studio extension that is a workflow management tool for language resource files.
 
 <div style="width: 409px" class="wp-caption aligncenter">
-  <a href="https://i1.wp.com/photos.smugmug.com/photos/i-cQPD83H/0/XL/i-cQPD83H-XL.png?ssl=1"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-cQPD83H/0/S/i-cQPD83H-S.png?resize=399%2C221&#038;ssl=1" alt="Multilingual App Toolkit" width="399" height="221" data-recalc-dims="1" /></a>
+  <a href="https://i1.wp.com/photos.smugmug.com/photos/i-cQPD83H/0/XL/i-cQPD83H-XL.png?ssl=1"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-cQPD83H/0/S/i-cQPD83H-S.png?resize=399%2C221&#038;ssl=1" alt="Multilingual App Toolkit" width="399" height="221"  /></a>
   
   <p class="wp-caption-text">
     I love this tool
@@ -38,7 +38,7 @@ If you are using Xamarin.Android and Xamarin.iOS to build your apps, you can us
 Besides translating the text that is compiled into the app, I spend time discussing how to manage language resources coming from web services.  Once again, the MAT is handy for managing language resources server side.
 
 <div style="width: 263px" class="wp-caption alignleft">
-  <img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-hDqvm92/0/M/i-hDqvm92-M.png?resize=253%2C450&#038;ssl=1" width="253" height="450" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-hDqvm92/0/M/i-hDqvm92-M.png?resize=253%2C450&#038;ssl=1" width="253" height="450"  />
   
   <p class="wp-caption-text">
     The sample app (Spanish version)

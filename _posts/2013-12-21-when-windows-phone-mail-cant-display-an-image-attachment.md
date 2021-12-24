@@ -23,7 +23,7 @@ So I decided to poke around a bit. Using GMail, I sent the same picture to anoth
 And I couldn&#8217;t open the picture from Windows Phone Mail.  I could create the problem on my end. That&#8217;s half the battle in fixing bugs, getting past &#8220;It works on my machine&#8221; stage.
 
 <div style="width: 210px" class="wp-caption aligncenter">
-  <img loading="lazy" alt="" src="https://i1.wp.com/www.rajapet.net/photos/i-vXzzQMW/0/O/i-vXzzQMW.png?resize=200%2C193" width="200" height="193" data-recalc-dims="1" />
+  <img loading="lazy" alt="" src="https://i1.wp.com/www.rajapet.net/photos/i-vXzzQMW/0/O/i-vXzzQMW.png?resize=200%2C193" width="200" height="193"  />
   
   <p class="wp-caption-text">
     Image from the <a href="http://www.codinghorror.com/blog/2007/03/the-works-on-my-machine-certification-program.html">Coding Horror</a>

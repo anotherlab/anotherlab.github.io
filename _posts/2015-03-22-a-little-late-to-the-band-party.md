@@ -7,7 +7,7 @@ guid: http://www.rajapet.com/?p=1208
 permalink: /2015/03/22/a-little-late-to-the-band-party/
 ---
 <div style="width: 410px" class="wp-caption alignnone">
-  <img loading="lazy" class="" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-LfFs2TG/0/S/MyBand-S.jpg?resize=400%2C232" alt="" width="400" height="232" data-recalc-dims="1" />
+  <img loading="lazy" class="" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-LfFs2TG/0/S/MyBand-S.jpg?resize=400%2C232" alt="" width="400" height="232"  />
   
   <p class="wp-caption-text">
     My Band with some decoration for the upcoming US MVP Open Days

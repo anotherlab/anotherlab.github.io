@@ -7,7 +7,7 @@ guid: http://www.rajapet.com/?p=823
 permalink: /2014/05/11/this-one-is-for-your-grandparents-aka-im-calling-you-from-windows-and-you-a-have-virus/
 ---
 <div style="width: 394px" class="wp-caption alignnone">
-  <img loading="lazy" src="https://i0.wp.com/www.rajapet.net/photos/i-KrwGSx5/0/S/i-KrwGSx5-S.jpg?resize=384%2C300" alt="Only you can save Grampy and Oma" width="384" height="300" data-recalc-dims="1" />
+  <img loading="lazy" src="https://i0.wp.com/www.rajapet.net/photos/i-KrwGSx5/0/S/i-KrwGSx5-S.jpg?resize=384%2C300" alt="Only you can save Grampy and Oma" width="384" height="300"  />
   
   <p class="wp-caption-text">
     Only you can save Grampy and Oma
@@ -23,7 +23,7 @@ This is what you need tell Grandma.  When the weasel calls from Windows, just 
 This scam has been going around for a few years and it&#8217;s classic social engineering.  They will walk you through launching the Windows event viewer and have you scroll through the list until you see an error message.  You&#8217;ll <span style="text-decoration: underline;">always see an error message</span>, something is always complaining about something under the hood.  It&#8217;s more or less business as usual in Windows.
 
 <div style="width: 410px" class="wp-caption aligncenter">
-  <img loading="lazy" src="https://i0.wp.com/www.rajapet.net/photos/i-gntDcNc/0/S/i-gntDcNc-S.jpg?resize=400%2C287" alt="There's always an error, you can ignore most of them" width="400" height="287" data-recalc-dims="1" />
+  <img loading="lazy" src="https://i0.wp.com/www.rajapet.net/photos/i-gntDcNc/0/S/i-gntDcNc-S.jpg?resize=400%2C287" alt="There's always an error, you can ignore most of them" width="400" height="287"  />
   
   <p class="wp-caption-text">
     There&#8217;s always an error, you can ignore most of them

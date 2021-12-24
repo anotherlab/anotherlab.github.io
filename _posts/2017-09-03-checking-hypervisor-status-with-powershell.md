@@ -16,7 +16,7 @@ tags:
   - Powershell
 ---
 <div style="width: 610px" class="wp-caption alignnone">
-  <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-Gg6pZTX/0/2727179c/M/i-Gg6pZTX-M.jpg?resize=600%2C368&#038;ssl=1" width="600" height="368" data-recalc-dims="1" />
+  <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-Gg6pZTX/0/2727179c/M/i-Gg6pZTX-M.jpg?resize=600%2C368&#038;ssl=1" width="600" height="368"  />
   
   <p class="wp-caption-text">
     Image courtesy of <a href="https://www.flickr.com/photos/sergemelki/4662832317">Serge Melki</a>

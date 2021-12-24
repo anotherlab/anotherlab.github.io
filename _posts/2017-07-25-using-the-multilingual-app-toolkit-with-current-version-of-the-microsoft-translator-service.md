@@ -12,7 +12,7 @@ categories:
   - Localization
 ---
 <div style="width: 609px" class="wp-caption alignnone">
-  <img loading="lazy" src="https://i2.wp.com/photos.smugmug.com/photos/i-D66Lc4v/0/e3f9e64e/M/i-D66Lc4v-M.png?resize=599%2C316&#038;ssl=1" alt="" width="599" height="316" data-recalc-dims="1" />
+  <img loading="lazy" src="https://i2.wp.com/photos.smugmug.com/photos/i-D66Lc4v/0/e3f9e64e/M/i-D66Lc4v-M.png?resize=599%2C316&#038;ssl=1" alt="" width="599" height="316"  />
   
   <p class="wp-caption-text">
     Image courtesy of M. Adiputra via Wikimedia Commons
@@ -38,7 +38,7 @@ Click the **Create** button
 Select the free pricing tier and fill out the rest of the fields and then press the create button.
 
 <div style="width: 118px" class="wp-caption alignnone">
-  <a href="https://i1.wp.com/photos.smugmug.com/photos/i-LrKS2cS/0/1b236708/XL/i-LrKS2cS-XL.png?ssl=1"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-LrKS2cS/0/1b236708/S/i-LrKS2cS-S.png?resize=108%2C300&#038;ssl=1" width="108" height="300" data-recalc-dims="1" /></a>
+  <a href="https://i1.wp.com/photos.smugmug.com/photos/i-LrKS2cS/0/1b236708/XL/i-LrKS2cS-XL.png?ssl=1"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-LrKS2cS/0/1b236708/S/i-LrKS2cS-S.png?resize=108%2C300&#038;ssl=1" width="108" height="300"  /></a>
   
   <p class="wp-caption-text">
     Click on image for larger version
@@ -66,7 +66,7 @@ If you copied and pasted the text, make sure that the text does not have trailin
 Click the **OK** button.
 
 <div style="width: 610px" class="wp-caption alignnone">
-  <img loading="lazy" src="https://i2.wp.com/photos.smugmug.com/photos/i-D4cGxtT/0/5b7c4039/M/i-D4cGxtT-M.png?resize=600%2C235&#038;ssl=1" alt="" width="600" height="235" data-recalc-dims="1" />
+  <img loading="lazy" src="https://i2.wp.com/photos.smugmug.com/photos/i-D4cGxtT/0/5b7c4039/M/i-D4cGxtT-M.png?resize=600%2C235&#038;ssl=1" alt="" width="600" height="235"  />
   
   <p class="wp-caption-text">
     Entering the Azure key as a generic credential

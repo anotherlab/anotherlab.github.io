@@ -6,7 +6,7 @@ layout: post
 guid: http://www.rajapet.com/?p=758
 permalink: /2014/03/17/sometimes-42-is-the-right-answer/
 ---
-<img loading="lazy" alt="Prime Meridian" src="https://i1.wp.com/anotherlab.smugmug.com/photos/i-tL8GBSj/0/M/i-tL8GBSj-M.jpg?resize=600%2C401" width="600" height="401" data-recalc-dims="1" />
+<img loading="lazy" alt="Prime Meridian" src="https://i1.wp.com/anotherlab.smugmug.com/photos/i-tL8GBSj/0/M/i-tL8GBSj-M.jpg?resize=600%2C401" width="600" height="401"  />
 
 I was skimming the [Codist blog](http://thecodist.com/article/our_ios_app_crash_rate) when I read the following
 

@@ -16,7 +16,7 @@ tags:
   - Duncan Jones
 ---
 <div style="width: 420px" class="wp-caption alignnone">
-  <a href="http://www.ala.org/"><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-cXMJdGz/0/26ff702f/L/i-cXMJdGz-L.jpg?resize=410%2C600&#038;ssl=1" width="410" height="600" data-recalc-dims="1" /></a>
+  <a href="http://www.ala.org/"><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-cXMJdGz/0/26ff702f/L/i-cXMJdGz-L.jpg?resize=410%2C600&#038;ssl=1" width="410" height="600"  /></a>
   
   <p class="wp-caption-text">
     Bowie&#8217;s READ poster from the American Library Association (1987)

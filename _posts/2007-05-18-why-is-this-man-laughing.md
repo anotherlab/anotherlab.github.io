@@ -6,7 +6,7 @@ layout: post
 guid: http://www.rajapet.com/?p=241
 permalink: /2007/05/18/why-is-this-man-laughing/
 ---
-  [<img alt="" src="https://i1.wp.com/2.bp.blogspot.com/_natoSxTaPFU/Rk3TFfq9V0I/AAAAAAAAAAg/KBX5zsjIaJM/s400/DaveAnthony.jpg?w=680" align="left" border="0" data-recalc-dims="1" />](https://i1.wp.com/2.bp.blogspot.com/_natoSxTaPFU/Rk3TFfq9V0I/AAAAAAAAAAg/KBX5zsjIaJM/s1600-h/DaveAnthony.jpg) 
+  [<img alt="" src="https://i1.wp.com/2.bp.blogspot.com/_natoSxTaPFU/Rk3TFfq9V0I/AAAAAAAAAAg/KBX5zsjIaJM/s400/DaveAnthony.jpg?w=680" align="left" border="0"  />](https://i1.wp.com/2.bp.blogspot.com/_natoSxTaPFU/Rk3TFfq9V0I/AAAAAAAAAAg/KBX5zsjIaJM/s1600-h/DaveAnthony.jpg) 
 
 There’s a story behind that picture and it’s pretty much what you would think it is. 
 

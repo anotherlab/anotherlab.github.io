@@ -167,7 +167,7 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>I had a problem with applying an <a href="http://www.iss.net/security_center/advice/Countermeasures/Authentication/Authenticode/default.htm">Authenticode</a> digital signature to installer that I had created with <a href="http://www.wise.com/Products/Installations.aspx">Wise Installation System 9.02</a>.  Basically, it was failing with the lovely message:</p>
 
-<p><a href="https://i0.wp.com/1.bp.blogspot.com/_natoSxTaPFU/R2f8ya7uenI/AAAAAAAAACY/ACIjygQfb5k/s1600-h/ole0.png" target="_blank"><img alt="Could not initialize installation. File size expected=3258503, size returned=3263976" src="https://i2.wp.com/1.bp.blogspot.com/_natoSxTaPFU/R2f8ya7uenI/AAAAAAAAACY/ACIjygQfb5k/s400/ole0.png?w=680" border="0" data-recalc-dims="1" /></a></p>
+<p><a href="https://i0.wp.com/1.bp.blogspot.com/_natoSxTaPFU/R2f8ya7uenI/AAAAAAAAACY/ACIjygQfb5k/s1600-h/ole0.png" target="_blank"><img alt="Could not initialize installation. File size expected=3258503, size returned=3263976" src="https://i2.wp.com/1.bp.blogspot.com/_natoSxTaPFU/R2f8ya7uenI/AAAAAAAAACY/ACIjygQfb5k/s400/ole0.png?w=680" border="0" /></a></p>
 
 <p>The signature was being applied outside of Wise, through our build process.  We use <a href="http://www.finalbuilder.com/finalbuilder.aspx">FinalBuilder</a> to build all of our applications and it has a handy Authenticode action for applying an Authenticode signature to the target you specify.  If I disabled that action, the installer worked.</p>
 
@@ -175,7 +175,7 @@
 
 <p>After a fair amount of googling, I found an <a href="http://https://www.thawte.com/dynamic/en/images/support/inetSDk5.zip">old copy of signcode</a> on Thawte’s site on this <a href="https://www.thawte.com/ssl-digital-certificates/technical-support/code/msauth.html#sr">page</a>.  I downloaded the file set and extracted signcode and placed it in my \windows folder.  I fired up Wise and went to the “Digital Signature” page in the IDE.  That’s when I saw the blindingly obvious setting that I needed to set:</p>
 
-<p><a href="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/R2f-zq7ueoI/AAAAAAAAACg/raZ85Wgenqg/s1600-h/dialog.png"><img alt="" src="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/R2f-zq7ueoI/AAAAAAAAACg/raZ85Wgenqg/s400/dialog.png?w=680" border="0" data-recalc-dims="1" /></a> </p>
+<p><a href="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/R2f-zq7ueoI/AAAAAAAAACg/raZ85Wgenqg/s1600-h/dialog.png"><img alt="" src="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/R2f-zq7ueoI/AAAAAAAAACg/raZ85Wgenqg/s400/dialog.png?w=680" border="0" /></a> </p>
 
 <p>On the “Digital Signature” in the Wise Installation System IDE, make sure that the radio button labeled “Add a digital signature externally” has been checked. Once I made that change, everything worked.</p>
 
@@ -214,6 +214,10 @@
       
         
           <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
         
       
         

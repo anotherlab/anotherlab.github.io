@@ -26,13 +26,15 @@ description: >- # this means to ignore newlines until "baseurl:"
   My personal blog, 4th version
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: anotherlab
-#github_username:  anotherlab
-search: true
-words_per_minute         : 200
+twitter_username: anotherlab
+github_username:  anotherlab
+search:           true
+words_per_minute: 200
+
 repository: "anotherlab/anotherlab.github.io"
 comments:
   provider: "giscus"
+#  provider: "utterances"
   giscus:
     repo:                "anotherlab/anotherlab.github.io"
     repo-id:             "R_kgDOGhtM_w"
@@ -42,6 +44,10 @@ comments:
     reactions-enabled:    "1"
     theme:               "light"
     crossorigin:         "anonymous"    
+  utterances:
+    repo:                "anotherlab/anotherlab.github.io"
+    theme:               "github-light" # "github-dark"
+    issue_term:          "pathname"
 
 # Build settings
 markdown: kramdown
@@ -49,14 +55,14 @@ remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: sunrise
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /:year/:month/:day/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: US/Eastern
 
 # Social
 twitter:
-  username               : anotherlab
+  username:         anotherlab
 github:             anotherlab
 stackoverflow:      206/chris-miller   #from a "http://stackoverflow.com/users/123456/username" link
 
@@ -107,6 +113,9 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/anotherlab"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/christophermiller/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/anotherlab"
@@ -184,7 +193,7 @@ defaults:
       path: ""
       type: posts
     values:
-#      layout: single
+      layout: single
       author_profile: true
       read_time: true
       comments: true
@@ -192,7 +201,6 @@ defaults:
       related: true
   # _pages
   - scope:
-#      path: "_pages"
       path: ""
       type: pages
     values:
@@ -204,14 +212,6 @@ defaults:
 sass:
   sass_dir: _sass
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-
-# Outputting
-permalink: /:categories/:title/
-# paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
-timezone: America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones      
-
 
 # Plugins (previously gems:)
 plugins:

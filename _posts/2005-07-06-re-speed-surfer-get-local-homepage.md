@@ -17,7 +17,7 @@ This is a clever idea, I think I&#8217;m going to do this on the home PC&#8217;s
 > 
 > Here&#8217;s an example:
 > 
-> [<img src="https://i0.wp.com/secretgeek.net/image/searcher.jpg?w=680" alt="snippet of my local homepage" border="0" data-recalc-dims="1" />](http://secretgeek.net/sg_portal.asp)
+> [<img src="https://i0.wp.com/secretgeek.net/image/searcher.jpg?w=680" alt="snippet of my local homepage" border="0"  />](http://secretgeek.net/sg_portal.asp)
 > 
 > This is my gift to you.
 > 

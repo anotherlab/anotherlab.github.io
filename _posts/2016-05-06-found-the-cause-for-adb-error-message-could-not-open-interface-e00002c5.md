@@ -7,7 +7,7 @@ guid: http://www.rajapet.com/?p=1439
 permalink: /2016/05/06/found-the-cause-for-adb-error-message-could-not-open-interface-e00002c5/
 ---
 <div style="width: 410px" class="wp-caption aligncenter">
-  <a href="https://www.flickr.com/photos/peterhess/2976755407"><img loading="lazy" class="" src="https://i2.wp.com/photos.smugmug.com/photos/i-bX9mPQR/0/S/i-bX9mPQR-S.jpg?resize=400%2C267&#038;ssl=1" alt="Frustration with Computers" width="400" height="267" data-recalc-dims="1" /></a>
+  <a href="https://www.flickr.com/photos/peterhess/2976755407"><img loading="lazy" class="" src="https://i2.wp.com/photos.smugmug.com/photos/i-bX9mPQR/0/S/i-bX9mPQR-S.jpg?resize=400%2C267&#038;ssl=1" alt="Frustration with Computers" width="400" height="267"  /></a>
   
   <p class="wp-caption-text">
     <a href="https://www.flickr.com/photos/peterhess/2976755407">Frustration</a> by Peter Alfred Hess
@@ -51,7 +51,7 @@ Apparently at some point last year, I installed [EasyTether](http://www.mobile-s
 I plugged my phone in and ADB saw it.
 
 <div style="width: 309px" class="wp-caption aligncenter">
-  <img loading="lazy" class="" src="https://i1.wp.com/photos.smugmug.com/photos/i-6tx22wp/0/S/i-6tx22wp-S.png?resize=299%2C300&#038;ssl=1" width="299" height="300" data-recalc-dims="1" />
+  <img loading="lazy" class="" src="https://i1.wp.com/photos.smugmug.com/photos/i-6tx22wp/0/S/i-6tx22wp-S.png?resize=299%2C300&#038;ssl=1" width="299" height="300"  />
   
   <p class="wp-caption-text">
     This made me happy

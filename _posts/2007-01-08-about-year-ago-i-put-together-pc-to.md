@@ -5,7 +5,7 @@ layout: post
 guid: http://www.rajapet.com/?p=268
 permalink: /2007/01/08/about-year-ago-i-put-together-pc-to/
 ---
-[<img src="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/RaKiRwzaw7I/AAAAAAAAAAM/8eZFGHVsGd4/s200/reenactors.jpg?w=680" alt="" border="0" data-recalc-dims="1" />](https://i2.wp.com/2.bp.blogspot.com/_natoSxTaPFU/RaKiRwzaw7I/AAAAAAAAAAM/8eZFGHVsGd4/s1600-h/reenactors.jpg)
+[<img src="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/RaKiRwzaw7I/AAAAAAAAAAM/8eZFGHVsGd4/s200/reenactors.jpg?w=680" alt="" border="0"  />](https://i2.wp.com/2.bp.blogspot.com/_natoSxTaPFU/RaKiRwzaw7I/AAAAAAAAAAM/8eZFGHVsGd4/s1600-h/reenactors.jpg)
 
 About a year ago, I put together a PC to automate all of our QA-Ready and production builds. We don&#8217;t have a huge number of applications to build, but I wanted an automated way to build each application. Before &#8220;Build Box&#8221;, each project had one developer who was reponsible for the build. 
 

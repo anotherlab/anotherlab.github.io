@@ -10,11 +10,11 @@ I&#8217;m working with a [SDK](http://en.wikipedia.org/wiki/Software_development
 
 Since Windows directly supports .zip files, I used Windows Explorer (Windows 7) to copy the files from the .zip file to new folder.  I then launched the help to examine some new functions the vendor had added for me.  The help file loaded up, but I couldn’t access anything.  It looked like this:
 
-[<img loading="lazy" alt="BlockedChm" border="0" height="248" src="https://i0.wp.com/lh6.ggpht.com/_natoSxTaPFU/THvpYtnYuYI/AAAAAAAAAeg/bKnuq0z8uSc/BlockedChm_thumb%5B2%5D.png?resize=404%2C248" title="BlockedChm" width="404"  data-recalc-dims="1" />](https://i1.wp.com/lh5.ggpht.com/_natoSxTaPFU/THvpYYZIJhI/AAAAAAAAAec/DMj3y0e8jd0/s1600-h/BlockedChm%5B4%5D.png) 
+[<img loading="lazy" alt="BlockedChm" border="0" height="248" src="https://i0.wp.com/lh6.ggpht.com/_natoSxTaPFU/THvpYtnYuYI/AAAAAAAAAeg/bKnuq0z8uSc/BlockedChm_thumb%5B2%5D.png?resize=404%2C248" title="BlockedChm" width="404"   />](https://i1.wp.com/lh5.ggpht.com/_natoSxTaPFU/THvpYYZIJhI/AAAAAAAAAec/DMj3y0e8jd0/s1600-h/BlockedChm%5B4%5D.png) 
 
 At first I thought the file was corrupt, but then I realized what was going on.  With Windows Explorer, I selected the .chm file and right-clicked on it and selected “Properties”. 
 
-[<img loading="lazy" alt="BlockedProperties" border="0" height="519" src="https://i1.wp.com/lh5.ggpht.com/_natoSxTaPFU/THvpZUJsW3I/AAAAAAAAAeo/A-_WtLyXFGU/BlockedProperties_thumb%5B5%5D.png?resize=381%2C519" title="BlockedProperties" width="381"  data-recalc-dims="1" />](https://i1.wp.com/lh5.ggpht.com/_natoSxTaPFU/THvpZJexxtI/AAAAAAAAAek/Nj8ilgufLmg/s1600-h/BlockedProperties%5B7%5D.png) 
+[<img loading="lazy" alt="BlockedProperties" border="0" height="519" src="https://i1.wp.com/lh5.ggpht.com/_natoSxTaPFU/THvpZUJsW3I/AAAAAAAAAeo/A-_WtLyXFGU/BlockedProperties_thumb%5B5%5D.png?resize=381%2C519" title="BlockedProperties" width="381"   />](https://i1.wp.com/lh5.ggpht.com/_natoSxTaPFU/THvpZJexxtI/AAAAAAAAAek/Nj8ilgufLmg/s1600-h/BlockedProperties%5B7%5D.png) 
 
 If you look at the section that is highlighted in green, you’ll see the text ”This file came from another computer and might be blocked to help protect this computer.”.  With Windows XP SP2 and later operating systems, the file’s zone information is being stored with the file as stream.  A stream is a separate resource stored with the file, just not exactly in the file.  Separate resource streams is a feature of the NTFS file system.  Since the .zip file had been downloaded with Internet Explorer, the .chm file was treated as if it had been downloaded directly.  
 

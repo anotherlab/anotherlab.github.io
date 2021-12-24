@@ -17,7 +17,7 @@ tags:
   - macOS
   - Win10
 ---
-<img loading="lazy" class="alignnone size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-KBXFdfp/0/ffff0d86/M/i-KBXFdfp-M.png?resize=600%2C409&#038;ssl=1" width="600" height="409" data-recalc-dims="1" />
+<img loading="lazy" class="alignnone size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-KBXFdfp/0/ffff0d86/M/i-KBXFdfp-M.png?resize=600%2C409&#038;ssl=1" width="600" height="409"  />
 
 I&#8217;ve been trying to get the most performance out of my Window 10 virtual machines running on my MacBook Pro through [VMware Fusion](http://www.vmware.com/products/fusion.html). I have a Windows 10 virtual machine that I use for software demos and testing beta versions of Windows. It&#8217;s been running much slower than you would expect on a <del>2</del> 3 year old [MacBook Pro](https://support.apple.com/kb/sp704?locale=en_US) with a quad core i7.  I&#8217;ve collected the following tips (the sources are listed at the end) and they have improved the performance.
 

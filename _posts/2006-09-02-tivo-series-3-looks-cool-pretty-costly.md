@@ -8,7 +8,7 @@ permalink: /2006/09/02/tivo-series-3-looks-cool-pretty-costly/
 ---
 I&#8217;ve been <strike>drooling over</strike> reading the various [articles](http://www.pvrwire.com/2006/08/31/tivo-series-3-unboxed/) [and](http://www.engadget.com/2006/08/28/tivo-series-3-coming-september-17th-for-799/) [blog](http://www.zatznotfunny.com/2006-01/tivos-series-3-lives/) postings over the soon to be released [TiVo Series 3](http://www.tivo.com/series3hdDvr.asp).
 
-[<img alt="" src="https://i0.wp.com/photos1.blogger.com/blogger/7711/622/320/tivohdfront.jpg?w=680" border="0" data-recalc-dims="1" />](https://i0.wp.com/photos1.blogger.com/blogger/7711/622/1600/tivohdfront.jpg) 
+[<img alt="" src="https://i0.wp.com/photos1.blogger.com/blogger/7711/622/320/tivohdfront.jpg?w=680" border="0"  />](https://i0.wp.com/photos1.blogger.com/blogger/7711/622/1600/tivohdfront.jpg) 
 
 It has the stuff I want: Ethernet support built in, dual tuners, cablecard, High Def, big honking hard drive (plus [external SATA](http://en.wikipedia.org/wiki/Serial_ATA#External_SATA) port).  The rumored list price is $795.  That&#8217;s a lot of shekels.  I have two Series 2 units and $800 is too much for my pocket.  Maybe next year if the prices drop&#8230;
 

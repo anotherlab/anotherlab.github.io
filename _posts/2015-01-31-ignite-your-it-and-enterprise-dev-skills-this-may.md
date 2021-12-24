@@ -7,7 +7,7 @@ guid: http://www.rajapet.com/?p=1084
 permalink: /2015/01/31/ignite-your-it-and-enterprise-dev-skills-this-may/
 ---
 <div style="width: 610px" class="wp-caption alignnone">
-  <a href="http://ignite.microsoft.com/"><img loading="lazy" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-kG77pFp/0/L/Msf-Ignite-640x360_0001_2-L.jpg?resize=600%2C338" alt="" width="600" height="338" data-recalc-dims="1" /></a>
+  <a href="http://ignite.microsoft.com/"><img loading="lazy" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-kG77pFp/0/L/Msf-Ignite-640x360_0001_2-L.jpg?resize=600%2C338" alt="" width="600" height="338"  /></a>
   
   <p class="wp-caption-text">
     Get ready for a glimpse at what’s possible today and in the future
@@ -19,7 +19,7 @@ Consolidating the various IT and Enterprise developer conferences, <a href="http
 This is a new conference and is aimed at IT professionals and enterprise developers looking to learn about new and existing technologies and network with the best in the business.  Ignite replaces TechEd and other IT/Enterprise related conferences.
 
 <div style="width: 160px" class="wp-caption alignleft">
-  <img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-d34d6Jt/0/S/speaker-o_01_satya-nadella_on-S.png?resize=150%2C150" alt="" width="150" height="150" data-recalc-dims="1" />
+  <img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-d34d6Jt/0/S/speaker-o_01_satya-nadella_on-S.png?resize=150%2C150" alt="" width="150" height="150"  />
   
   <p class="wp-caption-text">
     Microsoft CEO Satya Nadella

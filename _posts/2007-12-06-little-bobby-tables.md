@@ -8,7 +8,7 @@ permalink: /2007/12/06/little-bobby-tables/
 ---
 Not too long ago, the online comic [xkcd](http://xkcd.com/ "xkcd - A webcomic of romance, sarcasm, math, and language.") ran a strip that just killed me.
 
-[<img src="https://i0.wp.com/imgs.xkcd.com/comics/exploits_of_a_mom.png?w=680" data-recalc-dims="1" />](http://xkcd.com/327/)  
+[<img src="https://i0.wp.com/imgs.xkcd.com/comics/exploits_of_a_mom.png?w=680"  />](http://xkcd.com/327/)  
 (thanks to [Randall Munroe](http://xkcd.com/about/) for providing the image link for hotlinking)
 
 Our applications make extensive use of a table with a very similar name.  Most of our programmers got the joke and had a good laugh.  Our QA staff found it hysterical.  Had they been drinking milk, it would have sprayed out of their noses.

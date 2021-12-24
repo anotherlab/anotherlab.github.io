@@ -14,7 +14,7 @@ Another problem is that two people could have unique passwords that only differ 
 > 
 > Shouldn&#8217;t login dialogs look more like this?
 > 
-><img loading="lazy" alt="Login dialog without user field" src="https://i1.wp.com/www.codinghorror.com/blog/images/win2k3_login_no_user_field.png?resize=417%2C201" width="417" height="201" border="0" data-recalc-dims="1" /> 
+><img loading="lazy" alt="Login dialog without user field" src="https://i1.wp.com/www.codinghorror.com/blog/images/win2k3_login_no_user_field.png?resize=417%2C201" width="417" height="201" border="0"  /> 
 > 
 > And you know what? He&#8217;s right. **Your password alone should be enough information for the computer to know who you are.** 
 > 

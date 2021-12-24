@@ -18,13 +18,13 @@ Back in July, I received a new Macbook Pro.&nbsp; A lovely little device, but I 
 When you log into a site or a service that requires Apple&#8217;s 2 factor authentication, you can use a Trusted Device to generate a 6 digit authentication code.&nbsp; Most people use their iPhone, but I don&#8217;t have an iPhone.&nbsp; Plenty of other Apple devices, just not the phone.&nbsp; And 2 factor authentication works on my iPad, my old Macbook, and my Mac Mini.&nbsp; Just not on the new Macbook.&nbsp; 
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img src="https://i1.wp.com/photos.smugmug.com/photos/i-7gHJWnr/0/482a2ae0/M/i-7gHJWnr-M.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /><figcaption><em>The 2 Factor Auth prompt</em></figcaption></figure>
+  <figure class="aligncenter size-large"><img src="https://i1.wp.com/photos.smugmug.com/photos/i-7gHJWnr/0/482a2ae0/M/i-7gHJWnr-M.png" alt=""  /><figcaption><em>The 2 Factor Auth prompt</em></figcaption></figure>
 </div>
 
 When I&#8217;m travelling, the only Apple device that I carry is the Macbook.&nbsp; When I log into a service that needs the Apple auth, I want to be able to use my Macbook to provide that code.&nbsp; That&#8217;s a pretty [reasonable request](https://www.bing.com/th?id=OIP._p6PM7gxiGQ3iHWPeyN4cAHaGu&pid=Api&rs=1).
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img src="https://i1.wp.com/photos.smugmug.com/photos/i-k9qS2BL/0/5e65b6c0/S/i-k9qS2BL-S.png?w=680&#038;ssl=1" alt="" data-recalc-dims="1" /><figcaption><em>This is what you should get</em></figcaption></figure>
+  <figure class="aligncenter size-large"><img src="https://i1.wp.com/photos.smugmug.com/photos/i-k9qS2BL/0/5e65b6c0/S/i-k9qS2BL-S.png" alt=""  /><figcaption><em>This is what you should get</em></figcaption></figure>
 </div>
 
 This has been frustrating me for a good month or so.&nbsp; There is no switch or setting to enable.&nbsp; Once you enable your iCloud account on an Apple device made in the last few years, that device is now a trusted device. That&#8217;s all you are supposed to have to do.

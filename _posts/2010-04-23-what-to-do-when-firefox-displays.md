@@ -12,7 +12,7 @@ Firefox has two terms for add-ons.  They refer to them as either an add-on or a
 
 Something was changed in Firefox with the 3.6 release.  I saw a bunch of extensions that were not there before.  I was seeing multiple versions of something called the “Java Console”.
 
-[<img loading="lazy" title="Add-ons with Java Console" height="244" alt="Add-ons with Java Console" src="https://i2.wp.com/lh4.ggpht.com/_natoSxTaPFU/S9G4CrosxPI/AAAAAAAAAcY/RBxhO1KLWSk/Add-ons%20with%20Java%20Console_thumb%5B7%5D.png?resize=227%2C244" width="227" border="0" data-recalc-dims="1" />](https://i0.wp.com/lh3.ggpht.com/_natoSxTaPFU/S9G4BBuxxXI/AAAAAAAAAcU/qgSKb1EcxlQ/s1600-h/Add-ons%20with%20Java%20Console%5B9%5D.png) 
+[<img loading="lazy" title="Add-ons with Java Console" height="244" alt="Add-ons with Java Console" src="https://i2.wp.com/lh4.ggpht.com/_natoSxTaPFU/S9G4CrosxPI/AAAAAAAAAcY/RBxhO1KLWSk/Add-ons%20with%20Java%20Console_thumb%5B7%5D.png?resize=227%2C244" width="227" border="0"  />](https://i0.wp.com/lh3.ggpht.com/_natoSxTaPFU/S9G4BBuxxXI/AAAAAAAAAcU/qgSKb1EcxlQ/s1600-h/Add-ons%20with%20Java%20Console%5B9%5D.png) 
 
 This add-on is a [Java development tool](http://www.java.com/en/download/help/javaconsole.xml).  You can use it display error messages from Java applets running on a page.  I never use it and I didn’t want every old version in that list. If you search on “firefox java console multiple” with your favorite search site, you’ll get over 100,000 hits.  So I figured that it wasn’t me, it was Java causing the problem.  One the higher ranked hits for the search took me me to an [article about Java](http://kb.mozillazine.org/Java#Multiple_Java_Console_extensions "Multiple Java Console extensions") in the Mozilla (people behind Firefox) knowledge base.
 

@@ -9,7 +9,7 @@ permalink: /2015/10/05/when-a-ux-hack-has-unexpected-consequences-or-why-did-my-
 While testing a iOS app with [TestFlight](https://developer.apple.com/testflight/), we noticed that the app name was being truncated.  The name was just under the length where iOS truncates it and adds the ellipses.  When we compiled the app and deployed it a device, the name displayed normally.  When we put a test build up for QA through TestFlight, the name was truncated.
 
 <div style="width: 610px" class="wp-caption alignnone">
-  <img loading="lazy" class="" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-nQTV7CS/0/L/orangedot-L.png?resize=600%2C175" alt="" width="600" height="175" data-recalc-dims="1" />
+  <img loading="lazy" class="" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-nQTV7CS/0/L/orangedot-L.png?resize=600%2C175" alt="" width="600" height="175"  />
   
   <p class="wp-caption-text">
     Without the dot, the full name would have been shown

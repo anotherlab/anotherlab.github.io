@@ -7,7 +7,7 @@ guid: http://www.rajapet.com/?p=1387
 permalink: /2016/02/18/fbi-vs-apple-vs-the-consequences/
 ---
 <div style="width: 313px" class="wp-caption aligncenter">
-  <img loading="lazy" class="" src="https://i0.wp.com/photos.smugmug.com/photos/i-KgDRdwv/0/S/i-KgDRdwv-S.png?resize=303%2C300&#038;ssl=1" alt="" width="303" height="300" data-recalc-dims="1" />
+  <img loading="lazy" class="" src="https://i0.wp.com/photos.smugmug.com/photos/i-KgDRdwv/0/S/i-KgDRdwv-S.png?resize=303%2C300&#038;ssl=1" alt="" width="303" height="300"  />
   
   <p class="wp-caption-text">
     iPhone 5C, FBI Edition

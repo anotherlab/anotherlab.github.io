@@ -11,7 +11,7 @@ collect_box_size:
 categories:
   - Uncategorized
 ---
-[<img loading="lazy" class="alignnone size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-ns5k5w9/0/4ef2f179/S/i-ns5k5w9-S.png?resize=400%2C84&#038;ssl=1" width="400" height="84" data-recalc-dims="1" />](https://www.vtcodecamp.org/)
+[<img loading="lazy" class="alignnone size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-ns5k5w9/0/4ef2f179/S/i-ns5k5w9-S.png?resize=400%2C84&#038;ssl=1" width="400" height="84"  />](https://www.vtcodecamp.org/)
 
 So it looks like I&#8217;ll be speaking at [Vermont Code Camp 2017](https://www.vtcodecamp.org/) on September 16th.  I&#8217;ll be doing a presentation on using [vector graphics with Xamarin](https://www.vtcodecamp.org/2017/sessions#vector-graphics-in-xamarin).  If you targeting multiple platforms, using vector graphics like SVG files lets you have one set of images for multiple resolutions.  It&#8217;s a short session, but it will be useful for mobile developers of any stripe.
 

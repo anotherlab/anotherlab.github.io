@@ -6,7 +6,7 @@ layout: post
 guid: http://www.rajapet.com/?p=130
 permalink: /2008/07/11/drhorribles-sing-along-blog-is-coming/
 ---
-[<img src="https://i1.wp.com/www.drhorrible.com/images/banners/big_square.gif?w=680" border="0" data-recalc-dims="1" />](http://www.drhorrible.com/) 
+[<img src="https://i1.wp.com/www.drhorrible.com/images/banners/big_square.gif?w=680" border="0"  />](http://www.drhorrible.com/) 
 
 I can&#8217;t pass this one up.  [“Dr Horrible’s Sing-Along Blog”](http://www.drhorrible.com/ "Dr. Horrible") is a direct to the Internet miniseries from the mind of Joss Whedon.  It stars Neil Patrick Harris and Nathan Fillion and NPH has a knack for [playing crazy](http://www.youtube.com/watch?v=M7bK3w9Mw6w).
 

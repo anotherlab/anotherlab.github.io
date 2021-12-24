@@ -39,7 +39,7 @@ Each one reported reported the same error code 0x80073cfb. That error code is de
   <table align="center" cellpadding="0" cellspacing="0">
     <tr>
       <td>
-        <a href="http://www.rajapet.net/Other/blog/4420877_ZCzCW6#!i=2607508140&#038;k=VbhsGTf&#038;lb=1&#038;s=A" title=""><img alt="" src="https://i0.wp.com/www.rajapet.net/photos/i-VbhsGTf/0/L/i-VbhsGTf-L.jpg?w=680" title="" data-recalc-dims="1" /></a>
+        <a href="http://www.rajapet.net/Other/blog/4420877_ZCzCW6#!i=2607508140&#038;k=VbhsGTf&#038;lb=1&#038;s=A" title=""><img alt="" src="https://i0.wp.com/www.rajapet.net/photos/i-VbhsGTf/0/L/i-VbhsGTf-L.jpg?w=680" title=""  /></a>
       </td>
     </tr>
     
