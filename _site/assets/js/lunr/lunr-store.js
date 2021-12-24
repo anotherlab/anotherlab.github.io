@@ -3632,6 +3632,6 @@ var store = [{
         "title": "Moved the blog from WordPress to Jekyll",
         "excerpt":"First post under the new regime. Back story For a long time, this blog has been created with WordPress. It’s now a Jekyll site. The blog started as a free blog hosted on Google’s Blogger platform. It’s still there, but hasn’t been touched in 8 years. It was fine, but...","categories": ["jekyll","update"],
         "tags": [],
-        "url": "/jekyll/update/Migrated-to-jekyll/",
+        "url": "/2021/12/15/Migrated-to-jekyll/",
         "teaser": null
       }]
