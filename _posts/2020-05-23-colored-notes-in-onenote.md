@@ -1,15 +1,10 @@
 ---
-id: 3247
 title: Colored notes in OneNote
 date: 2020-05-23T15:57:18-05:00
-author: Chris Miller
 excerpt: A quick way to color paragraphs in OneNote.
-layout: post
-guid: http://rajapet.com/?p=3247
-permalink: /2020/05/23/colored-notes-in-onenote/
-spay_email:
-  - ""
 image: http://rajapet.com/wp-content/uploads/2020/05/ColoredTables.png
+featured-image: ColoredTables.png
+featured-image-alt: Colored notes in OneNote
 categories:
   - OneNote
 tags:

@@ -3546,13 +3546,13 @@ var store = [{
         "teaser": null
       },{
         "title": "Why I like working on Open Source (back to FocusUF)",
-        "excerpt":"About a month ago, I blogged about an update to a webcam hack that I did called FocusUF.  There wasn’t much to the code and I put it all up on GitHub.  Someone came along and submitted a pull request that added some cool functionality.   My version was hardcoded to...","categories": ["Annoyances","Coding"],
+        "excerpt":"About a month ago, I blogged about an update to a webcam hack that I did called FocusUF. There wasn’t much to the code and I put it all up on GitHub. Someone came along and submitted a pull request that added some cool functionality.   My version was hardcoded to...","categories": ["Annoyances","Coding"],
         "tags": [],
         "url": "/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/",
         "teaser": null
       },{
         "title": "Bag man",
-        "excerpt":"I just finished listening to Rachel Maddow’s excellent 7-part podcast, Bag Man. It’s an oral documentary of the events and actions that led to the resignation and conviction of Vice President Spiro Agnew. You can listen to episode one here: ![](https://upload.wikimedia.org/wikipedia/commons/f/f3/39_Spiro_Agnew_3x4.jpg) Spiro Agnew, 39th Vice President As a kid, I...","categories": ["Agnew"],
+        "excerpt":"I just finished listening to Rachel Maddow’s excellent 7-part podcast, Bag Man. It’s an oral documentary of the events and actions that led to the resignation and conviction of Vice President Spiro Agnew. You can listen to episode one here Spiro Agnew, 39th Vice President As a kid, I vaguely...","categories": ["Agnew"],
         "tags": ["agnew","podcast","watergate"],
         "url": "/2020/04/28/bag-man/",
         "teaser": null
@@ -3576,7 +3576,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Using PowerShell to set the Num Lock state",
-        "excerpt":"During these work from home times, on the darkest timeline, I spent a lot of my day using my work PC over an RDP connection. For some reason, every time I connected, the Num Lock status would be set to off. Which is silly and annoying.  When you are connected...","categories": ["Annoyances","PowerShell"],
+        "excerpt":"During these work from home times, on the darkest timeline, I spent a lot of my day using my work PC over an RDP connection. For some reason, every time I connected, the Num Lock status would be set to off. Which is silly and annoying. When you are connected...","categories": ["Annoyances","PowerShell"],
         "tags": ["POSH","RDP"],
         "url": "/2020/07/06/using-powershell-to-set-the-num-lock-state/",
         "teaser": null

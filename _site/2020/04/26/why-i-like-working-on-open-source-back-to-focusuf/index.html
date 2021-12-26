@@ -10,8 +10,13 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Why I like working on Open Source (back to FocusUF) - Chris Miller’s 4th Blog</title>
-<meta name="description" content="About a month ago, I blogged about an update to a webcam hack that I did called FocusUF.  There wasn’t much to the code and I put it all up on GitHub.  Someone came along and submitted a pull request that added some cool functionality.  ">
+<meta name="description" content="About a month ago, I blogged about an update to a webcam hack that I did called FocusUF. There wasn’t much to the code and I put it all up on GitHub. Someone came along and submitted a pull request that added some cool functionality.  ">
 
+
+  <meta name="author" content="Chris Miller">
+  
+  <meta property="article:author" content="Chris Miller">
+  
 
 
 <meta property="og:type" content="article">
@@ -21,7 +26,7 @@
 <meta property="og:url" content="/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/">
 
 
-  <meta property="og:description" content="About a month ago, I blogged about an update to a webcam hack that I did called FocusUF.  There wasn’t much to the code and I put it all up on GitHub.  Someone came along and submitted a pull request that added some cool functionality.  ">
+  <meta property="og:description" content="About a month ago, I blogged about an update to a webcam hack that I did called FocusUF. There wasn’t much to the code and I put it all up on GitHub. Someone came along and submitted a pull request that added some cool functionality.  ">
 
 
 
@@ -29,7 +34,7 @@
 
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Why I like working on Open Source (back to FocusUF)">
-  <meta name="twitter:description" content="About a month ago, I blogged about an update to a webcam hack that I did called FocusUF.  There wasn’t much to the code and I put it all up on GitHub.  Someone came along and submitted a pull request that added some cool functionality.  ">
+  <meta name="twitter:description" content="About a month ago, I blogged about an update to a webcam hack that I did called FocusUF. There wasn’t much to the code and I put it all up on GitHub. Someone came along and submitted a pull request that added some cool functionality.  ">
   <meta name="twitter:url" content="/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/">
 
   
@@ -99,7 +104,7 @@
 
   </head>
 
-  <body class="layout--post">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -150,51 +155,458 @@
 
 
     <div class="initial-content">
-      <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+      
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Why I like working on Open Source (back to FocusUF)</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2020-04-26T01:52:17-04:00" itemprop="datePublished">
-        Apr 26, 2020
-      </time>• 
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
-  </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
-    <p>About a month ago, I blogged about <a href="https://rajapet.com/2020/03/20/return-to-focusuf/">an update to a webcam hack</a> that I did called FocusUF.  There wasn’t much to the code and I put it all up on GitHub.  Someone came along and submitted a pull request that added some cool functionality.  </p>
 
-<p>My version was hardcoded to a single webcam.  Because that’s all I need it for.  At the time, I was using a Microsoft LifeCam HD-5000.  Someone else created an issue on my GitHub repo asking if I could add support for the HD-6000, which apparently suffers from the same annoyances with focus.</p>
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
 
-<p>I was going to add a command-line parameter to FocusUF to allow you to specify all or part of the webcam name, but someone else beat me to it.  <a href="https://github.com/cainhopwood">Cain Hopwood</a> updated my code to add that and a bunch of other useful command-line switches.  And somehow, I had missed his <a href="https://github.com/anotherlab/FocusUF/pull/2">PR</a> when it was submitted a month ago.</p>
 
-<p>So I tossed my changes out the window and accept the pull request.  It was <a href="https://www.youtube.com/watch?v=kRz8-EXlhBo">pretty good</a>.  After merging the changes, I added a couple of things.  Cain added code to list all of the webcams.  That would fail if you have any webcams that didn’t support the IAMCameraControl interface from the DirectShowLib.  If you have software that runs as a <a href="https://www.xsplit.com/vcam">virtual</a> <a href="https://www.chromacam.me/">webcam</a>, it probably doesn’t support IAMCameraControl.   Now when you run it without any parameters, you get the following usage help:</p>
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
-<div>
-  <code>FocusUF 1.2.0.0</code><br /><code>Get the source at https://github.com/anotherlab/FocusUF</code><br /><br /><code>Usage: FocusUF [--help | -?] [--list-cameras | -l]</code><br /><code>[--focus-mode-manual | -fm] [--focus-mode-auto | -fa]</code><br /><code>[--set-focus &lt;value&gt; | -f &lt;value&gt;]</code><br /><code>[--exposure-mode-manual | -em] [--exposure-mode-auto | -ea]</code><br /><code>[--set-exposure &lt;value&gt; | -e &lt;value&gt;]</code><br /><code>[--camera-name &lt;name&gt; | -n &lt;name&gt;]</code>
+  
+    <div class="author__avatar">
+      <a href="/">
+        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">Chris Miller</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Microsoft MVP, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+          
+            <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-award" aria-hidden="true"></i><span class="label">Microsoft MVP</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
 </div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Why I like working on Open Source (back to FocusUF)">
+    <meta itemprop="description" content="About a month ago, I blogged about an update to a webcam hack that I did called FocusUF. There wasn’t much to the code and I put it all up on GitHub. Someone came along and submitted a pull request that added some cool functionality.  ">
+    <meta itemprop="datePublished" content="2020-04-26T01:52:17-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/" class="u-url" itemprop="url">Why I like working on Open Source (back to FocusUF)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>About a month ago, I blogged about <a href="/2020/03/20/return-to-focusuf/">an update to a webcam hack</a> that I did called FocusUF. There wasn’t much to the code and I put it all up on GitHub. Someone came along and submitted a pull request that added some cool functionality.  </p>
+
+<p>My version was hardcoded to a single webcam. Because that’s all I need it for. At the time, I was using a Microsoft LifeCam HD-5000. Someone else created an issue on my GitHub repo asking if I could add support for the HD-6000, which apparently suffers from the same annoyances with focus.</p>
+
+<p>I was going to add a command-line parameter to FocusUF to allow you to specify all or part of the webcam name, but someone else beat me to it. <a href="https://github.com/cainhopwood">Cain Hopwood</a> updated my code to add that and a bunch of other useful command-line switches. And somehow, I had missed his <a href="https://github.com/anotherlab/FocusUF/pull/2">PR</a> when it was submitted a month ago.</p>
+
+<p>So I tossed my changes out the window and accept the pull request. It was <a href="https://www.youtube.com/watch?v=kRz8-EXlhBo">pretty good</a>. After merging the changes, I added a couple of things. Cain added code to list all of the webcams. That would fail if you have any webcams that didn’t support the IAMCameraControl interface from the DirectShowLib. If you have software that runs as a <a href="https://www.xsplit.com/vcam">virtual</a> <a href="https://www.chromacam.me/">webcam</a>, it probably doesn’t support IAMCameraControl.  Now when you run it without any parameters, you get the following usage help:</p>
+
+<figure class="highlight"><pre><code class="language-plainttext" data-lang="plainttext">FocusUF 1.2.0.0
+Get the source at https://github.com/anotherlab/FocusUF
+
+Usage: FocusUF [--help | -?] [--list-cameras | -l]
+[--focus-mode-manual | -fm] [--focus-mode-auto | -fa]
+[--set-focus | -f ]
+[--exposure-mode-manual | -em] [--exposure-mode-auto | -ea]
+[--set-exposure | -e ]
+[--camera-name | -n ]</code></pre></figure>
 
 <p> </p>
 
 <p>Now when you ask it to list the cameras, you get the following output:</p>
 
-<!--StartFragment -->
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="o">.</span><span class="n">\FocusUF.exe</span><span class="w"> </span><span class="nt">-l</span></code></pre></figure>
 
-<div>
-  <code>❯ .\FocusUF.exe -l</code><br /><code>FocusUF 1.2.0.0</code><br /><code>Get the source at https://github.com/anotherlab/FocusUF</code><br /><code>Camera: c922 Pro Stream Webcam</code><br /><code>    Focus Capability: Auto, Manual</code><br /><code>    Focus Range: 0 - 250</code><br /><code>    Focus Setting: Auto, 0</code><br /><code>    Exposure Capability: Auto, Manual</code><br /><code>    Exposure Range: -11 - -2</code><br /><code>    Exposure Setting: Auto, -5</code><br /><code>Camera: XSplit VCam</code><br /><code>    Camera does not expose settings through DirectShowLib</code>
+<figure class="highlight"><pre><code class="language-plainttext" data-lang="plainttext">FocusUF 1.2.0.0
+Get the source at https://github.com/anotherlab/FocusUF
+Camera: c922 Pro Stream Webcam
+    Focus Capability: Auto, Manual
+    Focus Range: 0 - 250
+    Focus Setting: Auto, 0
+    Exposure Capability: Auto, Manual
+    Exposure Range: -11 - -2
+    Exposure Setting: Auto, -5
+Camera: XSplit VCam
+    Camera does not expose settings through DirectShowLib</code></pre></figure>
+
+<p>I also made the search by name case insensitive. That was low hanging fruit. I also updated the compiled version of the code at <a href="https://github.com/anotherlab/FocusUF/blob/master/win32/focusuf.zip">focusuf.zip</a>. While I don’t support this as a product, it’s useful for people who don’t have the compiler installed. And I updated the readme file to document the new changes.</p>
+
+<p>And to go off on a tangent, I’ve been using a tool (Windows only) named <a href="https://markdownmonster.west-wind.com/">Markdown Monster</a> to edit the readme files. Markdown Monster is written and supported by <a href="https://medium.com/@RickStrahl_13614">Rick Strahl</a>. You can try it for free and then buy a cheap license for it. Working in Markdown is fairly easy, but it has its own syntax to learn. Markdown Monster gives you a <a href="https://medium.com/markdown-monster-blog/why-use-a-dedicated-markdown-editor-1aff2aaad42">nice editor</a> with full preview and it makes updating the readme file one less thing to think about.</p>
+
+<p>And that’s one of the great things about <a href="https://dev.to/danielshow/an-easy-approach-to-contribute-to-open-source-1d6i">open-source</a> software. Other people can jump in and contribute. I wrote a little tool to fix something that was bugging me. It sparked joy with someone and he added some additional joy to fix something that he needed.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#annoyances" class="page__taxonomy-item p-category" rel="tag">Annoyances</a><span class="sep">, </span>
+    
+      <a href="/categories/#coding" class="page__taxonomy-item p-category" rel="tag">Coding</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-04-26T01:52:17-04:00">April 26, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Why+I+like+working+on+Open+Source+%28back+to+FocusUF%29%20%2F2020%2F04%2F26%2Fwhy-i-like-working-on-open-source-back-to-focusuf%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F04%2F26%2Fwhy-i-like-working-on-open-source-back-to-focusuf%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2F2020%2F04%2F26%2Fwhy-i-like-working-on-open-source-back-to-focusuf%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2020/03/20/return-to-focusuf/" class="pagination--pager" title="Return to FocusUF
+">Previous</a>
+    
+    
+      <a href="/2020/04/28/bag-man/" class="pagination--pager" title="Bag man
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section id="giscus-comments"></section>
+    
 </div>
 
-<!--EndFragment -->
+    
+  </article>
 
-<p>I also made the search by name case insensitive.  That was low hanging fruit.  I also updated the compiled version of the code at <a href="https://github.com/anotherlab/FocusUF/blob/master/win32/focusuf.zip">focusuf.zip</a>.  While I don’t support this as a product, it’s useful for people who don’t have the compiler installed.  And I updated the readme file to document the new changes.</p>
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You May Also Enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
 
-<p>And to go off on a tangent, I’ve been using a tool (Windows only) named <a href="https://markdownmonster.west-wind.com/">Markdown Monster</a> to edit the readme files.  Markdown Monster is written and supported by <a href="https://medium.com/@RickStrahl_13614">Rick Strahl</a>.  You can try it for free and then buy a cheap license for it.  Working in Markdown is fairly easy, but it has its own syntax to learn.  Markdown Monster gives you a <a href="https://medium.com/markdown-monster-blog/why-use-a-dedicated-markdown-editor-1aff2aaad42">nice editor</a> with full preview and it makes updating the readme file one less thing to think about.</p>
 
-<p>And that’s one of the great things about <a href="https://dev.to/danielshow/an-easy-approach-to-contribute-to-open-source-1d6i">open-source</a> software.  Other people can jump in and contribute.  I wrote a little tool to fix something that was bugging me.  It sparked joy with someone and he added some additional joy to fix something that he needed.</p>
 
-  </div><a class="u-url" href="/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/" hidden></a>
-</article>
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/12/15/Migrated-to-jekyll/" rel="permalink">Moved the blog from WordPress to Jekyll
+</a>
+      
+    </h2>
+    
 
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">First post under the new regime.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="permalink">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I hit the “VersionCode 1.0 is invalid” error with .NET MAUI and resolved it.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="permalink">Controlling a WSL installation of redis-server from the Windows command line
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Some shortcuts accessing redis-server running under WSL via PowerShell
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/" rel="permalink">How to access Apple’s App Connect API from C#, Python, and Go. - Part 4
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
     </div>
 
     
