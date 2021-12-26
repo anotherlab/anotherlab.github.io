@@ -314,7 +314,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          6 minute read
+          7 minute read
         
       </span>
     
@@ -411,6 +411,8 @@
 <p>I’m using a Jekyll theme called <a href="https://mmistakes.github.io/minimal-mistakes/">“Minimal Mistakes”</a>. It’s a nice clean design and I like. There are a few things that I wanted to change, mostly with some CSS overrides. I’m not touching the actual theme bits. That makes it eassier to update or replace the theme. The way Jekyll’s Markdown processor, <a href="https://kramdown.gettalong.org/index.html">kramdown</a>, handles <code class="language-plaintext html highlighter-rouge">&lt;figure&gt;</code> is a little quirky and I’m seeing <code class="language-plaintext html highlighter-rouge">&lt;/figure&gt;</code> in the rendered output. I’m fixing those by hand as I come across them. That’s the problem with leaky abstractions, sometimes, you have leaks to patch.</p>
 <h2 id="code-highlighting">Code Highlighting</h2>
 <p>This is a work in progress. For the last few years, I’ve been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called <a href="http://rouge.jneen.net/">Rouge</a>. It does most of the same stuff, and I’ll use it as is for now. I can catch most of the snippets that used the WordPress markup, I’ll fix up the stragglers as I come across them.</p>
+
+<p>I had a few gist’s embedded in my blog. When the posts were exported, the gists had been rendered into the page and it was a lot of ugly HTML. I had to manually replace that <code class="language-plaintext ruby highlighter-rouge">&lt;script src="https://gist.github.com/XXXXX.js"&gt; &lt;/script&gt;</code>, which made the Markdown simpler.</p>
 
         
       </section>
