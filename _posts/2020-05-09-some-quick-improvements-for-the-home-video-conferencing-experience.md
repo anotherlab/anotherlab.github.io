@@ -20,43 +20,23 @@ I&#8217;m pretty sure it came with a tripod, but at the moment I&#8217;m not exa
 
 With the c922 on the tripod, I can move the webcam around as it suits my mood. I like having the camera at more or less eye level. With my PC, when it was mounted on top of one of the monitors, so it was always looking down on me. With the tripod, I can place it in between two of the monitors and at eye level.
 
-<div style="width: 178px" class="wp-caption aligncenter">
-  <img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-Lfnmz2Z/0/0ba38752/S/c922_joby-S.jpg?resize=168%2C299&#038;ssl=1" width="168" height="299"  />
-  
-  <p class="wp-caption-text">
-    Webcam deployed
-  </p>
-</div>
+<figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-Lfnmz2Z/0/0ba38752/S/c922_joby-S.jpg"><figcaption>Webcam deployed</figcaption></figure>
 
 Sometimes I want it at a slight angle from my face. With the webcam free to move around, that makes it easy to adjust. I&#8217;ve been in meetings where we spend most of the time going over documents, and we don&#8217;t need the &#8220;eye to eye&#8221; viewpoint.
 
 If you are doing a family Zoom meeting, it&#8217;s handy to connect a laptop to a TV and then be able to move the webcam so that it&#8217;s in front of the TV. And yes, sometimes I just aim the webcam at the dogs.
 
-<div style="width: 810px" class="wp-caption aligncenter">
-  <img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-tWCRTqF/0/9476e2dc/L/Dogs-L.jpg?resize=680%2C510&#038;ssl=1" width="680" height="510"  />
-  
-  <p class="wp-caption-text">
-    Every day is now take your work to dogs day
-  </p>
-</div>
+<figure><img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-tWCRTqF/0/9476e2dc/L/Dogs-L.jpg"><figcaption>Every day is now take your work to dogs day</figcaption></figure>
 
 At this point, replacing the background of your webcam is getting a bit tired. But early on in WFH mode, it was fun to change it up. At work, we use Teams, and back in March, it didn&#8217;t support virtual backgrounds. So I bought a license for [XSplit VCam](https://www.xsplit.com/vcam). VCam lets you use static images, videos, and even YouTube links for the background. And it will let blur any of that with fine control over the level of the blur.
 
 One of my teammates had bought a house last year from another co-worker. Thanks to that co-worker, I was able to grab pictures from the real estate listings for the house. For our first standup meeting after WFH, it looked like we in the same house. It&#8217;s a fun trick but grows tiresome after a few times. Also, do not make your webcam background a [live feed of puppies playing](https://www.youtube.com/results?search_query=live+puppies+stream). Unless bringing a meeting a flying stop is the desired outcome, then, by all means, go ahead.
 
-<div style="width: 410px" class="wp-caption aligncenter">
-  <img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-Xk8F6GW/0/9ed23b79/S/Puppies-S.gif?resize=400%2C229&#038;ssl=1" width="400" height="229"  />
-  
-  <p class="wp-caption-text">
-    Puppies, the meeting killer
-  </p>
-</div>
+<figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-Xk8F6GW/0/9ed23b79/S/Puppies-S.gif"><figcaption>Puppies, the meeting killer</figcaption></figure>
 
 The meeting apps that have the virtual background (and the 3rd party apps) can usually do the replacement without a green screen. But if you have an actual green screen, you can get better results. When I was given the WFH order, that night I bought the parts to make one. It&#8217;s basically a 2&#215;4, some PVC pipes, and cheap green table clothes. I think I spent $15 at Home Depot and a dollar store. I followed the instructions from this video:
 
-<div class="jetpack-video-wrapper">
-  <span class="embed-youtube" style="text-align:center; display: block;"></span>
-</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/du0XaCl25iQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 It was cheap and easy. And I can tear it down in seconds. If you have kids at home that are bored out of their minds, let them use a green screen and make their own videos.
 
@@ -64,13 +44,7 @@ Another thing I did was play around with the lighting. By genetics and behavior,
 
 Now, when I&#8217;m in a video meeting, I turn the Lattis light on, but I have it facing the wall by my desk. By bouncing it, I&#8217;m getting a nice gentle fill, instead of the light of a thousand suns. I have a window directly behind me and having a light source off to my side keeps me properly lit. The Lattis has three settings, **Low**, **Medium**, and **I&#8217;m Going Blind**. I find the lowest setting works the best.
 
-<div style="width: 377px" class="wp-caption aligncenter">
-  <img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-hX7WBbV/0/6471ad03/M/LattisLight-M.jpg?resize=367%2C450&#038;ssl=1" width="367" height="450"  />
-  
-  <p class="wp-caption-text">
-    At the lowest setting
-  </p>
-</div>
+<figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-hX7WBbV/0/6471ad03/M/LattisLight-M.jpg"><figcaption>At the lowest setting</figcaption></figure>
 
 Then there&#8217;s the audio. If you are going to be in video meetings, get a decent set of headphones with a noise-canceling microphone. If your environment has other people in it (like children, spouses, angry farm animals), the other people in the meeting will appreciate it. 
 

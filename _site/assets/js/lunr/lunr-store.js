@@ -3521,14 +3521,14 @@ var store = [{
         "url": "/2018/12/10/that-time-i-taught-that-dog-a-trick/",
         "teaser": null
       },{
-        "title": "Opportunity has ended it&#8217;s mission",
+        "title": "Opportunity has ended it's mission",
         "excerpt":"NASA&#8217;s Opportunity Rover looks back over its own tracks on Aug. 4, 2010. Image credit: NASA/JPL-Caltech Last night, NASA sent it’s final communique to the Opportunity rover. Somehow managing to last more than 14 years past it’s 90 day mission, Opportunity stopped responding after being blanketed by a planet wide...","categories": ["Uncategorized"],
         "tags": [],
         "url": "/2019/02/13/opportunity-has-ended-its-mission/",
         "teaser": null
       },{
         "title": "When your Apple device refuses to be trusted",
-        "excerpt":"Back in July, I received a new Macbook Pro.  A lovely little device, but I had this one problem.  It wasn’t showing up as a trusted device under my iCloud account.  When you log into a site or a service that requires Apple’s 2 factor authentication, you can use a...","categories": ["Annoyances","Apple"],
+        "excerpt":"Back in July, I received a new Macbook Pro. A lovely little device, but I had this one problem. It wasn’t showing up as a trusted device under my iCloud account. When you log into a site or a service that requires Apple’s 2 factor authentication, you can use a...","categories": ["Annoyances","Apple"],
         "tags": ["2fa","icloud"],
         "url": "/2019/08/26/when-your-apple-device-refuses-to-be-trusted/",
         "teaser": null
@@ -3570,7 +3570,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Colored notes in OneNote",
-        "excerpt":"I like using OneNote when I’m working on a project with different kinds of assets. I’m in the middle of doing a new course for Pluralsight that will be out in a couple of months. I have slides, a script, PowerPoint decks, code, media files, etc. It can get a...","categories": ["OneNote"],
+        "excerpt":"Notes in color I like using OneNote when I’m working on a project with different kinds of assets. I’m in the middle of doing a new course for Pluralsight that will be out in a couple of months. I have slides, a script, PowerPoint decks, code, media files, etc. It...","categories": ["OneNote"],
         "tags": ["colors","OneNote"],
         "url": "/2020/05/23/colored-notes-in-onenote/",
         "teaser": null

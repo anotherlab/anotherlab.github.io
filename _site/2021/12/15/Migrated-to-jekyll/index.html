@@ -409,6 +409,8 @@
 
 <h2 id="css--markup-changes">CSS &amp; Markup changes</h2>
 <p>I’m using a Jekyll theme called <a href="https://mmistakes.github.io/minimal-mistakes/">“Minimal Mistakes”</a>. It’s a nice clean design and I like. There are a few things that I wanted to change, mostly with some CSS overrides. I’m not touching the actual theme bits. That makes it eassier to update or replace the theme. The way Jekyll’s Markdown processor, <a href="https://kramdown.gettalong.org/index.html">kramdown</a>, handles <code class="language-plaintext html highlighter-rouge">&lt;figure&gt;</code> is a little quirky and I’m seeing <code class="language-plaintext html highlighter-rouge">&lt;/figure&gt;</code> in the rendered output. I’m fixing those by hand as I come across them. That’s the problem with leaky abstractions, sometimes, you have leaks to patch.</p>
+
+<p>For some reason, the Youtube clips that I embedded in a few posts didn’t make it over. That had to be fixed manually. I would go back to the post on the WordPress blog, right-click on the video, and then select “coopy embed code”. Then I would just paste it in the Markdown file.</p>
 <h2 id="code-highlighting">Code Highlighting</h2>
 <p>This is a work in progress. For the last few years, I’ve been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called <a href="http://rouge.jneen.net/">Rouge</a>. It does most of the same stuff, and I’ll use it as is for now. I can catch most of the snippets that used the WordPress markup, I’ll fix up the stragglers as I come across them.</p>
 

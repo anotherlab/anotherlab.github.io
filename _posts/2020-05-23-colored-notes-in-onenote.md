@@ -11,6 +11,7 @@ tags:
   - colors
   - OneNote
 ---
+<figure><img src="/assets/ColoredTables.png"><figcaption>Notes in color</figcaption></figure>
 I like using [OneNote](https://www.microsoft.com/en-us/microsoft-365/onenote/digital-note-taking-app) when I&#8217;m working on a project with different kinds of assets. I&#8217;m in the middle of doing a new course for [Pluralsight](https://www.pluralsight.com/authors/christopher-miller) that will be out in a couple of months. I have slides, a script, PowerPoint decks, code, media files, etc. It can get a little confusing trying to keep track of everything.
 
 For the new course, I have been using OneNote to map out each module. The way I create the content is that I create a PowerPoint deck for each module and then write a script for the narration of the deck. I create a new OneNote file for the course, and then add a tab for each module. Inside each module, there are tabs for each section of that module. I have one tab for just for notes and links to resources.
