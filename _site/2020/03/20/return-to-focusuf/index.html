@@ -10,8 +10,13 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Return to FocusUF - Chris Miller’s 4th Blog</title>
-<meta name="description" content="A while back, I blogged about a command line hack to set the focus for a web cam.  I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat.">
+<meta name="description" content="A while back, I blogged about a command line hack to set the focus for a web cam. I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat.">
 
+
+  <meta name="author" content="Chris Miller">
+  
+  <meta property="article:author" content="Chris Miller">
+  
 
 
 <meta property="og:type" content="article">
@@ -21,7 +26,7 @@
 <meta property="og:url" content="/2020/03/20/return-to-focusuf/">
 
 
-  <meta property="og:description" content="A while back, I blogged about a command line hack to set the focus for a web cam.  I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat.">
+  <meta property="og:description" content="A while back, I blogged about a command line hack to set the focus for a web cam. I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat.">
 
 
 
@@ -29,7 +34,7 @@
 
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Return to FocusUF">
-  <meta name="twitter:description" content="A while back, I blogged about a command line hack to set the focus for a web cam.  I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat.">
+  <meta name="twitter:description" content="A while back, I blogged about a command line hack to set the focus for a web cam. I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat.">
   <meta name="twitter:url" content="/2020/03/20/return-to-focusuf/">
 
   
@@ -99,7 +104,7 @@
 
   </head>
 
-  <body class="layout--post">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -150,47 +155,208 @@
 
 
     <div class="initial-content">
-      <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+      
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Return to FocusUF</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2020-03-20T23:49:29-04:00" itemprop="datePublished">
-        Mar 20, 2020
-      </time>• 
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
-  </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
-    <p>A while back, I <a href="https://rajapet.com/2018/04/05/focusuf-or-how-to-turn-off-the-autofocus-setting-of-the-lifecam-hd-5000-webcam/">blogged</a> about a command line hack to set the focus for a web cam.  I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat.</p>
 
-<p>It’s two years later and I have had a request for a compiled version of the FocusUF.  It wasn’t much more than a paragraph of code and I put it up on <a href="https://github.com/anotherlab/FocusUF">GitHub</a> for anyone to use.  That’s all I had wanted to do, just the share the code and move on.</p>
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
 
-<p>It’s not a product, it’s a block of code.  I had resisted putting a compiled version up because it’s not something I wanted to support.  But if you are not a .NET developer, it’s big ask to take that code and make a tiny command line tool.  I get it.  I decided to add a compiled version of the code to the GitHub repository.  For use as is, no support.</p>
 
-<p>I went back to the project and fired it up.  It’s been two years and management has made some changes.  I’m using Visual Studio 2019 and I no longer use that web cam.  I upgraded to a Logitech c922 and no longer use the LifeCam.</p>
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
 
-<p>The good news is the code compiled with no changes from VS 2019.  Which is what <a href="https://tenor.com/sDps.gif">I expected</a>.  When I ran it, tt crashed and burned with an error.  Which I did <a href="https://tenor.com/Kgay.gif">not expect</a>.  It literally dies on the second line of code.  The first two lines of code look like this:</p>
+  
+    <div class="author__avatar">
+      <a href="/">
+        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; highlight: [6]; title: ; notranslate" title="">
-// Get the list of connected video cameras
-DsDevice&#91;] devs = DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice);
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">Chris Miller</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Microsoft MVP, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
 
-// Filter that list down to the one with hyper-aggressive focus
-var dev = devs
-  .Where(d =&gt; d.Name.Equals("Microsoft® LifeCam HD-5000"))
-  .FirstOrDefault();
+      </div>
+    
+  </div>
 
-</pre>
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+          
+            <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-award" aria-hidden="true"></i><span class="label">Microsoft MVP</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
 </div>
+  
+  </div>
 
-<p>I broke the second line into multiple lines to make this a little easier to follow.  I was getting a null exception on the highlighted line, specifically on d.Name.</p>
 
-<p>For some reason, one of the items in the devs array has null for a name and that broke my code.  It was never a problem before, because the LifeCam was first in the list returned by GetDevicesOfCat.  Since I no longer had that web cam plugged in, the LINQ query was going through the entire list.  And then erroring out trying to call Equals() on a null value. [SPOILER ALERT! That assumption was completely wrong.]</p>
 
-<p>I was curious to see what was null. When I want to quickly visually data structures, I like to use <a href="https://www.linqpad.net/">LINQPad</a>. So I copied and pasted those two lines into LINQPad and pulled in the <a href="https://www.nuget.org/packages/DirectShowLib/">nuget package for DirectShowLib</a>.  I then used the Dump() extension method to look at what was being returned for GetDevicesOfCat.<figure class="wp-block-table is-style-stripes"></figure></p>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Return to FocusUF">
+    <meta itemprop="description" content="A while back, I blogged about a command line hack to set the focus for a web cam. I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat.">
+    <meta itemprop="datePublished" content="2020-03-20T23:49:29-04:00">
+    
 
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="/2020/03/20/return-to-focusuf/" class="u-url" itemprop="url">Return to FocusUF
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>A while back, I <a href="/2018/04/05/focusuf-or-how-to-turn-off-the-autofocus-setting-of-the-lifecam-hd-5000-webcam/">blogged</a> about a command line hack to set the focus for a web cam. I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat.</p>
+
+<p>It’s two years later and I have had a request for a compiled version of the FocusUF. It wasn’t much more than a paragraph of code and I put it up on <a href="https://github.com/anotherlab/FocusUF">GitHub</a> for anyone to use. That’s all I had wanted to do, just the share the code and move on.</p>
+
+<p>It’s not a product, it’s a block of code. I had resisted putting a compiled version up because it’s not something I wanted to support. But if you are not a .NET developer, it’s big ask to take that code and make a tiny command line tool. I get it. I decided to add a compiled version of the code to the GitHub repository. For use as is, no support.</p>
+
+<p>I went back to the project and fired it up. It’s been two years and management has made some changes. I’m using Visual Studio 2019 and I no longer use that web cam. I upgraded to a Logitech c922 and no longer use the LifeCam.</p>
+
+<p>The good news is the code compiled with no changes from VS 2019. Which is what <a href="https://tenor.com/sDps.gif">I expected</a>. When I ran it, tt crashed and burned with an error. Which I did <a href="https://tenor.com/Kgay.gif">not expect</a>. It literally dies on the second line of code. The first two lines of code look like this:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="c1">// Get the list of connected video cameras</span>
+<span class="n">DsDevice</span><span class="p">[]</span> <span class="n">devs</span> <span class="p">=</span> <span class="n">DsDevice</span><span class="p">.</span><span class="nf">GetDevicesOfCat</span><span class="p">(</span><span class="n">FilterCategory</span><span class="p">.</span><span class="n">VideoInputDevice</span><span class="p">);</span>
+
+<span class="c1">// Filter that list down to the one with hyper-aggressive focus</span>
+<span class="kt">var</span> <span class="n">dev</span> <span class="p">=</span> <span class="n">devs</span>
+  <span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">d</span> <span class="p">=&gt;</span> <span class="n">d</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="s">"Microsoft® LifeCam HD-5000"</span><span class="p">))</span>
+  <span class="p">.</span><span class="nf">FirstOrDefault</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>I broke the second line into multiple lines to make this a little easier to follow. I was getting a null exception on the highlighted line, specifically on d.Name.</p>
+
+<p>For some reason, one of the items in the devs array has null for a name and that broke my code. It was never a problem before, because the LifeCam was first in the list returned by GetDevicesOfCat. Since I no longer had that web cam plugged in, the LINQ query was going through the entire list. And then erroring out trying to call Equals() on a null value. [SPOILER ALERT! That assumption was completely wrong.]</p>
+
+<p>I was curious to see what was null. When I want to quickly visually data structures, I like to use <a href="https://www.linqpad.net/">LINQPad</a>. So I copied and pasted those two lines into LINQPad and pulled in the <a href="https://www.nuget.org/packages/DirectShowLib/">nuget package for DirectShowLib</a>. I then used the Dump() extension method to look at what was being returned for GetDevicesOfCat.</p>
 <table class="">
   <tr>
     <th>
@@ -232,37 +398,284 @@ var dev = devs
     </td>
   </tr>
 </table>
-<p>&lt;/figure&gt;</p>
 
-<p>And there’s the null value.  That was odd and we’ll get back that in minute.  In the meantime, let’s fix that code.  Instead of trying to be clever and use the Equals() function, I changed the code to just use the equals operator and let it handle the null check.  That one line becomes:</p>
+<p>And there’s the null value. That was odd and we’ll get back that in minute. In the meantime, let’s fix that code. Instead of trying to be clever and use the Equals() function, I changed the code to just use the equals operator and let it handle the null check. That one line becomes:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; highlight: [2]; title: ; notranslate" title="">
-var dev = devs
-  .Where(d =&gt; d.Name == "Microsoft® LifeCam HD-5000")
-  .FirstOrDefault();
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">dev</span> <span class="p">=</span> <span class="n">devs</span>
+  <span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">d</span> <span class="p">=&gt;</span> <span class="n">d</span><span class="p">.</span><span class="n">Name</span> <span class="p">==</span> <span class="s">"Microsoft® LifeCam HD-5000"</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">FirstOrDefault</span><span class="p">();</span></code></pre></figure>
 
-<p>I compiled the code and ran it.  And it did nothing.  Which is what I expected since I no longer had the LifeCam plugged in.  More importantly, it didn’t throw an error.</p>
+<p>I compiled the code and ran it. And it did nothing. Which is what I expected since I no longer had the LifeCam plugged in. More importantly, it didn’t throw an error.</p>
 
-<p>I went back and added some Console.Writeln() statements so the app would at least say what it was doing or not doing.  I built it again, zipped up the .dll &amp; .exe files and added the <a href="https://github.com/anotherlab/FocusUF/blob/master/win32/focusuf.zip">zip file</a> to a new win32 folder in the GitHub repository.  So if you don’t have access to Visual Studio, you can grab just that zip file and get the FocusUF.exe app.  But I’m not supporting that app.  If it doesn’t work for you, just grab the code and compile it.</p>
+<p>I went back and added some Console.Writeln() statements so the app would at least say what it was doing or not doing. I built it again, zipped up the .dll &amp; .exe files and added the <a href="https://github.com/anotherlab/FocusUF/blob/master/win32/focusuf.zip">zip file</a> to a new win32 folder in the GitHub repository. So if you don’t have access to Visual Studio, you can grab just that zip file and get the FocusUF.exe app. But I’m not supporting that app. If it doesn’t work for you, just grab the code and compile it.</p>
 
 <p>With the repo updated, it’s time to see what is our little null friend. If you look at the DevicePath, it has a wierd name buried in it. What is psycamera? If you google it, you find that a lot of people mispell “spy camera”. So that was no help. Names that are null set off my spidey senses. I wasn’t going to let that one just sit there with a look at it.</p>
 
 <p>Going with the path of least resistance, I fired up Device Manager to see if something looked unfamilair or out of place. Sure enough, under “Cameras”, there was a new item named “Personify Virtual Camera Universal”. The Personify name was vaguely familiar [SPOILER ALERT] and I had a pretty good idea of what was going on, but I decided to double click on it and drill into the details.</p>
 
-<p><a href="https://tenor.com/uMmi.gif">Literally</a> into the details. I selected the Details tab and select Device Instance Path from the drop-down list. That gave us this:<figure></figure></p>
+<p><a href="https://tenor.com/uMmi.gif">Literally</a> into the details. I selected the Details tab and select Device Instance Path from the drop-down list. That gave us this:</p>
 
-<p><img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-pF6Z8M7/0/53d4ae95/L/psycamera-L.png" alt="" /> &lt;/figure&gt;</p>
+<figure>
+<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-pF6Z8M7/0/53d4ae95/L/psycamera-L.png" alt="" /> 
+<figcaption>Device manager</figcaption>
+</figure>
 
 <p>And there is the mystery psycamera. Going back to the LINQPad dump, the third item that the list returned by GetDevicesOfCat was named ChromaCam. <a href="https://www.chromacam.me/">ChromaCam</a> is a virtual webcam. It lets you replace your background with an image. And ChromaCam is made by a company named Personify. I’m not sure exactly what they are doing with the psycamera device, but it’s fairly innocuous. When I wrote the code two years ago, I did not have ChromaCam, so my code back then only had to deal with a single item in the devs list.</p>
 
 <p>I did see if the code would compile with Visual Studio code and I think it would, but not <a href="https://stackoverflow.com/questions/47707095/visual-studio-code-for-net-framework">out of the box</a>. It looks like it would be more trouble than its worth. But I do recommend ChromaCam, it’s fun to play with.</p>
 
-  </div><a class="u-url" href="/2020/03/20/return-to-focusuf/" hidden></a>
-</article>
+        
+      </section>
 
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#webcam" class="page__taxonomy-item p-category" rel="tag">webcam</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#hardware" class="page__taxonomy-item p-category" rel="tag">Hardware</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-03-20T23:49:29-04:00">March 20, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Return+to+FocusUF%20%2F2020%2F03%2F20%2Freturn-to-focusuf%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2F2020%2F03%2F20%2Freturn-to-focusuf%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2F2020%2F03%2F20%2Freturn-to-focusuf%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2019/08/30/getting-a-new-dev-machine-set-up-macos-style/" class="pagination--pager" title="Getting a new dev machine set up, macOS Style
+">Previous</a>
+    
+    
+      <a href="/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/" class="pagination--pager" title="Why I like working on Open Source (back to FocusUF)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section id="giscus-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You May Also Enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/12/15/Migrated-to-jekyll/" rel="permalink">Moved the blog from WordPress to Jekyll
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">First post under the new regime.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="permalink">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I hit the “VersionCode 1.0 is invalid” error with .NET MAUI and resolved it.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/10/18/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="permalink">Controlling a WSL installation of redis-server from the Windows command line
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Some shortcuts accessing redis-server running under WSL via PowerShell
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/" rel="permalink">How to access Apple’s App Connect API from C#, Python, and Go. - Part 4
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
     </div>
 
     

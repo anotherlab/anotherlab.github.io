@@ -3540,8 +3540,8 @@ var store = [{
         "teaser": null
       },{
         "title": "Return to FocusUF",
-        "excerpt":"A while back, I blogged about a command line hack to set the focus for a web cam.  I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat. It’s two years later and I have had a request...","categories": ["Uncategorized"],
-        "tags": [],
+        "excerpt":"A while back, I blogged about a command line hack to set the focus for a web cam. I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat. It’s two years later and I have had a request...","categories": ["Hardware"],
+        "tags": ["webcam"],
         "url": "/2020/03/20/return-to-focusuf/",
         "teaser": null
       },{
@@ -3587,19 +3587,19 @@ var store = [{
         "url": "/2020/08/08/quick-and-cheap-audio-editing-for-online-courses/",
         "teaser": null
       },{
-        "title": "How to access Apple&#8217;s App Connect API from C#, Python, and Go. &#8211; Part 1",
+        "title": "How to access Apple's App Connect API from C#, Python, and Go. - Part 1",
         "excerpt":"As the Account Holder for my employer’s Apple App Store account, I get to keep track of who has access to the account. Apple does not do federated logins. Which means no linkage between our Active Directory store and the user accounts associated with the App Store account. So if...","categories": ["Apple"],
         "tags": ["Apple","C#","Go","Python"],
         "url": "/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/",
         "teaser": null
       },{
-        "title": "How to access Apple&#8217;s App Connect API from C#, Python, and Go. &#8211; Part 2",
+        "title": "How to access Apple's App Connect API from C#, Python, and Go. - Part 2",
         "excerpt":"In my previous post, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API.  In this installment, we’ll cover how to accomplish the same task with Python.  The final post will cover...","categories": ["Apple"],
         "tags": ["Apple","C#","Go","Python"],
         "url": "/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/",
         "teaser": null
       },{
-        "title": "How to access Apple&#8217;s App Connect API from C#, Python, and Go. &#8211; Part 3",
+        "title": "How to access Apple's App Connect API from C#, Python, and Go. - Part 3",
         "excerpt":"In my first post, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API. Part 2 covered the Python version. For our final installment, we’ll cover how to accomplish the same task...","categories": ["Apple"],
         "tags": ["Apple","C#","Go","Python"],
         "url": "/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/",
