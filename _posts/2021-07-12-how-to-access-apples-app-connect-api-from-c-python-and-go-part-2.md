@@ -1,11 +1,6 @@
 ---
-id: 3430
-title: 'How to access Apple&#8217;s App Connect API from C#, Python, and Go. &#8211; Part 2'
+title: How to access Apple's App Connect API from C#, Python, and Go. - Part 2
 date: 2021-07-12T08:02:52-05:00
-author: Chris Miller
-layout: post
-guid: https://rajapet.com/?p=3430
-permalink: /2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/
 categories:
   - Apple
 tags:

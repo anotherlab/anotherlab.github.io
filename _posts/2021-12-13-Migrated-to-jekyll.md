@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Moved the blog from WordPress to Jekyll"
 date:   2021-12-15 10:31:33 -0500
 categories: jekyll update
