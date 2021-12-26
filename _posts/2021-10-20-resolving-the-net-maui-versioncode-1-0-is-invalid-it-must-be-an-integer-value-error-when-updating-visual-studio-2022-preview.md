@@ -1,12 +1,7 @@
 ---
-id: 3535
-title: 'Resolving the .NET MAUI "VersionCode 1.0 is invalid. It must be an integer value." error when updating Visual Studio 2022 Preview'
+title: Resolving the .NET MAUI "VersionCode 1.0 is invalid. It must be an integer value." error when updating Visual Studio 2022 Preview
 date: 2021-10-20T23:19:33-05:00
-author: Chris Miller
 excerpt: I hit the "VersionCode 1.0 is invalid" error with .NET MAUI and resolved it.
-layout: post
-guid: https://rajapet.com/?p=3535
-permalink: /2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/
 categories:
   - Android
   - MAUI
@@ -26,9 +21,9 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 
 As a test, I created a new .NET MAUI app from Preview 6. It compiled and ran just fine.
 
-So who now, what now? When I first saw the error, I didn&#8217;t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.<figure>
+So who now, what now? When I first saw the error, I didn&#8217;t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.
 
-<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png" alt=""  /> </figure> 
+<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png" alt=""  />
 
 And we take a look at the file, it&#8217;s pretty standard, pretty boring AndroidManifest.xml
 

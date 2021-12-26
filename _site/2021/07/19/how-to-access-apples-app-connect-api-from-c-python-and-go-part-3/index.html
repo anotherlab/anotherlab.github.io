@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>How to access Apple’s App Connect API from C#, Python, and Go. - Part 3 - Chris Miller’s 4th Blog</title>
-<meta name="description" content="In my first post, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API. Part 2 covered the Python version. For our final installment, we’ll cover how to accomplish the same task with Go.  As with the C# and Python versions, we’ll need to create a signed Javascript Web Token (JWT) and then make some API calls.  I have the code in a Github repository. You can clone it from here. As with the C# project, the code is spread over a couple of modules.   The code should be portable across platforms. I used Go 1.13.2 on Windows. If you don’t have Go installed, you can grab it from the download page at golang.org. This would be a good place to mention that the only experience that I have with Go is what I learned from writing this applet. I’m pretty comfortable with C#, but everything that I know about Python and Go came from writing this code.  That disclaimer in place, after you install Go, you can grab the code from the repository and follow along. As with the other projects, we use a 3rd party library to generate and sign the Javascript Web Token (JWT). When I wrote the code a couple of months ago, I used dgrijalva’s jwt-go library. It’s no longer being maintained and it recomends to use a community supported clone of that project, golang-jwt/jwt. While writing this blog post, I updated the code to use the community supported project.          If you clone the code from my repo, the jwt library should get downloaded when you build the code. If it doesn&#8217;t you can install it the following command      go get github.com/golang-jwt/jwt  Before we run the code, lets take a tour of the code. The entry point is the module IsUserInApple.go. You can follow along with the code from the repo. It will differ from the C# and Python versions by having named command line parameters. We start with the following code      package main  import ( 	&quot;flag&quot; 	&quot;fmt&quot; 	&quot;os&quot; 	&quot;path/filepath&quot; )  func main() { 	// Define command line options 	configPtr := flag.String(&quot;config&quot;, &quot;./IsUserInApple.json&quot;, &quot;Configuration file&quot;) 	usernamePtr := flag.String(&quot;username&quot;, &quot;&quot;, &quot;Username to find (in quotes)&quot;)  	flag.Parse()  	var userName string = *usernamePtr 	var ConfigFileName string = *configPtr    At line 4, we import the flag module. This module makes it simple to define and read command line parameters. We’ll define 2 parameters, one for the name of the config file (line 12), the second for the name to match (line 13). For our code, we’ll define them as string variables. We pass in the name of the command line parameter, default value, and the help text.  After defining the parameters, we call flag.Parse() to parse the command line parameters that are being passed in. Lines 17-18 assign the flag values to string variables. This code could probably be written with less code, but it works and it’s readable. The next bit of code checks to see if a username was passed. If it doesn’t, it prints the command line help and then quietly dies a good death.      if len(userName) == 0 { 	fmt.Println(&quot;Please specify an email address to match (in quotes)&quot;) 	flag.PrintDefaults() 	os.Exit(1) }    The next few lines check to see if a config file was specified.      if len(ConfigFileName) == 0 { 	ex, err := os.Executable() 	if err != nil { 		panic(err) 	} 	ConfigFileName = filepath.Join(filepath.Dir(ex), &quot;IsUserInApple.json&quot;) }  if _, err := os.Stat(ConfigFileName); os.IsNotExist(err) { 	fmt.Println(err) 	os.Exit(2) }    At line 1, we see if a file has been specified. It hasn’t been specified, then we want to look in the folder that code is running from from for a file named IsUserInApple.json.  The os.Executable() method will return the full path for the running code, or an error message if something went wrong. If that happens, we abandon ship with panic().  If you are new to Go, it’s a little wierd to see both a return value and error message on the left side of a function call. But you get used to it after a while. And it’s a very clean way of getting errors back from a method call. After getting the path, we extract the directory and concatenate the name of the config file.  At line 9, we check to see if the file exists or die trying.  At this point we have a filename for the configuration file and we can attempt to read it.      fmt.Println(&quot;Looking for &quot; + userName)  config, err := ReadConfig(ConfigFileName)    Time to dive into the ReadConfig() method. That code is in the AppleJWT.go module. It’s not the cleanest separation of code, but just roll with it. We have a bunch of fun things going on here.  First things first are the imports:      import ( 	&quot;crypto/ecdsa&quot; 	&quot;crypto/x509&quot; 	&quot;encoding/json&quot; 	&quot;encoding/pem&quot; 	&quot;fmt&quot; 	&quot;io/ioutil&quot; 	&quot;log&quot; 	&quot;time&quot;  	&quot;github.com/golang-jwt/jwt&quot; )    The first 8 imports are modules that come with Go. The crypto modules are used for the JWT signing. The encoding modules let us read and parse JSON and PEM data. The last module is the external library that will be pulled directly from Github.  Now we’ll define an object to contain the JSON data from the config file. This is a pretty simple object:      type ConfigSettings struct { 	PrivateKeyFile string `json:&quot;PrivateKeyFile&quot;` 	KeyID          string `json:&quot;KeyID&quot;` 	IssuerID       string `json:&quot;IssuerID&quot;` }    That will map to the JSON format of the config file, which will look like this      {     &quot;PrivateKeyFile&quot;: &quot;path/to.your/privatekey.p8&quot;,     &quot;KeyID&quot;: &quot;ABCDEF1234&quot;,     &quot;IssuerID&quot;: &quot;d88b7c23-4c26-48fb-9d62-5649f27a25a2&quot; }    There are some handy online tools from converting JSON data to Go structs. I have used JSON-to-Go and transform.tools, they both work pretty well. The JSON-to-Go tool gives you the option of using inline type definitions or separate structs for each type. After that we have the ReadConfig method      func ReadConfig(ConfigFileName string) (*ConfigSettings, error) { 	file, err := ioutil.ReadFile(ConfigFileName)  	if err != nil { 		return nil, err 	}  	config := new(ConfigSettings)  	err = json.Unmarshal(&#91;]byte(file), &amp;config)  	return config, err }    Line 1 defines the parameters, the name of the config file, and an error variable. Then we read the file at line 2 with the ReadFile method. If it fails, we return the error. At line 8, we create a new instance of the ConfigSettings struct that will contain our settings. Then at line 10, we use the Unmarshal() method to parse the JSON data into our ConfigSettings struct.  That brings us back to our main method.       if err != nil { 	fmt.Println(err) 	os.Exit(3) }  CheckUserList(config, userName)    Skipping over error checking code, we now have the method that will ties this all together for us. Now we can dive in to CheckUserList() defined in AppleStoreApi.go. At the top of module, we have some structs defined.      type AppConnectUsers = struct { 	Data  &#91;]Datum              `json:&quot;data&quot;` 	Links AppConnectUsersLinks `json:&quot;links&quot;` }  type Datum = struct { 	Type       string     `json:&quot;type&quot;` 	Attributes Attributes `json:&quot;attributes&quot;` }  type Attributes = struct { 	Username  string   `json:&quot;username&quot;` 	FirstName string   `json:&quot;firstName&quot;` 	LastName  string   `json:&quot;lastName&quot;` 	Roles     &#91;]string `json:&quot;roles&quot;` }  type AppConnectUsersLinks = struct { 	Self string `json:&quot;self&quot;` 	Next string `json:&quot;next&quot;` }  type AppConnectErrors struct { 	Errors &#91;]struct { 		Status string `json:&quot;status&quot;` 		Code   string `json:&quot;code&quot;` 		Title  string `json:&quot;title&quot;` 		Detail string `json:&quot;detail&quot;` 	} `json:&quot;errors&quot;` }    The AppConnectUsers, Datum, Attributes, and AppConnectUsersLinks structs define the JSON data that is returned by the List Users API call. If you look back at Part 1, the JSON document returned by List Users has a lot more in it. We only need to define structs to use the data members that we actually care about. Since this is a read only API call, we can let Unmarshall deserialize only the fields that we will use and it will discard the rest.  We have a second object called AppConnectErrors, with a very different structure. If the API call fails from something happening on Apple’s end, the API will send back a very different JSON document. The following is an example of the JSON that Apple sends back when the API is not available:      { 	&quot;errors&quot;: &#91;{ 		&quot;status&quot;: &quot;500&quot;, 		&quot;code&quot;: &quot;UNEXPECTED_ERROR&quot;, 		&quot;title&quot;: &quot;An unexpected error occurred.&quot;, 		&quot;detail&quot;: &quot;An unexpected error occurred on the server side. If this issue continues, contact us at https://developer.apple.com/contact/.&quot; 	}] }    We’ll cover how to handle that error data later on. The CheckUserList method has a lot going on so we’ll do this in parts.      func CheckUserList(config *ConfigSettings, Username string) { 	token, err := CreateAppleJWT(config) 	if err != nil { 		fmt.Println(err) 	}  	client := &amp;http.Client{}  	var nextUrl string = &quot;https://api.appstoreconnect.apple.com/v1/users?limit=100&quot;    The first thing is that we call CreateAppleJWT in AppleJWT.go to create the signed JWT. Now we’ll jump into that.      func CreateAppleJWT(settings *ConfigSettings) (string, error) { 	bytes, err := ioutil.ReadFile(settings.PrivateKeyFile)  	if err != nil { 		fmt.Println(err) 	}  	x509Encoded, _ := pem.Decode(bytes)  	parsedKey, err := x509.ParsePKCS8PrivateKey(x509Encoded.Bytes)  	if err != nil { 		log.Fatal(err) 	}  	ecdsaPrivateKey, ok := parsedKey.(*ecdsa.PrivateKey)  	if !ok { 		panic(&quot;not ecdsa private key&quot;) 	}  	token := jwt.NewWithClaims(jwt.SigningMethodES256, jwt.MapClaims{ 		&quot;iss&quot;: settings.IssuerID, 		&quot;exp&quot;: time.Now().Add(time.Minute * 20).Unix(), 		&quot;aud&quot;: &quot;appstoreconnect-v1&quot;, 	})  	token.Header&#91;&quot;kid&quot;] = settings.KeyID  	tokenString, err := token.SignedString(ecdsaPrivateKey)  	if err != nil { 		log.Fatal(err) 	}  	return tokenString, nil }    At line 2, we read the private key file. Lines 8 through 16 parse the PEM data and come out with the private key in a format that we can use for signing. At line 22, we create the token with an expiration timestamp of 20 minutes into the future. We set the token header kid field to our KeyID. We sign the token at line 30 with our private key and pass it back. Getting the token signed correctly was the hardest part of writing this code. Getting back to CheckUserList…      client := &amp;http.Client{}  var nextUrl string = &quot;https://api.appstoreconnect.apple.com/v1/users?limit=100&quot;  var FoundMatch = false  for { 	req, err := http.NewRequest(&quot;GET&quot;, nextUrl, nil) 	if err != nil { 		fmt.Print(err.Error()) 		os.Exit(3) 	}  	req.Header.Add(&quot;Authorization&quot;, &quot;Bearer &quot;+token)  	resp, err := client.Do(req) 	if err != nil { 		log.Println(&quot;Error on response.\n&#91;ERROR] -&quot;, err) 		os.Exit(3) 	}  	defer resp.Body.Close()  	body, err := ioutil.ReadAll(resp.Body) 	if err != nil { 		log.Println(&quot;Error while reading the response bytes:&quot;, err) 		os.Exit(3) 	}    We start with a new instance of an http Client. We initialize nextUrl with the initial API url. And we set FoundMatch to false. Now we start looping. At line 8, we new up a new request and add our token at line 14. Line 16 is where we call the API and we wait at line 22 to get the response back.  We read the entire body into a byte array at line 24. Now we can start with the parsing. The first thing to do is see if the API returned an error document instead of the list of users.      var appConnectErrors AppConnectErrors err = json.Unmarshal(body, &amp;appConnectErrors) if err != nil { 	log.Println(&quot;Error while deserializing the response bytes:&quot;, err) 	os.Exit(3) }  // If there is an error object in the body, print it and exit if len(appConnectErrors.Errors) &gt; 0 { 	firstError := appConnectErrors.Errors&#91;0] 	log.Println(&quot;Status:&quot;, firstError.Status) 	log.Println(&quot;Error accessing API:&quot;, firstError.Detail) 	os.Exit(4) }    We new up an instance the AppConnectError struct as appConnectErrors. Then we unmarshal the body into appConnectErrors. Next we check the length of the Errors array In appConnectErrors. If the API returns users, the Errors object will not be there and the length will be 0.  If the length of Errors is greater than 0, then “Houston, we have a problem“. While Errors is an array and could have more than one error, we don’t care about anything after the first error. So we get the first (and probably only) error. Then we log the error status, which will be a numeric code, and the full text message. And then we die with an error code of 4.  Otherwise we keep going…      var appConnectUsers AppConnectUsers  err = json.Unmarshal(body, &amp;appConnectUsers) if err != nil { 	log.Println(&quot;Error while deserializing the response bytes:&quot;, err) 	os.Exit(3) }  for _, s := range appConnectUsers.Data { 	FoundMatch = strings.EqualFold(s.Attributes.Username, Username)  	if FoundMatch { 		fmt.Printf(&quot;Found %s, %s %s, %s\n&quot;, 			s.Attributes.Username, 			s.Attributes.FirstName, 			s.Attributes.LastName, 			strings.Join(s.Attributes.Roles, &quot;, &quot;)) 		break 	} }  if FoundMatch { 	break }  nextUrl = appConnectUsers.Links.Next  if len(nextUrl) == 0 { 	break }    As with the error struct, we new up a AppConnectUsers struct named appConnectUsers. We unmarshal the JSON data into the struct. At line 9, we iterate through the list of users stored in the Data array. We set FoundMatch at line 10 to true if the username matches. If we have a match, we print that match to the console and use break to exit the for..range loop  Next we break out of the forever loop if we have a match. Otherwise we check to see if we have a next link. If we do, we keep looping, otherwise we are done looping. And we end with an message if we didn’t have a match.   If you cloned the code from the repo and created your own config file (refer back to Part 1 for that part), you can now compile and run the code. You would compile the applet from your terminal of choice with the following command:      go build .    If you want the smallest executable, build it with the following options:      go build -ldflags=&quot;-s -w&quot; .    And then you can compress the resulting executable with a tool like upx. You would need to run IsUserInApple with a required command line parameter, the email to look for. If you leave it out, you will get an error message telling you what is needed. Remember that the IsUserInApple.json file needs to be in the same folder as the executable if you don’t use the second optional command line parameter that will let you specify the name of the config file.  If you are running it with the go command, you would run it as      go run . -username &quot;some.email@company.com&quot;    or      go run . -username &quot;some.email@company.com&quot; -config &quot;IsUserInApple.json&quot;    If you are running it as the compiled executable, you would run it as       IsUserInApple -username &quot;some.email@company.com    You’ll back something like this:      Looking for some.email@company.com Found some.email@company.com, Some Email, APP_MANAGER    or….      Looking for some.email@company.com No match for some.email@company.com    On the rare situation that the API is not available and Apple returns an error document, you’ll see something like this:      Looking for some.email@company.com 2021/07/13 23:26:19 Status: 500 2021/07/13 23:26:19 Error accessing API: An unexpected error occurred on the server side. If this issue continues, contact us at https://developer.apple.com/contact/. exit status 4    If you run it without  the -username parameter or pass is “-h” or “–help”, you will get back the usuage help messages      go run .                                                                   Please specify an email address to match (in quotes)   -config string         Configuration file (default &quot;./IsUserInApple.json&quot;)   -username string         Username to find (in quotes)  go run . -h Usage of C:\Users\anoth\AppData\Local\Temp\go-build2936985627\b001\exe\IsUserInApple.exe:   -config string         Configuration file (default &quot;./IsUserInApple.json&quot;)   -username string         Username to find (in quotes)    That wraps up this series. You can do more than get the team list from the App Connect API. For example, if you want to track how many devices have been provisioned, there is a Devices API. Lots of access points for DevOps functionality.">
+<meta name="description" content="">
 
 
   <meta name="author" content="Chris Miller">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/">
 
 
-  <meta property="og:description" content="In my first post, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API. Part 2 covered the Python version. For our final installment, we’ll cover how to accomplish the same task with Go.  As with the C# and Python versions, we’ll need to create a signed Javascript Web Token (JWT) and then make some API calls.  I have the code in a Github repository. You can clone it from here. As with the C# project, the code is spread over a couple of modules.   The code should be portable across platforms. I used Go 1.13.2 on Windows. If you don’t have Go installed, you can grab it from the download page at golang.org. This would be a good place to mention that the only experience that I have with Go is what I learned from writing this applet. I’m pretty comfortable with C#, but everything that I know about Python and Go came from writing this code.  That disclaimer in place, after you install Go, you can grab the code from the repository and follow along. As with the other projects, we use a 3rd party library to generate and sign the Javascript Web Token (JWT). When I wrote the code a couple of months ago, I used dgrijalva’s jwt-go library. It’s no longer being maintained and it recomends to use a community supported clone of that project, golang-jwt/jwt. While writing this blog post, I updated the code to use the community supported project.          If you clone the code from my repo, the jwt library should get downloaded when you build the code. If it doesn&#8217;t you can install it the following command      go get github.com/golang-jwt/jwt  Before we run the code, lets take a tour of the code. The entry point is the module IsUserInApple.go. You can follow along with the code from the repo. It will differ from the C# and Python versions by having named command line parameters. We start with the following code      package main  import ( 	&quot;flag&quot; 	&quot;fmt&quot; 	&quot;os&quot; 	&quot;path/filepath&quot; )  func main() { 	// Define command line options 	configPtr := flag.String(&quot;config&quot;, &quot;./IsUserInApple.json&quot;, &quot;Configuration file&quot;) 	usernamePtr := flag.String(&quot;username&quot;, &quot;&quot;, &quot;Username to find (in quotes)&quot;)  	flag.Parse()  	var userName string = *usernamePtr 	var ConfigFileName string = *configPtr    At line 4, we import the flag module. This module makes it simple to define and read command line parameters. We’ll define 2 parameters, one for the name of the config file (line 12), the second for the name to match (line 13). For our code, we’ll define them as string variables. We pass in the name of the command line parameter, default value, and the help text.  After defining the parameters, we call flag.Parse() to parse the command line parameters that are being passed in. Lines 17-18 assign the flag values to string variables. This code could probably be written with less code, but it works and it’s readable. The next bit of code checks to see if a username was passed. If it doesn’t, it prints the command line help and then quietly dies a good death.      if len(userName) == 0 { 	fmt.Println(&quot;Please specify an email address to match (in quotes)&quot;) 	flag.PrintDefaults() 	os.Exit(1) }    The next few lines check to see if a config file was specified.      if len(ConfigFileName) == 0 { 	ex, err := os.Executable() 	if err != nil { 		panic(err) 	} 	ConfigFileName = filepath.Join(filepath.Dir(ex), &quot;IsUserInApple.json&quot;) }  if _, err := os.Stat(ConfigFileName); os.IsNotExist(err) { 	fmt.Println(err) 	os.Exit(2) }    At line 1, we see if a file has been specified. It hasn’t been specified, then we want to look in the folder that code is running from from for a file named IsUserInApple.json.  The os.Executable() method will return the full path for the running code, or an error message if something went wrong. If that happens, we abandon ship with panic().  If you are new to Go, it’s a little wierd to see both a return value and error message on the left side of a function call. But you get used to it after a while. And it’s a very clean way of getting errors back from a method call. After getting the path, we extract the directory and concatenate the name of the config file.  At line 9, we check to see if the file exists or die trying.  At this point we have a filename for the configuration file and we can attempt to read it.      fmt.Println(&quot;Looking for &quot; + userName)  config, err := ReadConfig(ConfigFileName)    Time to dive into the ReadConfig() method. That code is in the AppleJWT.go module. It’s not the cleanest separation of code, but just roll with it. We have a bunch of fun things going on here.  First things first are the imports:      import ( 	&quot;crypto/ecdsa&quot; 	&quot;crypto/x509&quot; 	&quot;encoding/json&quot; 	&quot;encoding/pem&quot; 	&quot;fmt&quot; 	&quot;io/ioutil&quot; 	&quot;log&quot; 	&quot;time&quot;  	&quot;github.com/golang-jwt/jwt&quot; )    The first 8 imports are modules that come with Go. The crypto modules are used for the JWT signing. The encoding modules let us read and parse JSON and PEM data. The last module is the external library that will be pulled directly from Github.  Now we’ll define an object to contain the JSON data from the config file. This is a pretty simple object:      type ConfigSettings struct { 	PrivateKeyFile string `json:&quot;PrivateKeyFile&quot;` 	KeyID          string `json:&quot;KeyID&quot;` 	IssuerID       string `json:&quot;IssuerID&quot;` }    That will map to the JSON format of the config file, which will look like this      {     &quot;PrivateKeyFile&quot;: &quot;path/to.your/privatekey.p8&quot;,     &quot;KeyID&quot;: &quot;ABCDEF1234&quot;,     &quot;IssuerID&quot;: &quot;d88b7c23-4c26-48fb-9d62-5649f27a25a2&quot; }    There are some handy online tools from converting JSON data to Go structs. I have used JSON-to-Go and transform.tools, they both work pretty well. The JSON-to-Go tool gives you the option of using inline type definitions or separate structs for each type. After that we have the ReadConfig method      func ReadConfig(ConfigFileName string) (*ConfigSettings, error) { 	file, err := ioutil.ReadFile(ConfigFileName)  	if err != nil { 		return nil, err 	}  	config := new(ConfigSettings)  	err = json.Unmarshal(&#91;]byte(file), &amp;config)  	return config, err }    Line 1 defines the parameters, the name of the config file, and an error variable. Then we read the file at line 2 with the ReadFile method. If it fails, we return the error. At line 8, we create a new instance of the ConfigSettings struct that will contain our settings. Then at line 10, we use the Unmarshal() method to parse the JSON data into our ConfigSettings struct.  That brings us back to our main method.       if err != nil { 	fmt.Println(err) 	os.Exit(3) }  CheckUserList(config, userName)    Skipping over error checking code, we now have the method that will ties this all together for us. Now we can dive in to CheckUserList() defined in AppleStoreApi.go. At the top of module, we have some structs defined.      type AppConnectUsers = struct { 	Data  &#91;]Datum              `json:&quot;data&quot;` 	Links AppConnectUsersLinks `json:&quot;links&quot;` }  type Datum = struct { 	Type       string     `json:&quot;type&quot;` 	Attributes Attributes `json:&quot;attributes&quot;` }  type Attributes = struct { 	Username  string   `json:&quot;username&quot;` 	FirstName string   `json:&quot;firstName&quot;` 	LastName  string   `json:&quot;lastName&quot;` 	Roles     &#91;]string `json:&quot;roles&quot;` }  type AppConnectUsersLinks = struct { 	Self string `json:&quot;self&quot;` 	Next string `json:&quot;next&quot;` }  type AppConnectErrors struct { 	Errors &#91;]struct { 		Status string `json:&quot;status&quot;` 		Code   string `json:&quot;code&quot;` 		Title  string `json:&quot;title&quot;` 		Detail string `json:&quot;detail&quot;` 	} `json:&quot;errors&quot;` }    The AppConnectUsers, Datum, Attributes, and AppConnectUsersLinks structs define the JSON data that is returned by the List Users API call. If you look back at Part 1, the JSON document returned by List Users has a lot more in it. We only need to define structs to use the data members that we actually care about. Since this is a read only API call, we can let Unmarshall deserialize only the fields that we will use and it will discard the rest.  We have a second object called AppConnectErrors, with a very different structure. If the API call fails from something happening on Apple’s end, the API will send back a very different JSON document. The following is an example of the JSON that Apple sends back when the API is not available:      { 	&quot;errors&quot;: &#91;{ 		&quot;status&quot;: &quot;500&quot;, 		&quot;code&quot;: &quot;UNEXPECTED_ERROR&quot;, 		&quot;title&quot;: &quot;An unexpected error occurred.&quot;, 		&quot;detail&quot;: &quot;An unexpected error occurred on the server side. If this issue continues, contact us at https://developer.apple.com/contact/.&quot; 	}] }    We’ll cover how to handle that error data later on. The CheckUserList method has a lot going on so we’ll do this in parts.      func CheckUserList(config *ConfigSettings, Username string) { 	token, err := CreateAppleJWT(config) 	if err != nil { 		fmt.Println(err) 	}  	client := &amp;http.Client{}  	var nextUrl string = &quot;https://api.appstoreconnect.apple.com/v1/users?limit=100&quot;    The first thing is that we call CreateAppleJWT in AppleJWT.go to create the signed JWT. Now we’ll jump into that.      func CreateAppleJWT(settings *ConfigSettings) (string, error) { 	bytes, err := ioutil.ReadFile(settings.PrivateKeyFile)  	if err != nil { 		fmt.Println(err) 	}  	x509Encoded, _ := pem.Decode(bytes)  	parsedKey, err := x509.ParsePKCS8PrivateKey(x509Encoded.Bytes)  	if err != nil { 		log.Fatal(err) 	}  	ecdsaPrivateKey, ok := parsedKey.(*ecdsa.PrivateKey)  	if !ok { 		panic(&quot;not ecdsa private key&quot;) 	}  	token := jwt.NewWithClaims(jwt.SigningMethodES256, jwt.MapClaims{ 		&quot;iss&quot;: settings.IssuerID, 		&quot;exp&quot;: time.Now().Add(time.Minute * 20).Unix(), 		&quot;aud&quot;: &quot;appstoreconnect-v1&quot;, 	})  	token.Header&#91;&quot;kid&quot;] = settings.KeyID  	tokenString, err := token.SignedString(ecdsaPrivateKey)  	if err != nil { 		log.Fatal(err) 	}  	return tokenString, nil }    At line 2, we read the private key file. Lines 8 through 16 parse the PEM data and come out with the private key in a format that we can use for signing. At line 22, we create the token with an expiration timestamp of 20 minutes into the future. We set the token header kid field to our KeyID. We sign the token at line 30 with our private key and pass it back. Getting the token signed correctly was the hardest part of writing this code. Getting back to CheckUserList…      client := &amp;http.Client{}  var nextUrl string = &quot;https://api.appstoreconnect.apple.com/v1/users?limit=100&quot;  var FoundMatch = false  for { 	req, err := http.NewRequest(&quot;GET&quot;, nextUrl, nil) 	if err != nil { 		fmt.Print(err.Error()) 		os.Exit(3) 	}  	req.Header.Add(&quot;Authorization&quot;, &quot;Bearer &quot;+token)  	resp, err := client.Do(req) 	if err != nil { 		log.Println(&quot;Error on response.\n&#91;ERROR] -&quot;, err) 		os.Exit(3) 	}  	defer resp.Body.Close()  	body, err := ioutil.ReadAll(resp.Body) 	if err != nil { 		log.Println(&quot;Error while reading the response bytes:&quot;, err) 		os.Exit(3) 	}    We start with a new instance of an http Client. We initialize nextUrl with the initial API url. And we set FoundMatch to false. Now we start looping. At line 8, we new up a new request and add our token at line 14. Line 16 is where we call the API and we wait at line 22 to get the response back.  We read the entire body into a byte array at line 24. Now we can start with the parsing. The first thing to do is see if the API returned an error document instead of the list of users.      var appConnectErrors AppConnectErrors err = json.Unmarshal(body, &amp;appConnectErrors) if err != nil { 	log.Println(&quot;Error while deserializing the response bytes:&quot;, err) 	os.Exit(3) }  // If there is an error object in the body, print it and exit if len(appConnectErrors.Errors) &gt; 0 { 	firstError := appConnectErrors.Errors&#91;0] 	log.Println(&quot;Status:&quot;, firstError.Status) 	log.Println(&quot;Error accessing API:&quot;, firstError.Detail) 	os.Exit(4) }    We new up an instance the AppConnectError struct as appConnectErrors. Then we unmarshal the body into appConnectErrors. Next we check the length of the Errors array In appConnectErrors. If the API returns users, the Errors object will not be there and the length will be 0.  If the length of Errors is greater than 0, then “Houston, we have a problem“. While Errors is an array and could have more than one error, we don’t care about anything after the first error. So we get the first (and probably only) error. Then we log the error status, which will be a numeric code, and the full text message. And then we die with an error code of 4.  Otherwise we keep going…      var appConnectUsers AppConnectUsers  err = json.Unmarshal(body, &amp;appConnectUsers) if err != nil { 	log.Println(&quot;Error while deserializing the response bytes:&quot;, err) 	os.Exit(3) }  for _, s := range appConnectUsers.Data { 	FoundMatch = strings.EqualFold(s.Attributes.Username, Username)  	if FoundMatch { 		fmt.Printf(&quot;Found %s, %s %s, %s\n&quot;, 			s.Attributes.Username, 			s.Attributes.FirstName, 			s.Attributes.LastName, 			strings.Join(s.Attributes.Roles, &quot;, &quot;)) 		break 	} }  if FoundMatch { 	break }  nextUrl = appConnectUsers.Links.Next  if len(nextUrl) == 0 { 	break }    As with the error struct, we new up a AppConnectUsers struct named appConnectUsers. We unmarshal the JSON data into the struct. At line 9, we iterate through the list of users stored in the Data array. We set FoundMatch at line 10 to true if the username matches. If we have a match, we print that match to the console and use break to exit the for..range loop  Next we break out of the forever loop if we have a match. Otherwise we check to see if we have a next link. If we do, we keep looping, otherwise we are done looping. And we end with an message if we didn’t have a match.   If you cloned the code from the repo and created your own config file (refer back to Part 1 for that part), you can now compile and run the code. You would compile the applet from your terminal of choice with the following command:      go build .    If you want the smallest executable, build it with the following options:      go build -ldflags=&quot;-s -w&quot; .    And then you can compress the resulting executable with a tool like upx. You would need to run IsUserInApple with a required command line parameter, the email to look for. If you leave it out, you will get an error message telling you what is needed. Remember that the IsUserInApple.json file needs to be in the same folder as the executable if you don’t use the second optional command line parameter that will let you specify the name of the config file.  If you are running it with the go command, you would run it as      go run . -username &quot;some.email@company.com&quot;    or      go run . -username &quot;some.email@company.com&quot; -config &quot;IsUserInApple.json&quot;    If you are running it as the compiled executable, you would run it as       IsUserInApple -username &quot;some.email@company.com    You’ll back something like this:      Looking for some.email@company.com Found some.email@company.com, Some Email, APP_MANAGER    or….      Looking for some.email@company.com No match for some.email@company.com    On the rare situation that the API is not available and Apple returns an error document, you’ll see something like this:      Looking for some.email@company.com 2021/07/13 23:26:19 Status: 500 2021/07/13 23:26:19 Error accessing API: An unexpected error occurred on the server side. If this issue continues, contact us at https://developer.apple.com/contact/. exit status 4    If you run it without  the -username parameter or pass is “-h” or “–help”, you will get back the usuage help messages      go run .                                                                   Please specify an email address to match (in quotes)   -config string         Configuration file (default &quot;./IsUserInApple.json&quot;)   -username string         Username to find (in quotes)  go run . -h Usage of C:\Users\anoth\AppData\Local\Temp\go-build2936985627\b001\exe\IsUserInApple.exe:   -config string         Configuration file (default &quot;./IsUserInApple.json&quot;)   -username string         Username to find (in quotes)    That wraps up this series. You can do more than get the team list from the App Connect API. For example, if you want to track how many devices have been provisioned, there is a Devices API. Lots of access points for DevOps functionality.">
+  <meta property="og:description" content="">
 
 
 
@@ -34,7 +34,7 @@
 
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="How to access Apple’s App Connect API from C#, Python, and Go. - Part 3">
-  <meta name="twitter:description" content="In my first post, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API. Part 2 covered the Python version. For our final installment, we’ll cover how to accomplish the same task with Go.  As with the C# and Python versions, we’ll need to create a signed Javascript Web Token (JWT) and then make some API calls.  I have the code in a Github repository. You can clone it from here. As with the C# project, the code is spread over a couple of modules.   The code should be portable across platforms. I used Go 1.13.2 on Windows. If you don’t have Go installed, you can grab it from the download page at golang.org. This would be a good place to mention that the only experience that I have with Go is what I learned from writing this applet. I’m pretty comfortable with C#, but everything that I know about Python and Go came from writing this code.  That disclaimer in place, after you install Go, you can grab the code from the repository and follow along. As with the other projects, we use a 3rd party library to generate and sign the Javascript Web Token (JWT). When I wrote the code a couple of months ago, I used dgrijalva’s jwt-go library. It’s no longer being maintained and it recomends to use a community supported clone of that project, golang-jwt/jwt. While writing this blog post, I updated the code to use the community supported project.          If you clone the code from my repo, the jwt library should get downloaded when you build the code. If it doesn&#8217;t you can install it the following command      go get github.com/golang-jwt/jwt  Before we run the code, lets take a tour of the code. The entry point is the module IsUserInApple.go. You can follow along with the code from the repo. It will differ from the C# and Python versions by having named command line parameters. We start with the following code      package main  import ( 	&quot;flag&quot; 	&quot;fmt&quot; 	&quot;os&quot; 	&quot;path/filepath&quot; )  func main() { 	// Define command line options 	configPtr := flag.String(&quot;config&quot;, &quot;./IsUserInApple.json&quot;, &quot;Configuration file&quot;) 	usernamePtr := flag.String(&quot;username&quot;, &quot;&quot;, &quot;Username to find (in quotes)&quot;)  	flag.Parse()  	var userName string = *usernamePtr 	var ConfigFileName string = *configPtr    At line 4, we import the flag module. This module makes it simple to define and read command line parameters. We’ll define 2 parameters, one for the name of the config file (line 12), the second for the name to match (line 13). For our code, we’ll define them as string variables. We pass in the name of the command line parameter, default value, and the help text.  After defining the parameters, we call flag.Parse() to parse the command line parameters that are being passed in. Lines 17-18 assign the flag values to string variables. This code could probably be written with less code, but it works and it’s readable. The next bit of code checks to see if a username was passed. If it doesn’t, it prints the command line help and then quietly dies a good death.      if len(userName) == 0 { 	fmt.Println(&quot;Please specify an email address to match (in quotes)&quot;) 	flag.PrintDefaults() 	os.Exit(1) }    The next few lines check to see if a config file was specified.      if len(ConfigFileName) == 0 { 	ex, err := os.Executable() 	if err != nil { 		panic(err) 	} 	ConfigFileName = filepath.Join(filepath.Dir(ex), &quot;IsUserInApple.json&quot;) }  if _, err := os.Stat(ConfigFileName); os.IsNotExist(err) { 	fmt.Println(err) 	os.Exit(2) }    At line 1, we see if a file has been specified. It hasn’t been specified, then we want to look in the folder that code is running from from for a file named IsUserInApple.json.  The os.Executable() method will return the full path for the running code, or an error message if something went wrong. If that happens, we abandon ship with panic().  If you are new to Go, it’s a little wierd to see both a return value and error message on the left side of a function call. But you get used to it after a while. And it’s a very clean way of getting errors back from a method call. After getting the path, we extract the directory and concatenate the name of the config file.  At line 9, we check to see if the file exists or die trying.  At this point we have a filename for the configuration file and we can attempt to read it.      fmt.Println(&quot;Looking for &quot; + userName)  config, err := ReadConfig(ConfigFileName)    Time to dive into the ReadConfig() method. That code is in the AppleJWT.go module. It’s not the cleanest separation of code, but just roll with it. We have a bunch of fun things going on here.  First things first are the imports:      import ( 	&quot;crypto/ecdsa&quot; 	&quot;crypto/x509&quot; 	&quot;encoding/json&quot; 	&quot;encoding/pem&quot; 	&quot;fmt&quot; 	&quot;io/ioutil&quot; 	&quot;log&quot; 	&quot;time&quot;  	&quot;github.com/golang-jwt/jwt&quot; )    The first 8 imports are modules that come with Go. The crypto modules are used for the JWT signing. The encoding modules let us read and parse JSON and PEM data. The last module is the external library that will be pulled directly from Github.  Now we’ll define an object to contain the JSON data from the config file. This is a pretty simple object:      type ConfigSettings struct { 	PrivateKeyFile string `json:&quot;PrivateKeyFile&quot;` 	KeyID          string `json:&quot;KeyID&quot;` 	IssuerID       string `json:&quot;IssuerID&quot;` }    That will map to the JSON format of the config file, which will look like this      {     &quot;PrivateKeyFile&quot;: &quot;path/to.your/privatekey.p8&quot;,     &quot;KeyID&quot;: &quot;ABCDEF1234&quot;,     &quot;IssuerID&quot;: &quot;d88b7c23-4c26-48fb-9d62-5649f27a25a2&quot; }    There are some handy online tools from converting JSON data to Go structs. I have used JSON-to-Go and transform.tools, they both work pretty well. The JSON-to-Go tool gives you the option of using inline type definitions or separate structs for each type. After that we have the ReadConfig method      func ReadConfig(ConfigFileName string) (*ConfigSettings, error) { 	file, err := ioutil.ReadFile(ConfigFileName)  	if err != nil { 		return nil, err 	}  	config := new(ConfigSettings)  	err = json.Unmarshal(&#91;]byte(file), &amp;config)  	return config, err }    Line 1 defines the parameters, the name of the config file, and an error variable. Then we read the file at line 2 with the ReadFile method. If it fails, we return the error. At line 8, we create a new instance of the ConfigSettings struct that will contain our settings. Then at line 10, we use the Unmarshal() method to parse the JSON data into our ConfigSettings struct.  That brings us back to our main method.       if err != nil { 	fmt.Println(err) 	os.Exit(3) }  CheckUserList(config, userName)    Skipping over error checking code, we now have the method that will ties this all together for us. Now we can dive in to CheckUserList() defined in AppleStoreApi.go. At the top of module, we have some structs defined.      type AppConnectUsers = struct { 	Data  &#91;]Datum              `json:&quot;data&quot;` 	Links AppConnectUsersLinks `json:&quot;links&quot;` }  type Datum = struct { 	Type       string     `json:&quot;type&quot;` 	Attributes Attributes `json:&quot;attributes&quot;` }  type Attributes = struct { 	Username  string   `json:&quot;username&quot;` 	FirstName string   `json:&quot;firstName&quot;` 	LastName  string   `json:&quot;lastName&quot;` 	Roles     &#91;]string `json:&quot;roles&quot;` }  type AppConnectUsersLinks = struct { 	Self string `json:&quot;self&quot;` 	Next string `json:&quot;next&quot;` }  type AppConnectErrors struct { 	Errors &#91;]struct { 		Status string `json:&quot;status&quot;` 		Code   string `json:&quot;code&quot;` 		Title  string `json:&quot;title&quot;` 		Detail string `json:&quot;detail&quot;` 	} `json:&quot;errors&quot;` }    The AppConnectUsers, Datum, Attributes, and AppConnectUsersLinks structs define the JSON data that is returned by the List Users API call. If you look back at Part 1, the JSON document returned by List Users has a lot more in it. We only need to define structs to use the data members that we actually care about. Since this is a read only API call, we can let Unmarshall deserialize only the fields that we will use and it will discard the rest.  We have a second object called AppConnectErrors, with a very different structure. If the API call fails from something happening on Apple’s end, the API will send back a very different JSON document. The following is an example of the JSON that Apple sends back when the API is not available:      { 	&quot;errors&quot;: &#91;{ 		&quot;status&quot;: &quot;500&quot;, 		&quot;code&quot;: &quot;UNEXPECTED_ERROR&quot;, 		&quot;title&quot;: &quot;An unexpected error occurred.&quot;, 		&quot;detail&quot;: &quot;An unexpected error occurred on the server side. If this issue continues, contact us at https://developer.apple.com/contact/.&quot; 	}] }    We’ll cover how to handle that error data later on. The CheckUserList method has a lot going on so we’ll do this in parts.      func CheckUserList(config *ConfigSettings, Username string) { 	token, err := CreateAppleJWT(config) 	if err != nil { 		fmt.Println(err) 	}  	client := &amp;http.Client{}  	var nextUrl string = &quot;https://api.appstoreconnect.apple.com/v1/users?limit=100&quot;    The first thing is that we call CreateAppleJWT in AppleJWT.go to create the signed JWT. Now we’ll jump into that.      func CreateAppleJWT(settings *ConfigSettings) (string, error) { 	bytes, err := ioutil.ReadFile(settings.PrivateKeyFile)  	if err != nil { 		fmt.Println(err) 	}  	x509Encoded, _ := pem.Decode(bytes)  	parsedKey, err := x509.ParsePKCS8PrivateKey(x509Encoded.Bytes)  	if err != nil { 		log.Fatal(err) 	}  	ecdsaPrivateKey, ok := parsedKey.(*ecdsa.PrivateKey)  	if !ok { 		panic(&quot;not ecdsa private key&quot;) 	}  	token := jwt.NewWithClaims(jwt.SigningMethodES256, jwt.MapClaims{ 		&quot;iss&quot;: settings.IssuerID, 		&quot;exp&quot;: time.Now().Add(time.Minute * 20).Unix(), 		&quot;aud&quot;: &quot;appstoreconnect-v1&quot;, 	})  	token.Header&#91;&quot;kid&quot;] = settings.KeyID  	tokenString, err := token.SignedString(ecdsaPrivateKey)  	if err != nil { 		log.Fatal(err) 	}  	return tokenString, nil }    At line 2, we read the private key file. Lines 8 through 16 parse the PEM data and come out with the private key in a format that we can use for signing. At line 22, we create the token with an expiration timestamp of 20 minutes into the future. We set the token header kid field to our KeyID. We sign the token at line 30 with our private key and pass it back. Getting the token signed correctly was the hardest part of writing this code. Getting back to CheckUserList…      client := &amp;http.Client{}  var nextUrl string = &quot;https://api.appstoreconnect.apple.com/v1/users?limit=100&quot;  var FoundMatch = false  for { 	req, err := http.NewRequest(&quot;GET&quot;, nextUrl, nil) 	if err != nil { 		fmt.Print(err.Error()) 		os.Exit(3) 	}  	req.Header.Add(&quot;Authorization&quot;, &quot;Bearer &quot;+token)  	resp, err := client.Do(req) 	if err != nil { 		log.Println(&quot;Error on response.\n&#91;ERROR] -&quot;, err) 		os.Exit(3) 	}  	defer resp.Body.Close()  	body, err := ioutil.ReadAll(resp.Body) 	if err != nil { 		log.Println(&quot;Error while reading the response bytes:&quot;, err) 		os.Exit(3) 	}    We start with a new instance of an http Client. We initialize nextUrl with the initial API url. And we set FoundMatch to false. Now we start looping. At line 8, we new up a new request and add our token at line 14. Line 16 is where we call the API and we wait at line 22 to get the response back.  We read the entire body into a byte array at line 24. Now we can start with the parsing. The first thing to do is see if the API returned an error document instead of the list of users.      var appConnectErrors AppConnectErrors err = json.Unmarshal(body, &amp;appConnectErrors) if err != nil { 	log.Println(&quot;Error while deserializing the response bytes:&quot;, err) 	os.Exit(3) }  // If there is an error object in the body, print it and exit if len(appConnectErrors.Errors) &gt; 0 { 	firstError := appConnectErrors.Errors&#91;0] 	log.Println(&quot;Status:&quot;, firstError.Status) 	log.Println(&quot;Error accessing API:&quot;, firstError.Detail) 	os.Exit(4) }    We new up an instance the AppConnectError struct as appConnectErrors. Then we unmarshal the body into appConnectErrors. Next we check the length of the Errors array In appConnectErrors. If the API returns users, the Errors object will not be there and the length will be 0.  If the length of Errors is greater than 0, then “Houston, we have a problem“. While Errors is an array and could have more than one error, we don’t care about anything after the first error. So we get the first (and probably only) error. Then we log the error status, which will be a numeric code, and the full text message. And then we die with an error code of 4.  Otherwise we keep going…      var appConnectUsers AppConnectUsers  err = json.Unmarshal(body, &amp;appConnectUsers) if err != nil { 	log.Println(&quot;Error while deserializing the response bytes:&quot;, err) 	os.Exit(3) }  for _, s := range appConnectUsers.Data { 	FoundMatch = strings.EqualFold(s.Attributes.Username, Username)  	if FoundMatch { 		fmt.Printf(&quot;Found %s, %s %s, %s\n&quot;, 			s.Attributes.Username, 			s.Attributes.FirstName, 			s.Attributes.LastName, 			strings.Join(s.Attributes.Roles, &quot;, &quot;)) 		break 	} }  if FoundMatch { 	break }  nextUrl = appConnectUsers.Links.Next  if len(nextUrl) == 0 { 	break }    As with the error struct, we new up a AppConnectUsers struct named appConnectUsers. We unmarshal the JSON data into the struct. At line 9, we iterate through the list of users stored in the Data array. We set FoundMatch at line 10 to true if the username matches. If we have a match, we print that match to the console and use break to exit the for..range loop  Next we break out of the forever loop if we have a match. Otherwise we check to see if we have a next link. If we do, we keep looping, otherwise we are done looping. And we end with an message if we didn’t have a match.   If you cloned the code from the repo and created your own config file (refer back to Part 1 for that part), you can now compile and run the code. You would compile the applet from your terminal of choice with the following command:      go build .    If you want the smallest executable, build it with the following options:      go build -ldflags=&quot;-s -w&quot; .    And then you can compress the resulting executable with a tool like upx. You would need to run IsUserInApple with a required command line parameter, the email to look for. If you leave it out, you will get an error message telling you what is needed. Remember that the IsUserInApple.json file needs to be in the same folder as the executable if you don’t use the second optional command line parameter that will let you specify the name of the config file.  If you are running it with the go command, you would run it as      go run . -username &quot;some.email@company.com&quot;    or      go run . -username &quot;some.email@company.com&quot; -config &quot;IsUserInApple.json&quot;    If you are running it as the compiled executable, you would run it as       IsUserInApple -username &quot;some.email@company.com    You’ll back something like this:      Looking for some.email@company.com Found some.email@company.com, Some Email, APP_MANAGER    or….      Looking for some.email@company.com No match for some.email@company.com    On the rare situation that the API is not available and Apple returns an error document, you’ll see something like this:      Looking for some.email@company.com 2021/07/13 23:26:19 Status: 500 2021/07/13 23:26:19 Error accessing API: An unexpected error occurred on the server side. If this issue continues, contact us at https://developer.apple.com/contact/. exit status 4    If you run it without  the -username parameter or pass is “-h” or “–help”, you will get back the usuage help messages      go run .                                                                   Please specify an email address to match (in quotes)   -config string         Configuration file (default &quot;./IsUserInApple.json&quot;)   -username string         Username to find (in quotes)  go run . -h Usage of C:\Users\anoth\AppData\Local\Temp\go-build2936985627\b001\exe\IsUserInApple.exe:   -config string         Configuration file (default &quot;./IsUserInApple.json&quot;)   -username string         Username to find (in quotes)    That wraps up this series. You can do more than get the team list from the App Connect API. For example, if you want to track how many devices have been provisioned, there is a Devices API. Lots of access points for DevOps functionality.">
+  <meta name="twitter:description" content="">
   <meta name="twitter:url" content="/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/">
 
   
@@ -289,7 +289,7 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="How to access Apple’s App Connect API from C#, Python, and Go. - Part 3">
-    <meta itemprop="description" content="In my first post, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API. Part 2 covered the Python version. For our final installment, we’ll cover how to accomplish the same task with Go.As with the C# and Python versions, we’ll need to create a signed Javascript Web Token (JWT) and then make some API calls.  I have the code in a Github repository. You can clone it from here. As with the C# project, the code is spread over a couple of modules. The code should be portable across platforms. I used Go 1.13.2 on Windows. If you don’t have Go installed, you can grab it from the download page at golang.org. This would be a good place to mention that the only experience that I have with Go is what I learned from writing this applet. I’m pretty comfortable with C#, but everything that I know about Python and Go came from writing this code.That disclaimer in place, after you install Go, you can grab the code from the repository and follow along. As with the other projects, we use a 3rd party library to generate and sign the Javascript Web Token (JWT). When I wrote the code a couple of months ago, I used dgrijalva’s jwt-go library. It’s no longer being maintained and it recomends to use a community supported clone of that project, golang-jwt/jwt. While writing this blog post, I updated the code to use the community supported project.      If you clone the code from my repo, the jwt library should get downloaded when you build the code. If it doesn&#8217;t you can install it the following command  go get github.com/golang-jwt/jwtBefore we run the code, lets take a tour of the code. The entry point is the module IsUserInApple.go. You can follow along with the code from the repo. It will differ from the C# and Python versions by having named command line parameters. We start with the following code  package mainimport (	&quot;flag&quot;	&quot;fmt&quot;	&quot;os&quot;	&quot;path/filepath&quot;)func main() {	// Define command line options	configPtr := flag.String(&quot;config&quot;, &quot;./IsUserInApple.json&quot;, &quot;Configuration file&quot;)	usernamePtr := flag.String(&quot;username&quot;, &quot;&quot;, &quot;Username to find (in quotes)&quot;)	flag.Parse()	var userName string = *usernamePtr	var ConfigFileName string = *configPtrAt line 4, we import the flag module. This module makes it simple to define and read command line parameters. We’ll define 2 parameters, one for the name of the config file (line 12), the second for the name to match (line 13). For our code, we’ll define them as string variables. We pass in the name of the command line parameter, default value, and the help text.After defining the parameters, we call flag.Parse() to parse the command line parameters that are being passed in. Lines 17-18 assign the flag values to string variables. This code could probably be written with less code, but it works and it’s readable. The next bit of code checks to see if a username was passed. If it doesn’t, it prints the command line help and then quietly dies a good death.  if len(userName) == 0 {	fmt.Println(&quot;Please specify an email address to match (in quotes)&quot;)	flag.PrintDefaults()	os.Exit(1)}The next few lines check to see if a config file was specified.  if len(ConfigFileName) == 0 {	ex, err := os.Executable()	if err != nil {		panic(err)	}	ConfigFileName = filepath.Join(filepath.Dir(ex), &quot;IsUserInApple.json&quot;)}if _, err := os.Stat(ConfigFileName); os.IsNotExist(err) {	fmt.Println(err)	os.Exit(2)}At line 1, we see if a file has been specified. It hasn’t been specified, then we want to look in the folder that code is running from from for a file named IsUserInApple.json.  The os.Executable() method will return the full path for the running code, or an error message if something went wrong. If that happens, we abandon ship with panic().If you are new to Go, it’s a little wierd to see both a return value and error message on the left side of a function call. But you get used to it after a while. And it’s a very clean way of getting errors back from a method call. After getting the path, we extract the directory and concatenate the name of the config file.  At line 9, we check to see if the file exists or die trying.At this point we have a filename for the configuration file and we can attempt to read it.  fmt.Println(&quot;Looking for &quot; + userName)config, err := ReadConfig(ConfigFileName)Time to dive into the ReadConfig() method. That code is in the AppleJWT.go module. It’s not the cleanest separation of code, but just roll with it. We have a bunch of fun things going on here.  First things first are the imports:  import (	&quot;crypto/ecdsa&quot;	&quot;crypto/x509&quot;	&quot;encoding/json&quot;	&quot;encoding/pem&quot;	&quot;fmt&quot;	&quot;io/ioutil&quot;	&quot;log&quot;	&quot;time&quot;	&quot;github.com/golang-jwt/jwt&quot;)The first 8 imports are modules that come with Go. The crypto modules are used for the JWT signing. The encoding modules let us read and parse JSON and PEM data. The last module is the external library that will be pulled directly from Github.Now we’ll define an object to contain the JSON data from the config file. This is a pretty simple object:  type ConfigSettings struct {	PrivateKeyFile string `json:&quot;PrivateKeyFile&quot;`	KeyID          string `json:&quot;KeyID&quot;`	IssuerID       string `json:&quot;IssuerID&quot;`}That will map to the JSON format of the config file, which will look like this  {    &quot;PrivateKeyFile&quot;: &quot;path/to.your/privatekey.p8&quot;,    &quot;KeyID&quot;: &quot;ABCDEF1234&quot;,    &quot;IssuerID&quot;: &quot;d88b7c23-4c26-48fb-9d62-5649f27a25a2&quot;}There are some handy online tools from converting JSON data to Go structs. I have used JSON-to-Go and transform.tools, they both work pretty well. The JSON-to-Go tool gives you the option of using inline type definitions or separate structs for each type. After that we have the ReadConfig method  func ReadConfig(ConfigFileName string) (*ConfigSettings, error) {	file, err := ioutil.ReadFile(ConfigFileName)	if err != nil {		return nil, err	}	config := new(ConfigSettings)	err = json.Unmarshal(&#91;]byte(file), &amp;config)	return config, err}Line 1 defines the parameters, the name of the config file, and an error variable. Then we read the file at line 2 with the ReadFile method. If it fails, we return the error. At line 8, we create a new instance of the ConfigSettings struct that will contain our settings. Then at line 10, we use the Unmarshal() method to parse the JSON data into our ConfigSettings struct.That brings us back to our main method.   if err != nil {	fmt.Println(err)	os.Exit(3)}CheckUserList(config, userName)Skipping over error checking code, we now have the method that will ties this all together for us. Now we can dive in to CheckUserList() defined in AppleStoreApi.go. At the top of module, we have some structs defined.  type AppConnectUsers = struct {	Data  &#91;]Datum              `json:&quot;data&quot;`	Links AppConnectUsersLinks `json:&quot;links&quot;`}type Datum = struct {	Type       string     `json:&quot;type&quot;`	Attributes Attributes `json:&quot;attributes&quot;`}type Attributes = struct {	Username  string   `json:&quot;username&quot;`	FirstName string   `json:&quot;firstName&quot;`	LastName  string   `json:&quot;lastName&quot;`	Roles     &#91;]string `json:&quot;roles&quot;`}type AppConnectUsersLinks = struct {	Self string `json:&quot;self&quot;`	Next string `json:&quot;next&quot;`}type AppConnectErrors struct {	Errors &#91;]struct {		Status string `json:&quot;status&quot;`		Code   string `json:&quot;code&quot;`		Title  string `json:&quot;title&quot;`		Detail string `json:&quot;detail&quot;`	} `json:&quot;errors&quot;`}The AppConnectUsers, Datum, Attributes, and AppConnectUsersLinks structs define the JSON data that is returned by the List Users API call. If you look back at Part 1, the JSON document returned by List Users has a lot more in it. We only need to define structs to use the data members that we actually care about. Since this is a read only API call, we can let Unmarshall deserialize only the fields that we will use and it will discard the rest.We have a second object called AppConnectErrors, with a very different structure. If the API call fails from something happening on Apple’s end, the API will send back a very different JSON document. The following is an example of the JSON that Apple sends back when the API is not available:  {	&quot;errors&quot;: &#91;{		&quot;status&quot;: &quot;500&quot;,		&quot;code&quot;: &quot;UNEXPECTED_ERROR&quot;,		&quot;title&quot;: &quot;An unexpected error occurred.&quot;,		&quot;detail&quot;: &quot;An unexpected error occurred on the server side. If this issue continues, contact us at https://developer.apple.com/contact/.&quot;	}]}We’ll cover how to handle that error data later on. The CheckUserList method has a lot going on so we’ll do this in parts.  func CheckUserList(config *ConfigSettings, Username string) {	token, err := CreateAppleJWT(config)	if err != nil {		fmt.Println(err)	}	client := &amp;http.Client{}	var nextUrl string = &quot;https://api.appstoreconnect.apple.com/v1/users?limit=100&quot;The first thing is that we call CreateAppleJWT in AppleJWT.go to create the signed JWT. Now we’ll jump into that.  func CreateAppleJWT(settings *ConfigSettings) (string, error) {	bytes, err := ioutil.ReadFile(settings.PrivateKeyFile)	if err != nil {		fmt.Println(err)	}	x509Encoded, _ := pem.Decode(bytes)	parsedKey, err := x509.ParsePKCS8PrivateKey(x509Encoded.Bytes)	if err != nil {		log.Fatal(err)	}	ecdsaPrivateKey, ok := parsedKey.(*ecdsa.PrivateKey)	if !ok {		panic(&quot;not ecdsa private key&quot;)	}	token := jwt.NewWithClaims(jwt.SigningMethodES256, jwt.MapClaims{		&quot;iss&quot;: settings.IssuerID,		&quot;exp&quot;: time.Now().Add(time.Minute * 20).Unix(),		&quot;aud&quot;: &quot;appstoreconnect-v1&quot;,	})	token.Header&#91;&quot;kid&quot;] = settings.KeyID	tokenString, err := token.SignedString(ecdsaPrivateKey)	if err != nil {		log.Fatal(err)	}	return tokenString, nil}At line 2, we read the private key file. Lines 8 through 16 parse the PEM data and come out with the private key in a format that we can use for signing. At line 22, we create the token with an expiration timestamp of 20 minutes into the future. We set the token header kid field to our KeyID. We sign the token at line 30 with our private key and pass it back. Getting the token signed correctly was the hardest part of writing this code. Getting back to CheckUserList…  client := &amp;http.Client{}var nextUrl string = &quot;https://api.appstoreconnect.apple.com/v1/users?limit=100&quot;var FoundMatch = falsefor {	req, err := http.NewRequest(&quot;GET&quot;, nextUrl, nil)	if err != nil {		fmt.Print(err.Error())		os.Exit(3)	}	req.Header.Add(&quot;Authorization&quot;, &quot;Bearer &quot;+token)	resp, err := client.Do(req)	if err != nil {		log.Println(&quot;Error on response.\n&#91;ERROR] -&quot;, err)		os.Exit(3)	}	defer resp.Body.Close()	body, err := ioutil.ReadAll(resp.Body)	if err != nil {		log.Println(&quot;Error while reading the response bytes:&quot;, err)		os.Exit(3)	}We start with a new instance of an http Client. We initialize nextUrl with the initial API url. And we set FoundMatch to false. Now we start looping. At line 8, we new up a new request and add our token at line 14. Line 16 is where we call the API and we wait at line 22 to get the response back.We read the entire body into a byte array at line 24. Now we can start with the parsing. The first thing to do is see if the API returned an error document instead of the list of users.  var appConnectErrors AppConnectErrorserr = json.Unmarshal(body, &amp;appConnectErrors)if err != nil {	log.Println(&quot;Error while deserializing the response bytes:&quot;, err)	os.Exit(3)}// If there is an error object in the body, print it and exitif len(appConnectErrors.Errors) &gt; 0 {	firstError := appConnectErrors.Errors&#91;0]	log.Println(&quot;Status:&quot;, firstError.Status)	log.Println(&quot;Error accessing API:&quot;, firstError.Detail)	os.Exit(4)}We new up an instance the AppConnectError struct as appConnectErrors. Then we unmarshal the body into appConnectErrors. Next we check the length of the Errors array In appConnectErrors. If the API returns users, the Errors object will not be there and the length will be 0.If the length of Errors is greater than 0, then “Houston, we have a problem“. While Errors is an array and could have more than one error, we don’t care about anything after the first error. So we get the first (and probably only) error. Then we log the error status, which will be a numeric code, and the full text message. And then we die with an error code of 4.Otherwise we keep going…  var appConnectUsers AppConnectUserserr = json.Unmarshal(body, &amp;appConnectUsers)if err != nil {	log.Println(&quot;Error while deserializing the response bytes:&quot;, err)	os.Exit(3)}for _, s := range appConnectUsers.Data {	FoundMatch = strings.EqualFold(s.Attributes.Username, Username)	if FoundMatch {		fmt.Printf(&quot;Found %s, %s %s, %s\n&quot;,			s.Attributes.Username,			s.Attributes.FirstName,			s.Attributes.LastName,			strings.Join(s.Attributes.Roles, &quot;, &quot;))		break	}}if FoundMatch {	break}nextUrl = appConnectUsers.Links.Nextif len(nextUrl) == 0 {	break}As with the error struct, we new up a AppConnectUsers struct named appConnectUsers. We unmarshal the JSON data into the struct. At line 9, we iterate through the list of users stored in the Data array. We set FoundMatch at line 10 to true if the username matches. If we have a match, we print that match to the console and use break to exit the for..range loopNext we break out of the forever loop if we have a match. Otherwise we check to see if we have a next link. If we do, we keep looping, otherwise we are done looping. And we end with an message if we didn’t have a match. If you cloned the code from the repo and created your own config file (refer back to Part 1 for that part), you can now compile and run the code. You would compile the applet from your terminal of choice with the following command:  go build .If you want the smallest executable, build it with the following options:  go build -ldflags=&quot;-s -w&quot; .And then you can compress the resulting executable with a tool like upx. You would need to run IsUserInApple with a required command line parameter, the email to look for. If you leave it out, you will get an error message telling you what is needed. Remember that the IsUserInApple.json file needs to be in the same folder as the executable if you don’t use the second optional command line parameter that will let you specify the name of the config file.If you are running it with the go command, you would run it as  go run . -username &quot;some.email@company.com&quot;or  go run . -username &quot;some.email@company.com&quot; -config &quot;IsUserInApple.json&quot;If you are running it as the compiled executable, you would run it as   IsUserInApple -username &quot;some.email@company.comYou’ll back something like this:  Looking for some.email@company.comFound some.email@company.com, Some Email, APP_MANAGERor….  Looking for some.email@company.comNo match for some.email@company.comOn the rare situation that the API is not available and Apple returns an error document, you’ll see something like this:  Looking for some.email@company.com2021/07/13 23:26:19 Status: 5002021/07/13 23:26:19 Error accessing API: An unexpected error occurred on the server side. If this issue continues, contact us at https://developer.apple.com/contact/.exit status 4If you run it without  the -username parameter or pass is “-h” or “–help”, you will get back the usuage help messages  go run .                                                                  Please specify an email address to match (in quotes)  -config string        Configuration file (default &quot;./IsUserInApple.json&quot;)  -username string        Username to find (in quotes)go run . -hUsage of C:\Users\anoth\AppData\Local\Temp\go-build2936985627\b001\exe\IsUserInApple.exe:  -config string        Configuration file (default &quot;./IsUserInApple.json&quot;)  -username string        Username to find (in quotes)That wraps up this series. You can do more than get the team list from the App Connect API. For example, if you want to track how many devices have been provisioned, there is a Devices API. Lots of access points for DevOps functionality.">
+    <meta itemprop="description" content="">
     <meta itemprop="datePublished" content="2021-07-19T09:28:15-04:00">
     
 
@@ -314,7 +314,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          12 minute read
+          13 minute read
         
       </span>
     
@@ -328,9 +328,9 @@
         
         <figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MdwkwLM/0/e733f438/L/Apple%20Lock%20Purple-L.jpg?" alt="" /></figure>
 
-<p>In my <a href="https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">first post</a>, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API. <a href="https://rajapet.com/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/">Part 2</a> covered the Python version. For our final installment, we’ll cover how to accomplish the same task with <a href="https://golang.org/">Go</a>.</p>
+<p>In my <a href="/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">first post</a>, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API. <a href="/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/">Part 2</a> covered the Python version. For our final installment, we’ll cover how to accomplish the same task with <a href="https://golang.org/">Go</a>.</p>
 
-<p>As with the C# and Python versions, we’ll need to create a signed Javascript Web Token (JWT) and then make some API calls.  I have the code in a Github repository. You can clone it from <a href="https://github.com/anotherlab/IsUserInApple-golang">here</a>. As with the C# project, the code is spread over a couple of modules. </p>
+<p>As with the C# and Python versions, we’ll need to create a signed Javascript Web Token (JWT) and then make some API calls. I have the code in a Github repository. You can clone it from <a href="https://github.com/anotherlab/IsUserInApple-golang">here</a>. As with the C# project, the code is spread over a couple of modules.</p>
 
 <p>The code should be portable across platforms. I used Go 1.13.2 on Windows. If you don’t have Go installed, you can grab it from the download page at <a href="https://golang.org/dl/">golang.org</a>. This would be a good place to mention that the only experience that I have with Go is what I learned from writing this applet. I’m pretty comfortable with C#, but everything that I know about Python and Go came from writing this code.</p>
 
@@ -346,48 +346,75 @@
 
 <p>Before we run the code, lets take a tour of the code. The entry point is the module <a href="https://github.com/anotherlab/IsUserInApple-golang/blob/main/AppleStoreApi.go">IsUserInApple.go</a>. You can follow along with the code from the repo. It will differ from the C# and Python versions by having named command line parameters. We start with the following code</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-package main
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="n">package</span> <span class="n">main</span>
 
-import (
-	"flag"
-	"fmt"
-	"os"
-	"path/filepath"
-)
+<span class="nf">import</span> <span class="p">(</span>
+	<span class="s">"flag"</span>
+	<span class="s">"fmt"</span>
+	<span class="s">"os"</span>
+	<span class="s">"path/filepath"</span>
+<span class="p">)</span>
 
-func main() {
-	// Define command line options
-	configPtr := flag.String("config", "./IsUserInApple.json", "Configuration file")
-	usernamePtr := flag.String("username", "", "Username to find (in quotes)")
+<span class="n">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">// Define command line options</span>
+	<span class="n">configPtr</span> <span class="p">:=</span> <span class="n">flag</span><span class="p">.</span><span class="nf">String</span><span class="p">(</span><span class="s">"config"</span><span class="p">,</span> <span class="s">"./IsUserInApple.json"</span><span class="p">,</span> <span class="s">"Configuration file"</span><span class="p">)</span>
+	<span class="n">usernamePtr</span> <span class="p">:=</span> <span class="n">flag</span><span class="p">.</span><span class="nf">String</span><span class="p">(</span><span class="s">"username"</span><span class="p">,</span> <span class="s">""</span><span class="p">,</span> <span class="s">"Username to find (in quotes)"</span><span class="p">)</span>
 
-	flag.Parse()
+	<span class="n">flag</span><span class="p">.</span><span class="nf">Parse</span><span class="p">()</span>
 
-	var userName string = *usernamePtr
-	var ConfigFileName string = *configPtr
-</pre>
-</div>
+	<span class="kt">var</span> <span class="n">userName</span> <span class="kt">string</span> <span class="p">=</span> <span class="p">*</span><span class="n">usernamePtr</span>
+	<span class="kt">var</span> <span class="n">ConfigFileName</span> <span class="kt">string</span> <span class="p">=</span> <span class="p">*</span><span class="n">configPtr</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>At line 4, we import the <a href="https://pkg.go.dev/flag">flag</a> module. This module makes it simple to define and read command line parameters. We’ll define 2 parameters, one for the name of the config file (line 12), the second for the name to match (line 13). For our code, we’ll define them as string variables. We pass in the name of the command line parameter, default value, and the help text.</p>
 
 <p>After defining the parameters, we call <a href="https://pkg.go.dev/flag#Parse">flag.Parse()</a> to parse the command line parameters that are being passed in. Lines 17-18 assign the flag values to string variables. This code could probably be written with less code, but it works and it’s readable. The next bit of code checks to see if a username was passed. If it doesn’t, it prints the command line help and then quietly dies a good death.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-if len(userName) == 0 {
-	fmt.Println("Please specify an email address to match (in quotes)")
-	flag.PrintDefaults()
-	os.Exit(1)
-}
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">userName</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span> <span class="p">{</span>
+	<span class="n">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">"Please specify an email address to match (in quotes)"</span><span class="p">)</span>
+	<span class="n">flag</span><span class="p">.</span><span class="nf">PrintDefaults</span><span class="p">()</span>
+	<span class="n">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The next few lines check to see if a config file was specified.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; title: ; notranslate" title="">
-if len(ConfigFileName) == 0 {
+<figure class="highlight"><pre><code class="language-plain" data-lang="plain"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre>if len(ConfigFileName) == 0 {
 	ex, err := os.Executable()
 	if err != nil {
 		panic(err)
@@ -399,274 +426,403 @@ if _, err := os.Stat(ConfigFileName); os.IsNotExist(err) {
 	fmt.Println(err)
 	os.Exit(2)
 }
-</pre>
-</div>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>At line 1, we see if a file has been specified. It hasn’t been specified, then we want to look in the folder that code is running from from for a file named IsUserInApple.json.  The <a href="https://pkg.go.dev/os#Executable">os.Executable()</a> method will return the full path for the running code, or an error message if something went wrong. If that happens, we abandon ship with <a href="https://gobyexample.com/panic">panic()</a>.</p>
+<p>At line 1, we see if a file has been specified. It hasn’t been specified, then we want to look in the folder that code is running from from for a file named IsUserInApple.json. The <a href="https://pkg.go.dev/os#Executable">os.Executable()</a> method will return the full path for the running code, or an error message if something went wrong. If that happens, we abandon ship with <a href="https://gobyexample.com/panic">panic()</a>.</p>
 
-<p>If you are new to Go, it’s a little wierd to see both a return value and error message on the left side of a function call. But you get used to it after a while. And it’s a very clean way of getting errors back from a method call. After getting the path, we extract the directory and concatenate the name of the config file.  At line 9, we check to see if the file exists or die trying.</p>
+<p>If you are new to Go, it’s a little wierd to see both a return value and error message on the left side of a function call. But you get used to it after a while. And it’s a very clean way of getting errors back from a method call. After getting the path, we extract the directory and concatenate the name of the config file. At line 9, we check to see if the file exists or die trying.</p>
 
 <p>At this point we have a filename for the configuration file and we can attempt to read it.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; title: ; notranslate" title="">
-fmt.Println("Looking for " + userName)
+<figure class="highlight"><pre><code class="language-plain" data-lang="plain">fmt.Println("Looking for " + userName)
 
-config, err := ReadConfig(ConfigFileName)
-</pre>
-</div>
+config, err := ReadConfig(ConfigFileName)</code></pre></figure>
 
-<p>Time to dive into the ReadConfig() method. That code is in the <a href="https://github.com/anotherlab/IsUserInApple-golang/blob/main/AppleJWT.go">AppleJWT.go</a> module. It’s not the cleanest separation of code, but just roll with it. We have a bunch of fun things going on here.  First things first are the imports:</p>
+<p>Time to dive into the ReadConfig() method. That code is in the <a href="https://github.com/anotherlab/IsUserInApple-golang/blob/main/AppleJWT.go">AppleJWT.go</a> module. It’s not the cleanest separation of code, but just roll with it. We have a bunch of fun things going on here. First things first are the imports:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-import (
-	"crypto/ecdsa"
-	"crypto/x509"
-	"encoding/json"
-	"encoding/pem"
-	"fmt"
-	"io/ioutil"
-	"log"
-	"time"
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="nf">import</span> <span class="p">(</span>
+	<span class="s">"crypto/ecdsa"</span>
+	<span class="s">"crypto/x509"</span>
+	<span class="s">"encoding/json"</span>
+	<span class="s">"encoding/pem"</span>
+	<span class="s">"fmt"</span>
+	<span class="s">"io/ioutil"</span>
+	<span class="s">"log"</span>
+	<span class="s">"time"</span>
 
-	"github.com/golang-jwt/jwt"
-)
-</pre>
-</div>
+	<span class="s">"github.com/golang-jwt/jwt"</span>
+<span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The first 8 imports are modules that come with Go. The crypto modules are used for the JWT signing. The encoding modules let us read and parse JSON and PEM data. The last module is the external library that will be pulled directly from Github.</p>
 
 <p>Now we’ll define an object to contain the JSON data from the config file. This is a pretty simple object:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-type ConfigSettings struct {
-	PrivateKeyFile string `json:"PrivateKeyFile"`
-	KeyID          string `json:"KeyID"`
-	IssuerID       string `json:"IssuerID"`
-}
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="n">type</span> <span class="n">ConfigSettings</span> <span class="k">struct</span> <span class="err">{</span>
+	<span class="nc">PrivateKeyFile</span> <span class="kt">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"PrivateKeyFile"</span><span class="err">`</span>
+	<span class="n">KeyID</span>          <span class="kt">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"KeyID"</span><span class="err">`</span>
+	<span class="n">IssuerID</span>       <span class="kt">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"IssuerID"</span><span class="err">`</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>That will map to the JSON format of the config file, which will look like this</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: jscript; title: ; notranslate" title="">
-{
+<figure class="highlight"><pre><code class="language-jscript" data-lang="jscript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>{
     "PrivateKeyFile": "path/to.your/privatekey.p8",
     "KeyID": "ABCDEF1234",
     "IssuerID": "d88b7c23-4c26-48fb-9d62-5649f27a25a2"
 }
-</pre>
-</div>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>There are some handy online tools from converting JSON data to Go structs. I have used <a href="https://mholt.github.io/json-to-go/">JSON-to-Go</a> and <a href="https://transform.tools/json-to-go">transform.tools</a>, they both work pretty well. The JSON-to-Go tool gives you the option of using inline type definitions or separate structs for each type. After that we have the ReadConfig method</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-func ReadConfig(ConfigFileName string) (*ConfigSettings, error) {
-	file, err := ioutil.ReadFile(ConfigFileName)
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="n">func</span> <span class="nf">ReadConfig</span><span class="p">(</span><span class="n">ConfigFileName</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(*</span><span class="n">ConfigSettings</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">file</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">ioutil</span><span class="p">.</span><span class="nf">ReadFile</span><span class="p">(</span><span class="n">ConfigFileName</span><span class="p">)</span>
 
-	if err != nil {
-		return nil, err
-	}
+	<span class="k">if</span> <span class="n">err</span> <span class="p">!=</span> <span class="n">nil</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">nil</span><span class="p">,</span> <span class="n">err</span>
+	<span class="p">}</span>
 
-	config := new(ConfigSettings)
+	<span class="n">config</span> <span class="p">:=</span> <span class="k">new</span><span class="p">(</span><span class="n">ConfigSettings</span><span class="p">)</span>
 
-	err = json.Unmarshal(&#91;]byte(file), &amp;config)
+	<span class="n">err</span> <span class="p">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">([]</span><span class="kt">byte</span><span class="p">(</span><span class="n">file</span><span class="p">),</span> <span class="p">&amp;</span><span class="n">config</span><span class="p">)</span>
 
-	return config, err
-}
-</pre>
-</div>
+	<span class="k">return</span> <span class="n">config</span><span class="p">,</span> <span class="n">err</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Line 1 defines the parameters, the name of the config file, and an error variable. Then we read the file at line 2 with the <a href="https://pkg.go.dev/io/ioutil#ReadFile">ReadFile</a> method. If it fails, we return the error. At line 8, we create a new instance of the ConfigSettings struct that will contain our settings. Then at line 10, we use the <a href="https://pkg.go.dev/encoding/json#Unmarshal">Unmarshal()</a> method to parse the JSON data into our ConfigSettings struct.</p>
 
-<p>That brings us back to our main method. </p>
+<p>That brings us back to our main method.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-if err != nil {
-	fmt.Println(err)
-	os.Exit(3)
-}
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="k">if</span> <span class="n">err</span> <span class="p">!=</span> <span class="n">nil</span> <span class="p">{</span>
+	<span class="n">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+	<span class="n">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+<span class="p">}</span>
 
-CheckUserList(config, userName)
-</pre>
-</div>
+<span class="nf">CheckUserList</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">userName</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Skipping over error checking code, we now have the method that will ties this all together for us. Now we can dive in to CheckUserList() defined in <a href="https://github.com/anotherlab/IsUserInApple-golang/blob/main/AppleStoreApi.go">AppleStoreApi.go</a>. At the top of module, we have some structs defined.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-type AppConnectUsers = struct {
-	Data  &#91;]Datum              `json:"data"`
-	Links AppConnectUsersLinks `json:"links"`
-}
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="code"><pre><span class="n">type</span> <span class="n">AppConnectUsers</span> <span class="p">=</span> <span class="k">struct</span> <span class="err">{</span>
+	<span class="nc">Data</span>  <span class="p">[]</span><span class="n">Datum</span>              <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"data"</span><span class="err">`</span>
+	<span class="n">Links</span> <span class="n">AppConnectUsersLinks</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"links"</span><span class="err">`</span>
+<span class="p">}</span>
 
-type Datum = struct {
-	Type       string     `json:"type"`
-	Attributes Attributes `json:"attributes"`
-}
+<span class="n">type</span> <span class="n">Datum</span> <span class="p">=</span> <span class="k">struct</span> <span class="err">{</span>
+	<span class="nc">Type</span>       <span class="kt">string</span>     <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"type"</span><span class="err">`</span>
+	<span class="n">Attributes</span> <span class="n">Attributes</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"attributes"</span><span class="err">`</span>
+<span class="p">}</span>
 
-type Attributes = struct {
-	Username  string   `json:"username"`
-	FirstName string   `json:"firstName"`
-	LastName  string   `json:"lastName"`
-	Roles     &#91;]string `json:"roles"`
-}
+<span class="n">type</span> <span class="n">Attributes</span> <span class="p">=</span> <span class="k">struct</span> <span class="err">{</span>
+	<span class="nc">Username</span>  <span class="kt">string</span>   <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"username"</span><span class="err">`</span>
+	<span class="n">FirstName</span> <span class="kt">string</span>   <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"firstName"</span><span class="err">`</span>
+	<span class="n">LastName</span>  <span class="kt">string</span>   <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"lastName"</span><span class="err">`</span>
+	<span class="n">Roles</span>     <span class="p">[]</span><span class="kt">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"roles"</span><span class="err">`</span>
+<span class="p">}</span>
 
-type AppConnectUsersLinks = struct {
-	Self string `json:"self"`
-	Next string `json:"next"`
-}
+<span class="n">type</span> <span class="n">AppConnectUsersLinks</span> <span class="p">=</span> <span class="k">struct</span> <span class="err">{</span>
+	<span class="nc">Self</span> <span class="kt">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"self"</span><span class="err">`</span>
+	<span class="n">Next</span> <span class="kt">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"next"</span><span class="err">`</span>
+<span class="p">}</span>
 
-type AppConnectErrors struct {
-	Errors &#91;]struct {
-		Status string `json:"status"`
-		Code   string `json:"code"`
-		Title  string `json:"title"`
-		Detail string `json:"detail"`
-	} `json:"errors"`
-}
-</pre>
-</div>
+<span class="n">type</span> <span class="n">AppConnectErrors</span> <span class="k">struct</span> <span class="err">{</span>
+	<span class="nc">Errors</span> <span class="p">[]</span><span class="k">struct</span> <span class="err">{</span>
+		<span class="nc">Status</span> <span class="kt">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"status"</span><span class="err">`</span>
+		<span class="n">Code</span>   <span class="kt">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"code"</span><span class="err">`</span>
+		<span class="n">Title</span>  <span class="kt">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"title"</span><span class="err">`</span>
+		<span class="n">Detail</span> <span class="kt">string</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"detail"</span><span class="err">`</span>
+	<span class="p">}</span> <span class="err">`</span><span class="n">json</span><span class="p">:</span><span class="s">"errors"</span><span class="err">`</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>The AppConnectUsers, Datum, Attributes, and AppConnectUsersLinks structs define the JSON data that is returned by the List Users API call. If you look back at <a href="https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">Part 1</a>, the JSON document returned by List Users has a lot more in it. We only need to define structs to use the data members that we actually care about. Since this is a read only API call, we can let Unmarshall deserialize only the fields that we will use and it will discard the rest.</p>
+<p>The AppConnectUsers, Datum, Attributes, and AppConnectUsersLinks structs define the JSON data that is returned by the List Users API call. If you look back at <a href="/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">Part 1</a>, the JSON document returned by List Users has a lot more in it. We only need to define structs to use the data members that we actually care about. Since this is a read only API call, we can let Unmarshall deserialize only the fields that we will use and it will discard the rest.</p>
 
 <p>We have a second object called AppConnectErrors, with a very different structure. If the API call fails from something happening on Apple’s end, the API will send back a very different JSON document. The following is an example of the JSON that Apple sends back when the API is not available:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: jscript; title: ; notranslate" title="">
-{
-	"errors": &#91;{
+<figure class="highlight"><pre><code class="language-jscript" data-lang="jscript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre>{
+	"errors": [{
 		"status": "500",
 		"code": "UNEXPECTED_ERROR",
 		"title": "An unexpected error occurred.",
 		"detail": "An unexpected error occurred on the server side. If this issue continues, contact us at https://developer.apple.com/contact/."
 	}]
 }
-</pre>
-</div>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>We’ll cover how to handle that error data later on. The CheckUserList method has a lot going on so we’ll do this in parts.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-func CheckUserList(config *ConfigSettings, Username string) {
-	token, err := CreateAppleJWT(config)
-	if err != nil {
-		fmt.Println(err)
-	}
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="n">func</span> <span class="nf">CheckUserList</span><span class="p">(</span><span class="n">config</span> <span class="p">*</span><span class="n">ConfigSettings</span><span class="p">,</span> <span class="n">Username</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">token</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="nf">CreateAppleJWT</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="p">!=</span> <span class="n">nil</span> <span class="p">{</span>
+		<span class="n">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+	<span class="p">}</span>
 
-	client := &amp;http.Client{}
+	<span class="n">client</span> <span class="p">:=</span> <span class="p">&amp;</span><span class="n">http</span><span class="p">.</span><span class="n">Client</span><span class="p">{}</span>
 
-	var nextUrl string = "https://api.appstoreconnect.apple.com/v1/users?limit=100"
-</pre>
-</div>
+	<span class="kt">var</span> <span class="n">nextUrl</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">"https://api.appstoreconnect.apple.com/v1/users?limit=100"</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The first thing is that we call CreateAppleJWT in AppleJWT.go to create the signed JWT. Now we’ll jump into that.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-func CreateAppleJWT(settings *ConfigSettings) (string, error) {
-	bytes, err := ioutil.ReadFile(settings.PrivateKeyFile)
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+</pre></td><td class="code"><pre><span class="n">func</span> <span class="nf">CreateAppleJWT</span><span class="p">(</span><span class="n">settings</span> <span class="p">*</span><span class="n">ConfigSettings</span><span class="p">)</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">bytes</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">ioutil</span><span class="p">.</span><span class="nf">ReadFile</span><span class="p">(</span><span class="n">settings</span><span class="p">.</span><span class="n">PrivateKeyFile</span><span class="p">)</span>
 
-	if err != nil {
-		fmt.Println(err)
-	}
+	<span class="k">if</span> <span class="n">err</span> <span class="p">!=</span> <span class="n">nil</span> <span class="p">{</span>
+		<span class="n">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+	<span class="p">}</span>
 
-	x509Encoded, _ := pem.Decode(bytes)
+	<span class="n">x509Encoded</span><span class="p">,</span> <span class="n">_</span> <span class="p">:=</span> <span class="n">pem</span><span class="p">.</span><span class="nf">Decode</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span>
 
-	parsedKey, err := x509.ParsePKCS8PrivateKey(x509Encoded.Bytes)
+	<span class="n">parsedKey</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">x509</span><span class="p">.</span><span class="nf">ParsePKCS8PrivateKey</span><span class="p">(</span><span class="n">x509Encoded</span><span class="p">.</span><span class="n">Bytes</span><span class="p">)</span>
 
-	if err != nil {
-		log.Fatal(err)
-	}
+	<span class="k">if</span> <span class="n">err</span> <span class="p">!=</span> <span class="n">nil</span> <span class="p">{</span>
+		<span class="n">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+	<span class="p">}</span>
 
-	ecdsaPrivateKey, ok := parsedKey.(*ecdsa.PrivateKey)
+	<span class="n">ecdsaPrivateKey</span><span class="p">,</span> <span class="n">ok</span> <span class="p">:=</span> <span class="n">parsedKey</span><span class="p">.(*</span><span class="n">ecdsa</span><span class="p">.</span><span class="n">PrivateKey</span><span class="p">)</span>
 
-	if !ok {
-		panic("not ecdsa private key")
-	}
+	<span class="k">if</span> <span class="p">!</span><span class="n">ok</span> <span class="p">{</span>
+		<span class="nf">panic</span><span class="p">(</span><span class="s">"not ecdsa private key"</span><span class="p">)</span>
+	<span class="p">}</span>
 
-	token := jwt.NewWithClaims(jwt.SigningMethodES256, jwt.MapClaims{
-		"iss": settings.IssuerID,
-		"exp": time.Now().Add(time.Minute * 20).Unix(),
-		"aud": "appstoreconnect-v1",
-	})
+	<span class="n">token</span> <span class="p">:=</span> <span class="n">jwt</span><span class="p">.</span><span class="nf">NewWithClaims</span><span class="p">(</span><span class="n">jwt</span><span class="p">.</span><span class="n">SigningMethodES256</span><span class="p">,</span> <span class="n">jwt</span><span class="p">.</span><span class="n">MapClaims</span><span class="p">{</span>
+		<span class="s">"iss"</span><span class="p">:</span> <span class="n">settings</span><span class="p">.</span><span class="n">IssuerID</span><span class="p">,</span>
+		<span class="s">"exp"</span><span class="p">:</span> <span class="n">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">().</span><span class="nf">Add</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">Minute</span> <span class="p">*</span> <span class="m">20</span><span class="p">).</span><span class="nf">Unix</span><span class="p">(),</span>
+		<span class="s">"aud"</span><span class="p">:</span> <span class="s">"appstoreconnect-v1"</span><span class="p">,</span>
+	<span class="p">})</span>
 
-	token.Header&#91;"kid"] = settings.KeyID
+	<span class="n">token</span><span class="p">.</span><span class="n">Header</span><span class="p">[</span><span class="s">"kid"</span><span class="p">]</span> <span class="p">=</span> <span class="n">settings</span><span class="p">.</span><span class="n">KeyID</span>
 
-	tokenString, err := token.SignedString(ecdsaPrivateKey)
+	<span class="n">tokenString</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">token</span><span class="p">.</span><span class="nf">SignedString</span><span class="p">(</span><span class="n">ecdsaPrivateKey</span><span class="p">)</span>
 
-	if err != nil {
-		log.Fatal(err)
-	}
+	<span class="k">if</span> <span class="n">err</span> <span class="p">!=</span> <span class="n">nil</span> <span class="p">{</span>
+		<span class="n">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+	<span class="p">}</span>
 
-	return tokenString, nil
-}
-</pre>
-</div>
+	<span class="k">return</span> <span class="n">tokenString</span><span class="p">,</span> <span class="n">nil</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>At line 2, we read the private key file. Lines 8 through 16 parse the PEM data and come out with the private key in a format that we can use for signing. At line 22, we create the token with an expiration timestamp of <a href="https://tenor.com/view/random-weird-reaction-max-headroom-gif-13720275">20 minutes into the future</a>. We set the token header kid field to our KeyID. We sign the token at line 30 with our private key and pass it back. Getting the token signed correctly was the hardest part of writing this code. Getting back to CheckUserList…</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-client := &amp;http.Client{}
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="code"><pre><span class="n">client</span> <span class="p">:=</span> <span class="p">&amp;</span><span class="n">http</span><span class="p">.</span><span class="n">Client</span><span class="p">{}</span>
 
-var nextUrl string = "https://api.appstoreconnect.apple.com/v1/users?limit=100"
+<span class="kt">var</span> <span class="n">nextUrl</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">"https://api.appstoreconnect.apple.com/v1/users?limit=100"</span>
 
-var FoundMatch = false
+<span class="kt">var</span> <span class="n">FoundMatch</span> <span class="p">=</span> <span class="k">false</span>
 
-for {
-	req, err := http.NewRequest("GET", nextUrl, nil)
-	if err != nil {
-		fmt.Print(err.Error())
-		os.Exit(3)
-	}
+<span class="k">for</span> <span class="p">{</span>
+	<span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">nextUrl</span><span class="p">,</span> <span class="n">nil</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="p">!=</span> <span class="n">nil</span> <span class="p">{</span>
+		<span class="n">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="n">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+		<span class="n">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+	<span class="p">}</span>
 
-	req.Header.Add("Authorization", "Bearer "+token)
+	<span class="n">req</span><span class="p">.</span><span class="n">Header</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span> <span class="s">"Bearer "</span><span class="p">+</span><span class="n">token</span><span class="p">)</span>
 
-	resp, err := client.Do(req)
-	if err != nil {
-		log.Println("Error on response.\n&#91;ERROR] -", err)
-		os.Exit(3)
-	}
+	<span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="p">!=</span> <span class="n">nil</span> <span class="p">{</span>
+		<span class="n">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">"Error on response.\n[ERROR] -"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+		<span class="n">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+	<span class="p">}</span>
 
-	defer resp.Body.Close()
+	<span class="n">defer</span> <span class="n">resp</span><span class="p">.</span><span class="n">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
 
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Println("Error while reading the response bytes:", err)
-		os.Exit(3)
-	}
-</pre>
-</div>
+	<span class="n">body</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">ioutil</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="n">resp</span><span class="p">.</span><span class="n">Body</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="p">!=</span> <span class="n">nil</span> <span class="p">{</span>
+		<span class="n">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">"Error while reading the response bytes:"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+		<span class="n">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+	<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>We start with a new instance of an <a href="https://pkg.go.dev/net/http#pkg-overview">http</a> Client. We initialize nextUrl with the initial API url. And we set FoundMatch to false. Now we start looping. At line 8, we new up a new request and add our token at line 14. Line 16 is where we call the API and we wait at line 22 to get the response back.</p>
 
 <p>We read the entire body into a byte array at line 24. Now we can start with the parsing. The first thing to do is see if the API returned an error document instead of the list of users.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-var appConnectErrors AppConnectErrors
-err = json.Unmarshal(body, &amp;appConnectErrors)
-if err != nil {
-	log.Println("Error while deserializing the response bytes:", err)
-	os.Exit(3)
-}
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="kt">var</span> <span class="n">appConnectErrors</span> <span class="n">AppConnectErrors</span>
+<span class="n">err</span> <span class="p">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="p">&amp;</span><span class="n">appConnectErrors</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">err</span> <span class="p">!=</span> <span class="n">nil</span> <span class="p">{</span>
+	<span class="n">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">"Error while deserializing the response bytes:"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+	<span class="n">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+<span class="p">}</span>
 
-// If there is an error object in the body, print it and exit
-if len(appConnectErrors.Errors) &gt; 0 {
-	firstError := appConnectErrors.Errors&#91;0]
-	log.Println("Status:", firstError.Status)
-	log.Println("Error accessing API:", firstError.Detail)
-	os.Exit(4)
-}
-</pre>
-</div>
+<span class="c1">// If there is an error object in the body, print it and exit</span>
+<span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">appConnectErrors</span><span class="p">.</span><span class="n">Errors</span><span class="p">)</span> <span class="p">&gt;</span> <span class="m">0</span> <span class="p">{</span>
+	<span class="n">firstError</span> <span class="p">:=</span> <span class="n">appConnectErrors</span><span class="p">.</span><span class="n">Errors</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
+	<span class="n">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">"Status:"</span><span class="p">,</span> <span class="n">firstError</span><span class="p">.</span><span class="n">Status</span><span class="p">)</span>
+	<span class="n">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">"Error accessing API:"</span><span class="p">,</span> <span class="n">firstError</span><span class="p">.</span><span class="n">Detail</span><span class="p">)</span>
+	<span class="n">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="m">4</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>We new up an instance the AppConnectError struct as appConnectErrors. Then we unmarshal the body into appConnectErrors. Next we check the length of the Errors array In appConnectErrors. If the API returns users, the Errors object will not be there and the length will be 0.</p>
 
@@ -674,121 +830,132 @@ if len(appConnectErrors.Errors) &gt; 0 {
 
 <p>Otherwise we keep going…</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-var appConnectUsers AppConnectUsers
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+</pre></td><td class="code"><pre><span class="kt">var</span> <span class="n">appConnectUsers</span> <span class="n">AppConnectUsers</span>
 
-err = json.Unmarshal(body, &amp;appConnectUsers)
-if err != nil {
-	log.Println("Error while deserializing the response bytes:", err)
-	os.Exit(3)
-}
+<span class="n">err</span> <span class="p">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="p">&amp;</span><span class="n">appConnectUsers</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">err</span> <span class="p">!=</span> <span class="n">nil</span> <span class="p">{</span>
+	<span class="n">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">"Error while deserializing the response bytes:"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+	<span class="n">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+<span class="p">}</span>
 
-for _, s := range appConnectUsers.Data {
-	FoundMatch = strings.EqualFold(s.Attributes.Username, Username)
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">s</span> <span class="p">:=</span> <span class="n">range</span> <span class="n">appConnectUsers</span><span class="p">.</span><span class="n">Data</span> <span class="p">{</span>
+	<span class="n">FoundMatch</span> <span class="p">=</span> <span class="n">strings</span><span class="p">.</span><span class="nf">EqualFold</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">Attributes</span><span class="p">.</span><span class="n">Username</span><span class="p">,</span> <span class="n">Username</span><span class="p">)</span>
 
-	if FoundMatch {
-		fmt.Printf("Found %s, %s %s, %s\n",
-			s.Attributes.Username,
-			s.Attributes.FirstName,
-			s.Attributes.LastName,
-			strings.Join(s.Attributes.Roles, ", "))
-		break
-	}
-}
+	<span class="k">if</span> <span class="n">FoundMatch</span> <span class="p">{</span>
+		<span class="n">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">"Found %s, %s %s, %s\n"</span><span class="p">,</span>
+			<span class="n">s</span><span class="p">.</span><span class="n">Attributes</span><span class="p">.</span><span class="n">Username</span><span class="p">,</span>
+			<span class="n">s</span><span class="p">.</span><span class="n">Attributes</span><span class="p">.</span><span class="n">FirstName</span><span class="p">,</span>
+			<span class="n">s</span><span class="p">.</span><span class="n">Attributes</span><span class="p">.</span><span class="n">LastName</span><span class="p">,</span>
+			<span class="n">strings</span><span class="p">.</span><span class="nf">Join</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">Attributes</span><span class="p">.</span><span class="n">Roles</span><span class="p">,</span> <span class="s">", "</span><span class="p">))</span>
+		<span class="k">break</span>
+	<span class="p">}</span>
+<span class="p">}</span>
 
-if FoundMatch {
-	break
-}
+<span class="k">if</span> <span class="n">FoundMatch</span> <span class="p">{</span>
+	<span class="k">break</span>
+<span class="p">}</span>
 
-nextUrl = appConnectUsers.Links.Next
+<span class="n">nextUrl</span> <span class="p">=</span> <span class="n">appConnectUsers</span><span class="p">.</span><span class="n">Links</span><span class="p">.</span><span class="n">Next</span>
 
-if len(nextUrl) == 0 {
-	break
-}
-</pre>
-</div>
+<span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">nextUrl</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span> <span class="p">{</span>
+	<span class="k">break</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>As with the error struct, we new up a AppConnectUsers struct named appConnectUsers. We unmarshal the JSON data into the struct. At line 9, we iterate through the list of users stored in the Data array. We set FoundMatch at line 10 to true if the username matches. If we have a match, we print that match to the console and use break to exit the for..range loop</p>
 
-<p>Next we break out of the forever loop if we have a match. Otherwise we check to see if we have a next link. If we do, we keep looping, otherwise we are done looping. And we end with an message if we didn’t have a match. </p>
+<p>Next we break out of the forever loop if we have a match. Otherwise we check to see if we have a next link. If we do, we keep looping, otherwise we are done looping. And we end with an message if we didn’t have a match.</p>
 
-<p>If you cloned the code from the repo and created your own config file (refer back to <a href="https://rajapet.com/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">Part 1</a> for that part), you can now compile and run the code. You would compile the applet from your terminal of choice with the following command:</p>
+<p>If you cloned the code from the repo and created your own config file (refer back to <a href="/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">Part 1</a> for that part), you can now compile and run the code. You would compile the applet from your terminal of choice with the following command:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-go build .
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-plain" data-lang="plain">go build .</code></pre></figure>
 
 <p>If you want the smallest executable, build it with the following options:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-go build -ldflags="-s -w" .
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-plain" data-lang="plain">go build -ldflags="-s -w" .</code></pre></figure>
 
 <p>And then you can compress the resulting executable with a tool like <a href="https://upx.github.io/">upx</a>. You would need to run IsUserInApple with a required command line parameter, the email to look for. If you leave it out, you will get an error message telling you what is needed. Remember that the IsUserInApple.json file needs to be in the same folder as the executable if you don’t use the second optional command line parameter that will let you specify the name of the config file.</p>
 
 <p>If you are running it with the go command, you would run it as</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-go run . -username "some.email@company.com"
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-plain" data-lang="plain">go run . -username "some.email@company.com"</code></pre></figure>
 
 <p>or</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-go run . -username "some.email@company.com" -config "IsUserInApple.json"
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-plain" data-lang="plain">go run . -username "some.email@company.com" -config "IsUserInApple.json"</code></pre></figure>
 
-<p>If you are running it as the compiled executable, you would run it as </p>
+<p>If you are running it as the compiled executable, you would run it as</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-IsUserInApple -username "some.email@company.com
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-plain" data-lang="plain">IsUserInApple -username "some.email@company.com</code></pre></figure>
 
 <p>You’ll back something like this:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-Looking for some.email@company.com
-Found some.email@company.com, Some Email, APP_MANAGER
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-plain" data-lang="plain">Looking for some.email@company.com
+Found some.email@company.com, Some Email, APP_MANAGER</code></pre></figure>
 
 <p>or….</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-Looking for some.email@company.com
-No match for some.email@company.com
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-plain" data-lang="plain">Looking for some.email@company.com
+No match for some.email@company.com</code></pre></figure>
 
 <p>On the rare situation that the API is not available and Apple returns an error document, you’ll see something like this:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-Looking for some.email@company.com
+<figure class="highlight"><pre><code class="language-plain" data-lang="plain"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre>Looking for some.email@company.com
 2021/07/13 23:26:19 Status: 500
 2021/07/13 23:26:19 Error accessing API: An unexpected error occurred on the server side. If this issue continues, contact us at https://developer.apple.com/contact/.
 exit status 4
-</pre>
-</div>
+</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>If you run it without  the -username parameter or pass is “-h” or “–help”, you will get back the usuage help messages</p>
+<p>If you run it without  the -username parameter or pass is “-h” or “–help”, you will get back the usuage help messages</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-go run .                                                                  
+<figure class="highlight"><pre><code class="language-plain" data-lang="plain"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre>go run .                                                                
 Please specify an email address to match (in quotes)
   -config string
         Configuration file (default "./IsUserInApple.json")
@@ -801,8 +968,7 @@ Usage of C:\Users\anoth\AppData\Local\Temp\go-build2936985627\b001\exe\IsUserInA
         Configuration file (default "./IsUserInApple.json")
   -username string
         Username to find (in quotes)
-</pre>
-</div>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>That wraps up this series. You can do more than get the team list from the <a href="https://developer.apple.com/documentation/appstoreconnectapi">App Connect API</a>. For example, if you want to track how many devices have been provisioned, there is a Devices API. Lots of access points for DevOps functionality.</p>
 
@@ -926,7 +1092,7 @@ Usage of C:\Users\anoth\AppData\Local\Temp\go-build2936985627\b001\exe\IsUserInA
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          7 minute read
         
       </span>
     
@@ -949,7 +1115,7 @@ Usage of C:\Users\anoth\AppData\Local\Temp\go-build2936985627\b001\exe\IsUserInA
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="permalink">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
+        <a href="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="permalink">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
 </a>
       
     </h2>
@@ -989,7 +1155,7 @@ Usage of C:\Users\anoth\AppData\Local\Temp\go-build2936985627\b001\exe\IsUserInA
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2021/10/18/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="permalink">Controlling a WSL installation of redis-server from the Windows command line
+        <a href="/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="permalink">Controlling a WSL installation of redis-server from the Windows command line
 </a>
       
     </h2>

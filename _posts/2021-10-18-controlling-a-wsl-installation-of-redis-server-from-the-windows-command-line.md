@@ -1,12 +1,7 @@
 ---
-id: 3515
 title: Controlling a WSL installation of redis-server from the Windows command line
 date: 2021-10-18T23:53:13-05:00
-author: Chris Miller
 excerpt: Some shortcuts accessing redis-server running under WSL via PowerShell
-layout: post
-guid: https://rajapet.com/?p=3515
-permalink: /2021/10/18/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/
 categories:
   - Coding
   - Linux
@@ -18,7 +13,7 @@ tags:
 ---
 If you like using [redis](https://redis.io/) for web site caching and you are writing and testing code locally from Windows, you&#8217;ll want to figure out how to run a local instance of redis-server. You have a few options. You can run it from another machine that&#8217;s running something vaguely Linux-like or MacOS. You can run it from a Docker container under Windows. Or you can run it directly from <a href="http://Windows SubSystem (WSL) for Linux" data-wplink-url-error="true">Windows SubSystem (WSL) for Linux</a>.
 
-For the last few years, Windows (10, 11, Server 2019) comes with a compatibility layer that lets you run Linux binary executables. The current version is WSL 2, but I&#8217;m just going to refer to it as WSL.  If you don&#8217;t have installed already, just run the following command from an elevated shell (run as administrator)
+For the last few years, Windows (10, 11, Server 2019) comes with a compatibility layer that lets you run Linux binary executables. The current version is WSL 2, but I&#8217;m just going to refer to it as WSL. If you don&#8217;t have installed already, just run the following command from an elevated shell (run as administrator)
 
 {% highlight text %}
 wsl --install
@@ -73,7 +68,7 @@ Having to use the root password over and over again can be tedious on a developm
 {% highlight text %}
 cd /etc/sudoers.d
 sudo sh
-echo "%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service redis-server *" &gt;&gt; allowed-services
+echo "%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service redis-server *" >> allowed-services
 sudo chmod 0440 allowed-services
 exit
 {% endhighlight %}
