@@ -1,11 +1,6 @@
 ---
-id: 2993
-title: 'Opportunity has ended it&#8217;s mission'
+title: Opportunity has ended it's mission
 date: 2019-02-13T16:27:28-05:00
-author: Chris Miller
-layout: post
-guid: http://rajapet.com/?p=2993
-permalink: /2019/02/13/opportunity-has-ended-its-mission/
 categories:
   - Uncategorized
 ---

@@ -92,6 +92,8 @@ tags:
 
 ## CSS & Markup changes
 I'm using a Jekyll theme called ["Minimal Mistakes"](https://mmistakes.github.io/minimal-mistakes/). It's a nice clean design and I like. There are a few things that I wanted to change, mostly with some CSS overrides. I'm not touching the actual theme bits. That makes it eassier to update or replace the theme. The way Jekyll's Markdown processor, [kramdown](https://kramdown.gettalong.org/index.html), handles `<figure>`{:.html} is a little quirky and I'm seeing `</figure>`{:.html} in the rendered output. I'm fixing those by hand as I come across them. That's the problem with leaky abstractions, sometimes, you have leaks to patch.
+
+For some reason, the Youtube clips that I embedded in a few posts didn't make it over. That had to be fixed manually. I would go back to the post on the WordPress blog, right-click on the video, and then select "coopy embed code". Then I would just paste it in the Markdown file.
 ## Code Highlighting
 This is a work in progress. For the last few years, I've been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called [Rouge](http://rouge.jneen.net/). It does most of the same stuff, and I'll use it as is for now. I can catch most of the snippets that used the WordPress markup, I'll fix up the stragglers as I come across them.
 

@@ -118,8 +118,8 @@ Get-ChildItem gets a directory listing and I use the -Include parameter to only 
 
 About that &#8220;Cascadia Code PL&#8221; font face. I&#8217;m running a theming engine inside PowerShell called &#8220;Oh-my-posh&#8221;. I&#8217;ll do a longer post on it in the future, but the short story is that it makes the PowerShell prompt contain the current git status for the current folder. Read about it and get it [here](https://github.com/JanDeDobbeleer/oh-my-posh). On the Mac, I use [Oh-my-zsh](https://ohmyz.sh/) to get a souped-up zsh shell. Scott Hanselman did a good write up of Oh-my-posh [here](https://www.hanselman.com/blog/HowToMakeAPrettyPromptInWindowsTerminalWithPowerlineNerdFontsCascadiaCodeWSLAndOhmyposh.aspx).
 
-Oh-my-posh uses Powerline Glyphs ([originally defined here](https://github.com/powerline/powerline)) as part of the status display. So you&#8217;ll need a font that includes the Powerline Glyphs. Microsoft&#8217;s Cascadia Code font has a version with Powerline and you can get it [here](https://github.com/microsoft/cascadia-code/releases). Here&#8217;s what that looked like when I was adding the files to the Gist<figure class="wp-block-image">
+Oh-my-posh uses Powerline Glyphs ([originally defined here](https://github.com/powerline/powerline)) as part of the status display. So you&#8217;ll need a font that includes the Powerline Glyphs. Microsoft&#8217;s Cascadia Code font has a version with Powerline and you can get it [here](https://github.com/microsoft/cascadia-code/releases). Here&#8217;s what that looked like when I was adding the files to the Gist
 
-<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-6GTWwch/0/f94c4d14/M/shellposh-M.png" alt=""  /> </figure> 
+<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-6GTWwch/0/f94c4d14/M/shellposh-M.png" alt=""/>
 
 You can see the color and text information change as I used git to add the icon to the Gist. When working with git, it&#8217;s very handy to easily see which branch you are working with and the current status of that branch.
