@@ -3594,7 +3594,7 @@ var store = [{
         "teaser": null
       },{
         "title": "How to access Apple's App Connect API from C#, Python, and Go. - Part 2",
-        "excerpt":"In my previous post, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API.  In this installment, we’ll cover how to accomplish the same task with Python.  The final post will cover...","categories": ["Apple"],
+        "excerpt":"In my previous post, I wrote about a need to query my company’s membership list from our Apple app store development account. In that post, I used C# to query Apple’s API. In this installment, we’ll cover how to accomplish the same task with Python. The final post will cover...","categories": ["Apple"],
         "tags": ["Apple","C#","Go","Python"],
         "url": "/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/",
         "teaser": null
@@ -3620,17 +3620,17 @@ var store = [{
         "title": "Controlling a WSL installation of redis-server from the Windows command line",
         "excerpt":"If you like using redis for web site caching and you are writing and testing code locally from Windows, you’ll want to figure out how to run a local instance of redis-server. You have a few options. You can run it from another machine that’s running something vaguely Linux-like or...","categories": ["Coding","Linux"],
         "tags": ["linux","Powershell","redis","wsl"],
-        "url": "/2021/10/18/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/",
+        "url": "/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/",
         "teaser": null
       },{
         "title": "Resolving the .NET MAUI \"VersionCode 1.0 is invalid. It must be an integer value.\" error when updating Visual Studio 2022 Preview",
         "excerpt":"I installed the Visual Studio 2022 Preview 6 this evening. I had been using Preview 4. I installed Preview 5, but didn’t have a chance to play with it. I have a simple demo app that I have working with, a basic stopwatch type of app. That app had been...","categories": ["Android","MAUI"],
         "tags": ["android","maui"],
-        "url": "/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/",
+        "url": "/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/",
         "teaser": null
       },{
         "title": "Moved the blog from WordPress to Jekyll",
-        "excerpt":"First post under the new regime. Back story For a long time, this blog has been created with WordPress. It’s now a Jekyll site. The blog started as a free blog hosted on Google’s Blogger platform. It’s still there, but hasn’t been touched in 8 years. It was fine, but...","categories": ["jekyll","update"],
+        "excerpt":"First post under the new regime. Back story For a long time, this blog has been created with WordPress. It’s now a Jekyll site. The blog started as a free blog hosted on Google’s Blogger platform. It’s still there, but hasn’t been touched in 8 years. It was fine, but...","categories": ["Jekyll","WordPress","Blog"],
         "tags": [],
         "url": "/2021/12/15/Migrated-to-jekyll/",
         "teaser": null

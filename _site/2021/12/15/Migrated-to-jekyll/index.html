@@ -314,7 +314,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          6 minute read
         
       </span>
     
@@ -330,22 +330,22 @@
 
 <h1 id="back-story">Back story</h1>
 
-<p>For a long time, this blog has been created with WordPress.  It’s now a <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> site.</p>
+<p>For a long time, this blog has been created with WordPress. It’s now a <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> site.</p>
 
 <p>The blog started as a free blog hosted on Google’s Blogger platform. It’s <a href="http://anotherlab.blogspot.com/" target="_blank">still there</a>, but hasn’t been touched in 8 years. It was fine, but I felt limited by the platform.</p>
 
-<p>The second incarnation was on WordPress. I did it the hard way.  I created a Linux VM on Azure and manually wired up the <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)" target="_blank">LAMP stack</a>.  It was a good learning experience with Linux and WordPress.</p>
+<p>The second incarnation was on WordPress. I did it the hard way. I created a Linux VM on Azure and manually wired up the <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)" target="_blank">LAMP stack</a>. It was a good learning experience with Linux and WordPress.</p>
 
-<p>It was fine until a few years ago when there was a serious attack on WordPress sites.  It was a vulnerability with many of the plugins used on WordPress sites.  My site was one the ones that was taken down.</p>
+<p>It was fine until a few years ago when there was a serious attack on WordPress sites. It was a vulnerability with many of the plugins used on WordPress sites. My site was one the ones that was taken down.</p>
 
-<p>With a bit of amount of work, I was able to restore the site. I viewed the entire VM as compromised and generated a new VM in Azure. This time I used a <a href="https://bitnami.com/stack/wordpress" target="_blank">Bitnami WordPress</a> image so there was a lot less work to get it up and running. I still had to add my own SSL certificate through <a href="https://letsencrypt.org/" target="_blank">Let’s Encryt</a>.  I also signed up for a <a href="jetpack.com/upgrade/backup/" target="_blank">Jetpack</a> subscription to let them manage the backups of the site.</p>
+<p>With a bit of amount of work, I was able to restore the site. I viewed the entire VM as compromised and generated a new VM in Azure. This time I used a <a href="https://bitnami.com/stack/wordpress" target="_blank">Bitnami WordPress</a> image so there was a lot less work to get it up and running. I still had to add my own SSL certificate through <a href="https://letsencrypt.org/" target="_blank">Let’s Encryt</a>. I also signed up for a <a href="jetpack.com/upgrade/backup/" target="_blank">Jetpack</a> subscription to let them manage the backups of the site.</p>
 
 <p>Because this is a self-hosted WordPress site, I am responsible for updating the various moving parts. That was easy to do with the old system, annoying to do with the Bitnami image. It seems that the preferred way to do updates was to create a new VM and migrate the WordPress data over. That’s a little too much work.</p>
 
 <h1 id="new-boss-in-town">New Boss in Town</h1>
-<p>WordPress is a great platform, but it’s overkill for what I need, which is just a blog host.  So I decided to migrate it over to Jekyll.  I edit the blog on my own machine, in Ubuntu on Windows 10. It uses <a href="https://www.markdownguide.org/" target="_blank">Markdown</a> for the posts, which is handy for just knocking out stuff. The Jekyll tooling will bundle the files to a static set of pages that can be hosted by just about anything. In this case, it’s hosted under <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+<p>WordPress is a great platform, but it’s overkill for what I need, which is just a blog host. So I decided to migrate it over to Jekyll. I edit the blog on my own machine, in Ubuntu on Windows 10. It uses <a href="https://www.markdownguide.org/" target="_blank">Markdown</a> for the posts, which is handy for just knocking out stuff. The Jekyll tooling will bundle the files to a static set of pages that can be hosted by just about anything. In this case, it’s hosted under <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
 
-<p>Since it’s a static site, it has a tiny footprint and has much less exposure to being hacked. If it did get hacked, it would be fixed the next time I pushed out an update. I was able to install a WordPress plugin that exported the existing site to Jekyll formatted Markdown files. I’ll have to tweak some of posts. The content is all there, but there are some CSS styling issues to resolve.  The source code was using a WordPress plugin for doing syntax highlighting on code snippets. Jekyll has the equivalent feature, it’s just a matter of going back and editing the old posts.</p>
+<p>Since it’s a static site, it has a tiny footprint and has much less exposure to being hacked. If it did get hacked, it would be fixed the next time I pushed out an update. I was able to install a WordPress plugin that exported the existing site to Jekyll formatted Markdown files. I’ll have to tweak some of posts. The content is all there, but there are some CSS styling issues to resolve. The source code was using a WordPress plugin for doing syntax highlighting on code snippets. Jekyll has the equivalent feature, it’s just a matter of going back and editing the old posts.</p>
 
 <p>And since Jekyll is a static site engine, dynamic features like comments are not included out of the box. There are options for that and I’ll get that working at some point.</p>
 
@@ -365,13 +365,52 @@
 <figure class="highlight"><pre><code class="language-text" data-lang="text">wsl --import UbuntuBlog c:\data\UbuntuBlog c:\data\ubuntu.tar</code></pre></figure>
 
 <h1 id="whats-next">What’s next</h1>
-<p>By the time this post is public, I’ll have already transferred the domain name over.  I have a few images in the WordPress site, I’ll need to grab them. When I move from Blogger to WordPress, I made the decision to not host the images in WordPress. Almost all of my blog post images are hosted on my SmugMug site. I figured if I ever moved the blog again, that would be one less thing to worry about.</p>
+<p>By the time this post is public, I’ll have already transferred the domain name over. I have a few images in the WordPress site, I’ll need to grab them. When I move from Blogger to WordPress, I made the decision to not host the images in WordPress. Almost all of my blog post images are hosted on my SmugMug site. I figured if I ever moved the blog again, that would be one less thing to worry about.</p>
 
 <p>I also have some draft posts. I had a handful of stuff that I was going to blog about, but never finished. They were not exported, but that’s OK. Jekyll has a concept of <a href="https://jekyllrb.com/docs/posts/" target="_blank">draft posts</a> and I’ll just put them all in there.</p>
 
-<p>There is some cleanup that I need to do. For some reason, Jekyll doesn’t like HTML escape sequences in the post meta data. I’ll need to fix that. I use using WordPress’s mechanisms for source code highlighting, that will need to be changed to what Jekyll uses. And there is some funkiness in how the images are displayed.</p>
+<h1 id="post-migrations">Post migrations</h1>
+<p>There is some cleanup that I need to do. I had used a <a href="https://github.com/benbalter/wordpress-to-jekyll-exporter">Jekyll plugin</a> for WordPress to export the posts to Markdown files. It It converts all pages, posts, and settings to files that can be dropped in to a Jekyll site. It did most of the heavy lifting, but there were some rough edges that needed to be sanded down.</p>
 
-<p>I can fix some of that by doing some CSS overrides on the theme being used. The rest will need to edited. I plan on writing some code to fix some of the more annoying stuff. This will be a work in progress.</p>
+<h2 id="titles">Titles</h2>
+<p>At the top of a Jekyll post, there is a metadata section that is called <a href="https://jekyllrb.com/docs/front-matter/">“Front Matter”</a>. It’s in YAML format has the title of the post, the date, categories, tags, and other stuff. The plugin was using HTML escape codes for special characters in the title. That was not being parsed correctly and the escape code would print instead of the character. So I added rules in my conversion tool to write the escape codes as the action charactors.</p>
+
+<h2 id="other-front-matter-cleanup">Other Front Matter cleanup</h2>
+<p>The export added a bunch of tags that needed to be cleaned. The following is the Front Matter from a post</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">id</span><span class="pi">:</span> <span class="m">3247</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Colored notes in OneNote</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2020-05-23T15:57:18-05:00</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">Chris Miller</span>
+<span class="na">excerpt</span><span class="pi">:</span> <span class="s">A quick way to color paragraphs in OneNote.</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">guid</span><span class="pi">:</span> <span class="s">http://rajapet.com/?p=3247</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/2020/05/23/colored-notes-in-onenote/</span>
+<span class="na">spay_email</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">"</span>
+<span class="na">image</span><span class="pi">:</span> <span class="s">http://rajapet.com/wp-content/uploads/2020/05/ColoredTables.png</span>
+<span class="na">categories</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">OneNote</span>
+<span class="na">tags</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">colors</span>
+  <span class="pi">-</span> <span class="s">OneNote</span></code></pre></figure>
+
+<p>The “id:” tag refers to a row in the WordPress database, so that one goes. The “author:” goes because i’s just me. The “excerpt:” tag is a WordPress feature. Jekyll handles excerpts differently. I’ll leave it there for now. Same for “images:”. The “guid:” and “spay_mail:” tags are WordPress, so they go. I don’t need the “permlink:”, so it also goes. So after running my conversion tool, I would get Front Matter that would look like this</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">title</span><span class="pi">:</span> <span class="s">Colored notes in OneNote</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2020-05-23T15:57:18-05:00</span>
+<span class="na">excerpt</span><span class="pi">:</span> <span class="s">A quick way to color paragraphs in OneNote.</span>
+<span class="na">image</span><span class="pi">:</span> <span class="s">http://rajapet.com/wp-content/uploads/2020/05/ColoredTables.png</span>
+<span class="na">categories</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">OneNote</span>
+<span class="na">tags</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">colors</span>
+  <span class="pi">-</span> <span class="s">OneNote</span></code></pre></figure>
+
+<h2 id="css--markup-changes">CSS &amp; Markup changes</h2>
+<p>I’m using a Jekyll theme called <a href="https://mmistakes.github.io/minimal-mistakes/">“Minimal Mistakes”</a>. It’s a nice clean design and I like. There are a few things that I wanted to change, mostly with some CSS overrides. I’m not touching the actual theme bits. That makes it eassier to update or replace the theme. The way Jekyll’s Markdown processor, <a href="https://kramdown.gettalong.org/index.html">kramdown</a>, handles <code class="language-plaintext html highlighter-rouge">&lt;figure&gt;</code> is a little quirky and I’m seeing <code class="language-plaintext html highlighter-rouge">&lt;/figure&gt;</code> in the rendered output. I’m fixing those by hand as I come across them. That’s the problem with leaky abstractions, sometimes, you have leaks to patch.</p>
+<h2 id="code-highlighting">Code Highlighting</h2>
+<p>This is a work in progress. For the last few years, I’ve been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called <a href="http://rouge.jneen.net/">Rouge</a>. It does most of the same stuff, and I’ll use it as is for now. I can catch most of the snippets that used the WordPress markup, I’ll fix up the stragglers as I come across them.</p>
 
         
       </section>
@@ -390,9 +429,11 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#jekyll" class="page__taxonomy-item p-category" rel="tag">jekyll</a><span class="sep">, </span>
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">Blog</a><span class="sep">, </span>
     
-      <a href="/categories/#update" class="page__taxonomy-item p-category" rel="tag">update</a>
+      <a href="/categories/#jekyll" class="page__taxonomy-item p-category" rel="tag">Jekyll</a><span class="sep">, </span>
+    
+      <a href="/categories/#wordpress" class="page__taxonomy-item p-category" rel="tag">WordPress</a>
     
     </span>
   </p>
@@ -418,7 +459,7 @@
       
   <nav class="pagination">
     
-      <a href="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" class="pagination--pager" title="Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
+      <a href="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" class="pagination--pager" title="Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
 ">Previous</a>
     
     
@@ -455,7 +496,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="permalink">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
+        <a href="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="permalink">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
 </a>
       
     </h2>
@@ -495,7 +536,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2021/10/18/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="permalink">Controlling a WSL installation of redis-server from the Windows command line
+        <a href="/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="permalink">Controlling a WSL installation of redis-server from the Windows command line
 </a>
       
     </h2>

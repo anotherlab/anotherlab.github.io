@@ -314,7 +314,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          11 minute read
+          12 minute read
         
       </span>
     
@@ -334,7 +334,7 @@
 
 <p>To make it easier for IT to manage this, I wrote an applet that they could run to see if an employee had an account on on our App Store team. They have a limited API that you can query to get information about your apps and team members. Basically you run that applet and pass in the email address of the employee. It will come back and tell you if that address is a member of the account. </p>
 
-<p>I had written code in C# that I would run from <a href="https://www.linqpad.net/">LINQpad</a> to query various App Connect Services in an ad-hoc manner. I made a stand alone version for our IT department and then realized they would need to have the .NET Framework installed. So I decide to port the functionality to Python and Go (aka “Golang”). Installing the Python runtime is easy and with Go, I can just create a single executable. I’m going to split this blog post into 3 parts, each part covering a different language. This will be the C# version. <a href="https://rajapet.com/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/">Part 2</a> covers Python. The final post in the series, <a href="https://rajapet.com/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/">Part 3</a>, covers a Go implementation..</p>
+<p>I had written code in C# that I would run from <a href="https://www.linqpad.net/">LINQpad</a> to query various App Connect Services in an ad-hoc manner. I made a stand alone version for our IT department and then realized they would need to have the .NET Framework installed. So I decide to port the functionality to Python and Go (aka “Golang”). Installing the Python runtime is easy and with Go, I can just create a single executable. I’m going to split this blog post into 3 parts, each part covering a different language. This will be the C# version. <a href="/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/">Part 2</a> covers Python. The final post in the series, <a href="/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/">Part 3</a>, covers a Go implementation..</p>
 
 <p>This version of the applet was written for .NET 5. I wrote and tested the code with Windows 10, but it should compile and run under Linux and MacOS as long as the <a href="https://dotnet.microsoft.com/download/dotnet/5.0">.NET 5 SDK</a> has been installed. All of the source code can be cloned from <a href="https://github.com/anotherlab/IsUserinApple-dotnet">this repository</a> on Github.</p>
 
@@ -361,87 +361,127 @@
 
 <p>The JSON shown below is a subset of a fake result set that could be returned by a call to List Users. You get a set of users and the information that we need are fields in the “attributes” object, highlighted below:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: jscript; auto-links: false; highlight: [6,7,8,9]; title: ; quick-code: false; notranslate" title="">
-{
-  "data" : &#91; {
-    "type" : "users",
-    "id" : "bded051a-7566-4b5f-a7a9-2e461e51eab0",
-    "attributes" : {
-      "username" : "smithj@fake.com",
-      "firstName" : "John",
-      "lastName" : "Smith",
-      "roles" : &#91; "APP_MANAGER" ],
-      "allAppsVisible" : false,
-      "provisioningAllowed" : true
-    },
-    "relationships" : {
-      "visibleApps" : {
-        "links" : {
-          "self" : "https://api.appstoreconnect.apple.com/v1/users/bded051a-7566-4b5f-a7a9-2e461e51eab0/relationships/visibleApps",
-          "related" : "https://api.appstoreconnect.apple.com/v1/users/bded051a-7566-4b5f-a7a9-2e461e51eab0/visibleApps"
-        }
-      }
-    },
-    "links" : {
-      "self" : "https://api.appstoreconnect.apple.com/v1/users/bded051a-7566-4b5f-a7a9-2e461e51eab0"
-    }
-  } ],
-  "links" : {
-    "self" : "https://api.appstoreconnect.apple.com/v1/users?limit=50",
-    "next" : "https://api.appstoreconnect.apple.com/v1/users?cursor=SomeHideousToken&amp;limit=50"
-  },
-  "meta" : {
-    "paging" : {
-      "total" : 150,
-      "limit" : 50
-    }
-  }
-}
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"users"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bded051a-7566-4b5f-a7a9-2e461e51eab0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"smithj@fake.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"firstName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"roles"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"APP_MANAGER"</span><span class="w"> </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"allAppsVisible"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"provisioningAllowed"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"relationships"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"visibleApps"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"links"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"self"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.appstoreconnect.apple.com/v1/users/bded051a-7566-4b5f-a7a9-2e461e51eab0/relationships/visibleApps"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"related"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.appstoreconnect.apple.com/v1/users/bded051a-7566-4b5f-a7a9-2e461e51eab0/visibleApps"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"links"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"self"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.appstoreconnect.apple.com/v1/users/bded051a-7566-4b5f-a7a9-2e461e51eab0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"links"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.appstoreconnect.apple.com/v1/users?limit=50"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.appstoreconnect.apple.com/v1/users?cursor=SomeHideousToken&amp;limit=50"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"paging"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"total"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"limit"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>For our purposes, we only care about the email address. We walk through the JSON and just add the address to a list. If there is a “next set” URL, we call that to get the next set of addresses. Then we can compare those emails with the email addresses of the former employees to see which accounts will need to be removed.</p>
 
 <p>This “Next” set URL really isn’t documented as part of the API call. This caused me a fair amount of angst. The API documentation states that the maximum number of users returned will be 200. We have 150+ on the team and I converned about what would happen when we passed 200 members. I emailed Apple Support and was told that API works and I would get all of the members. But they didn’t mention how.</p>
 
-<p>I did some searching in Apple’s forums and the <a href="https://developer.apple.com/forums/thread/652124?answerId=617380022#617380022">solution was simple and logical</a>. In the JSON result set, there is “links” object. The links object will have a “self” field that contains the URL that was used to make the call. It can have an optional “next” field that will contain a URL that will return the next set of data. When you call the API, you will need to check the “next” field and call that URL until you no longer receive another “next” field in the JSON result set. </p>
+<p>I did some searching in Apple’s forums and the <a href="https://developer.apple.com/forums/thread/652124?answerId=617380022#617380022">solution was simple and logical</a>. In the JSON result set, there is “links” object. The links object will have a “self” field that contains the URL that was used to make the call. It can have an optional “next” field that will contain a URL that will return the next set of data. When you call the API, you will need to check the “next” field and call that URL until you no longer receive another “next” field in the JSON result set.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: jscript; auto-links: false; highlight: [3]; title: ; quick-code: false; notranslate" title="">
-"links" : {
-    "self" : "https://api.appstoreconnect.apple.com/v1/users?limit=50",
-    "next" : "https://api.appstoreconnect.apple.com/v1/users?cursor=SomeHideousToken&amp;limit=50"
-}
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nl">"links"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"self"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.appstoreconnect.apple.com/v1/users?limit=50"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"next"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.appstoreconnect.apple.com/v1/users?cursor=SomeHideousToken&amp;limit=50"</span><span class="w">
+</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Depending on your needs, you can either parse the data in each set or combine it into one set. It (hint) should documented in a way that would be easier to discover. So getting back to the data, we want the “username” from the “attributes” object. The name and role data is nice to have, so we’ll grab it.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: jscript; auto-links: false; highlight: [2,3,4,5]; title: ; quick-code: false; notranslate" title="">
-"attributes" : {
-  "username" : "smithj@fake.com",
-  "firstName" : "John",
-  "lastName" : "Smith",
-  "roles" : &#91; "APP_MANAGER" ],
-  "allAppsVisible" : false,
-  "provisioningAllowed" : true
-}
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nl">"attributes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"smithj@fake.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"firstName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lastName"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"roles"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"APP_MANAGER"</span><span class="w"> </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"allAppsVisible"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"provisioningAllowed"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The actual API key data is stored in a separate file that I created named IsUserinApple.json. It will contain the path to your private key file, the key id, and the issuer id for your account. It will look something like this:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: jscript; auto-links: false; title: ; quick-code: false; notranslate" title="">
-{
-    "PrivateKeyFile": "path/to.your/privatekey.p8",
-    "KeyID": "ABCDEF1234",
-    "IssuerID": "d88b7c23-4c26-48fb-9d62-5649f27a25a2"
-}
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="p">{</span><span class="w">
+    </span><span class="nl">"PrivateKeyFile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path/to.your/privatekey.p8"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"KeyID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCDEF1234"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"IssuerID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d88b7c23-4c26-48fb-9d62-5649f27a25a2"</span><span class="w">
+</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>That file will not be in the repo, you’ll have to create that one yourself. To get the data, we need to make the API call. We need to pass in a signed JWT. This will be the heaviest lifting for the code. There are three steps:</p>
 
@@ -453,218 +493,313 @@
 
 <p>For the .NET version, we are going to use a nuget package, <a href="https://github.com/dvsekhvalnov/jose-jwt">jose-jwt</a>, to create and sign the JWT. In the repo for this version of the applet, the code for generated the signed JWT is <a href="https://github.com/anotherlab/IsUserinApple-dotnet/blob/main/AppleJWT.cs" target="_blank" rel="noopener">AppleJWT.cs</a>. The full method is short and we can quickly go over what it does here.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; highlight: [11,12,13,14,15,16,19,21,22,23,24,25,26,29,32]; title: ; notranslate" title="">
-/// &lt;summary&gt;
-/// Returns a signed JSON Web Token
-/// &lt;/summary&gt;
-/// &lt;param name="keyId"&gt;Your private key ID from App Store Connect&lt;/param&gt;
-/// &lt;param name="issuerID"&gt;Your issuer ID from the API Keys page in App Store Connect&lt;/param&gt;
-/// &lt;param name="privateKey"&gt;The private that was generated by Apple, encoded as Base64&lt;/param&gt;
-/// &lt;returns&gt;Signed JWT&lt;/returns&gt;
-public string GetToken(string keyId, string issuerID, string privateKey)
-{
-    // Create the header
-    var header = new Dictionary&lt;string, object&gt;()
-    {
-        {"alg", "ES256"},
-        {"kid", keyId},
-        {"typ", "JWT"},
-    };
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="code"><pre><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Returns a signed JSON Web Token</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="c1">/// &lt;param name="keyId"&gt;Your private key ID from App Store Connect&lt;/param&gt;</span>
+<span class="c1">/// &lt;param name="issuerID"&gt;Your issuer ID from the API Keys page in App Store Connect&lt;/param&gt;</span>
+<span class="c1">/// &lt;param name="privateKey"&gt;The private that was generated by Apple, encoded as Base64&lt;/param&gt;</span>
+<span class="c1">/// &lt;returns&gt;Signed JWT&lt;/returns&gt;</span>
+<span class="k">public</span> <span class="kt">string</span> <span class="nf">GetToken</span><span class="p">(</span><span class="kt">string</span> <span class="n">keyId</span><span class="p">,</span> <span class="kt">string</span> <span class="n">issuerID</span><span class="p">,</span> <span class="kt">string</span> <span class="n">privateKey</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Create the header</span>
+    <span class="kt">var</span> <span class="n">header</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;()</span>
+    <span class="p">{</span>
+        <span class="p">{</span><span class="s">"alg"</span><span class="p">,</span> <span class="s">"ES256"</span><span class="p">},</span>
+        <span class="p">{</span><span class="s">"kid"</span><span class="p">,</span> <span class="n">keyId</span><span class="p">},</span>
+        <span class="p">{</span><span class="s">"typ"</span><span class="p">,</span> <span class="s">"JWT"</span><span class="p">},</span>
+    <span class="p">};</span>
 
-    // Create the payload
-    var exp = Math.Round((DateTime.UtcNow.AddMinutes(30) - new DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds, 0);
+    <span class="c1">// Create the payload</span>
+    <span class="kt">var</span> <span class="n">exp</span> <span class="p">=</span> <span class="n">Math</span><span class="p">.</span><span class="nf">Round</span><span class="p">((</span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">.</span><span class="nf">AddMinutes</span><span class="p">(</span><span class="m">30</span><span class="p">)</span> <span class="p">-</span> <span class="k">new</span> <span class="nf">DateTime</span><span class="p">(</span><span class="m">1970</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">)).</span><span class="n">TotalSeconds</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
 
-    var payload = new Dictionary&lt;string, object&gt;()
-    {
-        {"aud", "appstoreconnect-v1"},
-        { "exp", exp },
-        { "iss", issuerID }
-    };
+    <span class="kt">var</span> <span class="n">payload</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;()</span>
+    <span class="p">{</span>
+        <span class="p">{</span><span class="s">"aud"</span><span class="p">,</span> <span class="s">"appstoreconnect-v1"</span><span class="p">},</span>
+        <span class="p">{</span> <span class="s">"exp"</span><span class="p">,</span> <span class="n">exp</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="s">"iss"</span><span class="p">,</span> <span class="n">issuerID</span> <span class="p">}</span>
+    <span class="p">};</span>
 
-    // Generate the signing key from the private that has been given to us
-    CngKey key = CngKey.Import(Convert.FromBase64String(privateKey), CngKeyBlobFormat.Pkcs8PrivateBlob);
+    <span class="c1">// Generate the signing key from the private that has been given to us</span>
+    <span class="n">CngKey</span> <span class="n">key</span> <span class="p">=</span> <span class="n">CngKey</span><span class="p">.</span><span class="nf">Import</span><span class="p">(</span><span class="n">Convert</span><span class="p">.</span><span class="nf">FromBase64String</span><span class="p">(</span><span class="n">privateKey</span><span class="p">),</span> <span class="n">CngKeyBlobFormat</span><span class="p">.</span><span class="n">Pkcs8PrivateBlob</span><span class="p">);</span>
     
-    // Generate the signed token
-    string token = Jose.JWT.Encode(payload, key, JwsAlgorithm.ES256, header);
+    <span class="c1">// Generate the signed token</span>
+    <span class="kt">string</span> <span class="n">token</span> <span class="p">=</span> <span class="n">Jose</span><span class="p">.</span><span class="n">JWT</span><span class="p">.</span><span class="nf">Encode</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">JwsAlgorithm</span><span class="p">.</span><span class="n">ES256</span><span class="p">,</span> <span class="n">header</span><span class="p">);</span>
 
-    return token;
-}
-</pre>
-</div>
+    <span class="k">return</span> <span class="n">token</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Lines 11-16 create the header. We set the expiration date at line 19 to 30 minutes into the future with the “exp” field. The issuer ID at line 25 comes from your account in App Store Connect. Apple’s instructions for getting the issuer ID are fairly easy to follow: log in to <a href="https://appstoreconnect.apple.com/">App Store Connect</a> and: <a href="https://appstoreconnect.apple.com/access/users">Select Users and Access</a>, then Select the <a href="https://appstoreconnect.apple.com/access/api">API Keys</a> tab. The issuer ID appears near the top of the page. To copy the issuer ID, click Copy next to the ID. The key ID will also come from that page. It will be the key that we described how to create earlier.</p>
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-large"><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-4scN9mR/0/8d4a88a7/M/App%20Store%20Connect%20Keys-M.png" alt="" /><figcaption>The ID values that you will need</figcaption></figure>
-</div>
+<figure><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-4scN9mR/0/8d4a88a7/M/App%20Store%20Connect%20Keys-M.png" alt="" /><figcaption>The ID values that you will need</figcaption></figure>
 
 <p>The private key will come from the contents of the .p8 file that you downloaded when you created the API key. The .p8 file will have your private key in PEM format. We generate the signing key from the private key at line 29 and then generate a JWT and sign it with that key at line 32.</p>
 
 <p>There is some code in <a href="https://github.com/anotherlab/IsUserinApple-dotnet/blob/main/Program.cs">program.cs</a> to read the PEM data in the .p8 file and return just the private key needed to sign the JWT. The .p8 file will contain something vaguely like this:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; title: ; notranslate" title="">
------BEGIN PRIVATE KEY-----
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>-----BEGIN PRIVATE KEY-----
 mfykFJXw6fZBxYR4GYDGKyF27GfFaedt4tvR0jACGwUJxBR2t83wZQZOtoj6PMPC
 seSrR0XXVWhEzImSXtLfF8JCyHrvpknEgOzSvqD040LUOvgNrnMvrGQHmPGQwmta
 So6GaxJuCk0XxJa2t9mjfu5ERvPCIVwQPgeqcVrroNx2qaXzBteLsyonXOPRxo2w
 VnPiPup3
 -----END PRIVATE KEY-----
-</pre>
-</div>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Our code needs only what exists between the “BEGIN” and “END” lines. So this code just strips all of that out</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; title: ; notranslate" title="">
-private string GetPrivateKey(ConfigSettings configSettings)
-{
-    var certPEM = File.ReadAllText(configSettings.PrivateKeyFile);
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="k">private</span> <span class="kt">string</span> <span class="nf">GetPrivateKey</span><span class="p">(</span><span class="n">ConfigSettings</span> <span class="n">configSettings</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">certPEM</span> <span class="p">=</span> <span class="n">File</span><span class="p">.</span><span class="nf">ReadAllText</span><span class="p">(</span><span class="n">configSettings</span><span class="p">.</span><span class="n">PrivateKeyFile</span><span class="p">);</span>
 
-    return certPEM
-    .Replace("-----BEGIN PRIVATE KEY-----", "")
-    .Replace("\n", "")
-    .Replace("\r", "")
-    .Replace("-----END PRIVATE KEY-----", "");
-}
-</pre>
-</div>
+    <span class="k">return</span> <span class="n">certPEM</span>
+    <span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">"-----BEGIN PRIVATE KEY-----"</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">"\n"</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">"\r"</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">"-----END PRIVATE KEY-----"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Now that we have a signed JWT, we can make the API calls. In <a href="https://github.com/anotherlab/IsUserinApple-dotnet/blob/main/AppStoreApi.cs">AppStoreApi.cs</a>, there is a simple wrapper for the List User API call. This unit has a fair amount of code that provides C# models of the JSON data. I used the tools at <a href="https://app.quicktype.io/">app.quicktype.io</a> to generate the C# models from the JSON data. I wont repeat that code here, it’s all in repo. But we’ll review the highlights. We start off with by creating a descendant of <a href="https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0&amp;WT.mc_id=DT-MVP-5000200">HttpClient</a> that will be pass the signed JWT in the headers.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; highlight: [7]; title: ; notranslate" title="">
-public HttpClient client {
-    get {
-        if (_client == null)
-        {
-            _client = new HttpClient();    
-            _client.DefaultRequestHeaders.Authorization =
-                new AuthenticationHeaderValue("Bearer", token);
-        }
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="k">public</span> <span class="n">HttpClient</span> <span class="n">client</span> <span class="p">{</span>
+    <span class="k">get</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_client</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">_client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">HttpClient</span><span class="p">();</span>    
+            <span class="n">_client</span><span class="p">.</span><span class="n">DefaultRequestHeaders</span><span class="p">.</span><span class="n">Authorization</span> <span class="p">=</span>
+                <span class="k">new</span> <span class="nf">AuthenticationHeaderValue</span><span class="p">(</span><span class="s">"Bearer"</span><span class="p">,</span> <span class="n">token</span><span class="p">);</span>
+        <span class="p">}</span>
 
-        return _client;
-    }
-}
-</pre>
-</div>
+        <span class="k">return</span> <span class="n">_client</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>We’ll have a public method, FindUser. It will take an email address and return a user object. Or null, if it doesn’t find a match.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; title: ; notranslate" title="">
-public User FindUser(string EmailAddress)
-{
-    var users = GetAllUsers();
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="k">public</span> <span class="n">User</span> <span class="nf">FindUser</span><span class="p">(</span><span class="kt">string</span> <span class="n">EmailAddress</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">users</span> <span class="p">=</span> <span class="nf">GetAllUsers</span><span class="p">();</span>
 
-    if (users != null)
-    {
-        var user = users.Where(s =&gt; s.UserName.Equals(EmailAddress, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+    <span class="k">if</span> <span class="p">(</span><span class="n">users</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">user</span> <span class="p">=</span> <span class="n">users</span><span class="p">.</span><span class="nf">Where</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">UserName</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="n">EmailAddress</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">CurrentCultureIgnoreCase</span><span class="p">)).</span><span class="nf">FirstOrDefault</span><span class="p">();</span>
 
-        return user;
-    }
+        <span class="k">return</span> <span class="n">user</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    return null;
-}
-</pre>
-</div>
+    <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>The API call comes in GetAllUsers().</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; highlight: [7,14,16,17,18,19,20,21,23]; title: ; notranslate" title="">
-public List&lt;User&gt; GetAllUsers()
-{
-    List&lt;User&gt; users = new List&lt;User&gt;();
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="code"><pre><span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="nf">GetAllUsers</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">List</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="n">users</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;();</span>
 
-    // Find the first 100 users.  If there there are more than
-    // 100 users, the "Next" property will contain the net URL to call
-    var jsonString = GetUsers(100, null).Result;
+    <span class="c1">// Find the first 100 users. If there there are more than</span>
+    <span class="c1">// 100 users, the "Next" property will contain the net URL to call</span>
+    <span class="kt">var</span> <span class="n">jsonString</span> <span class="p">=</span> <span class="nf">GetUsers</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="k">null</span><span class="p">).</span><span class="n">Result</span><span class="p">;</span>
 
-    if (jsonString == null)
-    {
-        return null;
-    }
+    <span class="k">if</span> <span class="p">(</span><span class="n">jsonString</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    var appConnectUsers = AppConnectUsers.FromJson(jsonString);
+    <span class="kt">var</span> <span class="n">appConnectUsers</span> <span class="p">=</span> <span class="n">AppConnectUsers</span><span class="p">.</span><span class="nf">FromJson</span><span class="p">(</span><span class="n">jsonString</span><span class="p">);</span>
     
-    users.AddRange(appConnectUsers.Data
-        .Select(s =&gt; s.Attributes)
-        .Select(s =&gt; new User() {UserName = s.Username, 
-                                    LastName = s.LastName, 
-                                    FirstName = s.FirstName, 
-                                    Roles = s.Roles.ToList()}) );
+    <span class="n">users</span><span class="p">.</span><span class="nf">AddRange</span><span class="p">(</span><span class="n">appConnectUsers</span><span class="p">.</span><span class="n">Data</span>
+        <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">Attributes</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nf">User</span><span class="p">()</span> <span class="p">{</span><span class="n">UserName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">Username</span><span class="p">,</span> 
+                                    <span class="n">LastName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">LastName</span><span class="p">,</span> 
+                                    <span class="n">FirstName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">FirstName</span><span class="p">,</span> 
+                                    <span class="n">Roles</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">Roles</span><span class="p">.</span><span class="nf">ToList</span><span class="p">()})</span> <span class="p">);</span>
     
-    while (appConnectUsers.Links.Next != null)
-    {
-        jsonString = GetUsers(100, appConnectUsers.Links.Next.ToString()).Result;
-        appConnectUsers = AppConnectUsers.FromJson(jsonString);
-        users.AddRange(appConnectUsers.Data
-                .Select(s =&gt; s.Attributes)
-                .Select(s =&gt; new User() { UserName = s.Username, 
-                                        LastName = s.LastName, 
-                                        FirstName = s.FirstName, 
-                                        Roles = s.Roles.ToList() }));
-    }
+    <span class="k">while</span> <span class="p">(</span><span class="n">appConnectUsers</span><span class="p">.</span><span class="n">Links</span><span class="p">.</span><span class="n">Next</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">jsonString</span> <span class="p">=</span> <span class="nf">GetUsers</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="n">appConnectUsers</span><span class="p">.</span><span class="n">Links</span><span class="p">.</span><span class="n">Next</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()).</span><span class="n">Result</span><span class="p">;</span>
+        <span class="n">appConnectUsers</span> <span class="p">=</span> <span class="n">AppConnectUsers</span><span class="p">.</span><span class="nf">FromJson</span><span class="p">(</span><span class="n">jsonString</span><span class="p">);</span>
+        <span class="n">users</span><span class="p">.</span><span class="nf">AddRange</span><span class="p">(</span><span class="n">appConnectUsers</span><span class="p">.</span><span class="n">Data</span>
+                <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">Attributes</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nf">User</span><span class="p">()</span> <span class="p">{</span> <span class="n">UserName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">Username</span><span class="p">,</span> 
+                                        <span class="n">LastName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">LastName</span><span class="p">,</span> 
+                                        <span class="n">FirstName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">FirstName</span><span class="p">,</span> 
+                                        <span class="n">Roles</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">Roles</span><span class="p">.</span><span class="nf">ToList</span><span class="p">()</span> <span class="p">}));</span>
+    <span class="p">}</span>
 
-    return users;
-}
-</pre>
-</div>
+    <span class="k">return</span> <span class="n">users</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>GetUsers is the call the App Connect API and will return a JSON result set. The FromJson method is some boilerplate code for deserializing the JSON. Then we use some <a href="https://docs.microsoft.com/en-us/dotnet/api/system.linq?view=net-5.0&amp;WT.mc_id=DT-MVP-5000200">LINQ</a> code to iterate through the result and pull the fields from the attributes objects. Then we continue to call the API until we no longer have a Links.Next value.</p>
 
 <p>The GetUsers method is pretty straightforward.</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: csharp; auto-links: false; title: ; notranslate" title="">
-private async Task&lt;string&gt; GetUsers(int count, string nextUrl)
-{
-    var url = nextUrl ?? $"https://api.appstoreconnect.apple.com/v1/users?limit={count}";
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="k">private</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="nf">GetUsers</span><span class="p">(</span><span class="kt">int</span> <span class="n">count</span><span class="p">,</span> <span class="kt">string</span> <span class="n">nextUrl</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">url</span> <span class="p">=</span> <span class="n">nextUrl</span> <span class="p">??</span> <span class="s">$"https://api.appstoreconnect.apple.com/v1/users?limit=</span><span class="p">{</span><span class="n">count</span><span class="p">}</span><span class="s">"</span><span class="p">;</span>
         
-    var result = await client.GetAsync(url);
+    <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
     
-    if (result.StatusCode == System.Net.HttpStatusCode.InternalServerError)
-    {
-        Console.WriteLine(result.StatusCode.ToString());
-        return null;
-    }
-    else
-    {
-        var users = result.Content.ReadAsStringAsync();
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">StatusCode</span> <span class="p">==</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">HttpStatusCode</span><span class="p">.</span><span class="n">InternalServerError</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">StatusCode</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+        <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">users</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="nf">ReadAsStringAsync</span><span class="p">();</span>
 
-        return users.Result;
-    }
-}
-</pre>
-</div>
+        <span class="k">return</span> <span class="n">users</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>We pass in null for nextUrl for a new search, otherwise it’s the url for the next set of data. 99.99% of the time you will get a result back. When Apple’s API is down (and I have seen it happen), you can get a 500 error and this code will catch.</p>
 
-<p>Assuming that you have the <a href="https://dotnet.microsoft.com/download/dotnet/5.0">.NET 5 SDK</a> installed, you can just grab the code from the repo and then build it.  Executing “dotnet build” should pull down the required packages and the build the applet. If you are running it with the dotnet command, you would run it as </p>
+<p>Assuming that you have the <a href="https://dotnet.microsoft.com/download/dotnet/5.0">.NET 5 SDK</a> installed, you can just grab the code from the repo and then build it. Executing “dotnet build” should pull down the required packages and the build the applet. If you are running it with the dotnet command, you would run it as </p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-dotnet run -- some.email@company.com
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="n">dotnet</span><span class="w"> </span><span class="nx">run</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="nx">some.email</span><span class="err">@</span><span class="nx">company.com</span></code></pre></figure>
 
 <p>If that email is a member of the account, the applet wiill come back with something line this:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-Found user: some.email@company.com, Some Email &#91;AppManager, Developer]
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="n">Found</span><span class="w"> </span><span class="nx">user:</span><span class="w"> </span><span class="nx">some.email</span><span class="err">@</span><span class="nx">company.com</span><span class="p">,</span><span class="w"> </span><span class="nx">Some</span><span class="w"> </span><span class="nx">Email</span><span class="w"> </span><span class="p">[</span><span class="n">AppManager</span><span class="p">,</span><span class="w"> </span><span class="n">Developer</span><span class="p">]</span></code></pre></figure>
 
 <p>Otherwise something like this:</p>
 
-<div class="wp-block-syntaxhighlighter-code ">
-  <pre class="brush: plain; gutter: false; title: ; notranslate" title="">
-User: some.email@company.com not found
-</pre>
-</div>
+<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="n">User:</span><span class="w"> </span><span class="nx">some.email</span><span class="err">@</span><span class="nx">company.com</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">found</span></code></pre></figure>
 
 <p>That’s the core of the code. The rest of the code is some simple stuff for processing the command line parameters and loading the settings. It’s pretty basic stuff and commented in the repo. Our IT staff now uses a version of this code when they process an employee leaving the company. If that person’s email shows up, IT passes the email to me and I can remove that user from the account. We may look at ways to have the applet query the results from the App Connect API and then match all of the emails to see if they exist in our Active Directory. In the meantime, this works.</p>
 
@@ -673,7 +808,7 @@ User: some.email@company.com not found
 <hr class="wp-block-separator" />
 
 <p class="has-small-font-size">
-  <em>About the image: <br />This image was derived from some open-source images.&nbsp;The image of the wall comes from <a href="https://unsplash.com/@impatrickt">Patrick Tomasso via Unsplash</a>.&nbsp;The Apple lock logo comes from Apple, which retains all rights to its artwork. The people icon was created by <a href="https://thenounproject.com/search/?q=people&amp;i=165313">Monika from the Noun Project</a>.</em>
+  <em>About the image: <br />This image was derived from some open-source images. The image of the wall comes from <a href="https://unsplash.com/@impatrickt">Patrick Tomasso via Unsplash</a>. The Apple lock logo comes from Apple, which retains all rights to its artwork. The people icon was created by <a href="https://thenounproject.com/search/?q=people&amp;i=165313">Monika from the Noun Project</a>.</em>
 </p>
 
         
@@ -796,7 +931,7 @@ User: some.email@company.com not found
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          7 minute read
         
       </span>
     
@@ -819,7 +954,7 @@ User: some.email@company.com not found
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="permalink">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
+        <a href="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="permalink">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
 </a>
       
     </h2>
@@ -859,7 +994,7 @@ User: some.email@company.com not found
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2021/10/18/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="permalink">Controlling a WSL installation of redis-server from the Windows command line
+        <a href="/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="permalink">Controlling a WSL installation of redis-server from the Windows command line
 </a>
       
     </h2>

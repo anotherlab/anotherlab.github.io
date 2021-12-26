@@ -1,21 +1,14 @@
 ---
-id: 3489
 title: A quick PowerShell tip
 date: 2021-07-28T15:19:08-05:00
-author: Chris Miller
 excerpt: Simple tip for adding your own memory aid to your PowerShell profile.
-layout: post
-guid: https://rajapet.com/?p=3489
-permalink: /2021/07/28/a-quick-powershell-tip/
-spay_email:
-  - ""
 categories:
   - PowerShell
 tags:
   - Powershell
   - tips
 ---
-I have a bunch of PowerShell functions that I stick in my $profile file. Simple stuff, things to make my day to day development work easier. With my sieve-like memory, I need a quick way to see the functions. So I wrote a script named &#8220;mine.ps1&#8221; and it&#8217;s basically a tiny help file.  It has stuff like this
+I have a bunch of PowerShell functions that I stick in my $profile file. Simple stuff, things to make my day to day development work easier. With my sieve-like memory, I need a quick way to see the functions. So I wrote a script named &#8220;mine.ps1&#8221; and it&#8217;s basically a tiny help file. It has stuff like this
 
 {% highlight powershell %}
 write-host Commands -ForegroundColor White
@@ -72,7 +65,7 @@ function Set-FileTime{
       }
      
       function touchNewFile([string]$path) {
-        #$null &gt; $path
+        #$null > $path
         Set-Content -Path $path -value $null;
       }
     }

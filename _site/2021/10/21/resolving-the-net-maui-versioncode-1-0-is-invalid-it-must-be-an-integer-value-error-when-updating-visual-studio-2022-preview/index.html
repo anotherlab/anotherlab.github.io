@@ -13,12 +13,17 @@
 <meta name="description" content="I hit the “VersionCode 1.0 is invalid” error with .NET MAUI and resolved it.">
 
 
+  <meta name="author" content="Chris Miller">
+  
+  <meta property="article:author" content="Chris Miller">
+  
+
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview">
-<meta property="og:url" content="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
+<meta property="og:url" content="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
 
 
   <meta property="og:description" content="I hit the “VersionCode 1.0 is invalid” error with .NET MAUI and resolved it.">
@@ -30,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview">
   <meta name="twitter:description" content="I hit the “VersionCode 1.0 is invalid” error with .NET MAUI and resolved it.">
-  <meta name="twitter:url" content="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
+  <meta name="twitter:url" content="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
 
   
     <meta name="twitter:card" content="summary">
@@ -48,7 +53,7 @@
 
 
 
-<link rel="canonical" href="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
+<link rel="canonical" href="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">
 
 
 
@@ -99,7 +104,7 @@
 
   </head>
 
-  <body class="layout--post">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -150,19 +155,178 @@
 
 
     <div class="initial-content">
-      <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+      
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Resolving the .NET MAUI &quot;VersionCode 1.0 is invalid. It must be an integer value.&quot; error when updating Visual Studio 2022 Preview</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2021-10-21T00:19:33-04:00" itemprop="datePublished">
-        Oct 21, 2021
-      </time>• 
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
-  </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
-    <p>I installed the Visual Studio 2022 Preview 6 this evening. I had been using Preview 4. I installed Preview 5, but didn’t have a chance to play with it. I have a simple demo app that I have working with, a basic stopwatch type of app. That app had been created with Preview 4 and it more or less worked fine (unless you counted Mac Catalyst and Windows). After I installed Preview 6, I tried to run the project on Android. It failed to compile with the following error message:</p>
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="/">
+        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">Chris Miller</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Microsoft MVP, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+          
+            <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-award" aria-hidden="true"></i><span class="label">Microsoft MVP</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview">
+    <meta itemprop="description" content="I hit the “VersionCode 1.0 is invalid” error with .NET MAUI and resolved it.">
+    <meta itemprop="datePublished" content="2021-10-21T00:19:33-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" class="u-url" itemprop="url">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>I installed the Visual Studio 2022 Preview 6 this evening. I had been using Preview 4. I installed Preview 5, but didn’t have a chance to play with it. I have a simple demo app that I have working with, a basic stopwatch type of app. That app had been created with Preview 4 and it more or less worked fine (unless you counted Mac Catalyst and Windows). After I installed Preview 6, I tried to run the project on Android. It failed to compile with the following error message:</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">Severity	Code	Description	Project	File	Line	Suppression State
 Error	XA0003	VersionCode 1.0 is invalid. It must be an integer value.
@@ -170,9 +334,9 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 
 <p>As a test, I created a new .NET MAUI app from Preview 6. It compiled and ran just fine.</p>
 
-<p>So who now, what now? When I first saw the error, I didn’t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.<figure></figure></p>
+<p>So who now, what now? When I first saw the error, I didn’t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.</p>
 
-<p><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png" alt="" /> &lt;/figure&gt;</p>
+<p><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png" alt="" /></p>
 
 <p>And we take a look at the file, it’s pretty standard, pretty boring AndroidManifest.xml</p>
 
@@ -284,9 +448,262 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 
 <p>When I changed the “Versions” lines .csproj to match the single line used in the new .csproj Preview 6, the app compiled and deployed to Android. My best guess is that AndroidVersionCode was being used in Preview 4 and sometime after that, they made the breaking change to ApplicationVersion and jettisoned the AndroidVersionCode setting. It’s a preview release of Visual Studio and they are still baking .NET MAUI. This <a href="https://developercommunity.visualstudio.com/t/versioncode-10-is-invalid/1553498">kind of stuff happens</a> and the end result is a better product.</p>
 
-  </div><a class="u-url" href="/2021/10/20/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" hidden></a>
-</article>
+        
+      </section>
 
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#android" class="page__taxonomy-item p-category" rel="tag">android</a><span class="sep">, </span>
+    
+      <a href="/tags/#maui" class="page__taxonomy-item p-category" rel="tag">maui</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#android" class="page__taxonomy-item p-category" rel="tag">Android</a><span class="sep">, </span>
+    
+      <a href="/categories/#maui" class="page__taxonomy-item p-category" rel="tag">MAUI</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-10-21T00:19:33-04:00">October 21, 2021</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Resolving+the+.NET+MAUI+%22VersionCode+1.0+is+invalid.+It+must+be+an+integer+value.%22+error+when+updating+Visual+Studio+2022+Preview%20%2F2021%2F10%2F21%2Fresolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2F2021%2F10%2F21%2Fresolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2F2021%2F10%2F21%2Fresolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" class="pagination--pager" title="Controlling a WSL installation of redis-server from the Windows command line
+">Previous</a>
+    
+    
+      <a href="/2021/12/15/Migrated-to-jekyll/" class="pagination--pager" title="Moved the blog from WordPress to Jekyll
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section id="giscus-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You May Also Enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/12/15/Migrated-to-jekyll/" rel="permalink">Moved the blog from WordPress to Jekyll
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">First post under the new regime.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="permalink">Controlling a WSL installation of redis-server from the Windows command line
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Some shortcuts accessing redis-server running under WSL via PowerShell
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/" rel="permalink">How to access Apple’s App Connect API from C#, Python, and Go. - Part 4
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/07/28/a-quick-powershell-tip/" rel="permalink">A quick PowerShell tip
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Simple tip for adding your own memory aid to your PowerShell profile.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
     </div>
 
     
