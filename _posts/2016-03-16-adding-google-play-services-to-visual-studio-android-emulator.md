@@ -1,10 +1,6 @@
 ---
-id: 1419
 title: Adding Google Play Services to Visual Studio Android Emulator
-date: 2016-03-16T16:02:38-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1419
-permalink: /2016/03/16/adding-google-play-services-to-visual-studio-android-emulator/
+date: 2016-03-16
 ---
 <img loading="lazy" class="alignnone" src="https://i1.wp.com/www.rajapet.net/photos/i-R5kKSrR/0/S/i-R5kKSrR-S.jpg?resize=400%2C251" alt="" width="400" height="251"  />
 
@@ -12,72 +8,58 @@ Out of the box, the [Visual Studio Android Emulator](https://www.visualstudio.co
 
 The typical Android device starts with a base Android stack that comes from the [Android Open Source Project](https://source.android.com/) (AOSP).  Device OEMS (Samsung, Huawei, LG, etc) then license the Google Play Services from Google.  On top of that, the OEMs add any customizations that they do to Android.
 
-Google does not allow Microsoft/Genymotion/Xamarin to include the Google Play Services with their builds from the AOSP.  Enough developers have put together versions of the package so that it&#8217;s a fairly easy process to install. They are commonly packaged under the name &#8220;GApps&#8221;.
+Google does not allow Microsoft/Genymotion/Xamarin to include the Google Play Services with their builds from the AOSP.  Enough developers have put together versions of the package so that it's a fairly easy process to install. They are commonly packaged under the name “GApps”.
 
-Run the Visual Studio Emulator for Android from the Start Menu.  If you run it from VS, you may not be able to install firmware packages.  Then create a new VM.  For this example, we&#8217;ll create an Android 5.1 VM.  I tried this with Android 6 and it did not work with the GApps packages that I was able to obtain.
+Run the Visual Studio Emulator for Android from the Start Menu.  If you run it from VS, you may not be able to install firmware packages.  Then create a new VM.  For this example, we'll create an Android 5.1 VM.  I tried this with Android 6 and it did not work with the GApps packages that I was able to obtain.
 
-<div style="width: 329px" class="wp-caption alignnone">
-  <a href="https://i1.wp.com/www.rajapet.net/photos/i-2Zkg8TJ/0/L/i-2Zkg8TJ-L.png"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/photos/i-2Zkg8TJ/0/S/i-2Zkg8TJ-S.png?resize=319%2C300" alt="" width="319" height="300"  /></a>
-  
-  <p class="wp-caption-text">
-    Emulation Manager
-  </p>
-</div>
+<figure>
+<img src="https://i1.wp.com/www.rajapet.net/photos/i-2Zkg8TJ/0/L/i-2Zkg8TJ-L.png"/><figcaption>Emulation Manager</figcaption></figure>
 
-If you are using an existing VM, you&#8217;ll need to know which CPU architecture or ABI that the VM is running under.  Thanks to a [tip from the nutty people at Intel](https://software.intel.com/en-us/blogs/2014/12/16/how-to-identify-the-image-is-32-bit-or-64-bit-user-space), you can execute an ADB command to see what is on board.
+If you are using an existing VM, you'll need to know which CPU architecture or ABI that the VM is running under.  Thanks to a [tip from the nutty people at Intel](https://software.intel.com/en-us/blogs/2014/12/16/how-to-identify-the-image-is-32-bit-or-64-bit-user-space), you can execute an ADB command to see what is on board.
 
-<pre class="brush:powershell">adb shell getprop ro.product.cpu.abilist
-</pre>
+{% highlight powershell %}adb shell getprop ro.product.cpu.abilist
+{% endhighlight %}
 
 Also see the documentation for the [Build](http://developer.android.com/reference/android/os/Build.html) class.
 
-SInce we created the VM, we know it&#8217;s Android 5.1.  If you were working with VM and were not sure of the version, you can check via the Android Settings app or from the command line with the adb command.
+SInce we created the VM, we know it's Android 5.1.  If you were working with VM and were not sure of the version, you can check via the Android Settings app or from the command line with the adb command.
 
-<pre class="brush:powershell">adb shell getprop ro.build.version.release</pre>
+{% highlight powershell %}adb shell getprop ro.build.version.release{% endhighlight %}
 
 While we are checking stuff with ADB, the following command will return the SDK version
 
-<pre class="brush:powershell">adb shell getprop ro.build.version.sdk</pre>
+{% highlight powershell %}adb shell getprop ro.build.version.sdk{% endhighlight %}
 
-<div style="width: 410px" class="wp-caption alignnone">
-  <a href="https://i0.wp.com/www.rajapet.net/photos/i-6S78rKq/0/M/i-6S78rKq-M.png"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/photos/i-6S78rKq/0/S/i-6S78rKq-S.png?resize=400%2C289" alt="Results from the ADB commands" width="400" height="289"  /></a>
-  
-  <p class="wp-caption-text">
-    Results from the ADB commands
-  </p>
-</div>
+<figure>
+<img src="https://i0.wp.com/www.rajapet.net/photos/i-6S78rKq/0/M/i-6S78rKq-M.png"/>
+<figcaption>Results from the ADB commands</figcaption>
+</figure>
 
 First up is the installation of an ARM translator. The VS Android Emulator gets its speed by running an x86 version of Android. The Google Play Services are usually packed up already compiled for ARM. The ARM translator lets ARM code run on an x86 image. This is usually packaged up in a .zip named ARM Translation v1.1.
 
 Installing is easy, drag the .zip on to a running Android VM and follow the prompts.
 
-<div style="width: 244px" class="wp-caption alignnone">
-  <a href="https://i1.wp.com/www.rajapet.net/photos/i-Dfp2FZc/0/XL/i-Dfp2FZc-XL.png"><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/photos/i-Dfp2FZc/0/M/i-Dfp2FZc-M.png?resize=234%2C450" alt="" width="234" height="450"  /></a>
-  
-  <p class="wp-caption-text">
-    The dialog that appears after drag and drop the ARM Translator package onto the Android VM
-  </p>
-</div>
+<figure>
+<img src="https://i1.wp.com/www.rajapet.net/photos/i-Dfp2FZc/0/XL/i-Dfp2FZc-XL.png"/>
+<figcaption>Dialog that appears after drag and drop the ARM Translator package onto the Android VM</figcaption>
+</figure>
 
-If it didn&#8217;t reboot the VM, reboot it to be safe.  Multiple web sites have a copy of this file.  I downloaded one from the [Tech Bae](http://www.techbae.com/download-install-arm-translation-v1-1-zip-genymotion/) blog.
+If it didn't reboot the VM, reboot it to be safe.  Multiple web sites have a copy of this file.  I downloaded one from the [Tech Bae](http://www.techbae.com/download-install-arm-translation-v1-1-zip-genymotion/) blog.
 
-<div style="width: 362px" class="wp-caption alignnone">
-  <img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/photos/i-B54p3Pb/0/O/i-B54p3Pb.png?resize=352%2C179" alt="" width="352" height="179"  />
-  
-  <p class="wp-caption-text">
-    ARM Translator installed
-  </p>
-</div>
+<figure>
+<img src="https://i0.wp.com/www.rajapet.net/photos/i-B54p3Pb/0/O/i-B54p3Pb.png"/>
+<figcaption>ARM Translator installed</figcaption>
+</figure>
 
 Since we have Android 5.1, we need a GApps package for Android 5.1.  There are a few places where you can download a package from, but not all of them may work.  I was hoping to to use the packages on the [Open Gapps](http://opengapps.org/) project.  None of their packages would install into my VMs.  They all reported an invalid folder error message.
 
-The file sets available from [TeamAndroid](http://www.teamandroid.com/gapps/) should install without any problems.  I downloaded one named gapps-lp-20150314.zip.  The &#8220;lp&#8221; in the file name stands for Lollypop, the code name for Android 5.
+The file sets available from [TeamAndroid](http://www.teamandroid.com/gapps/) should install without any problems.  I downloaded one named gapps-lp-20150314.zip.  The “lp” in the file name stands for Lollypop, the code name for Android 5.
 
 Drag the gapps package and drop it on your Android VM.  You should get a dialog like this:
 
 <img loading="lazy" class="alignnone" src="https://i2.wp.com/www.rajapet.net/photos/i-WRKdg93/1/O/i-WRKdg93.png?resize=426%2C179" alt="" width="426" height="179"  /> 
 
-Click the install button and let it do it&#8217;s thing.  After it completes, it should shutdown.  Restart it from the Emulator Manager.  After Android starts up, you may see a &#8220;Optimizing app X of Y&#8221; dialog.  When Android versions upgrade, the apps all need to tuned for the new version.  This is normal.
+Click the install button and let it do it's thing.  After it completes, it should shutdown.  Restart it from the Emulator Manager.  After Android starts up, you may see a “Optimizing app X of Y” dialog.  When Android versions upgrade, the apps all need to tuned for the new version.  This is normal.
 
 <img loading="lazy" class="alignnone" src="https://i1.wp.com/www.rajapet.net/photos/i-fwHkhXr/2/O/i-fwHkhXr.png?resize=403%2C160" alt="" width="403" height="160"  /> 
 
@@ -96,7 +78,7 @@ Get the Google Play app to run long enough for you to login and it will start up
   3. Tap on Settings
   4. Scroll to the bottom and tap Build version
 
-If a newer version is a available, you&#8217;ll see a dialog with that information.
+If a newer version is a available, you'll see a dialog with that information.
 
 <img loading="lazy" class="alignnone" src="https://i0.wp.com/www.rajapet.net/photos/i-G92qSgW/1/O/i-G92qSgW.png?resize=403%2C717" alt="" width="403" height="717"  /> 
 
@@ -108,6 +90,6 @@ For this example, I had downloaded the full version of the x86 Android 6.0 GApp
 
 open_gapps-x86-6.0-stock-20160316.zip
 
-It wouldn&#8217;t install, but that is the accepted pattern for naming GApp packages.  It (and the ARM version) error-ed out with an invalid directory message.  Hopefully this will be addressed in an update to the Visual Studio Android Emulator.
+It wouldn't install, but that is the accepted pattern for naming GApp packages.  It (and the ARM version) error-ed out with an invalid directory message.  Hopefully this will be addressed in an update to the Visual Studio Android Emulator.
 
-This article&#8217;s banner image comes from [Arena4G](http://arena4g.com/2015/09/aprenda-um-novo-metodo-para-instalar-apps-android-no-windows-10-mobile.html).
+This article's banner image comes from [Arena4G](http://arena4g.com/2015/09/aprenda-um-novo-metodo-para-instalar-apps-android-no-windows-10-mobile.html).
