@@ -3479,44 +3479,44 @@ var store = [{
         "url": "/2017/11/29/what-not-to-do-on-a-job-interview-dont-play-the-arrogant-card/",
         "teaser": null
       },{
-        "title": "It&#8217;s 2018, time to join that David Bowie Book Club that his son has started",
+        "title": "It's 2018, time to join that David Bowie Book Club that his son has started",
         "excerpt":"Bowie&#8217;s READ poster from the American Library Association (1987) Filmmaker Duncan Jones has started a book club of his father’s 100 favorite books and has invited everyone to join. My dad was a beast of a reader. One of his true loves was Peter Ackroyd’s sojourns into the history of...","categories": ["Books"],
         "tags": ["Book Club","David Bowie","Duncan Jones"],
         "url": "/2018/01/02/its-2018-time-to-join-that-david-bowie-book-club-that-his-son-has-started/",
         "teaser": null
       },{
         "title": "FocusUF or how to turn off the autofocus setting of the LifeCam HD-5000 webcam",
-        "excerpt":"Welcome to the FuzzyCam Note from the future: I updated the code and blogged about it here. Why am I out of focus? It’s because I have a Microsoft LifeCam HD-5000 and I’m running Windows 10. The LifeCam HD-5000 webcam is a decent webcam with an annoying feature. The autofocus...","categories": ["Annoyances"],
+        "excerpt":"&lt;img loading=\"lazy\" class=\"size-medium\" src=\"https://i0.wp.com/photos.smugmug.com/photos/i-BgcrnZW/0/7d3ad5c8/S/i-BgcrnZW-S.jpg?resize=399%2C225&#038;ssl=1\"Welcome to the FuzzyCam Note from the future: I updated the code and blogged about it here. Why am I out of focus? It’s because I have a Microsoft LifeCam HD-5000 and I’m running Windows 10. The LifeCam HD-5000 webcam is a decent webcam with an annoying...","categories": ["Annoyances"],
         "tags": ["Autofocus","C","DirectShow","Webcam"],
         "url": "/2018/04/05/focusuf-or-how-to-turn-off-the-autofocus-setting-of-the-lifecam-hd-5000-webcam/",
         "teaser": null
       },{
         "title": "A Xamarin wrapper for the ACS USB library for Android",
-        "excerpt":"ACS ACR122U USB NFC Reader A while back, we were using RFID readers made by ACS.  They make a number of decent readers and we used one of the USB models, ACR1220U, with our bespoke Android tablet.  To communicate to the reader, ACS provides libraries for Windows and Android.  The...","categories": ["Uncategorized","Xamarin"],
+        "excerpt":"ACS ACR122U USB NFC Reader A while back, we were using RFID readers made by ACS. They make a number of decent readers and we used one of the USB models, ACR1220U, with our bespoke Android tablet. To communicate to the reader, ACS provides libraries for Windows and Android. The...","categories": ["Uncategorized","Xamarin"],
         "tags": [],
         "url": "/2018/07/03/a-xamarin-wrapper-for-the-acs-usb-library-for-android/",
         "teaser": null
       },{
         "title": "Planning for Wi-Fi",
-        "excerpt":"After 20 years in our existing home, we are getting ready to move to a new home.  The new house is still being built and I had CAT6 run to the places where I thought it would matter.  Time to plan for Wi-Fi. The new house is a single floor...","categories": ["Uncategorized"],
+        "excerpt":"After 20 years in our existing home, we are getting ready to move to a new home. The new house is still being built and I had CAT6 run to the places where I thought it would matter. Time to plan for Wi-Fi. The new house is a single floor...","categories": ["Uncategorized"],
         "tags": [],
         "url": "/2018/08/03/planning-for-wi-fi/",
         "teaser": null
       },{
-        "title": "Fix for  &#8220;[Network &#038; Virtual Switch] Failed to update DDNS &#8220;myQNAPcloud&#8221;",
-        "excerpt":"After Windows Home Server was more or less retired by Microsoft, I bought a new NAS server for home.  After some deliberation, I bought a QNAP TS-451+, a couple of years back.  It has been very reliable and is one of those things that Just Works. Today I logged into...","categories": ["Annoyances"],
+        "title": "Fix for  “[Network & Virtual Switch] Failed to update DDNS “myQNAPcloud”",
+        "excerpt":"After Windows Home Server was more or less retired by Microsoft, I bought a new NAS server for home. After some deliberation, I bought a QNAP TS-451+, a couple of years back. It has been very reliable and is one of those things that Just Works. Today I logged into...","categories": ["Annoyances"],
         "tags": ["QNAP"],
         "url": "/2018/10/16/fix-for-network-virtual-switch-failed-to-update-ddns-myqnapcloud/",
         "teaser": null
       },{
         "title": "Microsoft Edge to adopt the Chromium project",
-        "excerpt":"After a week of rumors, Microsoft has just publicly announced that they will be adopting the Chromium project for their Edge Browser.  They actually announced three things today: The Microsoft Edge browser will adopt the Chromium project Edge will no longer be released just for Windows 10, with updates limited...","categories": ["Events","Javascript"],
+        "excerpt":"After a week of rumors, Microsoft has just publicly announced that they will be adopting the Chromium project for their Edge Browser. They actually announced three things today: The Microsoft Edge browser will adopt the Chromium project Edge will no longer be released just for Windows 10, with updates limited...","categories": ["Events","Javascript"],
         "tags": ["Chakra","Chrome","Chromium","Edge","V8"],
         "url": "/2018/12/06/microsoft-edge-to-adopt-the-chromium-project/",
         "teaser": null
       },{
         "title": "That time I taught that dog a trick",
-        "excerpt":"Image by FiveRings [CC BY 3.0], from Wikimedia Commons Many, many years ago, I used to work with Jack*.  Jack is a musician and at the time was in band with two other guys.  Jack was renting this little cottage and that was where the band would rehearse. One fine...","categories": ["pets"],
+        "excerpt":"Image by FiveRings [CC BY 3.0], from Wikimedia Commons Many, many years ago, I used to work with Jack*. Jack is a musician and at the time was in band with two other guys. Jack was renting this little cottage and that was where the band would rehearse. One fine...","categories": ["pets"],
         "tags": ["defenestration","dogs","personal"],
         "url": "/2018/12/10/that-time-i-taught-that-dog-a-trick/",
         "teaser": null
