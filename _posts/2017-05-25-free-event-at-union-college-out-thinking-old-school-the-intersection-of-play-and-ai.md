@@ -1,11 +1,6 @@
 ---
-id: 2734
-title: 'Free event at Union College: Out-thinking Old School: the Intersection of Play and AI'
-date: 2017-05-25T09:48:49-05:00
-author: Chris Miller
-layout: post
-guid: http://rajapet.com/?p=2734
-permalink: /2017/05/25/free-event-at-union-college-out-thinking-old-school-the-intersection-of-play-and-ai/
+title: "Free event at Union College: Out-thinking Old School: the Intersection of Play and AI"
+date: 2017-05-25
 collect_box_size:
   - collect-square
 categories:
@@ -21,4 +16,4 @@ This event is open to the public.  For a map of Union College, [jump to this li
 
 Phaedra Boinodiris holds 6 patents in the gaming space, was named one of the top 100 women in the games industry and is the co-founder of [womengamers.com](http://womengamers.com/). Author of [Serious Games for Business](https://www.amazon.com/Serious-Games-Business-Gamification-Customers/dp/0929652509), Boinodiris started the first scholarship for women to pursue degrees in game design and development in the US. She currently teaches at UNC-Chapel Hill where she is also the UNC Social Entrepreneur in Residence.
 
-&nbsp;
+ 

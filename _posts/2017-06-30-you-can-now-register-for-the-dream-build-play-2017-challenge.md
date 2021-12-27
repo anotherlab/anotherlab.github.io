@@ -1,11 +1,6 @@
 ---
-id: 2748
 title: You can now register for the Dream.Build.Play 2017 Challenge
-date: 2017-06-30T15:11:19-05:00
-author: Chris Miller
-layout: post
-guid: http://rajapet.com/?p=2748
-permalink: /2017/06/30/you-can-now-register-for-the-dream-build-play-2017-challenge/
+date: 2017-06-30
 collect_box_size:
   - collect-square
 categories:
@@ -13,7 +8,7 @@ categories:
 ---
 <img loading="lazy" class="alignnone size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-xCHHc6k/0/7a2f8fc9/M/i-xCHHc6k-M.png?resize=599%2C209&#038;ssl=1" width="599" height="209"  />
 
-Microsoft has revived it&#8217;s indie game dev contest &#8211; Dream.Build.Play and you can [register now](https://developer.microsoft.com/windows/projects/campaigns/dream-build-play-registration).
+Microsoft has revived it's indie game dev contest &#8211; Dream.Build.Play and you can [register now](https://developer.microsoft.com/windows/projects/campaigns/dream-build-play-registration).
 
 ## Dream.Build.Play 2017 Challenge
 
