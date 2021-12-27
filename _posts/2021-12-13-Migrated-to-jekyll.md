@@ -98,3 +98,6 @@ For some reason, the Youtube clips that I embedded in a few posts didn't make it
 This is a work in progress. For the last few years, I've been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called [Rouge](http://rouge.jneen.net/). It does most of the same stuff, and I'll use it as is for now. I can catch most of the snippets that used the WordPress markup, I'll fix up the stragglers as I come across them.
 
 I had a few gist's embedded in my blog. When the posts were exported, the gists had been rendered into the page and it was a lot of ugly HTML. I had to manually replace that `{% gist XXXXX %}`{:.ruby}, which made the Markdown simpler.
+
+## Other Stuff
+I added a gem file, [jekyll-twitter-plugin]https://github.com/rob-murray/jekyll-twitter-plugin(), for rendering embedded Tweets. The cool thing is that once I installed it, it properly displayed the tweets that I had embedded in WordPress. I'm migrating them over to use the [Liquid tags](https://jekyllrb.com/docs/step-by-step/02-liquid/), it's much easier to woprk with.
