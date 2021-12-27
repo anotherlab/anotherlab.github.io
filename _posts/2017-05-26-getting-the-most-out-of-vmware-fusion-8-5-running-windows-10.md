@@ -1,11 +1,6 @@
 ---
-id: 2739
 title: Getting the most out of VMware Fusion 8.5 running Windows 10
-date: 2017-05-26T15:41:54-05:00
-author: Chris Miller
-layout: post
-guid: http://rajapet.com/?p=2739
-permalink: /2017/05/26/getting-the-most-out-of-vmware-fusion-8-5-running-windows-10/
+date: 2017-05-26
 collect_box_size:
   - collect-square
 categories:
@@ -19,13 +14,13 @@ tags:
 ---
 <img loading="lazy" class="alignnone size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-KBXFdfp/0/ffff0d86/M/i-KBXFdfp-M.png?resize=600%2C409&#038;ssl=1" width="600" height="409"  />
 
-I&#8217;ve been trying to get the most performance out of my Window 10 virtual machines running on my MacBook Pro through [VMware Fusion](http://www.vmware.com/products/fusion.html). I have a Windows 10 virtual machine that I use for software demos and testing beta versions of Windows. It&#8217;s been running much slower than you would expect on a <del>2</del> 3 year old [MacBook Pro](https://support.apple.com/kb/sp704?locale=en_US) with a quad core i7.  I&#8217;ve collected the following tips (the sources are listed at the end) and they have improved the performance.
+I've been trying to get the most performance out of my Window 10 virtual machines running on my MacBook Pro through [VMware Fusion](http://www.vmware.com/products/fusion.html). I have a Windows 10 virtual machine that I use for software demos and testing beta versions of Windows. It's been running much slower than you would expect on a <del>2</del> 3 year old [MacBook Pro](https://support.apple.com/kb/sp704?locale=en_US) with a quad core i7.  I've collected the following tips (the sources are listed at the end) and they have improved the performance.
 
 ### From the MacOS Side
 
 Exclude the virtual disks from Time Machine backups.
 
-You&#8217;ll want to avoid trying to back up the virtual machines by Time Machine.  If Time Machine is trying to back up the virtual machine while it is being used, it will probably fail to perform the backup and it will definitely throttle the disk I/O.
+You'll want to avoid trying to back up the virtual machines by Time Machine.  If Time Machine is trying to back up the virtual machine while it is being used, it will probably fail to perform the backup and it will definitely throttle the disk I/O.
 
   * Run the Settings App
   * Open &#8220;Time Machine&#8221;
@@ -38,7 +33,7 @@ If you are running an anti-virus application on your Mac, make sure that it is e
 
 ### From the Virtual Machine Side
 
-With your virtual machine stopped, you can make some system changes to achieve better performance.  Within Fusion and with the virtual machine open (but not running), open the Settings dialog.  You&#8217;ll want to make the following changes:
+With your virtual machine stopped, you can make some system changes to achieve better performance.  Within Fusion and with the virtual machine open (but not running), open the Settings dialog.  You'll want to make the following changes:
 
   * Open &#8220;Display&#8221; and clear the &#8220;Accelerate 3D Graphics&#8221; checkbox.
   * Open &#8220;Processors & Memory&#8221; 
@@ -50,7 +45,7 @@ With your virtual machine stopped, you can make some system changes to achieve b
       * Set bus type to SCSI
       * Set &#8220;Pro-allocate disk space&#8221; to enabled.
 
-There are some settings that are not directly exposed through the settings dialog.  You&#8217;ll need to modify the .xmx file directly.  There are a couple of ways of getting at the .vmx file, the clearest technique is documented on the vmguru.com page: [&#8220;Modifying the .vmx file step-by-step&#8221;](https://www.vmguru.com/2017/02/how-to-correctly-modify-the-vmx-file-in-vmware-fusion-8-x/).
+There are some settings that are not directly exposed through the settings dialog.  You'll need to modify the .xmx file directly.  There are a couple of ways of getting at the .vmx file, the clearest technique is documented on the vmguru.com page: [&#8220;Modifying the .vmx file step-by-step&#8221;](https://www.vmguru.com/2017/02/how-to-correctly-modify-the-vmx-file-in-vmware-fusion-8-x/).
 
   * Change **ethernet0.virtualDev = “e1000e”** to **ethernet0.virtualDev = “vmxnet3”**  
     This will change the default network adaptive to an enhanced driver
@@ -69,9 +64,9 @@ There are some settings that are not directly exposed through the settings dialo
   * **logging = &#8220;FALSE&#8221;**  
     Disabling the logging should speed things up a bit
 
-If you don&#8217;t need snapshots, remove them.  When you use a snapshot, disk I/O is parsed through each snapshot.  That will show things down.
+If you don't need snapshots, remove them.  When you use a snapshot, disk I/O is parsed through each snapshot.  That will show things down.
 
-&nbsp;
+ 
 
 ### Resources for these suggestions
 

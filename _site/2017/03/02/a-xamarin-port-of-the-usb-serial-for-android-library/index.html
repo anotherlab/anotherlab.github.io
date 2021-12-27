@@ -13,6 +13,11 @@
 <meta name="description" content="Back in January, I ported the excellent usb-serial-for-android library from the Java source code to Xamarin C#.  We have an Android application that needs to use an external RFID reader.  The reader is an Elatec TWN4 RFID reader and it can work as virtual comm port over USB. To use that reader, I needed a general purpose serial over USB library.  I ended taking a very good one from the open source Java community and porting it over to C#. That ported library is up on Github under the name UsbSerialForAndroid.">
 
 
+  <meta name="author" content="Chris Miller">
+  
+  <meta property="article:author" content="Chris Miller">
+  
+
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
@@ -41,7 +46,7 @@
 
 
 
-  <meta property="article:published_time" content="2017-03-02T10:06:10-05:00">
+  <meta property="article:published_time" content="2017-03-02T00:00:00-05:00">
 
 
 
@@ -99,7 +104,7 @@
 
   </head>
 
-  <body class="layout--post">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -150,22 +155,180 @@
 
 
     <div class="initial-content">
-      <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">A Xamarin port of the usb-serial-for-android library</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2017-03-02T10:06:10-05:00" itemprop="datePublished">
-        Mar 2, 2017
-      </time>• 
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">Chris Miller</span></span></p>
       
-  </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
-    <p>Back in January, I ported the excellent usb-serial-for-android library from the Java source code to Xamarin C#.  We have an Android application that needs to use an external RFID reader.  The reader is an <a href="https://www.elatec-rfid.com/en/products/multi-technology-rfid-reader/housed/hf-lf-nfc-multi-technology/">Elatec TWN4 RFID reader</a> and it can work as virtual comm port over USB. To use that reader, I needed a general purpose serial over USB library.  I ended taking a very good one from the open source Java community and porting it over to C#. That ported library is up on <a href="https://github.com/anotherlab/UsbSerialForAndroid">Github under the name UsbSerialForAndroid</a>.</p>
 
-<p>Out of the box, Android doesn’t come with a lot of support for serial port devices.  It’s probably not a common use case.  Starting in Android 3.1, support was added for <a href="https://developer.android.com/guide/topics/connectivity/usb/host.html">USB Host mode</a> to allow access to USB devices from Android apps.  There was enough of a need for serial devices that Mike Waverly wrote a very good library in Java named <a href="https://github.com/mik3y/usb-serial-for-android">usb-serial-for-android</a>.  It supports many of the common USB serial chipsets.  So I wanted to use that.</p>
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="/">
+        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="/" itemprop="url">Chris Miller</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Microsoft MVP, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+          
+            <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-award" aria-hidden="true"></i><span class="label">Microsoft MVP</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="A Xamarin port of the usb-serial-for-android library">
+    <meta itemprop="description" content="Back in January, I ported the excellent usb-serial-for-android library from the Java source code to Xamarin C#.  We have an Android application that needs to use an external RFID reader.  The reader is an Elatec TWN4 RFID reader and it can work as virtual comm port over USB. To use that reader, I needed a general purpose serial over USB library.  I ended taking a very good one from the open source Java community and porting it over to C#. That ported library is up on Github under the name UsbSerialForAndroid.">
+    <meta itemprop="datePublished" content="2017-03-02T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="/2017/03/02/a-xamarin-port-of-the-usb-serial-for-android-library/" class="u-url" itemprop="url">A Xamarin port of the usb-serial-for-android library
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>Back in January, I ported the excellent usb-serial-for-android library from the Java source code to Xamarin C#.  We have an Android application that needs to use an external RFID reader.  The reader is an <a href="https://www.elatec-rfid.com/en/products/multi-technology-rfid-reader/housed/hf-lf-nfc-multi-technology/">Elatec TWN4 RFID reader</a> and it can work as virtual comm port over USB. To use that reader, I needed a general purpose serial over USB library.  I ended taking a very good one from the open source Java community and porting it over to C#. That ported library is up on <a href="https://github.com/anotherlab/UsbSerialForAndroid">Github under the name UsbSerialForAndroid</a>.</p>
+
+<p>Out of the box, Android doesn’t come with a lot of support for serial port devices.  It’s probably not a common use case.  Starting in Android 3.1, support was added for <a href="https://developer.android.com/guide/topics/connectivity/usb/host.html">USB Host mode</a> to allow access to USB devices from Android apps.  There was enough of a need for serial devices that Mike Waverly wrote a very good library in Java named <a href="https://github.com/mik3y/usb-serial-for-android">usb-serial-for-android</a>. It supports many of the common USB serial chipsets.  So I wanted to use that.</p>
 
 <p>With Xamarin Android, you have basically two ways of consuming Java libraries.  You can use them directly by creating a C# to Java wrapper and bundling the .jar file with your project.  While that can work, and work very well, it can also be a bit clunky and you can hit some issues mapping the Java method calls to C#.  Another group had gone down that path.  They implemented a wrapper for the .jar file and added some helper classes.  It looked like their <a href="https://bitbucket.org/lusovu/xamarinusbserial">project</a> was abandonware and was not using a current version of Mike’s code.  You would also have the limitation of not being to debug into that code library.</p>
 
@@ -175,29 +338,33 @@
 
 <p>In the CdcAcmSerialPort.Read() method, defined here in <a href="https://github.com/anotherlab/UsbSerialForAndroid/blob/master/UsbSerialForAndroid/driver/CdcAcmSerialDriver.cs">C#</a> and here in <a href="https://github.com/anotherlab/UsbSerialForAndroid/blob/master/UsbSerialForAndroid/driver/CdcAcmSerialDriver.cs">Java</a>, I needed to add a line to copy the new array back over the original array.</p>
 
-<p>In the original Java (edited) code, we had this<br />
-<code language="csharp">final ByteBuffer buf = ByteBuffer.wrap(dest);&lt;br /&gt;
-if (!request.queue(buf, dest.length)) {&lt;br /&gt;
-throw new IOException("Error queueing request.");&lt;br /&gt;
-}&lt;/p&gt;
-&lt;p&gt;final int nread = buf.position();&lt;br /&gt;
-if (nread &gt; 0) {&lt;br /&gt;
-return nread;&lt;br /&gt;
-}&lt;br /&gt;
-</code><br />
-In the C# code, I added a call to <a href="https://msdn.microsoft.com/en-us/library/system.buffer.blockcopy(v=vs.110).aspx">BlockCopy</a> to overwrite the original byte array with the updated contents<br />
-<code language="csharp" hightlight="9">ByteBuffer buf = ByteBuffer.Wrap(dest);&lt;br /&gt;
-if (!request.Queue(buf, dest.Length))&lt;br /&gt;
-{&lt;br /&gt;
-throw new IOException("Error queueing request.");&lt;br /&gt;
-}&lt;/p&gt;
-&lt;p&gt;int nread = buf.Position();&lt;br /&gt;
-if (nread &gt; 0)&lt;br /&gt;
-System.Buffer.BlockCopy(buf.ToByteArray(), 0, dest, 0, dest.Length);&lt;br /&gt;
-return nread;&lt;br /&gt;
-}&lt;br /&gt;
-</code><br />
-I also replaced some integer constants with enumerated types where it made sense to do so. I also took the C# helpers from the <a href="https://bitbucket.org/lusovu/xamarinusbserial">LusoVU repository</a>.</p>
+<p>In the original Java (edited) code, we had this</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">final</span> <span class="nc">ByteBuffer</span> <span class="n">buf</span> <span class="o">=</span> <span class="nc">ByteBuffer</span><span class="o">.</span><span class="na">wrap</span><span class="o">(</span><span class="n">dest</span><span class="o">);</span>
+<span class="k">if</span> <span class="o">(!</span><span class="n">request</span><span class="o">.</span><span class="na">queue</span><span class="o">(</span><span class="n">buf</span><span class="o">,</span> <span class="n">dest</span><span class="o">.</span><span class="na">length</span><span class="o">))</span> <span class="o">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nf">IOException</span><span class="o">(</span><span class="s">"Error queueing request."</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">final</span> <span class="kt">int</span> <span class="n">nread</span> <span class="o">=</span> <span class="n">buf</span><span class="o">.</span><span class="na">position</span><span class="o">();</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">nread</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">nread</span><span class="o">;</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>In the C# code, I added a call to <a href="https://msdn.microsoft.com/en-us/library/system.buffer.blockcopy(v=vs.110).aspx">BlockCopy</a> to overwrite the original byte array with the updated contents</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">ByteBuffer</span> <span class="n">buf</span> <span class="p">=</span> <span class="n">ByteBuffer</span><span class="p">.</span><span class="nf">Wrap</span><span class="p">(</span><span class="n">dest</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(!</span><span class="n">request</span><span class="p">.</span><span class="nf">Queue</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">dest</span><span class="p">.</span><span class="n">Length</span><span class="p">))</span>
+<span class="p">{</span>
+  <span class="k">throw</span> <span class="k">new</span> <span class="nf">IOException</span><span class="p">(</span><span class="s">"Error queueing request."</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">nread</span> <span class="p">=</span> <span class="n">buf</span><span class="p">.</span><span class="nf">Position</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">nread</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+  <span class="n">System</span><span class="p">.</span><span class="n">Buffer</span><span class="p">.</span><span class="nf">BlockCopy</span><span class="p">(</span><span class="n">buf</span><span class="p">.</span><span class="nf">ToByteArray</span><span class="p">(),</span> <span class="m">0</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">dest</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">nread</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>I also replaced some integer constants with enumerated types where it made sense to do so. I also took the C# helpers from the <a href="https://bitbucket.org/lusovu/xamarinusbserial">LusoVU repository</a>.</p>
 
 <p>As much as I could do so, I followed the code structure’s of the Java library.  When changes are made to that library, I can view those changes and make the equivalent changes in the C# code.  The end result was that I ended up with all C# code and it works great.</p>
 
@@ -211,9 +378,245 @@ I also replaced some integer constants with enumerated types where it made sense
   </p>
 </div>
 
-  </div><a class="u-url" href="/2017/03/02/a-xamarin-port-of-the-usb-serial-for-android-library/" hidden></a>
-</article>
+        
+      </section>
 
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#hardware" class="page__taxonomy-item p-category" rel="tag">Hardware</a><span class="sep">, </span>
+    
+      <a href="/categories/#rfid" class="page__taxonomy-item p-category" rel="tag">RFID</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2017-03-02T00:00:00-05:00">March 2, 2017</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=A+Xamarin+port+of+the+usb-serial-for-android+library%20%2F2017%2F03%2F02%2Fa-xamarin-port-of-the-usb-serial-for-android-library%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2F2017%2F03%2F02%2Fa-xamarin-port-of-the-usb-serial-for-android-library%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2F2017%2F03%2F02%2Fa-xamarin-port-of-the-usb-serial-for-android-library%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2017/02/21/and-then-my-blog-was-defaced/" class="pagination--pager" title="And then my blog was defaced
+">Previous</a>
+    
+    
+      <a href="/2017/03/05/xamarin-dev-days-latham-ny-dec-2nd/" class="pagination--pager" title="Xamarin Dev Days - Latham, NY - Dec 2nd
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Comments</h4>
+      <section id="giscus-comments"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You May Also Enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/12/15/Migrated-to-jekyll/" rel="permalink">Moved the blog from WordPress to Jekyll
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">First post under the new regime.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="permalink">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I hit the “VersionCode 1.0 is invalid” error with .NET MAUI and resolved it.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="permalink">Controlling a WSL installation of redis-server from the Windows command line
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Some shortcuts accessing redis-server running under WSL via PowerShell
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/" rel="permalink">How to access Apple’s App Connect API from C#, Python, and Go. - Part 4
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
     </div>
 
     

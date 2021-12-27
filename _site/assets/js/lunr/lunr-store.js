@@ -3401,13 +3401,13 @@ var store = [{
         "url": "/2017/03/02/a-xamarin-port-of-the-usb-serial-for-android-library/",
         "teaser": null
       },{
-        "title": "Xamarin Dev Days &#8211; Latham, NY &#8211; Dec 2nd",
+        "title": "Xamarin Dev Days - Latham, NY - Dec 2nd",
         "excerpt":"Looking to start doing mobile app development with Xamarin, but don’t know where to start?  Then we have some good news for you.  Xamarin Dev Days is coming to the Tech Valley.  We’ll be hosting the event on Saturday, December 2nd, at the new Latham office of Tyler Technologies.  While it’s...","categories": ["Xamarin"],
         "tags": [],
         "url": "/2017/03/05/xamarin-dev-days-latham-ny-dec-2nd/",
         "teaser": null
       },{
-        "title": "Using console jQuery to scrape lists from Apple&#8217;s developer portal.",
+        "title": "Using console jQuery to scrape lists from Apple's developer portal",
         "excerpt":"I needed to grab the lists of registered devices and developers from our company’s Apple Developer portal. Unless I’m being particularly obtuse (an outcome that I never rule out), Apple does not provide any means of exporting the lists. Apple only allows 100 devices of each type (iPhone, iPad, iWhatever)...","categories": ["Annoyances","Apple","Javascript","jQuery"],
         "tags": [],
         "url": "/2017/03/16/using-console-jquery-to-scrape-lists-from-apples-developer-portal/",
@@ -3443,7 +3443,7 @@ var store = [{
         "url": "/2017/06/30/you-can-now-register-for-the-dream-build-play-2017-challenge/",
         "teaser": null
       },{
-        "title": "Using the Multilingual App Toolkit with the Microsoft Translator service from Azure&#8217;s Cognitive Services",
+        "title": "Using the Multilingual App Toolkit with the Microsoft Translator service from Azure's Cognitive Services",
         "excerpt":"Image courtesy of M. Adiputra via Wikimedia Commons The Multilingual App Toolkit (MAT) is a great tool for managing your localization workflow with Visual Studio projects.  One of the features is the ability to machine translate your string resources into another language.  You would not want to ship an application...","categories": ["Localization"],
         "tags": [],
         "url": "/2017/07/25/using-the-multilingual-app-toolkit-with-current-version-of-the-microsoft-translator-service/",
@@ -3468,19 +3468,19 @@ var store = [{
         "teaser": null
       },{
         "title": "That time I took a group of people to Boston for the Azure Red Shirt Dev Tour",
-        "excerpt":"I had tweeted out the hashtag #BostonOrBust.  Seriously, don’t do that.  I tempted Fate, and Fate called me out on it. A couple of weeks ago, Microsoft’s Mary Baker reached out to me to see if there would be any interest for people in the Albany area to take a...","categories": ["Events"],
+        "excerpt":"I had tweeted out the hashtag #BostonOrBust. Seriously, don’t do that. I tempted Fate, and Fate called me out on it. A couple of weeks ago, Microsoft’s Mary Baker reached out to me to see if there would be any interest for people in the Albany area to take a...","categories": ["Events"],
         "tags": ["Azure","RedShirt","TVUG"],
         "url": "/2017/10/21/that-time-i-took-a-group-of-people-to-boston-for-the-azure-red-shirt-dev-tour/",
         "teaser": null
       },{
-        "title": "What not to do on a job interview: Don&#8217;t play the arrogant card",
-        "excerpt":"Original image courtesy of Amtec Staffing A few years back, we were hiring a new ASP.NET developer and did a few rounds of interviews with a set of candidates.  For this position we were experimenting with having the candidate take a programming exam as part of the process.  An exam that...","categories": ["Employment"],
+        "title": "What not to do on a job interview: Don't play the arrogant card",
+        "excerpt":"Original image courtesy of Amtec Staffing A few years back, we were hiring a new ASP.NET developer and did a few rounds of interviews with a set of candidates.  For this position we were experimenting with having the candidate take a programming exam as part of the process. An exam that...","categories": ["Employment"],
         "tags": [],
         "url": "/2017/11/29/what-not-to-do-on-a-job-interview-dont-play-the-arrogant-card/",
         "teaser": null
       },{
         "title": "It's 2018, time to join that David Bowie Book Club that his son has started",
-        "excerpt":"Bowie&#8217;s READ poster from the American Library Association (1987) Filmmaker Duncan Jones has started a book club of his father’s 100 favorite books and has invited everyone to join. My dad was a beast of a reader. One of his true loves was Peter Ackroyd’s sojourns into the history of...","categories": ["Books"],
+        "excerpt":"Bowie's READ poster from the American Library Association (1987) Filmmaker Duncan Jones has started a book club of his father’s 100 favorite books and has invited everyone to join. My dad was a beast of a reader. One of his true loves was Peter Ackroyd’s sojourns into the history of...","categories": ["Books"],
         "tags": ["Book Club","David Bowie","Duncan Jones"],
         "url": "/2018/01/02/its-2018-time-to-join-that-david-bowie-book-club-that-his-son-has-started/",
         "teaser": null
