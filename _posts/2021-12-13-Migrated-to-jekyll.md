@@ -1,7 +1,7 @@
 ---
 title:  "Moved the blog from WordPress to Jekyll"
 date:   2021-12-15 10:31:33 -0500
-categories: Jekyll WordPress Blog
+categories: Jekyll WordPress Blog Ubuntu
 ---
 First post under the new regime.
 
@@ -13,18 +13,18 @@ The blog started as a free blog hosted on Google's Blogger platform. It's <a hre
 
 The second incarnation was on WordPress. I did it the hard way. I created a Linux VM on Azure and manually wired up the <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)" target="_blank">LAMP stack</a>. It was a good learning experience with Linux and WordPress.
 
-It was fine until a few years ago when there was a serious attack on WordPress sites. It was a vulnerability with many of the plugins used on WordPress sites. My site was one the ones that was taken down.
+It was fine until a few years ago when there was a serious attack on WordPress sites. It was a [vulnerability](https://blog.sucuri.net/2017/02/content-injection-vulnerability-wordpress-rest-api.html) that allowed anyone to edity any post on any WordPress sites. My site was one the ones that was hit.
 
 With [a bit of work](/2017/02/21/and-then-my-blog-was-defaced/), I was able to restore the site. I viewed the entire VM as compromised and generated a new VM in Azure. This time I used a <a href="https://bitnami.com/stack/wordpress" target="_blank">Bitnami WordPress</a> image so there was a lot less work to get it up and running. I still had to add my own SSL certificate through <a href="https://letsencrypt.org/" target="_blank">Let's Encryt</a>. I also signed up for a <a href="jetpack.com/upgrade/backup/" target="_blank">Jetpack</a> subscription to let them manage the backups of the site.
 
 Because this is a self-hosted WordPress site, I am responsible for updating the various moving parts. That was easy to do with the old system, annoying to do with the Bitnami image. It seems that the preferred way to do updates was to create a new VM and migrate the WordPress data over. That's a little too much work.
 
 # New Boss in Town
-WordPress is a great platform, but it's overkill for what I need, which is just a blog host. So I decided to migrate it over to Jekyll. I edit the blog on my own machine, in Ubuntu on Windows 10. It uses <a href="https://www.markdownguide.org/" target="_blank">Markdown</a> for the posts, which is handy for just knocking out stuff. The Jekyll tooling will bundle the files to a static set of pages that can be hosted by just about anything. In this case, it's hosted under <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+WordPress is a great platform, but it's overkill for what I need, which is just a blog host. So I decided to migrate it over to Jekyll. I edit the blog on my own machine, in [Ubuntu on Windows 10](https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview). It uses <a href="https://www.markdownguide.org/" target="_blank">Markdown</a> for the posts, which is handy for just knocking out stuff. The Jekyll tooling will bundle the files to a static set of pages that can be hosted by just about anything. In this case, it's hosted under <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 
 Since it's a static site, it has a tiny footprint and has much less exposure to being hacked. If it did get hacked, it would be fixed the next time I pushed out an update. I was able to install a WordPress plugin that exported the existing site to Jekyll formatted Markdown files. I'll have to tweak some of posts. The content is all there, but there are some CSS styling issues to resolve. The source code was using a WordPress plugin for doing syntax highlighting on code snippets. Jekyll has the equivalent feature, it's just a matter of going back and editing the old posts.
 
-And since Jekyll is a static site engine, dynamic features like comments are not included out of the box. There are options for that and I'll get that working at some point.
+And since Jekyll is a static site engine, dynamic features like comments are not included out of the box. I went with a Jekyll plugin that uses Github Discussions for comments..
 
 The Jekyll tooling is very Linux oriented. I'm running Windows 10, so I used Ubuntu running on WSL2. This gave me the power of the Linux command line tools while still leaving over the option of using Windows tools for file editing. It's easy to access the Windows file system from Linux on WSL2 and vice versa. There's a really cool Markdown editor called <a href="markdownmonster.west-wind.com" target="_blank">Markdown Monster</a> that makes editing a breeze. I highly recommend it.
 
@@ -55,6 +55,8 @@ There is some cleanup that I need to do. I had used a [Jekyll plugin](https://gi
 
 ## Titles
 At the top of a Jekyll post, there is a metadata section that is called ["Front Matter"](https://jekyllrb.com/docs/front-matter/). It's in YAML format has the title of the post, the date, categories, tags, and other stuff. The plugin was using HTML escape codes for special characters in the title. That was not being parsed correctly and the escape code would print instead of the character. So I added rules in my conversion tool to write the escape codes as the action charactors.
+
+I had to tweak the `date:` values that had been exported. The export had written the dates as Date/Time with my local (UTC-5:00) timezone. I discovered an odd quirk. Jekyll was taking the date/time and handling it as UTC±00:00. I had a post with a time of 11:19PM in UTC -5 on the 3rd day of the month. To Jekyll, that was the 4th day. That broke the link rendering. So I updated my migration tool to strip the time out of tge `date:` field.
 
 ## Other Front Matter cleanup
 The export added a bunch of tags that needed to be cleaned. The following is the Front Matter from a post
@@ -95,9 +97,11 @@ I'm using a Jekyll theme called ["Minimal Mistakes"](https://mmistakes.github.io
 
 For some reason, the Youtube clips that I embedded in a few posts didn't make it over. That had to be fixed manually. I would go back to the post on the WordPress blog, right-click on the video, and then select "coopy embed code". Then I would just paste it in the Markdown file.
 ## Code Highlighting
-This is a work in progress. For the last few years, I've been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called [Rouge](http://rouge.jneen.net/). It does most of the same stuff, and I'll use it as is for now. I can catch most of the snippets that used the WordPress markup, I'll fix up the stragglers as I come across them.
+This is a work in progress. For the last few years, I've been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called [Rouge](http://rouge.jneen.net/). It does most of the same stuff, and I'll use it as is for now. I can catch ~~most~~some of the snippets that used the WordPress markup, I'll fix up the stragglers as I come across them.
 
 I had a few gist's embedded in my blog. When the posts were exported, the gists had been rendered into the page and it was a lot of ugly HTML. I had to manually replace that `{% gist XXXXX %}`{:.ruby}, which made the Markdown simpler.
 
 ## Other Stuff
-I added a gem file, [jekyll-twitter-plugin]https://github.com/rob-murray/jekyll-twitter-plugin(), for rendering embedded Tweets. The cool thing is that once I installed it, it properly displayed the tweets that I had embedded in WordPress. I'm migrating them over to use the [Liquid tags](https://jekyllrb.com/docs/step-by-step/02-liquid/), it's much easier to woprk with.
+I added a gem file, [jekyll-twitter-plugin](https://github.com/rob-murray/jekyll-twitter-plugin), for rendering embedded Tweets. The cool thing is that once I installed it, it properly displayed the tweets that I had embedded in WordPress. I'm migrating them over to use the [Liquid tags](https://jekyllrb.com/docs/step-by-step/02-liquid/), it's much easier to woprk with. I ended up not being able to use that plugin. GitHub Pages only supports a [fixed list of plugins](https://pages.github.com/versions/), and that one wasn't on it. So I did it the hard way, go to the tweet in Twitter, click the "⋯" menu, and select the "Embed Tweet" option.
+
+After most of the posts have been updated, I'll post the conversion tool. It's not really a standalone app. It's a [LINQpad](https://www.linqpad.net/) script written in C#. It's very easy to dump out the data structures so I can see what is coming in and what I need to do to fix it.  When it's closer to being done, I'll make a command line app out of it so it will run on anything that supports .MET 6.

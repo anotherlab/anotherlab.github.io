@@ -1,101 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-27T16:34:44-05:00</updated><id>/feed.xml</id><title type="html">Chris Miller’s 4th Blog</title><subtitle>My personal blog, 4th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">Moved the blog from WordPress to Jekyll</title><link href="/2021/12/15/Migrated-to-jekyll/" rel="alternate" type="text/html" title="Moved the blog from WordPress to Jekyll" /><published>2021-12-15T10:31:33-05:00</published><updated>2021-12-15T10:31:33-05:00</updated><id>/2021/12/15/Migrated-to-jekyll</id><content type="html" xml:base="/2021/12/15/Migrated-to-jekyll/">First post under the new regime.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-27T23:16:01-05:00</updated><id>/feed.xml</id><title type="html">Chris Miller’s 4th Blog</title><subtitle>My personal blog, 4th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">Moved the blog from WordPress to Jekyll</title><link href="/2021/12/15/Migrated-to-jekyll/" rel="alternate" type="text/html" title="Moved the blog from WordPress to Jekyll" /><published>2021-12-15T10:31:33-05:00</published><updated>2021-12-15T10:31:33-05:00</updated><id>/2021/12/15/Migrated-to-jekyll</id><content type="html" xml:base="/2021/12/15/Migrated-to-jekyll/">&lt;p&gt;First post under the new regime.&lt;/p&gt;
 
-# Back story
+&lt;h1 id=&quot;back-story&quot;&gt;Back story&lt;/h1&gt;
 
-For a long time, this blog has been created with WordPress. It's now a &lt;a href=&quot;https://jekyllrb.com/&quot; target=&quot;_blank&quot;&gt;Jekyll&lt;/a&gt; site.
+&lt;p&gt;For a long time, this blog has been created with WordPress. It’s now a &lt;a href=&quot;https://jekyllrb.com/&quot; target=&quot;_blank&quot;&gt;Jekyll&lt;/a&gt; site.&lt;/p&gt;
 
-The blog started as a free blog hosted on Google's Blogger platform. It's &lt;a href=&quot;http://anotherlab.blogspot.com/&quot; target=&quot;_blank&quot;&gt;still there&lt;/a&gt;, but hasn't been touched in 8 years. It was fine, but I felt limited by the platform. 
+&lt;p&gt;The blog started as a free blog hosted on Google’s Blogger platform. It’s &lt;a href=&quot;http://anotherlab.blogspot.com/&quot; target=&quot;_blank&quot;&gt;still there&lt;/a&gt;, but hasn’t been touched in 8 years. It was fine, but I felt limited by the platform.&lt;/p&gt;
 
-The second incarnation was on WordPress. I did it the hard way. I created a Linux VM on Azure and manually wired up the &lt;a href=&quot;https://en.wikipedia.org/wiki/LAMP_(software_bundle)&quot; target=&quot;_blank&quot;&gt;LAMP stack&lt;/a&gt;. It was a good learning experience with Linux and WordPress.
+&lt;p&gt;The second incarnation was on WordPress. I did it the hard way. I created a Linux VM on Azure and manually wired up the &lt;a href=&quot;https://en.wikipedia.org/wiki/LAMP_(software_bundle)&quot; target=&quot;_blank&quot;&gt;LAMP stack&lt;/a&gt;. It was a good learning experience with Linux and WordPress.&lt;/p&gt;
 
-It was fine until a few years ago when there was a serious attack on WordPress sites. It was a vulnerability with many of the plugins used on WordPress sites. My site was one the ones that was taken down.
+&lt;p&gt;It was fine until a few years ago when there was a serious attack on WordPress sites. It was a &lt;a href=&quot;https://blog.sucuri.net/2017/02/content-injection-vulnerability-wordpress-rest-api.html&quot;&gt;vulnerability&lt;/a&gt; that allowed anyone to edity any post on any WordPress sites. My site was one the ones that was hit.&lt;/p&gt;
 
-With [a bit of work](/2017/02/21/and-then-my-blog-was-defaced/), I was able to restore the site. I viewed the entire VM as compromised and generated a new VM in Azure. This time I used a &lt;a href=&quot;https://bitnami.com/stack/wordpress&quot; target=&quot;_blank&quot;&gt;Bitnami WordPress&lt;/a&gt; image so there was a lot less work to get it up and running. I still had to add my own SSL certificate through &lt;a href=&quot;https://letsencrypt.org/&quot; target=&quot;_blank&quot;&gt;Let's Encryt&lt;/a&gt;. I also signed up for a &lt;a href=&quot;jetpack.com/upgrade/backup/&quot; target=&quot;_blank&quot;&gt;Jetpack&lt;/a&gt; subscription to let them manage the backups of the site.
+&lt;p&gt;With &lt;a href=&quot;/2017/02/21/and-then-my-blog-was-defaced/&quot;&gt;a bit of work&lt;/a&gt;, I was able to restore the site. I viewed the entire VM as compromised and generated a new VM in Azure. This time I used a &lt;a href=&quot;https://bitnami.com/stack/wordpress&quot; target=&quot;_blank&quot;&gt;Bitnami WordPress&lt;/a&gt; image so there was a lot less work to get it up and running. I still had to add my own SSL certificate through &lt;a href=&quot;https://letsencrypt.org/&quot; target=&quot;_blank&quot;&gt;Let’s Encryt&lt;/a&gt;. I also signed up for a &lt;a href=&quot;jetpack.com/upgrade/backup/&quot; target=&quot;_blank&quot;&gt;Jetpack&lt;/a&gt; subscription to let them manage the backups of the site.&lt;/p&gt;
 
-Because this is a self-hosted WordPress site, I am responsible for updating the various moving parts. That was easy to do with the old system, annoying to do with the Bitnami image. It seems that the preferred way to do updates was to create a new VM and migrate the WordPress data over. That's a little too much work.
+&lt;p&gt;Because this is a self-hosted WordPress site, I am responsible for updating the various moving parts. That was easy to do with the old system, annoying to do with the Bitnami image. It seems that the preferred way to do updates was to create a new VM and migrate the WordPress data over. That’s a little too much work.&lt;/p&gt;
 
-# New Boss in Town
-WordPress is a great platform, but it's overkill for what I need, which is just a blog host. So I decided to migrate it over to Jekyll. I edit the blog on my own machine, in Ubuntu on Windows 10. It uses &lt;a href=&quot;https://www.markdownguide.org/&quot; target=&quot;_blank&quot;&gt;Markdown&lt;/a&gt; for the posts, which is handy for just knocking out stuff. The Jekyll tooling will bundle the files to a static set of pages that can be hosted by just about anything. In this case, it's hosted under &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot;&gt;GitHub Pages&lt;/a&gt;.
+&lt;h1 id=&quot;new-boss-in-town&quot;&gt;New Boss in Town&lt;/h1&gt;
+&lt;p&gt;WordPress is a great platform, but it’s overkill for what I need, which is just a blog host. So I decided to migrate it over to Jekyll. I edit the blog on my own machine, in &lt;a href=&quot;https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview&quot;&gt;Ubuntu on Windows 10&lt;/a&gt;. It uses &lt;a href=&quot;https://www.markdownguide.org/&quot; target=&quot;_blank&quot;&gt;Markdown&lt;/a&gt; for the posts, which is handy for just knocking out stuff. The Jekyll tooling will bundle the files to a static set of pages that can be hosted by just about anything. In this case, it’s hosted under &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot;&gt;GitHub Pages&lt;/a&gt;.&lt;/p&gt;
 
-Since it's a static site, it has a tiny footprint and has much less exposure to being hacked. If it did get hacked, it would be fixed the next time I pushed out an update. I was able to install a WordPress plugin that exported the existing site to Jekyll formatted Markdown files. I'll have to tweak some of posts. The content is all there, but there are some CSS styling issues to resolve. The source code was using a WordPress plugin for doing syntax highlighting on code snippets. Jekyll has the equivalent feature, it's just a matter of going back and editing the old posts.
+&lt;p&gt;Since it’s a static site, it has a tiny footprint and has much less exposure to being hacked. If it did get hacked, it would be fixed the next time I pushed out an update. I was able to install a WordPress plugin that exported the existing site to Jekyll formatted Markdown files. I’ll have to tweak some of posts. The content is all there, but there are some CSS styling issues to resolve. The source code was using a WordPress plugin for doing syntax highlighting on code snippets. Jekyll has the equivalent feature, it’s just a matter of going back and editing the old posts.&lt;/p&gt;
 
-And since Jekyll is a static site engine, dynamic features like comments are not included out of the box. There are options for that and I'll get that working at some point.
+&lt;p&gt;And since Jekyll is a static site engine, dynamic features like comments are not included out of the box. I went with a Jekyll plugin that uses Github Discussions for comments..&lt;/p&gt;
 
-The Jekyll tooling is very Linux oriented. I'm running Windows 10, so I used Ubuntu running on WSL2. This gave me the power of the Linux command line tools while still leaving over the option of using Windows tools for file editing. It's easy to access the Windows file system from Linux on WSL2 and vice versa. There's a really cool Markdown editor called &lt;a href=&quot;markdownmonster.west-wind.com&quot; target=&quot;_blank&quot;&gt;Markdown Monster&lt;/a&gt; that makes editing a breeze. I highly recommend it.
+&lt;p&gt;The Jekyll tooling is very Linux oriented. I’m running Windows 10, so I used Ubuntu running on WSL2. This gave me the power of the Linux command line tools while still leaving over the option of using Windows tools for file editing. It’s easy to access the Windows file system from Linux on WSL2 and vice versa. There’s a really cool Markdown editor called &lt;a href=&quot;markdownmonster.west-wind.com&quot; target=&quot;_blank&quot;&gt;Markdown Monster&lt;/a&gt; that makes editing a breeze. I highly recommend it.&lt;/p&gt;
 
-# The process
-So writing and updating posts is very different than the traditional WordPress experience. With the WordPress site, I would create posts in the site, using the WordPress web tools. Until it was was posted, it would be a draft. Their &lt;a href=&quot;https://wordpress.org/gutenberg/&quot; target=&quot;_blank&quot;&gt;Gutenberg editor&lt;/a&gt; was a block based editor that I was never comfortable with.
+&lt;h1 id=&quot;the-process&quot;&gt;The process&lt;/h1&gt;
+&lt;p&gt;So writing and updating posts is very different than the traditional WordPress experience. With the WordPress site, I would create posts in the site, using the WordPress web tools. Until it was was posted, it would be a draft. Their &lt;a href=&quot;https://wordpress.org/gutenberg/&quot; target=&quot;_blank&quot;&gt;Gutenberg editor&lt;/a&gt; was a block based editor that I was never comfortable with.&lt;/p&gt;
 
-With Jekyll, I just create a Markdown file with the right tags and in the right folder. Then I use git to push it to the repo for the site. Between the git command and the &lt;a href=&quot;https://github.com/cli/cli&quot; target=&quot;_blank&quot;&gt;GitHub CLI&lt;/a&gt;, I can do the workflow right from the command line.
+&lt;p&gt;With Jekyll, I just create a Markdown file with the right tags and in the right folder. Then I use git to push it to the repo for the site. Between the git command and the &lt;a href=&quot;https://github.com/cli/cli&quot; target=&quot;_blank&quot;&gt;GitHub CLI&lt;/a&gt;, I can do the workflow right from the command line.&lt;/p&gt;
 
-As for backing up the site, it's backed up and versioned by being a GitHub repository. If I need to rebuild the Ubuntu environment, I would need to reinstall a few things (brew, Jekyll, gh), but it's not rocket science. I can also backup and restore the Ubuntu environment. It's as simple as:
+&lt;p&gt;As for backing up the site, it’s backed up and versioned by being a GitHub repository. If I need to rebuild the Ubuntu environment, I would need to reinstall a few things (brew, Jekyll, gh), but it’s not rocket science. I can also backup and restore the Ubuntu environment. It’s as simple as:&lt;/p&gt;
 
-{% highlight text %}
-wsl --export Ubuntu c:\data\ubuntu.tar
-{% endhighlight %}
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;wsl --export Ubuntu c:\data\ubuntu.tar&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-Then to restore it, you need to provide a distribution name and a location for the distribution.
+&lt;p&gt;Then to restore it, you need to provide a distribution name and a location for the distribution.&lt;/p&gt;
 
-{% highlight text %}
-wsl --import UbuntuBlog c:\data\UbuntuBlog c:\data\ubuntu.tar
-{% endhighlight %}
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;wsl --import UbuntuBlog c:\data\UbuntuBlog c:\data\ubuntu.tar&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-# What's next
-By the time this post is public, I'll have already transferred the domain name over. I have a few images in the WordPress site, I'll need to grab them. When I move from Blogger to WordPress, I made the decision to not host the images in WordPress. Almost all of my blog post images are hosted on my SmugMug site. I figured if I ever moved the blog again, that would be one less thing to worry about.
+&lt;h1 id=&quot;whats-next&quot;&gt;What’s next&lt;/h1&gt;
+&lt;p&gt;By the time this post is public, I’ll have already transferred the domain name over. I have a few images in the WordPress site, I’ll need to grab them. When I move from Blogger to WordPress, I made the decision to not host the images in WordPress. Almost all of my blog post images are hosted on my SmugMug site. I figured if I ever moved the blog again, that would be one less thing to worry about.&lt;/p&gt;
 
-I also have some draft posts. I had a handful of stuff that I was going to blog about, but never finished. They were not exported, but that's OK. Jekyll has a concept of &lt;a href=&quot;https://jekyllrb.com/docs/posts/&quot; target=&quot;_blank&quot;&gt;draft posts&lt;/a&gt; and I'll just put them all in there.
+&lt;p&gt;I also have some draft posts. I had a handful of stuff that I was going to blog about, but never finished. They were not exported, but that’s OK. Jekyll has a concept of &lt;a href=&quot;https://jekyllrb.com/docs/posts/&quot; target=&quot;_blank&quot;&gt;draft posts&lt;/a&gt; and I’ll just put them all in there.&lt;/p&gt;
 
-# Post migrations
-There is some cleanup that I need to do. I had used a [Jekyll plugin](https://github.com/benbalter/wordpress-to-jekyll-exporter) for WordPress to export the posts to Markdown files. It It converts all pages, posts, and settings to files that can be dropped in to a Jekyll site. It did most of the heavy lifting, but there were some rough edges that needed to be sanded down.
+&lt;h1 id=&quot;post-migrations&quot;&gt;Post migrations&lt;/h1&gt;
+&lt;p&gt;There is some cleanup that I need to do. I had used a &lt;a href=&quot;https://github.com/benbalter/wordpress-to-jekyll-exporter&quot;&gt;Jekyll plugin&lt;/a&gt; for WordPress to export the posts to Markdown files. It It converts all pages, posts, and settings to files that can be dropped in to a Jekyll site. It did most of the heavy lifting, but there were some rough edges that needed to be sanded down.&lt;/p&gt;
 
-## Titles
-At the top of a Jekyll post, there is a metadata section that is called [&quot;Front Matter&quot;](https://jekyllrb.com/docs/front-matter/). It's in YAML format has the title of the post, the date, categories, tags, and other stuff. The plugin was using HTML escape codes for special characters in the title. That was not being parsed correctly and the escape code would print instead of the character. So I added rules in my conversion tool to write the escape codes as the action charactors.
+&lt;h2 id=&quot;titles&quot;&gt;Titles&lt;/h2&gt;
+&lt;p&gt;At the top of a Jekyll post, there is a metadata section that is called &lt;a href=&quot;https://jekyllrb.com/docs/front-matter/&quot;&gt;“Front Matter”&lt;/a&gt;. It’s in YAML format has the title of the post, the date, categories, tags, and other stuff. The plugin was using HTML escape codes for special characters in the title. That was not being parsed correctly and the escape code would print instead of the character. So I added rules in my conversion tool to write the escape codes as the action charactors.&lt;/p&gt;
 
-## Other Front Matter cleanup
-The export added a bunch of tags that needed to be cleaned. The following is the Front Matter from a post
+&lt;p&gt;I had to tweak the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date:&lt;/code&gt; values that had been exported. The export had written the dates as Date/Time with my local (UTC-5:00) timezone. I discovered an odd quirk. Jekyll was taking the date/time and handling it as UTC±00:00. I had a post with a time of 11:19PM in UTC -5 on the 3rd day of the month. To Jekyll, that was the 4th day. That broke the link rendering. So I updated my migration tool to strip the time out of tge &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;date:&lt;/code&gt; field.&lt;/p&gt;
 
-{% highlight yaml lineno %}
-id: 3247
-title: Colored notes in OneNote
-date: 2020-05-23T15:57:18-05:00
-author: Chris Miller
-excerpt: A quick way to color paragraphs in OneNote.
-layout: post
-guid: http://rajapet.com/?p=3247
-permalink: /2020/05/23/colored-notes-in-onenote/
-spay_email:
-  - &quot;&quot;
-image: http://rajapet.com/wp-content/uploads/2020/05/ColoredTables.png
-categories:
-  - OneNote
-tags:
-  - colors
-  - OneNote
-{% endhighlight %}
-The &quot;id:&quot; tag refers to a row in the WordPress database, so that one goes. The &quot;author:&quot; goes because i's just me. The &quot;excerpt:&quot; tag is a WordPress feature. Jekyll handles excerpts differently. I'll leave it there for now. Same for &quot;images:&quot;. The &quot;guid:&quot; and &quot;spay_mail:&quot; tags are WordPress, so they go. I don't need the &quot;permlink:&quot;, so it also goes. So after running my conversion tool, I would get Front Matter that would look like this
-{% highlight yaml lineno %}
-title: Colored notes in OneNote
-date: 2020-05-23T15:57:18-05:00
-excerpt: A quick way to color paragraphs in OneNote.
-image: http://rajapet.com/wp-content/uploads/2020/05/ColoredTables.png
-categories:
-  - OneNote
-tags:
-  - colors
-  - OneNote
-{% endhighlight %}
+&lt;h2 id=&quot;other-front-matter-cleanup&quot;&gt;Other Front Matter cleanup&lt;/h2&gt;
+&lt;p&gt;The export added a bunch of tags that needed to be cleaned. The following is the Front Matter from a post&lt;/p&gt;
 
-## CSS &amp; Markup changes
-I'm using a Jekyll theme called [&quot;Minimal Mistakes&quot;](https://mmistakes.github.io/minimal-mistakes/). It's a nice clean design and I like. There are a few things that I wanted to change, mostly with some CSS overrides. I'm not touching the actual theme bits. That makes it eassier to update or replace the theme. The way Jekyll's Markdown processor, [kramdown](https://kramdown.gettalong.org/index.html), handles `&lt;figure&gt;`{:.html} is a little quirky and I'm seeing `&lt;/figure&gt;`{:.html} in the rendered output. I'm fixing those by hand as I come across them. That's the problem with leaky abstractions, sometimes, you have leaks to patch.
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3247&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Colored notes in OneNote&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2020-05-23T15:57:18-05:00&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Chris Miller&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;excerpt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;A quick way to color paragraphs in OneNote.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;guid&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://rajapet.com/?p=3247&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/2020/05/23/colored-notes-in-onenote/&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;spay_email&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://rajapet.com/wp-content/uploads/2020/05/ColoredTables.png&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;OneNote&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;colors&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;OneNote&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-For some reason, the Youtube clips that I embedded in a few posts didn't make it over. That had to be fixed manually. I would go back to the post on the WordPress blog, right-click on the video, and then select &quot;coopy embed code&quot;. Then I would just paste it in the Markdown file.
-## Code Highlighting
-This is a work in progress. For the last few years, I've been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called [Rouge](http://rouge.jneen.net/). It does most of the same stuff, and I'll use it as is for now. I can catch most of the snippets that used the WordPress markup, I'll fix up the stragglers as I come across them.
+&lt;p&gt;The “id:” tag refers to a row in the WordPress database, so that one goes. The “author:” goes because i’s just me. The “excerpt:” tag is a WordPress feature. Jekyll handles excerpts differently. I’ll leave it there for now. Same for “images:”. The “guid:” and “spay_mail:” tags are WordPress, so they go. I don’t need the “permlink:”, so it also goes. So after running my conversion tool, I would get Front Matter that would look like this&lt;/p&gt;
 
-I had a few gist's embedded in my blog. When the posts were exported, the gists had been rendered into the page and it was a lot of ugly HTML. I had to manually replace that `{% gist XXXXX %}`{:.ruby}, which made the Markdown simpler.
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Colored notes in OneNote&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2020-05-23T15:57:18-05:00&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;excerpt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;A quick way to color paragraphs in OneNote.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://rajapet.com/wp-content/uploads/2020/05/ColoredTables.png&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;OneNote&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;colors&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;OneNote&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-## Other Stuff
-I added a gem file, [jekyll-twitter-plugin]https://github.com/rob-murray/jekyll-twitter-plugin(), for rendering embedded Tweets. The cool thing is that once I installed it, it properly displayed the tweets that I had embedded in WordPress. I'm migrating them over to use the [Liquid tags](https://jekyllrb.com/docs/step-by-step/02-liquid/), it's much easier to woprk with.</content><author><name>Chris Miller</name></author><category term="Jekyll" /><category term="WordPress" /><category term="Blog" /><summary type="html">First post under the new regime.</summary></entry><entry><title type="html">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview</title><link href="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="alternate" type="text/html" title="Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview" /><published>2021-10-21T00:19:33-04:00</published><updated>2021-10-21T00:19:33-04:00</updated><id>/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview</id><content type="html" xml:base="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">I installed the Visual Studio 2022 Preview 6 this evening. I had been using Preview 4. I installed Preview 5, but didn't have a chance to play with it. I have a simple demo app that I have working with, a basic stopwatch type of app. That app had been created with Preview 4 and it more or less worked fine (unless you counted Mac Catalyst and Windows). After I installed Preview 6, I tried to run the project on Android. It failed to compile with the following error message:
+&lt;h2 id=&quot;css--markup-changes&quot;&gt;CSS &amp;amp; Markup changes&lt;/h2&gt;
+&lt;p&gt;I’m using a Jekyll theme called &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/&quot;&gt;“Minimal Mistakes”&lt;/a&gt;. It’s a nice clean design and I like. There are a few things that I wanted to change, mostly with some CSS overrides. I’m not touching the actual theme bits. That makes it eassier to update or replace the theme. The way Jekyll’s Markdown processor, &lt;a href=&quot;https://kramdown.gettalong.org/index.html&quot;&gt;kramdown&lt;/a&gt;, handles &lt;code class=&quot;language-plaintext html highlighter-rouge&quot;&gt;&amp;lt;figure&amp;gt;&lt;/code&gt; is a little quirky and I’m seeing &lt;code class=&quot;language-plaintext html highlighter-rouge&quot;&gt;&amp;lt;/figure&amp;gt;&lt;/code&gt; in the rendered output. I’m fixing those by hand as I come across them. That’s the problem with leaky abstractions, sometimes, you have leaks to patch.&lt;/p&gt;
+
+&lt;p&gt;For some reason, the Youtube clips that I embedded in a few posts didn’t make it over. That had to be fixed manually. I would go back to the post on the WordPress blog, right-click on the video, and then select “coopy embed code”. Then I would just paste it in the Markdown file.&lt;/p&gt;
+&lt;h2 id=&quot;code-highlighting&quot;&gt;Code Highlighting&lt;/h2&gt;
+&lt;p&gt;This is a work in progress. For the last few years, I’ve been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called &lt;a href=&quot;http://rouge.jneen.net/&quot;&gt;Rouge&lt;/a&gt;. It does most of the same stuff, and I’ll use it as is for now. I can catch &lt;del&gt;most&lt;/del&gt;some of the snippets that used the WordPress markup, I’ll fix up the stragglers as I come across them.&lt;/p&gt;
+
+&lt;p&gt;I had a few gist’s embedded in my blog. When the posts were exported, the gists had been rendered into the page and it was a lot of ugly HTML. I had to manually replace that &lt;code class=&quot;language-plaintext ruby highlighter-rouge&quot;&gt;&amp;lt;script src=&quot;https://gist.github.com/XXXXX.js&quot;&amp;gt; &amp;lt;/script&amp;gt;&lt;/code&gt;, which made the Markdown simpler.&lt;/p&gt;
+
+&lt;h2 id=&quot;other-stuff&quot;&gt;Other Stuff&lt;/h2&gt;
+&lt;p&gt;I added a gem file, &lt;a href=&quot;https://github.com/rob-murray/jekyll-twitter-plugin&quot;&gt;jekyll-twitter-plugin&lt;/a&gt;, for rendering embedded Tweets. The cool thing is that once I installed it, it properly displayed the tweets that I had embedded in WordPress. I’m migrating them over to use the &lt;a href=&quot;https://jekyllrb.com/docs/step-by-step/02-liquid/&quot;&gt;Liquid tags&lt;/a&gt;, it’s much easier to woprk with. I ended up not being able to use that plugin. GitHub Pages only supports a &lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;fixed list of plugins&lt;/a&gt;, and that one wasn’t on it. So I did it the hard way, go to the tweet in Twitter, click the “⋯” menu, and select the “Embed Tweet” option.&lt;/p&gt;
+
+&lt;p&gt;After most of the posts have been updated, I’ll post the conversion tool. It’s not really a standalone app. It’s a &lt;a href=&quot;https://www.linqpad.net/&quot;&gt;LINQpad&lt;/a&gt; script written in C#. It’s very easy to dump out the data structures so I can see what is coming in and what I need to do to fix it.  When it’s closer to being done, I’ll make a command line app out of it so it will run on anything that supports .MET 6.&lt;/p&gt;</content><author><name>Chris Miller</name></author><category term="Jekyll" /><category term="WordPress" /><category term="Blog" /><category term="Ubuntu" /><summary type="html">First post under the new regime.</summary></entry><entry><title type="html">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview</title><link href="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="alternate" type="text/html" title="Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview" /><published>2021-10-21T00:19:33-04:00</published><updated>2021-10-21T00:19:33-04:00</updated><id>/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview</id><content type="html" xml:base="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/">I installed the Visual Studio 2022 Preview 6 this evening. I had been using Preview 4. I installed Preview 5, but didn't have a chance to play with it. I have a simple demo app that I have working with, a basic stopwatch type of app. That app had been created with Preview 4 and it more or less worked fine (unless you counted Mac Catalyst and Windows). After I installed Preview 6, I tried to run the project on Android. It failed to compile with the following error message:
 
 {% highlight text %}
 Severity	Code	Description	Project	File	Line	Suppression State
