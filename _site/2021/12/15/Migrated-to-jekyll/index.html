@@ -314,7 +314,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          8 minute read
+          9 minute read
         
       </span>
     
@@ -397,7 +397,7 @@
   <span class="pi">-</span> <span class="s">colors</span>
   <span class="pi">-</span> <span class="s">OneNote</span></code></pre></figure>
 
-<p>The “id:” tag refers to a row in the WordPress database, so that one goes. The “author:” goes because i’s just me. The “excerpt:” tag is a WordPress feature. Jekyll handles excerpts differently. I’ll leave it there for now. Same for “images:”. The “guid:” and “spay_mail:” tags are WordPress, so they go. I don’t need the “permlink:”, so it also goes. So after running my conversion tool, I would get Front Matter that would look like this</p>
+<p>The “id:” tag refers to a row in the WordPress database, so that one goes. The “author:” goes because it’s just me. The “excerpt:” tag is a WordPress feature. Jekyll handles excerpts differently. I’ll leave it there for now. Same for “images:”. The “guid:” and “spay_mail:” tags are WordPress, so they go. I don’t need the “permlink:”, so it also goes. So after running my conversion tool, I would get Front Matter that would look like this</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">title</span><span class="pi">:</span> <span class="s">Colored notes in OneNote</span>
 <span class="na">date</span><span class="pi">:</span> <span class="s">2020-05-23T15:57:18-05:00</span>
@@ -416,12 +416,31 @@
 <h2 id="code-highlighting">Code Highlighting</h2>
 <p>This is a work in progress. For the last few years, I’ve been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called <a href="http://rouge.jneen.net/">Rouge</a>. It does most of the same stuff, and I’ll use it as is for now. I can catch <del>most</del>some of the snippets that used the WordPress markup, I’ll fix up the stragglers as I come across them.</p>
 
-<p>I had a few gist’s embedded in my blog. When the posts were exported, the gists had been rendered into the page and it was a lot of ugly HTML. I had to manually replace that <code class="language-plaintext ruby highlighter-rouge">&lt;script src="https://gist.github.com/XXXXX.js"&gt; &lt;/script&gt;</code>, which made the Markdown simpler.</p>
+<p>I had a few gist’s embedded in my blog. When the posts were exported, the gists had been rendered into the page and it was a lot of ugly HTML. I had to manually replace those bits with <code class="language-plaintext highlighter-rouge">{% gist XXXXX %}</code>, which made the Markdown simpler.</p>
 
 <h2 id="other-stuff">Other Stuff</h2>
-<p>I added a gem file, <a href="https://github.com/rob-murray/jekyll-twitter-plugin">jekyll-twitter-plugin</a>, for rendering embedded Tweets. The cool thing is that once I installed it, it properly displayed the tweets that I had embedded in WordPress. I’m migrating them over to use the <a href="https://jekyllrb.com/docs/step-by-step/02-liquid/">Liquid tags</a>, it’s much easier to woprk with. I ended up not being able to use that plugin. GitHub Pages only supports a <a href="https://pages.github.com/versions/">fixed list of plugins</a>, and that one wasn’t on it. So I did it the hard way, go to the tweet in Twitter, click the “⋯” menu, and select the “Embed Tweet” option.</p>
+<p>I added a gem file, <a href="https://github.com/rob-murray/jekyll-twitter-plugin">jekyll-twitter-plugin</a>, for rendering embedded Tweets. The cool thing is that once I installed it, it properly displayed the tweets that I had embedded in WordPress. I’m migrating them over to use the <a href="https://jekyllrb.com/docs/step-by-step/02-liquid/">Liquid tags</a>, it’s much easier to work with. I ended up not being able to use that plugin. GitHub Pages only supports a <a href="https://pages.github.com/versions/">fixed list of plugins</a>, and that one wasn’t on it. So I did it the hard way, go to the tweet in Twitter, click the “⋯” menu, and select the “Embed Tweet” option.</p>
 
-<p>After most of the posts have been updated, I’ll post the conversion tool. It’s not really a standalone app. It’s a <a href="https://www.linqpad.net/">LINQpad</a> script written in C#. It’s very easy to dump out the data structures so I can see what is coming in and what I need to do to fix it.  When it’s closer to being done, I’ll make a command line app out of it so it will run on anything that supports .MET 6.</p>
+<p>After most of the posts have been updated, I’ll post the conversion tool. It’s not really a standalone app. It’s a <a href="https://www.linqpad.net/">LINQpad</a> script written in C#. It’s very easy to dump out the data structures so I can see what is coming in and what I need to do to fix it. When it’s closer to being done, I’ll make a command line app out of it so it will run on anything that supports .NET 6.</p>
+
+<h2 id="what-i-lost">What I lost</h2>
+<p>I gave up some functionality by moving off of WordPress. It was running in my VM, I had complete control. I could install any WordPress plugin I wanted. While there are many plugins for Jekyll, GitHub pages only supports a fixed subset. It hasn’t blocked me from doing anything just yet.</p>
+
+<p>I could see a preview of the blog post before publishing on WordPress. If I edit the posts with Markdown Monster, I get a nice wysiwyg view of the Markdown, but not for the Liquid tags. But you can run a local Jekyll server and you’ll see pretty much how it will be rendered.</p>
+
+<p>Publishing takes a few more steps. Instead of pressing the “publish” button in WordPress, it gets done through git:</p>
+
+<ol>
+  <li>git add -A</li>
+  <li>git commit -m “Change notes”</li>
+  <li>git push</li>
+  <li><a href="https://cli.github.com/manual/gh_pr_create">gh pr create -f</a></li>
+  <li><a href="https://cli.github.com/manual/gh_pr_merge">gh pr merge -m</a></li>
+</ol>
+
+<p>Then it takes a coucple of minutes for GitHub Pages to run Jekyll on it’s end to render the pages.</p>
+
+<p>But I’m pleased with how it came out.</p>
 
         
       </section>

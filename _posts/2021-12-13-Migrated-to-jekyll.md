@@ -79,7 +79,7 @@ tags:
   - colors
   - OneNote
 {% endhighlight %}
-The "id:" tag refers to a row in the WordPress database, so that one goes. The "author:" goes because i's just me. The "excerpt:" tag is a WordPress feature. Jekyll handles excerpts differently. I'll leave it there for now. Same for "images:". The "guid:" and "spay_mail:" tags are WordPress, so they go. I don't need the "permlink:", so it also goes. So after running my conversion tool, I would get Front Matter that would look like this
+The "id:" tag refers to a row in the WordPress database, so that one goes. The "author:" goes because it's just me. The "excerpt:" tag is a WordPress feature. Jekyll handles excerpts differently. I'll leave it there for now. Same for "images:". The "guid:" and "spay_mail:" tags are WordPress, so they go. I don't need the "permlink:", so it also goes. So after running my conversion tool, I would get Front Matter that would look like this
 {% highlight yaml lineno %}
 title: Colored notes in OneNote
 date: 2020-05-23T15:57:18-05:00
@@ -99,9 +99,26 @@ For some reason, the Youtube clips that I embedded in a few posts didn't make it
 ## Code Highlighting
 This is a work in progress. For the last few years, I've been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called [Rouge](http://rouge.jneen.net/). It does most of the same stuff, and I'll use it as is for now. I can catch ~~most~~some of the snippets that used the WordPress markup, I'll fix up the stragglers as I come across them.
 
-I had a few gist's embedded in my blog. When the posts were exported, the gists had been rendered into the page and it was a lot of ugly HTML. I had to manually replace that `{% gist XXXXX %}`{:.ruby}, which made the Markdown simpler.
+I had a few gist's embedded in my blog. When the posts were exported, the gists had been rendered into the page and it was a lot of ugly HTML. I had to manually replace those bits with ```{% raw %}{% gist XXXXX %}{% endraw %}```, which made the Markdown simpler.
 
 ## Other Stuff
-I added a gem file, [jekyll-twitter-plugin](https://github.com/rob-murray/jekyll-twitter-plugin), for rendering embedded Tweets. The cool thing is that once I installed it, it properly displayed the tweets that I had embedded in WordPress. I'm migrating them over to use the [Liquid tags](https://jekyllrb.com/docs/step-by-step/02-liquid/), it's much easier to woprk with. I ended up not being able to use that plugin. GitHub Pages only supports a [fixed list of plugins](https://pages.github.com/versions/), and that one wasn't on it. So I did it the hard way, go to the tweet in Twitter, click the "⋯" menu, and select the "Embed Tweet" option.
+I added a gem file, [jekyll-twitter-plugin](https://github.com/rob-murray/jekyll-twitter-plugin), for rendering embedded Tweets. The cool thing is that once I installed it, it properly displayed the tweets that I had embedded in WordPress. I'm migrating them over to use the [Liquid tags](https://jekyllrb.com/docs/step-by-step/02-liquid/), it's much easier to work with. I ended up not being able to use that plugin. GitHub Pages only supports a [fixed list of plugins](https://pages.github.com/versions/), and that one wasn't on it. So I did it the hard way, go to the tweet in Twitter, click the "⋯" menu, and select the "Embed Tweet" option.
 
-After most of the posts have been updated, I'll post the conversion tool. It's not really a standalone app. It's a [LINQpad](https://www.linqpad.net/) script written in C#. It's very easy to dump out the data structures so I can see what is coming in and what I need to do to fix it.  When it's closer to being done, I'll make a command line app out of it so it will run on anything that supports .MET 6.
+After most of the posts have been updated, I'll post the conversion tool. It's not really a standalone app. It's a [LINQpad](https://www.linqpad.net/) script written in C#. It's very easy to dump out the data structures so I can see what is coming in and what I need to do to fix it. When it's closer to being done, I'll make a command line app out of it so it will run on anything that supports .NET 6.
+
+## What I lost
+I gave up some functionality by moving off of WordPress. It was running in my VM, I had complete control. I could install any WordPress plugin I wanted. While there are many plugins for Jekyll, GitHub pages only supports a fixed subset. It hasn't blocked me from doing anything just yet.
+
+I could see a preview of the blog post before publishing on WordPress. If I edit the posts with Markdown Monster, I get a nice wysiwyg view of the Markdown, but not for the Liquid tags. But you can run a local Jekyll server and you'll see pretty much how it will be rendered. 
+
+Publishing takes a few more steps. Instead of pressing the "publish" button in WordPress, it gets done through git:
+
+1. git add -A
+2. git commit -m "Change notes"
+3. git push
+4. [gh pr create -f](https://cli.github.com/manual/gh_pr_create)
+5. [gh pr merge -m](https://cli.github.com/manual/gh_pr_merge)
+
+Then it takes a coucple of minutes for GitHub Pages to run Jekyll on it's end to render the pages.
+
+But I'm pleased with how it came out.
