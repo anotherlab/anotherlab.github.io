@@ -119,6 +119,6 @@ Publishing takes a few more steps. Instead of pressing the "publish" button in W
 4. [gh pr create -f](https://cli.github.com/manual/gh_pr_create)
 5. [gh pr merge -m](https://cli.github.com/manual/gh_pr_merge)
 
-Then it takes a coucple of minutes for GitHub Pages to run Jekyll on it's end to render the pages.
+Then it takes a couple of minutes for GitHub Pages to run Jekyll on it's end to render the pages.
 
 But I'm pleased with how it came out.

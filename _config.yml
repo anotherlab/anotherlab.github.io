@@ -66,6 +66,12 @@ twitter:
 github:             anotherlab
 stackoverflow:      206/chris-miller   #from a "http://stackoverflow.com/users/123456/username" link
 
+# Analytics
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "UA-215918942-1"
+
 include:
   - _pages
 
