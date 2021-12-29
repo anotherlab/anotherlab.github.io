@@ -47,6 +47,9 @@ https://marketplace.visualstudio.com/items?itemName=golang.Go
 Powershell
 https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
 
+Code Spell Checker
+https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+
 hexdump
 https://marketplace.visualstudio.com/items?itemName=slevesque.vscode-hexdump
 

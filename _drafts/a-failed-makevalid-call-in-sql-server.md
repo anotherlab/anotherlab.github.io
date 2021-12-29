@@ -1,14 +1,26 @@
 ---
 layout: post
 title:  "A failed MakeValid call in SQL Server"
-date:   2021-12-15 10:31:33 -0500
-categories: SQL
+date:   2021-12-28
+categories: 
+  - SQL Server
+  - SQL
+Tags: 
+  - MakeValid
+  - SQLGeography
+  - SQLGeometry  
 ---
 We hit this strange bug in SQL Server about a month ago. A single SQL Statement would just kill the connection. It would kill it 100% in any version of SQL Server from 2016 and up. Let’s start with the SQL Statement.
 
 {% gist a97bf849285c710fcf6e6428b2fd4536 MakeValidCall.sql %}
 
 It’s a lot of data. It came from GPS data collected over a route. Visually the data looks like this.
+
+<figure>
+<image src="/assets/MakeValidMap2.gif">
+<figcaption>Rendering the data in segments</figcaption>
+</figure>
+
 
 The goal was to take the data and use MakeValid to clean it up. MakeValid() takes invalid data and attempts to convert it to a valid SQLGeometry instance. For this example, the call to MakeValid() never completes and eventually your connection times out.
 
