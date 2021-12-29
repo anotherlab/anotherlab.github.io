@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-28T14:06:46-05:00</updated><id>/feed.xml</id><title type="html">Chris Miller’s 4th Blog</title><subtitle>My personal blog, 4th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">Moved the blog from WordPress to Jekyll</title><link href="/2021/12/15/Migrated-to-jekyll/" rel="alternate" type="text/html" title="Moved the blog from WordPress to Jekyll" /><published>2021-12-15T10:31:33-05:00</published><updated>2021-12-15T10:31:33-05:00</updated><id>/2021/12/15/Migrated-to-jekyll</id><content type="html" xml:base="/2021/12/15/Migrated-to-jekyll/">First post under the new regime.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-28T23:50:07-05:00</updated><id>/feed.xml</id><title type="html">Chris Miller’s 4th Blog</title><subtitle>My personal blog, 4th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">A failed MakeValid call in SQL Server</title><link href="/2021/12/28/a-failed-makevalid-call-in-sql-server/" rel="alternate" type="text/html" title="A failed MakeValid call in SQL Server" /><published>2021-12-28T00:00:00-05:00</published><updated>2021-12-28T00:00:00-05:00</updated><id>/2021/12/28/a-failed-makevalid-call-in-sql-server</id><content type="html" xml:base="/2021/12/28/a-failed-makevalid-call-in-sql-server/">&lt;p&gt;We hit this strange bug in SQL Server earlier in the year. A single SQL Statement would just kill the connection. It would kill it 100% in any version of SQL Server from 2016 and up. Let’s start with the SQL Statement.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/a97bf849285c710fcf6e6428b2fd4536.js?file=MakeValidCall.sql&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;It’s a lot of data. It came from GPS data collected over a route. Visually the data looks like this.&lt;/p&gt;
+
+&lt;figure&gt;&lt;image src=&quot;/assets/MakeValidMap2.gif&quot; /&gt;&lt;figcaption&gt;Rendering the data in segments&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;The goal was to take the data and use &lt;a href=&quot;https://docs.microsoft.com/en-us/sql/t-sql/spatial-geometry/makevalid-geometry-data-type?view=sql-server-ver15&quot;&gt;MakeValid&lt;/a&gt; to clean it up. MakeValid() takes invalid data and attempts to convert it to a valid SQLGeometry instance. For this example, the call to MakeValid() never completes and eventually your connection times out.&lt;/p&gt;
+
+&lt;p&gt;The curious thing is if you used &lt;a href=&quot;https://docs.microsoft.com/en-us/sql/t-sql/spatial-geography/spatial-types-geography?view=sql-server-ver15&quot;&gt;SQLGeography&lt;/a&gt; instead of &lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/api/microsoft.sqlserver.types.sqlgeometry?view=sql-dacfx-150&quot;&gt;SQLGeometry&lt;/a&gt;, MakeValid works. Here is some sample code that uses C# with the SQLGeography MakeValid calls on the same data. It executes just fine&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/44a706a3792cf079f1e2512b4695447d.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;We first &lt;a href=&quot;https://stackoverflow.com/q/66496778/206&quot;&gt;posted it to Stack Overflow as a question&lt;/a&gt;. That generated some interesting dialog and some really good analysis. I opened a support ticket with Microsoft over the connection failing. It wasn’t so much about MakeValid() not working, but how the failure of the call would kill the connection.&lt;/p&gt;
+
+&lt;p&gt;Microsoft Support determined that code in SQLGeometry MakeValid() was running out of memory trying to evaluate all of the points. The code in SQLGeography’s MakeValid is different because &lt;a href=&quot;https://docs.microsoft.com/en-us/sql/t-sql/spatial-geography/spatial-types-geography?view=sql-server-ver15&quot; target=&quot;_blank&quot;&gt;SQLGeography&lt;/a&gt; is very different from &lt;a href=&quot;SQLGeometry&quot; target=&quot;_blank&quot;&gt;SQLGeometry&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The SQLGeometry data types and methods work in a flat space. SQLGeography is based on a round-earth coordinate system. In other words, when you work with distances, SQL Geometry is just a flat 2D polygon. It will calculate the same results for coordinates near the equator as they would further away. The greater the distance between the points, the less accurate it will be. SQLGeography will factor in the curvature of the earth and it knows that the horizontal distance between two difference latitude values will depend on how far they are away from the equator.&lt;/p&gt;
+
+&lt;p&gt;The end result with Microsoft was that this has been logged as a product issue to be looked at some point in the future. Which is fine, we adapted our code to use SQLGeography instead of SQLGeometry.&lt;/p&gt;</content><author><name>Chris Miller</name></author><category term="SQL Server" /><category term="SQL" /><category term="MakeValid" /><category term="SQLGeography" /><category term="SQLGeometry" /><category term="GPS" /><summary type="html">We hit this strange bug in SQL Server earlier in the year. A single SQL Statement would just kill the connection. It would kill it 100% in any version of SQL Server from 2016 and up. Let’s start with the SQL Statement.</summary></entry><entry><title type="html">Moved the blog from WordPress to Jekyll</title><link href="/2021/12/15/Migrated-to-jekyll/" rel="alternate" type="text/html" title="Moved the blog from WordPress to Jekyll" /><published>2021-12-15T10:31:33-05:00</published><updated>2021-12-15T10:31:33-05:00</updated><id>/2021/12/15/Migrated-to-jekyll</id><content type="html" xml:base="/2021/12/15/Migrated-to-jekyll/">First post under the new regime.
 
 # Back story
 
@@ -1451,35 +1471,4 @@ If you need to embed a link in your video and you just have a video file, use a 
 
 They give you a fair amount of tweaking to the QR code format. If you do something like this, add a 5-second pause and tell people to pause the video while they scan the code with their phone.
 
-And that&amp;#8217;s the budget-friendly way of getting a better sound out of your narration.</content><author><name>Chris Miller</name></author><category term="Authoring" /><category term="audacity" /><category term="camtasia" /><category term="editing" /><category term="video" /><summary type="html">Some quick and cheap tips to cleaning up the audio for video training courses</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://rajapet.com/wp-content/uploads/2020/08/desk-M.jpg" /><media:content medium="image" url="http://rajapet.com/wp-content/uploads/2020/08/desk-M.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Using PowerShell to set the Num Lock state</title><link href="/2020/07/06/using-powershell-to-set-the-num-lock-state/" rel="alternate" type="text/html" title="Using PowerShell to set the Num Lock state" /><published>2020-07-06T09:36:18-04:00</published><updated>2020-07-06T09:36:18-04:00</updated><id>/2020/07/06/using-powershell-to-set-the-num-lock-state</id><content type="html" xml:base="/2020/07/06/using-powershell-to-set-the-num-lock-state/">During these work from home times, on the [darkest timeline](https://tenor.com/EpSG.gif), I spent a lot of my day using my work PC over an RDP connection. For some reason, every time I connected, the Num Lock status would be set to off. Which is silly and annoying. 
-
-When you are connected to a remote machine and you press the Num Lock key on your keyboard, it toggles the Num Lock state for both the client and guest machine. Which can get confusing if you are working with apps on both machines and the Num Lock state is different between the machines. Ideally, you want the Num Lock state to be the same on both machines.
-
-For me, the preference was a command-line &lt;span style=&quot;font-size: inherit;&quot;&gt;option for setting Num Lock. My shell of choice on Windows is &lt;/span&gt;&lt;a style=&quot;font-size: inherit;&quot; href=&quot;https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7&quot;&gt;PowerShell&lt;/a&gt;&lt;span style=&quot;font-size: inherit;&quot;&gt;, so I decided to write a PowerShell script to set the Num Lock Status. The Num Lock key is a toggle switch, press once to turn on, press again to turn off. The script needed to be able to check the current state to be able to set a specified state correctly.&lt;/span&gt;
-
-With a little trial and error, I came up with the following script. I put it on gist to make it easier to grab and make your own:
-
-{% gist 863fc3f60379c29b2ebb8478859754c8 %}
-
-
-I put the comments inline, it should be pretty self-explanatory with the comments. While PowerShell is supported on macOS and Linux now, this is a Windows only script. The `[console]::NumberLock`{:.powershell} expression returns the following error message:
-
-{% highlight plaintext %}
-OperationStopped: Operation is not supported on this platform.
-{% endhighlight %}
-
-Which is odd, `[console]` is a shortcut for [[system.console](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=netcore-3.1)], a class that is accessible on the macOS Powershell. If you run the following command in a PowerShell on either Windows or macOS, you&amp;#8217;ll get a list of static properties that should be readable from a POSH script.
-
-{% highlight powershell %}
-[system.console] | Get-Member -Static -MemberType property | Format-Table 
-{% endhighlight %}
-
-And the NumberLock property is listed, but just not implemented. And that&amp;#8217;s not even the real sticking point. This script creates an instance of a WScript object and uses it&amp;#8217;s SendKeys method to pass in a Num Lock key press. WScript is the [Windows Script Host](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/wscript), a technology that lets scripting languages make Windows API calls. A minor sticking point, I only need this Windows. You can get a list of the special keys that SendKeys can send from [here](https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.sendkeys.send?view=netcore-3.1).
-
-That&amp;#8217;s the heavy lifting. Because I am lazy, I don&amp;#8217;t want to type in the name of the script. So I created an alias for it.
-
-{% highlight powershell %}
-Set-Alias nl d:\scripts\num-lock.ps1
-{% endhighlight %}
-
-Now I can just run &amp;#8220;nl&amp;#8221; or &amp;#8220;nl On&amp;#8221; or &amp;#8220;nl Off&amp;#8221; to change the Num Lock state. I added the alias to the profile so it&amp;#8217;s always available. Now when I connect to my work PC, I run &amp;#8220;nl&amp;#8221; and all is well.</content><author><name>Chris Miller</name></author><category term="Annoyances" /><category term="PowerShell" /><category term="POSH" /><category term="RDP" /><summary type="html">A quick PowerShell script for setting the Num Lock state</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://rajapet.com/wp-content/uploads/2020/07/keyboard_mono.jpg" /><media:content medium="image" url="http://rajapet.com/wp-content/uploads/2020/07/keyboard_mono.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+And that&amp;#8217;s the budget-friendly way of getting a better sound out of your narration.</content><author><name>Chris Miller</name></author><category term="Authoring" /><category term="audacity" /><category term="camtasia" /><category term="editing" /><category term="video" /><summary type="html">Some quick and cheap tips to cleaning up the audio for video training courses</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://rajapet.com/wp-content/uploads/2020/08/desk-M.jpg" /><media:content medium="image" url="http://rajapet.com/wp-content/uploads/2020/08/desk-M.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
