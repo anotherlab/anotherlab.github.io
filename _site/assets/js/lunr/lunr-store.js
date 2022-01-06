@@ -3636,8 +3636,14 @@ var store = [{
         "teaser": null
       },{
         "title": "A failed MakeValid call in SQL Server",
-        "excerpt":"We hit this strange bug in SQL Server about a month ago. A single SQL Statement would just kill the connection. It would kill it 100% in any version of SQL Server from 2016 and up. Let’s start with the SQL Statement. It’s a lot of data. It came from...","categories": ["SQL Server","SQL"],
-        "tags": [],
+        "excerpt":"We hit this strange bug in SQL Server earlier in the year. A single SQL Statement would just kill the connection. It would kill it 100% in any version of SQL Server from 2016 and up. Let’s start with the SQL Statement. It’s a lot of data. It came from...","categories": ["SQL Server","SQL"],
+        "tags": ["MakeValid","SQLGeography","SQLGeometry","GPS"],
         "url": "/2021/12/28/a-failed-makevalid-call-in-sql-server/",
+        "teaser": null
+      },{
+        "title": "A quick check to see if the user's locale is metric or imperial",
+        "excerpt":"While working on a demo mobile app for a course, I needed to know if the units of measurement on the app would be in Imperial units or Metric units. Since I’m using C#, the tools are in the framework. My first pass was just checking the locale and calling...","categories": ["Coding","Localization","Globalization"],
+        "tags": ["C#","CultureInfo","RegionInfo"],
+        "url": "/2022/01/05/quick-check-for-if-the-locale-ismetric/",
         "teaser": null
       }]
