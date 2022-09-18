@@ -13,7 +13,7 @@ tags:
 {:refdef: style="text-align: center;"}
 ![Deployment Target](/assets/giger-dev-001.png)
 {: refdef}
-So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn't paying much attention to the prompts or the even version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or the Mac, it was broken. 
+So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn't paying much attention to the prompts or even the version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or the Mac, it was broken. 
 
 From the Mac, when I went to pick a simulator for a Maui project, this happened with [Visual Studio 2022 17.4, Preview 2](https://learn.microsoft.com/en-us/visualstudio/releases/2022/mac-release-notes-preview#17.4.0-pre.2?WT.mc_id=DT-MVP-5000200).
 
@@ -29,7 +29,7 @@ Xcode is actually pretty decent about handling this. You can have multiple versi
 
 The first thing that you need to do is to download the version of Xcode to install. You can get every release of Xcode from xcodereleases.com. While that site is not Apple affiliated with Apple, all of the download links are from developer.appple.com. They are the official releases. I grabbed the final the Xcode 13 release, 13.4.1 from [here](https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_13.4.1/Xcode_13.4.1.xip).
 
-Extract the contents. It will be named Xcode.app. Since you already have an Xcode.app in the Applications folder, you'll need to rename it. My preference is to name it with version. In this case, Xcode13_4_1.app. Then drag it to the Applications folder.
+[Extract](https://osxdaily.com/2018/11/02/open-extract-xip-file-mac/#:~:text=Assuming%20you%20haven't%20associated,the%20Finder%20of%20Mac%20OS.) the contents of the .xip file. It will be named Xcode.app. Since you already have an Xcode.app in the Applications folder, you'll need to rename it. My preference is to name it with version. In this case, Xcode13_4_1.app. Then drag it to the Applications folder.
 
 And then make it the default Xcode. From a shell, run the following
 
@@ -61,3 +61,6 @@ To switch back to latest version, just run xcode-select again
 {% highlight shell %}
 sudo xcode-select -s /Applications/Xcode
 {% endhighlight %}
+
+
+After posting this, a friend [posted](https://twitter.com/BiloganSteve/status/1571477869817204738) with a link to where this issue was raised.  It's posted as an issue in the [xamarin/xamrin-macios](https://github.com/xamarin/xamarin-macios/issues/15954) repo.
