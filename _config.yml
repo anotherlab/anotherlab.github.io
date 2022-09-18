@@ -88,7 +88,7 @@ author:
   name   : *name
 #  avatar : "/assets/images/bio-photo.jpg"
   avatar : "https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg"
-  bio    : "I am a Microsoft MVP, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group."
+  bio    : "I am a Microsoft MVP, a Pluralsight Author, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group."
   location : "Albany, NY"
   email            :
   links:
@@ -98,6 +98,9 @@ author:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/anotherlab"
+    - label: "Pluralsight"
+      icon: "fas fa-fw fa-chalkboard-teacher"
+      url: "https://app.pluralsight.com/profile/author/christopher-miller"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/anotherlab"
