@@ -23,7 +23,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Chris Miller's 4th Blog">
 <meta property="og:title" content="Self installing services in .NET">
-<meta property="og:url" content="/2006/06/06/self-installing-services-in-net/">
+<meta property="og:url" content="http://localhost:4000/2006/06/06/self-installing-services-in-net/">
 
 
   <meta property="og:description" content="I have some service applications that I deploy with Wise for Windows. These particular services are .NET assemblies. The usual way of registering the .NET assembly as a service is to use the installutil.exe that comes with the .NET Framework. Wise made it easy to register the assemblies by adding a checkbox in the file properties for self installation. Behind the scenes, Wise must be calling installutil, because it fails when you have multiple versions of the .NET Framework installed. Installutil is not compatible across Frameworks. You can’t install a 1.1 assembly with the 2.0 installutil, and vice versa.">
@@ -35,7 +35,7 @@
   <meta name="twitter:site" content="@anotherlab">
   <meta name="twitter:title" content="Self installing services in .NET">
   <meta name="twitter:description" content="I have some service applications that I deploy with Wise for Windows. These particular services are .NET assemblies. The usual way of registering the .NET assembly as a service is to use the installutil.exe that comes with the .NET Framework. Wise made it easy to register the assemblies by adding a checkbox in the file properties for self installation. Behind the scenes, Wise must be calling installutil, because it fails when you have multiple versions of the .NET Framework installed. Installutil is not compatible across Frameworks. You can’t install a 1.1 assembly with the 2.0 installutil, and vice versa.">
-  <meta name="twitter:url" content="/2006/06/06/self-installing-services-in-net/">
+  <meta name="twitter:url" content="http://localhost:4000/2006/06/06/self-installing-services-in-net/">
 
   
     <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
 
 
-<link rel="canonical" href="/2006/06/06/self-installing-services-in-net/">
+<link rel="canonical" href="http://localhost:4000/2006/06/06/self-installing-services-in-net/">
 
 
 
@@ -64,7 +64,7 @@
     
       "@type": "Person",
       "name": "Chris Miller",
-      "url": "/"
+      "url": "http://localhost:4000/"
     
   }
 </script>
@@ -368,21 +368,6 @@ The MyService object in the above code is an instance of a System.ServiceProcess
 <script src="/assets/js/lunr/lunr.min.js"></script>
 <script src="/assets/js/lunr/lunr-store.js"></script>
 <script src="/assets/js/lunr/lunr-en.js"></script>
-
-
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-215918942-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-215918942-1', { 'anonymize_ip': false});
-</script>
-
-
 
 
 

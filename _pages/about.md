@@ -12,5 +12,6 @@ If you have a Pluralsight account, I have <a href="https://app.pluralsight.com/p
 * <a href="https://app.pluralsight.com/library/courses/using-xamarin-forms-shell" target="_blank">Using the Xamarin.Forms Shell</a>
 * <a href="https://app.pluralsight.com/library/courses/native-features-xamarin-forms-applications" target="_blank">Working with Native Features in Xamarin.Forms Applications</a>
 * <a href="https://app.pluralsight.com/library/courses/xamarin-forms-localization" target="_blank">Xamarin.Forms: Localization</a>
+* <a href="https://app.pluralsight.com/library/courses/xamarin-forms-5-fundamentals" target="_blank">Xamarin.Forms 5 Fundamentals (Coming soon)</a>
 
 I'm the author of the book "Cross-platform Localization for Native Mobile Apps with Xamarin" and you can find it at <a href="http://www.apress.com/us/book/9781484224656" target="_blank">Apress Books</a> or on <a href="http://amzn.to/2jtxR5Q" target="_blank">Amazon</a>.
