@@ -1,6 +1,7 @@
 ---
 title:  Running the iOS simulators after updating to Xcode 14
 date:   2022-09-17
+largeimage: /assets/giger-dev-001.png
 categories: 
   - Coding
   - VisualStudio

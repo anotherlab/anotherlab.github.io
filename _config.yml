@@ -25,7 +25,8 @@ name: &name "Chris Miller"
 description: >- # this means to ignore newlines until "baseurl:"
   My personal blog, 4th version
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://rajapet.com" # the base hostname & protocol for your site, e.g. http://example.com
+title_image:  "https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg"
 twitter_username: anotherlab
 github_username:  anotherlab
 search:           true
