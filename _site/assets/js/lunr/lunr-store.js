@@ -3648,7 +3648,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Running the iOS simulators after updating to Xcode 14",
-        "excerpt":"So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or the even version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or...","categories": ["Coding","VisualStudio","Xcode"],
+        "excerpt":"So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or even the version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or...","categories": ["Coding","VisualStudio","Xcode"],
         "tags": ["Xamarin","Maui","xcode-select"],
         "url": "/2022/09/17/Visual-Studio-New-Xcode/",
         "teaser": null
