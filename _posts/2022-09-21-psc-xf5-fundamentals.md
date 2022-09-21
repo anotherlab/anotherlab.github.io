@@ -3,7 +3,7 @@ title:  My new Xamarin.Forms 5 Pluralsight course is out
 date:   2022-09-21
 author: anotherlab
 summary: Pluralsight just released my Xamarin.Forms 5 Fundamentals course
-largeimage: assets/cyberpunk3.jpg
+largeimage: /assets/cyberpunk3.jpg
 categories: 
   - Pluralsight
   - Visual Studio
