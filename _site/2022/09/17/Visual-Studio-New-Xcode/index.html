@@ -13,11 +13,6 @@
 <meta name="description" content="So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or even the version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or the Mac, it was broken.  From the Mac, when I went to pick a simulator for a Maui project, this happened with Visual Studio 2022 17.4, Preview 2.    That “Lower the ‘Deployment Target’ to see the older simulators or check your Apple SDK path” message was somewhat less than helpful. I couldn’t figure out where to even set the Deployment target in Dotnet Maui.  I then loaded up a Xamarin.Forms app that was working fine a few days ago and saw the same results. I guess at this moment in time, Xcode 14 is not fully suppported. At some point it will all line up again, but in the meantime I need some iOS simulation. This wasn’t a regression in VS 17.4, this was Apple. Time to rollback Xcode and give that a shot.  Xcode is actually pretty decent about handling this. You can have multiple versions of Xcode installed and change up which one is the one that answers the call to duty. If you trying out Xcode betas, this is the way. All you need is gigabytes of disk storage and the patience to download and install the Xcode bits.  The first thing that you need to do is to download the version of Xcode to install. You can get every release of Xcode from xcodereleases.com. While that site is not Apple affiliated with Apple, all of the download links are from developer.appple.com. They are the official releases. I grabbed the final the Xcode 13 release, 13.4.1 from here.  Extract the contents of the .xip file. It will be named Xcode.app. Since you already have an Xcode.app in the Applications folder, you’ll need to rename it. My preference is to name it with version. In this case, Xcode13_4_1.app. Then drag it to the Applications folder.  And then make it the default Xcode. From a shell, run the following  sudo xcode-select -s /Applications/Xcode13_4_1.app  To verify that this is now the current version of Xcode, run the following  sudo xcode-select -p  That should come back with something like  /Applications/Xcode13_4_1.app/Contents/Developer  After doing that, I restarted Visual Studio and I had the simulators back    To switch back to latest version, just run xcode-select again  sudo xcode-select -s /Applications/Xcode  After posting this, a friend posted with a link to where this issue was raised.  It’s posted as an issue in the xamarin/xamrin-macios repo.">
 
 
-  <meta name="author" content="Chris Miller">
-  
-  <meta property="article:author" content="Chris Miller">
-  
-
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
@@ -98,11 +93,11 @@
 
 <!-- Twitter cards -->
 <meta name="twitter:site"    content="@anotherlab">
-<meta name="twitter:creator" content="@">
+<meta name="twitter:creator" content="@anotherlab">
 <meta name="twitter:title"   content="Running the iOS simulators after updating to Xcode 14">
 
 
-<meta name="twitter:description" content="My personal blog, 4th version">
+<meta name="twitter:description" content="How to enable older versions of Xcode when the current one doesn't with Xamarin or Maui">
 
 
 
@@ -182,22 +177,11 @@
 <div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   
-    <div class="author__avatar">
-      <a href="http://localhost:4000/">
-        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
-      </a>
-    </div>
-  
 
   <div class="author__content">
     <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Chris Miller</a>
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
     </h3>
-    
-      <div class="author__bio p-note" itemprop="description">
-        <p>I am a Microsoft MVP, a Pluralsight Author, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
-
-      </div>
     
   </div>
 
@@ -205,41 +189,7 @@
     <button class="btn btn--inverse">Follow</button>
     <ul class="author__urls social-icons">
       
-        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
-        </li>
-      
 
-      
-        
-          
-            <li><a href="https://" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
-          
-        
-          
-            <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
-          
-        
-          
-            <li><a href="https://app.pluralsight.com/profile/author/christopher-miller" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-chalkboard-teacher" aria-hidden="true"></i><span class="label">Pluralsight</span></a></li>
-          
-        
-          
-            <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
-          
-        
-          
-            <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
-          
-        
-          
-            <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
-          
-        
-          
-            <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-award" aria-hidden="true"></i><span class="label">Microsoft MVP</span></a></li>
-          
-        
       
 
       
@@ -421,7 +371,7 @@
     
       <a href="/categories/#coding" class="page__taxonomy-item p-category" rel="tag">Coding</a><span class="sep">, </span>
     
-      <a href="/categories/#visualstudio" class="page__taxonomy-item p-category" rel="tag">VisualStudio</a><span class="sep">, </span>
+      <a href="/categories/#visual-studio" class="page__taxonomy-item p-category" rel="tag">Visual Studio</a><span class="sep">, </span>
     
       <a href="/categories/#xcode" class="page__taxonomy-item p-category" rel="tag">Xcode</a>
     
@@ -453,7 +403,8 @@
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/2022/09/21/psc-xf5-fundamentals/" class="pagination--pager" title="My new Xamarin.Forms 5 Pluralsight course is out
+">Next</a>
     
   </nav>
 
@@ -467,6 +418,47 @@
     <div class="page__related">
       <h2 class="page__related-title">You May Also Enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/09/21/psc-xf5-fundamentals/" rel="permalink">My new Xamarin.Forms 5 Pluralsight course is out
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the devel...</p>
+  </article>
+</div>
+
         
           
 
@@ -582,46 +574,6 @@
 
     <p class="archive__item-excerpt" itemprop="description">First post under the new regime.
 
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="permalink">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">I hit the “VersionCode 1.0 is invalid” error with .NET MAUI and resolved it.
 </p>
   </article>
 </div>
