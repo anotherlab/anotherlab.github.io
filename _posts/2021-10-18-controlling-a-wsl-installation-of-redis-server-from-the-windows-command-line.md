@@ -101,3 +101,17 @@ And now I can just check the redis-server status via &#8220;redstat&#8221;
 <figure>
 <img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MBk5v8J/0/afa5b1b0/O/08-redstat.png" alt="" /> 
 </figure>
+**Extra Bonus Round!**
+
+If you would like to have redis startup when Windows boots up, you just need a couple of extra steps. You just need to create a batch file that starts up redis.
+
+In your Windows startup folder, create a batch file. If you press Win+R and type shell:startup, that will open up and instance of Windows Explorer in the user startup foider.  From the command line the following will place you into the same folder.
+  {% highlight text %}
+  cd %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
+  {% endhighlight %}
+Create a batch file in that folder. I used "start redis.cmd", any name that the OS will recgize as a batch file will work. In that file, add the following line:
+  {% highlight text %}
+  wsl sudo service redis-server start
+  {% endhighlight %}
+
+The next time you reboot, redis will be started.

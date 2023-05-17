@@ -334,7 +334,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 minute read
+          5 minute read
         
       </span>
     
@@ -422,6 +422,21 @@ function redstart {wsl sudo service redis-server start}</code></pre></figure>
 <figure>
 <img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MBk5v8J/0/afa5b1b0/O/08-redstat.png" alt="" /> 
 </figure>
+<p><strong>Extra Bonus Round!</strong></p>
+
+<p>If you would like to have redis startup when Windows boots up, you just need a couple of extra steps. You just need to create a batch file that starts up redis.</p>
+
+<p>In your Windows startup folder, create a batch file. If you press Win+R and type shell:startup, that will open up and instance of Windows Explorer in the user startup foider.  From the command line the following will place you into the same folder.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  cd %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
+  </code></pre></figure>
+
+<p>Create a batch file in that folder. I used “start redis.cmd”, any name that the OS will recgize as a batch file will work. In that file, add the following line:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  wsl sudo service redis-server start
+  </code></pre></figure>
+
+<p>The next time you reboot, redis will be started.</p>
 
         
       </section>
@@ -508,6 +523,47 @@ function redstart {wsl sudo service redis-server start}</code></pre></figure>
     <div class="page__related">
       <h2 class="page__related-title">You May Also Enjoy</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2023/03/22/android-exported/" rel="permalink">MyFirebaseMessagingService android:exported needs to be explicitly specified
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the ap...</p>
+  </article>
+</div>
+
         
           
 
@@ -629,45 +685,6 @@ So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much a
 </div>
 
         
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/2021/12/28/a-failed-makevalid-call-in-sql-server/" rel="permalink">A failed MakeValid call in SQL Server
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">We hit this strange bug in SQL Server earlier in the year. A single SQL Statement would just kill the connection. It would kill it 100% in any version of SQL...</p>
-  </article>
-</div>
-
-        
       </div>
     </div>
   
@@ -727,7 +744,7 @@ So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much a
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2022 Chris Miller. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2023 Chris Miller. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
