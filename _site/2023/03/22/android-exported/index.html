@@ -1,0 +1,663 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>MyFirebaseMessagingService android:exported needs to be explicitly specified - Chris Miller’s 4th Blog</title>
+<meta name="description" content="I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the app store. And was immediately rejected by Google. Our app was targetting API level 30 and the Google now requires API level 31 or later.  The app is a Xamarin.Forms app and I opened up the Android project and changed changed android:targetSdkVersion in the manifest from 30 to 31. And then the app stopped building. I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms.  From my own product blurb:    You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications.   If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course.  If you are working with Maui, a lot of this will still be applicable. The parts that are different, well, stay tuned.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 4th Blog">
+<meta property="og:title" content="MyFirebaseMessagingService android:exported needs to be explicitly specified">
+<meta property="og:url" content="http://localhost:4000/2023/03/22/android-exported/">
+
+
+  <meta property="og:description" content="I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the app store. And was immediately rejected by Google. Our app was targetting API level 30 and the Google now requires API level 31 or later.  The app is a Xamarin.Forms app and I opened up the Android project and changed changed android:targetSdkVersion in the manifest from 30 to 31. And then the app stopped building. I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms.  From my own product blurb:    You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications.   If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course.  If you are working with Maui, a lot of this will still be applicable. The parts that are different, well, stay tuned.">
+
+
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="MyFirebaseMessagingService android:exported needs to be explicitly specified">
+  <meta name="twitter:description" content="I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the app store. And was immediately rejected by Google. Our app was targetting API level 30 and the Google now requires API level 31 or later.  The app is a Xamarin.Forms app and I opened up the Android project and changed changed android:targetSdkVersion in the manifest from 30 to 31. And then the app stopped building. I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms.  From my own product blurb:    You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications.   If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course.  If you are working with Maui, a lot of this will still be applicable. The parts that are different, well, stay tuned.">
+  <meta name="twitter:url" content="http://localhost:4000/2023/03/22/android-exported/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2023-03-22T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2023/03/22/android-exported/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Chris Miller",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 4th Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+<!-- Twitter cards -->
+<meta name="twitter:site"    content="@anotherlab">
+<meta name="twitter:creator" content="@anotherlab">
+<meta name="twitter:title"   content="MyFirebaseMessagingService android:exported needs to be explicitly specified">
+
+
+<meta name="twitter:description" content="How to add android:exported to a Firebase service with Xamarin Android">
+
+
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:4000/assets/steam_punk_beker.jpg">
+
+<!-- end of Twitter cards -->
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 4th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="MyFirebaseMessagingService android:exported needs to be explicitly specified">
+    <meta itemprop="description" content="I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the app store. And was immediately rejected by Google. Our app was targetting API level 30 and the Google now requires API level 31 or later.The app is a Xamarin.Forms app and I opened up the Android project and changed changed android:targetSdkVersion in the manifest from 30 to 31. And then the app stopped building.I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms.From my own product blurb:  You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications.If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course.If you are working with Maui, a lot of this will still be applicable. The parts that are different, well, stay tuned.">
+    <meta itemprop="datePublished" content="2023-03-22T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/2023/03/22/android-exported/" class="u-url" itemprop="url">MyFirebaseMessagingService android:exported needs to be explicitly specified
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p style="text-align: center;"><img src="//assets/steam_punk_beker.jpg" alt="Changing the API" /></p>
+
+<p>I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the app store. And was immediately rejected by Google. Our app was targetting API level 30 and the Google now requires API level 31 or later.</p>
+
+<p>The app is a Xamarin.Forms app and I opened up the Android project and changed changed android:targetSdkVersion in the manifest from 30 to 31. And then the app stopped building.
+I have a new course that was just published this week on Pluralsight, <a href="http://www.pluralsight.com/courses/xamarin-forms-5-fundamentals.">“Xamarin.Forms 5 Fundamentals”</a>. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms.</p>
+
+<p>From my own product blurb:</p>
+<blockquote>
+  <p>You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications.</p>
+</blockquote>
+
+<p>If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course.</p>
+
+<p>If you are working with <a href="https://learn.microsoft.com/en-us/dotnet/maui?WT.mc_id=DT-MVP-5000200">Maui</a>, a lot of this will still be applicable. The parts that are different, well, stay tuned.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#android" class="page__taxonomy-item p-category" rel="tag">Android</a><span class="sep">, </span>
+    
+      <a href="/tags/#api" class="page__taxonomy-item p-category" rel="tag">API</a><span class="sep">, </span>
+    
+      <a href="/tags/#xamarin" class="page__taxonomy-item p-category" rel="tag">Xamarin</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#android" class="page__taxonomy-item p-category" rel="tag">Android</a><span class="sep">, </span>
+    
+      <a href="/categories/#xamarin" class="page__taxonomy-item p-category" rel="tag">Xamarin</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-03-22T00:00:00-04:00">March 22, 2023</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=MyFirebaseMessagingService+android%3Aexported+needs+to+be+explicitly+specified%20http%3A%2F%2Flocalhost%3A4000%2F2023%2F03%2F22%2Fandroid-exported%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2023%2F03%2F22%2Fandroid-exported%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2023%2F03%2F22%2Fandroid-exported%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2022/09/21/psc-xf5-fundamentals/" class="pagination--pager" title="My new Xamarin.Forms 5 Pluralsight course is out
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You May Also Enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/09/21/psc-xf5-fundamentals/" rel="permalink">My new Xamarin.Forms 5 Pluralsight course is out
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the devel...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/09/17/Visual-Studio-New-Xcode/" rel="permalink">Running the iOS simulators after updating to Xcode 14
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or even the version numbers. After doing so, I could n...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/01/05/quick-check-for-if-the-locale-ismetric/" rel="permalink">A quick check to see if the user’s locale is metric or imperial
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">While working on a demo mobile app for a course, I needed to know if the units of measurement on the app would be in Imperial units or Metric units. Since I’...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2021/12/28/a-failed-makevalid-call-in-sql-server/" rel="permalink">A failed MakeValid call in SQL Server
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">We hit this strange bug in SQL Server earlier in the year. A single SQL Statement would just kill the connection. It would kill it 100% in any version of SQL...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Chris Miller. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+  
+
+
+
+
+
+  </body>
+</html>

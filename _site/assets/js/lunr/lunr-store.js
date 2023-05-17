@@ -3658,4 +3658,10 @@ var store = [{
         "tags": ["Xamarin","Maui"],
         "url": "/2022/09/21/psc-xf5-fundamentals/",
         "teaser": null
+      },{
+        "title": "MyFirebaseMessagingService android:exported needs to be explicitly specified",
+        "excerpt":"I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the app store. And was immediately rejected by Google. Our app was targetting API level 30 and the Google...","categories": ["Android","Xamarin"],
+        "tags": ["Xamarin","Android","API"],
+        "url": "/2023/03/22/android-exported/",
+        "teaser": null
       }]
