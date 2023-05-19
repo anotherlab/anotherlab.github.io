@@ -114,4 +114,4 @@ Create a batch file in that folder. I used "start redis.cmd", any name that the 
   wsl sudo service redis-server start
   {% endhighlight %}
 
-The next time you reboot, redis will be started.
+The next time you reboot and login, redis will be started. Because the commands that in the startup folder tend to get run later in the boot process, it may be available for a minute after you login to Windows.
