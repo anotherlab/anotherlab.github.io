@@ -3664,4 +3664,10 @@ var store = [{
         "tags": ["Xamarin","Android","API"],
         "url": "/2023/03/22/android-exported/",
         "teaser": null
+      },{
+        "title": "Apple needs to sort out their API",
+        "excerpt":"I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly status update for the account. We link provisioned devices to the registered users in the account by their name. By...","categories": ["Apple"],
+        "tags": ["Apple","C#"],
+        "url": "/2024/08/27/apples-api-needs-to-be-sorted/",
+        "teaser": null
       }]

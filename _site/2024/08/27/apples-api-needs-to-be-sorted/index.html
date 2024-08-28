@@ -1,0 +1,795 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Apple needs to sort out their API - Chris Miller’s 4th Blog</title>
+<meta name="description" content="I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly status update for the account. We link provisioned devices to the registered users in the account by their name. By querying the device list and referencing it wiht the user list, I quickly identify when someome provisions a new device without identifying who has that device.  Why do I need to do that? Apple only allows 100 devices per type to be provisioned as a developer device. 100 iPhones, 100 iPads, etc.  You need to provision a device with Apple to run development code on it. When you a have bigger team, 100 is a hard limit to manage.  We only allow a developer to provision one device type. Matching the name to the user is how we manage it.  I ran the script this morning and it reported devices that were fine as being invalid. Like my boss’s iPad. I knew his user account was still valid, so something broke in my script. I ran the script again and his device was fine. Ran it again and it was a problem again. That’s weird.  I tore apart my script and the code that retrieves the user list uses the List Users endpoint, documented here.  I have the following code to call the API and get the set of users  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 public async Task&lt;string&gt; GetUsers(string token, int count, string nextUrl) {   var client = new HttpClient();    client.DefaultRequestHeaders.Authorization =     new AuthenticationHeaderValue(&quot;Bearer&quot;, token);    var url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&quot;;        var result = await client.GetAsync(url);      if (result.StatusCode == System.Net.HttpStatusCode.InternalServerError)   {     result.Dump();     return null;   }   else   {     var users = result.Content.ReadAsStringAsync();      return users.Result;   } }   Let’s take a closer look at the following line  var url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&quot;;  The users api call will return a set of records, based on the value of of the limit parameter. The maximum number of rows that can be returned is 200. I set the value of count to 100. We have 160 users. The first we call it, we pass in null for nextUrl.  In the JSON data that is returned, we have an object containing the set of users and a Links.Next property. If there are more users, Links.Next will be set to a URI that will return the next set of users. So our call to get all of the users would like this:  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 private List&lt;User&gt; GetUserList(string token) {   List&lt;User&gt; users = new List&lt;User&gt;();      int RequestSize = 100;    var jsonString = GetUsers(token, RequestSize, null).Result;    if (jsonString == null)   {     return users;   }    var appConnectUsers = AppConnectUsers.FromJson(jsonString);      users.AddRange(appConnectUsers.Data     .Select(s =&gt; s.Attributes)     .Select(s =&gt; new User() {       UserName = s.Username, LastName = s.LastName, FirstName = s.FirstName, Roles = s.Roles.ToList()      }));    while (appConnectUsers.Links.Next != null)   {     jsonString = GetUsers(token, RequestSize, appConnectUsers.Links.Next.ToString()).Result;     appConnectUsers = AppConnectUsers.FromJson(jsonString);      users.AddRange(appConnectUsers.Data       .Select(s =&gt; s.Attributes)       .Select(s =&gt; new User() {          UserName = s.Username, LastName = s.LastName, FirstName = s.FirstName, Roles = s.Roles.ToList()        }));   }    return users; }   The Links.Next property has the value that we use for nextUrl. We use a while loop to keep requesting more data until Links.Next comes back as null. While I could have set the request size to 200 and retrieved all of the users in one shot, at some point we’ll have more than 200 and it was better to work out the “paging” now.  When I called GetUserList and dumped out the users returned, I saw a problem. I would always get 160 users. Each and every time.  But there would be duplicates for some users and others would be missing. And it was non-deterministic. Each time I ran it, I would get different results.  One of the query parameters to the list users command is sort. My boss suggested that they probably added sorting and give that a shot. He was wrong about sort being added to the API, but if I sorted by username, I would get all 160 users.  All I needed to do was to change the URL to this:  var url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&amp;sort=username&quot;;  And that solved the problem. All of users came back as expected. No duplicates and none were missing. Apple’s documentation for their API has a show API changes widget. The sort command was not new and it was not listed as a requirement. This was just one of those times when you have to keeping poking the code with a sharp stick to see what falls out.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 4th Blog">
+<meta property="og:title" content="Apple needs to sort out their API">
+<meta property="og:url" content="http://localhost:4000/2024/08/27/apples-api-needs-to-be-sorted/">
+
+
+  <meta property="og:description" content="I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly status update for the account. We link provisioned devices to the registered users in the account by their name. By querying the device list and referencing it wiht the user list, I quickly identify when someome provisions a new device without identifying who has that device.  Why do I need to do that? Apple only allows 100 devices per type to be provisioned as a developer device. 100 iPhones, 100 iPads, etc.  You need to provision a device with Apple to run development code on it. When you a have bigger team, 100 is a hard limit to manage.  We only allow a developer to provision one device type. Matching the name to the user is how we manage it.  I ran the script this morning and it reported devices that were fine as being invalid. Like my boss’s iPad. I knew his user account was still valid, so something broke in my script. I ran the script again and his device was fine. Ran it again and it was a problem again. That’s weird.  I tore apart my script and the code that retrieves the user list uses the List Users endpoint, documented here.  I have the following code to call the API and get the set of users  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 public async Task&lt;string&gt; GetUsers(string token, int count, string nextUrl) {   var client = new HttpClient();    client.DefaultRequestHeaders.Authorization =     new AuthenticationHeaderValue(&quot;Bearer&quot;, token);    var url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&quot;;        var result = await client.GetAsync(url);      if (result.StatusCode == System.Net.HttpStatusCode.InternalServerError)   {     result.Dump();     return null;   }   else   {     var users = result.Content.ReadAsStringAsync();      return users.Result;   } }   Let’s take a closer look at the following line  var url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&quot;;  The users api call will return a set of records, based on the value of of the limit parameter. The maximum number of rows that can be returned is 200. I set the value of count to 100. We have 160 users. The first we call it, we pass in null for nextUrl.  In the JSON data that is returned, we have an object containing the set of users and a Links.Next property. If there are more users, Links.Next will be set to a URI that will return the next set of users. So our call to get all of the users would like this:  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 private List&lt;User&gt; GetUserList(string token) {   List&lt;User&gt; users = new List&lt;User&gt;();      int RequestSize = 100;    var jsonString = GetUsers(token, RequestSize, null).Result;    if (jsonString == null)   {     return users;   }    var appConnectUsers = AppConnectUsers.FromJson(jsonString);      users.AddRange(appConnectUsers.Data     .Select(s =&gt; s.Attributes)     .Select(s =&gt; new User() {       UserName = s.Username, LastName = s.LastName, FirstName = s.FirstName, Roles = s.Roles.ToList()      }));    while (appConnectUsers.Links.Next != null)   {     jsonString = GetUsers(token, RequestSize, appConnectUsers.Links.Next.ToString()).Result;     appConnectUsers = AppConnectUsers.FromJson(jsonString);      users.AddRange(appConnectUsers.Data       .Select(s =&gt; s.Attributes)       .Select(s =&gt; new User() {          UserName = s.Username, LastName = s.LastName, FirstName = s.FirstName, Roles = s.Roles.ToList()        }));   }    return users; }   The Links.Next property has the value that we use for nextUrl. We use a while loop to keep requesting more data until Links.Next comes back as null. While I could have set the request size to 200 and retrieved all of the users in one shot, at some point we’ll have more than 200 and it was better to work out the “paging” now.  When I called GetUserList and dumped out the users returned, I saw a problem. I would always get 160 users. Each and every time.  But there would be duplicates for some users and others would be missing. And it was non-deterministic. Each time I ran it, I would get different results.  One of the query parameters to the list users command is sort. My boss suggested that they probably added sorting and give that a shot. He was wrong about sort being added to the API, but if I sorted by username, I would get all 160 users.  All I needed to do was to change the URL to this:  var url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&amp;sort=username&quot;;  And that solved the problem. All of users came back as expected. No duplicates and none were missing. Apple’s documentation for their API has a show API changes widget. The sort command was not new and it was not listed as a requirement. This was just one of those times when you have to keeping poking the code with a sharp stick to see what falls out.">
+
+
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="Apple needs to sort out their API">
+  <meta name="twitter:description" content="I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly status update for the account. We link provisioned devices to the registered users in the account by their name. By querying the device list and referencing it wiht the user list, I quickly identify when someome provisions a new device without identifying who has that device.  Why do I need to do that? Apple only allows 100 devices per type to be provisioned as a developer device. 100 iPhones, 100 iPads, etc.  You need to provision a device with Apple to run development code on it. When you a have bigger team, 100 is a hard limit to manage.  We only allow a developer to provision one device type. Matching the name to the user is how we manage it.  I ran the script this morning and it reported devices that were fine as being invalid. Like my boss’s iPad. I knew his user account was still valid, so something broke in my script. I ran the script again and his device was fine. Ran it again and it was a problem again. That’s weird.  I tore apart my script and the code that retrieves the user list uses the List Users endpoint, documented here.  I have the following code to call the API and get the set of users  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 public async Task&lt;string&gt; GetUsers(string token, int count, string nextUrl) {   var client = new HttpClient();    client.DefaultRequestHeaders.Authorization =     new AuthenticationHeaderValue(&quot;Bearer&quot;, token);    var url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&quot;;        var result = await client.GetAsync(url);      if (result.StatusCode == System.Net.HttpStatusCode.InternalServerError)   {     result.Dump();     return null;   }   else   {     var users = result.Content.ReadAsStringAsync();      return users.Result;   } }   Let’s take a closer look at the following line  var url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&quot;;  The users api call will return a set of records, based on the value of of the limit parameter. The maximum number of rows that can be returned is 200. I set the value of count to 100. We have 160 users. The first we call it, we pass in null for nextUrl.  In the JSON data that is returned, we have an object containing the set of users and a Links.Next property. If there are more users, Links.Next will be set to a URI that will return the next set of users. So our call to get all of the users would like this:  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 private List&lt;User&gt; GetUserList(string token) {   List&lt;User&gt; users = new List&lt;User&gt;();      int RequestSize = 100;    var jsonString = GetUsers(token, RequestSize, null).Result;    if (jsonString == null)   {     return users;   }    var appConnectUsers = AppConnectUsers.FromJson(jsonString);      users.AddRange(appConnectUsers.Data     .Select(s =&gt; s.Attributes)     .Select(s =&gt; new User() {       UserName = s.Username, LastName = s.LastName, FirstName = s.FirstName, Roles = s.Roles.ToList()      }));    while (appConnectUsers.Links.Next != null)   {     jsonString = GetUsers(token, RequestSize, appConnectUsers.Links.Next.ToString()).Result;     appConnectUsers = AppConnectUsers.FromJson(jsonString);      users.AddRange(appConnectUsers.Data       .Select(s =&gt; s.Attributes)       .Select(s =&gt; new User() {          UserName = s.Username, LastName = s.LastName, FirstName = s.FirstName, Roles = s.Roles.ToList()        }));   }    return users; }   The Links.Next property has the value that we use for nextUrl. We use a while loop to keep requesting more data until Links.Next comes back as null. While I could have set the request size to 200 and retrieved all of the users in one shot, at some point we’ll have more than 200 and it was better to work out the “paging” now.  When I called GetUserList and dumped out the users returned, I saw a problem. I would always get 160 users. Each and every time.  But there would be duplicates for some users and others would be missing. And it was non-deterministic. Each time I ran it, I would get different results.  One of the query parameters to the list users command is sort. My boss suggested that they probably added sorting and give that a shot. He was wrong about sort being added to the API, but if I sorted by username, I would get all 160 users.  All I needed to do was to change the URL to this:  var url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&amp;sort=username&quot;;  And that solved the problem. All of users came back as expected. No duplicates and none were missing. Apple’s documentation for their API has a show API changes widget. The sort command was not new and it was not listed as a requirement. This was just one of those times when you have to keeping poking the code with a sharp stick to see what falls out.">
+  <meta name="twitter:url" content="http://localhost:4000/2024/08/27/apples-api-needs-to-be-sorted/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2024-08-27T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2024/08/27/apples-api-needs-to-be-sorted/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Chris Miller",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 4th Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+<!-- Twitter cards -->
+<meta name="twitter:site"    content="@anotherlab">
+<meta name="twitter:creator" content="@anotherlab">
+<meta name="twitter:title"   content="Apple needs to sort out their API">
+
+
+<meta name="twitter:description" content="Apple changed the how the AppConnect API worked with paged results">
+
+
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:4000/assets/steam-punk-scientist.jpg">
+
+<!-- end of Twitter cards -->
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 4th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Apple needs to sort out their API">
+    <meta itemprop="description" content="I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly status update for the account. We link provisioned devices to the registered users in the account by their name. By querying the device list and referencing it wiht the user list, I quickly identify when someome provisions a new device without identifying who has that device.Why do I need to do that? Apple only allows 100 devices per type to be provisioned as a developer device. 100 iPhones, 100 iPads, etc.  You need to provision a device with Apple to run development code on it. When you a have bigger team, 100 is a hard limit to manage.  We only allow a developer to provision one device type. Matching the name to the user is how we manage it.I ran the script this morning and it reported devices that were fine as being invalid. Like my boss’s iPad. I knew his user account was still valid, so something broke in my script. I ran the script again and his device was fine. Ran it again and it was a problem again. That’s weird.I tore apart my script and the code that retrieves the user list uses the List Users endpoint, documented here.I have the following code to call the API and get the set of users1234567891011121314151617181920212223public async Task&lt;string&gt; GetUsers(string token, int count, string nextUrl){  var client = new HttpClient();  client.DefaultRequestHeaders.Authorization =    new AuthenticationHeaderValue(&quot;Bearer&quot;, token);  var url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&quot;;      var result = await client.GetAsync(url);    if (result.StatusCode == System.Net.HttpStatusCode.InternalServerError)  {    result.Dump();    return null;  }  else  {    var users = result.Content.ReadAsStringAsync();    return users.Result;  }}Let’s take a closer look at the following linevar url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&quot;;The users api call will return a set of records, based on the value of of the limit parameter. The maximum number of rows that can be returned is 200. I set the value of count to 100. We have 160 users. The first we call it, we pass in null for nextUrl.In the JSON data that is returned, we have an object containing the set of users and a Links.Next property. If there are more users, Links.Next will be set to a URI that will return the next set of users. So our call to get all of the users would like this:1234567891011121314151617181920212223242526272829303132333435private List&lt;User&gt; GetUserList(string token){  List&lt;User&gt; users = new List&lt;User&gt;();    int RequestSize = 100;  var jsonString = GetUsers(token, RequestSize, null).Result;  if (jsonString == null)  {    return users;  }  var appConnectUsers = AppConnectUsers.FromJson(jsonString);    users.AddRange(appConnectUsers.Data    .Select(s =&gt; s.Attributes)    .Select(s =&gt; new User() {      UserName = s.Username, LastName = s.LastName, FirstName = s.FirstName, Roles = s.Roles.ToList()     }));  while (appConnectUsers.Links.Next != null)  {    jsonString = GetUsers(token, RequestSize, appConnectUsers.Links.Next.ToString()).Result;    appConnectUsers = AppConnectUsers.FromJson(jsonString);    users.AddRange(appConnectUsers.Data      .Select(s =&gt; s.Attributes)      .Select(s =&gt; new User() {         UserName = s.Username, LastName = s.LastName, FirstName = s.FirstName, Roles = s.Roles.ToList()       }));  }  return users;}The Links.Next property has the value that we use for nextUrl. We use a while loop to keep requesting more data until Links.Next comes back as null. While I could have set the request size to 200 and retrieved all of the users in one shot, at some point we’ll have more than 200 and it was better to work out the “paging” now.When I called GetUserList and dumped out the users returned, I saw a problem. I would always get 160 users. Each and every time.  But there would be duplicates for some users and others would be missing. And it was non-deterministic. Each time I ran it, I would get different results.One of the query parameters to the list users command is sort. My boss suggested that they probably added sorting and give that a shot. He was wrong about sort being added to the API, but if I sorted by username, I would get all 160 users.  All I needed to do was to change the URL to this:var url = nextUrl ?? $&quot;https://api.appstoreconnect.apple.com/v1/users?limit={count}&amp;sort=username&quot;;And that solved the problem. All of users came back as expected. No duplicates and none were missing. Apple’s documentation for their API has a show API changes widget. The sort command was not new and it was not listed as a requirement. This was just one of those times when you have to keeping poking the code with a sharp stick to see what falls out.">
+    <meta itemprop="datePublished" content="2024-08-27T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/2024/08/27/apples-api-needs-to-be-sorted/" class="u-url" itemprop="url">Apple needs to sort out their API
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p style="text-align: center;"><img src="/assets/steam-punk-scientist.jpg" alt="Who broke the API?" /></p>
+
+<p>I have some code that uses Apple’s <a href="https://developer.apple.com/documentation/appstoreconnectapi">AppConnect API</a> to query App store related things. I wrote a C# script that I run from <a href="https://www.linqpad.net/">LINQPad</a> that gives me a weekly status update for the account. We link provisioned devices to the registered users in the account by their name. By querying the device list and referencing it wiht the user list, I quickly identify when someome provisions a new device without identifying who has that device.</p>
+
+<p>Why do I need to do that? Apple only allows 100 devices per type to be provisioned as a developer device. 100 iPhones, 100 iPads, etc.  You need to provision a device with Apple to run development code on it. When you a have bigger team, 100 is a hard limit to manage.  We only allow a developer to provision one device type. Matching the name to the user is how we manage it.</p>
+
+<p>I ran the script this morning and it reported devices that were fine as being invalid. Like my boss’s iPad. I knew his user account was still valid, so something broke in my script. I ran the script again and his device was fine. Ran it again and it was a problem again. That’s weird.</p>
+
+<p>I tore apart my script and the code that retrieves the user list uses the List Users endpoint, documented <a href="https://developer.apple.com/documentation/appstoreconnectapi/list_users">here</a>.</p>
+
+<p>I have the following code to call the API and get the set of users</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="code"><pre><span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="nf">GetUsers</span><span class="p">(</span><span class="kt">string</span> <span class="n">token</span><span class="p">,</span> <span class="kt">int</span> <span class="n">count</span><span class="p">,</span> <span class="kt">string</span> <span class="n">nextUrl</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">HttpClient</span><span class="p">();</span>
+
+  <span class="n">client</span><span class="p">.</span><span class="n">DefaultRequestHeaders</span><span class="p">.</span><span class="n">Authorization</span> <span class="p">=</span>
+    <span class="k">new</span> <span class="nf">AuthenticationHeaderValue</span><span class="p">(</span><span class="s">"Bearer"</span><span class="p">,</span> <span class="n">token</span><span class="p">);</span>
+
+  <span class="kt">var</span> <span class="n">url</span> <span class="p">=</span> <span class="n">nextUrl</span> <span class="p">??</span> <span class="s">$"https://api.appstoreconnect.apple.com/v1/users?limit=</span><span class="p">{</span><span class="n">count</span><span class="p">}</span><span class="s">"</span><span class="p">;</span>
+    
+  <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="nf">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+  
+  <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">StatusCode</span> <span class="p">==</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">HttpStatusCode</span><span class="p">.</span><span class="n">InternalServerError</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">result</span><span class="p">.</span><span class="nf">Dump</span><span class="p">();</span>
+    <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+    <span class="kt">var</span> <span class="n">users</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="nf">ReadAsStringAsync</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="n">users</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Let’s take a closer look at the following line</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">url</span> <span class="p">=</span> <span class="n">nextUrl</span> <span class="p">??</span> <span class="s">$"https://api.appstoreconnect.apple.com/v1/users?limit=</span><span class="p">{</span><span class="n">count</span><span class="p">}</span><span class="s">"</span><span class="p">;</span></code></pre></figure>
+
+<p>The users api call will return a set of records, based on the value of of the limit parameter. The maximum number of rows that can be returned is 200. I set the value of count to 100. We have 160 users. The first we call it, we pass in null for nextUrl.</p>
+
+<p>In the JSON data that is returned, we have an object containing the set of users and a Links.Next property. If there are more users, Links.Next will be set to a URI that will return the next set of users. So our call to get all of the users would like this:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="code"><pre><span class="k">private</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="nf">GetUserList</span><span class="p">(</span><span class="kt">string</span> <span class="n">token</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">List</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="n">users</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;();</span>
+  
+  <span class="kt">int</span> <span class="n">RequestSize</span> <span class="p">=</span> <span class="m">100</span><span class="p">;</span>
+
+  <span class="kt">var</span> <span class="n">jsonString</span> <span class="p">=</span> <span class="nf">GetUsers</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">RequestSize</span><span class="p">,</span> <span class="k">null</span><span class="p">).</span><span class="n">Result</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">jsonString</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">users</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kt">var</span> <span class="n">appConnectUsers</span> <span class="p">=</span> <span class="n">AppConnectUsers</span><span class="p">.</span><span class="nf">FromJson</span><span class="p">(</span><span class="n">jsonString</span><span class="p">);</span>
+  
+  <span class="n">users</span><span class="p">.</span><span class="nf">AddRange</span><span class="p">(</span><span class="n">appConnectUsers</span><span class="p">.</span><span class="n">Data</span>
+    <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">Attributes</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nf">User</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">UserName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">Username</span><span class="p">,</span> <span class="n">LastName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">LastName</span><span class="p">,</span> <span class="n">FirstName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">FirstName</span><span class="p">,</span> <span class="n">Roles</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">Roles</span><span class="p">.</span><span class="nf">ToList</span><span class="p">()</span> 
+    <span class="p">}));</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="n">appConnectUsers</span><span class="p">.</span><span class="n">Links</span><span class="p">.</span><span class="n">Next</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">jsonString</span> <span class="p">=</span> <span class="nf">GetUsers</span><span class="p">(</span><span class="n">token</span><span class="p">,</span> <span class="n">RequestSize</span><span class="p">,</span> <span class="n">appConnectUsers</span><span class="p">.</span><span class="n">Links</span><span class="p">.</span><span class="n">Next</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()).</span><span class="n">Result</span><span class="p">;</span>
+    <span class="n">appConnectUsers</span> <span class="p">=</span> <span class="n">AppConnectUsers</span><span class="p">.</span><span class="nf">FromJson</span><span class="p">(</span><span class="n">jsonString</span><span class="p">);</span>
+
+    <span class="n">users</span><span class="p">.</span><span class="nf">AddRange</span><span class="p">(</span><span class="n">appConnectUsers</span><span class="p">.</span><span class="n">Data</span>
+      <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">Attributes</span><span class="p">)</span>
+      <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">s</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nf">User</span><span class="p">()</span> <span class="p">{</span> 
+        <span class="n">UserName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">Username</span><span class="p">,</span> <span class="n">LastName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">LastName</span><span class="p">,</span> <span class="n">FirstName</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">FirstName</span><span class="p">,</span> <span class="n">Roles</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">Roles</span><span class="p">.</span><span class="nf">ToList</span><span class="p">()</span> 
+      <span class="p">}));</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">users</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>The Links.Next property has the value that we use for nextUrl. We use a while loop to keep requesting more data until Links.Next comes back as null. While I could have set the request size to 200 and retrieved all of the users in one shot, at some point we’ll have more than 200 and it was better to work out the “paging” now.</p>
+
+<p>When I called GetUserList and dumped out the users returned, I saw a problem. I would always get 160 users. Each and every time.  But there would be duplicates for some users and others would be missing. And it was non-deterministic. Each time I ran it, I would get different results.</p>
+
+<p>One of the query parameters to the list users command is sort. My boss suggested that they probably added sorting and give that a shot. He was wrong about sort being added to the API, but if I sorted by username, I would get all 160 users.  All I needed to do was to change the URL to this:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">url</span> <span class="p">=</span> <span class="n">nextUrl</span> <span class="p">??</span> <span class="s">$"https://api.appstoreconnect.apple.com/v1/users?limit=</span><span class="p">{</span><span class="n">count</span><span class="p">}</span><span class="s">&amp;sort=username"</span><span class="p">;</span></code></pre></figure>
+
+<p>And that solved the problem. All of users came back as expected. No duplicates and none were missing. Apple’s documentation for their API has a show API changes widget. The sort command was not new and it was not listed as a requirement. This was just one of those times when you have to keeping poking the code with a sharp stick to see what falls out.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#apple" class="page__taxonomy-item p-category" rel="tag">Apple</a><span class="sep">, </span>
+    
+      <a href="/tags/#c" class="page__taxonomy-item p-category" rel="tag">C#</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#apple" class="page__taxonomy-item p-category" rel="tag">Apple</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-08-27T00:00:00-04:00">August 27, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Apple+needs+to+sort+out+their+API%20http%3A%2F%2Flocalhost%3A4000%2F2024%2F08%2F27%2Fapples-api-needs-to-be-sorted%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2024%2F08%2F27%2Fapples-api-needs-to-be-sorted%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2024%2F08%2F27%2Fapples-api-needs-to-be-sorted%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2023/03/22/android-exported/" class="pagination--pager" title="MyFirebaseMessagingService android:exported needs to be explicitly specified
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You May Also Enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2023/03/22/android-exported/" rel="permalink">MyFirebaseMessagingService android:exported needs to be explicitly specified
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the ap...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/09/21/psc-xf5-fundamentals/" rel="permalink">My new Xamarin.Forms 5 Pluralsight course is out
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the devel...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/09/17/Visual-Studio-New-Xcode/" rel="permalink">Running the iOS simulators after updating to Xcode 14
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or even the version numbers. After doing so, I could n...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/01/05/quick-check-for-if-the-locale-ismetric/" rel="permalink">A quick check to see if the user’s locale is metric or imperial
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">While working on a demo mobile app for a course, I needed to know if the units of measurement on the app would be in Imperial units or Metric units. Since I’...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2024 Chris Miller. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+  
+
+
+
+
+
+  </body>
+</html>
