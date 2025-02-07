@@ -52,7 +52,7 @@ comments:
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes@4.24.0
+remote_theme: mmistakes/minimal-mistakes@4.26.2
 minimal_mistakes_skin: sunrise
 
 # Outputting
@@ -93,12 +93,9 @@ author:
   location : "Albany, NY"
   email            :
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/anotherlab"
+    - label: "BlueSky"
+      icon: "fas fa-fw fa-bluesky"
+      url: "https://bsky.app/profile/anotherlab.bsky.social"
     - label: "Pluralsight"
       icon: "fas fa-fw fa-chalkboard-teacher"
       url: "https://app.pluralsight.com/profile/author/christopher-miller"

@@ -1,3 +1,253 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-06T23:35:59-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 4th Blog</title><subtitle>My personal blog, 4th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">You can find me on Bluesky</title><link href="http://localhost:4000/2025/02/06/bluesky/" rel="alternate" type="text/html" title="You can find me on Bluesky" /><published>2025-02-06T00:00:00-05:00</published><updated>2025-02-06T00:00:00-05:00</updated><id>http://localhost:4000/2025/02/06/bluesky</id><content type="html" xml:base="http://localhost:4000/2025/02/06/bluesky/"><![CDATA[<p><img loading="lazy" class="aligncenter size-medium" src="https://photos.smugmug.com/Blog/n-zwT5d/2025/i-8TCX2Qm/0/NQn4T72595x5vLgj8nvz3LtjNVjSLf5bqffPHMrcR/M/bluesky-M.jpg" /></p>
+
+<p>I’ve been on <a href="https://bsky.app/">Bluesky</a> for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn billions of dollars. I never announced that I had quit that site, I just stopped using it. There are few technical sites that are there, so I kept my account active so that I could view their posts.</p>
+
+<p>I try to use the same handle on social media sites and Bluesky is no exception.  I’m using the default domain, so you can find me at <a href="https://bsky.app/profile/anotherlab.bsky.social">anotherlab.bsky.social</a>.</p>
+
+<p>By the way, if you want to read a great book on how to wreck a company, I highly reccomend <a href="https://www.penguinrandomhouse.com/books/737290/character-limit-by-kate-conger-and-ryan-mac/">“Character Limit”</a>. It’s written by <a href="https://bsky.app/profile/did:plc:5siz7r23475fek2mj6p5zhzw">Kate Conger</a> and <a href="https://bsky.app/profile/rmac.bsky.social">Ryan Mac</a>. It’s an inside look of when Musk acquired Twitter.</p>]]></content><author><name>anotherlab</name></author><category term="Social Media" /><category term="Bluesky" /><summary type="html"><![CDATA[I’ve been on Bluesky for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn billions of dollars. I never announced that I had quit that site, I just stopped using it. There are few technical sites that are there, so I kept my account active so that I could view their posts. I try to use the same handle on social media sites and Bluesky is no exception. I’m using the default domain, so you can find me at anotherlab.bsky.social. By the way, if you want to read a great book on how to wreck a company, I highly reccomend “Character Limit”. It’s written by Kate Conger and Ryan Mac. It’s an inside look of when Musk acquired Twitter.]]></summary></entry><entry><title type="html">MyFirebaseMessagingService android:exported needs to be explicitly specified</title><link href="http://localhost:4000/2023/03/22/android-exported/" rel="alternate" type="text/html" title="MyFirebaseMessagingService android:exported needs to be explicitly specified" /><published>2023-03-22T00:00:00-04:00</published><updated>2023-03-22T00:00:00-04:00</updated><id>http://localhost:4000/2023/03/22/android-exported</id><content type="html" xml:base="http://localhost:4000/2023/03/22/android-exported/"><![CDATA[<p style="text-align: center;"><img src="//assets/steam_punk_beker.jpg" alt="Changing the API" /></p>
+
+<p>I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the app store. And was immediately rejected by Google. Our app was targetting API level 30 and the Google now requires API level 31 or later.</p>
+
+<p>The app is a Xamarin.Forms app and I opened up the Android project and changed changed android:targetSdkVersion in the manifest from 30 to 31. And then the app stopped building.
+I have a new course that was just published this week on Pluralsight, <a href="http://www.pluralsight.com/courses/xamarin-forms-5-fundamentals.">“Xamarin.Forms 5 Fundamentals”</a>. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms.</p>
+
+<p>From my own product blurb:</p>
+<blockquote>
+  <p>You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications.</p>
+</blockquote>
+
+<p>If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course.</p>
+
+<p>If you are working with <a href="https://learn.microsoft.com/en-us/dotnet/maui?WT.mc_id=DT-MVP-5000200">Maui</a>, a lot of this will still be applicable. The parts that are different, well, stay tuned.</p>]]></content><author><name>anotherlab</name></author><category term="Android" /><category term="Xamarin" /><category term="Xamarin" /><category term="Android" /><category term="API" /><summary type="html"><![CDATA[I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the app store. And was immediately rejected by Google. Our app was targetting API level 30 and the Google now requires API level 31 or later. The app is a Xamarin.Forms app and I opened up the Android project and changed changed android:targetSdkVersion in the manifest from 30 to 31. And then the app stopped building. I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms. From my own product blurb: You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications. If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course. If you are working with Maui, a lot of this will still be applicable. The parts that are different, well, stay tuned.]]></summary></entry><entry><title type="html">My new Xamarin.Forms 5 Pluralsight course is out</title><link href="http://localhost:4000/2022/09/21/psc-xf5-fundamentals/" rel="alternate" type="text/html" title="My new Xamarin.Forms 5 Pluralsight course is out" /><published>2022-09-21T00:00:00-04:00</published><updated>2022-09-21T00:00:00-04:00</updated><id>http://localhost:4000/2022/09/21/psc-xf5-fundamentals</id><content type="html" xml:base="http://localhost:4000/2022/09/21/psc-xf5-fundamentals/"><![CDATA[<p style="text-align: center;"><img src="/assets/cyberpunk3.jpg" alt="School is in session'?" /></p>
+
+<p>I have a new course that was just published this week on Pluralsight, <a href="http://www.pluralsight.com/courses/xamarin-forms-5-fundamentals.">“Xamarin.Forms 5 Fundamentals”</a>. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms.</p>
+
+<p>From my own product blurb:</p>
+<blockquote>
+  <p>You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications.</p>
+</blockquote>
+
+<p>If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course.</p>
+
+<p>If you are working with <a href="https://learn.microsoft.com/en-us/dotnet/maui?WT.mc_id=DT-MVP-5000200">Maui</a>, a lot of this will still be applicable. The parts that are different, well, stay tuned.</p>]]></content><author><name>anotherlab</name></author><category term="Pluralsight" /><category term="Visual Studio" /><category term="Xamarin" /><category term="Xamarin" /><category term="Maui" /><summary type="html"><![CDATA[I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms. From my own product blurb: You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications. If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course. If you are working with Maui, a lot of this will still be applicable. The parts that are different, well, stay tuned.]]></summary></entry><entry><title type="html">Running the iOS simulators after updating to Xcode 14</title><link href="http://localhost:4000/2022/09/17/Visual-Studio-New-Xcode/" rel="alternate" type="text/html" title="Running the iOS simulators after updating to Xcode 14" /><published>2022-09-17T00:00:00-04:00</published><updated>2022-09-17T00:00:00-04:00</updated><id>http://localhost:4000/2022/09/17/Visual-Studio-New-Xcode</id><content type="html" xml:base="http://localhost:4000/2022/09/17/Visual-Studio-New-Xcode/"><![CDATA[<p style="text-align: center;"><img src="/assets/giger-dev-001.png" alt="Deployment Target" /></p>
+<p>So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or even the version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or the Mac, it was broken.</p>
+
+<p>From the Mac, when I went to pick a simulator for a Maui project, this happened with <a href="https://learn.microsoft.com/en-us/visualstudio/releases/2022/mac-release-notes-preview#17.4.0-pre.2?WT.mc_id=DT-MVP-5000200">Visual Studio 2022 17.4, Preview 2</a>.</p>
+
+<p style="text-align: center;"><img src="/assets/no_sim_edit.png" alt="Lower the 'Deployment Target'?" /></p>
+
+<p>That “Lower the ‘Deployment Target’ to see the older simulators or check your Apple SDK path” message was somewhat less than helpful. I couldn’t figure out where to even set the Deployment target in Dotnet Maui.</p>
+
+<p>I then loaded up a Xamarin.Forms app that was working fine a few days ago and saw the same results. I guess at this moment in time, Xcode 14 is not fully suppported. At some point it will all line up again, but in the meantime I need some iOS simulation. This wasn’t a regression in VS 17.4, this was Apple. Time to rollback Xcode and give that a shot.</p>
+
+<p>Xcode is actually pretty decent about handling this. You can have multiple versions of Xcode installed and change up which one is the one that answers the call to duty. If you trying out Xcode betas, this is the way. All you need is gigabytes of disk storage and the patience to download and install the Xcode bits.</p>
+
+<p>The first thing that you need to do is to download the version of Xcode to install. You can get every release of Xcode from xcodereleases.com. While that site is not Apple affiliated with Apple, all of the download links are from developer.appple.com. They are the official releases. I grabbed the final the Xcode 13 release, 13.4.1 from <a href="https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_13.4.1/Xcode_13.4.1.xip">here</a>.</p>
+
+<p><a href="https://osxdaily.com/2018/11/02/open-extract-xip-file-mac/#:~:text=Assuming%20you%20haven't%20associated,the%20Finder%20of%20Mac%20OS.">Extract</a> the contents of the .xip file. It will be named Xcode.app. Since you already have an Xcode.app in the Applications folder, you’ll need to rename it. My preference is to name it with version. In this case, Xcode13_4_1.app. Then drag it to the Applications folder.</p>
+
+<p>And then make it the default Xcode. From a shell, run the following</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>xcode-select <span class="nt">-s</span> /Applications/Xcode13_4_1.app</code></pre></figure>
+
+<p>To verify that this is now the current version of Xcode, run the following</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>xcode-select <span class="nt">-p</span></code></pre></figure>
+
+<p>That should come back with something like</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">/Applications/Xcode13_4_1.app/Contents/Developer</code></pre></figure>
+
+<p>After doing that, I restarted Visual Studio and I had the simulators back</p>
+
+<p style="text-align: center;"><img src="/assets/yes_sim_edit.png" alt="Thar be simulators'?" /></p>
+
+<p>To switch back to latest version, just run xcode-select again</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>xcode-select <span class="nt">-s</span> /Applications/Xcode</code></pre></figure>
+
+<p>After posting this, a friend <a href="https://twitter.com/BiloganSteve/status/1571477869817204738">posted</a> with a link to where this issue was raised.  It’s posted as an issue in the <a href="https://github.com/xamarin/xamarin-macios/issues/15954">xamarin/xamrin-macios</a> repo.</p>]]></content><author><name>anotherlab</name></author><category term="Coding" /><category term="Visual Studio" /><category term="Xcode" /><category term="Xamarin" /><category term="Maui" /><category term="xcode-select" /><summary type="html"><![CDATA[So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or even the version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or the Mac, it was broken. From the Mac, when I went to pick a simulator for a Maui project, this happened with Visual Studio 2022 17.4, Preview 2. That “Lower the ‘Deployment Target’ to see the older simulators or check your Apple SDK path” message was somewhat less than helpful. I couldn’t figure out where to even set the Deployment target in Dotnet Maui. I then loaded up a Xamarin.Forms app that was working fine a few days ago and saw the same results. I guess at this moment in time, Xcode 14 is not fully suppported. At some point it will all line up again, but in the meantime I need some iOS simulation. This wasn’t a regression in VS 17.4, this was Apple. Time to rollback Xcode and give that a shot. Xcode is actually pretty decent about handling this. You can have multiple versions of Xcode installed and change up which one is the one that answers the call to duty. If you trying out Xcode betas, this is the way. All you need is gigabytes of disk storage and the patience to download and install the Xcode bits. The first thing that you need to do is to download the version of Xcode to install. You can get every release of Xcode from xcodereleases.com. While that site is not Apple affiliated with Apple, all of the download links are from developer.appple.com. They are the official releases. I grabbed the final the Xcode 13 release, 13.4.1 from here. Extract the contents of the .xip file. It will be named Xcode.app. Since you already have an Xcode.app in the Applications folder, you’ll need to rename it. My preference is to name it with version. In this case, Xcode13_4_1.app. Then drag it to the Applications folder. And then make it the default Xcode. From a shell, run the following sudo xcode-select -s /Applications/Xcode13_4_1.app To verify that this is now the current version of Xcode, run the following sudo xcode-select -p That should come back with something like /Applications/Xcode13_4_1.app/Contents/Developer After doing that, I restarted Visual Studio and I had the simulators back To switch back to latest version, just run xcode-select again sudo xcode-select -s /Applications/Xcode After posting this, a friend posted with a link to where this issue was raised. It’s posted as an issue in the xamarin/xamrin-macios repo.]]></summary></entry><entry><title type="html">A quick check to see if the user’s locale is metric or imperial</title><link href="http://localhost:4000/2022/01/05/quick-check-for-if-the-locale-ismetric/" rel="alternate" type="text/html" title="A quick check to see if the user’s locale is metric or imperial" /><published>2022-01-05T00:00:00-05:00</published><updated>2022-01-05T00:00:00-05:00</updated><id>http://localhost:4000/2022/01/05/quick-check-for-if-the-locale-ismetric</id><content type="html" xml:base="http://localhost:4000/2022/01/05/quick-check-for-if-the-locale-ismetric/"><![CDATA[<p>While working on a demo mobile app for a course, I needed to know if the units of measurement on the app would be in <a href="https://en.wikipedia.org/wiki/Imperial_units">Imperial</a> units or <a href="https://en.wikipedia.org/wiki/Metric_system">Metric</a> units. Since I’m using C#, the tools are in the framework.</p>
+
+<p>My first pass was just checking the locale and calling it imperial if the locale was “en-US”.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System.Globalization</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">locale</span> <span class="p">=</span> <span class="n">CultureInfo</span><span class="p">.</span><span class="n">CurrentCulture</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">IsMetric</span> <span class="p">=</span> <span class="p">!</span><span class="n">locale</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="s">"en-US"</span><span class="p">);</span></code></pre></figure>
+
+<p>It worked on my machine, but that is pretty flawed. It assumes that only the “en-US” locale use imperial units. While it often feels like the rest of the world is metric, the US is not the only country still on the imperial system. Both Liberia and Myanmar are in the imperial club.</p>
+
+<p style="text-align: center;"><img src="/assets/say-it-works-on-my-machine-again.jpg" alt="Works on my machine" /></p>
+
+<p>This code also makes the assumption that “en-US” is the only locale code for the US.  If you set your phone’s region to the US and the language to Spanish, the locale code could be “es-US”.  Instead of comparing against the locale name, we can use the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.globalization.regioninfo">RegionInfo</a> class instead.  We can pass in the locale in to RegionInfo and check it’s <code class="language-plaintext highlighter-rouge">IsMetric</code> property.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">using</span> <span class="nn">System.Globalization</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">locale</span> <span class="p">=</span> <span class="n">CultureInfo</span><span class="p">.</span><span class="n">CurrentCulture</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+
+<span class="kt">var</span> <span class="n">regionInfo</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RegionInfo</span><span class="p">(</span><span class="n">locale</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">IsMetric</span> <span class="p">=</span> <span class="n">regionInfo</span><span class="p">.</span><span class="n">IsMetric</span><span class="p">;</span></code></pre></figure>]]></content><author><name>Chris Miller</name></author><category term="Coding" /><category term="Localization" /><category term="Globalization" /><category term="C#" /><category term="CultureInfo" /><category term="RegionInfo" /><summary type="html"><![CDATA[While working on a demo mobile app for a course, I needed to know if the units of measurement on the app would be in Imperial units or Metric units. Since I’m using C#, the tools are in the framework. My first pass was just checking the locale and calling it imperial if the locale was “en-US”. using System.Globalization; var locale = CultureInfo.CurrentCulture.Name; var IsMetric = !locale.Equals("en-US"); It worked on my machine, but that is pretty flawed. It assumes that only the “en-US” locale use imperial units. While it often feels like the rest of the world is metric, the US is not the only country still on the imperial system. Both Liberia and Myanmar are in the imperial club. This code also makes the assumption that “en-US” is the only locale code for the US. If you set your phone’s region to the US and the language to Spanish, the locale code could be “es-US”. Instead of comparing against the locale name, we can use the RegionInfo class instead. We can pass in the locale in to RegionInfo and check it’s IsMetric property. using System.Globalization; var locale = CultureInfo.CurrentCulture.Name; var regionInfo = new RegionInfo(locale); var IsMetric = regionInfo.IsMetric;]]></summary></entry><entry><title type="html">A failed MakeValid call in SQL Server</title><link href="http://localhost:4000/2021/12/28/a-failed-makevalid-call-in-sql-server/" rel="alternate" type="text/html" title="A failed MakeValid call in SQL Server" /><published>2021-12-28T00:00:00-05:00</published><updated>2021-12-28T00:00:00-05:00</updated><id>http://localhost:4000/2021/12/28/a-failed-makevalid-call-in-sql-server</id><content type="html" xml:base="http://localhost:4000/2021/12/28/a-failed-makevalid-call-in-sql-server/"><![CDATA[<p>We hit this strange bug in SQL Server earlier in the year. A single SQL Statement would just kill the connection. It would kill it 100% in any version of SQL Server from 2016 and up. Let’s start with the SQL Statement.</p>
+
+<script src="https://gist.github.com/a97bf849285c710fcf6e6428b2fd4536.js?file=MakeValidCall.sql"> </script>
+
+<p>It’s a lot of data. It came from GPS data collected over a route. Visually the data looks like this.</p>
+
+<figure><image src="/assets/MakeValidMap2.gif" /><figcaption>Rendering the data in segments</figcaption></figure>
+
+<p>The goal was to take the data and use <a href="https://docs.microsoft.com/en-us/sql/t-sql/spatial-geometry/makevalid-geometry-data-type?view=sql-server-ver15">MakeValid</a> to clean it up. MakeValid() takes invalid data and attempts to convert it to a valid SQLGeometry instance. For this example, the call to MakeValid() never completes and eventually your connection times out.</p>
+
+<p>The curious thing is if you used <a href="https://docs.microsoft.com/en-us/sql/t-sql/spatial-geography/spatial-types-geography?view=sql-server-ver15">SQLGeography</a> instead of <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.sqlserver.types.sqlgeometry?view=sql-dacfx-150">SQLGeometry</a>, MakeValid works. Here is some sample code that uses C# with the SQLGeography MakeValid calls on the same data. It executes just fine</p>
+
+<script src="https://gist.github.com/44a706a3792cf079f1e2512b4695447d.js"> </script>
+
+<p>We first <a href="https://stackoverflow.com/q/66496778/206">posted it to Stack Overflow as a question</a>. That generated some interesting dialog and some really good analysis. I opened a support ticket with Microsoft over the connection failing. It wasn’t so much about MakeValid() not working, but how the failure of the call would kill the connection.</p>
+
+<p>Microsoft Support determined that code in SQLGeometry MakeValid() was running out of memory trying to evaluate all of the points. The code in SQLGeography’s MakeValid is different because <a href="https://docs.microsoft.com/en-us/sql/t-sql/spatial-geography/spatial-types-geography?view=sql-server-ver15" target="_blank">SQLGeography</a> is very different from <a href="SQLGeometry" target="_blank">SQLGeometry</a>.</p>
+
+<p>The SQLGeometry data types and methods work in a flat space. SQLGeography is based on a round-earth coordinate system. In other words, when you work with distances, SQL Geometry is just a flat 2D polygon. It will calculate the same results for coordinates near the equator as they would further away. The greater the distance between the points, the less accurate it will be. SQLGeography will factor in the curvature of the earth and it knows that the horizontal distance between two difference latitude values will depend on how far they are away from the equator.</p>
+
+<p>The end result with Microsoft was that this has been logged as a product issue to be looked at some point in the future. Which is fine, we adapted our code to use SQLGeography instead of SQLGeometry.</p>]]></content><author><name>Chris Miller</name></author><category term="SQL Server" /><category term="SQL" /><category term="MakeValid" /><category term="SQLGeography" /><category term="SQLGeometry" /><category term="GPS" /><summary type="html"><![CDATA[We hit this strange bug in SQL Server earlier in the year. A single SQL Statement would just kill the connection. It would kill it 100% in any version of SQL Server from 2016 and up. Let’s start with the SQL Statement.]]></summary></entry><entry><title type="html">Moved the blog from WordPress to Jekyll</title><link href="http://localhost:4000/2021/12/15/Migrated-to-jekyll/" rel="alternate" type="text/html" title="Moved the blog from WordPress to Jekyll" /><published>2021-12-15T10:31:33-05:00</published><updated>2021-12-15T10:31:33-05:00</updated><id>http://localhost:4000/2021/12/15/Migrated-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2021/12/15/Migrated-to-jekyll/"><![CDATA[<p>First post under the new regime.</p>
+
+<h1 id="back-story">Back story</h1>
+
+<p>For a long time, this blog has been created with WordPress. It’s now a <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> site.</p>
+
+<p>The blog started as a free blog hosted on Google’s Blogger platform. It’s <a href="http://anotherlab.blogspot.com/" target="_blank">still there</a>, but hasn’t been touched in 8 years. It was fine, but I felt limited by the platform.</p>
+
+<p>The second incarnation was on WordPress. I did it the hard way. I created a Linux VM on Azure and manually wired up the <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)" target="_blank">LAMP stack</a>. It was a good learning experience with Linux and WordPress.</p>
+
+<p>It was fine until a few years ago when there was a serious attack on WordPress sites. It was a <a href="https://blog.sucuri.net/2017/02/content-injection-vulnerability-wordpress-rest-api.html">vulnerability</a> that allowed anyone to edity any post on any WordPress sites. My site was one the ones that was hit.</p>
+
+<p>With <a href="/2017/02/21/and-then-my-blog-was-defaced/">a bit of work</a>, I was able to restore the site. I viewed the entire VM as compromised and generated a new VM in Azure. This time I used a <a href="https://bitnami.com/stack/wordpress" target="_blank">Bitnami WordPress</a> image so there was a lot less work to get it up and running. I still had to add my own SSL certificate through <a href="https://letsencrypt.org/" target="_blank">Let’s Encryt</a>. I also signed up for a <a href="jetpack.com/upgrade/backup/" target="_blank">Jetpack</a> subscription to let them manage the backups of the site.</p>
+
+<p>Because this is a self-hosted WordPress site, I am responsible for updating the various moving parts. That was easy to do with the old system, annoying to do with the Bitnami image. It seems that the preferred way to do updates was to create a new VM and migrate the WordPress data over. That’s a little too much work.</p>
+
+<h1 id="new-boss-in-town">New Boss in Town</h1>
+<p>WordPress is a great platform, but it’s overkill for what I need, which is just a blog host. So I decided to migrate it over to Jekyll. I edit the blog on my own machine, in <a href="https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview">Ubuntu on Windows 10</a>. It uses <a href="https://www.markdownguide.org/" target="_blank">Markdown</a> for the posts, which is handy for just knocking out stuff. The Jekyll tooling will bundle the files to a static set of pages that can be hosted by just about anything. In this case, it’s hosted under <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+
+<p>Since it’s a static site, it has a tiny footprint and has much less exposure to being hacked. If it did get hacked, it would be fixed the next time I pushed out an update. I was able to install a WordPress plugin that exported the existing site to Jekyll formatted Markdown files. I’ll have to tweak some of posts. The content is all there, but there are some CSS styling issues to resolve. The source code was using a WordPress plugin for doing syntax highlighting on code snippets. Jekyll has the equivalent feature, it’s just a matter of going back and editing the old posts.</p>
+
+<p>And since Jekyll is a static site engine, dynamic features like comments are not included out of the box. I went with a Jekyll plugin that uses Github Discussions for comments..</p>
+
+<p>The Jekyll tooling is very Linux oriented. I’m running Windows 10, so I used Ubuntu running on WSL2. This gave me the power of the Linux command line tools while still leaving over the option of using Windows tools for file editing. It’s easy to access the Windows file system from Linux on WSL2 and vice versa. There’s a really cool Markdown editor called <a href="markdownmonster.west-wind.com" target="_blank">Markdown Monster</a> that makes editing a breeze. I highly recommend it.</p>
+
+<h1 id="the-process">The process</h1>
+<p>So writing and updating posts is very different than the traditional WordPress experience. With the WordPress site, I would create posts in the site, using the WordPress web tools. Until it was was posted, it would be a draft. Their <a href="https://wordpress.org/gutenberg/" target="_blank">Gutenberg editor</a> was a block based editor that I was never comfortable with.</p>
+
+<p>With Jekyll, I just create a Markdown file with the right tags and in the right folder. Then I use git to push it to the repo for the site. Between the git command and the <a href="https://github.com/cli/cli" target="_blank">GitHub CLI</a>, I can do the workflow right from the command line.</p>
+
+<p>As for backing up the site, it’s backed up and versioned by being a GitHub repository. If I need to rebuild the Ubuntu environment, I would need to reinstall a few things (brew, Jekyll, gh), but it’s not rocket science. I can also backup and restore the Ubuntu environment. It’s as simple as:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">wsl --export Ubuntu c:\data\ubuntu.tar</code></pre></figure>
+
+<p>Then to restore it, you need to provide a distribution name and a location for the distribution.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">wsl --import UbuntuBlog c:\data\UbuntuBlog c:\data\ubuntu.tar</code></pre></figure>
+
+<h1 id="whats-next">What’s next</h1>
+<p>By the time this post is public, I’ll have already transferred the domain name over. I have a few images in the WordPress site, I’ll need to grab them. When I move from Blogger to WordPress, I made the decision to not host the images in WordPress. Almost all of my blog post images are hosted on my SmugMug site. I figured if I ever moved the blog again, that would be one less thing to worry about.</p>
+
+<p>I also have some draft posts. I had a handful of stuff that I was going to blog about, but never finished. They were not exported, but that’s OK. Jekyll has a concept of <a href="https://jekyllrb.com/docs/posts/" target="_blank">draft posts</a> and I’ll just put them all in there.</p>
+
+<h1 id="post-migrations">Post migrations</h1>
+<p>There is some cleanup that I need to do. I had used a <a href="https://github.com/benbalter/wordpress-to-jekyll-exporter">Jekyll plugin</a> for WordPress to export the posts to Markdown files. It It converts all pages, posts, and settings to files that can be dropped in to a Jekyll site. It did most of the heavy lifting, but there were some rough edges that needed to be sanded down.</p>
+
+<h2 id="titles">Titles</h2>
+<p>At the top of a Jekyll post, there is a metadata section that is called <a href="https://jekyllrb.com/docs/front-matter/">“Front Matter”</a>. It’s in YAML format has the title of the post, the date, categories, tags, and other stuff. The plugin was using HTML escape codes for special characters in the title. That was not being parsed correctly and the escape code would print instead of the character. So I added rules in my conversion tool to write the escape codes as the action charactors.</p>
+
+<p>I had to tweak the <code class="language-plaintext highlighter-rouge">date:</code> values that had been exported. The export had written the dates as Date/Time with my local (UTC-5:00) timezone. I discovered an odd quirk. Jekyll was taking the date/time and handling it as UTC±00:00. I had a post with a time of 11:19PM in UTC -5 on the 3rd day of the month. To Jekyll, that was the 4th day. That broke the link rendering. So I updated my migration tool to strip the time out of tge <code class="language-plaintext highlighter-rouge">date:</code> field.</p>
+
+<h2 id="other-front-matter-cleanup">Other Front Matter cleanup</h2>
+<p>The export added a bunch of tags that needed to be cleaned. The following is the Front Matter from a post</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">id</span><span class="pi">:</span> <span class="m">3247</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Colored notes in OneNote</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2020-05-23T15:57:18-05:00</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">Chris Miller</span>
+<span class="na">excerpt</span><span class="pi">:</span> <span class="s">A quick way to color paragraphs in OneNote.</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">guid</span><span class="pi">:</span> <span class="s">http://rajapet.com/?p=3247</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/2020/05/23/colored-notes-in-onenote/</span>
+<span class="na">spay_email</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">"</span>
+<span class="na">image</span><span class="pi">:</span> <span class="s">http://rajapet.com/wp-content/uploads/2020/05/ColoredTables.png</span>
+<span class="na">categories</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">OneNote</span>
+<span class="na">tags</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">colors</span>
+  <span class="pi">-</span> <span class="s">OneNote</span></code></pre></figure>
+
+<p>The “id:” tag refers to a row in the WordPress database, so that one goes. The “author:” goes because it’s just me. The “excerpt:” tag is a WordPress feature. Jekyll handles excerpts differently. I’ll leave it there for now. Same for “images:”. The “guid:” and “spay_mail:” tags are WordPress, so they go. I don’t need the “permlink:”, so it also goes. So after running my conversion tool, I would get Front Matter that would look like this</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">title</span><span class="pi">:</span> <span class="s">Colored notes in OneNote</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2020-05-23T15:57:18-05:00</span>
+<span class="na">excerpt</span><span class="pi">:</span> <span class="s">A quick way to color paragraphs in OneNote.</span>
+<span class="na">image</span><span class="pi">:</span> <span class="s">http://rajapet.com/wp-content/uploads/2020/05/ColoredTables.png</span>
+<span class="na">categories</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">OneNote</span>
+<span class="na">tags</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">colors</span>
+  <span class="pi">-</span> <span class="s">OneNote</span></code></pre></figure>
+
+<h2 id="css--markup-changes">CSS &amp; Markup changes</h2>
+<p>I’m using a Jekyll theme called <a href="https://mmistakes.github.io/minimal-mistakes/">“Minimal Mistakes”</a>. It’s a nice clean design and I like. There are a few things that I wanted to change, mostly with some CSS overrides. I’m not touching the actual theme bits. That makes it eassier to update or replace the theme. The way Jekyll’s Markdown processor, <a href="https://kramdown.gettalong.org/index.html">kramdown</a>, handles <code class="language-plaintext html highlighter-rouge">&lt;figure&gt;</code> is a little quirky and I’m seeing <code class="language-plaintext html highlighter-rouge">&lt;/figure&gt;</code> in the rendered output. I’m fixing those by hand as I come across them. That’s the problem with leaky abstractions, sometimes, you have leaks to patch.</p>
+
+<p>For some reason, the Youtube clips that I embedded in a few posts didn’t make it over. That had to be fixed manually. I would go back to the post on the WordPress blog, right-click on the video, and then select “coopy embed code”. Then I would just paste it in the Markdown file.</p>
+<h2 id="code-highlighting">Code Highlighting</h2>
+<p>This is a work in progress. For the last few years, I’ve been using the built in support that WordPress provides for source code highlighting. That is relatively ease for my tool to identify. Jekyll uses a code highlighter called <a href="http://rouge.jneen.net/">Rouge</a>. It does most of the same stuff, and I’ll use it as is for now. I can catch <del>most</del>some of the snippets that used the WordPress markup, I’ll fix up the stragglers as I come across them.</p>
+
+<p>I had a few gist’s embedded in my blog. When the posts were exported, the gists had been rendered into the page and it was a lot of ugly HTML. I had to manually replace those bits with <code class="language-plaintext highlighter-rouge">{% gist XXXXX %}</code>, which made the Markdown simpler.</p>
+
+<h2 id="other-stuff">Other Stuff</h2>
+<p>I added a gem file, <a href="https://github.com/rob-murray/jekyll-twitter-plugin">jekyll-twitter-plugin</a>, for rendering embedded Tweets. The cool thing is that once I installed it, it properly displayed the tweets that I had embedded in WordPress. I’m migrating them over to use the <a href="https://jekyllrb.com/docs/step-by-step/02-liquid/">Liquid tags</a>, it’s much easier to work with. I ended up not being able to use that plugin. GitHub Pages only supports a <a href="https://pages.github.com/versions/">fixed list of plugins</a>, and that one wasn’t on it. So I did it the hard way, go to the tweet in Twitter, click the “⋯” menu, and select the “Embed Tweet” option.</p>
+
+<p>After most of the posts have been updated, I’ll post the conversion tool. It’s not really a standalone app. It’s a <a href="https://www.linqpad.net/">LINQpad</a> script written in C#. It’s very easy to dump out the data structures so I can see what is coming in and what I need to do to fix it. When it’s closer to being done, I’ll make a command line app out of it so it will run on anything that supports .NET 6.</p>
+
+<h2 id="what-i-lost">What I lost</h2>
+<p>I gave up some functionality by moving off of WordPress. It was running in my VM, I had complete control. I could install any WordPress plugin I wanted. While there are many plugins for Jekyll, GitHub pages only supports a fixed subset. It hasn’t blocked me from doing anything just yet.</p>
+
+<p>I could see a preview of the blog post before publishing on WordPress. If I edit the posts with Markdown Monster, I get a nice wysiwyg view of the Markdown, but not for the Liquid tags. But you can run a local Jekyll server and you’ll see pretty much how it will be rendered.</p>
+
+<p>Publishing takes a few more steps. Instead of pressing the “publish” button in WordPress, it gets done through git:</p>
+
+<ol>
+  <li>git add -A</li>
+  <li>git commit -m “Change notes”</li>
+  <li>git push</li>
+  <li><a href="https://cli.github.com/manual/gh_pr_create">gh pr create -f</a></li>
+  <li><a href="https://cli.github.com/manual/gh_pr_merge">gh pr merge -m</a></li>
+</ol>
+
+<p>Then it takes a couple of minutes for GitHub Pages to run Jekyll on it’s end to render the pages.</p>
+
+<p>But I’m pleased with how it came out.</p>]]></content><author><name>Chris Miller</name></author><category term="Jekyll" /><category term="WordPress" /><category term="Blog" /><category term="Ubuntu" /><summary type="html"><![CDATA[First post under the new regime.]]></summary></entry><entry><title type="html">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview</title><link href="http://localhost:4000/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="alternate" type="text/html" title="Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview" /><published>2021-10-21T00:19:33-04:00</published><updated>2021-10-21T00:19:33-04:00</updated><id>http://localhost:4000/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview</id><content type="html" xml:base="http://localhost:4000/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/"><![CDATA[<p>I installed the Visual Studio 2022 Preview 6 this evening. I had been using Preview 4. I installed Preview 5, but didn’t have a chance to play with it. I have a simple demo app that I have working with, a basic stopwatch type of app. That app had been created with Preview 4 and it more or less worked fine (unless you counted Mac Catalyst and Windows). After I installed Preview 6, I tried to run the project on Android. It failed to compile with the following error message:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Severity	Code	Description	Project	File	Line	Suppression State
+Error	XA0003	VersionCode 1.0 is invalid. It must be an integer value.
+Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-android\android\AndroidManifest.xml</code></pre></figure>
+
+<p>As a test, I created a new .NET MAUI app from Preview 6. It compiled and ran just fine.</p>
+
+<p>So who now, what now? When I first saw the error, I didn’t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.</p>
+
+<p><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png" alt="" /></p>
+
+<p>And we take a look at the file, it’s pretty standard, pretty boring AndroidManifest.xml</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;uses-sdk</span> <span class="na">android:minSdkVersion=</span><span class="s">"21"</span> <span class="na">android:targetSdkVersion=</span><span class="s">"31"</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;application</span> <span class="na">android:allowBackup=</span><span class="s">"true"</span> <span class="na">android:icon=</span><span class="s">"@mipmap/appicon"</span> <span class="na">android:roundIcon=</span><span class="s">"@mipmap/appicon_round"</span> <span class="na">android:supportsRtl=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/application&gt;</span>
+	<span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.ACCESS_NETWORK_STATE"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span></code></pre></figure>
+
+<p>No versionCode there. What’s going on? So I went back and actually read the error message and it was complaining about a version of AndroidManifest.xml located in obj\Debug\net6.0-android. That little fellow looks like this:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+=======
 <?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-28T00:09:03-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 4th Blog</title><subtitle>My personal blog, 4th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">Apple needs to sort out their API</title><link href="http://localhost:4000/2024/08/27/apples-api-needs-to-be-sorted/" rel="alternate" type="text/html" title="Apple needs to sort out their API" /><published>2024-08-27T00:00:00-04:00</published><updated>2024-08-27T00:00:00-04:00</updated><id>http://localhost:4000/2024/08/27/apples-api-needs-to-be-sorted</id><content type="html" xml:base="http://localhost:4000/2024/08/27/apples-api-needs-to-be-sorted/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/steam-punk-scientist.jpg&quot; alt=&quot;Who broke the API?&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I have some code that uses Apple’s &lt;a href=&quot;https://developer.apple.com/documentation/appstoreconnectapi&quot;&gt;AppConnect API&lt;/a&gt; to query App store related things. I wrote a C# script that I run from &lt;a href=&quot;https://www.linqpad.net/&quot;&gt;LINQPad&lt;/a&gt; that gives me a weekly status update for the account. We link provisioned devices to the registered users in the account by their name. By querying the device list and referencing it wiht the user list, I quickly identify when someome provisions a new device without identifying who has that device.&lt;/p&gt;
@@ -388,6 +638,7 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 &lt;p&gt;No versionCode there. What’s going on? So I went back and actually read the error message and it was complaining about a version of AndroidManifest.xml located in obj\Debug\net6.0-android. That little fellow looks like this:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+>>>>>>> origin/main
 2
 3
 4
@@ -417,12 +668,81 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 28
 29
 30
+<<<<<<< HEAD
+</pre></td><td class="code"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!--
+=======
 &lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;&amp;lt;!--
+>>>>>>> origin/main
     This code was generated by a tool.
     It was generated from ....\StopwatchMaui\Platforms\Android\AndroidManifest.xml
     Changes to this file may cause incorrect behavior and will be lost if
     the contents are regenerated.
+<<<<<<< HEAD
+    --&gt;</span>
+<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">android:versionCode=</span><span class="s">"1.0"</span> <span class="na">package=</span><span class="s">"com.companyname.StopwatchMaui"</span> <span class="na">android:versionName=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;uses-sdk</span> <span class="na">android:minSdkVersion=</span><span class="s">"21"</span> <span class="na">android:targetSdkVersion=</span><span class="s">"31"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.ACCESS_NETWORK_STATE"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;application</span> <span class="na">android:allowBackup=</span><span class="s">"true"</span> <span class="na">android:icon=</span><span class="s">"@mipmap/appicon"</span> <span class="na">android:roundIcon=</span><span class="s">"@mipmap/appicon_round"</span> <span class="na">android:supportsRtl=</span><span class="s">"true"</span> <span class="na">android:name=</span><span class="s">"crc64c1104ba8f6ea44b3.MainApplication"</span> <span class="na">android:label=</span><span class="s">"StopwatchMaui"</span> <span class="na">android:debuggable=</span><span class="s">"true"</span> <span class="na">android:extractNativeLibs=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;activity</span> <span class="na">android:configChanges=</span><span class="s">"orientation|smallestScreenSize|screenLayout|screenSize|uiMode"</span> <span class="na">android:theme=</span><span class="s">"@style/Maui.SplashTheme"</span> <span class="na">android:name=</span><span class="s">"crc64c1104ba8f6ea44b3.MainActivity"</span> <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/intent-filter&gt;</span>
+    <span class="nt">&lt;/activity&gt;</span>
+    <span class="nt">&lt;receiver</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:label=</span><span class="s">"Essentials Battery Broadcast Receiver"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.BatteryBroadcastReceiver"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;receiver</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:label=</span><span class="s">"Essentials Energy Saver Broadcast Receiver"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.EnergySaverBroadcastReceiver"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;receiver</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:label=</span><span class="s">"Essentials Connectivity Broadcast Receiver"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.ConnectivityBroadcastReceiver"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;activity</span> <span class="na">android:configChanges=</span><span class="s">"orientation|screenSize"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.IntermediateActivity"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;provider</span> <span class="na">android:authorities=</span><span class="s">"com.companyname.StopwatchMaui.fileProvider"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:grantUriPermissions=</span><span class="s">"true"</span> <span class="na">android:name=</span><span class="s">"xamarin.essentials.fileProvider"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"android.support.FILE_PROVIDER_PATHS"</span> <span class="na">android:resource=</span><span class="s">"@xml/xamarin_essentials_fileprovider_file_paths"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/provider&gt;</span>
+    <span class="nt">&lt;activity</span> <span class="na">android:configChanges=</span><span class="s">"orientation|screenSize"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.WebAuthenticatorIntermediateActivity"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;service</span> <span class="na">android:name=</span><span class="s">"crc64396a3fe5f8138e3f.KeepAliveService"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;provider</span> <span class="na">android:name=</span><span class="s">"mono.MonoRuntimeProvider"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:initOrder=</span><span class="s">"1999999999"</span> <span class="na">android:authorities=</span><span class="s">"com.companyname.StopwatchMaui.mono.MonoRuntimeProvider.__mono_init__"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>If we look at line 8, we see the culprit</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> 
+    <span class="na">android:versionCode=</span><span class="s">"1.0"</span> 
+    <span class="na">package=</span><span class="s">"com.companyname.StopwatchMaui"</span> 
+    <span class="na">android:versionName=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<p>In the new app that was created in Preview 6, the same file had the following line:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> 
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> 
+    <span class="na">android:versionCode=</span><span class="s">"1"</span> 
+    <span class="na">package=</span><span class="s">"com.companyname.StopwatchMaui"</span> 
+    <span class="na">android:versionName=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<div class="wp-block-image">
+  <figure class="aligncenter size-large"><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-mF3bHJm/0/4ebec4dc/O/badgood.jpg?" alt="" /></figure>
+</div>
+
+<p>So why is the first one bad and the second one good? In the wacky world of Android, android:versionCode has to have an integer value. This is documented <a href="https://developer.android.com/guide/topics/manifest/manifest-element">here</a>. So now we know what is the actual error, the next question is why that error occurred.</p>
+
+<p>We can’t just edit the obj\Debug\net6.0-android\AndroidManifest.xml file and call it a day. The next time you rebuild the app, that file gets generated from Platforms\Android\AndroidManifest.xml. And apparently it pulls in information from somewhere else as well.</p>
+
+<p>So I took a look at the .csproj files for the working and non-working apps. In the .csproj file generated by Preview 4, the version information was defined with the following two lines</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- Versions --&gt;</span>
+<span class="nt">&lt;ApplicationVersion&gt;</span>1.0<span class="nt">&lt;/ApplicationVersion&gt;</span>
+<span class="nt">&lt;AndroidVersionCode&gt;</span>1<span class="nt">&lt;/AndroidVersionCode&gt;</span></code></pre></figure>
+
+<p>With the new project freshly generated by Release 6, the same two lines were now a single line, with the ApplicationVersion now set with an integer value.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- Versions --&gt;</span>
+<span class="nt">&lt;ApplicationVersion&gt;</span>1<span class="nt">&lt;/ApplicationVersion&gt;</span></code></pre></figure>
+
+<p>When I changed the “Versions” lines .csproj to match the single line used in the new .csproj Preview 6, the app compiled and deployed to Android. My best guess is that AndroidVersionCode was being used in Preview 4 and sometime after that, they made the breaking change to ApplicationVersion and jettisoned the AndroidVersionCode setting. It’s a preview release of Visual Studio and they are still baking .NET MAUI. This <a href="https://developercommunity.visualstudio.com/t/versioncode-10-is-invalid/1553498">kind of stuff happens</a> and the end result is a better product.</p>]]></content><author><name>Chris Miller</name></author><category term="Android" /><category term="MAUI" /><category term="android" /><category term="maui" /><summary type="html"><![CDATA[I hit the "VersionCode 1.0 is invalid" error with .NET MAUI and resolved it.]]></summary></entry><entry><title type="html">Controlling a WSL installation of redis-server from the Windows command line</title><link href="http://localhost:4000/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="alternate" type="text/html" title="Controlling a WSL installation of redis-server from the Windows command line" /><published>2021-10-19T00:53:13-04:00</published><updated>2021-10-19T00:53:13-04:00</updated><id>http://localhost:4000/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line</id><content type="html" xml:base="http://localhost:4000/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/"><![CDATA[<p>If you like using <a href="https://redis.io/">redis</a> for web site caching and you are writing and testing code locally from Windows, you’ll want to figure out how to run a local instance of redis-server. You have a few options. You can run it from another machine that’s running something vaguely Linux-like or MacOS. You can run it from a Docker container under Windows. Or you can run it directly from <a href="http://Windows SubSystem (WSL) for Linux" data-wplink-url-error="true">Windows SubSystem (WSL) for Linux</a>.</p>
+=======
     --&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;manifest&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:versionCode=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;package=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.companyname.StopwatchMaui&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:versionName=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;uses-sdk&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:minSdkVersion=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;21&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:targetSdkVersion=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;31&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
@@ -485,53 +805,109 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;ApplicationVersion&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ApplicationVersion&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;When I changed the “Versions” lines .csproj to match the single line used in the new .csproj Preview 6, the app compiled and deployed to Android. My best guess is that AndroidVersionCode was being used in Preview 4 and sometime after that, they made the breaking change to ApplicationVersion and jettisoned the AndroidVersionCode setting. It’s a preview release of Visual Studio and they are still baking .NET MAUI. This &lt;a href=&quot;https://developercommunity.visualstudio.com/t/versioncode-10-is-invalid/1553498&quot;&gt;kind of stuff happens&lt;/a&gt; and the end result is a better product.&lt;/p&gt;</content><author><name>Chris Miller</name></author><category term="Android" /><category term="MAUI" /><category term="android" /><category term="maui" /><summary type="html">I hit the &quot;VersionCode 1.0 is invalid&quot; error with .NET MAUI and resolved it.</summary></entry><entry><title type="html">Controlling a WSL installation of redis-server from the Windows command line</title><link href="http://localhost:4000/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="alternate" type="text/html" title="Controlling a WSL installation of redis-server from the Windows command line" /><published>2021-10-19T00:53:13-04:00</published><updated>2021-10-19T00:53:13-04:00</updated><id>http://localhost:4000/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line</id><content type="html" xml:base="http://localhost:4000/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/">&lt;p&gt;If you like using &lt;a href=&quot;https://redis.io/&quot;&gt;redis&lt;/a&gt; for web site caching and you are writing and testing code locally from Windows, you’ll want to figure out how to run a local instance of redis-server. You have a few options. You can run it from another machine that’s running something vaguely Linux-like or MacOS. You can run it from a Docker container under Windows. Or you can run it directly from &lt;a href=&quot;http://Windows SubSystem (WSL) for Linux&quot; data-wplink-url-error=&quot;true&quot;&gt;Windows SubSystem (WSL) for Linux&lt;/a&gt;.&lt;/p&gt;
+>>>>>>> origin/main
 
-&lt;p&gt;For the last few years, Windows (10, 11, Server 2019) comes with a compatibility layer that lets you run Linux binary executables. The current version is WSL 2, but I’m just going to refer to it as WSL. If you don’t have installed already, just run the following command from an elevated shell (run as administrator)&lt;/p&gt;
+<p>For the last few years, Windows (10, 11, Server 2019) comes with a compatibility layer that lets you run Linux binary executables. The current version is WSL 2, but I’m just going to refer to it as WSL. If you don’t have installed already, just run the following command from an elevated shell (run as administrator)</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;wsl --install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-text" data-lang="text">wsl --install</code></pre></figure>
 
-&lt;figure&gt; 
-&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-pTtQzxz/0/0a5988c8/L/02%20-%20wsl-install-L.png&quot; alt=&quot;Installing WSl via command line&quot; /&gt; &lt;figcaption&gt;Installing WSl via command line&lt;/figcaption&gt;&lt;/figure&gt;
+<figure> 
+<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-pTtQzxz/0/0a5988c8/L/02%20-%20wsl-install-L.png" alt="Installing WSl via command line" /> <figcaption>Installing WSl via command line</figcaption></figure>
 
-&lt;p&gt;It will install the bits that you need and then ask you to reboot your machine. For more information about installing and configuring WSL, Microsoft has some really good documentation at &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/wsl/install&quot;&gt;Install WSL&lt;/a&gt;.&lt;/p&gt;
+<p>It will install the bits that you need and then ask you to reboot your machine. For more information about installing and configuring WSL, Microsoft has some really good documentation at <a href="https://docs.microsoft.com/en-us/windows/wsl/install">Install WSL</a>.</p>
 
-&lt;p&gt;The default Linux distribution for WSL is Ubuntu. After you reboot, you may see a Ubuntu shell for a while as Windows installs the bits that you need. It will churn for a bit and then ask you for a username and password. That password will be your sudo (user root) password. One that is done, you should see something like this.&lt;figure&gt;&lt;/figure&gt;&lt;/p&gt;
+<p>The default Linux distribution for WSL is Ubuntu. After you reboot, you may see a Ubuntu shell for a while as Windows installs the bits that you need. It will churn for a bit and then ask you for a username and password. That password will be your sudo (user root) password. One that is done, you should see something like this.<figure></figure></p>
 
-&lt;figure&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-43gLWHP/0/54984ae6/L/02%20-%20ubuntu-install-L.png&quot; alt=&quot;Final step of installing WSL is configuring the default Linux distribution&quot; /&gt; &lt;figcaption&gt;Final step of installing WSL is configuring the default Linux distribution&lt;/figcaption&gt;&lt;/figure&gt;
+<figure><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-43gLWHP/0/54984ae6/L/02%20-%20ubuntu-install-L.png" alt="Final step of installing WSL is configuring the default Linux distribution" /> <figcaption>Final step of installing WSL is configuring the default Linux distribution</figcaption></figure>
 
-&lt;p&gt;The next thing to do is to install redis-server. We can install redis vis &lt;a href=&quot;https://en.wikipedia.org/wiki/APT_(software)&quot;&gt;apt-get&lt;/a&gt;, but before we do that, we need to update apt-get and remove some of the new install shininess off.&lt;/p&gt;
+<p>The next thing to do is to install redis-server. We can install redis vis <a href="https://en.wikipedia.org/wiki/APT_(software)">apt-get</a>, but before we do that, we need to update apt-get and remove some of the new install shininess off.</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get update
-sudo apt-get upgrade&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get update
+sudo apt-get upgrade</code></pre></figure>
 
-&lt;p&gt;After updating apt-get, you’ll want to upgrade it. Confusing? Sort of. Update is updating the instance of apt-get, upgrade is updating all of the packages that were installed via apt-get. After that has finished, you can install redis-server&lt;/p&gt;
+<p>After updating apt-get, you’ll want to upgrade it. Confusing? Sort of. Update is updating the instance of apt-get, upgrade is updating all of the packages that were installed via apt-get. After that has finished, you can install redis-server</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo apt-get install redis-server&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get install redis-server</code></pre></figure>
 
-&lt;p&gt;There will be some churn and finally, it be installed. Out of the box, redis will not be running. My personal preference is to only run redis when I’m actually using it for development. So I Iike to start and stop it from the command line. Here are commands that you need to know:&lt;/p&gt;
+<p>There will be some churn and finally, it be installed. Out of the box, redis will not be running. My personal preference is to only run redis when I’m actually using it for development. So I Iike to start and stop it from the command line. Here are commands that you need to know:</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;sudo service redis-server status
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo service redis-server status
 sudo service redis-server start
-sudo service redis-server stop&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+sudo service redis-server stop</code></pre></figure>
 
-&lt;p&gt;I’ll start up redis with the service start command, and it will come back with a message that redis is starting. And you can use the service status command to verify that it’s running. The acid test is to connect to redis and see if it’s working. You can use the redis-cli tool to set and get a cache value. You should see something like this.&lt;/p&gt;
+<p>I’ll start up redis with the service start command, and it will come back with a message that redis is starting. And you can use the service status command to verify that it’s running. The acid test is to connect to redis and see if it’s working. You can use the redis-cli tool to set and get a cache value. You should see something like this.</p>
 
-&lt;figure&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-vLhVGKK/0/6aaf4c9d/O/04%20-%20redis-cli.png&quot; alt=&quot;Running redis-cli from the Ubuntu shell&quot; /&gt; &lt;figcaption&gt;Running redis-cli from the Ubuntu shell&lt;/figcaption&gt;&lt;/figure&gt;
+<figure><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-vLhVGKK/0/6aaf4c9d/O/04%20-%20redis-cli.png" alt="Running redis-cli from the Ubuntu shell" /> <figcaption>Running redis-cli from the Ubuntu shell</figcaption></figure>
 
-&lt;p&gt;So now redis-server is running. If you close the shell and open up a new one, it will still be running. If you restart WSL or Windows, then it wont be running. Now you can always pop open an Ubuntu shell and start redis-server, but you can do it from a Windows command line&lt;/p&gt;
+<p>So now redis-server is running. If you close the shell and open up a new one, it will still be running. If you restart WSL or Windows, then it wont be running. Now you can always pop open an Ubuntu shell and start redis-server, but you can do it from a Windows command line</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;wsl sudo service redis-server status&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+<figure class="highlight"><pre><code class="language-text" data-lang="text">wsl sudo service redis-server status</code></pre></figure>
 
-&lt;figure&gt;&lt;img src=&quot;https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-ffr3dZN/0/71f62819/O/05%20-%20redis-pwsh.png&quot; alt=&quot;Running redis commands from PowerShell&quot; /&gt;&lt;figcaption&gt;Running redis commands from PowerShell&lt;/figcaption&gt;&lt;/figure&gt;
+<figure><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-ffr3dZN/0/71f62819/O/05%20-%20redis-pwsh.png" alt="Running redis commands from PowerShell" /><figcaption>Running redis commands from PowerShell</figcaption></figure>
 
-&lt;p&gt;From the screenshot, you can see that WSL passed along the sudo service command to Ubunto. And because I used sudo, I was prompted for the root password. And it returned the same message that I would see from the Ubuntu shell. Since I only have Ubunto installed, that was the default Linux that received the command. If you have multiple distributions installed, you would use “wsl -d DistributionName”. You can get the names of the installed distributions with the “wsl -l” command. Unlike from the Linux shell, each time I invoke “sudo”, I’m prompted for the password. In the Linux shell, you are prompted just the first time you call sudo in a terminal session.&lt;/p&gt;
+<p>From the screenshot, you can see that WSL passed along the sudo service command to Ubunto. And because I used sudo, I was prompted for the root password. And it returned the same message that I would see from the Ubuntu shell. Since I only have Ubunto installed, that was the default Linux that received the command. If you have multiple distributions installed, you would use “wsl -d DistributionName”. You can get the names of the installed distributions with the “wsl -l” command. Unlike from the Linux shell, each time I invoke “sudo”, I’m prompted for the password. In the Linux shell, you are prompted just the first time you call sudo in a terminal session.</p>
 
-&lt;p&gt;Having to use the root password over and over again can be tedious on a development box. There is a way around that. You can add a file to the /etc/sudoers.d folder in the Linux distribution and remove the root password requirement for the redis-server service. From the Linux shell do the following&lt;/p&gt;
+<p>Having to use the root password over and over again can be tedious on a development box. There is a way around that. You can add a file to the /etc/sudoers.d folder in the Linux distribution and remove the root password requirement for the redis-server service. From the Linux shell do the following</p>
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;cd /etc/sudoers.d
+<figure class="highlight"><pre><code class="language-text" data-lang="text">cd /etc/sudoers.d
 sudo sh
-echo &quot;%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service redis-server *&quot; &amp;gt;&amp;gt; allowed-services
+echo "%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service redis-server *" &gt;&gt; allowed-services
 sudo chmod 0440 allowed-services
+<<<<<<< HEAD
+exit</code></pre></figure>
+
+<figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-bdhLSQW/0/003b70be/O/06%20-%20sudoers.png" alt="" /> </figure>
+
+<p>The first thing we do is make /etc/sudoers.d the current folder. Then we use “sudo sh” to gain root access. You need root access to work with this folder. The echo line basically says that you can invoke sudo with no password for redis-server and writes that setting to a file named allowed-services. The file name allowed-services is arbitrary, I picked it because it made sense to me. There is a file in the sudoers.d folder named README, it will explain what the file name restrictions are.</p>
+
+<p>The chmod 0440 command sets the permissions to read-only for the root account and is required for sudoers.d. This allows us to remove the sudo password requirement for redis-server and only for redis-server. Now we can go back to the Windows shell and run the wsl commands without being prompted.</p>
+
+<p>You can even run the redis-cli tool from powershell…</p>
+
+<figure>
+<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-5jWGFRF/0/c4e9ba5e/O/07%20-%20redis-pwsh.png" alt="Redis from PowerShell, no password" />
+<figcaption>Redis from PowerShell, no password</figcaption>
+</figure>
+
+<p>The Windows Subsystem for Linux is one of the hidden gems for developers. And this gem sparkles…</p>
+
+<p><strong>Bonus Round!</strong></p>
+
+<p>Because I’m lazy, I created shortcuts in my PowerShell profile. I added the following functions:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">function redstat {wsl sudo service redis-server status}
+function redstart {wsl sudo service redis-server start}</code></pre></figure>
+
+<p>And now I can just check the redis-server status via “redstat”</p>
+<figure>
+<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MBk5v8J/0/afa5b1b0/O/08-redstat.png" alt="" /> 
+</figure>
+<p><strong>Extra Bonus Round!</strong></p>
+
+<p>If you would like to have redis startup when Windows boots up, you just need a couple of extra steps. You just need to create a batch file that starts up redis.</p>
+
+<p>In your Windows startup folder, create a batch file. If you press Win+R and type shell:startup, that will open up and instance of Windows Explorer in the user startup foider.  From the command line the following will place you into the same folder.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  cd %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
+  </code></pre></figure>
+
+<p>Create a batch file in that folder. I used “start redis.cmd”, any name that the OS will recgize as a batch file will work. In that file, add the following line:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  wsl sudo service redis-server start
+  </code></pre></figure>
+
+<p>The next time you reboot and then login, redis will be started. Because the commands that in the startup folder tend to get run later in the boot process, it may be available for a minute after you login to Windows.</p>]]></content><author><name>Chris Miller</name></author><category term="Coding" /><category term="Linux" /><category term="linux" /><category term="Powershell" /><category term="redis" /><category term="wsl" /><summary type="html"><![CDATA[Some shortcuts accessing redis-server running under WSL via PowerShell]]></summary></entry><entry><title type="html">How to access Apple’s App Connect API from C#, Python, and Go. - Part 4</title><link href="http://localhost:4000/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/" rel="alternate" type="text/html" title="How to access Apple’s App Connect API from C#, Python, and Go. - Part 4" /><published>2021-09-01T07:56:57-04:00</published><updated>2021-09-01T07:56:57-04:00</updated><id>http://localhost:4000/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4</id><content type="html" xml:base="http://localhost:4000/2021/09/01/how-to-access-apples-app-connect-api-from-c-python-and-go-part-4/"><![CDATA[<p>Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using <a href="/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/">C#</a>, <a href="/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/">Go</a>, and <a href="/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/">Python</a>. This was code I was actually using myself and after I wrote it, it stopped working. The API calls were returning an HTTP 401 error. But only on Windows, on the Mac the code worked.</p>
+
+<p>That was an odd one to track down. It turned out to be a bug with how I was generating the expiration timestamp for the JWT payload. Apple documents that you can specify up to 20 minutes into the future for the exp value. Don’t do the full 20 minutes. That works most of time. Until it doesn’t. Just set the timeout to 10 minutes into the future and Bob’s your uncle. </p>
+
+<p>I went back to the repo’s and changed the expiration timeout to 10 minutes for the <a href="https://github.com/anotherlab/IsUserinApple-dotnet">C#</a>, <a href="https://github.com/anotherlab/IsUserInApple-golang">Go</a>, and <a href="https://github.com/anotherlab/IsUserInApple-python">Python</a> repos. The C# code was set to 30 minutes, that should have never worked. If you tried the C# code and wondered why it wasn’t working, that was my mistake.</p>
+
+<p>While I was updating the code, I changed the Go version so that you could validate multiple user names by placing them in a line delimited file and pass that file in with a “-userlist” command line parameter. The code now reads all of the usernames and stores them in an array. It then gets all of the team members and checks to see if any of the user names in the array match the team member list. If you need to validate multiple users, this makes it a one and done task.</p>
+
+<p>The “-username” parameter can still be used if you just have one user to check. In that case, it’s treated as an array with just one item in it. If you use both “-username” and “-userlist”, the code will use the user list and ignore the user name passed on the command line.</p>
+
+<p>I’m not sure why the code worked when I originally wrote the posts a couple of months ago. My guess is that Apple used to allow timestamps longer than 20 minutes but made a change that now enforces the expiration to their published specification. Test for edge conditions, but avoid using them.</p>]]></content><author><name>Chris Miller</name></author><category term="Apple" /><category term="Apple" /><category term="C" /><category term="C#" /><category term="Python" /><summary type="html"><![CDATA[Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C#, Go, and Python. This was code I was actually using myself and after I wrote it, it stopped working. The API calls were returning an HTTP 401 error. But only on Windows, on the Mac the code worked.]]></summary></entry></feed>
+=======
 exit&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;figure&gt;&lt;img src=&quot;https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-bdhLSQW/0/003b70be/O/06%20-%20sudoers.png&quot; alt=&quot;&quot; /&gt; &lt;/figure&gt;
@@ -585,3 +961,4 @@ function redstart {wsl sudo service redis-server start}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The “-username” parameter can still be used if you just have one user to check. In that case, it’s treated as an array with just one item in it. If you use both “-username” and “-userlist”, the code will use the user list and ignore the user name passed on the command line.&lt;/p&gt;
 
 &lt;p&gt;I’m not sure why the code worked when I originally wrote the posts a couple of months ago. My guess is that Apple used to allow timestamps longer than 20 minutes but made a change that now enforces the expiration to their published specification. Test for edge conditions, but avoid using them.&lt;/p&gt;</content><author><name>Chris Miller</name></author><category term="Apple" /><category term="Apple" /><category term="C" /><category term="C#" /><category term="Python" /><summary type="html">Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple’s App Connect API to query the team membership list using C#, Go, and Python. This was code I was actually using myself and after I wrote it, it stopped working. The API calls were returning an HTTP 401 error. But only on Windows, on the Mac the code worked.</summary></entry></feed>
+>>>>>>> origin/main
