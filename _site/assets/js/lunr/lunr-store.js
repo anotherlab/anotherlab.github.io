@@ -3664,4 +3664,10 @@ var store = [{
         "tags": ["Xamarin","Android","API"],
         "url": "/2023/03/22/android-exported/",
         "teaser": null
+      },{
+        "title": "You can find me on Bluesky",
+        "excerpt":"I’ve been on Bluesky for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn billions of dollars. I never announced that I had quit that site, I just stopped using it. There...","categories": ["Social Media"],
+        "tags": ["Bluesky"],
+        "url": "/2025/02/06/bluesky/",
+        "teaser": null
       }]
