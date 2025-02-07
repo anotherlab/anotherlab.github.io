@@ -3665,16 +3665,15 @@ var store = [{
         "url": "/2023/03/22/android-exported/",
         "teaser": null
       },{
-<<<<<<< HEAD
-        "title": "You can find me on Bluesky",
-        "excerpt":"I’ve been on Bluesky for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn billions of dollars. I never announced that I had quit that site, I just stopped using it. There...","categories": ["Social Media"],
-        "tags": ["Bluesky"],
-        "url": "/2025/02/06/bluesky/",
-=======
         "title": "Apple needs to sort out their API",
         "excerpt":"I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly status update for the account. We link provisioned devices to the registered users in the account by their name. By...","categories": ["Apple"],
         "tags": ["Apple","C#"],
         "url": "/2024/08/27/apples-api-needs-to-be-sorted/",
->>>>>>> origin/main
+        "teaser": null
+      },{
+        "title": "You can find me on Bluesky",
+        "excerpt":"I’ve been on Bluesky for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn billions of dollars. I never announced that I had quit that site, I just stopped using it. There...","categories": ["Social Media"],
+        "tags": ["Bluesky"],
+        "url": "/2025/02/06/bluesky/",
         "teaser": null
       }]
