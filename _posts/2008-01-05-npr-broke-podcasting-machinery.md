@@ -1,10 +1,6 @@
 ---
-id: 212
 title: NPR broke the podcasting machinery
 date: 2008-01-05T16:34:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=212
-permalink: /2008/01/05/npr-broke-podcasting-machinery/
 ---
 I like listening to podcasts on my [Zen Vision:M](http://www.creative.com/products/mp3/zenvisionm/) player.  The Zen comes with a decent enough podcast tool called [Zencast](http://www.zencast.com/).  Zencast has an option to convert audio podcasts to video format.  They take the description of the podcast and display it as text in the podcast.  This makes it handy to see what is on a podcast by playing it for a few seconds.  The other advantage is that it categorizes them separately from the music, making it easier to drill down and locate the file to play.
 

@@ -1,10 +1,6 @@
 ---
-id: 273
 title: Sybase has left the building
 date: 2007-01-02T16:00:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=273
-permalink: /2007/01/02/sybase-has-left-building/
 ---
 We dropped support for Sybase&#8217;s Adaptive Server Anywhere, effective 12/31/06.  It wasn&#8217;t an easy decision, but it was the right choice for us.
 

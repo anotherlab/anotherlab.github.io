@@ -1,10 +1,6 @@
 ---
-id: 202
 title: Fun with changing the IP address of ESX Server 3.5
 date: 2008-02-28T21:56:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=202
-permalink: /2008/02/28/fun-with-changing-ip-address-of-esx/
 ---
 We (our IT manager and myself) have been having some fun with out shiny new [VMWare ESX 3.5 server](http://en.wikipedia.org/wiki/VMware_ESX_Server).  We have had it running for about two weeks now and we decided to change it&#8217;s IP address.  The ESX server was on the same subnet as our LAN.  This meant that it the virtual machines were taking IP addresses out of a pool that was needed for our physical computers.  There were some other security issues, so we decided to put it on it&#8217;s own subnet.
 

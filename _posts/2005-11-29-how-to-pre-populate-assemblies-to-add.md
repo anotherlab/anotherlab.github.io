@@ -1,10 +1,6 @@
 ---
-id: 358
 title: How to pre-populate assemblies to the Add References dialog in Visual Studio 2005
 date: 2005-11-29T15:02:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=358
-permalink: /2005/11/29/how-to-pre-populate-assemblies-to-add/
 ---
 This one is good to keep track of when working in a team enviroment where everyone uses their own folder structures.
 

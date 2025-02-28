@@ -1,10 +1,6 @@
 ---
-id: 261
 title: Windows Home Server goes Beta 2
 date: 2007-02-13T22:53:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=261
-permalink: /2007/02/13/windows-home-server-goes-beta-2/
 ---
 Windows Home Server has reached Beta 2.  Foe those of your playing the home version of &#8220;Name That Beta&#8221;, Beta 2 means that Microsoft has is now soliciting external testers to try the new OS.
 

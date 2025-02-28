@@ -1,10 +1,6 @@
 ---
-id: 252
 title: Fixing Wise Installation System 9 problem with shortcuts in Vista
 date: 2007-03-22T14:31:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=252
-permalink: /2007/03/22/fixing-wise-installation-system-9/
 ---
 We were testing one of installers under Vista and the dreaded [&#8220;User Account Control&#8221;](http://technet.microsoft.com/en-us/windowsvista/aa906021.aspx) dialog was being launched for every shortcut that was created by the installer.  Running the applications referenced by the shortcuts did not through the UAC, just the shortcuts.
 

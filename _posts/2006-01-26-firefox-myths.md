@@ -1,10 +1,6 @@
 ---
-id: 325
 title: FireFox myths
 date: 2006-01-26T18:49:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=325
-permalink: /2006/01/26/firefox-myths/
 ---
 There’s an interest web page called “[Firefox Myths](http://mywebpages.comcast.net/SupportCD/FirefoxMyths.html)” that takes some of the more common claims associated with [Firefox](http://www.mozilla.com/firefox/) (it’s faster, it’s more secure, it’s a [floor wax and a dessert topping](http://snltranscripts.jt.org/75/75ishimmer.phtml)) and examines each claim. While I’m sure that busting all of those myths is going to bug a lot of people who prefer Firefox, I think he’s dead on.
 

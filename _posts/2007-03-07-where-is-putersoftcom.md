@@ -1,10 +1,6 @@
 ---
-id: 259
 title: Where is puterSoft.com?
 date: 2007-03-07T19:55:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=259
-permalink: /2007/03/07/where-is-putersoftcom/
 ---
 Don&#8217;t you hate it when a software component vendor disappears without warning?  In some of our applications, we use a custom datetime edit control named TPSCDateEdit.  This is part of a package from a company named [puterSoft](http://www.putersoft.com/).  We have been using it for about 5 years and when we migrated our Delphi code to Delphi 2006, we got the Delphi 2006 version of their code.
 

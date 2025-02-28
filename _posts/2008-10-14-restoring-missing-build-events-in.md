@@ -1,10 +1,6 @@
 ---
-id: 113
 title: Restoring missing Build Events in Delphi 2007
 date: 2008-10-14T15:22:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=113
-permalink: /2008/10/14/restoring-missing-build-events-in/
 ---
 If you have a Delphi 2007 project that was ported from Delphi 2006, then you may be missing the build event project options.  The <a title="Files that end with .dproj are Delphi project files." href="http://www.file-extensions.org/dproj-file-extension" target="_blank">.dproj</a> file that Delphi 2006 creates is does not have a final XML element named PropertyGroup that Delphi 2007 uses.  Without that final PropertyGroup, Delphi 2007 will not enable Build Events as an option.  If you manually edit your .dproj file, just the following lines:
 

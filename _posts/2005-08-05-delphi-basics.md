@@ -1,10 +1,6 @@
 ---
-id: 421
 title: Delphi Basics
 date: 2005-08-05T13:53:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=421
-permalink: /2005/08/05/delphi-basics/
 ---
 Here&#8217;s a [cool site](http://www.delphibasics.co.uk/index.html "Delphi Basics") that has a lot of reference information for Delphi.
 

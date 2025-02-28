@@ -1,10 +1,6 @@
 ---
-id: 58
 title: Notes on installing FinalBuilder 7
 date: 2010-08-06T20:50:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=58
-permalink: /2010/08/06/notes-on-installing-finalbuilder-7/
 ---
 VSoft Technologies just released a new version of their build automation tool, [FinalBuilder](http://www.finalbuilder.com/home.aspx).  Version 7 gets a new look to their IDE and you can finally have multiple projects open at the same time.  Among other things, they added support for [Hg](http://mercurial.selenic.com/) and [Git](http://git-scm.com/), plus full support for Visual Studio 2010.  It also [supports](http://www.finalbuilder.com/articles.aspx?ID=38) Team Foundation Build 2010.
 

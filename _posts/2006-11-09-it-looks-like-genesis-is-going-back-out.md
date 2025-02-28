@@ -1,9 +1,5 @@
 ---
-id: 275
 date: 2006-11-09T14:06:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=275
-permalink: /2006/11/09/it-looks-like-genesis-is-going-back-out/
 ---
 [<img alt="" src="https://i2.wp.com/photos1.blogger.com/blogger2/6636/1399/320/image4.png?w=680" border="0"  />](https://i2.wp.com/photos1.blogger.com/blogger2/6636/1399/1600/image4.png)
 

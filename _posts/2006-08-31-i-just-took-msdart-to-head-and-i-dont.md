@@ -1,10 +1,6 @@
 ---
-id: 288
 title: 'I just took a MSDart to the head and I don&#8217;t feel so well right now.'
 date: 2006-08-31T20:35:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=288
-permalink: /2006/08/31/i-just-took-msdart-to-head-and-i-dont/
 ---
 One of clients went to run some of our applications on their Windows Server 2003 SP1 box and it wasn&#8217;t very pretty. They got the error message: 
 

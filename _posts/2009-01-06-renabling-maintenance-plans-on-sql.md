@@ -1,10 +1,6 @@
 ---
-id: 106
 title: Renabling maintenance plans on SQL Server 2005
 date: 2009-01-06T15:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=106
-permalink: /2009/01/06/renabling-maintenance-plans-on-sql/
 ---
 We have a couple of SQL Server boxes that we use in our department and of them has some mission critical databases.  Our defect tracking and source control databases are the big ones, but there are a few others.  We back them up and then copy them to a folder on a netwrk share.  From the network share, the files get backup up to tape and are stored offsite.
 

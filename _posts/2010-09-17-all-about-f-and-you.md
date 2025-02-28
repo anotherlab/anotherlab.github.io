@@ -1,10 +1,6 @@
 ---
-id: 49
 title: 'All about “F# and You”'
 date: 2010-09-17T14:18:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=49
-permalink: /2010/09/17/all-about-f-and-you/
 ---
 Last night at our monthly Tech Valley .NET User Group ([TVUG](http://tvug.net/)) meeting, we had [Rick Minerich](http://richardminerich.com/) come in and do a presentation on [F#](http://research.microsoft.com/en-us/um/cambridge/projects/fsharp/).  It was a [very good presentation](http://tvug.net/blogs/tvug_news_and_events/archive/2010/09/10/september-meeting-f.aspx).  Rick was enthusiastic and knows F# cold.  One of the cool things that he showed in his presentation were examples in both F# and [C#](http://msdn.microsoft.com/en-us/vcsharp/default.aspx).  It looked like you could replace every 5-10 lines of C# code with F# code.
 

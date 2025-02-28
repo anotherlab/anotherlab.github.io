@@ -1,10 +1,6 @@
 ---
-id: 196
 title: Miss Bimbo is not welcome in my house
 date: 2008-03-26T16:55:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=196
-permalink: /2008/03/26/miss-bimbo-is-not-welcome-in-my-house/
 ---
 There have been a few articles posted on the Internet about a web site called www.missbimbo.com.  It&#8217;s supposed to be fashion game for young girls, but it sounds pretty trashy.  It&#8217;s aimed at girls between the ages of 9 to 16 and it purports to be a virtual fashion games.  It&#8217;s widely condemned as the users are encouraged to compete against each other to become the &#8220;hottest, coolest, most famous bimbo in the whole world.&#8221; by buy chest implants.  CNN had a good [write up of it](http://www.cnn.com/2008/WORLD/europe/03/25/miss.bimbo/index.html "CNN.com:  Alarm as dolls get breast implants in 'Miss Bimbo' game") and here&#8217;s a direct quote:
 

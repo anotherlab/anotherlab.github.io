@@ -1,10 +1,6 @@
 ---
-id: 77
 title: I don’t care who signs a petition, Roman Polanski is a convicted sexual predator who needs to do his time.
 date: 2009-10-01T14:33:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=77
-permalink: /2009/10/01/i-dont-care-who-signs-petition-roman/
 ---
 I’ve never subscribed to the “Hollywood Elite” theory about radical liberals being in charge of Tinseltown, but I do think more attention is paid to people who lean to the left.  And too much attention is being paid to the people who signed the petition demanding the release of convicted child molester Roman Polanski.  Would they do the same thing if his name was Roman Ray Polan and was a Dade County dish washer?  I don’t think so.
 

@@ -1,10 +1,6 @@
 ---
-id: 230
 title: Allowing Comments on Blogs
 date: 2007-07-20T19:16:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=230
-permalink: /2007/07/20/allowing-comments-on-blogs/
 ---
 I came across a [posting](http://www.scripting.com/2007/01/01.html#theUneditedVoiceOfAPerson) by Dave Winer (via [Joel](http://www.scripting.com/)) about blog comments.  Dave doesn&#8217;t easily allow commenting because he thinks it takes away from message that the blogger is putting out.  The power of blogging is that anyone (outside of some 3rd world countries) can express their own message.  Allowing comments brings in other views that can dilute or contradict your own view.
 

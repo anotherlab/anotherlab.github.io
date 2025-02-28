@@ -1,10 +1,6 @@
 ---
-id: 254
 title: Notes on installing Delphi 2007
 date: 2007-03-20T20:58:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=254
-permalink: /2007/03/20/notes-on-installing-delphi-2007/
 ---
 I got the email yesterday from [CodeGear](http://www.codegear.com/ "Where developers matter"). It was a link to download the newly released [Delphi 2007](http://www.codegear.com/Products/Delphi/Delphi2007forWin32/tabid/236/Default.aspx "Delphi® 2007 for Win32®"). I will be getting the DVD from CodeGear as part of the Software Assurance that I have, but I wanted to try the new installer. This is their first release using installer technology from [InstallAware](http://www.installaware.com/). As it happens, I&#8217;m considering switching from [Wise For Windows Installer](http://www.wise.com/) (WFWI) to InstallAware, so it&#8217;s a good oppourtunity to see their installer in action.
 

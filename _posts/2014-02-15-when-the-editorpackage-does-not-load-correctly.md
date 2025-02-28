@@ -1,10 +1,6 @@
 ---
-id: 632
 title: When the EditorPackage does not load correctly
 date: 2014-02-15T22:09:59-05:00
-layout: post
-guid: http://www.rajapet.com/?p=632
-permalink: /2014/02/15/when-the-editorpackage-does-not-load-correctly/
 ---
 I had this &#8220;The &#8216;Microsoft.VisualStudio.Editor.Implementation.EditorPackage&#8217; package did not load correctly.&#8221; error message when I started up Visual Studio 2013.  My PC had rebooted earlier in the day as a result of some Windows Updates.  Now I was getting this error dialog:
 

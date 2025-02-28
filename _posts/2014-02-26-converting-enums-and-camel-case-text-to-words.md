@@ -1,10 +1,6 @@
 ---
-id: 664
 title: Converting enums and Camel case text to words
 date: 2014-02-26T14:39:01-05:00
-layout: post
-guid: http://www.rajapet.com/?p=664
-permalink: /2014/02/26/converting-enums-and-camel-case-text-to-words/
 ---
 I have [enums](http://msdn.microsoft.com/en-us/library/sbbt4032.aspx) that I want to display on a form and I wanted to make them look a little better on the screen.  The constants defined in the enumerator list are defined using [Camel case.](http://msdn.microsoft.com/en-us/library/x2dbyw72(v=vs.71).aspx "Capitalization Styles")  Like &#8220;firstName&#8221; or  &#8220;mobileNumber&#8221;.  Most of the values could be displayed by converting the Camel cased string to words.
 

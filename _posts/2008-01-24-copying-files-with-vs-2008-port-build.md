@@ -1,10 +1,6 @@
 ---
-id: 208
 title: 'Copying files with VS 2008&#8217;s port-build event under Vista'
 date: 2008-01-24T06:32:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=208
-permalink: /2008/01/24/copying-files-with-vs-2008-port-build/
 ---
 I&#8217;m still working on my [SmugMug](http://www.smugmug.com/) plugin for [Windows Live Writer](http://windowslivewriter.spaces.live.com/). I&#8217;ve ported it from VS 2005 to VS 2008, that was trivial. I&#8217;m at the point where I want to debug the plugin while it&#8217;s being loaded from Live Writer. Normally, this is pretty straight forward. You use the [post-build event](http://msdn2.microsoft.com/en-us/library/e2s2128d.aspx) to copy the plugin&#8217;s files to the Live Writer plugin folder. For my plugin, I used the following build event:
 

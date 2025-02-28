@@ -1,10 +1,6 @@
 ---
-id: 328
 title: Jack of all trades, master of none.
 date: 2006-01-24T15:02:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=328
-permalink: /2006/01/24/jack-of-all-trades-master-of-none/
 ---
 [Jeff Atwood](http://www.codinghorror.com/blog/) has a good [rant](http://www.codinghorror.com/mtype/mt-tb-renamed.cgi/496) about people asking for web sites that scale to devices like PDA’s or crackberry’s.  He takes the view that it would be nice if every web site could scale from cell phone size to desktop, but that it’s not always a realistic request.  
 

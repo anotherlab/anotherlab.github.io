@@ -1,10 +1,6 @@
 ---
-id: 374
 title: 'RE: A better BackgroundWorker : CancelImmediately and other goodies'
 date: 2005-11-11T17:28:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=374
-permalink: /2005/11/11/re-better-backgroundworker/
 ---
 Hmm, I can use this for a service testing application that I&#8217;m working on&#8230;
 

@@ -1,10 +1,6 @@
 ---
-id: 193
 title: Saving application settings over installs
 date: 2008-04-01T15:42:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=193
-permalink: /2008/04/01/saving-application-settings-over/
 ---
 We have been using [Windows Installer](http://en.wikipedia.org/wiki/Windows_installer) (WI) based setups for all of our newer applications.  I used to use [Wise](http://en.wikipedia.org/wiki/Wise_Solutions%2C_Inc.), but I have migrated our installers to [InstallAware](http://www.installaware.com/ "Software Installer: MSI installation tool").  Why I made that change will be another blog post, but needless to say I had very good reasons to make the switch.  When we release a new version or upgrade for one of our applications, we do full installs.  We don&#8217;t do patches.
 

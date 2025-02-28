@@ -1,10 +1,6 @@
 ---
-id: 1293
 title: 'Why the Virtual Keyboard on the Microsoft Band doesn&#8217;t work with Android and iOS'
 date: 2015-06-24T10:21:52-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1293
-permalink: /2015/06/24/why-the-virtual-keyboard-on-the-microsoft-band-doesnt-work-with-android-and-ios/
 ---
 <div id="attachment_1294" style="width: 335px" class="wp-caption alignnone">
   <a href="https://i1.wp.com/www.rajapet.com/wp-content/uploads/2015/06/BandVirtualKeyboard.gif"><img aria-describedby="caption-attachment-1294" loading="lazy" class="size-full wp-image-1294" src="https://i1.wp.com/www.rajapet.com/wp-content/uploads/2015/06/BandVirtualKeyboard.gif?resize=325%2C106" alt="Microsoft Band's Virtual Keyboard" width="325" height="106"  /></a>

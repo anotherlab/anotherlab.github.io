@@ -1,10 +1,6 @@
 ---
-id: 71
 title: There is no sense of humor on the North Face
 date: 2009-12-25T04:02:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=71
-permalink: /2009/12/25/there-is-no-sense-of-humor-on-north/
 ---
 I was just read about how [the North Face is suing the South Butt](http://www.techdirt.com/articles/20091214/2350107352.shtml). The [South Butt](http://www.thesouthbutt.com/) is a parody line of clothing started by Jimmy Winkelmann, a college freshman at the University of Missouri.  The South Butt clothing line features a logo that is a clever spoof of the ever present North Face logo.
 

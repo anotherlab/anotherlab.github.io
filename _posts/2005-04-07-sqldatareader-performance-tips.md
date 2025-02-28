@@ -1,10 +1,6 @@
 ---
-id: 502
 title: SqlDataReader performance tips
 date: 2005-04-07T15:52:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=502
-permalink: /2005/04/07/sqldatareader-performance-tips/
 ---
 [SqlDataReader performance tips](http://sqljunkies.com/WebLog/amachanic/archive/2005/04/06/10462.aspx)
 

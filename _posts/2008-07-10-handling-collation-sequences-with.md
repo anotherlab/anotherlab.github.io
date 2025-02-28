@@ -1,10 +1,6 @@
 ---
-id: 131
 title: Handling collation sequences with temporary tables and table variables with SQL Server
 date: 2008-07-10T19:42:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=131
-permalink: /2008/07/10/handling-collation-sequences-with/
 ---
 When building complex stored procedures that span multiple tables, you will probably need to store some intermediate results in a local buffer and process them before returning the final output.  SQL Server lets you do this through temporary table and table variables.   
 

@@ -1,10 +1,6 @@
 ---
-id: 823
 title: 'This one is for your grandparents (aka &#8220;I&#8217;m calling you from Windows and you a have virus&#8221;'
 date: 2014-05-11T22:44:16-05:00
-layout: post
-guid: http://www.rajapet.com/?p=823
-permalink: /2014/05/11/this-one-is-for-your-grandparents-aka-im-calling-you-from-windows-and-you-a-have-virus/
 ---
 <div style="width: 394px" class="wp-caption alignnone">
   <img loading="lazy" src="https://i0.wp.com/www.rajapet.net/photos/i-KrwGSx5/0/S/i-KrwGSx5-S.jpg?resize=384%2C300" alt="Only you can save Grampy and Oma" width="384" height="300"  />

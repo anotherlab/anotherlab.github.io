@@ -1,10 +1,6 @@
 ---
-id: 350
 title: 'Set the wayback machine to late 1980&#8217;s'
 date: 2005-12-09T17:07:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=350
-permalink: /2005/12/09/set-wayback-machine-to-late-1980s/
 ---
 SteveX posted some [tidbits](http://blog.stevex.net/index.php/2005/12/09/sober-virus-and-reminiscing-about-virusx/ "Sober Virus (and remininscing about VirusX)") about his work on VirusX, a virus checker for the Amiga. I get [Lattice](http://www.lattice.com/otherdos.htm) flashbacks whenever he does that. 
 

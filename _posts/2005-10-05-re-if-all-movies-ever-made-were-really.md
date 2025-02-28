@@ -1,10 +1,6 @@
 ---
-id: 407
 title: 'RE: If All Movies Ever Made Were Really About Software&#8230;'
 date: 2005-10-05T15:35:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=407
-permalink: /2005/10/05/re-if-all-movies-ever-made-were-really/
 ---
 > _A Few Good Objects  
 >_ **Col. Jessup**: You want destructors?  

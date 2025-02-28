@@ -1,0 +1,24 @@
+---
+id: 302
+title: Fun with scripted load tests
+date: 2006-06-13T18:03:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=302
+permalink: /2006/06/13/fun-with-scripted-load-tests/
+---
+We are getting ready to do some load tests and it&#8217;s time to pick some tools.  The app that we want to test is a client/server app with buckets of processing going on the client side.  Most c/s load test tools just emulate the traffic that goes on between the client and the server.  For our app, that wont work, the load occurs on both the client and the app and we have to drive the app.  This means one instance of the app per PC.  We have tried multiple instances of the app on the desktop or through multiple terminal service sessions, but that just didn&#8217;t work.  We tried that a couple of years ago at at the [Microsoft testing facility](http://www.microsoft.com/mscorp/info/usaoffices/newengland/waltham.mspx) in Waltham, MA, but it only would work as one app per machine.
+
+So we will just do that here in the office.  Some night, after everyone goes home, we&#8217;ll log into each desktop with a special login (limited access) and run our tests.  We are evaluating [HighTest Plus](http://www.vtsoft.com/products/HT.html), from Vermont Creative Software.  It&#8217;s an automated software testing tool that allows you to record and playback keyboard/mouse actions.  What we want to do is to setup a repository of scripts and have a set of PCs run the scripts.  The fun part is how to start each testing session without having to walk over to each machine and login and then run the script.
+
+I first looked into somehow getting each machine to login into the testing account.  There&#8217;s no easy way to remotely script this.  For security reasons, you have to use the keyboard and/or mouse with the login dialog, you can&#8217;t bypass that with a script invoked from another machine.   We didn&#8217;t want to install any remote access software like [VNC](http://www.realvnc.com/) or pcAnywhere.  It would cost too much and we didn&#8217;t want to leave anything running on the machines during business hours.  That leaves [Remote Desktop](http://www.microsoft.com/windowsxp/using/mobility/getstarted/remoteintro.mspx).  You can script the [mstsc.exe](http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/ts_cmd_mstsc.mspx?mfr=true) client so that you can feed in the login infomation.  So we started with that.
+
+We wanted to start the remote desktop sessions and then disconnect from them, with the sessions running.  The reason for this was that the machine controlling the tests would end up with 10 to 40 remote desktop sessions and there could be a resource problem.  We tried using Sysinternal.com&#8217;s excellant [psxec](http://www.sysinternals.com/Utilities/PsExec.html) utility to remotely invoke the HighTest executable.  No matter hoiw we sliced it, it would fail with msg hook error message.    This meant that we had to invoke HighTest from a process running on the remote pc.  After banging a few things around, I created a batch file on the remote pc to launch the HighTest executable and added the the &#8220;Scheduled Tasks&#8221; list.  That worked, so I disabled the task so it wouldn&#8217;t get launched by accident.  The schtasks.exe can be used to run scheduled jobs, even from other machines.  Provided that the machine has an open desktop and is not a disconnected session.  Disconnected sessions do not receive keyboard or mouse input, not even simulated input from HightTest.
+
+We have once more trick up our sleeves.  The remote desktop client (mstsc) can be configured to run a program after you are connected.  If you have the &#8220;Remote Desktop Connection&#8221; dialog open, click on the &#8220;Programs&#8221; tab and you will be able to configure the program that you want to run.  We we will do is to have it run a batch file.  That batch file will run the HighTest tool, do any cleanup, and then logout.  And that&#8217;s how we plan on running our load tests.
+
+[Edited on 6/14/06]  
+Scratch the running of programs from the &#8220;Remote Desktop Connection&#8221; dialog.  That only works if you are connected to a Terminal Server.  You get [bupkis](http://www.urbandictionary.com/define.php?term=bupkis) if you use that option with Windows XP.  We are back to looking at using schtasks.exe after starting the remote session with Remote Desktop.
+
+<div>
+  Tech Tags: <a href="http://technorati.com/tag/load+testing" rel="tag">load testing</a> <a href="http://technorati.com/tag/mstsc" rel="tag">mstsc</a> <a href="http://technorati.com/tag/Remote+Desktop" rel="tag">Remote Desktop</a> <a href="http://technorati.com/tag/psexec" rel="tag">psexec</a> <a href="http://technorati.com/tag/schtasks" rel="tag">schtasks</a> <a href="http://technorati.com/tag/HighTest+Plus" rel="tag">HighTest Plus</a> <a href="http://technorati.com/tag/Waltham" rel="tag">Waltham</a>
+</div>

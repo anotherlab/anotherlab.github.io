@@ -1,10 +1,6 @@
 ---
-id: 209
 title: What do you mean my router has a UPnP security hole?
 date: 2008-01-19T02:41:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=209
-permalink: /2008/01/19/what-do-you-mean-my-router-has-upnp/
 ---
 It&#8217;s been [recently made public](http://www.channelregister.co.uk/2008/01/15/home_router_insecurity/ "Most home routers 'vulnerable to remote take-over'") that just about every consumer router is a security hole wide open and it&#8217;s called [UPnP](http://en.wikipedia.org/wiki/Upnp).  That stands for Universal Plug and Play and it&#8217;s a set pf protocols that allow netwrok devices to configure themselves on a network without requiring much, if any, human intervention.
 

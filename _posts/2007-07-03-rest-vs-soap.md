@@ -1,10 +1,6 @@
 ---
-id: 232
 title: REST vs SOAP
 date: 2007-07-03T18:35:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=232
-permalink: /2007/07/03/rest-vs-soap/
 ---
 In the weekly newsletter from [TheServerSide.NET](http://www.theserverside.net/), there was a link to an article titled [&#8220;REST versus SOAP &#8211; the REST story&#8221;](http://searchwebservices.techtarget.com/tip/0,289483,sid26_gci1227190,00.html?track=NL-462&ad=595566&Offer=WStsnret73rest&asrc=EM_NLN_1720842&uid=3232655) by [William Brogden](http://www.wbrogden.com/).  It&#8217;s a few months old, but talk about the recent rise in [REST](http://en.wikipedia.org/wiki/REST) types of services over [XML-RPC](http://en.wikipedia.org/wiki/XML-RPC) and [SOAP](http://en.wikipedia.org/wiki/SOAP).   Brogden briefly covers REST, but he doesn&#8217;t talk about the advantages of REST and why you would ever want to use it over SOAP.  It&#8217;s obvious that he prefers SOAP, but the reasoning was left out of the article.
 

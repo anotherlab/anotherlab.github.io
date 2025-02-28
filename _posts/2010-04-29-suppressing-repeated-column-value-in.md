@@ -1,10 +1,6 @@
 ---
-id: 64
 title: Suppressing a repeated column value in SQL
 date: 2010-04-29T20:37:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=64
-permalink: /2010/04/29/suppressing-repeated-column-value-in/
 ---
 I was asked by one of my co-workers for some SQL help. He needed a SQL statement that would suppress repeated column values for the result set. Basically the value would be shown for the first row and blanked for each successful row that had the same value. Typically you would handle this in the application code, we had a case where we had to pass data to another application and we needed to do this within a single SQL select statement.
 

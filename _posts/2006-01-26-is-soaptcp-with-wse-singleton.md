@@ -1,10 +1,6 @@
 ---
-id: 326
 title: Is soap.tcp with WSE a singleton?
 date: 2006-01-26T06:24:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=326
-permalink: /2006/01/26/is-soaptcp-with-wse-singleton/
 ---
 Ok, the title of this post is pure [jargon](http://www.dack.com/web/bullshit.html), but it fits. This WSE 3 thing is still new to me and I&#8217;m still trying to [grok](http://catb.org/~esr/jargon/html/G/grok.html) some of the finer details. The ability to run a .NET web server over TCP without involving IIS has caught me eye. Thanks to [Indy](http://www.indyproject.org/), I&#8217;ve been doing stand alone web services with Delphi for a couple of years, an equivalent functionality in .NET may make some things easier to migrate. Having a stand alone web service allows you to do interesting things with persistent data structures and you no longer have to worry about IIS flushing your service out of memory.
 

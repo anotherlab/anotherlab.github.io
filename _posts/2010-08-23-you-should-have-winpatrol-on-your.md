@@ -1,10 +1,6 @@
 ---
-id: 54
 title: You should have WinPatrol on your system
 date: 2010-08-23T18:10:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=54
-permalink: /2010/08/23/you-should-have-winpatrol-on-your/
 ---
 You really should have [WinPatrol](http://www.winpatrol.com/) installed on your system.  It’s a service type of application that monitors changes to your system.  For example, if an app tries to register a web browser toolbar, WinPatrol will warn you and give you a chance to block it.  There’s a free version and a paid version.  The free version is very good, but you’ll want the paid version.  It’s [very affordable](http://winpatrol.stores.yahoo.net/winplusmemre.html) and will keep your machine from being bogged down with [crapware](http://www.urbandictionary.com/define.php?term=crapware) and suspicious processes.  WinPatrol is written and supported by [Bill Pytlovany](http://billpstudios.blogspot.com/), a well known Windows security professional.
 

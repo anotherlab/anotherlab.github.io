@@ -1,10 +1,6 @@
 ---
-id: 345
 title: Exceptions and Threads
 date: 2005-12-14T15:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=345
-permalink: /2005/12/14/exceptions-and-threads/
 ---
 Scott Allen has a [good post](http://odetocode.com/Blogs/scott/archive/2005/12/14/2618.aspx "Death by Unhandled Exception") about a difference in how unhandled exceptions are dealt with in .NET 2 from how they were handled in 1.1 In 1.1, if a thread has a unhandled exception, the app would continue to run and there wouldn&#8217;t be any notice of an error. In .NET 2.0, an unhandled exception in a thread will take out the app, just like if it had occurred in the main thread.
 

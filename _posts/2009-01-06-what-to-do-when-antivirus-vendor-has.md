@@ -1,10 +1,6 @@
 ---
-id: 105
 title: What to do when an antivirus vendor has flagged your software as a virus
 date: 2009-01-06T16:55:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=105
-permalink: /2009/01/06/what-to-do-when-antivirus-vendor-has/
 ---
 I usually don’t talk about where I work, this is my personal blog and where I work really doesn’t matter to the content of blog posts.  This post is a little different, it’s work related and knowing where I work adds some needed context.  I’m a senior software engineer for [Tyler Technologies](http://www.tylertech.com/), in their [VersaTrans Solution](http://www.versatrans.com/). The [VersaTrans product line](http://www.versatrans.com/products/versatrans_rp.cfm) provides school transportation software and services for the K-12 schools.
 

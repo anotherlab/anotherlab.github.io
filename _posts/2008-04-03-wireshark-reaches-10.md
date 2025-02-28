@@ -1,10 +1,6 @@
 ---
-id: 192
 title: Wireshark reaches 1.0
 date: 2008-04-03T17:15:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=192
-permalink: /2008/04/03/wireshark-reaches-10/
 ---
 <img loading="lazy" height="100" alt="Image:Wireshark Icon.svg" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Wireshark_Icon.svg/100px-Wireshark_Icon.svg.png" width="100" border="0" />
 

@@ -1,10 +1,6 @@
 ---
-id: 117
 title: Using the test form from remote connections for .NET web services
 date: 2008-08-21T14:16:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=117
-permalink: /2008/08/21/using-test-form-from-remote-connections/
 ---
 I’m working on a web service using C# and targeting the .NET 2.0 Framework.  Nothing terribly fancy, but it has some code to log the caller’s IP address (via HttpContext.Current.Request.UserHostAddress).  While testing the code, I like using the test form functionality that .NET provides with web services.  By design, it only works locally.  If you try to use the test form from a remote machine, you’ll get the error:
 

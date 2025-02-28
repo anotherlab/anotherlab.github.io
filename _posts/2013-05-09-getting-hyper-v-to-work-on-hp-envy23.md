@@ -1,10 +1,6 @@
 ---
-id: 14
 title: Getting Hyper-V to work on a HP Envy23
 date: 2013-05-09T16:57:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=14
-permalink: /2013/05/09/getting-hyper-v-to-work-on-hp-envy23/
 ---
 I finally got Hyper-V working on our HP Envy 23.  For Christmas, I had bought a new PC for our family.  We have a shared PC in a our family room that everyone uses for email, browsing, etc.  At the time I was working on a Windows Phone 8 project and I needed a machine that could handle that development.  My own PC was running Windows 7 and you need Windows 8 or better for Windows Phone development.
 

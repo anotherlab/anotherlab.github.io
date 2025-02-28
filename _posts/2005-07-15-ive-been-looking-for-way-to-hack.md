@@ -1,10 +1,6 @@
 ---
-id: 424
 title: 'I&#8217;ve been looking for a way to hack Google Earth'
 date: 2005-07-15T16:29:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=424
-permalink: /2005/07/15/ive-been-looking-for-way-to-hack/
 ---
 [Google Earth](http://earth.google.com/ "Google Earth") is cool. They took an excellent product called Keyhole and bought the company last year. The first resulsts of that were the satelite image detail available in Google Maps. Then they recently release Google Earth in three versions, two paid, one free. The free version is pretty powerful and lets you create animations on the screen, but you can&#8217;t save the output as a video file. 
 

@@ -1,10 +1,6 @@
 ---
-id: 1049
 title: Quick work around for unresolved Xamarin components in Visual Studio
 date: 2015-01-23T12:53:17-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1049
-permalink: /2015/01/23/quick-work-around-for-unresolved-xamarin-components-in-visual-studio/
 ---
 Have you ever had an unresolved component when  using the Xamarin plugin win Visual Studio?  You add a component from the Xamarin Component Store and after you installed it, it comes up as unresolved.
 

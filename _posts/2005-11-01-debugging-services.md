@@ -1,10 +1,6 @@
 ---
-id: 383
 title: Debugging services
 date: 2005-11-01T15:35:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=383
-permalink: /2005/11/01/debugging-services/
 ---
 Simon Carter has [a tip](http://cc.borland.com/Item.aspx?id=21933 "Debugging Services with Attach to Process") on debugging services. It boils down to calling the Windows Sleep API in your service constructor code. This gives your debugger enough time to attach the your process in time to step through the service start up code. Usually when you attach to a running process, it has already gone through it&#8217;s normal initialization code (&#8220;We now join this program already in progress&#8221;). If you are trying to diagnose a problem in the startup code, it&#8217;s already too late by the time you can attach to it. That is [the joy](http://images.google.com/images?svnum=10&hl=en&lr=&imgsz=xxlarge&c2coff=1&client=opera&rls=en&q=%22the+scream%22+munch&btnG=Search "the joy") that we call Windows Service programming.
 

@@ -1,10 +1,6 @@
 ---
-id: 18
 title: Today I learned that my daughter has never seen a 3.5” disk
 date: 2013-02-10T05:42:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=18
-permalink: /2013/02/10/today-i-learned-that-my-daughter-has/
 ---
 I was watching my 10 year old daughter work on a story in MS Word 2007. To save the document, she was going into the Word menu to select save. I asked her why she just didn’t click the save button. She said “What save button?”. I pointed out the save button that is just above the Home tab.
 

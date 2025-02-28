@@ -1,10 +1,6 @@
 ---
-id: 340
 title: The joy of editing the Mac OS X hosts file
 date: 2005-12-21T21:41:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=340
-permalink: /2005/12/21/joy-of-editing-mac-os-x-hosts-file/
 ---
 I have a G4 iMac on my desk. You know, one of the ones that looks like a desk lamp. It competes for space with my two XP boxes. I do my development under XP, the iLamp is for testing our web apps. The ilamp more or less sees our network, but it can&#8217;t resolve workstation WINS names to actual IP addresses. Since I know zip about configuring Mac OS X networking, I figured I would cheat and just add the workstation IP addresses to the hosts file on the iLamp. In a normal OS, you just edit the hosts file and be done with it, not with the iLamp. No sir, you have to mix the cutting edge of 1978 technology with arcane Mac OS X commands. After some googling, I found what I needed here at [macosx.com](http://www.macosx.com/forums/archive/index.php/t-10694.html). You have to run a unix/linix/whatever shell, edit or create the hosts file, then load it with niload. And that&#8217;s the simple way to do it. If you want to do it with the GUI tools, it&#8217;s pretty damn tedius.
 

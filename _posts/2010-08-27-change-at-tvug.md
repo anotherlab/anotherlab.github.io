@@ -1,10 +1,6 @@
 ---
-id: 53
 title: A change at TVUG
 date: 2010-08-27T16:49:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=53
-permalink: /2010/08/27/change-at-tvug/
 ---
 For the last couple of years, Griff Townsend has been the President of the [Tech Valley .NET Users Group (TVUG)](http://www.tvug.net/), here in Albany NY.  Griff has put in many hours with [TVUG activities](http://www.tvug.net/blogs/tvug_news_and_events/archive/2010/05/07/may-meeting-5-15-2010-launch-and-learn.aspx) and has [done](http://www.tvug.net/blogs/tvug_news_and_events/archive/2008/09/03/september-2008-meeting.aspx) [many](http://www.tvug.net/blogs/tvug_news_and_events/archive/2009/11/24/building-business-objects-with-ef-and-visual-studio.aspx) [presentations](http://www.tvug.net/blogs/tvug_news_and_events/archive/2008/12/08/december-meeting.aspx) for us.  Unfortunately for [us](http://www.techvalley.org/), Griff is moving to bigger and better things in another state.  Griff will be missed here and we wish him well as he continues his career in a warmer climate.
 

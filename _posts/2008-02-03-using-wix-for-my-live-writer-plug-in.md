@@ -1,10 +1,6 @@
 ---
-id: 206
 title: Using Wix for my Live Writer Plug-in
 date: 2008-02-03T06:35:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=206
-permalink: /2008/02/03/using-wix-for-my-live-writer-plug-in/
 ---
 I finally have version 1 of my Smugmug gallery plug-in completed. The next step is to do the installer. To get a plug-in up on the [Windows Live Gallery](http://gallery.live.com/), it must have an installer that meets the requirements on the Gallery Developer Center [page](http://gallery.live.com/devcenter.aspx). A content plug-in has to meet these requirements:
 

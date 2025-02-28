@@ -1,10 +1,6 @@
 ---
-id: 140
 title: Why I like owning a TiVo
 date: 2008-07-01T13:43:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=140
-permalink: /2008/07/01/why-i-like-owning-tivo/
 ---
 This tip just popped in my email as part of the [TiVo](http://www.tivo.com/) Newsletter:
 

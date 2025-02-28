@@ -1,10 +1,6 @@
 ---
-id: 15
 title: My journey into the Center of Gravity
 date: 2013-05-06T17:05:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=15
-permalink: /2013/05/06/my-journey-into-center-of-gravity/
 ---
 <img src="https://i1.wp.com/www.rajapet.net/photos/i-mPQ8tzM/0/S/i-mPQ8tzM-S.png?w=680"  />
 

@@ -1,10 +1,6 @@
 ---
-id: 121
 title: Why www.nbc.com wont load with IE7 on Vista (and how to get around it)
 date: 2008-08-11T16:59:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=121
-permalink: /2008/08/11/why-wwwnbccom-wont-load-with-ie7-on/
 ---
 My kids wanted to watch the Olympic swimming events going on in Beijing.  Since NBC is streaming all the venues, I figures I would just fire up the web browser and wander over to [www.nbc.com](http://www.nbc.com/).   We have a “family” pc that everyone can use and it runs Vista Home Premimum (32-bit), with Service Pack 1 installed.  Since I knew that NBC was going to be using the Microsoft stack with Silverlight to stream the video, I figured I would have the least amount of headaches with Internet Explorer 7.  Wrong!
 

@@ -1,10 +1,6 @@
 ---
-id: 29
 title: I’m bothered by the idea of using the homeless as office infrastructure
 date: 2012-03-13T11:02:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=29
-permalink: /2012/03/13/im-bothered-by-idea-of-using-homeless/
 ---
 There has been a lot of comments regarding the [use the of homeless people at the SxSW Interactive conference as roving hotspots](http://www.latimes.com/news/nation/nationnow/la-na-nn-texas-homeless-hotspot-20120312,0,5851125.story).  [BBH Labs](http://bbh-labs.com/), a NYC based marketing company, did an experiment where they sent out homeless people carrying 4G wireless hotspots.  They wore shirts that said “I’m XXX, a 4G hotspot”.  You paid what you were felt was fair, and the proceeds would go to that homeless person.
 

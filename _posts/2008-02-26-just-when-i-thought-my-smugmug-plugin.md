@@ -1,10 +1,6 @@
 ---
-id: 203
 title: 'Just when I thought my SmugMug plugin was finished&#8230;'
 date: 2008-02-26T05:31:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=203
-permalink: /2008/02/26/just-when-i-thought-my-smugmug-plugin/
 ---
 After tackling the Wix learning curve, I have an installer for my SmugMug plugin does usual things: check for .NET 2.0, install the files, add the registry key to register the plugin, and support upgrading in place.  One step closer to releasing this plugin for Windows Live Writer.
 

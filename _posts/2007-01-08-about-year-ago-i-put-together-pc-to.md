@@ -1,9 +1,5 @@
 ---
-id: 268
 date: 2007-01-08T18:39:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=268
-permalink: /2007/01/08/about-year-ago-i-put-together-pc-to/
 ---
 [<img src="https://i0.wp.com/2.bp.blogspot.com/_natoSxTaPFU/RaKiRwzaw7I/AAAAAAAAAAM/8eZFGHVsGd4/s200/reenactors.jpg?w=680" alt="" border="0"  />](https://i2.wp.com/2.bp.blogspot.com/_natoSxTaPFU/RaKiRwzaw7I/AAAAAAAAAAM/8eZFGHVsGd4/s1600-h/reenactors.jpg)
 

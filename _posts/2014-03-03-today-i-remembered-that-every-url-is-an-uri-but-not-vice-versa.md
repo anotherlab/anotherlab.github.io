@@ -1,10 +1,6 @@
 ---
-id: 681
 title: Today I remembered that every URL is an URI, but not vice versa
 date: 2014-03-03T13:07:38-05:00
-layout: post
-guid: http://www.rajapet.com/?p=681
-permalink: /2014/03/03/today-i-remembered-that-every-url-is-an-uri-but-not-vice-versa/
 ---
 I was writing some validation code for a desktop app and there are some fields require web page URLs.  My first thought was to a regular expression to validate the input, then this quote came to mind.
 

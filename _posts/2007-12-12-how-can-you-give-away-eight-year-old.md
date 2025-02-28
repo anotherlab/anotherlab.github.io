@@ -1,10 +1,6 @@
 ---
-id: 219
 title: How can you give away a eight year old?
 date: 2007-12-12T03:17:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=219
-permalink: /2007/12/12/how-can-you-give-away-eight-year-old/
 ---
 I came across a news article about the [Dutch couple](http://www.dailymail.co.uk/pages/live/articles/news/worldnews.html?in_article_id=501281&in_page_id=1811 "Link to an article in the Dailly Mail") who gave up their eight year old daughter, who they had adopted as a baby from South Korea.  They claimed she didn&#8217;t fit in their life style.  What on Earth is going through these people&#8217;s minds?  She has been their daughter since she was four months old.  Since when did the disposal of second graders become a life style option?
 

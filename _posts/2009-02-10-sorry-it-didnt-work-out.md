@@ -1,10 +1,6 @@
 ---
-id: 103
 title: Sorry it didn’t work out
 date: 2009-02-10T15:18:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=103
-permalink: /2009/02/10/sorry-it-didnt-work-out/
 ---
 My work email inbox had a lot of spam this morning.  The messages were very similar in content with subtle variations in the sender and subject fields.  Nothing unusual there.  The odds are that someone got hit with a virus and my email address was in their address book.  That’s the tax we pay for free transmission of email.  [Okay people, move along, there’s nothing to see here](http://www.nationmaster.com/encyclopedia/Officer-Barbrady#Quotes "Obligatory Officer Barbrady reference").
 

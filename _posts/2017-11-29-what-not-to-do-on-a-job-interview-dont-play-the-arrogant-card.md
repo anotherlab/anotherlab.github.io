@@ -1,8 +1,6 @@
 ---
 title: "What not to do on a job interview: Don't play the arrogant card"
 date: 2017-11-29
-collect_box_size:
-  - collect-square
 categories:
   - Employment
 ---

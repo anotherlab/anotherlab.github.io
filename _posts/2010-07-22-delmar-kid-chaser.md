@@ -1,10 +1,6 @@
 ---
-id: 61
 title: The Delmar Kid Chaser
 date: 2010-07-22T14:08:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=61
-permalink: /2010/07/22/delmar-kid-chaser/
 ---
 I’ve been following the story of the Delmar Kid Chaser.  If you had not been following this one, it made the [local](http://www.timesunion.com/AspStories/story.asp?storyID=952628) [news](http://wnyt.com/article/stories/S1662478.shtml?cat=300) [a](http://www.fox23news.com/news/local/story/Homeowner-arrested-in-teen-prank/7mv_TBBQ4E2zjE83yZJZsQ.cspx) [few](http://www.wten.com/Global/story.asp?S=12849451http://www.wten.com/Global/story.asp?S=12849451) [days](http://spotlightnews.com/news/view_news.php?news_id=1279730321) ago.  Four teenagers raised a ruckus outside a local families home around 10pm on Saturday night.  They banged on the back door and then rang the front door bell.  The home owner chased the boys and caught one of them.  He brought the 14 year old into his home and then called the police.
 

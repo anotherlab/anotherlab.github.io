@@ -1,10 +1,6 @@
 ---
-id: 1072
 title: Getting a new dev machine set up, OS X Style
 date: 2015-02-03T11:36:51-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1072
-permalink: /2015/02/03/getting-a-new-dev-machine-set-up-os-x-style/
 ---
 So I&#8217;m on my second Macbook. I use a Macbook Pro for iOS development and I was due for a new one.  I went from a Late 2011 MBP to a late 2014 MBP.  Except now I have a Retina display and a 512 SSD. I&#8217;ve gained an HDMI port, but lost the Ethernet port.  I&#8217;m still not sure if that was a fair trade.
 

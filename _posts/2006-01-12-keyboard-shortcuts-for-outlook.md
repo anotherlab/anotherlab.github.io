@@ -1,10 +1,6 @@
 ---
-id: 332
 title: Keyboard shortcuts for Outlook
 date: 2006-01-12T19:58:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=332
-permalink: /2006/01/12/keyboard-shortcuts-for-outlook/
 ---
 Tragically, I live inside Outlook 2003. Anything that makes it faster for me to use, I&#8217;ll take. [LifeHacker](http://www.lifehacker.com/) has some [good](http://www.lifehacker.com/software/outlook/microsoft-outlook-keyboard-shortcuts-148157.php) stuff&#8230;. 
 

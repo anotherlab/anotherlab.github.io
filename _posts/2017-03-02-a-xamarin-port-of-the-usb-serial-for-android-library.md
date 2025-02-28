@@ -1,8 +1,6 @@
 ---
 title: A Xamarin port of the usb-serial-for-android library
 date: 2017-03-02
-collect_box_size:
-  - collect-square
 categories:
   - Hardware
   - RFID

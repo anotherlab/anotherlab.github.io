@@ -1,10 +1,6 @@
 ---
-id: 138
 title: It’s not a TiVo, it’s just a DVR
 date: 2008-07-02T21:03:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=138
-permalink: /2008/07/02/its-not-tivo-its-just-dvr/
 ---
 </p> </p> 
 

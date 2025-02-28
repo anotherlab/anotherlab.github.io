@@ -1,10 +1,6 @@
 ---
-id: 500
 title: Convert a string to an enumerated (enum) value.
 date: 2005-04-07T16:11:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=500
-permalink: /2005/04/07/convert-string-to-enumerated-enum/
 ---
 Another cool tip from Mark Wagner: [Convert a string to an enumerated (enum) value.](http://blogs.crsw.com/mark/archive/2005/04/07/832.aspx)
 

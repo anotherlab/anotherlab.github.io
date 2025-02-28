@@ -1,10 +1,6 @@
 ---
-id: 223
 title: What happened after I emailed Sears
 date: 2007-11-28T02:51:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=223
-permalink: /2007/11/28/what-happened-after-i-emailed-sears/
 ---
 Earlier today, I posted about what I went through with [ordering a vacuum cleaner from Sears.com](http://anotherlab.rajapet.net/2007/11/how-not-to-handle-black-friday-searscom.html "How not to handle Black Friday: Sears.com").  My first inclination was to just call the store.   But I wanted to make sure that I got everything down and with as little emotion as possible.  I can do that better with email than over the phone.  I wasn&#8217;t 100% successful with keeping my emotions out of the message, but I think I accurately conveyed the experience that I went through.
 

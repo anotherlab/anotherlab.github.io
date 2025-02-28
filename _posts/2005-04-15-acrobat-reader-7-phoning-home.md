@@ -1,10 +1,6 @@
 ---
-id: 496
 title: Acrobat Reader 7 phoning home
 date: 2005-04-15T18:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=496
-permalink: /2005/04/15/acrobat-reader-7-phoning-home/
 ---
 Remote Approach is a company that has designed a way to track PDF files using Javascript. Each time a person reads these special designed PDF files, a connection to http://www.remoteapproach.com/remoteapproach/logging.asp is made. This allows the company (and PDF author) to gather information such as IP addresses of those who are reading the PDF.
 

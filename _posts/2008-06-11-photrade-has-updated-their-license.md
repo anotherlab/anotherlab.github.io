@@ -1,10 +1,6 @@
 ---
-id: 159
 title: 'Photrade has updated their license agreement for everyone&#8217;s benefit'
 date: 2008-06-11T04:56:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=159
-permalink: /2008/06/11/photrade-has-updated-their-license/
 ---
 Yesterday, I posted about a new site called [Photrade and it&#8217;s license agreement](http://anotherlab.rajapet.net/2008/06/photrade-lets-you-sell-your-photos.html).  Basically, section F of their license gave them the permanent right to do anything to your images with out compensation. 
 

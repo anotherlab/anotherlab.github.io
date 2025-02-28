@@ -1,10 +1,6 @@
 ---
-id: 1238
 title: The first US MVP Open Days was a success
 date: 2015-04-01T14:11:48-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1238
-permalink: /2015/04/01/the-first-us-mvp-open-days-was-a-success/
 ---
 Last week I attended the first [US MVP Open Days](http://mvp.microsoft.com/en-US/US-MVP-Open-Days.aspx "US MVP Open Days March 27 - 28, 2015").  It was held at the Microsoft Technology Center in Malvern, PA.  It was a 2+ day conference for US Microsoft MVPs.  Other countries have been holding their own MVP Days, it was time for us to have one.
 

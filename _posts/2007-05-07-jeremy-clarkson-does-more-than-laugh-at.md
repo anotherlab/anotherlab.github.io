@@ -1,10 +1,6 @@
 ---
-id: 245
 title: Jeremy Clarkson does more than laugh at rice
 date: 2007-05-07T15:33:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=245
-permalink: /2007/05/07/jeremy-clarkson-does-more-than-laugh-at/
 ---
 I really wish I could get [&#8220;Top Gear&#8221;](http://www.topgear.com/) here.  I can just watch that show for hours.  The only way I get to see any episodes is through YouTube.   I just came across this little gem:
 

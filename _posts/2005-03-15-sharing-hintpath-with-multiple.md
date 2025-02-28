@@ -1,10 +1,6 @@
 ---
-id: 512
 title: Sharing the Hintpath with multiple programmers
 date: 2005-03-15T16:45:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=512
-permalink: /2005/03/15/sharing-hintpath-with-multiple/
 ---
 At work we are going from being a Delphi-centric shop, to a Delphi and .NET shop. To say that has been a bit of a learning curve going from Delphi to C#. Just learning the IDE is a substantial task. One problem we had was with shared code assemblies having different paths on each programmer&#8217;s machine. In the .csproj file, the assembly&#8217;s hintpath was set to an absolute and that wasn&#8217;t going to work.
 

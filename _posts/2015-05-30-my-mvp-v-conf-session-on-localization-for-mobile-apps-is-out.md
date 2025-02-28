@@ -1,10 +1,6 @@
 ---
-id: 1271
 title: My MVP V-Conf session on localization for mobile apps is out
 date: 2015-05-30T23:04:09-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1271
-permalink: /2015/05/30/my-mvp-v-conf-session-on-localization-for-mobile-apps-is-out/
 ---
 Two weeks ago I participated in the [Microsoft Virtual Conference](http://mvp.microsoft.com/en-us/virtualconference.aspx).  I did a session on cross platform localization for native apps using .NET.  It&#8217;s a continuation of the localization [article](http://www.rajapet.com/2013/12/cross-platform-localization-for-mobile-apps-in-code-magazine.html) that I did for CODE magazine 18 months ago.
 

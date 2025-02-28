@@ -1,10 +1,6 @@
 ---
-id: 448
 title: 'Causes of Colors &#8211; Why are things colored?'
 date: 2005-06-02T14:41:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=448
-permalink: /2005/06/02/causes-of-colors-why-are-things/
 ---
 [Causes of Colors &#8211; Why are things colored?](http://webexhibits.org/causesofcolor/index.html)
 

@@ -1,10 +1,6 @@
 ---
-id: 160
 title: Photrade lets you sell your photos online but retains perpetual and royalty-free license to your images
 date: 2008-06-10T20:13:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=160
-permalink: /2008/06/10/photrade-lets-you-sell-your-photos/
 ---
 _I have updated this post with additional details about how Photrade has revised their license agreement.  I also put additional comments in a new_ [_post_](http://anotherlab.rajapet.net/2008/06/photrade-has-updated-their-license.html)_._
 

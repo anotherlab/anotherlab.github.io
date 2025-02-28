@@ -1,10 +1,6 @@
 ---
-id: 346
 title: Saving and restoring a forms location on
 date: 2005-12-12T16:32:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=346
-permalink: /2005/12/12/saving-and-restoring-forms-location-on/
 ---
 [Raghavendra Prabhu](http://blogs.msdn.com/rprabhu/default.aspx) has the [start of some code](http://blogs.msdn.com/rprabhu/archive/2005/11/28/497792.aspx) to save/restore a form’s position.  This requires the [Application Settings](http://msdn2.microsoft.com/library/0zszyc6e(en-us,VS.80).aspx) feature in 2.0, so this is mostly theoretical for me.
 

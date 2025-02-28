@@ -1,10 +1,6 @@
 ---
-id: 175
 title: How to rename database objects to comply with naming conventions
 date: 2008-05-02T18:23:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=175
-permalink: /2008/05/02/how-to-rename-database-objects-to/
 ---
 We have guidelines for the naming conventions of our database objects.  It&#8217;s pretty much the common pattern you see all over the place. For example, we use the following convention for default constraints:
 

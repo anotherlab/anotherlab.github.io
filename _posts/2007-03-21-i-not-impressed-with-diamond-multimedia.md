@@ -1,10 +1,6 @@
 ---
-id: 253
 title: 'I&#8217;m not impressed with Diamond Multimedia support'
 date: 2007-03-21T16:51:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=253
-permalink: /2007/03/21/i-not-impressed-with-diamond-multimedia/
 ---
 I have a older PC that I just installed Vista. I want to make sure that our apps place well under that OS and I don&#8217;t want Vista as my primary OS just yet. Usually I do that kind of testing under VMWare, but you don&#8217;t get the full experience of the OS when it&#8217;s virtualized.
 

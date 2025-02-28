@@ -1,10 +1,6 @@
 ---
-id: 200
 title: The Lost Art of TSR Programming
 date: 2008-03-11T14:44:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=200
-permalink: /2008/03/11/lost-art-of-tsr-programming/
 ---
 Scott Allen had a [amusing post](http://odetocode.com/Blogs/scott/archive/2008/03/10/11882.aspx "Talks You Won’t See At the Local Code Camp"), &#8220;Talks You Won’t See At the Local Code Camp&#8221;, on his blog.  One of the talks was &#8220;The Lost Art of TSR Programming&#8221;.   That shook some memories out of the cranial storage device.  I used to write TSR programs, more formerly known as Terminate and Stay Resident.
 

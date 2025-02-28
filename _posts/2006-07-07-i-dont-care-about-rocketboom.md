@@ -1,10 +1,6 @@
 ---
-id: 299
 title: 'I don&#8217;t care about RocketBoom'
 date: 2006-07-07T21:03:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=299
-permalink: /2006/07/07/i-dont-care-about-rocketboom/
 ---
 I have seen too many blog postings about [Amanda Congdon](http://www.amandaunboomed.blogspot.com/) leaving the [RocketBoom](http://www.rocketboom.com/) [vlog](http://en.wikipedia.org/wiki/Videoblog). There&#8217;s a he said/she said thing going on between her and the other owner. Since the world+dog seems to have a need to post about, I might was well too.
 

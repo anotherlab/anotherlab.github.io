@@ -1,10 +1,6 @@
 ---
-id: 372
 title: 'A suggestion for &quot;Just Think of Canada as 11 More States&quot;'
 date: 2005-11-14T18:43:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=372
-permalink: /2005/11/14/suggestion-for-just-think-of-canada-as/
 ---
 Steve&#8217;s has [a bone to pick with us](http://blog.stevex.net/index.php/2005/11/12/just-think-of-canada-as-11-more-states/trackback/).
 

@@ -1,10 +1,6 @@
 ---
-id: 76
 title: Fess up when you made a mistake
 date: 2009-10-08T02:43:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=76
-permalink: /2009/10/08/fess-up-when-you-made-mistake/
 ---
 I was working on a installer project for a new tool that we will be releasing this fall when I hit the most odd error.  Right after the installer started up, it would bomb out with an error message that the some files that it need were missing.  And it only happened when I called a command line app that I wrote from within the installer.  If I commented out the code that executed that app, the installer ran as expected.
 

@@ -1,10 +1,6 @@
 ---
-id: 516
 title: Just ordered our Christmas cards
 date: 2013-12-08T03:35:59-05:00
-layout: post
-guid: http://www.rajapet.com/?p=516
-permalink: /2013/12/08/just-ordered-our-christmas-cards/
 ---
 I finally got around to ordering our Christmas cards.  We&#8217;ve been using [Shutterfly](http://www.shutterfly.com/ "Shutterfly") for the last few years.  I&#8217;ve been please with the quality, choices, and costs.
 

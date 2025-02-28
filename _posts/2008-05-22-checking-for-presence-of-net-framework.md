@@ -1,10 +1,6 @@
 ---
-id: 169
 title: Checking for the presence of .Net Framework 2.0 SP1
 date: 2008-05-22T20:31:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=169
-permalink: /2008/05/22/checking-for-presence-of-net-framework/
 ---
 [Installware](http://www.installaware.com/) has a lot of built in support for checking for the presence of the various flavors of the .NET Framework.  In it&#8217;s current incarnation, 7.5, it doesn&#8217;t have anything for checking for the presence of Service Pack 1 of the .NET Framework 1.0.  It turned out to be pretty easy to add that check to my installer script.
 

@@ -1,10 +1,6 @@
 ---
-id: 148
 title: Is there ever a good reason to “Google Bomb”?
 date: 2008-06-23T06:11:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=148
-permalink: /2008/06/23/is-there-ever-good-reason-to-google/
 ---
 </p> </p> 
 

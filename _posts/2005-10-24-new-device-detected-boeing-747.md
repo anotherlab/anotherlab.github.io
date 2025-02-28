@@ -1,10 +1,6 @@
 ---
-id: 393
 title: 'New device detected: Boeing 747'
 date: 2005-10-24T16:24:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=393
-permalink: /2005/10/24/new-device-detected-boeing-747/
 ---
 I would have loved to have seen that ono pop up on the scrren.
 

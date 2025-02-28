@@ -1,10 +1,6 @@
 ---
-id: 770
 title: Bundling jQuery 2.x and jQuery 1.x in ASP .Net MVC and staying NuGet fresh
 date: 2014-03-23T15:00:31-05:00
-layout: post
-guid: http://www.rajapet.com/?p=770
-permalink: /2014/03/23/bundling-jquery-2-x-and-jquery-1-x-in-asp-net-mvc-and-staying-nuget-fresh/
 ---
 <img loading="lazy" class="aligncenter" alt="Fork in the road" src="https://i1.wp.com/www.rajapet.net/photos/i-bvJLJpj/0/L/i-bvJLJpj-L.jpg?resize=400%2C300" width="400" height="300"  />  
 If you use [Nuget](https://www.nuget.org/) to install [jQuery](http://www.jquery.com/) into your application, you&#8217;ll need to take some extra steps to support multiple versions of jQuery.  By default, NuGet will uninstall previous versions of a package.  The way around this is to create another folder inside the scripts folder and put the older jQuery-1._._ files in it. I got the idea for doing this from a [post](http://stackoverflow.com/questions/17783019/bundling-multiple-versions-of-jquery "Bundling multiple versions of Jquery") on StackOverflow

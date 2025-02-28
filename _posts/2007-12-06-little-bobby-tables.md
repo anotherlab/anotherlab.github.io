@@ -1,10 +1,6 @@
 ---
-id: 221
 title: Little Bobby Tables
 date: 2007-12-06T15:51:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=221
-permalink: /2007/12/06/little-bobby-tables/
 ---
 Not too long ago, the online comic [xkcd](http://xkcd.com/ "xkcd - A webcomic of romance, sarcasm, math, and language.") ran a strip that just killed me.
 

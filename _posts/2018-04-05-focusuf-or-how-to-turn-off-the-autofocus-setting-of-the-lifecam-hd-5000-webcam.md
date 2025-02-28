@@ -1,8 +1,6 @@
 ---
 title: FocusUF or how to turn off the autofocus setting of the LifeCam HD-5000 webcam
 date: 2018-04-05
-collect_box_size:
-  - collect-square
 categories:
   - Annoyances
 tags:

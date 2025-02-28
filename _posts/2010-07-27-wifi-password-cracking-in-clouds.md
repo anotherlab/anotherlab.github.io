@@ -1,10 +1,6 @@
 ---
-id: 60
 title: Wifi password cracking in the clouds
 date: 2010-07-27T21:02:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=60
-permalink: /2010/07/27/wifi-password-cracking-in-clouds/
 ---
 Bruce Schneier posted [an article on his blog about wpacracker.com](http://www.schneier.com/blog/archives/2010/07/wpa_cracking_in.html), a service for cracking [WPA](http://en.wikipedia.org/wiki/Wi-Fi_Protected_Access) and other passwords.  Basically, you send them a dump of network traffic from a WiFi network and they will use a brute force algorithm to guess the password.  With a massive dictionary and brute force computing. they claim to be able to crack most WPA passwords in 20 minutes.  Once they have the WPA password, your home network wide open to the outside world.
 

@@ -1,10 +1,6 @@
 ---
-id: 258
 title: Thinking about WAIS, Gopher, and ExecPC
 date: 2007-03-12T03:36:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=258
-permalink: /2007/03/12/thinking-about-wais-gopher-and-execpc/
 ---
 I was reading a [post](http://blogs.msdn.com/brada/archive/2007/03/11/failed-internet-technologies-examples.aspx) by [Brad Abrams](http://blogs.msdn.com/brada/default.aspx), where he was wondering why WAIS and FTP had died out.  While [I disagreed](http://blogs.msdn.com/brada/archive/2007/03/11/failed-internet-technologies-examples.aspx#1861929) with the idea that FTP has died out, [WAIS](http://en.wikipedia.org/wiki/Wide_area_information_server) is one of the [long](http://www.tranquileye.com/cyber/1992/AISandGopher.html) gone technologies of the Internet.  Unless you were using the Internet in the early &#8217;90s, the odds are that you have no idea of what WAIS was.  WAIS is [over](http://www.w3.org/Gateways/WAISGate.html).
 

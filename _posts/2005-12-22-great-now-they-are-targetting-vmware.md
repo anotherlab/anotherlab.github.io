@@ -1,10 +1,6 @@
 ---
-id: 339
 title: Great, now they are targetting VMWare
 date: 2005-12-22T15:25:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=339
-permalink: /2005/12/22/great-now-they-are-targetting-vmware/
 ---
 > [http://www.vmware.com/support/kb/enduser/std\_adp.php?p\_faqid=2000](http://www.vmware.com/support/kb/enduser/std_adp.php?p_faqid=2000)
 > 

@@ -1,10 +1,6 @@
 ---
-id: 129
 title: Bonus TVUG presentation by John Papa
 date: 2008-07-13T04:42:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=129
-permalink: /2008/07/13/bonus-tvug-presentation-by-john-papa/
 ---
 On Tuesday, July 22nd, we will be having a bonus [Tech Valley User Group](http://tvug.net/) meeting.  We usually skip the summer months, but [John Papa](http://johnpapa.net/) is going to be in town and he offered to do a presentation [how to consume WCF web services from Silverlight applications](http://johnpapa.net/all/silverlight-and-data-services-in-albany-ny/).  
 

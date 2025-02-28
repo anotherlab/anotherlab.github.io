@@ -1,10 +1,6 @@
 ---
-id: 155
 title: At least I passed the robot test
 date: 2008-06-12T20:13:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=155
-permalink: /2008/06/12/at-least-i-passed-robot-test/
 ---
 [<img alt="Name That Robot" src="https://i2.wp.com/www.oneplusyou.com/q/img/badges/robot_pass_my_score_69.jpg?w=680" border="0"  />](http://www.oneplusyou.com/q/v/robot)  
 

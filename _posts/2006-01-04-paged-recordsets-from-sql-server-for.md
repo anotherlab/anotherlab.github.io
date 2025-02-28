@@ -1,10 +1,6 @@
 ---
-id: 335
 title: Paged recordsets from SQL Server for web pages
 date: 2006-01-04T21:15:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=335
-permalink: /2006/01/04/paged-recordsets-from-sql-server-for/
 ---
 I&#8217;ve worked on a few web apps where I displayed a paged list of data, but without storing all of the rows in the view state or as a session variable. I prefer to let SQL Server do the [heavy lifting](http://heavylifting.blogspot.com/ "this link has nothing to do with the subject matter") for these kinds of situations. What I want to do is to get a set of filtered data from SQL Server (2000 or better, my friend) with arbitrary row numbers assigned so that I can ask for all rows between X and Y.
 

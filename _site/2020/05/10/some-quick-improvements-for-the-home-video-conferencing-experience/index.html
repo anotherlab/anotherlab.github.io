@@ -1,0 +1,765 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Some quick improvements for the home video conferencing experience - Chris Miller’s 5th Blog</title>
+<meta name="description" content="A few things that I have done to improve video conferencing from home.">
+
+
+  <meta name="author" content="Chris Miller">
+  
+  <meta property="article:author" content="Chris Miller">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
+<meta property="og:title" content="Some quick improvements for the home video conferencing experience">
+<meta property="og:url" content="http://localhost:4000/2020/05/10/some-quick-improvements-for-the-home-video-conferencing-experience/">
+
+
+  <meta property="og:description" content="A few things that I have done to improve video conferencing from home.">
+
+
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="Some quick improvements for the home video conferencing experience">
+  <meta name="twitter:description" content="A few things that I have done to improve video conferencing from home.">
+  <meta name="twitter:url" content="http://localhost:4000/2020/05/10/some-quick-improvements-for-the-home-video-conferencing-experience/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2020-05-10T02:15:30+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2020/05/10/some-quick-improvements-for-the-home-video-conferencing-experience/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 5th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Chris Miller</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Microsoft MVP, a Pluralsight Author, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span class="label">BlueSky</span></a></li>
+          
+        
+          
+            <li><a href="https://app.pluralsight.com/profile/author/christopher-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-chalkboard-teacher" aria-hidden="true"></i><span class="label">Pluralsight</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+          
+            <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-award" aria-hidden="true"></i><span class="label">Microsoft MVP</span></a></li>
+          
+        
+          
+            <li><a href="https://stackoverflow.com/users/206/chris-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i><span class="label">Stack Overflow</span></a></li>
+          
+        
+          
+            <li><a href="https://www.reddit.com/user/anotherlab/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-reddit-alien" aria-hidden="true"></i><span class="label">Reddit</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Some quick improvements for the home video conferencing experience">
+    <meta itemprop="description" content="A few things that I have done to improve video conferencing from home.">
+    <meta itemprop="datePublished" content="2020-05-10T02:15:30+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2020/05/10/some-quick-improvements-for-the-home-video-conferencing-experience/" itemprop="url">Some quick improvements for the home video conferencing experience
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>After a few months of full time working from home, there are a couple of things that I have done to improve the video conferencing experience. Well, for me, anyway.</p>
+
+<p>Having a decent webcam will be a big improvement in the quality of your video. And it can give you some added flexibility with positioning over the webcams that are built into laptops. Even though they are hard to get now, they are well worth the money.</p>
+
+<p>For a long time, I used a Microsoft LifeCam. It was more or less fine, but every time I sat back in my chair, it would hunt for focus. That’s an unnecessary distraction. I <a href="/2018/04/05/focusuf-or-how-to-turn-off-the-autofocus-setting-of-the-lifecam-hd-5000-webcam/">wrote some code</a> to deal with that. And that became a <a href="/2020/03/20/return-to-focusuf/">project</a> that still <a href="/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/">lives on</a>. But I no longer use that webcam.</p>
+
+<p>I bought a Logitech (sorry, I refuse to say “logi”) <a href="https://www.logitech.com/en-us/product/c922-pro-stream-webcam">c922 webcam</a>. It had the resolution that I wanted and a tripod mount on the base. It tilts up and down but oddly doesn’t adjust from side to side.</p>
+
+<p>I’m pretty sure it came with a tripod, but at the moment I’m not exactly sure where that went. I have it mounted on an old JOBY Gorillapod that I had in my camera bag. It’s an older one, without the adjustable head. </p>
+
+<p>With the c922 on the tripod, I can move the webcam around as it suits my mood. I like having the camera at more or less eye level. With my PC, when it was mounted on top of one of the monitors, so it was always looking down on me. With the tripod, I can place it in between two of the monitors and at eye level.</p>
+
+<figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-Lfnmz2Z/0/0ba38752/S/c922_joby-S.jpg" /><figcaption>Webcam deployed</figcaption></figure>
+
+<p>Sometimes I want it at a slight angle from my face. With the webcam free to move around, that makes it easy to adjust. I’ve been in meetings where we spend most of the time going over documents, and we don’t need the “eye to eye” viewpoint.</p>
+
+<p>If you are doing a family Zoom meeting, it’s handy to connect a laptop to a TV and then be able to move the webcam so that it’s in front of the TV. And yes, sometimes I just aim the webcam at the dogs.</p>
+
+<figure><img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-tWCRTqF/0/9476e2dc/L/Dogs-L.jpg" /><figcaption>Every day is now take your work to dogs day</figcaption></figure>
+
+<p>At this point, replacing the background of your webcam is getting a bit tired. But early on in WFH mode, it was fun to change it up. At work, we use Teams, and back in March, it didn’t support virtual backgrounds. So I bought a license for <a href="https://www.xsplit.com/vcam">XSplit VCam</a>. VCam lets you use static images, videos, and even YouTube links for the background. And it will let blur any of that with fine control over the level of the blur.</p>
+
+<p>One of my teammates had bought a house last year from another co-worker. Thanks to that co-worker, I was able to grab pictures from the real estate listings for the house. For our first standup meeting after WFH, it looked like we in the same house. It’s a fun trick but grows tiresome after a few times. Also, do not make your webcam background a <a href="https://www.youtube.com/results?search_query=live+puppies+stream">live feed of puppies playing</a>. Unless bringing a meeting a flying stop is the desired outcome, then, by all means, go ahead.</p>
+
+<figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-Xk8F6GW/0/9ed23b79/S/Puppies-S.gif" /><figcaption>Puppies, the meeting killer</figcaption></figure>
+
+<p>The meeting apps that have the virtual background (and the 3rd party apps) can usually do the replacement without a green screen. But if you have an actual green screen, you can get better results. When I was given the WFH order, that night I bought the parts to make one. It’s basically a 2×4, some PVC pipes, and cheap green table clothes. I think I spent $15 at Home Depot and a dollar store. I followed the instructions from this video:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/du0XaCl25iQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>It was cheap and easy. And I can tear it down in seconds. If you have kids at home that are bored out of their minds, let them use a green screen and make their own videos.</p>
+
+<p>Another thing I did was play around with the lighting. By genetics and behavior, I’m pretty pale. If the lighting is not balanced, I look like <a href="https://www.youtube.com/watch?v=tGr35i1JfCg">Caspar</a>. And not in a good way. For Christmas, I received a Circadian Optics <a href="https://www.circadianoptics.com/product/lattis">Lattis Light Therapy Lamp</a> as a gift. It’s very bright and full spectrum. For the longest time, I couldn’t figure out what to do with it.</p>
+
+<p>Now, when I’m in a video meeting, I turn the Lattis light on, but I have it facing the wall by my desk. By bouncing it, I’m getting a nice gentle fill, instead of the light of a thousand suns. I have a window directly behind me and having a light source off to my side keeps me properly lit. The Lattis has three settings, <strong>Low</strong>, <strong>Medium</strong>, and <strong>I’m Going Blind</strong>. I find the lowest setting works the best.</p>
+
+<figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2020/i-hX7WBbV/0/6471ad03/M/LattisLight-M.jpg" /><figcaption>At the lowest setting</figcaption></figure>
+
+<p>Then there’s the audio. If you are going to be in video meetings, get a decent set of headphones with a noise-canceling microphone. If your environment has other people in it (like children, spouses, angry farm animals), the other people in the meeting will appreciate it.</p>
+
+<p>I have a Macbook and a Windows desktop and on the Mac, I use my Jabra <a href="https://www.jabra.com/bluetooth-headsets/jabra-elite-active-65t">earbuds</a>. They fit well and the microphone is good enough. On the Windows box, I use a set of cheap headphones, the <a href="https://www.amazon.com/Microsoft-LifeChat-LX-3000-Headset-JUG-00013/dp/B00906E03I">Microsoft Lifechat LX-3000</a>. They get the job done and they work with everything.</p>
+
+<p>Work From Home is the new normal for me. And based on current conditions, I don’t expect that will change for a few months, probably longer. So it’s important to me to do what I can to improve the video conferencing setup.</p>
+
+<p>In other news…</p>
+
+<p>Next week, I’m restarting the <a href="https://www.meetup.com/TechValleyNETUserGroup/">TVUG user group</a> after a few months of hiatus. It’s on Tuesday, the 12th. You can join in via this handy <a href="https://www.meetup.com/TechValleyNETUserGroup/events/270177755/">link</a> via Teams. I’m going to be the presenter, so it’s important that the audio and the visual work well.</p>
+
+<p>And don’t even get me started on chairs…</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#webcam" class="page__taxonomy-item p-category" rel="tag">Webcam</a><span class="sep">, </span>
+    
+      <a href="/tags/#wfh" class="page__taxonomy-item p-category" rel="tag">wfh</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#work-from-home" class="page__taxonomy-item p-category" rel="tag">Work From Home</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-05-10T02:15:30+00:00">May 10, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Some+quick+improvements+for+the+home+video+conferencing+experience%20http%3A%2F%2Flocalhost%3A4000%2F2020%2F05%2F10%2Fsome-quick-improvements-for-the-home-video-conferencing-experience%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2020%2F05%2F10%2Fsome-quick-improvements-for-the-home-video-conferencing-experience%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2020/05/10/some-quick-improvements-for-the-home-video-conferencing-experience/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2020/04/29/bag-man/" class="pagination--pager" title="Bag man
+">Previous</a>
+    
+    
+      <a href="/2020/05/15/add-a-posh-adb-to-your-windows-terminal/" class="pagination--pager" title="Add a POSH ADB to your Windows Terminal
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/02/06/bluesky/" rel="permalink">You can find me on Bluesky
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I’ve been on Bluesky for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn bil...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/08/27/apples-api-needs-to-be-sorted/" rel="permalink">Apple needs to sort out their API
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly sta...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2023/03/22/android-exported/" rel="permalink">MyFirebaseMessagingService android:exported needs to be explicitly specified
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the ap...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/09/21/psc-xf5-fundamentals/" rel="permalink">My new Xamarin.Forms 5 Pluralsight course is out
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the devel...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
+    script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>

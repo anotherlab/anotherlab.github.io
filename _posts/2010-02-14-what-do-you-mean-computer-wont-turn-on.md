@@ -1,10 +1,6 @@
 ---
-id: 69
 title: What do you mean the computer wont turn on?
 date: 2010-02-14T04:10:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=69
-permalink: /2010/02/14/what-do-you-mean-computer-wont-turn-on/
 ---
 Last Monday, I came home from work and went to check my email on my home PC.  I went into my home office and sat down at the PC.  I turned on the monitors (I run two monitors on my main dev machine at home and at the office) and banged on the shift key to wake things up.
 

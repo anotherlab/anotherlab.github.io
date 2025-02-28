@@ -1,0 +1,25 @@
+---
+id: 200
+title: The Lost Art of TSR Programming
+date: 2008-03-11T14:44:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=200
+permalink: /2008/03/11/lost-art-of-tsr-programming/
+---
+Scott Allen had a [amusing post](http://odetocode.com/Blogs/scott/archive/2008/03/10/11882.aspx "Talks You Won’t See At the Local Code Camp"), &#8220;Talks You Won’t See At the Local Code Camp&#8221;, on his blog.  One of the talks was &#8220;The Lost Art of TSR Programming&#8221;.   That shook some memories out of the cranial storage device.  I used to write TSR programs, more formerly known as Terminate and Stay Resident.
+
+This takes back to the days of DOS, when giants like [dBase](http://en.wikipedia.org/wiki/DBase) and [Lotus](http://en.wikipedia.org/wiki/Lotus_123) walked the land.  Your network was Novell and you feared the [Bindery](http://docsrv.sco.com/SDK_wcpg/wcpgC.Comparing_the_netware_bindery_a.html).  You could only run one program at a time and the 640K limitation was real and not just a [saying commonly misattributed](http://tickletux.wordpress.com/2007/02/20/did-bill-gates-say-the-640k-line/ "Did Bill Gates say the 640k line?") to Bill Gates.
+
+When I was at [Stochos](http://www.stochos.com/), we wrote software to do [statistical process control](http://www.stochos.com/customzed_spc_training.htm) (SPC) in the manufacturing industry.  We would collect data from measurement devices or from the manufacturing hardware to monitor the process of making whatever was running.  Back in the late &#8217;80s, we had hardened PC&#8217;s running DOS and our software right on the factory floor.  One of my tasks was to write the code to collect the data from the machines and get it into the PC.
+
+Early on, I had decided that the data collection code would run separately from the SPC application.  This allowed the user to exit our app to run other apps while still collecting data.  The way I did that was to write the data collector as a TSR.
+
+The whole TSR section of DOS programming was pretty much an accident.  The DOS print spooler gave DOS the ability to print in the background while your application was running.  The print spooler was the first TSR.  A TSR would load itself using INT 27H to make itself as a TSR type of programming.  Once loaded, the TSR would typically insert itself into the chain of the applications that would receive hardware and/or software events.  If the TSR wasn&#8217;t careful, it could wreck havoc with the interrupt chain.
+
+I would write TSR&#8217;s that would hook into the serial port or parallel port events.   Some of the time, all I needed to do was to capture data as it came in and write it to a file.  Usually, the hardware would have some sort of protocol and I would have implement it in my code.  One of the odder ones was for a machine that printed foil packets, the kind used for condiments at fast food restaurants.  This machine did not support the logging of it&#8217;s data.  But I found a way in.  It had a PC that functioned as operator console with a color screen and keyboard.  Usually the screen would be displaying the current process settings and readings from it&#8217;s own measuring devices, but not always.  The PC was connected to the machine over the serial port and was basically being used as a terminal.
+
+I wrote a TSR that would periodically scan the screen in memory.  Since it was running in text mode, it&#8217;s fairly easy to ready the screen from memory.  If I saw a certain sequence of characters at a specific location, I knew that I had the main console screen.  I then scanned different locations on the screen and wrote out a text file, logging each set of values as an attribute for our SPC application.
+
+The TSR would read a template file that listed what attributes to look for and at what locations on the screen to expect the attributes at.  The setup of the template was done by trial and error, but once it was set the client never had to touch it.  It even allowed for character translation.  For some odd reason, the console display didn&#8217;t use the number &#8220;0&#8221;, they used the letter &#8220;O&#8221;.  That took more time to track down then you would have expected.
+
+To keep the size of the TSR down, I used a library named CodeRunner with Microsoft C.  The Coderunner library had the housekeeping code for doing the INT 27h stuff and interrupt managing.  It also took many of the standard routines and replaced them with hard coded assembler optimized for space over performance.  It also had the ability to run most of the TSR out of EMS memory, greatly reducing the footprint in the lower 640K space.  This particuliar TSR took about 6000 bytes of conventional memory.  I remember talking to Ratko Tomic, the engineer who wrote the CodeRunner libraries.  He was genius at squeezing every extra byte of the TSR code.  It&#8217;s a lost art.

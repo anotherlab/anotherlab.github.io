@@ -1,10 +1,6 @@
 ---
-id: 307
 title: 'Rants against the machine: Are stored procedures inherently evil?'
 date: 2006-05-26T13:41:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=307
-permalink: /2006/05/26/rants-against-machine-are-stored/
 ---
 Jeremy MIller has a good [rant](http://codebetter.com/blogs/jeremy.miller/archive/2006/05/25/145450.aspx "Why I do not use Stored Procedures") against the use of stored procedures. He thinks prefers to keep his code in the application and use T-SQL sparingly. HIs view is that sprocs are harder to test and harder to understand. There&#8217;s a logical disconnect when you business logic is split between the application and the database.
 

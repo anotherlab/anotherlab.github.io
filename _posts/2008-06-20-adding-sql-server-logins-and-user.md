@@ -1,10 +1,6 @@
 ---
-id: 149
 title: Adding SQL Server logins and user accounts for multiple databases in one pass
 date: 2008-06-20T18:56:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=149
-permalink: /2008/06/20/adding-sql-server-logins-and-user/
 ---
 We have a few applications that include bits that are service applications.  These applications talk to SQL Server databases and they authenticate using SQL Server logins, as opposed to using Windows Authentication.  We recently changed the account that the services were using to a new account with a more robust password.  When the services are deployed, they will have an update mechanism that will add the new login account.  For internal testing, I wanted to give our testers the ability to add the server login and database user for all of their test databases in one shot.  I ended up with a script that looked like this:
 

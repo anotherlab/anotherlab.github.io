@@ -1,10 +1,6 @@
 ---
-id: 244
 title: Is Microsoft Dead?
 date: 2007-05-10T18:54:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=244
-permalink: /2007/05/10/is-microsoft-dead/
 ---
 I was reading Mike Gunderloy&#8217;s new blog, [A Fresh Cup](http://afreshcup.com/), and I came across a link to an article titled [&#8220;Microsoft is Dead&#8221;](http://www.paulgraham.com/microsoft.html), by [Paul Graham](http://en.wikipedia.org/wiki/Paul_Graham).  Paul&#8217;s view is that Microsoft is no longer relevant and we live in &#8220;Web 2.0&#8221; world that Microsoft doesn&#8217;t know how to play in.  He states that there are four things that killed Microsoft: Google, &#8220;the desktop is over&#8221;, broadband Internet, the rise of Apple.  He&#8217;s just plain wrong.
 

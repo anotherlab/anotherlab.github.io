@@ -1,10 +1,6 @@
 ---
-id: 438
 title: 'RE: Special Directories in ASP.NET 2.0'
 date: 2005-06-28T14:04:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=438
-permalink: /2005/06/28/re-special-directories-in-aspnet-20/
 ---
 Here are some interesting tidbits about ASP.NET 2.0&#8230;.
 

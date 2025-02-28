@@ -1,8 +1,6 @@
 ---
 title: Checking Hypervisor status with PowerShell
 date: 2017-09-03
-collect_box_size:
-  - collect-square
 categories:
   - Virtualization
 tags:

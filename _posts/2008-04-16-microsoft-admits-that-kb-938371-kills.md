@@ -1,10 +1,6 @@
 ---
-id: 186
 title: Microsoft admits that KB 938371 kills USB Devices
 date: 2008-04-16T20:06:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=186
-permalink: /2008/04/16/microsoft-admits-that-kb-938371-kills/
 ---
 [Various](http://www.pcmag.com/article2/0,2817,2284304,00.asp "PCMAG.COM:  Microsoft Vista Update Causes USB Problems") [reports](http://www.theregister.co.uk/2008/04/16/vista_defender_sp1/ "The Register: Windows Vista update 'kills' USB devices") on the Intertubes are reporting that Microsoft has acknowledge that last weeks Vista Update, [938371](http://support.microsoft.com/kb/938371), has been causing &#8220;problems&#8221; with USB devices.  The money quote:
 

@@ -1,10 +1,6 @@
 ---
-id: 134
 title: Installing the “Copy as Plain Text” add-in in Firefox 3
 date: 2008-07-08T14:16:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=134
-permalink: /2008/07/08/installing-copy-as-plain-text-add-in-in/
 ---
 </p> </p> 
 

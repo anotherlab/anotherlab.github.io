@@ -1,9 +1,5 @@
 ---
-id: 298
 date: 2006-07-13T17:50:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=298
-permalink: /2006/07/13/following-could-have-been-coming-from/
 ---
 The following could have been coming from my desk (but didn&#8217;t)
 

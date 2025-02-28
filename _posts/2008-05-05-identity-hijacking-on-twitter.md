@@ -1,10 +1,6 @@
 ---
-id: 174
 title: Identity hijacking on Twitter.
 date: 2008-05-05T14:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=174
-permalink: /2008/05/05/identity-hijacking-on-twitter/
 ---
 The other day, I got an email from Twitter announcing that someone new is following [me](http://twitter.com/anotherlab).
 

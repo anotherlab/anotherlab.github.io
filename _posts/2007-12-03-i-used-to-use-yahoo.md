@@ -1,10 +1,6 @@
 ---
-id: 222
 title: 'I used to use Yahoo&#8230;'
 date: 2007-12-03T15:11:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=222
-permalink: /2007/12/03/i-used-to-use-yahoo/
 ---
 Steve Trefethen&#8217;s [posting about Yahoo](http://www.stevetrefethen.com/blog/After10YearsImSeeminglyStillAStrangerToYahoo.aspx "Trefethen: After 10 years I'm seemingly still a stranger to Yahoo") is pretty dead on.  I used to use the various Yahoo apps and services, but I have slowly replaced them with the various services from Google.  I think  the problem was the development team saw too many bright and shiny objects and decided to implement them.
 

@@ -1,10 +1,6 @@
 ---
-id: 197
 title: Enabling users with ESX 3.5.0
 date: 2008-03-25T18:07:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=197
-permalink: /2008/03/25/enabling-users-with-esx-350/
 ---
 I&#8217;ve been playing admin on our shiny new [ESX server](http://en.wikipedia.org/wiki/VMware_ESX_Server "VMware ESX Server is an enterprise-level virtualization product offered by VMware, Inc., a division of EMC Corporation. ESX Server is a component of VMware's larger offering, VMware Infrastructure, which adds management and reliability services to the core server product") and it&#8217;s been a struggle trying to get the user accounts configured.  I wanted to give our QA staff enough rights to login through the [VMware Web Access portal](http://www.petri.co.il/5_ways_to_adminster_esx_server.htm) so that they could start and stop their virtual machines.  I figured I would just set up their accounts and put them in the &#8220;Virtual Machine User&#8221; role.  No of the accounts could login in.  They kept getting the dreaded &#8220;Login failed due to a bad username or password.&#8221;
 

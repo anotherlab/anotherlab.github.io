@@ -1,10 +1,6 @@
 ---
-id: 100
 title: Have you had any bizarre IM messages from a person with “coho” in his screen name?
 date: 2009-02-18T17:45:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=100
-permalink: /2009/02/18/have-you-had-any-bizarre-im-messages/
 ---
 I was moving some Visual Studio projects around when an odd [AIM](http://en.wikipedia.org/wiki/AOL_Instant_Messenger "AOL Instant Messenger (AIM)") window popped up.  It was from someone named “limbercoho” and the message was “Hail, Fellow”.  I usually close unsolicited AIM messages without even looking at them.  There are other ways to get in tougc with me, I view anything unsolicited from AIM or [MSN](http://en.wikipedia.org/wiki/.NET_Messenger_Service "The .NET Messenger Service (formerly MSN Messenger Service[1] and now called Windows Live Messenger Service[2]) is an instant messaging and presence system developed by Microsoft") with more than a little suspicion.
 

@@ -1,10 +1,6 @@
 ---
-id: 204
 title: I hate spam that comes in under my own name
 date: 2008-02-21T17:08:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=204
-permalink: /2008/02/21/i-hate-spam-that-comes-in-under-my-own/
 ---
 For the last few weeks, I&#8217;ve been getting spam email addressed to my work account with the &#8220;from:&#8221; field set to my work address.  That allows it past our companies spam filters.  The subject line is usually something liken &#8220;January 79% OFF&#8221; and the message body contains a few images, some oddly worded links, and some boiler plate text about receiving this mailing because I am &#8220;subscribed to MSN Featured Offers&#8221;.
 

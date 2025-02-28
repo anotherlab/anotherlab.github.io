@@ -1,10 +1,6 @@
 ---
-id: 417
 title: 'RE: Thread-safe Format'
 date: 2005-08-29T13:35:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=417
-permalink: /2005/08/29/re-thread-safe-format/
 ---
 Oh, the joy of writing multiple threaded applications. I like this little tip that will keep string formatting calls from stepping over each other.
 

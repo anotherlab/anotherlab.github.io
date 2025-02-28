@@ -1,10 +1,6 @@
 ---
-id: 1329
 title: 'When a UX hack has unexpected consequences or &#8220;Why did my iOS app name get truncated when I used TestFlight?&#8221;'
 date: 2015-10-05T09:44:45-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1329
-permalink: /2015/10/05/when-a-ux-hack-has-unexpected-consequences-or-why-did-my-ios-app-name-get-truncated-when-i-used-testflight/
 ---
 While testing a iOS app with [TestFlight](https://developer.apple.com/testflight/), we noticed that the app name was being truncated.  The name was just under the length where iOS truncates it and adds the ellipses.  When we compiled the app and deployed it a device, the name displayed normally.  When we put a test build up for QA through TestFlight, the name was truncated.
 

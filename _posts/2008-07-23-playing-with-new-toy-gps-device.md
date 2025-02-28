@@ -1,10 +1,6 @@
 ---
-id: 127
 title: Playing with a new toy, a GPS device
 date: 2008-07-23T21:35:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=127
-permalink: /2008/07/23/playing-with-new-toy-gps-device/
 ---
 While on vacation in [Hyannis](http://www.hyannis.com/), I got annoyed with the one way streets odd layouts so I went out and bought a GPS unit.  I had wanted one for a while, and this was a first good excuse to get one.  The Hyannis Staples had a [Magellan RoadMate 1412](http://www.magellangps.com/products/product.asp?segID=354&prodID=2054) on sale, so I bought one.  Staples had it for $250, but you can get it cheaper [online](http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2FMagellan-RoadMate-1412-Widescreen-Navigator%2Fdp%2FB0014LC9S0&tag=christmillers-20&linkCode=ur2&camp=1789&creative=9325)<img loading="lazy" alt="" border="0" height="1" src="http://www.assoc-amazon.com/e/ir?t=christmillers-20&#038;l=ur2&#038;o=1" width="1" />.  It’s your basic consumer GPS, nice big screen and text to speech (TTS).  It doesn’t have Bluetooth, MP3, or any other non-GPS functionality.  I would have liked having Bluetooth, so I could use it as a speaker for my cell phone, but that would have jacked the price outside the range we wanted to pay.
 

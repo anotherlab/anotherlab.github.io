@@ -1,10 +1,6 @@
 ---
-id: 487
 title: Is the handwriting on the wall for Delphi .Net?
 date: 2005-04-25T14:08:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=487
-permalink: /2005/04/25/is-handwriting-on-wall-for-delphi-net/
 ---
 I just saw that Xavier Pacheco will [not](http://xavierpacheco.com/xlog/archive/2005/04/21/257.aspx) be writing a Delphi 2005 Developer&#8217;s Guide. His reasons were logical:
 

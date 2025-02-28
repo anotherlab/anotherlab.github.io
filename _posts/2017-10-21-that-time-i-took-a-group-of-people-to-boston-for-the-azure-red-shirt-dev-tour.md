@@ -1,8 +1,6 @@
 ---
 title: That time I took a group of people to Boston for the Azure Red Shirt Dev Tour
 date: 2017-10-21
-collect_box_size:
-  - collect-square
 categories:
   - Events
 tags:

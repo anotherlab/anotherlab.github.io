@@ -1,10 +1,6 @@
 ---
-id: 28
 title: Kill all the SQL connections for a DB or app
 date: 2012-04-25T18:57:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=28
-permalink: /2012/04/25/kill-all-sql-connections-for-db-or-app/
 ---
 One of customers needed to be able to clear all of the connections to a database before running some maintenance tasks on the database.  So the question came my way and after searching the Internets, I ended up with the following T-SQL code
 

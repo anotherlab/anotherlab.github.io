@@ -1,10 +1,6 @@
 ---
-id: 270
 title: Blog Tagged
 date: 2007-01-05T20:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=270
-permalink: /2007/01/05/blog-tagged/
 categories:
   - Uncategorized
 ---

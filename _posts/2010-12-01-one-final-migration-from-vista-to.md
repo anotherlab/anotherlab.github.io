@@ -1,10 +1,6 @@
 ---
-id: 45
 title: One final migration from Vista to Windows 7
 date: 2010-12-01T06:02:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=45
-permalink: /2010/12/01/one-final-migration-from-vista-to/
 ---
 Over Thanksgiving weekend, I upgraded our last Vista PC to Windows 7. We have a family PC, that we all share.  It’s nothing too fancy, a three year old Dell [Inspiron 530](http://support.dell.com/support/edocs/systems/inspd530/en/OM/HTML/appendix.htm#wp1052310).  It came with Windows Vista Home Edition preinstalled.  A Core 2 4300, running at 1.8 Ghz and 2GB of RAM.  
 

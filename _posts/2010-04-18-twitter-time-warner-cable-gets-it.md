@@ -1,10 +1,6 @@
 ---
-id: 66
 title: Twitter? Time Warner Cable gets it
 date: 2010-04-18T04:25:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=66
-permalink: /2010/04/18/twitter-time-warner-cable-gets-it/
 ---
 I have a love/hate relationship with Twitter.  Some days, I think it’s greatest time waste since they [invented the meeting](http://quotationsbook.com/quote/25915/).  Other days, it’s an [endless](http://twitter.com/badbanana/statuses/12173953400) [source](http://twitter.com/willplatnick/statuses/12366277060) [of](http://twitter.com/BrianPeek/status/12299760959) [amusement](http://tweetingtoohard.com/).  And on some days, it’s actually useful.  Yesterday was one of the useful days.
 

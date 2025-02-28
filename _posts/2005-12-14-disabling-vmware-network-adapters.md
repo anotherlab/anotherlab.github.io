@@ -1,10 +1,6 @@
 ---
-id: 344
 title: Disabling the VMWare network adapters
 date: 2005-12-14T17:27:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=344
-permalink: /2005/12/14/disabling-vmware-network-adapters/
 ---
 When you are not running a [VMWare](http://www.vmware.com/products/ws/) session, you may want to disable the VMware virtual network adapters. I have found that they can slow down network operations on the host. Anything doing a [UDP](http://en.wikipedia.org/wiki/User_Datagram_Protocol "User Datagram Protocol") broadcast that is sentg over all adapters will take much longer to run if they broadcast over the VMWare adapters. The [ListAvailableSQLServers](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/sqldmo/dmoref_m_l_9jfo.asp) function call in the SQLDMO library is one example that I came across that slowed down dramaticly with the VMWare adapters running.
 

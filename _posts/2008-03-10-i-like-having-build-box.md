@@ -1,10 +1,6 @@
 ---
-id: 201
 title: I like having a build box
 date: 2008-03-10T17:32:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=201
-permalink: /2008/03/10/i-like-having-build-box/
 ---
 This morning I came across a blog by Landon Dyer called [Dadhacker](http://www.dadhacker.com/blog/ "DadHacker: Instant wisdom about any random thing I feel like.").  He got linked by BoingBoing for a entertaining post that he wrote about working on [the Donkey Kong cartridge for Atari](http://www.boingboing.net/2008/03/09/insiders-story-about.html "Insider's story about Atari").  I started reading his other posts and it turns out that I agree with nearly all of his opinions.  Except for build boxes. He [wrote](http://www.dadhacker.com/blog/wp-trackback.php?p=849 "DadHacker: Musings"):
 

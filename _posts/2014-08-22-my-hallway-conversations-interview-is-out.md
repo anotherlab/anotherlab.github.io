@@ -1,10 +1,6 @@
 ---
-id: 901
 title: My Hallway Conversations interview is out
 date: 2014-08-22T10:17:19-05:00
-layout: post
-guid: http://www.rajapet.com/?p=901
-permalink: /2014/08/22/my-hallway-conversations-interview-is-out/
 ---
 <div style="width: 410px" class="wp-caption alignnone">
   <a href="http://hallwayconversations.com/podcast/episode-023-the-business-case-for-xamarin-with-chris-miller/"><img loading="lazy" src="https://i0.wp.com/www.rajapet.net/photos/i-K8WDJsJ/0/L/i-K8WDJsJ-L.jpg?resize=400%2C162" alt="Hallway Conversations Podcast" width="400" height="162"  /></a>

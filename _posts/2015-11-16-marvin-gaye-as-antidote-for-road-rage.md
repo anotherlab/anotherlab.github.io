@@ -1,10 +1,6 @@
 ---
-id: 1351
 title: Marvin Gaye as an antidote for Road Rage
 date: 2015-11-16T10:31:23-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1351
-permalink: /2015/11/16/marvin-gaye-as-antidote-for-road-rage/
 ---
 <div style="width: 410px" class="wp-caption alignnone">
   <a href="http://www.dailymotion.com/video/xlh0k1_marvin-gaye-mercy-mercy-me-from-live-at-montreux-1980-dvd_music"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-kSC4KkH/0/S/Marvin_Gaye_photo-S.jpg?resize=400%2C267" alt="" width="400" height="267"  /></a>

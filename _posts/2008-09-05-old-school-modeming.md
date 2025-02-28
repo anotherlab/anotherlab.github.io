@@ -1,10 +1,6 @@
 ---
-id: 115
 title: Old School modeming
 date: 2008-09-05T15:46:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=115
-permalink: /2008/09/05/old-school-modeming/
 ---
 The always entertaining DadHacker has a <a href="http://www.dadhacker.com/blog/?p=1050" target="_blank">great post</a> on how he used to write code in the old days at 300 baud.   When he was in school, he had to submit course source code by punch card.  That’s a death by a thousand paper cuts.  To avoid having to use punch cards, he would dial in over the ancestor to the Internet and edit the code at 300 baud.   You should read his post to see all the steps he had to do.  It would have made Rube Goldberg proud.
 

@@ -1,10 +1,6 @@
 ---
-id: 31
 title: An open letter to Newport Television
 date: 2012-01-14T14:40:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=31
-permalink: /2012/01/14/open-letter-to-newport-television/
 ---
 This is a copy of an email that I just sent to [Newport Television](http://www.newporttv.com/default.aspx), owners of WXXA-FOX23
 

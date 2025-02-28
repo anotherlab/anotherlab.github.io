@@ -1,10 +1,6 @@
 ---
-id: 63
 title: Using robocopy with Visual Studio 2008 Post-build events
 date: 2010-05-26T19:11:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=63
-permalink: /2010/05/26/using-robocopy-with-visual-studio-2008/
 ---
 I have a solution that has about 15 odd projects in it.  It’s for an application that has multiple optional services with shared assemblies.  Hence the 15 projects.  I have an installer that lets the user pick from which of the optional bits to install.  For ease of maintenance, I version the installer with multiple folders.  Each version gets a folder for the installer source and a folder for the installable bits.
 

@@ -1,10 +1,6 @@
 ---
-id: 114
 title: '&quot;Everything That Happens Will Happen Today&quot; by Byrne and Eno'
 date: 2008-09-06T21:30:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=114
-permalink: /2008/09/06/that-happens-will-happen-today-by-byrne/
 ---
 David Byrne and Brian Eno have a new album out, &#8220;Everything That Happens Will Happen Today&#8221;.  It&#8217;s available exclusively through their web site, <http://www.everythingthathappens.com/>.  You can listen to the entire album on their site, or by using their streaming player right below this text.</p> 
 

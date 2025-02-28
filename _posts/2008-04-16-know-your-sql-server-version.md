@@ -1,10 +1,6 @@
 ---
-id: 187
 title: Know your SQL Server version
 date: 2008-04-16T15:28:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=187
-permalink: /2008/04/16/know-your-sql-server-version/
 ---
 There are times where you need to know what version of SQL Server is installed.  Usually you want to know which version and which service pack has been applied.  There have been a few isolated cases over the years where we saw bugs go away or significant performance boosts by merely installing the latest service pack.  It&#8217;s less of an issue with 2005, but with SQL Server 2000, we wanted to make sure the user installed the latest service packs to block against stuff like the [&#8220;Slammer&#8221; worm](http://en.wikipedia.org/wiki/SQL_slammer_worm "Wikipedia: SQL slammer (computer worm)").
 

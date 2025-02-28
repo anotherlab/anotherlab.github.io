@@ -1,10 +1,6 @@
 ---
-id: 414
 title: 'RE: Dynamic Behavior with the Decorator Pattern'
 date: 2005-09-06T17:07:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=414
-permalink: /2005/09/06/re-dynamic-behavior-with-decorator/
 ---
 Here&#8217;s great example of how to use the Decorator pattern in C#&#8230;.
 

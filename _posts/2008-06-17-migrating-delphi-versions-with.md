@@ -1,10 +1,6 @@
 ---
-id: 151
 title: Migrating Delphi versions with DevExpress
 date: 2008-06-17T16:42:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=151
-permalink: /2008/06/17/migrating-delphi-versions-with/
 ---
 I usually run on the latest version of Delphi while the other Delphi developers in our department run a version or two back.  I’m the pretty much the sole Delphi developer on our .NET projects and I switch between VS 2008 and Delphi 2007 as needed.  The core Delphi team is on Delphi 2006 because of how our product development and testing cycles work.  We don’t switch compiler versions without coordinating with our QA department.
 

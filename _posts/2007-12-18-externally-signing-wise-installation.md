@@ -1,10 +1,6 @@
 ---
-id: 217
 title: Externally signing Wise Installation System generated executables
 date: 2007-12-18T16:49:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=217
-permalink: /2007/12/18/externally-signing-wise-installation/
 ---
 I had a problem with applying an [Authenticode](http://www.iss.net/security_center/advice/Countermeasures/Authentication/Authenticode/default.htm) digital signature to installer that I had created with [Wise Installation System 9.02](http://www.wise.com/Products/Installations.aspx).  Basically, it was failing with the lovely message:
 

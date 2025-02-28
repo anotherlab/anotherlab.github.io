@@ -1,10 +1,6 @@
 ---
-id: 486
 title: Performance of Nullable types
 date: 2005-04-25T14:23:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=486
-permalink: /2005/04/25/performance-of-nullable-types/
 ---
 I saw a interesting post by [David Kean](http://davidkean.net/) about the [performance of the nullable types](http://davidkean.net/archive/2005/04/25/393.aspx) in .NET 2.0. The new int? type is about 50% slower than int and the bool? is about 15% than bool. The post is worth reading if only for the great example code for using interfaces.
 

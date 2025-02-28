@@ -1,10 +1,6 @@
 ---
-id: 118
 title: Using Delphi in a team
 date: 2008-08-13T13:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=118
-permalink: /2008/08/13/using-delphi-in-team/
 ---
 I was just reading <span>Marshall Fryman&#8217;s <a title="Delphi in the workgroup" href="http://ruminatedrumblings.blogspot.com/2008/08/delphi-in-workgroup.html">post</a> about getting Delphi set up in a uniform way in a team or group setting.  He&#8217;s looking for a tool to manage the 3rd party components and compiler patches so that everyone on the team has the same setting.</span>
 

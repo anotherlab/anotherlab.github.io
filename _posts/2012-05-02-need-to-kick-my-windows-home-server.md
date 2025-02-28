@@ -1,10 +1,6 @@
 ---
-id: 26
 title: Need to kick my Windows Home Server every now and then
 date: 2012-05-02T03:31:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=26
-permalink: /2012/05/02/need-to-kick-my-windows-home-server/
 ---
 For some reason, my [HP MediaSmart Server EX495](http://h10025.www1.hp.com/ewfrf/wc/product?product=3969718&lc=en&cc=us&dlc=en&jumpid=reg_r1002_usen) seems to be locking up.  It&#8217;s very infrequent, but when it happens, I can no longer access it and I have to boot it with [severe prejudice](http://en.wikipedia.org/wiki/Terminate_with_extreme_prejudice).  Something is crashing, but I have not been able to determine what is the culprit.  
 .  

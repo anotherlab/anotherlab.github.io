@@ -1,10 +1,6 @@
 ---
-id: 758
 title: Sometimes 42 is the right answer
 date: 2014-03-17T14:22:25-05:00
-layout: post
-guid: http://www.rajapet.com/?p=758
-permalink: /2014/03/17/sometimes-42-is-the-right-answer/
 ---
 <img loading="lazy" alt="Prime Meridian" src="https://i1.wp.com/anotherlab.smugmug.com/photos/i-tL8GBSj/0/M/i-tL8GBSj-M.jpg?resize=600%2C401" width="600" height="401"  />
 

@@ -1,10 +1,6 @@
 ---
-id: 216
 title: Citizens Bank Debit card security worries me
 date: 2007-12-28T18:12:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=216
-permalink: /2007/12/28/citizens-bank-debit-card-security/
 ---
 A few weeks ago (on December 9th), I was reviewing my [Citizens Bank](http://www.citizensbank.com/home/) checking account history online when I saw two transactions that didn&#8217;t belong to me.  They were debit card ([MasterCard](http://www.mastercard.com/us/gateway.html)) charges from an online grocery store in another state, halfway across the country.  They were posted on 11/27 and 11/28 for about $260 and $11 respectively.  I&#8217;m going to be vague about the amounts and the identity of the online grocery.   The online grocery made an honest mistake and did everything they could to rectify the matter with in a day.
 

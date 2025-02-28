@@ -1,10 +1,6 @@
 ---
-id: 12
 title: There should be a Blue Rhino for Electric Cars
 date: 2013-05-15T14:37:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=12
-permalink: /2013/05/15/there-should-be-blue-rhino-for-electric/
 ---
 What if the car companies came together and come up with a standard for replaceable electric car batteries?  It takes [hours to charge](http://www.fueleconomy.gov/feg/evtech.shtml) an electric car battery.  That just pretty much limits the use of an all electric car to local use for small amounts of time. It also limits the number of vehicles that could be charged at any time.
 

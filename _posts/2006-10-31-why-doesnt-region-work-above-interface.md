@@ -1,10 +1,6 @@
 ---
-id: 277
 title: 'Why doesn&#8217;t {$REGION} work above the interface?'
 date: 2006-10-31T20:29:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=277
-permalink: /2006/10/31/why-doesnt-region-work-above-interface/
 ---
 Our Delphi code has some standard header comments at the top of the unit.  It has some information about the unit and who created it, and the purpose of that unit.  It also has some tags that the version contol system will use to expand.  On of those tags is the history of who edited that file.  On some of our older files, that list can get quite long.
 

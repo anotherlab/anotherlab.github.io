@@ -1,10 +1,6 @@
 ---
-id: 357
 title: Scott Allen list of ASP 1 to ASP 2 resources
 date: 2005-12-05T14:35:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=357
-permalink: /2005/12/05/scott-allen-list-of-asp-1-to-asp-2/
 ---
 I grabbed this from Scott Allen&#8217;s blog. I will probably need it sooner than later&#8230;.
 

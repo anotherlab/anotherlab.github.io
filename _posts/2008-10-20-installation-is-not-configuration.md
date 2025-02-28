@@ -1,10 +1,6 @@
 ---
-id: 111
 title: Installation is not configuration
 date: 2008-10-20T19:43:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=111
-permalink: /2008/10/20/installation-is-not-configuration/
 ---
 Christopher Painter has a <a title="DeploymentEngineering.com - The Blog: RFC: SQL Scripts Are Almost Declared Evil" href="http://blog.deploymentengineering.com/2008/10/rfc-sql-scripts-are-almost-declared.html" target="_blank">good post about the problems inherent with with having installers run SQL scripts</a>.  Having an installer communicate with a database server just opens the door to all sorts of issues.  Just handling the connection to the server requires making sure that you have all of the required bits installed and that you can locate, and connect to the server.  None of that code is rocket science, we’ve been using it for years. I just don’t think having it in an installer is the right place for that type of code.
 

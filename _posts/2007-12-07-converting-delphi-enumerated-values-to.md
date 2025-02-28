@@ -1,10 +1,6 @@
 ---
-id: 220
 title: Converting Delphi enumerated values to strings
 date: 2007-12-07T17:20:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=220
-permalink: /2007/12/07/converting-delphi-enumerated-values-to/
 ---
 It&#8217;s pretty easy to converted Delphi enumerated types to string and vice versa, but I can never remember the syntax.  The good thing about having your own blog is being able use it as an off-line cranial storage device.  I [did the same thing a while back](http://anotherlab.rajapet.net/2005/04/convert-string-to-enumerated-enum.html "Convert a string to an enumerated (enum) value") to do the same thing in .NET code.
 

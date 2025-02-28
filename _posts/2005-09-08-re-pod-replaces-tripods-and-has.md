@@ -1,10 +1,6 @@
 ---
-id: 411
 title: 'RE: The Pod Replaces Tripods (And has Nothing to do with iPod, Thank God)'
 date: 2005-09-08T16:12:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=411
-permalink: /2005/09/08/re-pod-replaces-tripods-and-has/
 ---
 This looks cool. I usually keep a mini tripod in my camera bag, but the Pod may work in places where the mini tripod wouldn&#8217;t be stable
 

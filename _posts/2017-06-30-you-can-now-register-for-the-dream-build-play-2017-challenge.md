@@ -1,8 +1,6 @@
 ---
 title: You can now register for the Dream.Build.Play 2017 Challenge
 date: 2017-06-30
-collect_box_size:
-  - collect-square
 categories:
   - Uncategorized
 ---

@@ -1,10 +1,6 @@
 ---
-id: 24
 title: Thinking about Windows Phone 8
 date: 2012-06-22T19:03:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=24
-permalink: /2012/06/22/thinking-about-windows-phone-8/
 ---
 I watched Microsoft’s [Windows Phone 8 Summit](http://channel9.msdn.com/Events/Windows-Phone/Summit/Keynote "Watch the on-demand video of the June 20 press event in San Francisco outlining the past and future of Windows Phone.") on Monday and I came away impressed.  My phone contract is up and I have been holding off on getting a new phone.  I knew that Windows Phone 8 was coming and I didn’t have an urgent need to get a new phone. Between that and the Surface tablet, it’s good to see MSFT putting some skin into the game.
 

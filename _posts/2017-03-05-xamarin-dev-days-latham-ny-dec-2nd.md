@@ -1,8 +1,6 @@
 ---
 title: Xamarin Dev Days - Latham, NY - Dec 2nd
 date: 2017-03-05
-collect_box_size:
-  - collect-square
 categories:
   - Xamarin
 ---

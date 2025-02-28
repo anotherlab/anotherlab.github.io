@@ -1,10 +1,6 @@
 ---
-id: 262
 title: I hate Macs
 date: 2007-02-05T21:09:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=262
-permalink: /2007/02/05/i-hate-macs/
 ---
 You have to love a [good rant](http://www.guardian.co.uk/commentisfree/story/0,,2006031,00.html)&#8230;
 

@@ -1,10 +1,6 @@
 ---
-id: 400
 title: Just say no to CLR UDTs
 date: 2005-10-20T20:21:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=400
-permalink: /2005/10/20/just-say-no-to-clr-udts/
 ---
 Alex Papadimoulis is pretty adamant about <a href="http://weblogs.asp.net/alex_papadimoulis/archive/2005/10/20/428014.aspx" title="" when should i use sql-server clr user definied types>not using CLR UDTs in SQL Server 2005</a>.
 

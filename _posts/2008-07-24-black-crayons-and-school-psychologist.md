@@ -1,10 +1,6 @@
 ---
-id: 126
 title: Black Crayons and the school psychologist, a true story (just not mine)
 date: 2008-07-24T18:24:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=126
-permalink: /2008/07/24/black-crayons-and-school-psychologist/
 ---
 I follow [Raymond Chen](http://en.wikipedia.org/wiki/Raymond_Chen)’s [blog](http://blogs.msdn.com/oldnewthing/default.aspx) (required reading if you program for Win32) and the [other day](http://blogs.msdn.com/oldnewthing/archive/2008/07/23/8765362.aspx) he had a link to a story that was both hysterical and scary.  My first thought that it was another [urban](http://www.snopes.com/) [legend](http://urbanlegends.about.com/).  After a bit of searching, I tracked down the author, Deirdre Sholto-Douglas, and she confirmed that the story was true and gave me permission to repost it here.
 

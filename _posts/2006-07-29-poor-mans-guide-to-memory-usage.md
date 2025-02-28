@@ -1,10 +1,6 @@
 ---
-id: 295
 title: 'Poor man&#8217;s guide to memory usage tracking'
 date: 2006-07-29T03:32:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=295
-permalink: /2006/07/29/poor-mans-guide-to-memory-usage/
 ---
 I have a service and I need to make sure that it doesn&#8217;t have a memory leak after running for a sustained length of time.  I&#8217;m doing all the good stuff in code to manage the garbage collection and I have the right tools to check for leaks in my code.  But I still want to monitor an instance of the service during regular usage.  I don&#8217;t need anything too finely grained, I just want to see if the memory usage is trending upwards.  There&#8217;s a good chance that I might have to deploy this out in the field, so I want something simple.  I could have used the Performance console, but I wanted something very simple to explain.  You can probably do this with a [CScript](http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/cscript_overview.mspx?mfr=true) batch file and [WMI](http://www.microsoft.com/whdc/system/pnppwr/wmi/default.mspx), but I wanted something fast to load and fast to exit.
 

@@ -1,0 +1,13 @@
+---
+id: 183
+title: Looking forward to stackoverflow
+date: 2008-04-18T14:28:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=183
+permalink: /2008/04/18/looking-forward-to-stackoverflow/
+---
+Not an actual stack overflow, but the new site, [stackoverflow.com](http://www.stackoverflow.com/), run by [Jeff Atwood](http://www.codinghorror.com/blog/archives/001101.html "Introducing Stackoverflow.com") and [Joel Spolsky](http://www.joelonsoftware.com/items/2008/04/16.html "What is stackoverflow.com?").  Their aim is to provide some sort of programming Q&A site.  Accurate and up to date information that&#8217;s easy to find by having programmers ask questions and other programmers answer them.  I hope that they can pull it off.  My usual method of learning something programming related is by what Joel referred to as &#8220;page-fault&#8221; learning.  I start out with a Google or forum search, get the basics, and start implementing until I hit an error or a mental block.  Then I jump back on the [Intertubes](http://en.wikipedia.org/wiki/Series_of_tubes) to research a little deeper.
+
+I&#8217;m so tired of hitting Experts-exchange when I google a topic.  So much that I&#8217;ll specifically exclude it from my Google searches by tacking on  &#8220;-site:www.experts-exchange.com&#8221; to the search string.  There&#8217;s something about that site that just rubs me the wrong way.  it&#8217;s like &#8220;We&#8217;ll tease you with the question, now pay up for the answer&#8221;.  And you&#8217;ll have no way of knowing if the answer is correct or applicable to your need until after you have paid them.  [No sir, I don&#8217;t like it](http://en.wikipedia.org/wiki/Mr._Horse "Obligatory quote from Mr. Horse").
+
+Right now, the only thing up on the site is a podcast of a conversation between Jeff and Joel.  I&#8217;ve been listening to it and it&#8217;s pretty good.  I can&#8217;t wait for the site to take form and I hope to be able to contribute to it in some small form.

@@ -1,10 +1,6 @@
 ---
-id: 475
 title: 'Total Illusions &#8211; The Forums -&gt; Dangerous Hacker!'
 date: 2005-04-29T16:15:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=475
-permalink: /2005/04/29/total-illusions-forums-dangerous/
 ---
 [Total Illusions &#8211; The Forums -> Dangerous Hacker!](http://www.totalillusions.net/forum/index.php?showtopic=328)
 

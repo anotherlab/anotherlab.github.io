@@ -1,8 +1,6 @@
 ---
 title: It's 2018, time to join that David Bowie Book Club that his son has started
 date: 2018-01-02
-collect_box_size:
-  - collect-square
 categories:
   - Books
 tags:

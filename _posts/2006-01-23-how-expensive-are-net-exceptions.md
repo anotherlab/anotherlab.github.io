@@ -1,10 +1,6 @@
 ---
-id: 329
 title: How expensive are .NET exceptions?
 date: 2006-01-23T15:59:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=329
-permalink: /2006/01/23/how-expensive-are-net-exceptions/
 ---
 With .NET, I keep hearing “Don’t use exceptions, they’re expensive” and I have always wondering how true it was.  I’ve been in the camp of using exceptions when you need them and don’t worry about the performance cost.  You want to use them for handling situations where something completely unexpected is happening in the code.  I don’t believe in using them to return an error condition in code, that’s what function return values are for.
 

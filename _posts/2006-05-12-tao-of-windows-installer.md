@@ -1,10 +1,6 @@
 ---
-id: 313
 title: Tao of the Windows Installer
 date: 2006-05-12T18:31:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=313
-permalink: /2006/05/12/tao-of-windows-installer/
 ---
 There are some really good Windows Installer guidelines up on the [Windows Installer Team Blog](http://blogs.msdn.com/windows_installer_team).  [Part 1](http://blogs.msdn.com/windows_installer_team/archive/2006/05/01/587990.aspx) went up yesterday and [Part 2](http://blogs.msdn.com/windows_installer_team/archive/2006/05/12/595950.aspx) went up today.  Most the rules I follow already, due to constant beating of the forehead against the wall experience that I call working with Windows Installer, but it was help to see the rest of them.  I listed them below, with my own comments.  Visit the links for [Part 1](http://blogs.msdn.com/windows_installer_team/archive/2006/05/01/587990.aspx) and [Part 2](http://blogs.msdn.com/windows_installer_team/archive/2006/05/12/595950.aspx) for the full text behind each rule.
 

@@ -1,10 +1,6 @@
 ---
-id: 218
 title: Just listened to a great interview with Dan Appleman over on Hanselminutes
 date: 2007-12-17T06:33:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=218
-permalink: /2007/12/17/just-listened-to-great-interview-with/
 ---
 That spring, I treated my self to an MP3 player, a [Creative Zen Vision:M](http://www.creative.com/products/mp3/zenvisionm/).  Why I picked a ZVM is food for another post, but it&#8217;s opened up a new world to me.  The world of [podcasts](http://en.wikipedia.org/wiki/Podcasts "Obligatory wikipedia reference").  My podcast listening typically falls into two categories:  programming related and NPR [shows](http://www.npr.org/rss/podcast/podcast_directory.php "NPR podcast directory").
 

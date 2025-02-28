@@ -1,10 +1,6 @@
 ---
-id: 108
 title: Some odd TiVo issues
 date: 2008-11-23T14:26:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=108
-permalink: /2008/11/23/some-odd-tivo-issues/
 ---
 I have  couple a couple of Series2 [TiVo](http://www.tivo.com/) DVRs and they just received the [TiVo Fall 2008 Service Update](http://research.tivo.com/932priority/index.htm "TiVo 9.3.2 Software Priority Request Form") for 9.3.2.  It’s basically a few tweaks to the UI, but the odd thing was that I needed to manually restart the TiVo.  Usually the TiVo restarts itself after getting a new system update.  Very odd, but hopefully just a one time glitch.</p> </p> 
 

@@ -1,10 +1,6 @@
 ---
-id: 433
 title: www.dumpsterworld.com
 date: 2005-06-28T17:13:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=433
-permalink: /2005/06/28/wwwdumpsterworldcom/
 ---
 &#8220;Your Dumpster Diving and Curb Crawling Resource.&#8221;
 

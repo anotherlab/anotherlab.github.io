@@ -1,10 +1,6 @@
 ---
-id: 250
 title: Understanding SQL Server error 18456
 date: 2007-04-10T14:57:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=250
-permalink: /2007/04/10/understanding-sql-server-error-18456/
 ---
 I came across an odd problem with SQL Server Express.  We have a test server with various versions of SQL Server installed for QA to use.   Of the QA techs was unable to connect to the instance of SQL Server Express when he used a SQL Server login.  The code was not returning an error error code, so I decide to take a look at it.
 

@@ -1,10 +1,6 @@
 ---
-id: 302
 title: Fun with scripted load tests
 date: 2006-06-13T18:03:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=302
-permalink: /2006/06/13/fun-with-scripted-load-tests/
 ---
 We are getting ready to do some load tests and it&#8217;s time to pick some tools.  The app that we want to test is a client/server app with buckets of processing going on the client side.  Most c/s load test tools just emulate the traffic that goes on between the client and the server.  For our app, that wont work, the load occurs on both the client and the app and we have to drive the app.  This means one instance of the app per PC.  We have tried multiple instances of the app on the desktop or through multiple terminal service sessions, but that just didn&#8217;t work.  We tried that a couple of years ago at at the [Microsoft testing facility](http://www.microsoft.com/mscorp/info/usaoffices/newengland/waltham.mspx) in Waltham, MA, but it only would work as one app per machine.
 

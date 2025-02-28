@@ -1,8 +1,6 @@
 ---
 title: My book about localization with Xamarin is out
 date: 2017-01-19
-collect_box_size:
-  - collect-square
 categories:
   - Uncategorized
 ---

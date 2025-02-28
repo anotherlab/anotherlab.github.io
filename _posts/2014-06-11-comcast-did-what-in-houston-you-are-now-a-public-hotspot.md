@@ -1,10 +1,6 @@
 ---
-id: 851
 title: 'Comcast did WHAT in Houston?  You are now a public hotspot.'
 date: 2014-06-11T12:09:24-05:00
-layout: post
-guid: http://www.rajapet.com/?p=851
-permalink: /2014/06/11/comcast-did-what-in-houston-you-are-now-a-public-hotspot/
 ---
 <div style="background-color: #fff; display: inline-block; font-family: 'Helvetica Neue',Arial,sans-serif; color: #a7a7a7; font-size: 11px; width: 100%; max-width: 594px;">
   <div class="mceItemVisualAid mceItemLayer" style="overflow: hidden; position: relative; height: 0; padding: 66.498316% 0 49px 0; width: 100%;">

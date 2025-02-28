@@ -1,10 +1,6 @@
 ---
-id: 363
 title: 'Why you wont find C# example code for writing Shell Extension handlers'
 date: 2005-11-21T14:59:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=363
-permalink: /2005/11/21/why-you-wont-find-c-example-code-for/
 ---
 Jesse Kaplan posted [the following](http://forums.microsoft.com/MSDN/ShowPost.aspx?PostID=125283&SiteID=1) (thanks to [Junfeng Zhang](http://blogs.msdn.com/junfeng/default.aspx "Junfeng Zhang's .Net Framework Notes"))
 

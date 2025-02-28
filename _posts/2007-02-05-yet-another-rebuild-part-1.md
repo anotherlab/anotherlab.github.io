@@ -1,10 +1,6 @@
 ---
-id: 264
 title: Yet another rebuild (Part 1)
 date: 2007-02-05T18:15:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=264
-permalink: /2007/02/05/yet-another-rebuild-part-1/
 ---
 After two and half weeks, I finally got my primary development box back from our IT manager.  The delay was due to fun with RAID.  After two drive failures within 30 days, I&#8217;m not taking any more chances.  BTW, nothing beats having two development boxes.  We are on three year refresh cycles for our PC&#8217;s.  Usually developer boxes get rotated out to other departments.  On the last refresh, I managed to keep my old PC.  I do enough TCP development work, where it&#8217;s handy to have to physically separated machines.  Now, the old box is now the insurance policy for when the hard drive goes on the primary box. 
 

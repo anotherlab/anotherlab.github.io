@@ -1,10 +1,6 @@
 ---
-id: 72
 title: Getting the list of databases that a user has rights to from SQL Server
 date: 2009-12-18T20:53:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=72
-permalink: /2009/12/18/getting-list-of-databases-that-user-has/
 ---
 We have a few applications that let the user select the database connection details.  It’s for SQL Server 2005/2008 and they can pick the server protocol, server name, and the database.  Once they select a database server, the user selects the database from a pick list selection.  We filter that list to only show the databases that are applicable for that user and application.
 

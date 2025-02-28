@@ -1,10 +1,6 @@
 ---
-id: 119
 title: Get ready to say good bye to Google Page Creator
 date: 2008-08-12T18:56:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=119
-permalink: /2008/08/12/get-ready-to-say-good-bye-to-google/
 ---
 When I get some spare time, I plan on revamping the layout of this blog.  Right now, it’s an ugly mess of hacks placed in Blogger templates.  I want to make use of external CSS and Javascript files, but Blogger doesn’t allow you to upload those types of files.  Since of the design goals for this blog is to run it for free, I wanted to have a way of hosting CSS and Javascript files without having to use a paid hosting account.
 

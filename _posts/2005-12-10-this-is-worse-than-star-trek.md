@@ -1,10 +1,6 @@
 ---
-id: 349
 title: '&quot;This is worse than a Star Trek convention.&quot;'
 date: 2005-12-10T02:46:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=349
-permalink: /2005/12/10/this-is-worse-than-star-trek/
 ---
 That was a comment posted on a [Gothamist](http://www.gothamist.com/) blog entry about [making fake MTA posters](http://www.gothamist.com/archives/2005/12/07/mta_hack_make_y.php). The designer types are arguing over <strike>fonts</strike> typefaces. It&#8217;s very much like the Kirk vs Picard arguments found on the Star Trek boards.
 

@@ -1,10 +1,6 @@
 ---
-id: 79
 title: Wireshark work around for Windows 7
 date: 2009-09-10T14:01:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=79
-permalink: /2009/09/10/wireshark-work-around-for-windows-7/
 ---
 I do a fair amount of programming at the socket level and [Wireshark](http://www.wireshark.org/) is one the tools that I use to test the data going over the wire.  Wireshark is a free application that analyzes packets going across the network.  It knows about the different protocols and can display the data with a nice GUI front end.  It’s a cross platform tool, and I hit a small snag when I went to Windows 7. 
 

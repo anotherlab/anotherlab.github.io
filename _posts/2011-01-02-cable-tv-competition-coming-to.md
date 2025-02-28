@@ -1,10 +1,6 @@
 ---
-id: 44
 title: Cable TV Competition coming to Bethlehem? (FiOS TV vs Time Warner Cable)
 date: 2011-01-02T05:00:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=44
-permalink: /2011/01/02/cable-tv-competition-coming-to/
 ---
 On January 12th, 2011, the town of Bethlehem (NY) will be holding a [monthly town meeting](http://www.townofbethlehem.org/pages/agenda/townAgenda.asp).  One of the topics on the agenda is to have a public hearing to allow the public to voice their opinion on whether or not to allow Verizon to provide FiOS TV.  This would be a competing cable TV service, going up against [Time Warner Cable](http://www.timewarnercable.com/northeast/learn/cable/default.html) (the current provider).
 

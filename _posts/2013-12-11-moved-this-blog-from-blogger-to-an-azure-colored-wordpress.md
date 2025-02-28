@@ -1,10 +1,6 @@
 ---
-id: 532
 title: Moved this blog from Blogger to an Azure colored WordPress
 date: 2013-12-11T22:51:50-05:00
-layout: post
-guid: http://www.rajapet.com/?p=532
-permalink: /2013/12/11/moved-this-blog-from-blogger-to-an-azure-colored-wordpress/
 ---
 You may have noticed that this blog looks a little different.  I just migrated my blog from Google&#8217;s Blogger platform to a self-hosted [WordPress](http://wordpress.org/) blog.  And it&#8217;s running in Microsoft&#8217;s [Azure](http://windowsazure.com) cloud.
 

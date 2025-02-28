@@ -1,10 +1,6 @@
 ---
-id: 315
 title: Tivo, one year later
 date: 2006-04-13T01:41:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=315
-permalink: /2006/04/13/tivo-one-year-later/
 ---
 It&#8217;s been a year since we started using [Tivo](http://www.tivo.com/4.0.asp) and I wouldn&#8217;t want to watch TV without it. It&#8217;s more than the time-shifting of hour favorite shows (but that part is pretty good), it&#8217;s being able to keep a library of shows for the kids to watch when they want to. It&#8217;s having two Tivo&#8217;s and being able to transfer shows from one box to the other in real time. It&#8217;s being able to show music and pictures from our PC&#8217;s to the TVs. It&#8217;s being able to schedule a show to be recorded remotely. It means never having to touch a [VHS tape](http://www.washingtonpost.com/wp-dyn/content/article/2005/08/26/AR2005082600332.html) ever again.
 

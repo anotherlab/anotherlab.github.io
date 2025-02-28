@@ -1,0 +1,13 @@
+---
+id: 350
+title: 'Set the wayback machine to late 1980&#8217;s'
+date: 2005-12-09T17:07:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=350
+permalink: /2005/12/09/set-wayback-machine-to-late-1980s/
+---
+SteveX posted some [tidbits](http://blog.stevex.net/index.php/2005/12/09/sober-virus-and-reminiscing-about-virusx/ "Sober Virus (and remininscing about VirusX)") about his work on VirusX, a virus checker for the Amiga. I get [Lattice](http://www.lattice.com/otherdos.htm) flashbacks whenever he does that. 
+
+I learned how to program in C on Lattice. At my first real [job](http://www.stochos.com/), we used the Lattice C compiler for Unix and MS-DOS. I bought the Amiga version and taught myself C with it. Back in the early 80&#8217;s, Lattice was the only game in town for getting commercial C compilers. Even Microsoft repackaged it as Microsoft C until they came out with their own compiler (MS C 4.0). By the time I was using it (1988), Lattice was being eclipsed by Microsoft&#8217;s own C compiler and Borland&#8217;s Turbo C. We eventually dropped it for the Watcom C compiler, a C compiler that ran circles around Microsoft C back then. It&#8217;s hard to imagine, but Microsoft used to have serious competition in the compiler area. Watcom C was nearly 100% compatible with Microsoft C at the source level, but it would compiler smaller executable that ran faster than the same code compiled with Microsoft C. Mind you, this was back in the early 90&#8217;s and Visual Studio did not exist. Lattice was eventually bought out by the SAS Institute, who then effectively killed it.
+
+I was surprised to see that Watcom C is still around as [Open Watcom C/C++ and FORTRAN](http://www.openwatcom.org/product/features_content.html). Sybase ended up owning Watcom and realized that maintaining the compilers didn&#8217;t make a lot of business sense. So they open sourced it about 5 years ago. It looks like you can still build Netware [NLM](http://en.wikipedia.org/wiki/NetWare_Loadable_Module)&#8216;s with it. If you ever needed to write a NLM, this would be the way to do it without having to spend any money.

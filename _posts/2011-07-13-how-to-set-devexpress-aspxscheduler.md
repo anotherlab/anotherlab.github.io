@@ -1,10 +1,6 @@
 ---
-id: 34
 title: How to set the DevExpress ASPxScheduler current time line marker to only appear for the current date
 date: 2011-07-13T15:26:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=34
-permalink: /2011/07/13/how-to-set-devexpress-aspxscheduler/
 ---
 I’ve been using the [DevExpress](http://www.devexpress.com/) [ASPxScheduler](http://www.devexpress.com/Products/NET/Controls/ASP/Scheduler/) with one of our WebForms apps and it’s been a pretty good experience so far. It does pretty much what I need for it to do and I have been able to bend it to do things that I want it to do.
 

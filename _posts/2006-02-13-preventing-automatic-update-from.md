@@ -1,10 +1,6 @@
 ---
-id: 322
 title: Preventing Automatic Update from rebooting your machine
 date: 2006-02-13T17:51:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=322
-permalink: /2006/02/13/preventing-automatic-update-from/
 ---
 > Here&#8217;s how to prevent Automatic Update from rebooting your machine:
 > 

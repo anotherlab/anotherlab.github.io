@@ -1,10 +1,6 @@
 ---
-id: 46
 title: How TweeVo survived the OAuthcalypse
 date: 2010-10-18T03:09:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=46
-permalink: /2010/10/18/how-tweevo-survived-oauthcalypse/
 ---
 Last month, I spent a few evenings adding OAuth support to [Brian Peek&#8217;s](http://brianpeek.com/blog/default.aspx) TweeVo application.  TweeVo is a little WPF based application that runs in the background and logs what your TiVo has recorded to a specified Twitter account.  I’ve been running it on and off as [@AnotherTiVo](http://twitter.com/anothertivo). Brian keeps a Twitter list of known TweeVo accounts [as tweevousers](http://twitter.com/peekvo/tweevousers).
 

@@ -1,8 +1,6 @@
 ---
 title: "What not to do on a job interview: Pressing the Self-Destruct Button"
 date: 2017-04-11
-collect_box_size:
-  - collect-square
 categories:
   - Employment
 ---

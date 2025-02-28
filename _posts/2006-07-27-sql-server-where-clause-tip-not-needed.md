@@ -1,10 +1,6 @@
 ---
-id: 296
 title: SQL Server WHERE clause tip (not needed for SQL Server 2005)
 date: 2006-07-27T14:44:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=296
-permalink: /2006/07/27/sql-server-where-clause-tip-not-needed/
 ---
 One of my services logs every request to a private log table. That table mainly a diagnostic tool to provide some crude performance benchmarks. It&#8217;s not designed for historical trending, so I have code to purge older records. The service would periodically (twice a day) issue a DELETE statement to the database server to delete records older than 30 days.  Given the following schema (sample, not the actual schema):
 

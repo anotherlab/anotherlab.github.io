@@ -1,10 +1,6 @@
 ---
-id: 226
 title: When memes escape out of the series of tubes
 date: 2007-11-19T04:42:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=226
-permalink: /2007/11/19/when-memes-escape-out-of-series-of/
 ---
 It was only a matter of time before one of the [candidates](http://www.mikehuckabee.com/) played the [Chuck Norris card](http://en.wikipedia.org/wiki/Chuck_Norris_Facts).
 

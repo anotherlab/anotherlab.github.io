@@ -1,10 +1,6 @@
 ---
-id: 284
 title: 'Why you wont see Linux on Corporate America&#8217;s desktops just yet'
 date: 2006-09-07T14:47:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=284
-permalink: /2006/09/07/why-you-wont-see-linux-on-corporate/
 ---
 <span>I came across this <a href="http://scobleizer.wordpress.com/2006/08/17/linux-achilles-heel-fonts/">blog post</a> by <a href="http://scobleizer.wordpress.com/">Robert Scoble</a> while checking something for a GPS data collector that I writing, it has a useful data point to file in the back of the mind.<span>  </span>It has nothing to do with GPS data collection or even what I was googling for, but it explains a very good reason why you won’t see Linux on corporate desktops for the conceivable future.<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /></p> 
 

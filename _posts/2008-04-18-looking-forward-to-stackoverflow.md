@@ -1,10 +1,6 @@
 ---
-id: 183
 title: Looking forward to stackoverflow
 date: 2008-04-18T14:28:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=183
-permalink: /2008/04/18/looking-forward-to-stackoverflow/
 ---
 Not an actual stack overflow, but the new site, [stackoverflow.com](http://www.stackoverflow.com/), run by [Jeff Atwood](http://www.codinghorror.com/blog/archives/001101.html "Introducing Stackoverflow.com") and [Joel Spolsky](http://www.joelonsoftware.com/items/2008/04/16.html "What is stackoverflow.com?").  Their aim is to provide some sort of programming Q&A site.  Accurate and up to date information that&#8217;s easy to find by having programmers ask questions and other programmers answer them.  I hope that they can pull it off.  My usual method of learning something programming related is by what Joel referred to as &#8220;page-fault&#8221; learning.  I start out with a Google or forum search, get the basics, and start implementing until I hit an error or a mental block.  Then I jump back on the [Intertubes](http://en.wikipedia.org/wiki/Series_of_tubes) to research a little deeper.
 

@@ -1,10 +1,6 @@
 ---
-id: 94
 title: If you sell poison, I think your customer hotline should be manned 24/7
 date: 2009-04-28T13:29:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=94
-permalink: /2009/04/28/if-you-sell-poison-i-think-your/
 ---
 A couple of weeks ago, we had some unwanted visitors coming in from under the front door.  Pavement ants.  You know, [Tetramorium caespitum](http://www.ento.psu.edu/extension/factsheets/pavement_ant.htm).  They are tiny and they come from under the door frame.  It usually happens every year at about this time.  I usually spray around the outside of the house with a pesticide and the problem goes away.
 

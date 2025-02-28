@@ -1,10 +1,6 @@
 ---
-id: 978
 title: And then they added Xamarin support to the Multilingual App Toolkit
 date: 2014-10-08T06:33:35-05:00
-layout: post
-guid: http://www.rajapet.com/?p=978
-permalink: /2014/10/08/and-then-they-added-xamarin-support-to-the-multilingual-app-toolkit/
 ---
 As of 6am EDT today, Microsoft&#8217;s [Multilingual App Toolkit](http://aka.ms/matpreview "Multilingual App Toolkit") officially supports Xamarin for making it easy to manage language translations in mobile apps. Originally designed for Windows Store apps, the Multilingual App Toolkit (which I&#8217;m just going to call MAT) allows you to add new language resources and generate RESX files to compile into your app. It uses the XLIFF format for storing the translated resources and can import, export, and even machine translate your native text into other languages.
 

@@ -1,10 +1,6 @@
 ---
-id: 176
 title: A more robust way of converting a string to an enumerated value (enum)
 date: 2008-04-30T17:50:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=176
-permalink: /2008/04/30/more-robust-way-of-converting-string-to/
 ---
 A while back, I [had blogged](http://anotherlab.rajapet.net/2005/04/convert-string-to-enumerated-enum.html) about a tip that Mark Wagner had posted [about converting a string to an enumerated value](http://blogs.crsw.com/mark/archive/2005/04/07/832.aspx).  Tim Sneath posted a [similar tip](http://blogs.msdn.com/tims/archive/2004/04/02/106310.aspx "How do you convert a string into an enum?") even earlier, except his had some additional error logging.  Tim&#8217;s post made it to DotNetKicks, which is good because having the additional error handling is just good coding practice.  
 

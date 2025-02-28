@@ -1,10 +1,6 @@
 ---
-id: 379
 title: 'More news on Sony&#8217;s rootkit'
 date: 2005-11-07T15:24:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=379
-permalink: /2005/11/07/more-news-on-sonys-rootkit/
 ---
 The story of Sony&#8217;s rootkit continues to live on. After [Mark Russinovich](http://www.sysinternals.com/Blog/ "Mark's Blog") first documented his analysis of the rootkit installed by content protected Sony audio CD&#8217;s, just about everyone and their grandmother linked to Mark&#8217;s site. Oddly enough, CNN didn&#8217;t. That&#8217;s another story. Mark has provided updates to the rootkit story and it continues [here](http://www.sysinternals.com/blog/2005/11/sonys-rootkit-first-4-internet.html "Sony's Rootkit: First 4 Internet Responds").
 

@@ -1,10 +1,6 @@
 ---
-id: 293
 title: Dates are not numbers
 date: 2006-08-18T19:18:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=293
-permalink: /2006/08/18/dates-are-not-numbers/
 ---
 One of the other developers that I work with had a question about inserting some date values into a SQL Server database.  The code in question is doing a batch insert and it was implemented as a series of INSERT statements and they get executed in large batches.  He was having some difficulty in getting the right values for the dates.  He was formatting the INSERT statement with the datetime values being formatted as numeric values.  The end result was that the dates were off by two days.  It was easy to fix and is yet another example of a [leaky](http://www.joelonsoftware.com/articles/LeakyAbstractions.html) [abstraction](http://anotherlab.blogspot.com/2006/05/leaky-abstractions-in-wise-for-windows.html) can bite you in the [ass](http://www.phrases.org.uk/bulletin_board/43/messages/989.html).
 

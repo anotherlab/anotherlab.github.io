@@ -1,10 +1,6 @@
 ---
-id: 248
 title: Fun with COM and console Delphi applications
 date: 2007-04-30T20:50:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=248
-permalink: /2007/04/30/fun-with-com-and-console-delphi/
 ---
 I try to make my setup projects upgradeable in place through Windows Installer.  This means that if a previous application has already been installed, the installer will do a silent uninstall before installing the new version.  The fun part is saving the current user settings across the uninstall/install divide.  Depending on the application being installed, the settings could be in the registry, a web.config files, or some other location.
 

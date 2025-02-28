@@ -1,10 +1,6 @@
 ---
-id: 4
 title: A work around for the files in use bug with HeatDirectory in MSBuild
 date: 2013-12-05T18:45:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=4
-permalink: /2013/12/05/a-work-around-for-files-in-use-bug-with/
 ---
 I have this multi-project solution in Visual Studio 2013 and one of the projects is a Windows Installer project.  It uses [WiX](http://wixtoolset.org/) (Windows Installer XML) 3.8 and when I rebuild the solution, the final result is a nice .MSI file that will install the executable bits from the other projects.
 

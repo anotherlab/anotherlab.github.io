@@ -1,10 +1,6 @@
 ---
-id: 501
 title: String Date Validator
 date: 2005-04-07T15:56:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=501
-permalink: /2005/04/07/string-date-validator/
 ---
 [String Date Validator](http://blogs.crsw.com/mark/archive/2005/04/06/829.aspx)
 

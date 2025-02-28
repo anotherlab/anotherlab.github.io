@@ -1,8 +1,6 @@
 ---
 title: Time to repave (slightly) my work machine
 date: 2017-09-01
-collect_box_size:
-  - collect-square
 categories:
   - Annoyances
 tags:

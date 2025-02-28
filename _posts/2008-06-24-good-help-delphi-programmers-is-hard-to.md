@@ -1,10 +1,6 @@
 ---
-id: 146
 title: Good help (Delphi programmers) is hard to find
 date: 2008-06-24T05:12:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=146
-permalink: /2008/06/24/good-help-delphi-programmers-is-hard-to/
 ---
 I was just reading a post on Bart Roozendaal&#8217;s [Sevensteps](http://sevensteps.blogspot.com/) blog titled [&#8220;Are Delphi programmersa dying breed?&#8221;](http://sevensteps.blogspot.com/2008/06/are-delphi-programmersa-dying-breed.html).  The title pretty much sums up Bart&#8217;s point, it&#8217;s getting harder and harder hire programmers with Delphi experience.  It took a long time for us to find our last two Delphi hires.  Here in [Albany](http://www.albany.org/), we never had a huge talent pool to pick from, and these days you just can&#8217;t find the Delphi talent.
 

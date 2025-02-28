@@ -1,10 +1,6 @@
 ---
-id: 167
 title: Ack! The Windows Installer does not permit installation from a Remote Desktop Connection
 date: 2008-05-27T18:45:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=167
-permalink: /2008/05/27/ack-windows-installer-does-not-permit/
 ---
 I&#8217;m testing a installer that I had migrated from Wise For Windows to [InstallAware](http://www.installaware.com/). I testing the installer from inside a virtual machine. I used do it with VMware Workstation, but now I&#8217;m using virtual machines hosted on our [ESX](http://info.vmware.com/content/GLP_ESX_LP1) server. That&#8217;s usually much faster and doesn&#8217;t my bog down my development machine. 
 

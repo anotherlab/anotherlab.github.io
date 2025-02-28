@@ -1,10 +1,6 @@
 ---
-id: 70
 title: Just watched a movie in HD using Amazon Video On Demand through my Tivo
 date: 2010-01-04T05:57:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=70
-permalink: /2010/01/04/just-watched-movie-in-hd-using-amazon/
 ---
 I had some credits with my Amazon account so I decided to “rent” a movie through their Amazon [Video On Demand](http://www.amazon.com/Video-On-Demand/b/ref=topnav_storetab_atv?ie=UTF8&node=16261631) program.  TiVo had offered the Amazon Video on Demand for while, I decided to see what the experience would be with a HD movie. 
 

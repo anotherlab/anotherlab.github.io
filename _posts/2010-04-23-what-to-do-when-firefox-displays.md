@@ -1,10 +1,6 @@
 ---
-id: 65
 title: What to do when Firefox displays multiple versions of the Java Console in the Add-ons list
 date: 2010-04-23T15:09:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=65
-permalink: /2010/04/23/what-to-do-when-firefox-displays/
 ---
 I upgraded to [Firefox](http://www.mozilla.com/firefox) 3.6.3 the other day and at the same time, upgraded one of the add-ons I use (Xmarks).  I love [Xmarks](http://anotherlab.rajapet.net/%7BCAFEEFAC-0016-0000-0010-ABCDEFFEDCBA%7D "Bookmark sync and search"), but that’s for another time.  When Firefox upgrades an add-on, it displays the Add-ons list, which is a dialog box that lists all of the add-ons that are registered with Firefox.  You can use that dialog to enable or to disable an add-on or see if a newer version of an add-on is available.  
 

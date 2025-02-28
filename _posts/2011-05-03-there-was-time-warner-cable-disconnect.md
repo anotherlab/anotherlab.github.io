@@ -1,10 +1,6 @@
 ---
-id: 36
 title: There was a Time Warner Cable Disconnect Technician in my yard this morning.
 date: 2011-05-03T14:25:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=36
-permalink: /2011/05/03/there-was-time-warner-cable-disconnect/
 ---
 I had an interesting conversation this morning with a Time Warner Cable (TWC) Disconnect Technician.  I went out to get my paper and he had the cable junction box open.  He was clipping the wires going my house and my neighbor’s house.  We had both switched to Verizon FiOS TV and were no longer paying for any TWC services.
 

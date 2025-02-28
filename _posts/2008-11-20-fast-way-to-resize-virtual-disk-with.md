@@ -1,10 +1,6 @@
 ---
-id: 109
 title: Fast way to resize a virtual disk with VMware ESX Server
 date: 2008-11-20T21:22:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=109
-permalink: /2008/11/20/fast-way-to-resize-virtual-disk-with/
 ---
 We’re starting some [SharePoint](http://en.wikipedia.org/wiki/Sharepoint) development and I needed to create a [development environment](http://weblogs.asp.net/erobillard/archive/2007/02/23/build-a-sharepoint-development-machine.aspx) on Windows Server 2003.  So I created a new virtual machine (VM) of Server 2003 on our [VMware ESX](http://en.wikipedia.org/wiki/VMware_ESX) box and gave it a 1GB of RAM and 8GB of disk space.  I installed the OS and configured it for [Windows SharePoint Services](http://en.wikipedia.org/wiki/Windows_SharePoint_Services) (WSS) and then installed Visual Studio 2008.  That left us with about 1.5GB of disk space.  Oops, time to resize the drive.
 

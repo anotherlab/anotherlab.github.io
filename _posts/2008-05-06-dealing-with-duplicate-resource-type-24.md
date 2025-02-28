@@ -1,10 +1,6 @@
 ---
-id: 173
 title: 'Dealing with the Duplicate Resource: Type 24 when enabling theme support in Delphi 2007'
 date: 2008-05-06T14:17:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=173
-permalink: /2008/05/06/dealing-with-duplicate-resource-type-24/
 ---
 I was writing a little utility in Delphi 2007 to make it easy to work with data stored as the XML data type in SQL Server. While I have been using Delphi 2007 since it was released last fall, this was the first desktop app that I had written from scratch. I threw some components up on the form and I did a quick compile to see how the visual elements looked at runtime. I got the following error message:
 

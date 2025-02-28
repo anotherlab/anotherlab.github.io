@@ -1,10 +1,6 @@
 ---
-id: 385
 title: Voices of reason in a sea of hype
 date: 2005-10-27T17:39:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=385
-permalink: /2005/10/27/voices-of-reason-in-sea-of-hype/
 ---
 I am so tired of the term &#8220;Web 2.0&#8221;. When ever I see that that term bandied about, I get a mental flashback to an old Verizon commercial where a consultant is pronouncing the word paradigm as &#8220;Pair-Uh-Dig-Um&#8221;. It&#8217;s [another example](http://www.dack.com/web/bullshit.html "Web Economy Bullshit Generator") of [&#8220;buzzword bingo&#8221;](http://en.wikipedia.org/wiki/Buzzword_bingo "Buzzword Bingo - the game"). What does it mean? And I do mean that specificly. 
 

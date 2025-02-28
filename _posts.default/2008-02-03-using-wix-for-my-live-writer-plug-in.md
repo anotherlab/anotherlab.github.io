@@ -1,0 +1,34 @@
+---
+id: 206
+title: Using Wix for my Live Writer Plug-in
+date: 2008-02-03T06:35:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=206
+permalink: /2008/02/03/using-wix-for-my-live-writer-plug-in/
+---
+I finally have version 1 of my Smugmug gallery plug-in completed. The next step is to do the installer. To get a plug-in up on the [Windows Live Gallery](http://gallery.live.com/), it must have an installer that meets the requirements on the Gallery Developer Center [page](http://gallery.live.com/devcenter.aspx). A content plug-in has to meet these requirements:
+
+  1. Content Plugins must be built using either the .NET 1.1 or .NET 2.0 frameworks. 
+  2. Content Plugins must be packaged and submitted as a Microsoft Installer (*.msi). 
+  3. If you use the .NET 2.0 framework, the installer must link to the .NET 2.0 download site or use the Visual Studio 2005 Bootstrapper. The Bootstrapper detects and downloads the correct .NET 2.0 framework. 
+  4. Your installer must copy the assembly to the &#8220;Plug -ins&#8221; sub-directory of the Windows Live Writer installation directory.
+
+I have #1, my plug-in uses the .NET 2.0 framework. Number 2 is that it must be packaged using a Windows Installer .msi setup. I&#8217;m still figuring out the best way how to implement #3, but I&#8217;m not sweating it. With #4, I&#8217;m not doing it that way. The alternative method is to install the plug-in in your own folder and write a registry key to Software\Windows Live Writer\PluginAssemblies (HKLM or HKCU) with the name of your plugin and the path to it. That way you don&#8217;t have to worry about where Live Writer was installed to. In fact that page is probably obsolete, there is an MSDN [article](http://msdn2.microsoft.com/en-us/library/aa738841.aspx "Distributing Plugins") that covers the registry method.
+
+Let&#8217;s start with the .msi requirement.
+
+I looked that the &#8220;Setup Project&#8221; template in VS 2008. Um, no thanks. After 30 minutes of playing with it, I started getting annoyed. It felt awkward and non-intuitive. Granted, most things with Windows Installer are awkward and non-intuitive, but I couldn&#8217;t get fast handle on &#8220;Setup Project&#8221; template. It was easy enough to get the files installed, but getting the registry written correctly was a task I just couldn&#8217;t figure out. After two years of doing .msi with Wise For Windows and now InstallAware, I have a pretty good idea of an .msi is supposed to work.
+
+I decided to knock out an setup with InstallAware. It took about 5 minutes and worked perfectly. But it was 1.2 MB in size. That seemed excessive to deploy 45K for two assemblies. Frankly any installer will be excessive, but I have to follow requirement #2. I have lots of love for InstallAware and it&#8217;s my tool of choice for application installs, but it still bothers me to have a setup that 26 times larger than the files being deployed.
+
+With VS&#8217;s &#8220;Setup Project&#8221; and InstallAware out of the picture, I decided to check out [WiX](http://wix.sourceforge.net/index.html "Windows Installer XML (WiX) toolset"). WiX stands for WIndows Installer XML and is an open source toolkit for building .msi setups from an XML source file. The current version, 3, [installs nicely into VS 2008](http://wix.sourceforge.net/votive.html "Votive is the Visual Studio package for WiX that lets you create and build WiX setup projects using the Visual Studio IDE. Votive supports syntax highlighting and IntelliSense for .wxs source files and adds a WiX setup project type to Visual Studio."). It installed so nicely, I didn&#8217;t need to be concerned with how to run the [Candle](http://wix.sourceforge.net/manual-wix2/candle.htm) (the WiX compiler) or [Light](http://wix.sourceforge.net/manual-wix2/light.htm) (the WiX linker). There is also a .msi decompiler, named [Dark](http://wix.sourceforge.net/manual-wix2/dark.htm). It will emit Wix source code from a .MSI or .MSM file.
+
+WiX source code is pretty intimidating when you first look at it. if you have no experience with authoring Windows Installer, it will be hard to grasp at first. The WiX site has a nice [tutorial](http://www.tramontana.co.hu/wix/ "ntroduction to the Windows Installer XML Toolset"), but it&#8217;s for version 2 and uses syntax that&#8217;s deprecated in version 3. Fortunately, I was able to google the differences and I was able to get a working installer in about an hour. It&#8217;s not handling step 3 completely, but it is terminating the install if .NET 2.0 is not available.
+
+The size of the .msi is much smaller, about 220k. Still way too large, but it&#8217;s as about as small as I&#8217;m going to get for a .msi file. So far, I&#8217;m very impressed with WiX. Once you start getting the hang of the syntax, it&#8217;s very clear on how to setup a proper .msi file. There&#8217;s even a open source editor called [WixEdit](http://wixedit.sourceforge.net/). I didn&#8217;t need it for this task, but I think I make take at peek at it at another timer.
+
+Enough people are using it so that I was able to google for the bits I needed. Morten Lyhr had a great [post](http://morten.lyhr.dk/2007/10/wix-v3-and-detection-of-iis-and-aspnet.html "WiX v3 and detection of IIS and ASP.NET") on how to detect the .NET Framework. I figured out how to write the registry key from a [post](http://blogs.msdn.com/cjacks/archive/2008/01/03/stock-viewer-shim-demo-application.aspx "Stock Viewer Shim Demo Application") by Chris Jackson. Bonnie (one of the Live Writer developers) had a good sample [WiX file](http://bplo.spaces.live.com/blog/cns%21CF2831C0AE64E81B%21210.entry "Making an installer for your plugin") for installing a plug-in. While I didn&#8217;t follow her pattern, it did give me a tour of the neighborhood. Mike Stall has a good [post](http://blogs.msdn.com/jmstall/archive/2007/10/29/creating-msis-for-live-writer-plugins.aspx "Creating MSIs for Live Writer PlugIns") that covers the basics. I think I need to spend some time reading the blogs of the WiX developers, they have a build a really cool tool. 
+
+<div>
+  Tech Tags: <a href="http://technorati.com/tag/Windows+Live+Writer" rel="tag">Windows+Live+Writer</a> <a href="http://technorati.com/tag/plugin" rel="tag">plugin</a> <a href="http://technorati.com/tag/installer" rel="tag">installer</a> <a href="http://technorati.com/tag/msi" rel="tag">msi</a> <a href="http://technorati.com/tag/Wix" rel="tag">Wix</a>
+</div>

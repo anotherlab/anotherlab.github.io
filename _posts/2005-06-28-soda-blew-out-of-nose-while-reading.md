@@ -1,10 +1,6 @@
 ---
-id: 431
 title: 'The soda blew out of nose while reading this&#8230;'
 date: 2005-06-28T20:58:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=431
-permalink: /2005/06/28/soda-blew-out-of-nose-while-reading/
 ---
 Wil Wheaton answers questions [submitted from Slashdot](http://interviews.slashdot.org/article.pl?sid=05/06/27/0926218&from=rss)
 

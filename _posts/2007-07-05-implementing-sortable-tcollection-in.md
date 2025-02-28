@@ -1,10 +1,6 @@
 ---
-id: 231
 title: Implementing a sortable TCollection in Delphi
 date: 2007-07-05T17:24:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=231
-permalink: /2007/07/05/implementing-sortable-tcollection-in/
 ---
 [Delphi&#8217;s](http://www.codegear.com/products/delphi/win32) [TCollection](http://www.freepascal.org/docs-html/rtl/classes/tcollection.html) class is very useful, but out of the box it lacks the ability to sort the items in the list.  Fortunately, this is easily addressable accessing some private properties of the TCollection class.  Internally, the items in a TCollection are stored in a private TList named FList.  
 

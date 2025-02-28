@@ -1,8 +1,6 @@
 ---
 title: And then my blog was defaced
 date: 2017-02-21
-collect_box_size:
-  - collect-square
 categories:
   - WordPress
 tags:

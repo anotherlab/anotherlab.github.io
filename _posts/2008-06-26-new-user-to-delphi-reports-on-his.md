@@ -1,10 +1,6 @@
 ---
-id: 143
 title: A new user to Delphi reports on his annoyances
 date: 2008-06-26T17:29:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=143
-permalink: /2008/06/26/new-user-to-delphi-reports-on-his/
 ---
 Branden Tanga posted a [list of annoyances with Delphi](http://www.beigehat.com/2008/06/my-annoyances-with-codegear-rad.html) on his blog.  While there are some legitimate complaints you can make about Delphi (the borked help system), his complaints largely stem from being unfamiliar with the IDE. I’m going to paraphrase his complaints to just list the gist of complaint and my responses.  [Other](http://blog.marcocantu.com/blog/user_finds_delphi_annoyances.html) people have commented on his complaints, but I did want to note that his first one has some value.
 

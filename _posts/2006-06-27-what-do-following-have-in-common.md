@@ -1,10 +1,6 @@
 ---
-id: 300
 title: What do the following have in common?
 date: 2006-06-27T19:08:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=300
-permalink: /2006/06/27/what-do-following-have-in-common/
 ---
 What do the following have in common? 
 

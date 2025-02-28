@@ -1,10 +1,6 @@
 ---
-id: 495
 title: 'Bug Details: Arithmetic operation resulted in an overflow with Int32.'
 date: 2005-04-18T14:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=495
-permalink: /2005/04/18/bug-details-arithmetic-operation/
 ---
 [Bug Details: Arithmetic operation resulted in an overflow with Int32.](http://lab.msdn.microsoft.com/productfeedback/viewfeedback.aspx?feedbackid=76e26e0e-fc16-4a28-b8da-dca88900f2cf)
 

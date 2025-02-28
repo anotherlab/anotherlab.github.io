@@ -1,10 +1,6 @@
 ---
-id: 224
 title: 'How not to handle Black Friday: Sears.com'
 date: 2007-11-27T18:31:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=224
-permalink: /2007/11/27/how-not-to-handle-black-friday-searscom/
 ---
 On Saturday I was vacuuming when I noticed a burning smell coming from the vacuum cleaner.  It wasn&#8217;t the burning rubber smell you get when the belt gets caught on something, this was coming from the motor.  This was the Saturday after Black Friday, so if an appliance is going to go, this would be a good day to replace it.
 

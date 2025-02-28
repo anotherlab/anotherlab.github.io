@@ -1,10 +1,6 @@
 ---
-id: 388
 title: Fun with BCP
 date: 2005-10-26T15:01:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=388
-permalink: /2005/10/26/fun-with-bcp/
 ---
 Here&#8217;s a quick and dirty way to export a table to a text file with SQL Server. With some minor tweaking, it should also work for views and stored procedures that return result sets.
 

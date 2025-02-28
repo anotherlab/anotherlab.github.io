@@ -1,10 +1,6 @@
 ---
-id: 425
 title: 'RE: Skype and Port 80'
 date: 2005-07-14T13:32:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=425
-permalink: /2005/07/14/re-skype-and-port-80/
 ---
 Here&#8217;s a good tip to remember if you are using Skype and doing web developement&#8230;
 
