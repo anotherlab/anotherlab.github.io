@@ -1,8 +1,6 @@
 ---
 title: Getting the most out of VMware Fusion 8.5 running Windows 10
 date: 2017-05-26
-collect_box_size:
-  - collect-square
 categories:
   - Apple
   - Performance

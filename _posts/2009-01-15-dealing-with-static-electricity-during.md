@@ -1,10 +1,6 @@
 ---
-id: 104
 title: Dealing with static electricity during winter
 date: 2009-01-15T03:36:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=104
-permalink: /2009/01/15/dealing-with-static-electricity-during/
 ---
 Lately I’ve had bad luck plugging in USB devices into my home development PC. I would go to sync up my Zen (or since Christmas, my iPod Touch) and bad things would happen.  As soon as the USB cable touched the device, the PC would reboot.  I hate it when that happens.  I learned to touch some metal object to ground myself, but that didn’t always work.
 

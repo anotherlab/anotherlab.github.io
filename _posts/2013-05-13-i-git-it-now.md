@@ -1,10 +1,6 @@
 ---
-id: 13
 title: I git it now
 date: 2013-05-13T20:40:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=13
-permalink: /2013/05/13/i-git-it-now/
 ---
 Sharing code across OS X and Windows was a bit more challenging than what I had expected. We have our own TFS servers, but Xamarin Studio on the Mac really can&#8217;t do much with them. XS does support git, so I have been using a local repository on the Macbook to version control the source code.  I needed to have that source backed up in a sane mannor.
 

@@ -1,10 +1,6 @@
 ---
-id: 92
 title: Tag your junk mail before it gets sent to you.
 date: 2009-05-11T20:00:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=92
-permalink: /2009/05/11/tag-your-junk-mail-before-it-gets-sent/
 ---
 Even though we live in the [world of tomorrow](http://www.bairdtelevision.com/RCA.html), we still get junk mail.  The old fashioned kind made of out paper and stuff like that.  Junk email annoys me, but physical junk mail is just a waste of physical resources.   I try to prevent junk mail from being sent at all, but sometimes it still comes in.  What seems to invariably happen is that I’ll get junk mail from some company that I have not had a prior relationship with.  They probably bought my contact information from some other company.
 

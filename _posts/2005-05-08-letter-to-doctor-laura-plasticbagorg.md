@@ -1,10 +1,6 @@
 ---
-id: 466
 title: 'A letter to Doctor Laura&#8230; (plasticbag.org)'
 date: 2005-05-08T01:39:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=466
-permalink: /2005/05/08/letter-to-doctor-laura-plasticbagorg/
 ---
 Tom Coates’s [letter to Doctor Laura](http://www.plasticbag.org/archives/2000/05/a_letter_to_doctor_laura.shtml) is the best response that I have seen to people who declare that homosexual behavior is described as [an abomination in the Bible](http://mindprod.com/kjv/Leviticus/18.html).
 

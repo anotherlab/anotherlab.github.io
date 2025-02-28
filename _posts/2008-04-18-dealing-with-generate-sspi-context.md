@@ -1,10 +1,6 @@
 ---
-id: 182
 title: 'Dealing with the &quot;Cannot generate SSPI context&quot; error message'
 date: 2008-04-18T17:45:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=182
-permalink: /2008/04/18/dealing-with-generate-sspi-context/
 ---
 One of our sales engineers came up to me with with a problem that I had not come across before.  He was getting the error &#8220;Cannot generate SSPI context&#8221; when he tried to back up a database. Before getting too deep into the problem, I&#8217;ll lay out the background of how the problem occurred.
 

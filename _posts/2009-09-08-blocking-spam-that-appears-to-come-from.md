@@ -1,10 +1,6 @@
 ---
-id: 80
 title: Blocking spam that appears to come from your own email address
 date: 2009-09-08T15:32:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=80
-permalink: /2009/09/08/blocking-spam-that-appears-to-come-from/
 ---
 At work, I get a lot of email where the sender has spoofed the email address so that it appears to come my work email address.  It’s annoying and our corporate email filter doesn’t catch it.  I did find a way to block it with a close to 100% success rate.  What I did was to create an email filter in the email application that traps those messages.  I’m using Outlook 2007, but the technique should would work for any email client that has decent filtering.  Here’s how I created the rule (using an obviously fake email address of a known spammer):</p> 
 

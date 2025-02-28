@@ -1,10 +1,6 @@
 ---
-id: 415
 title: When the going gets tough, the tough fire up the generator.
 date: 2005-09-01T03:17:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=415
-permalink: /2005/09/01/when-going-gets-tough-tough-fire-up/
 ---
 Just about everyone on the planet knows what Katrina did. And most of us know that New Orleans has been all but abandoned. But not everyone left. [DirectNIC](http://www.directnic.com/ "http://www.directnic.com/"), a web hosting company, is running from a dry and secure skyscraper in New Orlean&#8217;s central business district. They have enough backup power for a few weeks and it looks like they will need it. In addition to keep their customer&#8217;s web sites running, they have a [blog](http://www.livejournal.com/users/interdictor/ "The Interdictor") documenting what they are going through and what they are seeing from their vantage point. It&#8217;s required reading folks.
 

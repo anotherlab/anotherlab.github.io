@@ -1,10 +1,6 @@
 ---
-id: 161
 title: Displaying what your TiVo recorded as a blog badge
 date: 2008-06-05T19:16:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=161
-permalink: /2008/06/05/displaying-what-your-tivo-recorded-as/
 ---
 There have been some [people](http://www.louisgray.com/live/2008/06/tivo-is-zero-on-social-web-its-time.html "louisgray.com: TiVo Is a Zero On the Social Web. It's Time They Fast Forward.") [blogging](http://www.tivoblog.com/archives/2008/06/03/tivo-and-the-social-web/ "TiVo Blog: TiVo And The Social Web") about having what was recorded on [TiVo](http://www.tivo.com/) being displayed on their blog.  Something like how you have display what you have been listening to with [Last.FM](http://www.last.fm/).  Personally, I wouldn&#8217;t want the world to know what was just recorded on my TiVos.  One TiVo gets filled up with cooking shows and NY Mets baseball, the other one gets an eclectic collection of kid shows and the SciFi channel, with some Animal Planet for extra seasoning.
 

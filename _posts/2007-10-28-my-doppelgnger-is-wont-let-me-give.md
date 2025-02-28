@@ -1,10 +1,6 @@
 ---
-id: 227
 title: My doppelgänger is preventing me from giving blood
 date: 2007-10-28T02:34:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=227
-permalink: /2007/10/28/my-doppelgnger-is-wont-let-me-give/
 ---
 About two weeks ago, I went to give blood for the [Red Cross](http://www.redcrossneny.org/).  It had been at least five years since I had last given blood and there was really no excuse for that.  The Red Cross had a few rooms in another building in our complex and I made an appointment to give some blood.
 

@@ -1,10 +1,6 @@
 ---
-id: 98
 title: Getting back the Ctrl-N shortcut with SQL Server 2008’s SSMS
 date: 2009-03-12T14:27:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=98
-permalink: /2009/03/12/getting-back-ctrl-n-shortcut-with-sql/
 ---
 After I installed SQL Server 2008, I noticed that the Ctrl-N keyboard shortcut in the SQL Server Management Studio (SSMS) no longer worked.  What it’s supposed to do is to open up a new query tab.  In my install of SSMS 2008, the Ctrl-N key did nothing.  Pressing Ctrl-N was burned into my brain. It was a serious [context switch](http://havemacwillblog.com/2008/10/16/productivity-and-the-context-switch/) for me to have to select a menu item or press a button to get a new query tab.  
 

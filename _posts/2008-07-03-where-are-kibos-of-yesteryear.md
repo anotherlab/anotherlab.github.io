@@ -1,10 +1,6 @@
 ---
-id: 137
 title: Where are the Kibos of yesteryear?
 date: 2008-07-03T15:42:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=137
-permalink: /2008/07/03/where-are-kibos-of-yesteryear/
 ---
 To paraphrase an old [Yossarian](http://en.wikipedia.org/wiki/Yossarian) [quote](http://everything2.com/e2node/Where%2520are%2520the%2520Snowdens%2520of%2520yesteryear%253F), where are the Kibos of yesteryear?  The other day I read [a question that Jeff Atwood had tweeted](http://twitter.com/codinghorror/statuses/848012543) about Kibo, a name I had not seen in a very long time.  Kibo was the handle of [James Parry](http://en.wikipedia.org/wiki/James_Parry), and he was famous for responding to any message posted on Usenet that contained the word “Kibo” in it.  Wired did get a great article about Kibo in their September, 1993 issue.  To get in touch with Kibo, they posted a couple of messages with the word “Kibo” in them in some random groups.  He replied to each message.</p> </p> </p> 
 

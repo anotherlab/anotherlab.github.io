@@ -1,10 +1,6 @@
 ---
-id: 405
 title: 'RE: Why do login dialogs have a &quot;User&quot; field?'
 date: 2005-10-12T15:25:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=405
-permalink: /2005/10/12/re-why-do-login-dialogs-have-user/
 ---
 I like Jeff Atwood&#8217;s blog, but I don&#8217;t agree with his posting about removing the &#8220;User&#8221; field from the dialog box. If you pull the user out of the user/password combination, you have to force unique passwords in your system. That&#8217;s a huge hurdle. I know couples where they share the same password for their individual email accounts. Technically, that&#8217;s less secure than different passwords for each others account, but it&#8217;s easier to manage.
 

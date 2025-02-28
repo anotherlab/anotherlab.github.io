@@ -1,10 +1,6 @@
 ---
-id: 488
 title: 'HOW TO: Download, Install, and Remove the IIS MetaEdit 2.2 Utility'
 date: 2005-04-22T14:48:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=488
-permalink: /2005/04/22/how-to-download-install-and-remove-iis/
 ---
 [HOW TO: Download, Install, and Remove the IIS MetaEdit 2.2 Utility](http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q232068)
 

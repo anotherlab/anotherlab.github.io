@@ -1,10 +1,6 @@
 ---
-id: 416
 title: 'RE: Disabling Windows Authentication in Visual Studio 2005&#8217;s built-in ASP.NET server'
 date: 2005-08-31T17:15:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=416
-permalink: /2005/08/31/re-disabling-windows-authentication-in/
 ---
 File this one away&#8230;
 

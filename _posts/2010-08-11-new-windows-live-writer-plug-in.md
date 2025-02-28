@@ -1,10 +1,6 @@
 ---
-id: 56
 title: New Windows Live Writer Plug-in Submission Process
 date: 2010-08-11T02:50:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=56
-permalink: /2010/08/11/new-windows-live-writer-plug-in/
 ---
 I just received an email from Microsoft about changes to the submission and and hosting of Windows Live Writer plug-ins.  It goes into effect on September 10, 2010 (one month from now).  Live Writer is a great blogging tool and it has a nice API for extending it’s functionality.  If you use Live Writer, you should check out the plug-ins at [Windows Live Gallery](http://gallery.live.com/default.aspx?pl=8). 
 

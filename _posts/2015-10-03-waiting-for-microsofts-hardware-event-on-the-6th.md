@@ -1,10 +1,6 @@
 ---
-id: 1323
 title: 'Waiting for Microsoft&#8217;s hardware event on the 6th'
 date: 2015-10-03T23:20:54-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1323
-permalink: /2015/10/03/waiting-for-microsofts-hardware-event-on-the-6th/
 ---
 As a long time Verizon customer and a Windows Phone fan, I&#8217;ve been waiting for the new Windows 10 for Mobile flagship phones from Microsoft.  In a couple of days, [Microsoft will be holding an event](https://www.microsoft.com/october2015event/en-us) to announce some new hardware.  It&#8217;s expected that Microsoft will announce and demo the Surface Pro 4, the Band 2, and a pair of Windows 10 for Mobile phones.  It&#8217;s not exactly a state secret that the phones will be known as 950 and 950XL and will be the logical extensions of the higher end Lumia phones.
 

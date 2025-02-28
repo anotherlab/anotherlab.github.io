@@ -1,0 +1,19 @@
+---
+id: 191
+title: Fun with CoInitialize
+date: 2008-04-07T14:42:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=191
+permalink: /2008/04/07/fun-with-coinitialize/
+---
+I was tracking down a error in one of the command line apps that I use to [save web.config settings over upgrades](http://anotherlab.rajapet.net/2008/04/saving-application-settings-over.html).  It was a strange error, If I stepped through the code, everything executed correctly, but I would get an access violation when I left a specific method call.  The fun part was that all of the code in that method call executed normally.  The app is written in Delphi 2007 and is Win32 unmanaged code.  The code looked something like this:
+
+<pre><span>function</span> TSaveConfig.UpdateWebConfig(<span>const</span> srcfile, destfile: <span>string</span>): <span>boolean</span>;<br />var<br />  fsrcDoc, fDestDoc: IXMLDocument;<br />begin<br />  CoInitialize(nil);<br /><br />  result := <span>true</span>;<br /><br />  fsrcDoc := LoadXMLDocument(srcFile);<br />  fDestDoc := LoadXMLDocument(DestFile);<br /><br />  UpdateNode(fsrcDoc, fDestDoc, <span>'configuration\system.web\httpRuntime', 'executionTimeout', '', '');</span><br />  UpdateNode(fsrcDoc, fDestDoc, <span>'configuration\system.web\sessionState', 'timeout', '', '');</span><br /><br /><span>if</span> fDestdoc.Modified <span>then</span> begin<br />    fDestdoc.SaveToFile(DestFile);<br /><span>end</span>;<br /><br />  CoUninitialize;<br /><span>end</span>;<br /></pre>
+
+
+
+Not much to it.  My [Spidey sense](http://www.urbandictionary.com/define.php?term=spidey+sense "Derived from the "Spidey sense" of the comic book superhero Spiderman, it is generally used to mean a vague but strong sense of something being wrong, dangerous, suspicious, a security situation.") started tingling at the calls to [CoInitialize](http://msdn2.microsoft.com/en-us/library/ms678543(VS.85).aspx "Initializes the COM library on the current thread and identifies the concurrency model as single-thread apartment (STA). Applications must initialize the COM library before they can call COM library functions other than CoGetMalloc and memory allocation functions.")/[CoUninitialize](http://msdn2.microsoft.com/en-us/library/ms688715(VS.85).aspx "Closes the COM library on the current thread, unloads all DLLs loaded by the thread, frees any other resources that the thread maintains, and forces all RPC connections on the thread to close.").  CoInitialize is needed to initialize the COM library on the current thread.  And COM is needed because I am using MS XML COM objects to work with the web.config files.  I was initializing COM, using COM, then uninitializing COM.  The problem was that I was using interfaces to the COM objects and Delphi is managing the lifetime of interfaces.  At the end of the method call, those objects go out of scope and Delphi calls their cleanup code.  In my case this happens after the the call to CoUninitialize.  My IXMLDocument interfaces were being garbage collected by the Delphi runtime and they were referencing a COM library that had been already closed. 
+
+
+
+In this case, the fix was easy.  I just moved the calls to CoInitialize/CoUninitialize to the code that calls UpdateWebConfig.  Once I did that, my odd little access violation was fixed.  That&#8217;s one of those bugs that seems obvious after you fix it.  What clued me in to what was going on was a [post by Chris Bensen](http://chrisbensen.blogspot.com/2007/06/delphi-tips-and-tricks.html "Chris Bensen: Delphi Tips And Tricks: CoInitialize/CoUninitialize Part I") that explained it all.  Thanks Chris!

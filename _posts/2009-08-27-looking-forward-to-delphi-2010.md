@@ -1,10 +1,6 @@
 ---
-id: 82
 title: Looking forward to Delphi 2010
 date: 2009-08-27T12:33:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=82
-permalink: /2009/08/27/looking-forward-to-delphi-2010/
 ---
 I just got the email from Embarcadero with the access code to get my copy of RAD Studio 2010.  Almost all of our products that are Delphi based are compiled with Delphi 2007, I’m looking forward to working with [2010 flavor of Delphi](http://www.embarcadero.com/products/rad-studio/whats-new "Embarcadero RAD Studio 2010 What’s New").  We do a lot of .NET development, but there is still a need for WIn32 code and Delphi has been a really good development platform for us.  
 

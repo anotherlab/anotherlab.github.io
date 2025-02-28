@@ -1,10 +1,6 @@
 ---
-id: 207
 title: 'When the clipboard doesn&#8217;t work across Remote Desktop'
 date: 2008-01-29T20:10:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=207
-permalink: /2008/01/29/when-clipboard-doesn-work-across-remote/
 ---
 Every now and then, when I have a remote desktop connection open, the clipboard fails to copy across the sessions.  It&#8217;s usually the remote to local copy that&#8217;s [borked](http://www.urbandictionary.com/define.php?term=borked).  It&#8217;s pretty easy to fix, but I can never remember what I need to do to fix the connection.
 

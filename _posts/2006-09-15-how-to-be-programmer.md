@@ -1,10 +1,6 @@
 ---
-id: 280
 title: How to be a programmer
 date: 2006-09-15T17:43:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=280
-permalink: /2006/09/15/how-to-be-programmer/
 ---
 </p> 
 

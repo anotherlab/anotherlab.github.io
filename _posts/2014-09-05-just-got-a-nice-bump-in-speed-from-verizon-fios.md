@@ -1,10 +1,6 @@
 ---
-id: 926
 title: Just got a nice bump in speed from Verizon FiOS
 date: 2014-09-05T10:22:03-05:00
-layout: post
-guid: http://www.rajapet.com/?p=926
-permalink: /2014/09/05/just-got-a-nice-bump-in-speed-from-verizon-fios/
 ---
 This morning I received an email from Verizon FiOS informing me that my upload speeds are now as fast as my download speeds.  I currently have the 50 Mbps download, 25 Mbps upload package.  I just checked with Ookla&#8217;s [speedtest.net](http://www.speedtest.net/ "Speedtest.net by Ookla") and my current speed is now 58/63.
 

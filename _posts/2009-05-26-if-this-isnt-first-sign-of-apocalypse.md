@@ -1,10 +1,6 @@
 ---
-id: 91
 title: 'If this isn’t the first sign of the apocalypse, nothing is. (Jon &amp; Kate &amp; American Chopper)'
 date: 2009-05-26T16:13:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=91
-permalink: /2009/05/26/if-this-isnt-first-sign-of-apocalypse/
 ---
 A few months back, I posted [this](http://anotherlab.rajapet.net/2009/02/on-this-episode-of-jon-and-kate-and.html "On this episode of “Jon and Kate and an American Chopper”…") as a joke.  Now I’m seeing pictures like this floating across the Internet:
 

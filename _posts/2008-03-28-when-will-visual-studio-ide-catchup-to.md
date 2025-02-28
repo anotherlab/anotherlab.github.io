@@ -1,10 +1,6 @@
 ---
-id: 195
 title: When will the Visual Studio IDE catchup to the Delphi IDE?
 date: 2008-03-28T18:18:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=195
-permalink: /2008/03/28/when-will-visual-studio-ide-catchup-to/
 ---
 Sometimes it just the little things that annoy you.  If I add a button to a [Delphi](http://en.wikipedia.org/wiki/Borland_Delphi) form, by default it is named **Button1**.  If I double click on **Button1**, a Click event handler is added and is named **Button1Click** and wires it up to the button&#8217;s OnClick event.  [Visual Studio](http://en.wikipedia.org/wiki/Visual_studio) does pretty much the same thing.  Where they is differ is when you edit the button&#8217;s name.
 

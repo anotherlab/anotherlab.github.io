@@ -1,10 +1,6 @@
 ---
-id: 102
 title: Resetting the mouse cursor
 date: 2009-02-10T17:54:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=102
-permalink: /2009/02/10/resetting-mouse-cursor/
 ---
 Some app on my XP development PC left the mouse cursor stuck in the “move” state.  The mouse was behaving correctly, but it was stuck in move image, the one with the four direction arrows.  Normally, the mouse cursor is application specific.  One the apps is coloring outside the lines and the cursor image was stuck for all of the running applications.  I’m using a beta version of a Twitter client app, it’s the obvious suspect, but I still need to prove that.
 

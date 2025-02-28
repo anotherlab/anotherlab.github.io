@@ -1,9 +1,5 @@
 ---
-id: 311
 title: Using Cache in Your WinForms Applications
 date: 2006-05-18T17:10:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=311
-permalink: /2006/05/18/using-cache-in-your-winforms/
 ---
 Here&#8217;s a [decent article](http://www.codeproject.com/csharp/cacheinwinformapps.asp) about using ASP.NET cache ([`System.Web.Caching.Cache`](http://msdn2.microsoft.com/en-us/library/system.web.caching.cache.aspx)) in WinForms applications (or services).  This would be handy in service application, I can&#8217;t see how much use it would be for an actual WinForms application.  Combined with the [`SqlCacheDependency`](http://msdn2.microsoft.com/en-us/library/system.web.caching.sqlcachedependency.aspx) class and SQL Server 2005, then you can cache frequently used rowsets and let the .NET invalidate them when the source data is updated on the server. It should be more efficient than periodically pinging the server for data changes.  It does require Windows 2000 or later.  That&#8217;s not a deal breaker for a service app, but it eliminates [Windows 9X](http://www.theonion.com/content/node/29023) for a WinForms app.<span></span>

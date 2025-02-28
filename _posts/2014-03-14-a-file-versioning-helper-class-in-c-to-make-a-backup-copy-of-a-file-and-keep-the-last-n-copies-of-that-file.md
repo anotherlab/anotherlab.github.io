@@ -1,10 +1,6 @@
 ---
-id: 743
 title: 'A file versioning helper class in C# to make a backup copy of a file and keep the last N copies of that file'
 date: 2014-03-14T15:36:54-05:00
-layout: post
-guid: http://www.rajapet.com/?p=743
-permalink: /2014/03/14/a-file-versioning-helper-class-in-c-to-make-a-backup-copy-of-a-file-and-keep-the-last-n-copies-of-that-file/
 ---
 [<img loading="lazy" title="Cicero denouncing Cataline" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Comic_History_of_Rome_Table_10_Cicero_denouncing_Cataline.jpg/640px-Comic_History_of_Rome_Table_10_Cicero_denouncing_Cataline.jpg" alt="Cicero denouncing Cataline" width="640" height="404" />](http://commons.wikimedia.org/wiki/File:Comic_History_of_Rome_Table_10_Cicero_denouncing_Cataline.jpg)
 

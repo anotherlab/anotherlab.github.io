@@ -1,10 +1,6 @@
 ---
-id: 327
 title: Viewing local XML files with IE without that idiot warning
 date: 2006-01-26T05:38:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=327
-permalink: /2006/01/26/viewing-local-xml-files-with-ie/
 ---
 To take a quick peek at an XML file, Internet Explorer is what I usually use. It knows how to properly format the display and allows you to close and open the nodes. It does have it&#8217;s quirks. When you open up an XML file, IE will probably display the following warning:
 

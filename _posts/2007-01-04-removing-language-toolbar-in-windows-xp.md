@@ -1,10 +1,6 @@
 ---
-id: 271
 title: Removing the Language Toolbar in Windows XP
 date: 2007-01-04T21:47:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=271
-permalink: /2007/01/04/removing-language-toolbar-in-windows-xp/
 ---
 This was completely copied from [here](http://www.dtdn.com/blog/2004/12/removing-language-toolbar-in-windows.htm "Cornelius J. van Dyk").   This was bugging me to no end and I wanted to make sure that I had an easy to find copy.
 

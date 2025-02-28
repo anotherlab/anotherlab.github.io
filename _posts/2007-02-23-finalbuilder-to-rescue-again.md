@@ -1,10 +1,6 @@
 ---
-id: 260
 title: FinalBuilder to the rescue (again)
 date: 2007-02-23T20:05:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=260
-permalink: /2007/02/23/finalbuilder-to-rescue-again/
 ---
 One of our applications has an installer that is created with [Wise InstallBuilder 9](http://www.wise.com/).  The application is built from our shiny buildbox under the control of [FinalBuilder](http://www.finalbuilder.com/finalbuilder.aspx).  When FinalBuilder builds the application, it does everything locally on that box.  With one exception, the installer.  The installer script file resides on another box, and our QA department uses the same installer to test various versions of the installer.
 

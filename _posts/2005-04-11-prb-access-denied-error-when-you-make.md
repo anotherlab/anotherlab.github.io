@@ -1,10 +1,6 @@
 ---
-id: 499
 title: 'PRB: Access Denied Error When You Make Code Modifications with Index Services Running'
 date: 2005-04-11T19:06:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=499
-permalink: /2005/04/11/prb-access-denied-error-when-you-make/
 ---
 [PRB: Access Denied Error When You Make Code Modifications with Index Services Running](http://support.microsoft.com/default.aspx?scid=kb;en-us;329065)
 

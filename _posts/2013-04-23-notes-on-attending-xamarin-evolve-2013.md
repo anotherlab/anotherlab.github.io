@@ -1,10 +1,6 @@
 ---
-id: 16
 title: Notes on attending Xamarin Evolve 2013
 date: 2013-04-23T17:59:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=16
-permalink: /2013/04/23/notes-on-attending-xamarin-evolve-2013/
 ---
 <img src="https://i0.wp.com/www.smugmug.com/photos/i-grmmF69/1/S/i-grmmF69-S.jpg?w=680"  />
 

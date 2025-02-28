@@ -1,10 +1,6 @@
 ---
-id: 37
 title: One week with FiOS TV
 date: 2011-04-05T04:59:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=37
-permalink: /2011/04/05/one-week-with-fios-tv/
 ---
 It’s been a week since I switched from Time Warner Cable to Verizon FiOS TV.  After years of having only one choice in my town for cable TV, Verizon just started offering FiOS TV. While I appreciate the quality of support that I had received from TWC, I was ready to switch providers.  I’m getting better technology at lower price from VZ.
 

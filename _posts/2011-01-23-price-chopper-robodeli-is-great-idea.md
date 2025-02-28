@@ -1,10 +1,6 @@
 ---
-id: 41
 title: 'Price Chopper&#8217;s RoboDeli is great idea, but flawed'
 date: 2011-01-23T21:57:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=41
-permalink: /2011/01/23/price-chopper-robodeli-is-great-idea/
 ---
 <p align="left">
   I just did some Sunday shopping at a local <a href="http://www.pricechopper.com/">Price Chopper</a> <a href="http://twitter.com/#!/PriceChopperNY">supermarket</a>.  It was pretty busy and there was a long line at the deli counter.  With in the last few months, they implemented a computerized ticket system.  Instead of grabbing a ticket and waiting for a number to be called, you pushed a button on a touch screen and a numbered ticket was printed out for you.  On a large TV screen above the deli, the ticket numbers currently being served and tickets to be served were listed, along with their approximate wait times.

@@ -1,10 +1,6 @@
 ---
-id: 281
 title: 'Where is &quot;Step Into&quot; on my Visual Studio 2005 Debug menu?'
 date: 2006-09-14T17:59:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=281
-permalink: /2006/09/14/where-is-on-my-visual-studio-2005/
 ---
 I was debugging some code in VS 2005 when I noticed that I could no longer find &#8220;Step Into&#8221; on the debug menu.  I was already used to the keyboard short cut of F11, but I was wondering why it was no longer on the menu.  After some googling, I found a [post](http://aspadvice.com/blogs/plitwin/archive/2005/11/12/13767.aspx) from Paul Litwin&#8217;s [blog](http://aspadvice.com/blogs/plitwin/default.aspx) that explained how to fix it.  Basicly, the IDE thinks that you just don&#8217;t want to see that menu item and you just need to reset your profile.   Here are the steps that Paul listed on his blog:
 

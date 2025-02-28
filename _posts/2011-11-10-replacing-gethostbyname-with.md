@@ -1,10 +1,6 @@
 ---
-id: 32
 title: Replacing GetHostByName with GetHostAddresses
 date: 2011-11-10T06:06:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=32
-permalink: /2011/11/10/replacing-gethostbyname-with/
 ---
 I’m working on some C# code that needs to send some data over a socket connection.  The user can specify the destination by name or by IP address.  I was using syntax like the following to get the address
 

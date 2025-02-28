@@ -1,10 +1,6 @@
 ---
-id: 318
 title: 'My web application is running at 98% of the CPU'
 date: 2006-03-01T21:10:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=318
-permalink: /2006/03/01/my-web-application-is-running-at-98-of/
 ---
 We are in the middle of testing a new web application and we have 7 instances of it running on 2003 Server box. Each instance has a web page virtual directory and a web service virtual directory. Some of the web services are on another box, but more of the bits are on this server. I was doing some related file cleanup on this box and it felt a little sluggish. A quick peek at Task Manager showed both processors (dual Xenon) were pegged at 96% to 99% of the CPU, in the w3wp.exe process. This is the process that manages the application pool in IIS6. I had all of the sites running in the same default app pool and it was imposible to tell which site was causing the spike, or if it was caused by just having a single app pool.
 

@@ -1,10 +1,6 @@
 ---
-id: 23
 title: Every 30 seconds, the cursor would turning into the spinning donut of death
 date: 2012-07-17T01:32:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=23
-permalink: /2012/07/17/every-30-seconds-cursor-would-turning/
 ---
 I was working from home today when I kept seeing something strange.  About every 30 seconds, the cursor would go from normal to busy.  It would last for a second or two and then go back to normal.  30 seconds later, the cycle would repeat.  I didn’t matter if I was doing anything or not, nothing interfered with the cycle.
 

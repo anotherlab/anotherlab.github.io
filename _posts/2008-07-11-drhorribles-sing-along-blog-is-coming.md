@@ -1,10 +1,6 @@
 ---
-id: 130
 title: Dr. Horrible’s Sing-Along Blog is coming to an Internet near you.
 date: 2008-07-11T12:43:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=130
-permalink: /2008/07/11/drhorribles-sing-along-blog-is-coming/
 ---
 [<img src="https://i1.wp.com/www.drhorrible.com/images/banners/big_square.gif?w=680" border="0"  />](http://www.drhorrible.com/) 
 

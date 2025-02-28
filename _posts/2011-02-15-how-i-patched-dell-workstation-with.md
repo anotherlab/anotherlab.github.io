@@ -1,10 +1,6 @@
 ---
-id: 39
 title: How I patched a Dell workstation with a firmware update from HP
 date: 2011-02-15T17:17:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=39
-permalink: /2011/02/15/how-i-patched-dell-workstation-with/
 ---
 About 18 months ago, I got a Dell [Precision T5500](http://www.dell.com/us/business/p/precision-t5500/pd) workstation.  A decent PC with a Xeon quad core processor which has bee a pretty decent box for doing development with.
 

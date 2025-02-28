@@ -1,10 +1,6 @@
 ---
-id: 210
 title: How (and why) to increase the Windows Desktop heap size
 date: 2008-01-15T17:04:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=210
-permalink: /2008/01/15/how-and-why-to-increase-windows-desktop/
 ---
 Jon Galloway had a [posting about issues that he came across when he opened too many tabs in IE7](http://weblogs.asp.net/jgalloway/archive/2008/01/14/registry-setting-keeps-windows-from-wigging-out-when-you-open-lots-of-ie7-tabs.aspx "Jon Galloway: Registry setting keeps Windows from wigging out when you open lots of IE7 tabs").  Apparently the Desktop ran out of heap space and Bad Things happened.  [Jeff Atwood came across the same problem](http://www.codinghorror.com/blog/archives/000966.html "Coding Horror: Pushing Operating System Limits").  I remember reading Jeff&#8217;s post back in October, but I didn&#8217;t associate it with a problem that I was having.    
 

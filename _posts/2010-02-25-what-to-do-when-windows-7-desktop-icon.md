@@ -1,10 +1,6 @@
 ---
-id: 67
 title: What to do when a Windows 7 desktop icon has the wrong image
 date: 2010-02-25T21:58:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=67
-permalink: /2010/02/25/what-to-do-when-windows-7-desktop-icon/
 ---
 We are in the middle of rebranding our applications and as part of the rebranding, the icons for each application have been updated.  We are having lots of fun cramming Vista styled icons through ancient resource compilers, but that’s another story.
 

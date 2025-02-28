@@ -1,8 +1,6 @@
 ---
 title: Vermont Code Camp 2017
 date: 2017-08-26
-collect_box_size:
-  - collect-square
 categories:
   - Uncategorized
 ---

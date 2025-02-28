@@ -1,10 +1,6 @@
 ---
-id: 267
 title: Snap Preview Anywhere is annoying
 date: 2007-01-31T03:58:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=267
-permalink: /2007/01/31/snap-preview-anywhere-is-annoying/
 ---
 Lately, I&#8217;ve been starting to see idiot popup windows on blogs that should know better.  The popups are from &#8220;Snap Preview Anywhere™&#8221;, a javascript thingie that displays a popup window when you move the mouse over a link on a page.
 

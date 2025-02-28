@@ -1,10 +1,6 @@
 ---
-id: 96
 title: Natasha Richardson
 date: 2009-03-19T15:23:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=96
-permalink: /2009/03/19/natasha-richardson/
 ---
 I was shocked when I first heard about the tragic accident that took the life of Natasha Richardson.  I am finding it hard to accept that a small fall could cause a fatal brain injury.  While the privacy of her family out weighs everything else, I do hope that they announce the results of her autopsy.  
 

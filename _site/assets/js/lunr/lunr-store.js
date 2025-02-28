@@ -86,7 +86,7 @@ var store = [{
         "title": "PRB: Access Denied Error When You Make Code Modifications with Index Services Running",
         "excerpt":"PRB: Access Denied Error When You Make Code Modifications with Index Services Running I was getting an annoying error while writing an ASP.NET app. I would make a change to the code and then run the app. Most of the time, it would run. About 5% of time, I would...","categories": [],
         "tags": [],
-        "url": "/2005/04/11/prb-access-denied-error-when-you-make/",
+        "url": "/2005/04/12/prb-access-denied-error-when-you-make/",
         "teaser": null
       },{
         "title": "Build numbers",
@@ -242,7 +242,7 @@ var store = [{
         "title": "&quot;In space, no one can hear you scream.&quot;",
         "excerpt":"“In space, no one can hear you scream.” Ever wonder about the origins of the taglines on a movie poster? The one that I always remember is “In space, no one can hear you scream.”, from the movie ALIEN.. The link for this posting is to an interesting blog about...","categories": [],
         "tags": [],
-        "url": "/2005/04/30/in-space-no-one-can-hear-you-scream/",
+        "url": "/2005/05/01/in-space-no-one-can-hear-you-scream/",
         "teaser": null
       },{
         "title": "DUI &#8211; Dialing under the influence",
@@ -308,7 +308,7 @@ var store = [{
         "title": "Charles Manson explains static routing",
         "excerpt":"And now a few words from Charles Manson on floating static routes…  ","categories": [],
         "tags": [],
-        "url": "/2005/05/12/charles-manson-explains-static-routing/",
+        "url": "/2005/05/13/charles-manson-explains-static-routing/",
         "teaser": null
       },{
         "title": ".NET Tools: Ten Must-Have Tools Every Developer Should Download Now &#8212; MSDN Magazine, July 2004",
@@ -398,7 +398,7 @@ var store = [{
         "title": "Hot .Net Tip: This will save you a lot of time",
         "excerpt":"Hot .Net Tip: This will save you a lot of time   Here’s a quick tip for adding the “View code” and “View designer” buttons to the main toolbar. That way, they are always visible.  ","categories": [],
         "tags": [],
-        "url": "/2005/06/03/hot-net-tip-this-will-save-you-lot-of/",
+        "url": "/2005/06/04/hot-net-tip-this-will-save-you-lot-of/",
         "teaser": null
       },{
         "title": "Slip &#8216;N&#8217; Slide",
@@ -488,13 +488,13 @@ var store = [{
         "title": "The Polaroid-o-nizer™",
         "excerpt":"The picture to left is a snapshot of the girls after it’s been run through the Polaroid-o-nizer™. This is a free site that will take an online image (you can’t upload one directly) and transform it to look like a Poloroid instant picture. It’s nothing that you couldn’t do your...","categories": [],
         "tags": [],
-        "url": "/2005/06/28/polaroid-o-nizer/",
+        "url": "/2005/06/29/polaroid-o-nizer/",
         "teaser": null
       },{
         "title": "The soda blew out of nose while reading this&#8230;",
         "excerpt":"Wil Wheaton answers questions submitted from Slashdot One of my favorite things to do when I worked on Star Trek was walk through the sets when nobody else was around, just so I could study the graphics. I’m sure you know about the giant Enterprise schematic in Engineering, but for...","categories": [],
         "tags": [],
-        "url": "/2005/06/28/soda-blew-out-of-nose-while-reading/",
+        "url": "/2005/06/29/soda-blew-out-of-nose-while-reading/",
         "teaser": null
       },{
         "title": "RE: Speed Surfer? Get a &#8216;Local&#8217; Homepage",
@@ -560,13 +560,13 @@ var store = [{
         "title": "String formatting in C#",
         "excerpt":"Here’s a handy link to formatting strings in C#, courtesy of Steve Tibbett’s blog.  ","categories": [],
         "tags": [],
-        "url": "/2005/08/11/string-formatting-in-c/",
+        "url": "/2005/08/12/string-formatting-in-c/",
         "teaser": null
       },{
         "title": "RE: Great List of Free Windows Software",
         "excerpt":"   I’ve always wanted to maintain one of these, but don’t have the time… this one looks great though.     http://shsc.info/UsefulWindowsSoftware    [Via steve’s blog]  ","categories": [],
         "tags": [],
-        "url": "/2005/08/11/re-great-list-of-free-windows-software/",
+        "url": "/2005/08/12/re-great-list-of-free-windows-software/",
         "teaser": null
       },{
         "title": "RE: Strings are immutable",
@@ -680,13 +680,13 @@ var store = [{
         "title": "Just say no to CLR UDTs",
         "excerpt":"Alex Papadimoulis is pretty adamant about not using CLR UDTs in SQL Server 2005. No one has asked me that question just yet [“When Should I Use SQL-Server CLR User Definied Types (UDT)?”], but with the release of SQL Server 2005 just around the corner, I’m sure a handful of...","categories": [],
         "tags": [],
-        "url": "/2005/10/20/just-say-no-to-clr-udts/",
+        "url": "/2005/10/21/just-say-no-to-clr-udts/",
         "teaser": null
       },{
         "title": "RE: SqlDependency changes for RTM [Sushil Chordia]",
         "excerpt":"I want to play with this feature. I have implemented something with similiar functionality using UDP in an extended stored procedure, but this looks much simpler. As mentioned in my previous blog, SqlDependency is a new feature in .Net framework 2.0, which provide a mechanism to notify an app when...","categories": [],
         "tags": [],
-        "url": "/2005/10/20/re-sqldependency-changes-for-rtm/",
+        "url": "/2005/10/21/re-sqldependency-changes-for-rtm/",
         "teaser": null
       },{
         "title": "Internet Health Report",
@@ -746,7 +746,7 @@ var store = [{
         "title": "Whither DAAB?",
         "excerpt":"If you were looking for a reason to dump DAAB, it looks like the good parts have already been folded into ADO.NET 2.0. The ADO.NET data providers in .NET 2.0 provide factory and common ADO.NET classes that make it easy to keep your code independent from a particular ADO.NET data...","categories": [],
         "tags": [],
-        "url": "/2005/10/25/whither-daab/",
+        "url": "/2005/10/26/whither-daab/",
         "teaser": null
       },{
         "title": "Fun with BCP",
@@ -794,13 +794,13 @@ var store = [{
         "title": "China&#8217;s Little Green Book",
         "excerpt":"Thomas Friedman had an interesting column today. It’s titled “China’a Little Green Book” and he talks about how the growing conservation movement in China. China is poluted to a scale beyond anything we ever saw here. When we were over there in the summer of 2003, I was astounded by...","categories": [],
         "tags": [],
-        "url": "/2005/11/02/chinas-little-green-book/",
+        "url": "/2005/11/03/chinas-little-green-book/",
         "teaser": null
       },{
         "title": "The arrival of Delphi Man and Doctor Deadline",
         "excerpt":"&lt;/p&gt; &lt;/p&gt; &lt;/td&gt; After coming back to Cubeland from lunch, I saw a small package on my chair. It had airmail stamps and came from Middlesex, England. I had no idea what it was, so I ripped it open to find Boland&#8217;s inflatable action figures. The images are courtesy of...","categories": [],
         "tags": [],
-        "url": "/2005/11/03/arrival-of-delphi-man-and-doctor/",
+        "url": "/2005/11/04/arrival-of-delphi-man-and-doctor/",
         "teaser": null
       },{
         "title": "More news on Sony&#8217;s rootkit",
@@ -854,7 +854,7 @@ var store = [{
         "title": "Test drive of writely.com",
         "excerpt":"This message was entered with writely.com, a web based document collaboration tool. I usually enter my blog entries with w.bloggar, but I&#8217;m game to try something new. It doen&#8217;t work with Opera 8.5, I&#8217;m using IE 6 right now. As a rule, I only use IE when I have to...","categories": [],
         "tags": [],
-        "url": "/2005/11/14/test-drive-of-writelycom/",
+        "url": "/2005/11/15/test-drive-of-writelycom/",
         "teaser": null
       },{
         "title": "Building ASP.NET 2 projects",
@@ -872,13 +872,13 @@ var store = [{
         "title": "New tool bar icons for VS 2005",
         "excerpt":"I’m putting this here to I’ll remember where the bits are A customer from Las Vegas DevConnections asks: It seems like, but I may be mistaken, that you said something about posting some new set of toolbar icons on your blog? Was I in a Vegas-induced stupor or did you really...","categories": [],
         "tags": [],
-        "url": "/2005/11/16/new-tool-bar-icons-for-vs-2005/",
+        "url": "/2005/11/17/new-tool-bar-icons-for-vs-2005/",
         "teaser": null
       },{
         "title": "That Pesky Sql Server Express",
         "excerpt":"That pesky SQL Server Express. I’m going to have to support it, it’s time to start collecting tips from the veterans…. These problems left me stranded for days, then today, on another machine, I hit a different set of problems I kept getting the following “Failed to generate user instance...","categories": [],
         "tags": [],
-        "url": "/2005/11/16/that-pesky-sql-server-express/",
+        "url": "/2005/11/17/that-pesky-sql-server-express/",
         "teaser": null
       },{
         "title": "Grimmy weighs in on blogs",
@@ -962,13 +962,13 @@ var store = [{
         "title": "Keytools",
         "excerpt":"Today our main app’s help system broke.  I hate that when it happens.  This app is built with Delphi, which supports WinHelp (*.hlp) files for context sensitive help.  A long time ago, I added some code to allow our apps to use HTML Help (*.chm).  It was fairly trivial to implement...","categories": [],
         "tags": [],
-        "url": "/2005/12/06/keytools/",
+        "url": "/2005/12/07/keytools/",
         "teaser": null
       },{
         "title": "VMware-authd.exe slowing down my PC",
         "excerpt":"I was doing some work on one of my PC’s and I had the processes list open in Task Manager. Out of the corner of my eye, I noticed that one process, VMware-authd.exe, was going from 0 to 10% of the CPU. I didn’t know what that process did, I...","categories": [],
         "tags": [],
-        "url": "/2005/12/06/vmware-authdexe-slowing-down-my-pc/",
+        "url": "/2005/12/07/vmware-authdexe-slowing-down-my-pc/",
         "teaser": null
       },{
         "title": "Cool site for sysadmins",
@@ -1040,7 +1040,7 @@ var store = [{
         "title": "The joy of editing the Mac OS X hosts file",
         "excerpt":"I have a G4 iMac on my desk. You know, one of the ones that looks like a desk lamp. It competes for space with my two XP boxes. I do my development under XP, the iLamp is for testing our web apps. The ilamp more or less sees our...","categories": [],
         "tags": [],
-        "url": "/2005/12/21/joy-of-editing-mac-os-x-hosts-file/",
+        "url": "/2005/12/22/joy-of-editing-mac-os-x-hosts-file/",
         "teaser": null
       },{
         "title": "Great, now they are targetting VMWare",
@@ -1070,7 +1070,7 @@ var store = [{
         "title": "Paged recordsets from SQL Server for web pages",
         "excerpt":"I’ve worked on a few web apps where I displayed a paged list of data, but without storing all of the rows in the view state or as a session variable. I prefer to let SQL Server do the heavy lifting for these kinds of situations. What I want to...","categories": [],
         "tags": [],
-        "url": "/2006/01/04/paged-recordsets-from-sql-server-for/",
+        "url": "/2006/01/05/paged-recordsets-from-sql-server-for/",
         "teaser": null
       },{
         "title": "Fun with 802.11",
@@ -1088,7 +1088,7 @@ var store = [{
         "title": "Keyboard shortcuts for Outlook",
         "excerpt":"Tragically, I live inside Outlook 2003. Anything that makes it faster for me to use, I’ll take. LifeHacker has some good stuff…. We’re on a bit of an Outlook bender this morning – for those of you who live in the look, Microsoft offers a complete list of Outlook keyboard...","categories": [],
         "tags": [],
-        "url": "/2006/01/12/keyboard-shortcuts-for-outlook/",
+        "url": "/2006/01/13/keyboard-shortcuts-for-outlook/",
         "teaser": null
       },{
         "title": "History of the C family of languages",
@@ -1100,7 +1100,7 @@ var store = [{
         "title": "Repaving an XP box",
         "excerpt":"I’m getting ready to help repave a family member’s PC (Windows XP). Too many questionable things have been installed and some nasty thing is blocking https pages and pages that lead to diagnostic tools. When something is actively blocking Sysinternals, then you know you have something malevolent on board. The...","categories": [],
         "tags": [],
-        "url": "/2006/01/17/repaving-xp-box/",
+        "url": "/2006/01/18/repaving-xp-box/",
         "teaser": null
       },{
         "title": "How expensive are .NET exceptions?",
@@ -1172,7 +1172,7 @@ var store = [{
         "title": "My web application is running at 98% of the CPU",
         "excerpt":"We are in the middle of testing a new web application and we have 7 instances of it running on 2003 Server box. Each instance has a web page virtual directory and a web service virtual directory. Some of the web services are on another box, but more of the...","categories": [],
         "tags": [],
-        "url": "/2006/03/01/my-web-application-is-running-at-98-of/",
+        "url": "/2006/03/02/my-web-application-is-running-at-98-of/",
         "teaser": null
       },{
         "title": "Enhanced version of sp_who",
@@ -1262,7 +1262,7 @@ var store = [{
         "title": "Self installing services in .NET",
         "excerpt":"I have some service applications that I deploy with Wise for Windows. These particular services are .NET assemblies. The usual way of registering the .NET assembly as a service is to use the installutil.exe that comes with the .NET Framework. Wise made it easy to register the assemblies by adding...","categories": [],
         "tags": [],
-        "url": "/2006/06/06/self-installing-services-in-net/",
+        "url": "/2006/06/07/self-installing-services-in-net/",
         "teaser": null
       },{
         "title": "Fun with scripted load tests",
@@ -1280,13 +1280,13 @@ var store = [{
         "title": "What do the following have in common?",
         "excerpt":"What do the following have in common? Palladium WinFS Monad UEFI Support SecurID Support PC-to-PC Sync XPS Support The answer is not this.  These are the previously announced features of Microsoft Vista that have been dropped out of the product over the last couple of years.  Here’s a link to...","categories": [],
         "tags": [],
-        "url": "/2006/06/27/what-do-following-have-in-common/",
+        "url": "/2006/06/28/what-do-following-have-in-common/",
         "teaser": null
       },{
         "title": "I don&#8217;t care about RocketBoom",
         "excerpt":"I have seen too many blog postings about Amanda Congdon leaving the RocketBoom vlog. There’s a he said/she said thing going on between her and the other owner. Since the world+dog seems to have a need to post about, I might was well too. I first heard about RocketBoom when...","categories": [],
         "tags": [],
-        "url": "/2006/07/07/i-dont-care-about-rocketboom/",
+        "url": "/2006/07/08/i-dont-care-about-rocketboom/",
         "teaser": null
       },{
         "title": "Following Could Have Been Coming From",
@@ -1298,7 +1298,7 @@ var store = [{
         "title": "Migrating to Delphi 2006",
         "excerpt":"I’ve been working on migrating our Delphi 5 code to Delphi 2006.  For the most part it’s been pretty straight forward, the fun part has been dealing with the assortment of 3rd party packages.  Some of them required new versions, others were not available and I had to migrate them...","categories": [],
         "tags": [],
-        "url": "/2006/07/14/migrating-to-delphi-2006/",
+        "url": "/2006/07/15/migrating-to-delphi-2006/",
         "teaser": null
       },{
         "title": "SQL Server WHERE clause tip (not needed for SQL Server 2005)",
@@ -1322,13 +1322,13 @@ var store = [{
         "title": "Dates are not numbers",
         "excerpt":"One of the other developers that I work with had a question about inserting some date values into a SQL Server database.  The code in question is doing a batch insert and it was implemented as a series of INSERT statements and they get executed in large batches.  He was having some difficulty...","categories": [],
         "tags": [],
-        "url": "/2006/08/18/dates-are-not-numbers/",
+        "url": "/2006/08/19/dates-are-not-numbers/",
         "teaser": null
       },{
         "title": "Back from vacation",
         "excerpt":"After a couple of weeks of vacation, I came back to the office to find my old development book DOA.  It was worse than a Blue Screen, it was a black screen with Read/Write error message.  My C: partition was filled with CRC errors.  I could copy some files off...","categories": [],
         "tags": [],
-        "url": "/2006/08/18/back-from-vacation/",
+        "url": "/2006/08/19/back-from-vacation/",
         "teaser": null
       },{
         "title": "Vista performance (or lack of)",
@@ -1340,7 +1340,7 @@ var store = [{
         "title": "Stream reading in C#",
         "excerpt":"I was banging my head against the wall with an odd stream reading problem.  I was making a web service call as straight http, no SOAP, when I hit a snag reading the response back.  I was making the request with a HttpWebRequest object and getting the HttpWebResponse response back...","categories": [],
         "tags": [],
-        "url": "/2006/08/24/stream-reading-in-c/",
+        "url": "/2006/08/25/stream-reading-in-c/",
         "teaser": null
       },{
         "title": "Leave that thread priority alone",
@@ -1352,7 +1352,7 @@ var store = [{
         "title": "I just took a MSDart to the head and I don&#8217;t feel so well right now.",
         "excerpt":"One of clients went to run some of our applications on their Windows Server 2003 SP1 box and it wasn’t very pretty. They got the error message: “The procedure entry point DefWindowProcI could not be located in the dynamic link library msdart.dll” Not a very helpful message. It happens when...","categories": [],
         "tags": [],
-        "url": "/2006/08/31/i-just-took-msdart-to-head-and-i-dont/",
+        "url": "/2006/09/01/i-just-took-msdart-to-head-and-i-dont/",
         "teaser": null
       },{
         "title": "Diagnostic mode for Ipod Shuffle",
@@ -1418,7 +1418,7 @@ var store = [{
         "title": "Why doesn&#8217;t {$REGION} work above the interface?",
         "excerpt":"Our Delphi code has some standard header comments at the top of the unit.  It has some information about the unit and who created it, and the purpose of that unit.  It also has some tags that the version contol system will use to expand.  On of those tags is...","categories": [],
         "tags": [],
-        "url": "/2006/10/31/why-doesnt-region-work-above-interface/",
+        "url": "/2006/11/01/why-doesnt-region-work-above-interface/",
         "teaser": null
       },{
         "title": "Sometimes there is a free lunch",
@@ -1454,13 +1454,13 @@ var store = [{
         "title": "Removing the Language Toolbar in Windows XP",
         "excerpt":"This was completely copied from here.   This was bugging me to no end and I wanted to make sure that I had an easy to find copy. Removing the Language Toolbar in Windows XP Click the Start Button. Select Control Panel option. Double-Click the Regional and Language Options icon. Click...","categories": [],
         "tags": [],
-        "url": "/2007/01/04/removing-language-toolbar-in-windows-xp/",
+        "url": "/2007/01/05/removing-language-toolbar-in-windows-xp/",
         "teaser": null
       },{
         "title": "Blog Tagged",
         "excerpt":"Andy just tagged me.  This is the geek version of tag.  I share 5 things about myself, then I tag 5 other people.  The hard is finding 5 other people who haven’t yet been tagged. What don’t you know about me? I used to be a DataFlex programmer (During the...","categories": ["Uncategorized"],
         "tags": [],
-        "url": "/2007/01/05/blog-tagged/",
+        "url": "/2007/01/06/blog-tagged/",
         "teaser": null
       },{
         "title": "What to install, what to leave out&#8230;",
@@ -1508,25 +1508,25 @@ var store = [{
         "title": "I hate Macs",
         "excerpt":"You have to love a good rant… I hate Macs. I have always hated Macs. I hate people who use Macs. I even hate people who don’t use Macs but sometimes wish they did. Macs are glorified Fisher-Price activity centres for adults; computers for scaredy cats too nervous to learn...","categories": [],
         "tags": [],
-        "url": "/2007/02/05/i-hate-macs/",
+        "url": "/2007/02/06/i-hate-macs/",
         "teaser": null
       },{
         "title": "Windows Home Server goes Beta 2",
         "excerpt":"Windows Home Server has reached Beta 2.  Foe those of your playing the home version of “Name That Beta”, Beta 2 means that Microsoft has is now soliciting external testers to try the new OS. I’ve been running FreeNAS for a couple of weeks without incident, so naturally I decided...","categories": [],
         "tags": [],
-        "url": "/2007/02/13/windows-home-server-goes-beta-2/",
+        "url": "/2007/02/14/windows-home-server-goes-beta-2/",
         "teaser": null
       },{
         "title": "FinalBuilder to the rescue (again)",
         "excerpt":"One of our applications has an installer that is created with Wise InstallBuilder 9.  The application is built from our shiny buildbox under the control of FinalBuilder.  When FinalBuilder builds the application, it does everything locally on that box.  With one exception, the installer.  The installer script file resides on another...","categories": [],
         "tags": [],
-        "url": "/2007/02/23/finalbuilder-to-rescue-again/",
+        "url": "/2007/02/24/finalbuilder-to-rescue-again/",
         "teaser": null
       },{
         "title": "Where is puterSoft.com?",
         "excerpt":"Don’t you hate it when a software component vendor disappears without warning?  In some of our applications, we use a custom datetime edit control named TPSCDateEdit.  This is part of a package from a company named puterSoft.  We have been using it for about 5 years and when we migrated our...","categories": [],
         "tags": [],
-        "url": "/2007/03/07/where-is-putersoftcom/",
+        "url": "/2007/03/08/where-is-putersoftcom/",
         "teaser": null
       },{
         "title": "Thinking about WAIS, Gopher, and ExecPC",
@@ -1556,7 +1556,7 @@ var store = [{
         "title": "Notes on installing Delphi 2007",
         "excerpt":"I got the email yesterday from CodeGear. It was a link to download the newly released Delphi 2007. I will be getting the DVD from CodeGear as part of the Software Assurance that I have, but I wanted to try the new installer. This is their first release using installer...","categories": [],
         "tags": [],
-        "url": "/2007/03/20/notes-on-installing-delphi-2007/",
+        "url": "/2007/03/21/notes-on-installing-delphi-2007/",
         "teaser": null
       },{
         "title": "I&#8217;m not impressed with Diamond Multimedia support",
@@ -1592,7 +1592,7 @@ var store = [{
         "title": "Fun with COM and console Delphi applications",
         "excerpt":"I try to make my setup projects upgradeable in place through Windows Installer.  This means that if a previous application has already been installed, the installer will do a silent uninstall before installing the new version.  The fun part is saving the current user settings across the uninstall/install divide.  Depending...","categories": [],
         "tags": [],
-        "url": "/2007/04/30/fun-with-com-and-console-delphi/",
+        "url": "/2007/05/01/fun-with-com-and-console-delphi/",
         "teaser": null
       },{
         "title": "Domain name change",
@@ -1634,7 +1634,7 @@ var store = [{
         "title": "TestDriven.NET and Visual Studio Express",
         "excerpt":"There’s been a lot of blog postings about Jamie Cansdale’s legal issues with Microsoft in the last few days.  Jamie has a product called TestDriven.NET that integrates unit testing within the Visual Studio IDE.  The problem is that Jamie has integrated TestDriven.NET within Visual Studio Express and Microsoft would like...","categories": [],
         "tags": [],
-        "url": "/2007/06/05/testdrivennet-and-visual-studio-express/",
+        "url": "/2007/06/06/testdrivennet-and-visual-studio-express/",
         "teaser": null
       },{
         "title": "Shawn is dragged kicking and screaming into the year 2004",
@@ -1646,7 +1646,7 @@ var store = [{
         "title": "User specific connection strings",
         "excerpt":"Steve Harmon has a good tip on how to use ASP.NET 2.0’s configSource to store connection strings in a file outside of the web.config.  You keep the user specific file out of source control and you eliminate conflicts when people use their own connection string settings.  He’s not the only...","categories": [],
         "tags": [],
-        "url": "/2007/06/08/user-specific-connection-strings/",
+        "url": "/2007/06/09/user-specific-connection-strings/",
         "teaser": null
       },{
         "title": "The $51 server.",
@@ -1694,7 +1694,7 @@ var store = [{
         "title": "Allowing Comments on Blogs",
         "excerpt":"I came across a posting by Dave Winer (via Joel) about blog comments.  Dave doesn’t easily allow commenting because he thinks it takes away from message that the blogger is putting out.  The power of blogging is that anyone (outside of some 3rd world countries) can express their own message.  Allowing...","categories": [],
         "tags": [],
-        "url": "/2007/07/20/allowing-comments-on-blogs/",
+        "url": "/2007/07/21/allowing-comments-on-blogs/",
         "teaser": null
       },{
         "title": "File sharing with Vista Home without passwords",
@@ -1724,7 +1724,7 @@ var store = [{
         "title": "Digital versus paper books",
         "excerpt":"Charles Petzold has a good point about the digital versus paper books debate.  Digital books are great when you first get them, but how are you going to read them 25 years from now?  How many people reading this have computer gadgets from 1982 that still work?  Can you read...","categories": [],
         "tags": [],
-        "url": "/2007/11/20/digital-versus-paper-books/",
+        "url": "/2007/11/21/digital-versus-paper-books/",
         "teaser": null
       },{
         "title": "How not to handle Black Friday: Sears.com",
@@ -1808,7 +1808,7 @@ var store = [{
         "title": "What&#8217;s the deal with this .rbf file?",
         "excerpt":"I was updating the installer to one of our applications and every time I ran it, it wanted to reboot at the end of the install.  This installer was installing a web application with some utility apps, nothing that should have forced a reboot.  I was running the installer inside...","categories": [],
         "tags": [],
-        "url": "/2008/01/08/what-deal-with-this-rbf-file/",
+        "url": "/2008/01/09/what-deal-with-this-rbf-file/",
         "teaser": null
       },{
         "title": "How (and why) to increase the Windows Desktop heap size",
@@ -1832,7 +1832,7 @@ var store = [{
         "title": "When the clipboard doesn&#8217;t work across Remote Desktop",
         "excerpt":"Every now and then, when I have a remote desktop connection open, the clipboard fails to copy across the sessions.  It’s usually the remote to local copy that’s borked.  It’s pretty easy to fix, but I can never remember what I need to do to fix the connection. Fortunately the...","categories": [],
         "tags": [],
-        "url": "/2008/01/29/when-clipboard-doesn-work-across-remote/",
+        "url": "/2008/01/30/when-clipboard-doesn-work-across-remote/",
         "teaser": null
       },{
         "title": "Using Wix for my Live Writer Plug-in",
@@ -1844,7 +1844,7 @@ var store = [{
         "title": "Nvidia nForce network driver problem under Vista",
         "excerpt":"On my home machine, I rarely reboot it. If a software update requires a reboot, then I do it. otherwise it stays running for weeks at a time. Vista (32-bit) has been stable enough for me, where I don’t have to start the system or suffer system crashes. But when...","categories": [],
         "tags": [],
-        "url": "/2008/02/09/nvidia-nforce-network-driver-problem/",
+        "url": "/2008/02/10/nvidia-nforce-network-driver-problem/",
         "teaser": null
       },{
         "title": "I hate spam that comes in under my own name",
@@ -1862,7 +1862,7 @@ var store = [{
         "title": "Fun with changing the IP address of ESX Server 3.5",
         "excerpt":"We (our IT manager and myself) have been having some fun with out shiny new VMWare ESX 3.5 server.  We have had it running for about two weeks now and we decided to change it’s IP address.  The ESX server was on the same subnet as our LAN.  This meant...","categories": [],
         "tags": [],
-        "url": "/2008/02/28/fun-with-changing-ip-address-of-esx/",
+        "url": "/2008/02/29/fun-with-changing-ip-address-of-esx/",
         "teaser": null
       },{
         "title": "I like having a build box",
@@ -1946,7 +1946,7 @@ var store = [{
         "title": "Work around for KB938371 disabling HID-compliant input devices",
         "excerpt":"After a few days of non-working mice, someone found a work around for KB938371. As I noted here and here, Vista Update 938371 disabled two the three mice I have I on my main home machine. Here’s the work around that actually worked for me: Just go to device manager...","categories": [],
         "tags": [],
-        "url": "/2008/04/13/work-around-for-kb938371-disabling-hid/",
+        "url": "/2008/04/14/work-around-for-kb938371-disabling-hid/",
         "teaser": null
       },{
         "title": "Know your SQL Server version",
@@ -1958,13 +1958,13 @@ var store = [{
         "title": "Microsoft admits that KB 938371 kills USB Devices",
         "excerpt":"Various reports on the Intertubes are reporting that Microsoft has acknowledge that last weeks Vista Update, 938371, has been causing “problems” with USB devices.  The money quote: “We are aware of concerns that a recent Microsoft update may be causing problems with USB devices. We are investigating the matter, and...","categories": [],
         "tags": [],
-        "url": "/2008/04/16/microsoft-admits-that-kb-938371-kills/",
+        "url": "/2008/04/17/microsoft-admits-that-kb-938371-kills/",
         "teaser": null
       },{
         "title": "Handy tip for debugging a Windows Service",
         "excerpt":"Debugging a Windows Service is always a pain. You can’t run a service like a regular application, you have to run it from Windows Service Control Manager (SCM) and then have your debugger attach to the process while it’s running. The problem is that it’s difficult to debug problems with...","categories": [],
         "tags": [],
-        "url": "/2008/04/16/handy-tip-for-debugging-windows-service/",
+        "url": "/2008/04/17/handy-tip-for-debugging-windows-service/",
         "teaser": null
       },{
         "title": "There&#8217;s no privacy with infant video monitors",
@@ -2060,13 +2060,13 @@ var store = [{
         "title": "Checking for the presence of .Net Framework 2.0 SP1",
         "excerpt":"Installware has a lot of built in support for checking for the presence of the various flavors of the .NET Framework.  In it’s current incarnation, 7.5, it doesn’t have anything for checking for the presence of Service Pack 1 of the .NET Framework 1.0.  It turned out to be pretty...","categories": [],
         "tags": [],
-        "url": "/2008/05/22/checking-for-presence-of-net-framework/",
+        "url": "/2008/05/23/checking-for-presence-of-net-framework/",
         "teaser": null
       },{
         "title": "IPv6 and Vista",
         "excerpt":"The other day, I read a post that Carl Franklin had made on his blog about a new Vista laptop that he had to buy on short notice.  The gist of his post that Vista ran pretty well, but he did tweak some of the settings. One of the settings...","categories": [],
         "tags": [],
-        "url": "/2008/05/24/ipv6-and-vista/",
+        "url": "/2008/05/25/ipv6-and-vista/",
         "teaser": null
       },{
         "title": "Ack! The Windows Installer does not permit installation from a Remote Desktop Connection",
@@ -2078,7 +2078,7 @@ var store = [{
         "title": "Does knowing C make you a better programmer?",
         "excerpt":"Joel and Jeff had a conversation about the merits of knowing how to program in C.  Joel’s take was knowing how to program in C makes you a better program.  I’m in that camp, with some other people (Darren and Eric). After college, I did mostly C programming.  That was...","categories": [],
         "tags": [],
-        "url": "/2008/05/27/does-knowing-c-make-you-better/",
+        "url": "/2008/05/28/does-knowing-c-make-you-better/",
         "teaser": null
       },{
         "title": "Brian Peeks new book is already listed on Amazon",
@@ -2096,7 +2096,7 @@ var store = [{
         "title": "One more reason why I&#8217;ll never go back to Time Warner Road Runner",
         "excerpt":"Time Warner Cable is implementing metered broad band Internet usage in a few test markets.  I switched to FiOS the day it was available and it’s been a positive experience.  I’m paying less money for more bandwidth.  And it’s consistent bandwidth.  I usually get a little over 20 Mbs for...","categories": [],
         "tags": [],
-        "url": "/2008/06/04/one-more-reason-why-i-never-go-back-to/",
+        "url": "/2008/06/05/one-more-reason-why-i-never-go-back-to/",
         "teaser": null
       },{
         "title": "Not a fan of Vibrant Media&#8217;s intellitxt popups (and how to get rid of them)",
@@ -2108,13 +2108,13 @@ var store = [{
         "title": "Displaying what your TiVo recorded as a blog badge",
         "excerpt":"There have been some people blogging about having what was recorded on TiVo being displayed on their blog.  Something like how you have display what you have been listening to with Last.FM.  Personally, I wouldn’t want the world to know what was just recorded on my TiVos.  One TiVo gets...","categories": [],
         "tags": [],
-        "url": "/2008/06/05/displaying-what-your-tivo-recorded-as/",
+        "url": "/2008/06/06/displaying-what-your-tivo-recorded-as/",
         "teaser": null
       },{
         "title": "Photrade lets you sell your photos online but retains perpetual and royalty-free license to your images",
         "excerpt":"I have updated this post with additional details about how Photrade has revised their license agreement.  I also put additional comments in a new post. I’m still playing around with Twitter and one of the accounts that I follow is photojojo.  The photojojo site is pretty cool and has some...","categories": [],
         "tags": [],
-        "url": "/2008/06/10/photrade-lets-you-sell-your-photos/",
+        "url": "/2008/06/11/photrade-lets-you-sell-your-photos/",
         "teaser": null
       },{
         "title": "Photrade has updated their license agreement for everyone&#8217;s benefit",
@@ -2138,13 +2138,13 @@ var store = [{
         "title": "Unblocking attachments with Outlook",
         "excerpt":"Today, one of the other programmers needed to send me some odd registry entries that were on his machine.  So I asked him to export the registry settings to a .reg file from regedit and then and email me the .reg file.  Outlook blocked the file attachment because the .reg...","categories": [],
         "tags": [],
-        "url": "/2008/06/12/unblocking-attachments-with-outlook/",
+        "url": "/2008/06/13/unblocking-attachments-with-outlook/",
         "teaser": null
       },{
         "title": "At least I passed the robot test",
         "excerpt":"    That’s almost as important as knowing how long I could survive in the vacuum of space?       File this under “end of the day diversions”…  ","categories": [],
         "tags": [],
-        "url": "/2008/06/12/at-least-i-passed-robot-test/",
+        "url": "/2008/06/13/at-least-i-passed-robot-test/",
         "teaser": null
       },{
         "title": "Tim Russert, 1950-2008",
@@ -2174,7 +2174,7 @@ var store = [{
         "title": "Sign the &quot;danah boyd proper case&quot; petition",
         "excerpt":"Jeff Atwood is on a righteous crusade against those who insist on using only lower case for their names.  He has a petition and he wants you to sign it.  It’s all in good fun, but it raises a subtle point.  There are times where you have to import data...","categories": [],
         "tags": [],
-        "url": "/2008/06/18/sign-boyd-proper-case-petition/",
+        "url": "/2008/06/19/sign-boyd-proper-case-petition/",
         "teaser": null
       },{
         "title": "Adding SQL Server logins and user accounts for multiple databases in one pass",
@@ -2222,13 +2222,13 @@ var store = [{
         "title": "Resizing the “Bookmark this page” dialog in Firefox 3",
         "excerpt":"&lt;/p&gt; &lt;/p&gt; I like using the new Firefox 3, but there is a little thing that annoys me.   When you go to bookmark a page, you get the “Bookmark this page” dialog.  Inside that dialog, there is a folder tree that will display your bookmark folders.  Out of the box,...","categories": [],
         "tags": [],
-        "url": "/2008/06/27/resizing-bookmark-this-page-dialog-in/",
+        "url": "/2008/06/28/resizing-bookmark-this-page-dialog-in/",
         "teaser": null
       },{
         "title": "Fix for endless registration loop with Delphi 2006",
         "excerpt":"&lt;/p&gt; With the acquisition, our login accounts are being migrated to a new domain.  We are doing this in multiple parts, with the first part changing our existing domain logins from using our last name plus first initial (millerc) to what is referred as the User Principal Name (basically our...","categories": [],
         "tags": [],
-        "url": "/2008/06/30/fix-for-endless-registration-loop-with/",
+        "url": "/2008/07/01/fix-for-endless-registration-loop-with/",
         "teaser": null
       },{
         "title": "Why I like owning a TiVo",
@@ -2240,13 +2240,13 @@ var store = [{
         "title": "I see the Cylons found Twitter",
         "excerpt":"Maybe they can fix it?  You can get the list of Cylons and associated BSG characters from the Hybrid’s Friends list. If you know BSG and are on Twitter, it’s pretty funny.  Some random excerpts… galentyrol I am Cylon, but I will never be able to download into a fresh...","categories": [],
         "tags": [],
-        "url": "/2008/07/01/i-see-cylons-found-twitter/",
+        "url": "/2008/07/02/i-see-cylons-found-twitter/",
         "teaser": null
       },{
         "title": "It’s not a TiVo, it’s just a DVR",
         "excerpt":"&lt;/p&gt; &lt;/p&gt; There’s a post on the TV Board blog that really illustrates the differences between a TiVo and a cable company DVR.  A friend of the blog’s author (Mitch Oscar) was contacted by his cable operator, Comcast, and was offered a DVR.  We now join that conversation already in...","categories": [],
         "tags": [],
-        "url": "/2008/07/02/its-not-tivo-its-just-dvr/",
+        "url": "/2008/07/03/its-not-tivo-its-just-dvr/",
         "teaser": null
       },{
         "title": "Where are the Kibos of yesteryear?",
@@ -2276,19 +2276,19 @@ var store = [{
         "title": "Still time to enter the Darwin Race of Languages",
         "excerpt":"Do you think that hand tweaked C code runs circles around managed code (C#, Java, VB.NET)?  Or do you think that your Just In Time compiled managed code gets the job done more securely than those bit sniffing dinosaurs?  Anxious to prove that Delphi is still relevant?  Want to win...","categories": [],
         "tags": [],
-        "url": "/2008/07/08/still-time-to-enter-darwin-race-of/",
+        "url": "/2008/07/09/still-time-to-enter-darwin-race-of/",
         "teaser": null
       },{
         "title": "A nice article about using Custom Attributes in your own code",
         "excerpt":"I was poking around the blogs posts on the Falafel site and I came across a nice concise example by John Waters of how to define and use custom attributes in your own code.  His example shows how to use custom attributes as a simple way to define tag values...","categories": [],
         "tags": [],
-        "url": "/2008/07/09/nice-article-about-using-custom/",
+        "url": "/2008/07/10/nice-article-about-using-custom/",
         "teaser": null
       },{
         "title": "Handling collation sequences with temporary tables and table variables with SQL Server",
         "excerpt":"When building complex stored procedures that span multiple tables, you will probably need to store some intermediate results in a local buffer and process them before returning the final output.  SQL Server lets you do this through temporary table and table variables.   Usually table variables offer faster performance (less locking...","categories": [],
         "tags": [],
-        "url": "/2008/07/10/handling-collation-sequences-with/",
+        "url": "/2008/07/11/handling-collation-sequences-with/",
         "teaser": null
       },{
         "title": "Dr. Horrible’s Sing-Along Blog is coming to an Internet near you.",
@@ -2312,7 +2312,7 @@ var store = [{
         "title": "Playing with a new toy, a GPS device",
         "excerpt":"While on vacation in Hyannis, I got annoyed with the one way streets odd layouts so I went out and bought a GPS unit.  I had wanted one for a while, and this was a first good excuse to get one.  The Hyannis Staples had a Magellan RoadMate 1412 on...","categories": [],
         "tags": [],
-        "url": "/2008/07/23/playing-with-new-toy-gps-device/",
+        "url": "/2008/07/24/playing-with-new-toy-gps-device/",
         "teaser": null
       },{
         "title": "Black Crayons and the school psychologist, a true story (just not mine)",
@@ -2342,7 +2342,7 @@ var store = [{
         "title": "How to log the TIDSmtp component",
         "excerpt":"I have some Delphi code that needs to send a quick mail message so I was using the Indy 10 TIdSmtp component.  The code was working just fine for a few months, but this week it would fail with an EIdSMTPReplyError exception.  The message property of the exception was a...","categories": [],
         "tags": [],
-        "url": "/2008/08/07/how-to-log-tidsmtp-component/",
+        "url": "/2008/08/08/how-to-log-tidsmtp-component/",
         "teaser": null
       },{
         "title": "Why www.nbc.com wont load with IE7 on Vista (and how to get around it)",
@@ -2354,7 +2354,7 @@ var store = [{
         "title": "Why doesn’t an OS that backs your OS have any means of backing itself up?",
         "excerpt":"&lt;/p&gt; Steve Tibbets has been writing about his troubles with Windows Home Server.  His homebrew Windows Home Server box had a failing power supply and it hosed the registry on the way out.  When he replaced the power supply, he was forced to reinstall Windows Home Server and he’s facing...","categories": [],
         "tags": [],
-        "url": "/2008/08/11/why-doesnt-os-that-backs-your-os-have/",
+        "url": "/2008/08/12/why-doesnt-os-that-backs-your-os-have/",
         "teaser": null
       },{
         "title": "Get ready to say good bye to Google Page Creator",
@@ -2390,7 +2390,7 @@ var store = [{
         "title": "&quot;Everything That Happens Will Happen Today&quot; by Byrne and Eno",
         "excerpt":"David Byrne and Brian Eno have a new album out, “Everything That Happens Will Happen Today”.  It’s available exclusively through their web site, http://www.everythingthathappens.com/.  You can listen to the entire album on their site, or by using their streaming player right below this text.&lt;/p&gt; I’ve been listening to it while...","categories": [],
         "tags": [],
-        "url": "/2008/09/06/that-happens-will-happen-today-by-byrne/",
+        "url": "/2008/09/07/that-happens-will-happen-today-by-byrne/",
         "teaser": null
       },{
         "title": "Restoring missing Build Events in Delphi 2007",
@@ -2402,25 +2402,25 @@ var store = [{
         "title": "Strange 64-bit error with LayoutKind.Explicit",
         "excerpt":"I have a C# service that collects data from another company that we do business with.  They send the data in a binary format from one of their C++ applications.  To read their data with .NET, I needed to marshal their data to a set of structs defined in C#. ...","categories": [],
         "tags": [],
-        "url": "/2008/10/17/strange-64-bit-error-with/",
+        "url": "/2008/10/18/strange-64-bit-error-with/",
         "teaser": null
       },{
         "title": "Installation is not configuration",
         "excerpt":"Christopher Painter has a good post about the problems inherent with with having installers run SQL scripts.  Having an installer communicate with a database server just opens the door to all sorts of issues.  Just handling the connection to the server requires making sure that you have all of the...","categories": [],
         "tags": [],
-        "url": "/2008/10/20/installation-is-not-configuration/",
+        "url": "/2008/10/21/installation-is-not-configuration/",
         "teaser": null
       },{
         "title": "DevTrack woes with build 1833 of mfc80.dll",
         "excerpt":"We use TechExcel’s DevTrack tool to track our defects and project modifications.  A few weeks ago, one of our QA specialists installed SQL Server 2008 Express.  That broke DevTrack.  After SQL Express 2008 was installed, DevTrack would crash after loading.  After contacting DevTrack support, we were advised that the mfc80.dll...","categories": [],
         "tags": [],
-        "url": "/2008/10/21/devtrack-woes-with-build-1833-of/",
+        "url": "/2008/10/22/devtrack-woes-with-build-1833-of/",
         "teaser": null
       },{
         "title": "Fast way to resize a virtual disk with VMware ESX Server",
         "excerpt":"We’re starting some SharePoint development and I needed to create a development environment on Windows Server 2003.  So I created a new virtual machine (VM) of Server 2003 on our VMware ESX box and gave it a 1GB of RAM and 8GB of disk space.  I installed the OS and...","categories": [],
         "tags": [],
-        "url": "/2008/11/20/fast-way-to-resize-virtual-disk-with/",
+        "url": "/2008/11/21/fast-way-to-resize-virtual-disk-with/",
         "teaser": null
       },{
         "title": "Some odd TiVo issues",
@@ -2504,7 +2504,7 @@ var store = [{
         "title": "Remembering Alivia Lovell",
         "excerpt":"Last October, our company constructed 8 playhouses that were donated to some patients at the Center for Childhood Cancer and Blood Disorders at Albany Medical Center.  We do something like that every year.  It’s partly a team building exercise and partly a way a way to give back something to...","categories": [],
         "tags": [],
-        "url": "/2009/04/21/remembering-alivia-lovell/",
+        "url": "/2009/04/22/remembering-alivia-lovell/",
         "teaser": null
       },{
         "title": "If you sell poison, I think your customer hotline should be manned 24/7",
@@ -2522,7 +2522,7 @@ var store = [{
         "title": "Tag your junk mail before it gets sent to you.",
         "excerpt":"Even though we live in the world of tomorrow, we still get junk mail.  The old fashioned kind made of out paper and stuff like that.  Junk email annoys me, but physical junk mail is just a waste of physical resources.   I try to prevent junk mail from being sent...","categories": [],
         "tags": [],
-        "url": "/2009/05/11/tag-your-junk-mail-before-it-gets-sent/",
+        "url": "/2009/05/12/tag-your-junk-mail-before-it-gets-sent/",
         "teaser": null
       },{
         "title": "If this isn’t the first sign of the apocalypse, nothing is. (Jon &amp; Kate &amp; American Chopper)",
@@ -2552,13 +2552,13 @@ var store = [{
         "title": "A work around for Delphi 2007/2009 with Windows 7 64 bit",
         "excerpt":"I just installed Windows 7, 64 bit edition so that I could code and test against this new operating system.  Visual Studio 2008 installed and ran without any incident, but I hit a snag with Delphi 2007.  Delphi 2007 installed just fine, but it would die when you ended a...","categories": [],
         "tags": [],
-        "url": "/2009/08/19/work-around-for-delphi-20072009-with/",
+        "url": "/2009/08/20/work-around-for-delphi-20072009-with/",
         "teaser": null
       },{
         "title": "Offload TCP processing to the network controllers under Vista, Server 2008, and Windows 7",
         "excerpt":"After upgrading my home PC to Windows 7, I was decided to see if my motherboard/CPU combination support hardware virtualization.  You need hardware virtualization support if you want to run Windows XP Mode or Windows Virtual PC.  I have an XMD Athlon X2 with an Asus M2N-SLI Deluxe and I’m...","categories": [],
         "tags": [],
-        "url": "/2009/08/22/offload-tcp-processing-to-network/",
+        "url": "/2009/08/23/offload-tcp-processing-to-network/",
         "teaser": null
       },{
         "title": "Using uberOptions to extend the functionality of Logitech devices",
@@ -2642,7 +2642,7 @@ var store = [{
         "title": "Getting the list of databases that a user has rights to from SQL Server",
         "excerpt":"We have a few applications that let the user select the database connection details.  It’s for SQL Server 2005/2008 and they can pick the server protocol, server name, and the database.  Once they select a database server, the user selects the database from a pick list selection.  We filter that...","categories": [],
         "tags": [],
-        "url": "/2009/12/18/getting-list-of-databases-that-user-has/",
+        "url": "/2009/12/19/getting-list-of-databases-that-user-has/",
         "teaser": null
       },{
         "title": "There is no sense of humor on the North Face",
@@ -2666,13 +2666,13 @@ var store = [{
         "title": "This connection is Untrusted (another ID10T error)",
         "excerpt":"The other day, my PC died.  After some angst, I was able to fix it by replacing the power supply.  After starting the PC, I fired up Firefox to check my email.  That’s when the first error message popped up.  I was presented with this lovely error dialog. Lovely.  This...","categories": [],
         "tags": [],
-        "url": "/2010/02/14/this-connection-is-untrusted-another/",
+        "url": "/2010/02/15/this-connection-is-untrusted-another/",
         "teaser": null
       },{
         "title": "What to do when a Windows 7 desktop icon has the wrong image",
         "excerpt":"We are in the middle of rebranding our applications and as part of the rebranding, the icons for each application have been updated.  We are having lots of fun cramming Vista styled icons through ancient resource compilers, but that’s another story. We provided a rebranded application to our QA tem...","categories": [],
         "tags": [],
-        "url": "/2010/02/25/what-to-do-when-windows-7-desktop-icon/",
+        "url": "/2010/02/26/what-to-do-when-windows-7-desktop-icon/",
         "teaser": null
       },{
         "title": "Twitter? Time Warner Cable gets it",
@@ -2690,19 +2690,19 @@ var store = [{
         "title": "Suppressing a repeated column value in SQL",
         "excerpt":"I was asked by one of my co-workers for some SQL help. He needed a SQL statement that would suppress repeated column values for the result set. Basically the value would be shown for the first row and blanked for each successful row that had the same value. Typically you...","categories": [],
         "tags": [],
-        "url": "/2010/04/29/suppressing-repeated-column-value-in/",
+        "url": "/2010/04/30/suppressing-repeated-column-value-in/",
         "teaser": null
       },{
         "title": "Using robocopy with Visual Studio 2008 Post-build events",
         "excerpt":"I have a solution that has about 15 odd projects in it.  It’s for an application that has multiple optional services with shared assemblies.  Hence the 15 projects.  I have an installer that lets the user pick from which of the optional bits to install.  For ease of maintenance, I...","categories": [],
         "tags": [],
-        "url": "/2010/05/26/using-robocopy-with-visual-studio-2008/",
+        "url": "/2010/05/27/using-robocopy-with-visual-studio-2008/",
         "teaser": null
       },{
         "title": "Enjoy some Bar-B-Que for a good cause",
         "excerpt":"There’s a flyer floating around in the office and it’s worth sharing the details with the rest of the world (the part of the world that lives near Latham, NY).  Brooks Bar-B-Q of Oneonta will be participating in a fund raiser for The Coins Foundation on July 20, 2010.  They...","categories": [],
         "tags": [],
-        "url": "/2010/06/24/enjoy-some-bar-b-que-for-good-cause/",
+        "url": "/2010/06/25/enjoy-some-bar-b-que-for-good-cause/",
         "teaser": null
       },{
         "title": "The Delmar Kid Chaser",
@@ -2714,19 +2714,19 @@ var store = [{
         "title": "Wifi password cracking in the clouds",
         "excerpt":"Bruce Schneier posted an article on his blog about wpacracker.com, a service for cracking WPA and other passwords.  Basically, you send them a dump of network traffic from a WiFi network and they will use a brute force algorithm to guess the password.  With a massive dictionary and brute force...","categories": [],
         "tags": [],
-        "url": "/2010/07/27/wifi-password-cracking-in-clouds/",
+        "url": "/2010/07/28/wifi-password-cracking-in-clouds/",
         "teaser": null
       },{
         "title": "Notes on installing FinalBuilder 7",
         "excerpt":"VSoft Technologies just released a new version of their build automation tool, FinalBuilder.  Version 7 gets a new look to their IDE and you can finally have multiple projects open at the same time.  Among other things, they added support for Hg and Git, plus full support for Visual Studio...","categories": [],
         "tags": [],
-        "url": "/2010/08/06/notes-on-installing-finalbuilder-7/",
+        "url": "/2010/08/07/notes-on-installing-finalbuilder-7/",
         "teaser": null
       },{
         "title": "How to shoot yourself in the foot writing installer upgrades",
         "excerpt":"I’m in the middle of a development cycle for one of our products, when QA logged an unexpected bug.  When you upgraded an existing version of the product to the new one, only some of the settings were being saved.  This was a new bug, something I did recently broke...","categories": [],
         "tags": [],
-        "url": "/2010/08/10/how-to-shoot-yourself-in-foot-writing/",
+        "url": "/2010/08/11/how-to-shoot-yourself-in-foot-writing/",
         "teaser": null
       },{
         "title": "New Windows Live Writer Plug-in Submission Process",
@@ -2756,7 +2756,7 @@ var store = [{
         "title": "DynDNS is making making changes to their free Dynamic DNS accounts",
         "excerpt":"I use the free version of the dynamic DNS names provided by DynDNS.  It gives me an easy way to connect to my home VPN.  They provide a domain name, usually for a home network.  Since most ISP’s will change the IP addresses handed out to home users, you need...","categories": [],
         "tags": [],
-        "url": "/2010/08/27/dyndns-is-making-making-changes-to/",
+        "url": "/2010/08/28/dyndns-is-making-making-changes-to/",
         "teaser": null
       },{
         "title": "A Disaster Recovery Plan is useless if you don’t verify that it works.",
@@ -2810,7 +2810,7 @@ var store = [{
         "title": "Scrolling a ListView’s EditItemTemplate with some help from jQuery",
         "excerpt":"I’ve been using ASP.Net’s ListView control and I cam across a little quirk while setting up the editing bits.  I have an EditItemTemplate defined that has some input controls and a couple of nested ListViews.  It’s a nice way of defining a hierarchal editing view.  If you haven’t used a...","categories": [],
         "tags": [],
-        "url": "/2011/01/05/scrolling-listviews-edititemtemplate/",
+        "url": "/2011/01/06/scrolling-listviews-edititemtemplate/",
         "teaser": null
       },{
         "title": "A Random Vegas Observation",
@@ -2822,7 +2822,7 @@ var store = [{
         "title": "Price Chopper&#8217;s RoboDeli is great idea, but flawed",
         "excerpt":"I just did some Sunday shopping at a local Price Chopper supermarket.  It was pretty busy and there was a long line at the deli counter.  With in the last few months, they implemented a computerized ticket system.  Instead of grabbing a ticket and waiting for a number to be...","categories": [],
         "tags": [],
-        "url": "/2011/01/23/price-chopper-robodeli-is-great-idea/",
+        "url": "/2011/01/24/price-chopper-robodeli-is-great-idea/",
         "teaser": null
       },{
         "title": "Reflections on Red Gate and their decision to charge for .NET Reflector",
@@ -2912,7 +2912,7 @@ var store = [{
         "title": "Thinking about Windows Phone 8",
         "excerpt":"I watched Microsoft’s Windows Phone 8 Summit on Monday and I came away impressed.  My phone contract is up and I have been holding off on getting a new phone.  I knew that Windows Phone 8 was coming and I didn’t have an urgent need to get a new phone....","categories": [],
         "tags": [],
-        "url": "/2012/06/22/thinking-about-windows-phone-8/",
+        "url": "/2012/06/23/thinking-about-windows-phone-8/",
         "teaser": null
       },{
         "title": "Every 30 seconds, the cursor would turning into the spinning donut of death",
@@ -2930,7 +2930,7 @@ var store = [{
         "title": "The HP Printer Display Hack (with financial goodness)",
         "excerpt":"The HP Printer Display Hack article has been posted to the Coding4Fun site.  This is an article and application that I wrote that lets you display a stock price on the display panel of an HP (or compatible) laser printer. The app is written in C# with WPF and it...","categories": [],
         "tags": [],
-        "url": "/2012/09/14/the-hp-printer-display-hack-with_14/",
+        "url": "/2012/09/15/the-hp-printer-display-hack-with_14/",
         "teaser": null
       },{
         "title": "A quick photobook order on Shutterfly",
@@ -2972,7 +2972,7 @@ var store = [{
         "title": "I git it now",
         "excerpt":"Sharing code across OS X and Windows was a bit more challenging than what I had expected. We have our own TFS servers, but Xamarin Studio on the Mac really can’t do much with them. XS does support git, so I have been using a local repository on the Macbook...","categories": [],
         "tags": [],
-        "url": "/2013/05/13/i-git-it-now/",
+        "url": "/2013/05/14/i-git-it-now/",
         "teaser": null
       },{
         "title": "There should be a Blue Rhino for Electric Cars",
@@ -2996,7 +2996,7 @@ var store = [{
         "title": "Increasing the target area of a table&#8217;s DetailDisclose button with Xamarin.iOS",
         "excerpt":"Can you make that button bigger? I went slightly under the hood in Xamarin.iOS to make an accessory button target area larger. I’m finishing up an iPad app for our fall release schedule. One of the comments that came up in testing was that it was too hard for some...","categories": [],
         "tags": [],
-        "url": "/2013/08/23/increasing-target-area-of-tables/",
+        "url": "/2013/08/24/increasing-target-area-of-tables/",
         "teaser": null
       },{
         "title": "Today&#8217;s lesson in voice mail etiquette",
@@ -3008,7 +3008,7 @@ var store = [{
         "title": "Taking the Acer W3 from Preview to RTM",
         "excerpt":"It was time to install Windows 8.1 on my Acer Iconia W3-810. I received the tablet at the Build conference. The W3 came with the 32-bit edition of Windows 8 and Microsoft provided a USB drive with preview copies of Windows 8.1 for it and the Surface Pro. I had...","categories": ["Uncategorized"],
         "tags": [],
-        "url": "/2013/10/07/taking-acer-w3-from-preview-to-rtm/",
+        "url": "/2013/10/08/taking-acer-w3-from-preview-to-rtm/",
         "teaser": null
       },{
         "title": "A work around for the files in use bug with HeatDirectory in MSBuild",
@@ -3026,13 +3026,13 @@ var store = [{
         "title": "Moved this blog from Blogger to an Azure colored WordPress",
         "excerpt":"You may have noticed that this blog looks a little different.  I just migrated my blog from Google’s Blogger platform to a self-hosted WordPress blog.  And it’s running in Microsoft’s Azure cloud. Migrated nearly decade of posts, comments, permalinks, and hopefully most of the images.  After a few days of...","categories": [],
         "tags": [],
-        "url": "/2013/12/11/moved-this-blog-from-blogger-to-an-azure-colored-wordpress/",
+        "url": "/2013/12/12/moved-this-blog-from-blogger-to-an-azure-colored-wordpress/",
         "teaser": null
       },{
         "title": "Cross-Platform Localization for Mobile Apps in CODE Magazine",
         "excerpt":"The January/February 2014 issue of CODE Magazine is up on the CODE Magazine site.  This issue focuses on mobile development.  There are a couple of Xamarin flavored articles in this issue, including one that I wrote.  I did an article on cross platform localization for mobile apps and you can...","categories": [],
         "tags": [],
-        "url": "/2013/12/14/cross-platform-localization-for-mobile-apps-in-code-magazine/",
+        "url": "/2013/12/15/cross-platform-localization-for-mobile-apps-in-code-magazine/",
         "teaser": null
       },{
         "title": "It&#8217;s 2013, stop trying to write to the Program Files folder already",
@@ -3044,13 +3044,13 @@ var store = [{
         "title": "When Windows Phone Mail can&#8217;t display an image attachment",
         "excerpt":"I came across a strange little problem reported in answers.microsoft.com with Windows Phone 8 Mail. It wasn’t downloading  jpg images. The email app that comes with Windows Phone 8 does not display image attachments automatically. You need to tap on them and then they download and you can view them....","categories": [],
         "tags": [],
-        "url": "/2013/12/21/when-windows-phone-mail-cant-display-an-image-attachment/",
+        "url": "/2013/12/22/when-windows-phone-mail-cant-display-an-image-attachment/",
         "teaser": null
       },{
         "title": "While I don&#8217;t recommend messing with scammers, it can be entertaining",
         "excerpt":"I was doing coding on my home machine when the phone rang.  The Caller ID said “Out of State”.  When Caller ID comes up like that, I know the call will not be in my benefit. I answered the phone and there was a 30 second delay before someone speaks...","categories": [],
         "tags": [],
-        "url": "/2014/01/16/while-i-dont-recommend-messing-with-scammers-it-can-be-entertaining/",
+        "url": "/2014/01/17/while-i-dont-recommend-messing-with-scammers-it-can-be-entertaining/",
         "teaser": null
       },{
         "title": "Locating the right web.config file at runtime",
@@ -3062,13 +3062,13 @@ var store = [{
         "title": "When the EditorPackage does not load correctly",
         "excerpt":"I had this “The ‘Microsoft.VisualStudio.Editor.Implementation.EditorPackage’ package did not load correctly.” error message when I started up Visual Studio 2013.  My PC had rebooted earlier in the day as a result of some Windows Updates.  Now I was getting this error dialog: This is telling me to open ActivityLog.xml, and hopefully...","categories": [],
         "tags": [],
-        "url": "/2014/02/15/when-the-editorpackage-does-not-load-correctly/",
+        "url": "/2014/02/16/when-the-editorpackage-does-not-load-correctly/",
         "teaser": null
       },{
         "title": "How to use Bing Code Search when ReSharper is installed",
         "excerpt":"Microsoft Research just released a cool add-in for Visual Studio 2013 called Bing Code Search.  It allows you to search for code samples from with the IDE and has enough context awareness to use the variables from your code. If you have ReSharper installed, the two do not play together....","categories": [],
         "tags": [],
-        "url": "/2014/02/17/how-to-use-bing-code-search-when-resharper-is-installed/",
+        "url": "/2014/02/18/how-to-use-bing-code-search-when-resharper-is-installed/",
         "teaser": null
       },{
         "title": "And then I stuck shipping tape on the back of the SIM card",
@@ -3110,7 +3110,7 @@ var store = [{
         "title": "We had a great TVUG meeting this week",
         "excerpt":"A couple of nights ago, @PeterLanoie did a great presentation on IIS administration.  This was at the March TVUG meeting.  We had a good sized crowd and there were plenty of questions and discussions from the audience.  Peter had some cool tricks to show off.  Like how to use an...","categories": [],
         "tags": [],
-        "url": "/2014/03/12/we-had-a-great-tvug-meeting-this-week/",
+        "url": "/2014/03/13/we-had-a-great-tvug-meeting-this-week/",
         "teaser": null
       },{
         "title": "A file versioning helper class in C# to make a backup copy of a file and keep the last N copies of that file",
@@ -3140,7 +3140,7 @@ var store = [{
         "title": "Resolving the &#8220;The &#8216;CctSharedPackage&#8217; package did not load correctly.&#8221; error message",
         "excerpt":"After launching an Azure project in Visual Studio 2013, I was handed a “The ‘CctSharedPackage’ package did not load correctly.” error message. I was unfamiliar with that one, and a quick check of the forums showed that a few people had reported this happening after installing the latest Windows 8.1...","categories": [],
         "tags": [],
-        "url": "/2014/04/13/resolving-the-the-cctsharedpackage-package-did-not-load-correctly-error-message/",
+        "url": "/2014/04/14/resolving-the-the-cctsharedpackage-package-did-not-load-correctly-error-message/",
         "teaser": null
       },{
         "title": "Using the Windows Phone 8.1 Start Background to personalize your phone",
@@ -3152,7 +3152,7 @@ var store = [{
         "title": "This one is for your grandparents (aka &#8220;I&#8217;m calling you from Windows and you a have virus&#8221;",
         "excerpt":"Only you can save Grampy and Oma OK people, this one is for your parents and your grandparents.  There is an annoying scam that has been going around where they get called from someone claiming to be from Windows and the weasels have detected a virus on their PC.  And then the weasels extort...","categories": [],
         "tags": [],
-        "url": "/2014/05/11/this-one-is-for-your-grandparents-aka-im-calling-you-from-windows-and-you-a-have-virus/",
+        "url": "/2014/05/12/this-one-is-for-your-grandparents-aka-im-calling-you-from-windows-and-you-a-have-virus/",
         "teaser": null
       },{
         "title": "Been reading &#8220;iOS Development with Xamarin Cookbook&#8221;",
@@ -3248,7 +3248,7 @@ var store = [{
         "title": "Registration is now open for the 2015 Microsoft MVP Virtual Conference.",
         "excerpt":"2015 Microsoft MVP Virtual Conference I’ll presenting at the 2015 Microsoft MVP Virtual Conference.  The MVP V-Conf is a new 2-day event presented by MVPs from the Americas’ region.  It’s a virtual conference and it’s free. The theme of the inaugural conference is “The Power of Community” where we MVPs...","categories": [],
         "tags": [],
-        "url": "/2015/04/06/registration-is-now-open-for-the-2015-microsoft-mvp-virtual-conference/",
+        "url": "/2015/04/07/registration-is-now-open-for-the-2015-microsoft-mvp-virtual-conference/",
         "teaser": null
       },{
         "title": "Trying to get Apple Testflight to send new build notifications",
@@ -3266,7 +3266,7 @@ var store = [{
         "title": "My MVP V-Conf session on localization for mobile apps is out",
         "excerpt":"Two weeks ago I participated in the Microsoft Virtual Conference.  I did a session on cross platform localization for native apps using .NET.  It’s a continuation of the localization article that I did for CODE magazine 18 months ago. The V-Conf was two days with 5 concurrent tracks running.  The US MVPs...","categories": [],
         "tags": [],
-        "url": "/2015/05/30/my-mvp-v-conf-session-on-localization-for-mobile-apps-is-out/",
+        "url": "/2015/05/31/my-mvp-v-conf-session-on-localization-for-mobile-apps-is-out/",
         "teaser": null
       },{
         "title": "Exporting SMS/MMS messages from Windows Phone 8",
@@ -3284,13 +3284,13 @@ var store = [{
         "title": "Send your name to Mars",
         "excerpt":"If you want to take part in the next NASA mission to Mars, there’s still time.  NASA is inviting the public to submit their names to be encoded on a chip that will be sent to Mars.  That chip will be on the InSight (Interior Exploration using Seismic Investigations, Geodesy and...","categories": [],
         "tags": [],
-        "url": "/2015/08/19/send-your-name-to-mars/",
+        "url": "/2015/08/20/send-your-name-to-mars/",
         "teaser": null
       },{
         "title": "Waiting for Microsoft&#8217;s hardware event on the 6th",
         "excerpt":"As a long time Verizon customer and a Windows Phone fan, I’ve been waiting for the new Windows 10 for Mobile flagship phones from Microsoft.  In a couple of days, Microsoft will be holding an event to announce some new hardware.  It’s expected that Microsoft will announce and demo the Surface Pro...","categories": [],
         "tags": [],
-        "url": "/2015/10/03/waiting-for-microsofts-hardware-event-on-the-6th/",
+        "url": "/2015/10/04/waiting-for-microsofts-hardware-event-on-the-6th/",
         "teaser": null
       },{
         "title": "When a UX hack has unexpected consequences or &#8220;Why did my iOS app name get truncated when I used TestFlight?&#8221;",
@@ -3308,7 +3308,7 @@ var store = [{
         "title": "Microsoft&#8217;s Privacy Manifesto",
         "excerpt":"In the Cloud We Trust Microsoft News just posted an article by Brad Smith, the President and Chief Legal Officer at Microsoft about privacy in the age of the Cloud.  You really want to read it, it’s about where we are now and where we should be going, and what Microsoft is...","categories": [],
         "tags": [],
-        "url": "/2015/11/12/microsofts-privacy-manifesto/",
+        "url": "/2015/11/13/microsofts-privacy-manifesto/",
         "teaser": null
       },{
         "title": "Marvin Gaye as an antidote for Road Rage",
@@ -3542,7 +3542,7 @@ var store = [{
         "title": "Return to FocusUF",
         "excerpt":"A while back, I blogged about a command line hack to set the focus for a web cam. I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat. It’s two years later and I have had a request...","categories": ["Hardware"],
         "tags": ["webcam"],
-        "url": "/2020/03/20/return-to-focusuf/",
+        "url": "/2020/03/21/return-to-focusuf/",
         "teaser": null
       },{
         "title": "Why I like working on Open Source (back to FocusUF)",
@@ -3554,13 +3554,13 @@ var store = [{
         "title": "Bag man",
         "excerpt":"I just finished listening to Rachel Maddow’s excellent 7-part podcast, Bag Man. It’s an oral documentary of the events and actions that led to the resignation and conviction of Vice President Spiro Agnew. You can listen to episode one here Spiro Agnew, 39th Vice President As a kid, I vaguely...","categories": ["Agnew"],
         "tags": ["agnew","podcast","watergate"],
-        "url": "/2020/04/28/bag-man/",
+        "url": "/2020/04/29/bag-man/",
         "teaser": null
       },{
         "title": "Some quick improvements for the home video conferencing experience",
         "excerpt":"After a few months of full time working from home, there are a couple of things that I have done to improve the video conferencing experience. Well, for me, anyway. Having a decent webcam will be a big improvement in the quality of your video. And it can give you...","categories": ["Work From Home"],
         "tags": ["Webcam","wfh"],
-        "url": "/2020/05/09/some-quick-improvements-for-the-home-video-conferencing-experience/",
+        "url": "/2020/05/10/some-quick-improvements-for-the-home-video-conferencing-experience/",
         "teaser": null
       },{
         "title": "Add a POSH ADB to your Windows Terminal",
@@ -3584,13 +3584,13 @@ var store = [{
         "title": "Quick and cheap audio editing for online courses",
         "excerpt":"A family member is a college professor and her courses this fall will be held virtually. Her lectures will be recorded ahead of time and she asked me for some tips to be more productive. Much of this will be for the tools that she is using, Microsoft Powerpoint and...","categories": ["Authoring"],
         "tags": ["audacity","camtasia","editing","video"],
-        "url": "/2020/08/08/quick-and-cheap-audio-editing-for-online-courses/",
+        "url": "/2020/08/09/quick-and-cheap-audio-editing-for-online-courses/",
         "teaser": null
       },{
         "title": "How to access Apple's App Connect API from C#, Python, and Go. - Part 1",
         "excerpt":"As the Account Holder for my employer’s Apple App Store account, I get to keep track of who has access to the account. Apple does not do federated logins. Which means no linkage between our Active Directory store and the user accounts associated with the App Store account. So if...","categories": ["Apple"],
         "tags": ["Apple","C#","Go","Python"],
-        "url": "/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/",
+        "url": "/2021/07/10/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/",
         "teaser": null
       },{
         "title": "How to access Apple's App Connect API from C#, Python, and Go. - Part 2",

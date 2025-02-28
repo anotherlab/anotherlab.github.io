@@ -1,10 +1,6 @@
 ---
-id: 304
 title: Leaky Abstractions in Wise for Windows
 date: 2006-05-30T15:31:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=304
-permalink: /2006/05/30/leaky-abstractions-in-wise-for-windows/
 ---
 I had just reported a bug with the Wise for Windows Installer (it can&#8217;t call the Install method on a service compiled under the .NET Framework 2.0) and I checked the Altiris support forum to see if there were any other surprises. One of the senior forum members reported [something interesting with the MSI scripting](http://forums.altiris.com/messageview.aspx?catid=20&threadid=31410&enterthread=y). He had a block of code with the following logic:
 

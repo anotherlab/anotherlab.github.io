@@ -1,10 +1,6 @@
 ---
-id: 481
 title: 'What&#8217;s wrong with large values of zero?'
 date: 2005-04-26T13:15:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=481
-permalink: /2005/04/26/whats-wrong-with-large-values-of-zero/
 ---
 We are about to roll out an update to one of our applications and we made some schema changes to the database. A couple of floating point fields were changed to the money data type. And that&#8217;s when the [fun](http://www.lafferty.ca/photos/Things/Saab_9-3/crash.jpg) began. QA reported the following error from one of the reports:
 

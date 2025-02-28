@@ -1,10 +1,6 @@
 ---
-id: 233
 title: 'Blast from the past: Forth'
 date: 2007-07-03T16:43:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=233
-permalink: /2007/07/03/blast-from-past-forth/
 ---
 I came across a [link](http://home.iae.nl/users/mhx/sf.html) an [online version](http://home.iae.nl/users/mhx/sf.html) to [Leo Brodie&#8217;s](http://home.earthlink.net/~lbrodie/whatever.html) Forth tutorial, &#8220;[Starting Forth](http://www.amazon.com/exec/obidos/tg/detail/-/013843087X/qid=1034103279/sr=1-2/ref=sr_1_2/104-7425591-9919103?v=glance)&#8221; today.  I used to have a copy of that book eons ago.  I learned how to program on a [Commodore VIC-20](http://oldcomputers.net/vic20.html) and I bought (actually had to special order it) a Forth language cartridge.  This book has been out of print for decades, the online version is probably the only way to read it now.
 

@@ -1,10 +1,6 @@
 ---
-id: 303
 title: Self installing services in .NET
 date: 2006-06-06T21:01:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=303
-permalink: /2006/06/06/self-installing-services-in-net/
 ---
 I have some service applications that I deploy with [Wise for Windows](http://www.wise.com/wfwi.asp). These particular services are .NET [assemblies](http://www.codeguru.com/columns/csharp_learning/article.php/c5845/). The usual way of registering the .NET assembly as a service is to use the [installutil.exe](http://msdn2.microsoft.com/en-us/library/50614e95.aspx) that comes with the .NET Framework. Wise made it easy to register the assemblies by adding a checkbox in the file properties for self installation. Behind the scenes, Wise must be calling installutil, because it fails when you have multiple versions of the .NET Framework installed. Installutil is not compatible across Frameworks. You can’t install a 1.1 assembly with the 2.0 installutil, and vice versa.
 

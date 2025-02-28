@@ -1,10 +1,6 @@
 ---
-id: 269
 title: 'What to install, what to leave out&#8230;'
 date: 2007-01-08T18:36:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=269
-permalink: /2007/01/08/what-to-install-what-to-leave-out/
 ---
 I have two machines that I do the brunt of my programming on.  One is a P4 1.8 Ghz box, circa 2002 that was my main work horse.  Last year I got a Pentium D 2.8 Ghz and that&#8217;s the new main work horse.  Over the years, they have accumulated all the compilers that I work with (Delphi 5, Delphi 7, BDS 2006, VS 2002, VS 2003, VS 2005).   In a stunning show of solidarity, both machines had hard drive failures within a few months of each other.  The older one fell down August and the new guy blue screen in the most spectaculiar way just before Christmas.
 

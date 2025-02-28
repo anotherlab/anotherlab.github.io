@@ -1,10 +1,6 @@
 ---
-id: 399
 title: 'RE: SqlDependency changes for RTM [Sushil Chordia]'
 date: 2005-10-20T20:52:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=399
-permalink: /2005/10/20/re-sqldependency-changes-for-rtm/
 ---
 I want to play with this feature. I have implemented something with similiar functionality using UDP in an extended stored procedure, but this looks much simpler.
 

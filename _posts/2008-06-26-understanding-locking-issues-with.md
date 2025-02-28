@@ -1,10 +1,6 @@
 ---
-id: 144
 title: Understanding locking issues with multithreaded code
 date: 2008-06-26T16:53:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=144
-permalink: /2008/06/26/understanding-locking-issues-with/
 ---
 From Joe White’s [blog](http://blog.excastle.com/2008/06/25/low-lock-multithreading/trackback/), I came across a link to an interesting [article](http://msdn.microsoft.com/en-us/magazine/cc163715.aspx "Understand the Impact of Low-Lock Techniques in Multithreaded Apps") about working with various locking models when writing multithreaded code.  It was written by [Vance Morrison](http://blogs.msdn.com/vancem/), the compiler architect for the .NET Runtime and it’s required reading for anyone doing multithreaded coding.  It was written a few years back, but is still relevant.  I’ve read it a couple of times and I still have not grokked all of it.
 

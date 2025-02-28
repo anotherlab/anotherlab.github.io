@@ -1,10 +1,6 @@
 ---
-id: 330
 title: Repaving an XP box
 date: 2006-01-17T19:52:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=330
-permalink: /2006/01/17/repaving-xp-box/
 ---
 I&#8217;m getting ready to help [repave](http://www.pcworld.com/resource/article/0,aid,119814,pg,1,RSS,RSS,00.asp) a family member&#8217;s PC (Windows XP). Too many [questionable things](http://en.wikiquote.org/wiki/Blade_Runner) have been installed and some nasty thing is blocking https pages and pages that lead to diagnostic tools. When something is actively blocking [Sysinternals](http://www.sysinternals.com/), then you know you have something malevolent on board. The usual suspects haven&#8217;t been able to clean it, so it&#8217;s time to [sanction](http://www.geocities.com/mattreigns/General/EigerSanction.htm) the spyware/hijackers/cruft with extreme prejudice. 
 

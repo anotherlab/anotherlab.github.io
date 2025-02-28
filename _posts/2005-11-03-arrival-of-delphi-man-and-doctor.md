@@ -1,10 +1,6 @@
 ---
-id: 380
 title: The arrival of Delphi Man and Doctor Deadline
 date: 2005-11-03T20:23:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=380
-permalink: /2005/11/03/arrival-of-delphi-man-and-doctor/
 ---
 <table>
   </p> 

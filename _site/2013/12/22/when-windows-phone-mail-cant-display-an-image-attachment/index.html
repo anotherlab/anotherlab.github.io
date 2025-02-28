@@ -1,0 +1,732 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>When Windows Phone Mail can’t display an image attachment - Chris Miller’s 5th Blog</title>
+<meta name="description" content="I came across a strange little problem reported in answers.microsoft.com with Windows Phone 8 Mail. It wasn’t downloading  jpg images.">
+
+
+  <meta name="author" content="Chris Miller">
+  
+  <meta property="article:author" content="Chris Miller">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
+<meta property="og:title" content="When Windows Phone Mail can’t display an image attachment">
+<meta property="og:url" content="http://localhost:4000/2013/12/22/when-windows-phone-mail-cant-display-an-image-attachment/">
+
+
+  <meta property="og:description" content="I came across a strange little problem reported in answers.microsoft.com with Windows Phone 8 Mail. It wasn’t downloading  jpg images.">
+
+
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="When Windows Phone Mail can’t display an image attachment">
+  <meta name="twitter:description" content="I came across a strange little problem reported in answers.microsoft.com with Windows Phone 8 Mail. It wasn’t downloading  jpg images.">
+  <meta name="twitter:url" content="http://localhost:4000/2013/12/22/when-windows-phone-mail-cant-display-an-image-attachment/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2013-12-22T00:54:48+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2013/12/22/when-windows-phone-mail-cant-display-an-image-attachment/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 5th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Chris Miller</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Microsoft MVP, a Pluralsight Author, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span class="label">BlueSky</span></a></li>
+          
+        
+          
+            <li><a href="https://app.pluralsight.com/profile/author/christopher-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-chalkboard-teacher" aria-hidden="true"></i><span class="label">Pluralsight</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+          
+            <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-award" aria-hidden="true"></i><span class="label">Microsoft MVP</span></a></li>
+          
+        
+          
+            <li><a href="https://stackoverflow.com/users/206/chris-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i><span class="label">Stack Overflow</span></a></li>
+          
+        
+          
+            <li><a href="https://www.reddit.com/user/anotherlab/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-reddit-alien" aria-hidden="true"></i><span class="label">Reddit</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="When Windows Phone Mail can’t display an image attachment">
+    <meta itemprop="description" content="I came across a strange little problem reported in answers.microsoft.com with Windows Phone 8 Mail. It wasn’t downloading  jpg images.">
+    <meta itemprop="datePublished" content="2013-12-22T00:54:48+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2013/12/22/when-windows-phone-mail-cant-display-an-image-attachment/" itemprop="url">When Windows Phone Mail can’t display an image attachment
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>I came across a strange little problem <a href="http://answers.microsoft.com/en-us/winphone/forum/wp8-wpcamera/unable-to-download-jpg-attachments-from-emails/69d1bb37-d2e5-40dc-952c-107b04557eac">reported in answers.microsoft.com with Windows Phone 8 Mail</a>. It wasn’t downloading  jpg images.</p>
+
+<p>The email app that comes with Windows Phone 8 does not display image attachments automatically. You need to tap on them and then they download and you can view them. That drives some people batty, but it saves on bandwidth and prevents web bugs from tracking you.</p>
+
+<blockquote>
+  <p>When you view an image in an email, you are providing a lot of information about yourself to the sender. First of all, you are telling the sender that your address is active.  Which can mean more spam.  For that reason <a href="http://gmailblog.blogspot.com/2013/12/images-now-showing.html">Google is now sending all images coming in through GMail through a proxy server</a>.</p>
+</blockquote>
+
+<p>A user reported that he couldn’t download images from mail. When he tapped on them, just just displayed the “Downloading…” status message.  We traded a few messages and nothing sounded out of the ordinary. So I asked him to me an email with one of those images. And he did.  He sent a few images in an email.  To keep thing simple, I’ll just refer to a single image and call it “foo bar.jpg”. His image had a different file name, but this one matches the naming convention with out using his personal information.</p>
+
+<p>I saw the same thing.  Tapped on the image and saw the “Downloading…” display without ever getting the image. So I started playing around his message.  I used a GMail account and I viewed the message from the GMail web app.  Sure enough, it displayed the image just fine.  That ruled out the image being corrupt.</p>
+
+<p>I saved the image to my PC and looked it with a few apps.  Nothing out of the ordinary, just an image from a Kodak digital camera, according the <a href="http://en.wikipedia.org/wiki/Exchangeable_image_file_format">EXIF</a> data.</p>
+
+<p>So I decided to poke around a bit. Using GMail, I sent the same picture to another gmail account that I have.  That worked just fine on my phone.  That was strange so I took another look at his email.  His email was sent from Windows Mail. So I sent the same picture to my gmail account from Windows Mail on Windows 8.1.</p>
+
+<p>And I couldn’t open the picture from Windows Phone Mail.  I could create the problem on my end. That’s half the battle in fixing bugs, getting past “It works on my machine” stage.</p>
+
+<div style="width: 210px" class="wp-caption aligncenter">
+  <img loading="lazy" alt="" src="https://i1.wp.com/www.rajapet.net/photos/i-vXzzQMW/0/O/i-vXzzQMW.png?resize=200%2C193" width="200" height="193" />
+  
+  <p class="wp-caption-text">
+    Image from the <a href="http://www.codinghorror.com/blog/2007/03/the-works-on-my-machine-certification-program.html">Coding Horror</a>
+  </p>
+</div>
+
+<p>To completely rule his picture being part of the problem, I went into Paint.Net and created a small jpeg and saved it as “test.jpg”. I sent that picture from Windows Mail to the GMail account, and sure enough that worked just fine.</p>
+
+<p>I thought I was going down the right path, but another data point was mocking me. Mocking me to my face. Time to dig in deeper.  I went into GMail and opened up the message that had “foo bar.jpg” in it and selected “Show original” to see the actual message being sent.  It looked pretty normal, until I got to the part with the image attachment.</p>
+
+<pre>Content-Type: image/jpeg; name="=?utf-8?Q?Foo_Bar.jpg?="
+Content-Description: =?utf-8?Q?Foo_Bar.jpg?=
+Content-Disposition: attachment; name="=?utf-8?Q?Foo_Bar.jpg?="
+Content-Transfer-Encoding: base64</pre>
+
+<p>After that the data for the image itself was included.  The image data was fine, but the file name seemed a little odd. The <strong>=?utf-8?Q?</strong> bit just says that the file name is UTF-8 encoded. The name itself had replaced the space in “foo bar.jpg” with an underscore to make “foo_bar.jpg”.</p>
+
+<p>When I sent the email from GMail, the content header block for the image looked like this</p>
+
+<pre>Content-Type: image/jpeg; name="Foo Bar.jpg"
+Content-Disposition: attachment; filename="Foo Bar.jpg"
+Content-Transfer-Encoding: base64</pre>
+
+<p>Gmail did not replace the ” ” with a “_”.  When you viewed the both emails on the phone, the file name was displayed with the space. I copied the image to foobar.jpg and sent it from Windows Mail, it worked perfectly.</p>
+
+<p>As near as I can tell, the problem is with the Windows Phone Mail app, everything else seems to handle the images correctly. The question thread has been passed along to Microsoft to take a closer look at.</p>
+
+<p>I’m not anticipating a quick fix from Microsoft.  But it’s easy to get around this.  Don’t send images with spaces in the file name from Windows Mail. Use a different email app or rename the file.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2013-12-22T00:54:48+00:00">December 22, 2013</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=When+Windows+Phone+Mail+can%26%238217%3Bt+display+an+image+attachment%20http%3A%2F%2Flocalhost%3A4000%2F2013%2F12%2F22%2Fwhen-windows-phone-mail-cant-display-an-image-attachment%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2013%2F12%2F22%2Fwhen-windows-phone-mail-cant-display-an-image-attachment%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2013/12/22/when-windows-phone-mail-cant-display-an-image-attachment/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2013/12/18/its-2013-stop-trying-to-write-to-the-program-files-folder-already/" class="pagination--pager" title="It’s 2013, stop trying to write to the Program Files folder already
+">Previous</a>
+    
+    
+      <a href="/2014/01/17/while-i-dont-recommend-messing-with-scammers-it-can-be-entertaining/" class="pagination--pager" title="While I don’t recommend messing with scammers, it can be entertaining
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/02/06/bluesky/" rel="permalink">You can find me on Bluesky
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I’ve been on Bluesky for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn bil...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/08/27/apples-api-needs-to-be-sorted/" rel="permalink">Apple needs to sort out their API
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly sta...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2023/03/22/android-exported/" rel="permalink">MyFirebaseMessagingService android:exported needs to be explicitly specified
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the ap...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2022/09/21/psc-xf5-fundamentals/" rel="permalink">My new Xamarin.Forms 5 Pluralsight course is out
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the devel...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
+    script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>

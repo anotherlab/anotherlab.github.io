@@ -1,10 +1,6 @@
 ---
-id: 439
 title: 'RE: Why is the DOS path character &quot;\&quot;?'
 date: 2005-06-27T16:56:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=439
-permalink: /2005/06/27/re-why-is-dos-path-character/
 ---
 > 
 > 

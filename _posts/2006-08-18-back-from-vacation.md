@@ -1,10 +1,6 @@
 ---
-id: 292
 title: Back from vacation
 date: 2006-08-18T19:59:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=292
-permalink: /2006/08/18/back-from-vacation/
 ---
 After a couple of weeks of vacation, I came back to the office to find my old development book DOA.  It was worse than a Blue Screen, it was a black screen with Read/Write error message.  My C: partition was filled with CRC errors.  I could copy some files off it, but most were toast.  A second parition on the same drive reported no errors, so I don&#8217;t think it was a drive failure.  We did have a brown out while I was away, and that box only had a surge protector to save it.  Which it didn&#8217;t.
 

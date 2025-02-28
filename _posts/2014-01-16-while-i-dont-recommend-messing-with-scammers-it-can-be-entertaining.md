@@ -1,10 +1,6 @@
 ---
-id: 590
 title: 'While I don&#8217;t recommend messing with scammers, it can be entertaining'
 date: 2014-01-16T20:17:33-05:00
-layout: post
-guid: http://www.rajapet.com/?p=590
-permalink: /2014/01/16/while-i-dont-recommend-messing-with-scammers-it-can-be-entertaining/
 ---
 I was doing coding on my home machine when the phone rang.  The Caller ID said &#8220;Out of State&#8221;.  When Caller ID comes up like that, I know the call will not be in my benefit.
 

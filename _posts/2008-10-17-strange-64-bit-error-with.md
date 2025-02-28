@@ -1,10 +1,6 @@
 ---
-id: 112
 title: Strange 64-bit error with LayoutKind.Explicit
 date: 2008-10-17T20:34:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=112
-permalink: /2008/10/17/strange-64-bit-error-with/
 ---
 I have a C# service that collects data from another company that we do business with.  They send the data in a binary format from one of their C++ applications.  To read their data with .NET, I needed to <a href="http://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">marshal</a> their data to a set of structs defined in C#.  I created a structure that looked something like this.  
 

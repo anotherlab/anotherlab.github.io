@@ -1,10 +1,6 @@
 ---
-id: 180
 title: How to identify who has a terminal session and how to kill it
 date: 2008-04-25T14:52:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=180
-permalink: /2008/04/25/how-to-identify-who-has-terminal/
 ---
 Having the ability to use a terminal service (aka Remote Desktop) session to manage a Windows Server (2000, 2003, and 2008) is very useful.  If you don&#8217;t have a Terminal Services license installed, you are limited to to two active sessions (plus a bonus connection that I&#8217;ll get to in a minute).  If a person disconnects from a session without logging out, it can leave that session running.  That allows you to start a long running task and come back to it later, but it does use up one of the available connections.  If both sessions are being used, you will not be able to create a new terminal service connection to the server.  At this point, you have three options:
 

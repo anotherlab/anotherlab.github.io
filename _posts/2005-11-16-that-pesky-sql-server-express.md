@@ -1,9 +1,5 @@
 ---
-id: 367
 date: 2005-11-16T20:18:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=367
-permalink: /2005/11/16/that-pesky-sql-server-express/
 ---
 That pesky SQL Server Express. I&#8217;m going to have to support it, it&#8217;s time to start collecting tips from the veterans&#8230;. 
 

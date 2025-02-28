@@ -1,10 +1,6 @@
 ---
-id: 110
 title: DevTrack woes with build 1833 of mfc80.dll
 date: 2008-10-21T19:05:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=110
-permalink: /2008/10/21/devtrack-woes-with-build-1833-of/
 ---
 We use TechExcel’s <a href="http://www.techexcel.com/products/devsuite/devtrack.html" target="_blank">DevTrack</a> tool to track our defects and project modifications.  A few weeks ago, one of our QA specialists installed SQL Server 2008 Express.  That broke DevTrack.  After SQL Express 2008 was installed, DevTrack would crash after loading.  After contacting DevTrack support, we were advised that the mfc80.dll installed with SQL Express was causing the problem.  
 

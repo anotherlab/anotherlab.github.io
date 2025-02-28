@@ -1,10 +1,6 @@
 ---
-id: 172
 title: Uninstall IE8 Beta before installing XP SP3
 date: 2008-05-08T16:03:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=172
-permalink: /2008/05/08/uninstall-ie8-beta-before-installing-xp/
 ---
 If you running the beta version of [Internet Explorer 8](http://www.microsoft.com/windows/products/winfamily/ie/ie8/getitnow.mspx "Download Internet Explorer 8 Beta 1") (IE8) under Windows XP, the word is to uninstall IE8 before installing [Windows XP Service Pack 3](http://www.microsoft.com/downloads/details.aspx?FamilyID=D811F258-C95F-479A-BDF1-0D1154D700A5&displaylang=en "Windows XP Service Pack 3, Checked Build") (SP3).  Once SP3 has been installed, you will be unable to remove IE8 (and IE7).  The reason for this is documented on the IEBlog with this [post](http://blogs.msdn.com/ie/archive/2008/05/05/ie-and-xpsp3.aspx "IE and Windows XP Service Pack 3").  Basically, when you install IE7 or IE8, the existing IE6 (version of IE that comes with XP) is backed up to an uninstall folder.  SP3 includes an updated set pf IE6 files.  If you were to uninstall IE7 or IE8 after installing SP3, you would have a mixture of IE6 files from pre-SP3 and the bits installed as part of SP3.  That would cause all sorts of problems and Microsoft disables the uninstall option for IE7 and IE8 after SP3 is installed.
 

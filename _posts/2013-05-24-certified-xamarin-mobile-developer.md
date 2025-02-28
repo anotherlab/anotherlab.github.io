@@ -1,10 +1,6 @@
 ---
-id: 11
 title: Certified Xamarin Mobile Developer
 date: 2013-05-24T14:10:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=11
-permalink: /2013/05/24/certified-xamarin-mobile-developer/
 ---
 I just received the email notification from [Xamarin](http://xamarin.com/) that I successfully passed their Mobile Developer certification exam. I was given a free pass for the exam for attending the [Xamarin Evolve Developer conference](http://xamarin.com/evolve/2013#home) back in April.
 

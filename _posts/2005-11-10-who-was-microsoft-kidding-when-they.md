@@ -1,9 +1,5 @@
 ---
-id: 376
 date: 2005-11-10T16:31:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=376
-permalink: /2005/11/10/who-was-microsoft-kidding-when-they/
 ---
 Who was Microsoft kidding when they promised to end &#8220;DLL Hell&#8221;? The long dark night of the SQL Server 2005/Visual Studio .NET 2005 beta produced a series of seeming incompatible .NET frameworks. I didn&#8217;t do much beta testing with the 2005 bits, but when I did, I did so from the safe confines of various [VMWare](http://www.vmware.com/) sessions. I&#8217;m now looking at some automated build tools and one of our developers suggested MSBuild. That&#8217;s the last thing you would want, a build tool that will be dependant having the appropriate runtime installed. Plus I want something that supports more than .NET compilers, we are still building Delphi Win32 apps here as well as .NET assemblies.
 

@@ -1,10 +1,6 @@
 ---
-id: 249
 title: SQL UPDATE from another row in the same table
 date: 2007-04-14T02:42:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=249
-permalink: /2007/04/14/sql-update-from-another-row-in-same/
 ---
 My SQL skills are getting rusty.  I have some code where I needed to quickly copy a field from one row in a table to another row in the same table.  Bascially, a self-referencing UPDATE. I knew I could so it with a simple UPDATE statement, but I forgot the ANSI syntax.  Self-joining UDPATE statements can be a little squirrelly, so it&#8217;s best to follow the ANSI standard.  So I went looking for the Master, [Mr. Joe Celko](http://www.celko.com/).
 

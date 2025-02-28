@@ -1,10 +1,6 @@
 ---
-id: 78
 title: You always need to read your bank and credit statements
 date: 2009-09-17T13:00:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=78
-permalink: /2009/09/17/you-always-have-read-your-bank-and/
 ---
 It was with some interest that I read [today’s “The Advocate” column](http://blog.timesunion.com/advocate/account-number-mix-up-missed-deadline-put-400-at-risk/1886/ "Account number mix-up, missed deadline put $400 at risk") in the [Times Union](http://www.timesunion.com/).  A man had $400 taken out of his credit union account and the credit union wasn’t going to give it back to him.  He has an account with the [State Employees Federal Credit Union](http://www.sefcu.com/) (SEFCU).  Another SEFCU member was making a bill payment over the phone and mistyped her account number.  It ended up being his account number and the money was taken from his account.
 

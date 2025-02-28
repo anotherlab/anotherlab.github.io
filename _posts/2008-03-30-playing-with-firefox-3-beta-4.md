@@ -1,10 +1,6 @@
 ---
-id: 194
 title: Playing with Firefox 3 Beta 4
 date: 2008-03-30T18:15:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=194
-permalink: /2008/03/30/playing-with-firefox-3-beta-4/
 ---
 I&#8217;ve pretty much standardized on Firefox as my default browser (but not the default Windows browser).  I had been an Opera bigot for years, but the tipping point was when Google released their browser sync addin that made it easy to keep my bookmarks and other settigns in sync between work and home.
 

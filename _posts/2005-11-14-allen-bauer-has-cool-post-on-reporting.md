@@ -1,9 +1,5 @@
 ---
-id: 373
 date: 2005-11-14T18:19:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=373
-permalink: /2005/11/14/allen-bauer-has-cool-post-on-reporting/
 ---
 [Allen Bauer](http://blogs.borland.com/abauer/) has a [cool post](http://blogs.borland.com/abauer/archive/2005/11/12/22066.aspx "The Oracle at Delphi") on reporting bugs and the common sense etiquette that should be used.
 

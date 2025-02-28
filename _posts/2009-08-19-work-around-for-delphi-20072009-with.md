@@ -1,10 +1,6 @@
 ---
-id: 87
 title: A work around for Delphi 2007/2009 with Windows 7 64 bit
 date: 2009-08-19T20:20:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=87
-permalink: /2009/08/19/work-around-for-delphi-20072009-with/
 ---
 I just installed Windows 7, 64 bit edition so that I could code and test against this new operating system.  Visual Studio 2008 installed and ran without any incident, but I hit a snag with Delphi 2007.  Delphi 2007 installed just fine, but it would die when you ended a debugging session.  An assert error would get thrown and after you cleared the dialog, Delphi would be terminated.  
 The error was thrown by bordbk105N.dll and had the following text:

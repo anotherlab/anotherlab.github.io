@@ -1,10 +1,6 @@
 ---
-id: 89
 title: Facebook does not need a “dislike” button
 date: 2009-06-18T02:34:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=89
-permalink: /2009/06/18/facebook-does-not-need-dislike-button/
 ---
 With just about everything you get to see view in [Facebook](http://www.facebook.com/), there’s usually a button or a link displayed as “like” associated with the topic.  If you click that button, the person who posted that link gets a little note on his Facebook page that you liked what ever it was that they had put up.
 

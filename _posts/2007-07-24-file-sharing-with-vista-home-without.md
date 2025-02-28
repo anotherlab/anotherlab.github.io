@@ -1,10 +1,6 @@
 ---
-id: 229
 title: File sharing with Vista Home without passwords
 date: 2007-07-24T03:52:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=229
-permalink: /2007/07/24/file-sharing-with-vista-home-without/
 ---
 After having several PC implosions, we now have two new Vista boxes at home. Both have Vista Home Premium installed. I&#8217;m used to the relative stability of XP Pro, but I figured I would give Vista a shot. For the most part it has gone very well, but I made sure that each machine was going to be able to run Vista.
 

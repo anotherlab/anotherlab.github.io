@@ -1,10 +1,6 @@
 ---
-id: 365
 title: Client vs Developer
 date: 2005-11-21T14:32:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=365
-permalink: /2005/11/21/client-vs-developer/
 ---
 [Client vs Developer wars](http://www.newfangled.com/background/book.php "Newfangled Web Company").  
 This is stuff isn&#8217;t directly applicable to our development patterns, but it has some useful information. 

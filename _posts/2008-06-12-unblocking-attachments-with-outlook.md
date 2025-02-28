@@ -1,10 +1,6 @@
 ---
-id: 156
 title: Unblocking attachments with Outlook
 date: 2008-06-12T19:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=156
-permalink: /2008/06/12/unblocking-attachments-with-outlook/
 ---
 Today, one of the other programmers needed to send me some odd registry entries that were on his machine.  So I asked him to export the registry settings to a .reg file from regedit and then and email me the .reg file.  Outlook blocked the file attachment because the .reg file extension is on the Outlook equivalent of the “No Fly” list.  Outlook has two levels of attachment security, Level 1 and Level 2.  Level 2 attachments will prompt you to save the file to your hard disk.  Level 1 attachments are blocked at the client by Outlook and can not be accessed.  The list of file types classified as Level 1 are listed [here](http://office.microsoft.com/en-us/outlook/HP030850041033.aspx "Attachment file types blocked by Outlook - Outlook - Microsoft Office Online").  It has the usual suspects and this include .reg files.
 

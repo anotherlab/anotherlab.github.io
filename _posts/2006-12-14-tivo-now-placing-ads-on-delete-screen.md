@@ -1,10 +1,6 @@
 ---
-id: 274
 title: TiVo now placing ads on the delete screen
 date: 2006-12-14T18:07:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=274
-permalink: /2006/12/14/tivo-now-placing-ads-on-delete-screen/
 ---
 I finally saw [TiVo](http://www.tivo.com/0.0.asp)&#8216;s [new advertising placements](http://www.pvrwire.com/2006/12/13/tivo-recording-delete-screen-adverts-are-live/) on the &#8220;Delete this recording?&#8221; screen. It was a one line blurb for Burger King that you could click into via the remote. It was not intrusive and didn&#8217;t change how to delete a recording at all.
 

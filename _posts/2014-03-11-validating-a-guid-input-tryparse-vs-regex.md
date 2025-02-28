@@ -1,10 +1,6 @@
 ---
-id: 703
 title: Validating a GUID input, TryParse vs RegEx
 date: 2014-03-11T00:03:12-05:00
-layout: post
-guid: http://www.rajapet.com/?p=703
-permalink: /2014/03/11/validating-a-guid-input-tryparse-vs-regex/
 ---
 Once again I&#8217;m validating some text inputs, this time I need [to verify that a user has entered a GUID](#fortherecord20141103) in a valid format.  While I can&#8217;t verify that the user has entered the correct [GUID](http://en.wikipedia.org/wiki/Globally_unique_identifier), I can check to make sure that I have the right characters in the string.
 

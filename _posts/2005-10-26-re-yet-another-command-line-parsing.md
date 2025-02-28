@@ -1,10 +1,6 @@
 ---
-id: 386
 title: 'RE: Yet another command line parsing system'
 date: 2005-10-26T15:31:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=386
-permalink: /2005/10/26/re-yet-another-command-line-parsing/
 ---
 This looks like a logical way to handle command line parameters while still following convention of using an app.config file.
 

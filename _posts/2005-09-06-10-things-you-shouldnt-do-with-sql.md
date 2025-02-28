@@ -1,10 +1,6 @@
 ---
-id: 413
 title: '10 Things You Shouldn&#8217;t Do with SQL Server'
 date: 2005-09-06T17:16:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=413
-permalink: /2005/09/06/10-things-you-shouldnt-do-with-sql/
 ---
 I&#8217;ve seen and written too much stuff that violates these rules. Click the link after &#8220;Via&#8221; for the full article&#8230;
 

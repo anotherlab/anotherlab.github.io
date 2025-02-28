@@ -1,10 +1,6 @@
 ---
-id: 166
 title: Does knowing C make you a better programmer?
 date: 2008-05-27T20:26:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=166
-permalink: /2008/05/27/does-knowing-c-make-you-better/
 ---
 [Joel](http://www.joelonsoftware.com/AboutMe.html) and [Jeff](http://www.codinghorror.com/blog/archives/000021.html) had a [conversation](http://blog.stackoverflow.com/index.php/2008/04/podcast-3/) about the merits of knowing how to program in C.  Joel&#8217;s take was knowing how to program in C makes you a better program.  I&#8217;m in that camp, with some [other](http://blog.darrenstokes.com/2008/05/22/do-you-really-need-to-know-c-i-think-so/) [people](http://www.ericsink.com/entries/c_morse_code.html) (Darren and Eric).
 

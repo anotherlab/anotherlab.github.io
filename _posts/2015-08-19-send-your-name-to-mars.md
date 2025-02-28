@@ -1,10 +1,6 @@
 ---
-id: 1303
 title: Send your name to Mars
 date: 2015-08-19T19:18:22-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1303
-permalink: /2015/08/19/send-your-name-to-mars/
 ---
 [<img src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-dNDZDJG/0/L/ChrisMars-L.png?w=680" alt=""  />](http://www.rajapet.net/Other/2015-Blog/i-dNDZDJG/A)
 

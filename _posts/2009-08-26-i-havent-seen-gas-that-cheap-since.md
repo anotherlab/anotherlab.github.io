@@ -1,10 +1,6 @@
 ---
-id: 83
 title: I haven’t seen gas that cheap since the Carter administration
 date: 2009-08-26T17:02:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=83
-permalink: /2009/08/26/i-havent-seen-gas-that-cheap-since/
 ---
 Our local supermarket chain, [Price Chopper](http://www.pricechopper.com/), has been running a [promotion](http://www2.pricechopper.com/fueladvantedge/ "Fuel AdvantEdge") this summer in combination with [Sunoco](http://www.sunocoinc.com/site).  The more you spend, the greater the discount will be on your next gas fill up.
 

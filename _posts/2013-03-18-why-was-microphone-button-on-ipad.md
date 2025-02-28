@@ -1,10 +1,6 @@
 ---
-id: 17
 title: Why was microphone button on the iPad virtual keyboard disabled?
 date: 2013-03-18T03:03:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=17
-permalink: /2013/03/18/why-was-microphone-button-on-ipad/
 ---
 After demoing some voice dictation with an iPad app that I am working, the microphone button stopped working.  It was fine for one demo, disabled for the next one.  I could not figure out what had changed.  I kept seeing numerous references for [setting the dictation option](http://support.apple.com/kb/HT5176) and making sure that the iPad had a network connection.  Stuff like this [forum posting](https://discussions.apple.com/thread/4287366?tstart=0) on discussions.apple.com:
 

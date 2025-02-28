@@ -1,10 +1,6 @@
 ---
-id: 403
 title: RE:Oldest noodles unearthed in China
 date: 2005-10-13T16:51:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=403
-permalink: /2005/10/13/reoldest-noodles-unearthed-in-china/
 ---
 > **Paleolithic dorm food discovered**:  
 ><img loading="lazy" src="https://i2.wp.com/news.bbc.co.uk/nol/shared/spl/hi/pop_ups/05/sci_nat_enl_1129126327/img/laun.jpg?resize=203%2C152" title="Oodles of Ancient Noodles" width="203" height="152" border="0" align="left"  />  

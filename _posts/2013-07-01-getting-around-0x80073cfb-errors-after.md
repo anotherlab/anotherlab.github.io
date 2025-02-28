@@ -1,10 +1,6 @@
 ---
-id: 10
 title: Getting around 0x80073cfb errors after installing Windows 8.1 Preview
 date: 2013-07-01T04:34:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=10
-permalink: /2013/07/01/getting-around-0x80073cfb-errors-after/
 ---
 As an attendee of the [//build/](http://www.buildwindows.com/) conference, I received a Surface Pro and an [Acer Iconia W3](http://us.acer.com/ac/en/US/content/series/iconiaw3), along with a USB drive with the Windows 8.1 Preview update for each device. After installing 8.1, Windows Store on the Surface Pro showed that there a bunch of apps that needed updates. So I updated them all and it failed to update five of the apps:
 

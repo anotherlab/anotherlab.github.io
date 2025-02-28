@@ -1,10 +1,6 @@
 ---
-id: 240
 title: TestDriven.NET and Visual Studio Express
 date: 2007-06-05T21:08:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=240
-permalink: /2007/06/05/testdrivennet-and-visual-studio-express/
 ---
 There&#8217;s been a lot of blog postings about Jamie Cansdale&#8217;s legal issues with Microsoft in the last few days.  Jamie has a product called TestDriven.NET that integrates unit testing within the Visual Studio IDE.  The problem is that Jamie has integrated TestDriven.NET within [Visual Studio Express](http://msdn.microsoft.com/vstudio/express/) and Microsoft would like him not to do that.
 

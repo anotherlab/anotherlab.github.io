@@ -1,10 +1,6 @@
 ---
-id: 57
 title: How to shoot yourself in the foot writing installer upgrades
 date: 2010-08-10T21:23:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=57
-permalink: /2010/08/10/how-to-shoot-yourself-in-foot-writing/
 ---
 I’m in the middle of a development cycle for one of our products, when QA logged an unexpected bug.  When you upgraded an existing version of the product to the new one, only some of the settings were being saved.  This was a new bug, something I did recently broke the installer.
 

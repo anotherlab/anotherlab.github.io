@@ -1,10 +1,6 @@
 ---
-id: 38
 title: Initial impressions of the Netgear WNDR3700
 date: 2011-02-17T12:02:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=38
-permalink: /2011/02/17/initial-impressions-of-netgear-wndr3700/
 ---
 I recently upgraded my home network with a new router.  I have [Linksys WRT54GS](http://en.wikipedia.org/wiki/Linksys_WRT54G_series) router, running a custom firmware called [DD-WRT](http://en.wikipedia.org/wiki/Dd-wrt).  DD-WRT provides a lot of extra functionality that wasn’t available with the stock firmware.  It’s the closest thing to a free lunch that you can get, computer-wise.
 

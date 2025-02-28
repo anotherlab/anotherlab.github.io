@@ -1,10 +1,6 @@
 ---
-id: 468
 title: 'The world&#8217;s funniest joke?'
 date: 2005-05-05T17:13:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=468
-permalink: /2005/05/05/worlds-funniest-joke/
 ---
 [Scotsman.com News &#8211; Funniest jokes &#8211; The world&#8217;s funniest joke?](http://news.scotsman.com/topics.cfm?tid=70&id=1096842002)
 

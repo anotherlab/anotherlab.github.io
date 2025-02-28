@@ -1,10 +1,6 @@
 ---
-id: 394
 title: Deleting lots of data in batches
 date: 2005-10-24T14:54:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=394
-permalink: /2005/10/24/deleting-lots-of-data-in-batches/
 ---
 The fun part is in the &#8220;where&#8230;&#8221; bit, knowing how to set your query to only get a portion of the data is heavy lifting here.  
 I know where I&#8217;m going to be using this in some soon to be written code. For the code, the data will timestamped, I can safely iterate by day and nuke all of the records for each day.

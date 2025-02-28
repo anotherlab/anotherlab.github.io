@@ -1,10 +1,6 @@
 ---
-id: 86
 title: Offload TCP processing to the network controllers under Vista, Server 2008, and Windows 7
 date: 2009-08-22T20:28:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=86
-permalink: /2009/08/22/offload-tcp-processing-to-network/
 ---
 After upgrading my home PC to Windows 7, I was decided to see if my motherboard/CPU combination support hardware virtualization.  You need hardware virtualization support if you want to [run Windows XP Mode or Windows Virtual PC](http://www.microsoft.com/windows/virtual-pc/support/configure-bios.aspx).  I have an XMD Athlon X2 with an [Asus M2N-SLI Deluxe](http://usa.asus.com/products.aspx?l1=3&l2=101&l3=301&model=1160&modelmenu=1) and I’m not sure if that combination supports hardware virtualization.  I’m pretty sure the CPU does, but I don’t yet yet know about the motherboard.
 

@@ -1,10 +1,6 @@
 ---
-id: 179
 title: 'My &quot;Windows Feedback&quot; copy of Office 2007 Ultimate just came in'
 date: 2008-04-29T14:55:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=179
-permalink: /2008/04/29/my-feedback-copy-of-office-2007/
 ---
 I just received a [NFR](http://acronyms.thefreedictionary.com/Not+For+Resale "Not For Resale") copy of Microsoft Office 2007 Ultimate in the mail.  Last December, I signed up for the [2008 Microsoft Windows Feedback Program Sweepstakes](http://wfp.microsoft.com/Sweepstakes.aspx).  This was a three month program run out of the [Windows Feedback Program](http://wfp.microsoft.com/Welcome.aspx).  As part of the program, I installed some software on one of my home PC&#8217;s that recorded some basic metrics such as Windows settings, hardware details, how the common document folders are being used, changes to the system, and problems that may occur.
 

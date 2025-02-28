@@ -1,10 +1,6 @@
 ---
-id: 477
 title: The Ten Rules of Performance
 date: 2005-04-28T16:18:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=477
-permalink: /2005/04/28/ten-rules-of-performance/
 ---
 [The Ten Rules of Performance](http://www.panopticoncentral.net/archive/2004/02/10/270.aspx)
 

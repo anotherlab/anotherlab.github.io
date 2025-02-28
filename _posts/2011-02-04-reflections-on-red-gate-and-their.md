@@ -1,10 +1,6 @@
 ---
-id: 40
 title: Reflections on Red Gate and their decision to charge for .NET Reflector
 date: 2011-02-04T17:16:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=40
-permalink: /2011/02/04/reflections-on-red-gate-and-their/
 ---
 The [chattering](http://news.ycombinator.com/item?id=2170245) classes in the .NET world have been buzzing about Red Gate’s decision to start charging for the .NET Reflector utility in March.  I’m been amazed by the hostility and venom sent their way.  Lots of nasty things being written in a [forum provided by Red Gate](http://www.red-gate.com/messageboard/viewforum.php?f=141 ".NET Reflector 7.0 Feedback forum").
 

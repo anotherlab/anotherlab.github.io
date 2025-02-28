@@ -1,10 +1,6 @@
 ---
-id: 316
 title: Demoed FinalBuilder at TVUG
 date: 2006-04-12T04:36:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=316
-permalink: /2006/04/12/demoed-finalbuilder-at-tvug/
 ---
 Last month I demoed [FinalBuilder](http://www.finalbuilder.com/finalbuilder.aspx) at [TVUG](http://www.tvug.net/site/1/default.aspx). That was an interesting experience. I have managed to spend my entire career without having to do a public presentation. I was supposed to do one at the &#8217;98 BorCon on QuickReport, but I got bumped by another presenter who wanted that glory. He did his presentation using a version of QuickReport that was not ready for prime time and he told me later (before he found out that I was the person that he bumped) that it was a very unpleasant experience.
 

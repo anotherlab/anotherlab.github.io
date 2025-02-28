@@ -1,10 +1,6 @@
 ---
-id: 120
 title: Why doesn’t an OS that backs your OS have any means of backing itself up?
 date: 2008-08-11T21:07:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=120
-permalink: /2008/08/11/why-doesnt-os-that-backs-your-os-have/
 ---
 </p> 
 

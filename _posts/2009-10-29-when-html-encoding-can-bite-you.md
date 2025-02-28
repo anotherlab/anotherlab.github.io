@@ -1,10 +1,6 @@
 ---
-id: 75
 title: When HTML encoding can bite you
 date: 2009-10-29T05:08:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=75
-permalink: /2009/10/29/when-html-encoding-can-bite-you/
 ---
 I’ve been using [TweetDeck](http://tweetdeck.com/beta/) to follow [Twitter](http://twitter.com/anotherlab).  It’s a great app, but it has some quirks.  Like it’s ginormous memory usage.   Another is how it renders the text of a tweet. I’ve seen a few tweets go by where the text had HTML escape sequences instead of the text.  
 

@@ -1,10 +1,6 @@
 ---
-id: 7
 title: 'Increasing the target area of a table&#8217;s DetailDisclose button with Xamarin.iOS'
 date: 2013-08-23T20:04:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=7
-permalink: /2013/08/23/increasing-target-area-of-tables/
 ---
 Can you make that button bigger? I went slightly under the hood in [Xamarin.iOS](http://xamarin.com/monotouch) to make an accessory button target area larger.
 

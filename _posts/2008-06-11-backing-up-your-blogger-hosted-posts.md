@@ -1,10 +1,6 @@
 ---
-id: 158
 title: Backing up your Blogger hosted posts
 date: 2008-06-11T16:39:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=158
-permalink: /2008/06/11/backing-up-your-blogger-hosted-posts/
 ---
 This blog is hosted on Google&#8217;s Blogger platform.  It has it&#8217;s own domain name, but it&#8217;s still on Blogger.  While I have faith in our Google Overlords, I still like keeping a local backup of the blog posts.  There&#8217;s a nice open source Blogger backup utility named &#8220;Blogger Backup&#8221;.  It&#8217;s written <strike>in C#</strike> in VB.NET and is [hosted on CodePlex](http://www.codeplex.com/bloggerbackup).
 

@@ -1,10 +1,6 @@
 ---
-id: 396
 title: 'RE: Another Blast of Cold Water in the face &#8211; &quot;The Build Master&quot; by Vincent Maraia'
 date: 2005-10-24T14:25:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=396
-permalink: /2005/10/24/re-another-blast-of-cold-water-in-face/
 ---
 Bill lists a couple of good references for doing the build the right way. I want these two books.
 

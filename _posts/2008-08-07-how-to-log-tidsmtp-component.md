@@ -1,10 +1,6 @@
 ---
-id: 122
 title: How to log the TIDSmtp component
 date: 2008-08-07T20:23:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=122
-permalink: /2008/08/07/how-to-log-tidsmtp-component/
 ---
 I have some Delphi code that needs to send a quick mail message so I was using the <a href="http://www.indyproject.org/index.en.aspx" target="_blank">Indy</a> 10 <a href="http://www.indyproject.org/docsite/html/frames.html?frmname=topic&#038;frmfile=TIdSMTP.html" target="_blank">TIdSmtp</a> component.  The code was working just fine for a few months, but this week it would fail with an EIdSMTPReplyError exception.  The message property of the exception was a empty string, not terribly useful.  After a bit of googling, I found references to using one of the Indy TIdLogXXXX components.  Sure enough, there is a <a href="http://www.indyproject.org/docsite/html/TIdLogFile.html" target="_blank">TIdLogFile</a> component that will log messages to a file.  That sounded like what I needed, but the help file did not make it clear on how to hook up a TIdLogFile to a TIdSmtp component.
 

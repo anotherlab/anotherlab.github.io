@@ -1,10 +1,6 @@
 ---
-id: 51
 title: A Disaster Recovery Plan is useless if you don’t verify that it works.
 date: 2010-08-30T13:43:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=51
-permalink: /2010/08/30/disaster-recovery-plan-is-useless-if/
 ---
 I was just reading a Computerworld article about how [American Eagles Outfitters just went through an eight day web outage](http://www.computerworld.com/s/article/9182159/American_Eagle_Outfitters_learns_a_painful_service_provider_lesson "American Eagle Outfitters learns a painful service provider lesson - Computerworld") (originally covered by [StorefrontBacktalk](http://www.storefrontbacktalk.com/securityfraud/oracle-backup-failure-major-factor-in-american-eagle-8-day-crash/)).  It started when some hardware failed, then the backup hardware failed, then the software designed to restore the data to the replacement hardware failed, and finally their disaster recovery site wasn’t ready.  They were doing the right things: backups, backups of backups, and an alternate site in case their main site is dead in the water.  It just didn’t work when it was needed.  They were [flat out down for 4 days, and then only had minimal functionality for another four days](http://storefrontbacktalk.com/e-commerce/down-for-8-days-american-eagles-site-disaster).
 

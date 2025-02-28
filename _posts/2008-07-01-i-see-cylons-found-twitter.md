@@ -1,10 +1,6 @@
 ---
-id: 139
 title: I see the Cylons found Twitter
 date: 2008-07-01T19:56:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=139
-permalink: /2008/07/01/i-see-cylons-found-twitter/
 ---
 Maybe they can [fix](http://www.twittown.com/twitter-outage) it?  You can get the list of Cylons and associated BSG characters from the Hybrid’s [Friends list](http://twitter.com/cylonhybrid/friends "The Hybrid follows 13 people.").
 

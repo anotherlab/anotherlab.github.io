@@ -1,10 +1,6 @@
 ---
-id: 1114
 title: Taking care of a pet peeve with the Xamarin Build Host
 date: 2015-02-04T01:29:06-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1114
-permalink: /2015/02/04/taking-care-of-a-pet-peeve-with-the-xamarin-build-host/
 ---
 I write code in Windows with Visual Studio, but parts of it compile and debug on OS X.  I&#8217;m doing mobile (Android, iOS, and Windows) development with Xamarin and the iOS part needs to be compiled on OS X.  Xamarin provides an app called the Xamarin Build Host that runs on OS X and allows for their tools in Visual Studio to communicate with the tools on OS X.
 

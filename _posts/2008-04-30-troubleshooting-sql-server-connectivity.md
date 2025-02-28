@@ -1,10 +1,6 @@
 ---
-id: 177
 title: Troubleshooting SQL Server connectivity issues
 date: 2008-04-30T12:17:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=177
-permalink: /2008/04/30/troubleshooting-sql-server-connectivity/
 ---
 Xinwei Hong (MSFT) wrote a great troubleshooting guide on [how to identify and resolve SQL Server connectivity issues](http://blogs.msdn.com/sql_protocols/archive/2008/04/30/steps-to-troubleshoot-connectivity-issues.aspx "Steps to troubleshoot connectivity issues") on the [SQL Protocols blog](http://blogs.msdn.com/sql_protocols/default.aspx "Discussions related to Microsoft's SQL Server Protocols - Netlibs, TDS and SOAP. Topics include connections and SQL connectivity").
 

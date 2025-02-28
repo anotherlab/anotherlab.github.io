@@ -1,10 +1,6 @@
 ---
-id: 392
 title: Quick lesson on how to strip text out using RexEx
 date: 2005-10-25T14:24:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=392
-permalink: /2005/10/25/quick-lesson-on-how-to-strip-text-out/
 ---
 There&#8217;s just something about RegEx that makes my ears bleed. Fortunately other people get it. Here&#8217;s an example of how to filter text out of an expression, courtesy of Jeff Atwood&#8217;s [Coding Horror](http://www.codinghorror.com/blog/archives/000425.html "Excluding matches with Regular Expressions")&#8230;.
 

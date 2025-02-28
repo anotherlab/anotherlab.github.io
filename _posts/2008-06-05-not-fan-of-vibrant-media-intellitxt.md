@@ -1,10 +1,6 @@
 ---
-id: 162
 title: 'Not a fan of Vibrant Media&#8217;s intellitxt popups (and how to get rid of them)'
 date: 2008-06-05T03:58:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=162
-permalink: /2008/06/05/not-fan-of-vibrant-media-intellitxt/
 ---
 I was reading a blog about [pulling an XML feed from my TiVo](http://www.tivoblog.com/archives/2006/03/02/getting-the-tivo-roll-on-windows-to-work/) and I kept being distracted by popup ads over key words in the article.  You&#8217;ve probably seen them on other sites, the words have a double underline and they are not actually links.  
 

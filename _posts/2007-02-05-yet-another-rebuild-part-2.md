@@ -1,10 +1,6 @@
 ---
-id: 263
 title: Yet another rebuild (Part 2)
 date: 2007-02-05T18:33:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=263
-permalink: /2007/02/05/yet-another-rebuild-part-2/
 ---
 I&#8217;m not installing Opera this time.  I&#8217;ve been an [Opera](http://www.opera.com/) bigot for a long time, but it&#8217;s not going on my primary work PC.  I&#8217;m using [FireFox 2](http://en-us.www.mozilla.com/en-US/firefox/central/) instead of Opera.  Why?  Three words: [Google Browser Sync](http://www.google.com/tools/firefox/browsersync/).  The best description of Browser Sync comes from Google:
 

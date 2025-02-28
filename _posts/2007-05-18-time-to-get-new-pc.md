@@ -1,10 +1,6 @@
 ---
-id: 243
 title: Time to get a new PC
 date: 2007-05-18T15:24:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=243
-permalink: /2007/05/18/time-to-get-new-pc/
 ---
 My home PC died last Friday and I&#8217;m waiting for it&#8217;s replacement to show up. I&#8217;ve had the machine for years and it&#8217;s been running 24/7, something was bound to fail. The fan on the video card was starting to lock up and I&#8217;m pretty sure that the main hard drive is toast. It was a decent machine back in 2002, an Athlon XP 2000 with fast memory and drives.
 

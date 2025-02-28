@@ -1,10 +1,6 @@
 ---
-id: 30
 title: Ratcheting up the scroll with my Logitech mouse
 date: 2012-01-24T04:18:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=30
-permalink: /2012/01/24/ratcheting-up-scroll-with-my-logitech/
 ---
 With the PC that gets used by the family, we use a wireless Logitech mouse. It’s the [VX Revolution](http://www.logitech.com/en-us/428/165?softwareid=671&osid=14). It’s a few years old, but it has all the functionality that we need. 
 

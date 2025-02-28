@@ -1,0 +1,18 @@
+---
+id: 378
+title: Bender, Smender. I want Robbie!
+date: 2005-11-09T05:46:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=378
+permalink: /2005/11/09/bender-smender-i-want-robbie_09/
+---
+[<img src="https://i1.wp.com/photos1.blogger.com/blogger/7711/622/400/RobbieSmall.1.jpeg?w=680" border="0" alt=""  />](https://i1.wp.com/photos1.blogger.com/blogger/7711/622/1600/RobbieSmall.1.jpeg)  
+[Forbidden Planet](http://www.imdb.com/title/tt0049223/ "A starship crew goes to investigate the silence of a planet's colony only to find two survivors and a deadly secret that one of them has.") has always been one of my favorite movies. As a kid, I always wanted my very own [&#8220;Robbie the Robot&#8221;](http://www.the-robotman.com/nv_fs.html "Welcome to Altair 4..."). If I start playing the lottery, I can now [order one](http://www.hammacher.com/publish/10921.asp "Please allow 4 to 6 weeks for delivery") from the [Hammacher Schlemmer catalo](http://www.hammacher.com/ "As seen on airline flights")g for the mere sum of $49,999.95. 
+
+Robbie was a cool robot. None of this [wimpy C-3PO](http://en.wikipedia.org/wiki/C-3PO "Wimpy robot") nonsense. Robbie embodied the cutting edge of 1950&#8217;s computer technology. Vacuum tubes glowing, relays clacking, and don&#8217;t forget little metal spinning things on the side of his head. That&#8217;s a man&#8217;s robot.
+
+I know a few people who were deeply affected by that movie. There used to be an audio store just outside of Albany, NY, named &#8220;Altair Audio&#8221;. It was named after the planet Altair IV. It was actually a decent place, they carried the high end stuff and knew how to sell it. And of course, they carried the [Krell](http://en.wikipedia.org/wiki/Krell_Industries_Inc.) line of amplifiers.
+
+And the movie had Leslie Neilsen back when he was known as a dramatic actor. It&#8217;s hard to watch him in serious roles after seeing Airplane and the Naked Gun shows/movies. I actually Leslie Neilsen once. About 15 years agao, I went to Irvine CA to visit my brother. On the way back, I flew out of John Wayne (aka Santa Ana) airport. While I was waiting for my fliight, I saw a production crew fiming a commercial. The commercial featured Leslie Neilsen. He had a break in the filming and I walked up to him and introduced my self. He was very gracious and we chatted for a minute or two. I was probably stammering like an idiot. I was too nervous to get a picture of the two of us. I do have a blurry picture of the back of his head. 
+
+Then a couple of older women came up. They were huge fans of his dramatic roles and they just kept talking and talking. They would ask him a question and then talk about something else before he could answer. And that&#8217;s when the fun began. Mr. Neilsen had a llittle device in his suit jacket pocket that made fart sounds. He would stand there and smile at the women or make small talk, and at the same time, he was pressing the button on the fart sound device. The women didn&#8217;t know how to react. They were trying to get their cues from Leslie, but he played it straight. I wanted to laugh so hard, I was dying. If he was goiing to play it straight, I was going to do so. I wanted to see how far he could take this. After a few minutes, I had to leave to catch my flight. I never knew how far he was able to play the gag, but I still laugh to myself just picturing it in my head.

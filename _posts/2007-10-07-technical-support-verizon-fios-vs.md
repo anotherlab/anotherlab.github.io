@@ -1,10 +1,6 @@
 ---
-id: 228
 title: 'Technical Support: Verizon FiOS vs McAfee'
 date: 2007-10-07T03:04:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=228
-permalink: /2007/10/07/technical-support-verizon-fios-vs/
 ---
 It all started this morning when my wife went to check her email. She said that it wasn&#8217;t working, so I took a quick look. She uses [Thunderbird](http://www.mozilla.com/en-US/thunderbird/) to check her [Verizon FiOS](http://www22.verizon.com/content/ConsumerFios) email account. Thunderbird would connect to the [POP3](http://en.wikipedia.org/wiki/Pop3 "Post Office Protocol version 3 (POP3)") server, incoming.verizon.net, but would time out after a minute or two with the message &#8220;Connection to server incoming.verizon.net timed out&#8221;.
 

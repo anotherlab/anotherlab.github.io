@@ -1,10 +1,6 @@
 ---
-id: 81
 title: When Page Up and Page Down behave oddly in FireFox
 date: 2009-08-29T03:40:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=81
-permalink: /2009/08/29/when-page-up-and-page-down-behave-odd/
 ---
 I was viewing a web page with [Firefox 3.5.2](http://www.mozilla.com/en-US/firefox/personal.html) the other day and I noticed the Page Up and Page Down keys were not behaving the right way.  Instead of scrolling, the page would flash a bit, but nothing really would happen.  I could still scroll with the mouse, but it bugged me.  Bugged me a lot.
 

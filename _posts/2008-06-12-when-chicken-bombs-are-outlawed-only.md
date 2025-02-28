@@ -1,10 +1,6 @@
 ---
-id: 157
 title: When chicken bombs are outlawed, only outlaws will have chicken bombs
 date: 2008-06-12T04:35:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=157
-permalink: /2008/06/12/when-chicken-bombs-are-outlawed-only/
 ---
 From the The Hartford Courant:
 

@@ -1,10 +1,6 @@
 ---
-id: 247
 title: Domain name change
 date: 2007-05-04T03:47:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=247
-permalink: /2007/05/04/domain-name-change/
 ---
 As of today, the address of this blog is now <http://anotherlab.rajapet.net/>.  The old name, [http://anotherlab.blogspot.com](http://anotherlab.blogspot.com/), still works but you&#8217;ll see the new name in your browser&#8217;s address field.   I made the change after signing up for Google Apps.  I wanted to have a personal email address with my own domain and [Google Apps](http://www.google.com/a/help/intl/en/admins/editions_spe.html "Welcome to Google Apps") will do that for free.  I&#8217;ve had rajapet.net parked at [GoDaddy](http://www.godaddy.com/gdshop/default.asp) for the last few years (for a side project that never got off the ground), I figured I might as well use it.
 

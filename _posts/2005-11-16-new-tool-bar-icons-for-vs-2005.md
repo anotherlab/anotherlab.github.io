@@ -1,10 +1,6 @@
 ---
-id: 368
 title: New tool bar icons for VS 2005
 date: 2005-11-16T19:56:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=368
-permalink: /2005/11/16/new-tool-bar-icons-for-vs-2005/
 ---
 I&#8217;m putting this here to I&#8217;ll remember where the bits are
 

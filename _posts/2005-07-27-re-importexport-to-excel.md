@@ -1,10 +1,6 @@
 ---
-id: 423
 title: 'RE: Import/Export to Excel'
 date: 2005-07-27T13:34:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=423
-permalink: /2005/07/27/re-importexport-to-excel/
 ---
 Every now and then, I need to send stuff from SQL to Excel&#8230;.
 

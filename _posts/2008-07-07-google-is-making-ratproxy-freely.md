@@ -1,10 +1,6 @@
 ---
-id: 136
 title: Google is making Ratproxy freely available
 date: 2008-07-07T16:34:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=136
-permalink: /2008/07/07/google-is-making-ratproxy-freely/
 ---
 Google has just released the source code to one of their internal testing tools.  [Ratproxy](http://code.google.com/p/ratproxy/ "ratproxy - passive web application security assessment tool") is a web proxy that is designed to scan for and log potential problems and “security-relevant design patterns” as you (the user) test your site or web service.
 

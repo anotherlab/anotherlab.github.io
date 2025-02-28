@@ -1,10 +1,6 @@
 ---
-id: 42
 title: A Random Vegas Observation
 date: 2011-01-11T04:18:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=42
-permalink: /2011/01/11/random-vegas-observation/
 ---
 I like walking the strip in Vegas at night, it makes for great entertainment.  I just love watching everything going on.  I’m not into gambling, so I just walk around and take pictures of the bright lights.  One of the seedier parts of the Vegas Strip Life are the “Porn Slappers”.  If you have never been to Las Vegas, Porn Slappers are people who stand on the sidewalk and hand out “business cards” for “contractors in the adult service industry”.  Prostitution is illegal in Clark County, this is one of the ways that they advertise their services.
 

@@ -1,10 +1,6 @@
 ---
-id: 735
 title: We had a great TVUG meeting this week
 date: 2014-03-12T23:39:06-05:00
-layout: post
-guid: http://www.rajapet.com/?p=735
-permalink: /2014/03/12/we-had-a-great-tvug-meeting-this-week/
 ---
 <img loading="lazy" title="Peter Lanoie" alt="Peter" src="https://i1.wp.com/www.rajapet.net/photos/i-DNZcF9p/1/M/i-DNZcF9p-M.jpg?resize=600%2C322" width="600" height="322"  />
 

@@ -1,10 +1,6 @@
 ---
-id: 362
 title: RE:How to determine if the current user is an administrator
 date: 2005-11-23T15:10:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=362
-permalink: /2005/11/23/rehow-to-determine-if-current-user-is/
 ---
 This is pretty cool. A lot of the stuff that I write is low level admin type of utilities. As my coding meter moves further away from the Win32 Delphi to C#, I&#8217;ll need stuff like this more often.
 

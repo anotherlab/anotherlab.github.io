@@ -1,10 +1,6 @@
 ---
-id: 55
 title: 'Why are there randomly named folders with mpavdlta.vdm files on my C: drive?'
 date: 2010-08-23T03:55:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=55
-permalink: /2010/08/23/why-are-there-randomly-named-folders/
 ---
 I was looking for a folder on a PC at home (Vista, 32 bit) when I saw a bunch of folders with oddly formed filenames.  There were 13 of them, with names and dates like this:
 

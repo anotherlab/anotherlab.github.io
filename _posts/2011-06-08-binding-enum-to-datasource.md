@@ -1,10 +1,6 @@
 ---
-id: 35
 title: Binding an Enum to a DataSource
 date: 2011-06-08T17:56:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=35
-permalink: /2011/06/08/binding-enum-to-datasource/
 ---
 I had some code for an ASP.Net Webforms app where I need to present to the user a list of options that were define as Enum.  I want to populate a combobox with the enumerated type values and do it from code automatically.  This is the Enum in question
 

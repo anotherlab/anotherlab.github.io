@@ -1,10 +1,6 @@
 ---
-id: 354
 title: Delphi Interview Questions
 date: 2005-12-06T17:43:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=354
-permalink: /2005/12/06/delphi-interview-questions/
 ---
 [Nick Hodges](http://www.lemanix.com/nick/) posted a [list of interview questions for Delphi programmers](http://www.lemanix.com/nick/archive/2005/12/05/3309.aspx). While I usually like his posts, I didn&#8217;t agree with this one. I&#8217;ve been using Delphi since version 2 and I would get a brain freeze if I got all of those questions in an interview. I know them all, but to repeat them back in an interview, that&#8217;s not going to happen. The sole exception would be writing of a function to reverse a string. If I was interviewing someone, I would make them write a function like that. It shows how they think and hopefully what processes they are accustomed to following. 
 

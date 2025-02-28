@@ -1,10 +1,6 @@
 ---
-id: 1208
 title: A little late to the Band Party
 date: 2015-03-22T16:41:17-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1208
-permalink: /2015/03/22/a-little-late-to-the-band-party/
 ---
 <div style="width: 410px" class="wp-caption alignnone">
   <img loading="lazy" class="" src="https://i2.wp.com/www.rajapet.net/Other/2015-Blog/i-LfFs2TG/0/S/MyBand-S.jpg?resize=400%2C232" alt="" width="400" height="232"  />

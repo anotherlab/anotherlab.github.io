@@ -1,10 +1,6 @@
 ---
-id: 256
 title: 'Why I&#8217;m looking forward to &quot;Orcas&quot;'
 date: 2007-03-13T13:47:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=256
-permalink: /2007/03/13/why-i-looking-forward-to/
 ---
 I have stayed away from the Visual Studio betas (I beta test enough stuff already, thank you), but the more I hear about the next version of Visual Studio (code named [&#8220;Orcas&#8221;](http://msdn2.microsoft.com/en-us/vstudio/aa700831.aspx)), the more inclined I am to installing it in a [VMWare](http://www.vmware.com/products/ws/) session.
 

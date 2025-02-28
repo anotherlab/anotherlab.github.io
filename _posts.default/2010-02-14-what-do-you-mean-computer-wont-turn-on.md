@@ -1,0 +1,33 @@
+---
+id: 69
+title: What do you mean the computer wont turn on?
+date: 2010-02-14T04:10:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=69
+permalink: /2010/02/14/what-do-you-mean-computer-wont-turn-on/
+---
+Last Monday, I came home from work and went to check my email on my home PC.  I went into my home office and sat down at the PC.  I turned on the monitors (I run two monitors on my main dev machine at home and at the office) and banged on the shift key to wake things up.
+
+Nothing happened.  That was odd.  My PC was very quiet but you can usually hear a faint hum from the CPU fan.  Not this time.  This machine is on pretty much 24/7.  I leave it on overnight so that my [Windows Home Server](http://www.microsoft.com/windows/products/winfamily/windowshomeserver/default.mspx "Everybody needs Windows Home Server") can back it up.  I also leave it on during the day in case I need to access it from work.
+
+We had come contractors in the house for some home remodeling projects, one of them may have tripped a circuit breaker.  My PC is set not to reboot if the power comes back on after an outage.  If we have power outage from a storm, I don’t want my machine coming back online until I”m sure the power is staying on.
+
+So I pressed the power button.  Nothing happening.  It’s a soft power button, it doesn’t stay pressed in.  I pressed it again.  More nothing.   I have a case where the side panel comes right off.  So I took it off and looked for the motherboard power LED.  Most motherboards have an LED to indicate the power supply is connected.
+
+I could see that the light was on, so it looked like it was getting power.  I pulled the power cord from the PC and double checked all of the connecters.  Nothing appeared to be loose.  I plugged the cable back and tried the power.  Nothing.  I was starting to get a little nervous at this point.  This is my main home PC, I depend on it being in working order.  It’s a few years old, I [had it custom built](http://anotherlab.rajapet.net/2007/05/time-to-get-new-pc.html "Time to get a new PC") using parts that should last a while.
+
+Since none of the obvious suspects appeared to be the root cause, I decided to see if the motherboard manual has a trouble shooting section.  It didn’t.  I went to the ASUS web site and drilled down through the support pages until I found a trouble shooting guide.  <a name="biosreset">One of the things it suggested was to reset the BIOS settings</a> by pulling the battery out and putting it back in upside down.
+
+So I did that and nothing happened.   Usually when a PC wont come on, you usually see something on the screen or hear something from the hard drives.  Even if the machine wont boot, the disk drives will spin up.  That pointed the fickle finger of fate back to the power supply.  There is a power switch on the power supply.  This switch controlled whether or not the power supply provided any juice to the motherboard.
+
+While looking at the motherboard, I flicked the power supply switch back on.  The motherboard light came on and then dimmed a bit.  It’s not supposed to do that.  That meant the power supply was most probably toast.  It was about 11pm at this point, and my nerves were shot.  But it meant I had a shot for getting this machine back online.
+
+When I had this PC built, I had picked an [Antec Sonata II](http://www.legitreviews.com/article/217/1/) case.  There were a couple of reasons.  It’s a very easy case to work with, no sharp edges on the inside.  It’s also designed to be a quiet case, which is nice for a home office.  Instead of 80mm case fan, it has a pair on 120mm fans to push the air through the case.  By being larger, they can run a lower speed and push more air with less noise.  It also came with a decent Antec 450 watt power supply.  Well, in my case, not so decent.  But the power supply could be easily removed.
+
+So I needed a new power supply and I needed it ASAP.  Around here (Albany, NY), the options for locally obtained computer parts are slim.  It’s basically Best Buy.  So I went on their site and looked over their [list of power supplies](http://www.bestbuy.com/site/Computer-Cases-Components/Power-Supplies/abcat0507009.c?id=abcat0507009).  They actually had a decent selection.  I didn’t need anything crazy, but I wanted a good one.  I found one that had good reviews on Best Buy and a few other sites AND was in stock at the local Best Buy shop.  It was a [Corsair 650 watt](http://www.corsair.com/products/tx/default.aspx) model. 
+
+So I dragged my PC into work to have our IT manager take a look.  He basically confirmed my suspicion that the power supply was shot.  At lunch time, I went over to Best Buy and bought the Corsair.  This was a 650TX, which is a non-modular power supply.  A non-modular power supply means that all of the cables are permanently attached.  It had many connectors.  It looked like a mechanical squid.  It would have been nice to get a [modular supply](http://www.corsair.com/products/hx650/default.aspx) and only attach the cables that I actually needed.  Unfortunately, I would have to order that online and I wanted to get this machine running right now.  We swapped the power supplies and my machine booted right up.
+
+So my machine is back up and running.  It had some other issues, but I was able to resolve them.  I’m a bit disappointed with Antec.  That power supply should not have died.  If I were to build a new PC tomorrow, I would not use an Antec power supply.  I would get a current generation Sonata, like the [Sonata Elite](http://www.antec.com/Believe_it/product.php?id=NzIx).  That model does not come with a power supply, you bring your own.  I’ll probably go with another Corsair.
+
+Through out all of this, I was able to stay sane by the knowledge that I had a backup of everything on that machine.  If the power supply had not been the problem, I would have been getting a new PC.  Which is usually a good thing, but not when it’s not on the budget.  A couple of weeks ago, I bought a WIndows Home Server.  I bought a [HP MediaSmart Server](http://www.hp.com/united-states/campaigns/mediasmart-server/).  I got the [EX495](http://www.shopping.hp.com/product/computer/categories/home_servers/1/accessories/FL705AA%2523ABA) and I’ve been very happy with.  It backs up all of the PC’s on my home network every night.  I was able to access the backups from another PC and I could easily access them.  I highly recommend having a WIndows Home Server at home.

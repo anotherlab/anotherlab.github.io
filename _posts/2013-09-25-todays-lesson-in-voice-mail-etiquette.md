@@ -1,10 +1,6 @@
 ---
-id: 6
 title: 'Today&#8217;s lesson in voice mail etiquette'
 date: 2013-09-25T16:34:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=6
-permalink: /2013/09/25/todays-lesson-in-voice-mail-etiquette/
 ---
 I just had a fun adventure in returning a wrong number voice mail. I arrived into work late today and I had a voice mail message time stamped at 10:00am. The message was the following:
 

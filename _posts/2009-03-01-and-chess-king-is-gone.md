@@ -1,10 +1,6 @@
 ---
-id: 99
 title: And the Chess King is gone
 date: 2009-03-01T18:39:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=99
-permalink: /2009/03/01/and-chess-king-is-gone/
 ---
 2009 Me: And by 1995, the last [Chess King](http://en.wikipedia.org/wiki/Chess_King) had closed it’s doors [for good](http://the80srule.blogspot.com/2006/01/and-what-of-chess-king.html).
 

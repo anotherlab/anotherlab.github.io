@@ -1,10 +1,6 @@
 ---
-id: 289
 title: Leave that thread priority alone
 date: 2006-08-31T17:34:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=289
-permalink: /2006/08/31/leave-that-thread-priority-alone/
 ---
 During initial [e-Link](http://www.versatrans.com/products/versatrans_e-link.cfm) web service development, I played around with lowering the priority of a background processing thread.  It didn&#8217;t need to run in real time and having the service handling client requests was more important.  For a background housekeeping thread, I lowered it&#8217;s priority to BelowNormal.
 

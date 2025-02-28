@@ -1,10 +1,6 @@
 ---
-id: 286
 title: 'TiVo Series 3: Looks cool, pretty costly'
 date: 2006-09-02T03:41:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=286
-permalink: /2006/09/02/tivo-series-3-looks-cool-pretty-costly/
 ---
 I&#8217;ve been <strike>drooling over</strike> reading the various [articles](http://www.pvrwire.com/2006/08/31/tivo-series-3-unboxed/) [and](http://www.engadget.com/2006/08/28/tivo-series-3-coming-september-17th-for-799/) [blog](http://www.zatznotfunny.com/2006-01/tivos-series-3-lives/) postings over the soon to be released [TiVo Series 3](http://www.tivo.com/series3hdDvr.asp).
 

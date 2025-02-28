@@ -1,10 +1,6 @@
 ---
-id: 235
 title: Enabling Database Diagrams in SQL Server 2005
 date: 2007-06-14T18:23:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=235
-permalink: /2007/06/14/enabling-database-diagrams-in-sql/
 ---
 I was working on a spec for a new feature in our flagship [application](http://www.versatrans.com/products/versatrans_rp.cfm "VersaTrans RP"), when I wanted to included some simple database diagrams.  I was adding some new schema and I wanted to reference them in the spec.  I figured I would just do the schema changes in a spare database and make a database diagram.
 

@@ -1,10 +1,6 @@
 ---
-id: 125
 title: How to shoot yourself in the foot with regular expressions
 date: 2008-07-25T13:50:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=125
-permalink: /2008/07/25/how-to-shoot-yourself-in-foot-with/
 ---
 I had some Delphi code that is used a user entered text string as a key. After the user entered in the text, my code would force it to uppercase and strip out any characters outside of A-Z and 0-9. This was for a very specialized task and the following Delphi code did the job.
 

@@ -1,10 +1,6 @@
 ---
-id: 301
 title: Tomato funeral
 date: 2006-06-27T18:41:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=301
-permalink: /2006/06/27/tomato-funeral/
 ---
 I saw a reference to “tomato funeral” on a .Net developer’s [blog](http://blogs.msdn.com/oldnewthing/archive/2006/06/27/648495.aspx).  I had to click through the link and ended up somewhere deep in the bowels of Wil Wheaton’s blog….
 

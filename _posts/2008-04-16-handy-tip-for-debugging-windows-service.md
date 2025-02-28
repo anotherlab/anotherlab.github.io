@@ -1,10 +1,6 @@
 ---
-id: 185
 title: Handy tip for debugging a Windows Service
 date: 2008-04-16T20:21:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=185
-permalink: /2008/04/16/handy-tip-for-debugging-windows-service/
 ---
 Debugging a Windows Service is always a pain. You can&#8217;t run a service like a regular application, you have to run it from Windows Service Control Manager (SCM) and then have your debugger attach to the process while it&#8217;s running. The problem is that it&#8217;s difficult to debug problems with the service startup as the debugger can&#8217;t attach to the service in time.
 

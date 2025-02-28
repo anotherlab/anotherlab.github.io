@@ -1,10 +1,6 @@
 ---
-id: 128
 title: 'Live from Daryl Hall&#8217;s House'
 date: 2008-07-22T15:09:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=128
-permalink: /2008/07/22/live-from-daryl-hall-house/
 ---
 <div>
   I came across an interesting site while looking for something else on Wikipedia&#8230;.

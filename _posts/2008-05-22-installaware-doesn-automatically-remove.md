@@ -1,10 +1,6 @@
 ---
-id: 170
 title: 'InstallAware doesn&#8217;t automatically remove assemblies from the GAC at uninstall time'
 date: 2008-05-22T15:43:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=170
-permalink: /2008/05/22/installaware-doesn-automatically-remove/
 ---
 I am updating the installer for one of our products to check for the presence of the SP1 version of the .NET 2.0 Framework, when I noticed something odd.  The assemblies that I was putting into the GAC were still there after an uninstall.  The guys at [InstallAware](http://www.installaware.com/) seem to think that this is not a problem.  They refer to a topic in the MSDN, [Removal of Assemblies from the Global Assembly Cache](http://msdn.microsoft.com/en-us/library/aa371192.aspx), which describes how the Windows Installer is not responsible for the removal of entries in the GAC:
 

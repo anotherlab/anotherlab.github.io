@@ -1,10 +1,6 @@
 ---
-id: 1136
 title: The coolest tool that you are not yet using (Xamarin edition)
 date: 2015-02-20T10:05:05-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1136
-permalink: /2015/02/20/the-coolest-tool-that-you-are-not-yet-using-xamarin-edition/
 ---
 Have you played with Xamarin Sketches yet?  Sketches was announced at Evolve back in October and is available in Xamarin Studio on OS X.  It gives you a real time coding environment and lets you interactively try code out without having to go through a code/compile/deploy cycle.
 

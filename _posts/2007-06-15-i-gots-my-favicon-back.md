@@ -1,10 +1,6 @@
 ---
-id: 234
 title: I gots my favicon back
 date: 2007-06-15T02:30:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=234
-permalink: /2007/06/15/i-gots-my-favicon-back/
 ---
 A while back, this blog was updated to the new Blogger and I was the custom icon that was displayed with my blog.  And of course, I forgot where I had hosted the icon.  I came across an blog posting for [MyFavatar](http://www.myfavatar.com/), a free site for hosting favicons for blogs.  I decided to give it a shot and it&#8217;s one of those things that just plain works.
 

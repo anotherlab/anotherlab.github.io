@@ -1,10 +1,6 @@
 ---
-id: 294
 title: Hidden gotcha in FreeAndNil()
 date: 2006-08-01T04:10:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=294
-permalink: /2006/08/01/hidden-gotcha-in-freeandnil/
 ---
 Time to go memory leak hunting in my service. I&#8217;m using [AutomatedQA](http://www.automatedqa.com/)&#8216;s [AQTime 4](http://www.automatedqa.com/products/aqtime/index.asp), a really cool tool. I&#8217;ve used it&#8217;s profiling features in the past, but not the memory leak detection. Since Delphi frees up your allocated memory when you exit the app and/or service, it&#8217;s too easy to get sloppy and not free up singleton types of objects. Well, that makes it harder to find actual memory leaks as AQTime is going to flag everything that wasn&#8217;t explicitly freed up as a leak. And that will lower the [s/n](http://mm.iit.uni-miskolc.hu/Data/texts/hackers_jargon/signal-to-noiseratio.HTML) ratio to make the too to hard to use. 
 

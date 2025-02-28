@@ -1,10 +1,6 @@
 ---
-id: 370
 title: Building ASP.NET 2 projects
 date: 2005-11-15T16:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=370
-permalink: /2005/11/15/building-aspnet-2-projects/
 ---
 On K. Scott Allen&#8217;s [blog](http://odetocode.com/Blogs/scott/ "Ode to Code"), you can find a really good description of how the build process for ASP.NET projects has changed from 1.0/1.1 to 2.0.
 

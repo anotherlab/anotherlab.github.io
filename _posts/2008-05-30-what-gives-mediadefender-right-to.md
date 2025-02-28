@@ -1,10 +1,6 @@
 ---
-id: 164
 title: What gives MediaDefender the right to launch a DoS attack against Revision3
 date: 2008-05-30T03:01:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=164
-permalink: /2008/05/30/what-gives-mediadefender-right-to/
 ---
 I just started reading Molly Wood&#8217;s [blog](http://cultureofownership.org/?p=42 "The Culture of Ownership: It's time to put MediaDefender out of business") and that&#8217;s where I first heard about the Denial of Service (DoS) attack that Revision3 suffered from over the Memorial Day weekend.  Jim Louderback, the CEO of Revision3, wrote a detailed explanation of what happened and who was responsible for the attack on a Revision3 blog [post](http://revision3.com/wp-trackback.php?p=153).
 

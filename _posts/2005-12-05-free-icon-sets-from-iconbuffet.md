@@ -1,10 +1,6 @@
 ---
-id: 355
 title: Free icon sets from IconBuffet
 date: 2005-12-05T16:43:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=355
-permalink: /2005/12/05/free-icon-sets-from-iconbuffet/
 ---
 Thanks to a [tip posted](http://forevergeek.com/news/iconbuffet_now_offers_free_icon_packs.php) on Forevergeek.com, I came across a site that offers free commercial quality icon sets.  [IconBuffet.com](http://www.iconbuffet.com/) sells a wide variety of icon sets for app and web work.  What they also offer are free sets.  You register with them and once a month they send you a free set of icons.  To raise it up a notch, they will send different people different sets each month.  You are allowed to send each set up to 5 times to other people through IconBuffet’s web site.  They call it “Free Delivery”.
 

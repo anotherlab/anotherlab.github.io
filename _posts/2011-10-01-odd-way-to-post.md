@@ -1,10 +1,6 @@
 ---
-id: 33
 title: An odd way to post
 date: 2011-10-01T00:20:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=33
-permalink: /2011/10/01/odd-way-to-post/
 ---
 This short little post was composed with the Blogger iPhone app. It&#8217;s running on my iPad and I&#8217;m using the <a target="_blank" href="http://www.shopping.hp.com/webapp/shopping/product_detail.do?product_code=FB344AA%23AC3&#038;aoid=44661&#038;ci_sku=FB344AA#AC3&#038;ci_gpa=pla&#038;ci_kw=%7Bkeyword%7D">BlueTooth keyboard</a> that HP made for the ill-fated TouchPad.
 

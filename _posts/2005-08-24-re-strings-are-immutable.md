@@ -1,10 +1,6 @@
 ---
-id: 418
 title: 'RE: Strings are immutable'
 date: 2005-08-24T13:47:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=418
-permalink: /2005/08/24/re-strings-are-immutable/
 ---
 Sahil has a good post that explains why you should use StringBuilder to concatenate strings instead of just doing &#8220;string a&#8221; + &#8220;string b&#8221;
 

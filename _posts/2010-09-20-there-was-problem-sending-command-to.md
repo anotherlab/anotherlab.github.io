@@ -1,10 +1,6 @@
 ---
-id: 48
 title: There was a problem sending the command to the program
 date: 2010-09-20T17:26:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=48
-permalink: /2010/09/20/there-was-problem-sending-command-to/
 ---
 I hate error messages like that. It’s both detailed and vague at the same. What command was being sent and what was the problem? Let me back up a few steps. A family member bought a new PC running Windows 7, for his home office. He works from home and accesses his work email account through Internet Explorer.  His email based on [Domino Web Access](http://www-947.ibm.com/support/entry/portal/Overview/Software/Lotus/Lotus_Domino_Web_Access), which I’m assuming is the web bit for Lotus Notes email.
 

@@ -1,10 +1,6 @@
 ---
-id: 153
 title: What’s the deal with the idiots wearing Bluetooth earpieces at a dance recital?
 date: 2008-06-16T14:24:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=153
-permalink: /2008/06/16/whats-deal-with-idiots-wearing/
 ---
 </p> 
 

@@ -1,10 +1,6 @@
 ---
-id: 62
 title: Enjoy some Bar-B-Que for a good cause
 date: 2010-06-24T20:25:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=62
-permalink: /2010/06/24/enjoy-some-bar-b-que-for-good-cause/
 ---
 There’s a flyer floating around in the office and it’s worth sharing the details with the rest of the world (the part of the world that lives near Latham, NY).  [Brooks Bar-B-Q](http://www.brooksbbq.com/) of Oneonta will be participating in a fund raiser for [The Coins Foundation](http://www.coinsfoundation.org/) on July 20, 2010.  They will be selling dinners to go, with the proceeds going to help build homes, schools, and hospitals in areas where they are needed the most.
 

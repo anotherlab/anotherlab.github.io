@@ -1,10 +1,6 @@
 ---
-id: 660
 title: And then I stuck shipping tape on the back of the SIM card
 date: 2014-02-22T01:45:57-05:00
-layout: post
-guid: http://www.rajapet.com/?p=660
-permalink: /2014/02/22/and-then-i-stuck-shipping-tape-on-the-back-of-the-sim-card/
 ---
 I just did a simple hardware hack to my [HTC 8X](http://www.htc.com/www/smartphones/htc-wp-8x/) phone.  I have been having random problems where the phone loses it&#8217;s ability to make calls or to send SMS messages.  And it will do a spontaneous reboot every once in a while.  So I took the SIM card out and stuck some tape to the back of it and put it back in.
 

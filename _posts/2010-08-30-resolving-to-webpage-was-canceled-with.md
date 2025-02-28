@@ -1,10 +1,6 @@
 ---
-id: 50
 title: 'Resolving &quot;Navigation to the webpage was canceled&quot; with Compiled HTML Help files (.chm)'
 date: 2010-08-30T17:24:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=50
-permalink: /2010/08/30/resolving-to-webpage-was-canceled-with/
 ---
 I&#8217;m working with a [SDK](http://en.wikipedia.org/wiki/Software_development_kit) from a vendor that we have partnered with.  They provide the SDK as a download that I grabbed over FTP with Internet Explorer.  The SDK has a .NET assembly to use, some sample code, and documentation in a [.chm help file](http://en.wikipedia.org/wiki/Microsoft_Compiled_HTML_Help "Microsoft Compiled HTML Help").  It&#8217;s all neatly bundled in a .zip files, nothing too esoteric.
 

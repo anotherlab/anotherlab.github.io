@@ -1,10 +1,6 @@
 ---
-id: 498
 title: Build numbers
 date: 2005-04-15T12:56:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=498
-permalink: /2005/04/15/build-numbers/
 ---
 I can never figure out the naming scheme for version numbers. Is it Major, Minor, Build, Release? Or is it Major, Minor, Release, Build? Borland calls the last field &#8220;Build&#8221;, Microsoft calls the last field &#8220;Release&#8221; (except for the times where it [doesn&#8217;t](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfsystemdiagnosticsfileversioninfoclassfileprivateparttopic.asp)).
 

@@ -1,8 +1,6 @@
 ---
 title: Using console jQuery to scrape lists from Apple's developer portal
 date: 2017-03-16
-collect_box_size:
-  - collect-square
 categories:
   - Annoyances
   - Apple

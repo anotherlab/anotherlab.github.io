@@ -1,10 +1,6 @@
 ---
-id: 43
 title: Scrolling a ListView’s EditItemTemplate with some help from jQuery
 date: 2011-01-05T19:30:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=43
-permalink: /2011/01/05/scrolling-listviews-edititemtemplate/
 ---
 I’ve been using ASP.Net’s [ListView](http://msdn.microsoft.com/en-us/library/bb398790.aspx "The ASP.NET ListView control enables you to bind to data items that are returned from a data source and display them. You can display data in pages. You can display items individually, or you can group them.") control and I cam across a little quirk while setting up the editing bits.  I have an [EditItemTemplate](http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.listview.edititemtemplate.aspx) defined that has some input controls and a couple of nested ListViews.  It’s a nice way of defining a hierarchal editing view.  If you haven’t used a ListView before, [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml) have a [great tutorial](http://www.4guysfromrolla.com/articles/122607-1.aspx "Using ASP.NET 3.5's ListView and DataPager Controls: Displaying Data with the ListView").
 

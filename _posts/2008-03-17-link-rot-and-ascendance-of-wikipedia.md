@@ -1,10 +1,6 @@
 ---
-id: 198
 title: Link rot and the ascendance of Wikipedia
 date: 2008-03-17T16:53:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=198
-permalink: /2008/03/17/link-rot-and-ascendance-of-wikipedia/
 ---
 As usual, Steve Tibbets hits the nail directly on the head with his post about [link rot and Wikipedia](http://blog.stevex.net/index.php/2008/03/17/linking-policy-and-wikipedia/).  I would have to say that the domain that I link to the most would have to be Wikipedia.  Most of the time I dot it because it&#8217;s convenient, but [link rot](http://en.wikipedia.org/wiki/Link_rot "Link rot is the process by which links on a website gradually become irrelevant or broken as time goes on, because websites that they link to disappear, change their content or redirect to new locations.") (there!  I just did it) happens a lot.  
 

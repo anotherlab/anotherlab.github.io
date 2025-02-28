@@ -1,10 +1,6 @@
 ---
-id: 321
 title: Mini-primer on handling exceptions in .NET
 date: 2006-02-14T14:38:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=321
-permalink: /2006/02/14/mini-primer-on-handling-exceptions-in/
 ---
 There&#8217;s a lot of good technique in a short article. I wont repeat it all here, just a taste&#8230;
 

@@ -1,10 +1,6 @@
 ---
-id: 297
 title: Migrating to Delphi 2006
 date: 2006-07-14T20:01:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=297
-permalink: /2006/07/14/migrating-to-delphi-2006/
 ---
 I&#8217;ve been working on migrating our Delphi 5 code to [Delphi 2006](http://www.borland.com/us/products/delphi/index.html).  For the most part it&#8217;s been pretty straight forward, the [fun part](http://www.fotosearch.com/IGS016/is150-149/) has been dealing with the assortment of 3rd party packages.  Some of them required new versions, others were not available and I had to migrate them myself.  I&#8217;ll save my [DevExpress](http://www.devexpress.com/) experiences for another post&#8230;
 

@@ -1,10 +1,6 @@
 ---
-id: 184
 title: 'There&#8217;s no privacy with infant video monitors'
 date: 2008-04-18T02:28:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=184
-permalink: /2008/04/18/there-no-privacy-with-infant-video/
 ---
 We still have a [video baby monitor](http://www.summerinfant.com/videomonitors.htm) on our youngest, Laura.  She&#8217;s 5, but we never got around to taking it down.  At bedtime, Laura and her older sister Kathryn will perform for each other in front of the camera while the other one is watching the monitor.
 

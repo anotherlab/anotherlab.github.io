@@ -1,10 +1,6 @@
 ---
-id: 842
 title: 'Been reading &#8220;iOS Development with Xamarin Cookbook&#8221;'
 date: 2014-06-09T08:36:21-05:00
-layout: post
-guid: http://www.rajapet.com/?p=842
-permalink: /2014/06/09/been-reading-ios-development-with-xamarin-cookbook/
 ---
 <div style="width: 250px" class="wp-caption alignnone">
   <a href="http://bit.ly/1tnxmGX"><img loading="lazy" src="https://i2.wp.com/www.rajapet.net/photos/i-4FTpLnQ/0/S/i-4FTpLnQ-S.jpg?resize=240%2C300" alt="iOS Development with Xamarin Cookbook" width="240" height="300"  /></a>

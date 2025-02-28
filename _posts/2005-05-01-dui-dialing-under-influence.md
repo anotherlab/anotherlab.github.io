@@ -1,10 +1,6 @@
 ---
-id: 472
 title: 'DUI &#8211; Dialing under the influence'
 date: 2005-05-01T01:19:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=472
-permalink: /2005/05/01/dui-dialing-under-influence/
 ---
 [Virgin Mobile Australia adds 333 prefix to prevent drunk dialing.](http://www.virginmobile.com.au/dui/)
 

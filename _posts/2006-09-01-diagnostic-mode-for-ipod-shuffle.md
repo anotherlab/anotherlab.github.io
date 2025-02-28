@@ -1,10 +1,6 @@
 ---
-id: 287
 title: Diagnostic mode for Ipod Shuffle
 date: 2006-09-01T01:23:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=287
-permalink: /2006/09/01/diagnostic-mode-for-ipod-shuffle/
 ---
 ### Shuffle Lights
 

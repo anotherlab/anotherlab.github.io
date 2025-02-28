@@ -1,10 +1,6 @@
 ---
-id: 142
 title: Resizing the “Bookmark this page” dialog in Firefox 3
 date: 2008-06-27T20:38:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=142
-permalink: /2008/06/27/resizing-bookmark-this-page-dialog-in/
 ---
 </p> </p> 
 

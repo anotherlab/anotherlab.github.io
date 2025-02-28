@@ -1,10 +1,6 @@
 ---
-id: 88
 title: When installing apps in a Terminal Server or Citrix environment
 date: 2009-07-27T16:02:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=88
-permalink: /2009/07/27/when-installing-apps-in-terminal-server/
 ---
 When you install an application on a Windows Server running Terminal Services or a Citrix server, the user should go into Add/Remove programs and run the installer through “Add New Programs”.  It sounds clunky, but there is a reason for this.  Microsoft virtualizes the location of the Windows directory under terminal services.  Each user has a private copy of the Windows folder.  This allows applications that assume they are the only user to see only their own copy of the folder.
 

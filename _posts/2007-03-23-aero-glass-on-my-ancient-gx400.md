@@ -1,10 +1,6 @@
 ---
-id: 251
 title: Aero Glass on my ancient GX400
 date: 2007-03-23T17:48:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=251
-permalink: /2007/03/23/aero-glass-on-my-ancient-gx400/
 ---
 My latest video card arrived this morning and installing it was a much better experience than [what I went through with the Diamond card](http://anotherlab.blogspot.com/2007/03/i-not-impressed-with-diamond-multimedia.html "I'm not impressed with Diamond Multimedia support"). I have a Dell Optiplex GX400 that is about 5 years old. I installed Vista Ultimate on it so I could test apps under Aero Glass. That had ruled out VMWare. The GX400 has 5 empty PCI slots and an AGP4x slot. Since most new cards are PCI-Express or AGP8x, I tried a PCI based card. That experiment failed and I ordered a [BFG GeForce 7600GS OC](http://www.bfgtech.com/7600GS_512.html "BFG product page"). It claimed to work with just about any AGP slot.
 

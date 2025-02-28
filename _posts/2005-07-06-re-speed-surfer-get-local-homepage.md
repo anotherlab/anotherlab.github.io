@@ -1,10 +1,6 @@
 ---
-id: 430
 title: 'RE: Speed Surfer? Get a &#8216;Local&#8217; Homepage'
 date: 2005-07-06T13:41:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=430
-permalink: /2005/07/06/re-speed-surfer-get-local-homepage/
 ---
 This is a clever idea, I think I&#8217;m going to do this on the home PC&#8217;s. I&#8217;ll add links to email and of course, Amazon. I&#8217;m always curious about the status of the wireless [bridges](http://www.smc.com/index.cfm?event=viewLargeImage&localeCode=EN_USA&pid=586 "SMC2870 802.11g bridge") that I plugged the Tivo&#8217;s into, I can add links to them as well.
 

@@ -1,10 +1,6 @@
 ---
-id: 171
 title: Showing installed app versions with BgInfo
 date: 2008-05-14T14:54:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=171
-permalink: /2008/05/14/showing-installed-app-versions-with/
 ---
 I love it when you can use one cool tool to enhance another cool tool.  Duncan Epping [posted an English translation](http://www.yellow-bricks.com/2008/04/29/show-vmware-tools-version-with-bginfo/ "Show VMware Tools version with BGInfo") of a Arne Fokkema [post](http://ictfreak.wordpress.com/2008/04/28/vmware-show-vmware-tools-version-with-bginfo/) about how to use BgInfo to display the version number of VMware Tools that has been installed inside a VMWare virtual machine.
 

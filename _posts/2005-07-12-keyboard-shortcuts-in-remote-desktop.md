@@ -1,10 +1,6 @@
 ---
-id: 427
 title: Keyboard Shortcuts in a Remote Desktop Session
 date: 2005-07-12T14:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=427
-permalink: /2005/07/12/keyboard-shortcuts-in-remote-desktop/
 ---
 From the [Windows XP Resource Kit](http://www.microsoft.com/resources/documentation/Windows/XP/all/reskit/en-us/Default.asp?url=/resources/documentation/Windows/XP/all/reskit/en-us/pree_rem_qsva.asp "Windows XP Resource Kit - Remote Desktop ")
 

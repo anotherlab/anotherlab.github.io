@@ -1,10 +1,6 @@
 ---
-id: 337
 title: How to replace a installed buggy .MSI file with a fixed one.
 date: 2005-12-27T15:28:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=337
-permalink: /2005/12/27/how-to-replace-installed-buggy-msi/
 ---
 Aaron listed a couple of ways of removing a buggy .msi file that was installed, but would not uninstall. This is why I test all of my .msi files with VMWare. Being able to rollback changes to a virtual machine is priceless.
 

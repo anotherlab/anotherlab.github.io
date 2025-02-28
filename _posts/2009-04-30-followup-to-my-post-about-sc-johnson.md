@@ -1,10 +1,6 @@
 ---
-id: 93
 title: A followup to my post about SC Johnson not manning a customer hotline.
 date: 2009-04-30T17:29:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=93
-permalink: /2009/04/30/followup-to-my-post-about-sc-johnson/
 ---
 A few days ago, I posted about [my experience trying to get a hold of customer support after my dog ate some ant bait](http://anotherlab.rajapet.net/2009/04/if-you-sell-poison-i-think-your.html).  SC Johnson has a contract with a health and safety clearinghouse that is manned 24/7.  I have spoken to those people and they are very professional.  Their phone number is not listed on the ant traps.  The number that is listed, goes directly to SC Johnson.  When I called that number, I got a recorded messaged that they were closed and to call back Monday through Friday, between the hours of 8am and 6pm (CST).  That’s all I remembered hearing when I called that number.  When I called SC Johnson on Tuesday, they insisted that the emergency contact number was on the message.  I don’t remember hearing that at all.
 

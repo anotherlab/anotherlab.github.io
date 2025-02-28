@@ -1,10 +1,6 @@
 ---
-id: 283
 title: THIS IS YOUR REPLACEMENT TAG
 date: 2006-09-08T01:11:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=283
-permalink: /2006/09/08/this-is-your-replacement-tag/
 ---
 I&#8217;m on my third [E-ZPass](http://www.e-zpassny.com/static/info/index.shtml) tag.  The battery in the first one died after about 5 years.  I have had the second one for another 5 years.  This time, the E-ZPass people sent me a new one before the current one died.
 

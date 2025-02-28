@@ -1,10 +1,6 @@
 ---
-id: 493
 title: Hit me with your rhythm stick
 date: 2005-04-20T04:13:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=493
-permalink: /2005/04/20/hit-me-with-your-rhythm-stick/
 ---
 [<img alt="Ian Dury, NYC 1978" src="https://i2.wp.com/img244.echo.cx/img244/4243/r308iandury19782kp.jpg?w=245" border="0"  />](http://www.iandury.co.uk/biogfrm.html)  
 __  

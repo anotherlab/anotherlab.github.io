@@ -1,10 +1,6 @@
 ---
-id: 225
 title: Digital versus paper books
 date: 2007-11-20T22:04:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=225
-permalink: /2007/11/20/digital-versus-paper-books/
 ---
 [Charles Petzold](http://en.wikipedia.org/wiki/Charles_Petzold) has a good point about the [digital versus paper books debate](http://www.charlespetzold.com/blog/2007/11/201225.html).  Digital books are great when you first get them, but how are you going to read them 25 years from now?  How many people reading this have computer gadgets from 1982 that still work?  Can you read the disk from 1982 circa IBM PC?  I know I don&#8217;t have any 5.25 in floppy drives anymore.
 

@@ -1,10 +1,6 @@
 ---
-id: 361
 title: 'Fun with the MSDE: installing'
 date: 2005-11-25T16:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=361
-permalink: /2005/11/25/fun-with-msde-installing/
 ---
 Dana Epp has posted a [request](http://silverstr.ufies.org/blog/archives/000880.html "Any MSDE Gurus Out There?") for information about the MSDE on his blog. He wants to install an app that that requires a named instance of the MSDE and wants to include the smallest footprint of the MSDE installer bits. On machines that already have the MSDE, he wants to install an additional named instance and wanted to avoid including the MSDE bits since it was already installed. With SQL Server named instances, you can&#8217;t do that. Adding a second instance isn&#8217;t a reconfiguration of the existing install of SQL Server/MSDE/Express, it&#8217;s a completely separate install. It&#8217;s considered to be a separate application by the installer and the OS.
 

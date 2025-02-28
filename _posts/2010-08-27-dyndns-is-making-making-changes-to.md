@@ -1,10 +1,6 @@
 ---
-id: 52
 title: DynDNS is making making changes to their free Dynamic DNS accounts
 date: 2010-08-27T20:51:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=52
-permalink: /2010/08/27/dyndns-is-making-making-changes-to/
 ---
 I use the free version of the dynamic DNS names provided by [DynDNS](http://www.dyndns.com/ "DynDNS.com - Free Domain Name, Managed DNS, Email Services").  It gives me an easy way to connect to my home VPN.  They provide a domain name, usually for a home network.  Since most ISP’s will change the IP addresses handed out to home users, you need to periodically update the IP address associated with your domain name.
 

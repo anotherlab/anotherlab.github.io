@@ -1,10 +1,6 @@
 ---
-id: 576
 title: 'When Windows Phone Mail can&#8217;t display an image attachment'
 date: 2013-12-21T19:54:48-05:00
-layout: post
-guid: http://www.rajapet.com/?p=576
-permalink: /2013/12/21/when-windows-phone-mail-cant-display-an-image-attachment/
 ---
 I came across a strange little problem [reported in answers.microsoft.com with Windows Phone 8 Mail](http://answers.microsoft.com/en-us/winphone/forum/wp8-wpcamera/unable-to-download-jpg-attachments-from-emails/69d1bb37-d2e5-40dc-952c-107b04557eac). It wasn&#8217;t downloading  jpg images.
 

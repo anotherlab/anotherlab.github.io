@@ -1,10 +1,6 @@
 ---
-id: 810
 title: Using the Windows Phone 8.1 Start Background to personalize your phone
 date: 2014-04-16T09:50:19-05:00
-layout: post
-guid: http://www.rajapet.com/?p=810
-permalink: /2014/04/16/using-the-windows-phone-8-1-start-background-to-personalize-your-phone/
 ---
 A great way to personalize your [Windows Phone 8.1](http://www.windowsphone.com/en-us/features-8-1) device is a custom start background.  You are no longer limited to using the 20 or so accent colors as the default tile color.  You can now select an image file to use as the background.
 

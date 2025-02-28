@@ -1,10 +1,6 @@
 ---
-id: 446
 title: 'Slip &#8216;N&#8217; Slide'
 date: 2005-06-06T14:54:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=446
-permalink: /2005/06/06/slip-n-slide/
 ---
 It was pretty hot Sunday afternoon. While Laura was napping, Kathryn and I went down to ToysRUs and pciked up some backyard toys. We grabbed a [Wham-O](http://www.wham-o.com/) [Slip &#8216;N&#8217; Slide](http://www.amazon.com/exec/obidos/tg/detail/-/B00003CYPS/qid%3D1118069522) and a pair of pump action squirt guns.
 

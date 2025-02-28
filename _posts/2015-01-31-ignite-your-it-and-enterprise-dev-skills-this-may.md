@@ -1,10 +1,6 @@
 ---
-id: 1084
 title: Ignite your IT and Enterprise Dev skills this May
 date: 2015-01-31T13:01:51-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1084
-permalink: /2015/01/31/ignite-your-it-and-enterprise-dev-skills-this-may/
 ---
 <div style="width: 610px" class="wp-caption alignnone">
   <a href="http://ignite.microsoft.com/"><img loading="lazy" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-kG77pFp/0/L/Msf-Ignite-640x360_0001_2-L.jpg?resize=600%2C338" alt="" width="600" height="338"  /></a>

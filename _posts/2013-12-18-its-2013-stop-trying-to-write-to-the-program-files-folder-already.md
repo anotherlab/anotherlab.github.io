@@ -1,10 +1,6 @@
 ---
-id: 565
 title: 'It&#8217;s 2013, stop trying to write to the Program Files folder already'
 date: 2013-12-18T00:12:31-05:00
-layout: post
-guid: http://www.rajapet.com/?p=565
-permalink: /2013/12/18/its-2013-stop-trying-to-write-to-the-program-files-folder-already/
 ---
 <div style="width: 235px" class="wp-caption alignleft">
   <a href="http://ttl4.sunburst.com/"><img loading="lazy" class=" " alt="Type To Learn" src="https://i2.wp.com/www.rajapet.net/photos/i-Hxz98hj/0/S/i-Hxz98hj-S.jpg?resize=225%2C180" width="225" height="180"  /></a>

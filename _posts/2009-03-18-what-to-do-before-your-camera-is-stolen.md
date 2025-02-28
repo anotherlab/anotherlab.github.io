@@ -1,10 +1,6 @@
 ---
-id: 97
 title: What to do before your camera is stolen
 date: 2009-03-18T17:10:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=97
-permalink: /2009/03/18/what-to-do-before-your-camera-is-stolen/
 ---
 I just read about a guy in Poland who bought a camera on an on-line auction and it came with a memory card with someone’s travel pictures. He figured that the camera had been or lost or stolen. Based on a picture, he guessed the owner was from Australia.  So he registered as a new member on a [Australian photography web forum](http://www.photoforum.com.au/) and solicited the members for help.  
 

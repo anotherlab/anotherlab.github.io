@@ -1,10 +1,6 @@
 ---
-id: 982
 title: Looking back on Xamarin Evolve 2014
 date: 2014-10-15T12:22:34-05:00
-layout: post
-guid: http://www.rajapet.com/?p=982
-permalink: /2014/10/15/looking-back-on-xamarin-evolve-2014/
 ---
 Xamarin&#8217;s [Evolve 2014](https://evolve.xamarin.com/) conference was a great experience.  I attended it last week in Atlanta and while you see a lot of the cool new features from the live stream, the personal interactions made attending much more valuable.
 

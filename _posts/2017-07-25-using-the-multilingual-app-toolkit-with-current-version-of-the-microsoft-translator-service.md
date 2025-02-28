@@ -1,8 +1,6 @@
 ---
 title: Using the Multilingual App Toolkit with the Microsoft Translator service from Azure's Cognitive Services
 date: 2017-07-25
-collect_box_size:
-  - collect-square
 categories:
   - Localization
 ---

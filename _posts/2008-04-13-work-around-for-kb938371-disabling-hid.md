@@ -1,10 +1,6 @@
 ---
-id: 188
 title: Work around for KB938371 disabling HID-compliant input devices
 date: 2008-04-13T20:23:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=188
-permalink: /2008/04/13/work-around-for-kb938371-disabling-hid/
 ---
 After a few days of non-working mice, someone found a work around for KB938371. As I noted [here](http://anotherlab.rajapet.net/2008/04/vista-update-kb938371-disabled-my-mouse.html "Vista update KB938371 disabled my mouse") and [here](http://anotherlab.rajapet.net/2008/04/kb-938371-woes-continue.html "KB 938371 woes continue"), [Vista Update 938371](http://support.microsoft.com/kb/938371) disabled two the three mice I have I on my main home machine. Here&#8217;s the work around that actually worked for me:
 

@@ -1,0 +1,20 @@
+---
+id: 190
+title: Vista update KB938371 disabled my mouse
+date: 2008-04-10T14:14:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=190
+permalink: /2008/04/10/vista-update-kb938371-disabled-my-mouse/
+---
+Windows Update just pushed down an update, [KB938371](http://support.microsoft.com/kb/938371 "A software update is available for the Windows Vista installation components") on to my main home PC, as a prerequisite for [Vista Service Pack 1](http://www.microsoft.com/windows/products/windowsvista/sp1.mspx).  After that update was installed and Vista rebooted, I lost all mouse functionality.  The only way I could get mouse functionality back was to run System Restore and restore the OS to the point to just before 938371 was installed.  For me, selecting the recommended restore point was as far back as I needed to go.
+
+I have installed 938371 twice now by itself, each time I lose mouse function.  My machine was custom built for Visa Home Premium, but it uses a pretty standard motherboard, an [ASUS M2N-SLI Deluxe](http://www.asus.com/products.aspx?l1=3&l2=101&l3=301&model=1160&modelmenu=1), which uses the NVidia NForce chipset.  I have a [Logitech MX™700](http://www.logitech.com/index.cfm/428/909 "MX™700 Cordless Optical Mouse"), which uses the Vista input drivers and mouse that comes with the [Wacom Bamboo Fun tablet](http://www.wacom.com/bambootablet/bamboofun.cfm), which has it&#8217;s own Vista drivers.  I also have Dell USB mouse which I use when I&#8217;m recharging the batteries in the MX700.  None of them worked after 938371 was installed.  I think it would be a fair assumption that other features are broken, but I didn&#8217;t bother to check.  The machine was unusable without a working pointing device, I concentrated my efforts on rolling back 938371.
+
+938371 is an non-removable update.  It wont show up in the &#8220;Uninstall or change a program&#8221; list under &#8220;Control Panel\Programs and Features&#8221;.  System Restore is the only way that I know to yank it out.  I don&#8217;t think I&#8217;m only one having this problem.  I <a title="nV News Forums > Software Forums > Microsoft Windows XP and Vista > KB 938371 disables mouse&#8221; href=&#8221;http://www.nvnews.net/vbulletin/showthread.php?p=1623021&#8243;>posted a message</a> about this on an NVidia enthusiasts board and saw an immediate [reply](http://anotherlab.rajapet.net/2008/04/fun-with-coinitialize.html?showComment=1207831860000#c2197343771102998845) on this blog as a comment to a non-related post.
+
+Service Pack 1 for Vista is out now and it requires 938371 as a  prerequisite.  Which means I can&#8217;t install SP1 without running a mouse killing update.  I&#8217;m trying to decide if I can install SP1 and hope for the best.  If it fails, I&#8217;m without a pointing device and makes Windows somewhat less than usuable.  I would prefer to resolve 938371 before installing anything else.  The advantage of trying SP1 would be that Microsoft is providing free support for SP1 and this is definitely a SP1 support issue.
+
+This could be the final straw that pushes me back Windows XP.  After using Vista for nearly a year, I&#8217;m tempted to repave with XP.  I have another Vista box at home that the family shares.  It&#8217;s a Dell and while it has less functionality (my box has RAID 5), it has had any of the weird Vista problems that this machine has had.  I do wonder how many other people have had their mice disabled by this update.  If we can discover what we have in common, we get closer to determining what the root cause is and what fix there may be.
+
+[Updated on 4/17/08]  
+If this is your first visit to my blog, please read this [post](http://anotherlab.rajapet.net/2008/04/work-around-for-kb938371-disabling-hid.html "Work around for KB938371 disabling HID-compliant input devices") for a work around that may work for you.

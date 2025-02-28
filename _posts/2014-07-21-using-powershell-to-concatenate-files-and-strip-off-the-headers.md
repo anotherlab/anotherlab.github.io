@@ -1,10 +1,6 @@
 ---
-id: 875
 title: Using Powershell to concatenate files and strip off the headers
 date: 2014-07-21T11:52:32-05:00
-layout: post
-guid: http://www.rajapet.com/?p=875
-permalink: /2014/07/21/using-powershell-to-concatenate-files-and-strip-off-the-headers/
 ---
 <div style="background-color:#fff;display:inline-block;font-family:'Helvetica Neue',Arial,sans-serif;color:#a7a7a7;font-size:11px;width:100%;max-width:478px;min-width:300px;">
   <div style="overflow:hidden;position:relative;height:0;padding:75.104603% 0 49px 0;width:100%;">

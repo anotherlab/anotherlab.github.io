@@ -1,8 +1,6 @@
 ---
 title: Debugging devices without displays or debuggers
 date: 2017-05-19
-collect_box_size:
-  - collect-square
 categories:
   - Coding
 tags:

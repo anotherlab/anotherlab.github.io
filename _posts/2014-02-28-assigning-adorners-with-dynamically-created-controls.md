@@ -1,10 +1,6 @@
 ---
-id: 676
 title: Assigning adorners with dynamically created controls
 date: 2014-02-28T13:02:43-05:00
-layout: post
-guid: http://www.rajapet.com/?p=676
-permalink: /2014/02/28/assigning-adorners-with-dynamically-created-controls/
 ---
 I was trying to add an [adorner](http://msdn.microsoft.com/en-us/library/ms743737(v=vs.110).aspx) to the WPF TextBox to add a cue banner.  I was creating the controls at runtime and I am relatively clueless with WPF.  I wanted my text boxes to show a grayed out text prompt in the edit fields when they are empty.  In HTML5, that would be the [placeholder](http://www.w3schools.com/tags/att_input_placeholder.asp) attribute.  In Win32, it&#8217;s called a [cue banner](http://msdn.microsoft.com/en-us/library/windows/desktop/bb761639(v=vs.85).aspx).
 

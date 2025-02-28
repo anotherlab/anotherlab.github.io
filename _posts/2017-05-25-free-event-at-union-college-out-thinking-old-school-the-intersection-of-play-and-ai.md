@@ -1,8 +1,6 @@
 ---
 title: "Free event at Union College: Out-thinking Old School: the Intersection of Play and AI"
 date: 2017-05-25
-collect_box_size:
-  - collect-square
 categories:
   - Uncategorized
 ---

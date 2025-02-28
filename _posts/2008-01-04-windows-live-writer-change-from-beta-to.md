@@ -1,10 +1,6 @@
 ---
-id: 213
 title: Windows Live Writer change from beta to 1.0 that affects plugin development
 date: 2008-01-04T04:38:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=213
-permalink: /2008/01/04/windows-live-writer-change-from-beta-to/
 ---
 I&#8217;ve been working on a [SmugMug](http://www.smugmug.com/) [plugin](http://msdn2.microsoft.com/en-us/library/aa738863.aspx "MSDN: Windows Live Writer Content Source Plugins") for [Windows Live Writer](http://get.live.com/writer/overview "Windows Live Writer is a desktop application that makes it easy to publish rich content to your blog.") on and off for the last few months.  The code is nearly complete, some other things came up and I had to put that code a way for a while.  Now I&#8217;m back on the code and I&#8217;m almost done.  While I was off doing other things, two things changed in my development environment.
 

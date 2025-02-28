@@ -1,10 +1,6 @@
 ---
-id: 145
 title: Evans Data’s 2008 IDE User Satisfaction Survey
 date: 2008-06-24T16:30:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=145
-permalink: /2008/06/24/evans-datas-2008-ide-user-satisfaction/
 ---
 </p> 
 

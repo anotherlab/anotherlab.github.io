@@ -1,10 +1,6 @@
 ---
-id: 90
 title: Checking to see Microsoft Report Viewer 2008 SP1 has been installed
 date: 2009-06-15T16:05:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=90
-permalink: /2009/06/15/checking-to-see-microsoft-report-viewer/
 ---
 We are updating the installer for one of our applications and that app now requires the Microsoft Report Viewer 2008 Service Pack 1 to be installed first.  The fun part is determining if it’s installed or not.  Usually, I check the registry keys to see if an application is installed.  If the user has installed the Report Viewer as a separate application, you’ll find it under the key ****
 

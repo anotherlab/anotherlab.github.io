@@ -1,10 +1,6 @@
 ---
-id: 452
 title: MooreIsLess’s Law
 date: 2005-05-31T13:13:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=452
-permalink: /2005/05/31/mooreislesss-law/
 ---
 **MooreIsLess**’s Law. Which, given Moore’s Law, holds that the time taken to boot a Microsoft Operating System is constant.
 

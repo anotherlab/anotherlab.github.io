@@ -1,10 +1,6 @@
 ---
-id: 191
 title: Fun with CoInitialize
 date: 2008-04-07T14:42:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=191
-permalink: /2008/04/07/fun-with-coinitialize/
 ---
 I was tracking down a error in one of the command line apps that I use to [save web.config settings over upgrades](http://anotherlab.rajapet.net/2008/04/saving-application-settings-over.html).  It was a strange error, If I stepped through the code, everything executed correctly, but I would get an access violation when I left a specific method call.  The fun part was that all of the code in that method call executed normally.  The app is written in Delphi 2007 and is Win32 unmanaged code.  The code looked something like this:
 

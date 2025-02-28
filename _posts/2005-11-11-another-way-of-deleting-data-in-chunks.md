@@ -1,10 +1,6 @@
 ---
-id: 375
 title: Another way of deleting data in chunks
 date: 2005-11-11T16:04:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=375
-permalink: /2005/11/11/another-way-of-deleting-data-in-chunks/
 ---
 I&#8217;m bloggin this because I&#8217;ll need it in a few weeks&#8230;.
 

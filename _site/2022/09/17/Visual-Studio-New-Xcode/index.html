@@ -1,22 +1,23 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
-  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
-<html lang="en" class="no-js">
+
+<html lang="en-US" class="no-js">
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Running the iOS simulators after updating to Xcode 14 - Chris Miller’s 4th Blog</title>
+<!-- begin _includes/seo.html --><title>Running the iOS simulators after updating to Xcode 14 - Chris Miller’s 5th Blog</title>
 <meta name="description" content="So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or even the version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or the Mac, it was broken.  From the Mac, when I went to pick a simulator for a Maui project, this happened with Visual Studio 2022 17.4, Preview 2.    That “Lower the ‘Deployment Target’ to see the older simulators or check your Apple SDK path” message was somewhat less than helpful. I couldn’t figure out where to even set the Deployment target in Dotnet Maui.  I then loaded up a Xamarin.Forms app that was working fine a few days ago and saw the same results. I guess at this moment in time, Xcode 14 is not fully suppported. At some point it will all line up again, but in the meantime I need some iOS simulation. This wasn’t a regression in VS 17.4, this was Apple. Time to rollback Xcode and give that a shot.  Xcode is actually pretty decent about handling this. You can have multiple versions of Xcode installed and change up which one is the one that answers the call to duty. If you trying out Xcode betas, this is the way. All you need is gigabytes of disk storage and the patience to download and install the Xcode bits.  The first thing that you need to do is to download the version of Xcode to install. You can get every release of Xcode from xcodereleases.com. While that site is not Apple affiliated with Apple, all of the download links are from developer.appple.com. They are the official releases. I grabbed the final the Xcode 13 release, 13.4.1 from here.  Extract the contents of the .xip file. It will be named Xcode.app. Since you already have an Xcode.app in the Applications folder, you’ll need to rename it. My preference is to name it with version. In this case, Xcode13_4_1.app. Then drag it to the Applications folder.  And then make it the default Xcode. From a shell, run the following  sudo xcode-select -s /Applications/Xcode13_4_1.app  To verify that this is now the current version of Xcode, run the following  sudo xcode-select -p  That should come back with something like  /Applications/Xcode13_4_1.app/Contents/Developer  After doing that, I restarted Visual Studio and I had the simulators back    To switch back to latest version, just run xcode-select again  sudo xcode-select -s /Applications/Xcode  After posting this, a friend posted with a link to where this issue was raised.  It’s posted as an issue in the xamarin/xamrin-macios repo.">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Chris Miller's 4th Blog">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
 <meta property="og:title" content="Running the iOS simulators after updating to Xcode 14">
 <meta property="og:url" content="http://localhost:4000/2022/09/17/Visual-Studio-New-Xcode/">
 
@@ -41,7 +42,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-09-17T00:00:00-04:00">
+  <meta property="article:published_time" content="2022-09-17T00:00:00+00:00">
 
 
 
@@ -53,16 +54,7 @@
 
 
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Chris Miller",
-      "url": "http://localhost:4000/"
-    
-  }
-</script>
+
 
 
 
@@ -74,37 +66,21 @@
 
 
 
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 4th Blog Feed">
-
-
-<!-- https://t.co/dKP3o1e -->
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
+<script type="text/javascript">
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
 </script>
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
 
 
 
-<!-- Twitter cards -->
-<meta name="twitter:site"    content="@anotherlab">
-<meta name="twitter:creator" content="@anotherlab">
-<meta name="twitter:title"   content="Running the iOS simulators after updating to Xcode 14">
-
-
-<meta name="twitter:description" content="How to enable older versions of Xcode when the current one doesn't with Xamarin or Maui">
-
-
-
-<meta name="twitter:card"  content="summary_large_image">
-<meta name="twitter:image" content="http://localhost:4000/assets/giger-dev-001.png">
-
-<!-- end of Twitter cards -->
     <!-- start custom head snippets -->
 
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
@@ -122,10 +98,6 @@
   </ul>
 </nav>
 
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
     
 
 <div class="masthead">
@@ -134,17 +106,33 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          Chris Miller's 4th Blog
+          Chris Miller's 5th Blog
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/posts/">Posts</a>
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
             </li><li class="masthead__menu-item">
-              <a href="/categories/">Categories</a>
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
             </li><li class="masthead__menu-item">
-              <a href="/tags/">Tags</a>
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
             </li><li class="masthead__menu-item">
-              <a href="/about/">About</a>
+              <a
+                href="/about/"
+                
+                
+              >About</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -165,6 +153,8 @@
 
     <div class="initial-content">
       
+
+
 
 
 
@@ -250,22 +240,23 @@
     </ul>
   </div>
 </div>
+
   
   </div>
 
 
 
-  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Running the iOS simulators after updating to Xcode 14">
     <meta itemprop="description" content="So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or even the version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or the Mac, it was broken.From the Mac, when I went to pick a simulator for a Maui project, this happened with Visual Studio 2022 17.4, Preview 2.That “Lower the ‘Deployment Target’ to see the older simulators or check your Apple SDK path” message was somewhat less than helpful. I couldn’t figure out where to even set the Deployment target in Dotnet Maui.I then loaded up a Xamarin.Forms app that was working fine a few days ago and saw the same results. I guess at this moment in time, Xcode 14 is not fully suppported. At some point it will all line up again, but in the meantime I need some iOS simulation. This wasn’t a regression in VS 17.4, this was Apple. Time to rollback Xcode and give that a shot.Xcode is actually pretty decent about handling this. You can have multiple versions of Xcode installed and change up which one is the one that answers the call to duty. If you trying out Xcode betas, this is the way. All you need is gigabytes of disk storage and the patience to download and install the Xcode bits.The first thing that you need to do is to download the version of Xcode to install. You can get every release of Xcode from xcodereleases.com. While that site is not Apple affiliated with Apple, all of the download links are from developer.appple.com. They are the official releases. I grabbed the final the Xcode 13 release, 13.4.1 from here.Extract the contents of the .xip file. It will be named Xcode.app. Since you already have an Xcode.app in the Applications folder, you’ll need to rename it. My preference is to name it with version. In this case, Xcode13_4_1.app. Then drag it to the Applications folder.And then make it the default Xcode. From a shell, run the followingsudo xcode-select -s /Applications/Xcode13_4_1.appTo verify that this is now the current version of Xcode, run the followingsudo xcode-select -pThat should come back with something like/Applications/Xcode13_4_1.app/Contents/DeveloperAfter doing that, I restarted Visual Studio and I had the simulators backTo switch back to latest version, just run xcode-select againsudo xcode-select -s /Applications/XcodeAfter posting this, a friend posted with a link to where this issue was raised.  It’s posted as an issue in the xamarin/xamrin-macios repo.">
-    <meta itemprop="datePublished" content="2022-09-17T00:00:00-04:00">
+    <meta itemprop="datePublished" content="2022-09-17T00:00:00+00:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/2022/09/17/Visual-Studio-New-Xcode/" class="u-url" itemprop="url">Running the iOS simulators after updating to Xcode 14
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2022/09/17/Visual-Studio-New-Xcode/" itemprop="url">Running the iOS simulators after updating to Xcode 14
 </a>
           </h1>
           
@@ -292,7 +283,7 @@
         </header>
       
 
-      <section class="page__content e-content" itemprop="text">
+      <section class="page__content" itemprop="text">
         
         <p style="text-align: center;"><img src="/assets/giger-dev-001.png" alt="Deployment Target" /></p>
 <p>So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or even the version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or the Mac, it was broken.</p>
@@ -381,7 +372,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-09-17T00:00:00-04:00">September 17, 2022</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-09-17T00:00:00+00:00">September 17, 2022</time></p>
 
       </footer>
 
@@ -392,7 +383,7 @@
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2022%2F09%2F17%2FVisual-Studio-New-Xcode%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2022%2F09%2F17%2FVisual-Studio-New-Xcode%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2022/09/17/Visual-Studio-New-Xcode/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -415,11 +406,14 @@
 
   
   
-    <div class="page__related">
-      <h2 class="page__related-title">You May Also Enjoy</h2>
-      <div class="grid__wrapper">
-        
-          
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
 
 
 
@@ -459,8 +453,9 @@ I’ve been on Bluesky for a while now. I still have my account on the dead bird
   </article>
 </div>
 
-        
-          
+    
+      
+      
 
 
 
@@ -500,8 +495,9 @@ I have some code that uses Apple’s AppConnect API to query App store related t
   </article>
 </div>
 
-        
-          
+    
+      
+      
 
 
 
@@ -541,8 +537,9 @@ I needed to make a small change to an Android apop that we have in the Google Pl
   </article>
 </div>
 
-        
-          
+    
+      
+      
 
 
 
@@ -582,12 +579,15 @@ I have a new course that was just published this week on Pluralsight, “Xamarin
   </article>
 </div>
 
-        
-      </div>
-    </div>
+    
+  </div>
+</div>
+
   
   
 </div>
+
+      
     </div>
 
     
@@ -615,7 +615,7 @@ I have a new course that was just published this week on Pluralsight, “Xamarin
     
       
         
-          <li><a href="https://twitter.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
         
       
         
@@ -642,7 +642,7 @@ I have a new course that was just published this week on Pluralsight, “Xamarin
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2025 Chris Miller. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
@@ -671,21 +671,29 @@ I have a new course that was just published this week on Pluralsight, “Xamarin
     }
 
     var script = document.createElement('script');
+
     script.setAttribute('src', 'https://giscus.app/client.js');
     script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
     script.setAttribute('data-repo-id', '');
     script.setAttribute('data-category', '');
     script.setAttribute('data-category-id', '');
     script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
     script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
     script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
     script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
 
     commentContainer.appendChild(script);
   })();
 </script>
-  
 
+  
 
 
 

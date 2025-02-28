@@ -1,0 +1,30 @@
+---
+id: 164
+title: What gives MediaDefender the right to launch a DoS attack against Revision3
+date: 2008-05-30T03:01:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=164
+permalink: /2008/05/30/what-gives-mediadefender-right-to/
+---
+I just started reading Molly Wood&#8217;s [blog](http://cultureofownership.org/?p=42 "The Culture of Ownership: It's time to put MediaDefender out of business") and that&#8217;s where I first heard about the Denial of Service (DoS) attack that Revision3 suffered from over the Memorial Day weekend.  Jim Louderback, the CEO of Revision3, wrote a detailed explanation of what happened and who was responsible for the attack on a Revision3 blog [post](http://revision3.com/wp-trackback.php?p=153).
+
+Before I go any further, Revision3 uses [Bittorrent](http://en.wikipedia.org/wiki/BitTorrent_%28protocol%29 "BitTorrent is a method of distributing large amounts of data widely without the original distributor incurring the entire costs of hardware, hosting, and bandwidth resources") (BT) to distribute their own content to their viewers so that bandwidth demands on Revision3&#8217;s site are greatly reduced.  What Revison3 is doing is legal and is what Bittorent was designed for.
+
+In a nutshell, an anti-piracy organization named MediaDefender had been illegally storing Bittorrent (BT) tracker files on Revision3&#8217;s BT server for months.  They used a back door into the Revision3 server.  At some point, the illegally placed files were detected by Revision3 and they closed the security hole that allowed MediaDefender to gain unauthorized access to their servers.  
+
+That&#8217;s when the bovine excrement hit the rotating air circulation device.  The MediaDefender server lost contact with their BT Tracker files and launched a [DoS](http://en.wikipedia.org/wiki/Denial-of-service_attack) attack.  What they did was flood the Revision3 servers with SYN requests, causing a [&#8220;SYN Flood&#8221;](http://en.wikipedia.org/wiki/SYN_flood "A SYN flood is a form of denial-of-service attack in which an attacker sends a succession of SYN requests to a target's system[") type of attack.  In layman&#8217;s terms, it&#8217;s the equivalent of kids ringing your door bell and running away before you open it.  Except here it was happening to Revision3 8000 times a second.
+
+This attack basically stopped anything Internet related at Revision3.  Their web servers, RSS feeds, BT feeds, and everything else outwardly facing was just dead in the water.  It also took out their email.  This caused real and measurable costs to Revision3.
+
+I&#8217;m not a lawyer, but I&#8217;m pretty sure that it&#8217;s not legal to gain unauthorized access to another company&#8217;s servers.  The DoS attack was definitely illegal and the FBI has already been brought in.  They suffered measurable losses and MediaDefender should be held legally responsible for the damage they caused.  They should pay compensatory damages for the employee time wasted, for the extra bandwidth costs, and for the lost revenue while the Revision3 sites were down.  In addition, they should pay punitive damages to give them a strong financial incentive not to launch any more DoS attacks.
+
+Jim&#8217;s [description of the events](http://revision3.com/?p=153) was well written and very even handed and should be read by everyone.  Any company using BT or other forms of P2P technology to distribute their own content is at risk being attacked by MediaDefender.  This isn&#8217;t the first time that [MediaDefender has been accused of launching DoS attacks](http://arstechnica.com/news.ars/post/20070919-p2p-sites-ridicule-mediadefender-takedown-notices-in-wake-of-e-mail-leak.html).  What MediaDefender did was wrong, both morally and legally.  How can this type of attack be prevented in the future?  To quote from an [old episode of Star Trek](http://en.wikiquote.org/wiki/Star_Trek:_The_Original_Series#The_Omega_Glory):
+
+> &#8220;&#8230;I&#8217;ve found that evil usually triumphs&#8230;unless good is very, very careful.&#8221; &#8211; Dr McCoy.
+
+You can&#8217;t beat an outfit like MediaDefender by resorting to their tactics with DoS attacks against their servers.  First of all it wouldn&#8217;t work, and more importantly it&#8217;s just as wrong as their attack.  I think Revision3 should sue for damages and we should all contact the companies that use MediaDefender.  We should tell them that we don&#8217;t want to buy products from companies that are associated with MediaDefender.
+
+Getting back to Molly, I first heard about her blog when she mentioned it on an episode of [Cranky Geeks](http://crankygeeks.com/).  I get Cranky Geeks as a [TiVoCast](http://www.tivo.com/whatistivo/tivois/videodownloads/index.html) download to my my TiVo and I just started watching it.  After two episodes, I&#8217;ve had enough of Dvorak but it was worth listening to the viewpoints of the other debaters on the show.  Molly&#8217;s blog is well written and is focused on digital rights and copyright issues (and abuses).
+
+_postscript:_  
+The inspiration for the Star Trek quote came from the [comments](http://www.codinghorror.com/blog/archives/001123.html#comments) for a [post](http://www.codinghorror.com/blog/archives/001123.html "Coding Horror: Designing For Evil") on [The Coding Horror blog](http://www.codinghorror.com/blog/).  That post discussed the issues of how to block comment spamming on blogs and forum sites.  It&#8217;s a great quote and I hope the guy who first used it in the Coding Horror comments doesn&#8217;t mind me using it here.

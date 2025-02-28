@@ -1,10 +1,6 @@
 ---
-id: 697
 title: Getty Images now providing a huge selection of images free for non-commercial use
 date: 2014-03-06T17:10:25-05:00
-layout: post
-guid: http://www.rajapet.com/?p=697
-permalink: /2014/03/06/getty-images-now-providing-a-huge-selection-of-images-free-for-non-commercial-use/
 ---
 [Getty Images](http://www.gettyimages.com/) is how made available a large selection of images from their gallery [free for non-commercial use in social media](http://www.gettyimages.com/Creative/Frontdoor/embed "Getty Images is leading the way in creating a more visual world. Our new embed feature makes it easy, legal, and free for anybody to share our images on websites, blogs, and social media platforms."). For free. Which is pretty cool. There are times when you want to add an image to illustrate a point and a screen shot isn&#8217;t always applicable. And you may not have an image that you own that fits the theme.
 

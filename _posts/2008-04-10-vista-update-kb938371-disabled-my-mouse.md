@@ -1,10 +1,6 @@
 ---
-id: 190
 title: Vista update KB938371 disabled my mouse
 date: 2008-04-10T14:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=190
-permalink: /2008/04/10/vista-update-kb938371-disabled-my-mouse/
 ---
 Windows Update just pushed down an update, [KB938371](http://support.microsoft.com/kb/938371 "A software update is available for the Windows Vista installation components") on to my main home PC, as a prerequisite for [Vista Service Pack 1](http://www.microsoft.com/windows/products/windowsvista/sp1.mspx).  After that update was installed and Vista rebooted, I lost all mouse functionality.  The only way I could get mouse functionality back was to run System Restore and restore the OS to the point to just before 938371 was installed.  For me, selecting the recommended restore point was as far back as I needed to go.
 

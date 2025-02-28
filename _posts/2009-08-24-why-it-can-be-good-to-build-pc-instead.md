@@ -1,10 +1,6 @@
 ---
-id: 84
 title: Why it can be good to build a PC instead of buying a prebuilt one.
 date: 2009-08-24T18:44:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=84
-permalink: /2009/08/24/why-it-can-be-good-to-build-pc-instead/
 ---
 After installing Windows 7, I wanted to install [Windows Virtual PC](http://www.microsoft.com/windows/virtual-pc/ "Windows Virtual PC Home Page").  Windows Virtual PC requires that your machine support [hardware virtualization](http://en.wikipedia.org/wiki/X86_virtualization#Hardware_support "Intel and AMD have independently developed virtualization extensions to the x86 architecture. Though not directly compatible with each other, they serve largely the same functions. Either will allow a virtual machine hypervisor to run an unmodified guest operating system without incurring significant emulation performance penalties.").  My home development machine is about two years old and I wasn’t sure it it support hardware virtualization.  I have an AMD X2 64 4800 with an Asus MSI-SLI Deluxe motherboard.  With AMD, the virtualization technology is called “[AMD-V](http://www.amd.com/us/products/technologies/virtualization/Pages/amd-v.aspx "AMD Virtualization (AMD-V™) Technology")’.
 

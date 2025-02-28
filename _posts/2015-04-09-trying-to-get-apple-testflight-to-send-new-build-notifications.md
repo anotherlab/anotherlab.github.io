@@ -1,10 +1,6 @@
 ---
-id: 1250
 title: Trying to get Apple Testflight to send new build notifications
 date: 2015-04-09T15:57:54-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1250
-permalink: /2015/04/09/trying-to-get-apple-testflight-to-send-new-build-notifications/
 ---
 I used TestFlight 18 months ago when I finished our first iOS app.  It worked great.  It was a stand alone service that allowed you to beta test your apps before submitting them to the Apple App Store.
 

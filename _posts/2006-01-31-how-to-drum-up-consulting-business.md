@@ -1,10 +1,6 @@
 ---
-id: 323
 title: How to drum up consulting business
 date: 2006-01-31T15:01:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=323
-permalink: /2006/01/31/how-to-drum-up-consulting-business/
 ---
 This is an interesting article about a guy who jump started his own consulting company in a new town. It&#8217;s all about the networking. 
 

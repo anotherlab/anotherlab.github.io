@@ -1,10 +1,6 @@
 ---
-id: 598
 title: Locating the right web.config file at runtime
 date: 2014-02-06T12:29:46-05:00
-layout: post
-guid: http://www.rajapet.com/?p=598
-permalink: /2014/02/06/locating-the-right-web-config-file-at-runtime/
 ---
 I created a [Web API](http://www.asp.net/web-api) web service that&#8217;s part of a shrink wrapped application. The service has a web.config that the end user will need to configure some settings in.  Editing a web.config manually is, at best, annoying.
 

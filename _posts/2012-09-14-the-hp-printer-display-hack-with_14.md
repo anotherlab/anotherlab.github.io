@@ -1,10 +1,6 @@
 ---
-id: 20
 title: The HP Printer Display Hack (with financial goodness)
 date: 2012-09-14T21:19:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=20
-permalink: /2012/09/14/the-hp-printer-display-hack-with_14/
 ---
 The HP Printer Display Hack article has been posted to the [Coding4Fun](http://channel9.msdn.com/coding4fun) site.  This is an article and application that I wrote that lets you display a stock price on the display panel of an HP (or compatible) laser printer.
 

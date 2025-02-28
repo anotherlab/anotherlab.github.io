@@ -1,10 +1,6 @@
 ---
-id: 181
 title: System Restore and Vista
 date: 2008-04-20T01:28:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=181
-permalink: /2008/04/20/system-restore-and-vista/
 ---
 After reading the comments posted to my blog entries for USB issues caused by [KB938371](http://support.microsoft.com/kb/938371 "A Vista Update known to be unfriendly to USB mice"), I can&#8217;t over emphasis how valuable it is to have [System Restore](http://en.wikipedia.org/wiki/System_Restore "Wikipedia: System Restore is a component of Microsoft's Windows Me, Windows XP and Windows Vista operating systems that allows for the rolling back of system files, registry keys, installed programs, etc., to a previous state in the event of a failure.") enabled.  While trying to find a work around for the mouse problems that I reported [here](http://anotherlab.rajapet.net/2008/04/microsoft-admits-that-kb-938371-kills.html "Microsoft admits that KB 938371 kills USB Devices"), [here](http://anotherlab.rajapet.net/2008/04/work-around-for-kb938371-disabling-hid.html "Work around for KB938371 disabling HID-compliant input devices"), [here](http://anotherlab.rajapet.net/2008/04/kb-938371-woes-continue.html "KB 938371 woes continue"), and starting at [here](http://anotherlab.rajapet.net/2008/04/vista-update-kb938371-disabled-my-mouse.html "Vista update KB938371 disabled my mouse"); I noted that a few of the people who had posted responses or had sent private email did not have System Restore available.
 

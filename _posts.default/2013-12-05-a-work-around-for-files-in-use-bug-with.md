@@ -1,0 +1,929 @@
+---
+id: 4
+title: A work around for the files in use bug with HeatDirectory in MSBuild
+date: 2013-12-05T18:45:00-05:00
+layout: post
+guid: http://www.rajapet.com/?p=4
+permalink: /2013/12/05/a-work-around-for-files-in-use-bug-with/
+---
+I have this multi-project solution in Visual Studio 2013 and one of the projects is a Windows Installer project.  It uses [WiX](http://wixtoolset.org/) (Windows Installer XML) 3.8 and when I rebuild the solution, the final result is a nice .MSI file that will install the executable bits from the other projects.
+
+To get the files that need to be bundled with the installer, I copy the files that I need from the project bin folders to a folder in the WiX project named “files”.  This folder is not part of the project or the solution and is not in source control.  I started out with a prebuild event of the WIX project that did the following:
+
+  1. Delete the files folder. I just assume that everything in the folder is obsolete
+  2. Robocopy the deployable files from a WPF project to the files folder.
+  3. Robocopy an ASP.Net MVC 4 project to the filles folder
+  4. Run ctt.exe ([Config Transformation Tool](http://ctt.codeplex.com/)) to clean up the web.config file and set some default values.
+  5. Run the [WiX Harvest tool, heat.exe](http://wixtoolset.org/documentation/manual/v3/overview/heat.html), to generate a [.wxi](http://wixtoolset.org/documentation/manual/v3/overview/files.html) include file of all of the files in the files folder.
+
+Using robocopy makes it easy to just the files that you want and not include the files that are not needed for deployment.
+
+With Windows Installer, every object that gets installed has to be defined in a WiX source file.  You get end up with stuff that looks like:
+
+<div style="tab-size: 8" id="gist7809649" class="gist">
+  <div class="gist-file" translate="no">
+    <div class="gist-data">
+      <div class="js-gist-file-update-container js-task-list-container file-box">
+        <div id="file-gistfile1-xml" class="file my-2">
+          <div itemprop="text" class="Box-body p-0 blob-wrapper data type-xml  ">
+            <div class="js-check-bidi blob-code-content">
+              <template class="js-file-alert-template"></p> 
+              
+              <div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg></p> 
+                
+                <p>
+                  <span><br /> This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br /> <a href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br /> </span>
+                </p>
+                
+                <div data-view-component="true" class="flash-action">
+                  <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn"></p> 
+                  
+                  <p>
+                    Show hidden characters
+                  </p>
+                  
+                  <p>
+                    </a> </div> </div> 
+                    
+                    <p>
+                      </template><br /> <template class="js-line-alert-template"><br /> <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="bidi-line-alert tooltipped tooltipped-e"><br /> <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg><br /> </span></template>
+                    </p>
+                    
+                    <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="XML" data-tagsearch-path="gistfile1.xml">
+                      <tr>
+                        <td id="file-gistfile1-xml-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC1" class="blob-code blob-code-inner js-file-line">
+                          <?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>?>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC2" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">Wix</span> <span class="pl-e">xmlns</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.microsoft.com/wix/2006/wi<span class="pl-pds">"</span></span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC3" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">Fragment</span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC4" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">DirectoryRef</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>INSTALLLOCATION<span class="pl-pds">"</span></span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC5" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">Component</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>cmp18BCDCBE7DFEDEAC86EBAA695FE5CDC3<span class="pl-pds">"</span></span> <span class="pl-e">Guid</span>=<span class="pl-s"><span class="pl-pds">"</span>{542781FF-5726-48AC-93B1-DF0C05363017}<span class="pl-pds">"</span></span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC6" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">File</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>fil62DDF69CC427A28D37806B9D6E98E9DE<span class="pl-pds">"</span></span> <span class="pl-e">KeyPath</span>=<span class="pl-s"><span class="pl-pds">"</span>yes<span class="pl-pds">"</span></span> <span class="pl-e">Source</span>=<span class="pl-s"><span class="pl-pds">"</span>$(var.AdminSource)\favicon.ico<span class="pl-pds">"</span></span> />
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC7" class="blob-code blob-code-inner js-file-line">
+                          </<span class="pl-ent">Component</span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L8" class="blob-num js-line-number js-code-nav-line-number" data-line-number="8">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC8" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">Component</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>cmp93645FCD1A13835D0DFCD156CF2C6C64<span class="pl-pds">"</span></span> <span class="pl-e">Guid</span>=<span class="pl-s"><span class="pl-pds">"</span>{1F90BC80-59F5-4E51-8359-C3B39B78C052}<span class="pl-pds">"</span></span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L9" class="blob-num js-line-number js-code-nav-line-number" data-line-number="9">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC9" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">File</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>fil00A150C9AD477E1EE4E8CA4503876DA9<span class="pl-pds">"</span></span> <span class="pl-e">KeyPath</span>=<span class="pl-s"><span class="pl-pds">"</span>yes<span class="pl-pds">"</span></span> <span class="pl-e">Source</span>=<span class="pl-s"><span class="pl-pds">"</span>$(var.AdminSource)\Global.asax<span class="pl-pds">"</span></span> />
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L10" class="blob-num js-line-number js-code-nav-line-number" data-line-number="10">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC10" class="blob-code blob-code-inner js-file-line">
+                          </<span class="pl-ent">Component</span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L11" class="blob-num js-line-number js-code-nav-line-number" data-line-number="11">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC11" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">Component</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>cmp1F6DF8646619108DFBB033EF4679F1AC<span class="pl-pds">"</span></span> <span class="pl-e">Guid</span>=<span class="pl-s"><span class="pl-pds">"</span>{E6B85075-DFA4-4A2B-A96F-21904E17A32A}<span class="pl-pds">"</span></span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L12" class="blob-num js-line-number js-code-nav-line-number" data-line-number="12">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC12" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">File</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>filCAAC665964D1DB313016DB15221ED3C8<span class="pl-pds">"</span></span> <span class="pl-e">KeyPath</span>=<span class="pl-s"><span class="pl-pds">"</span>yes<span class="pl-pds">"</span></span> <span class="pl-e">Source</span>=<span class="pl-s"><span class="pl-pds">"</span>$(var.AdminSource)\log4net.config<span class="pl-pds">"</span></span> />
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L13" class="blob-num js-line-number js-code-nav-line-number" data-line-number="13">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC13" class="blob-code blob-code-inner js-file-line">
+                          </<span class="pl-ent">Component</span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L14" class="blob-num js-line-number js-code-nav-line-number" data-line-number="14">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC14" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">Component</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>cmpFED9CE4C040C6D017106CB6B92C2F157<span class="pl-pds">"</span></span> <span class="pl-e">Guid</span>=<span class="pl-s"><span class="pl-pds">"</span>{668F5139-6B0A-47D5-9030-FC89F1972559}<span class="pl-pds">"</span></span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L15" class="blob-num js-line-number js-code-nav-line-number" data-line-number="15">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC15" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">File</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>fil43F031812C2D8647225696DDDF358FCA<span class="pl-pds">"</span></span> <span class="pl-e">KeyPath</span>=<span class="pl-s"><span class="pl-pds">"</span>yes<span class="pl-pds">"</span></span> <span class="pl-e">Source</span>=<span class="pl-s"><span class="pl-pds">"</span>$(var.AdminSource)\packages.config<span class="pl-pds">"</span></span> />
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L16" class="blob-num js-line-number js-code-nav-line-number" data-line-number="16">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC16" class="blob-code blob-code-inner js-file-line">
+                          </<span class="pl-ent">Component</span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L17" class="blob-num js-line-number js-code-nav-line-number" data-line-number="17">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC17" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">Component</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>cmp96166321C384ACAF2E55370F693BBA87<span class="pl-pds">"</span></span> <span class="pl-e">Guid</span>=<span class="pl-s"><span class="pl-pds">"</span>{EE876A20-1353-472A-B942-09C755DD4ECC}<span class="pl-pds">"</span></span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L18" class="blob-num js-line-number js-code-nav-line-number" data-line-number="18">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC18" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">File</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>fil288668DCAE437D221881AFEB1D9D3919<span class="pl-pds">"</span></span> <span class="pl-e">KeyPath</span>=<span class="pl-s"><span class="pl-pds">"</span>yes<span class="pl-pds">"</span></span> <span class="pl-e">Source</span>=<span class="pl-s"><span class="pl-pds">"</span>$(var.AdminSource)\QrCodeHandler.ashx<span class="pl-pds">"</span></span> />
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L19" class="blob-num js-line-number js-code-nav-line-number" data-line-number="19">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC19" class="blob-code blob-code-inner js-file-line">
+                          </<span class="pl-ent">Component</span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L20" class="blob-num js-line-number js-code-nav-line-number" data-line-number="20">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC20" class="blob-code blob-code-inner js-file-line">
+                          </<span class="pl-ent">DirectoryRef</span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L21" class="blob-num js-line-number js-code-nav-line-number" data-line-number="21">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC21" class="blob-code blob-code-inner js-file-line">
+                          </<span class="pl-ent">Fragment</span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L22" class="blob-num js-line-number js-code-nav-line-number" data-line-number="22">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC22" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">Fragment</span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L23" class="blob-num js-line-number js-code-nav-line-number" data-line-number="23">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC23" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">ComponentGroup</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>AdminFilesGroup<span class="pl-pds">"</span></span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L24" class="blob-num js-line-number js-code-nav-line-number" data-line-number="24">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC24" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">ComponentRef</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>cmp18BCDCBE7DFEDEAC86EBAA695FE5CDC3<span class="pl-pds">"</span></span> />
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L25" class="blob-num js-line-number js-code-nav-line-number" data-line-number="25">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC25" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">ComponentRef</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>cmp93645FCD1A13835D0DFCD156CF2C6C64<span class="pl-pds">"</span></span> />
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L26" class="blob-num js-line-number js-code-nav-line-number" data-line-number="26">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC26" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">ComponentRef</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>cmp1F6DF8646619108DFBB033EF4679F1AC<span class="pl-pds">"</span></span> />
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L27" class="blob-num js-line-number js-code-nav-line-number" data-line-number="27">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC27" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">ComponentRef</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>cmpFED9CE4C040C6D017106CB6B92C2F157<span class="pl-pds">"</span></span> />
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L28" class="blob-num js-line-number js-code-nav-line-number" data-line-number="28">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC28" class="blob-code blob-code-inner js-file-line">
+                          <<span class="pl-ent">ComponentRef</span> <span class="pl-e">Id</span>=<span class="pl-s"><span class="pl-pds">"</span>cmp96166321C384ACAF2E55370F693BBA87<span class="pl-pds">"</span></span> />
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L29" class="blob-num js-line-number js-code-nav-line-number" data-line-number="29">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC29" class="blob-code blob-code-inner js-file-line">
+                          </<span class="pl-ent">ComponentGroup</span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L30" class="blob-num js-line-number js-code-nav-line-number" data-line-number="30">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC30" class="blob-code blob-code-inner js-file-line">
+                          </<span class="pl-ent">Fragment</span>>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td id="file-gistfile1-xml-L31" class="blob-num js-line-number js-code-nav-line-number" data-line-number="31">
+                        </td>
+                        
+                        <td id="file-gistfile1-xml-LC31" class="blob-code blob-code-inner js-file-line">
+                          </<span class="pl-ent">Wix</span>>
+                        </td>
+                      </tr>
+                    </table></div></div>
+                  </p></div> </div></div> 
+                  
+                  <div class="gist-meta">
+                    <a href="https://gist.github.com/anotherlab/c28a1d94a31fa7fce7c7/raw/2629d43e22ee00b9880f4acfec53597ee1cf8e5e/gistfile1.xml" style="float:right">view raw</a><br /> <a href="https://gist.github.com/anotherlab/c28a1d94a31fa7fce7c7#file-gistfile1-xml"><br /> gistfile1.xml<br /> </a><br /> hosted with &#10084; by <a href="https://github.com">GitHub</a>
+                  </div></p></div> </div> 
+                  
+                  <p>
+                    Which is hideous to do by hand.  You can run heat.exe on a folder and it will generate that the include file for all the files in that folder for you.  In my prebuild event, I had the following lines:
+                  </p>
+                  
+                  <div style="tab-size: 8" id="gist7809590" class="gist">
+                    <div class="gist-file" translate="no">
+                      <div class="gist-data">
+                        <div class="js-gist-file-update-container js-task-list-container file-box">
+                          <div id="file-131205-prebuid" class="file my-2">
+                            <div itemprop="text" class="Box-body p-0 blob-wrapper data type-text  ">
+                              <div class="js-check-bidi blob-code-content">
+                                <template class="js-file-alert-template"></p> 
+                                
+                                <div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+                                  <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg></p> 
+                                  
+                                  <p>
+                                    <span><br /> This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br /> <a href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br /> </span>
+                                  </p>
+                                  
+                                  <div data-view-component="true" class="flash-action">
+                                    <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn"></p> 
+                                    
+                                    <p>
+                                      Show hidden characters
+                                    </p>
+                                    
+                                    <p>
+                                      </a> </div> </div> 
+                                      
+                                      <p>
+                                        </template><br /> <template class="js-line-alert-template"><br /> <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="bidi-line-alert tooltipped tooltipped-e"><br /> <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg><br /> </span></template>
+                                      </p>
+                                      
+                                      <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="" data-tagsearch-path="131205-prebuid">
+                                        <tr>
+                                          <td id="file-131205-prebuid-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1">
+                                          </td>
+                                          
+                                          <td id="file-131205-prebuid-LC1" class="blob-code blob-code-inner js-file-line">
+                                            rd /s /q $(ProjectDir)files
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-131205-prebuid-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2">
+                                          </td>
+                                          
+                                          <td id="file-131205-prebuid-LC2" class="blob-code blob-code-inner js-file-line">
+                                            robocopy $(ProjectDir)..\AdminConsole\bin\$(ConfigurationName) $(ProjectDir)files\adminconsole *.* /s /XF *.pdb *vshost* *.xml
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-131205-prebuid-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3">
+                                          </td>
+                                          
+                                          <td id="file-131205-prebuid-LC3" class="blob-code blob-code-inner js-file-line">
+                                            robocopy $(ProjectDir)..\webapi $(ProjectDir)\files *.* /s /XF *.pdb *vshost* *.xml *.cs *.user *.vspscc web.debug.config web.release.config *.layout *.csproj /XD obj properties
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-131205-prebuid-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4">
+                                          </td>
+                                          
+                                          <td id="file-131205-prebuid-LC4" class="blob-code blob-code-inner js-file-line">
+                                            "$(SolutionDir)ctt.exe" s:$(ProjectDir)..\webapi\web.config t:$(ProjectDir)..\webapi\web.release.config d:$(ProjectDir)files\web.config pw v
+                                          </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td id="file-131205-prebuid-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5">
+                                          </td>
+                                          
+                                          <td id="file-131205-prebuid-LC5" class="blob-code blob-code-inner js-file-line">
+                                            "$(WIX)bin\heat" dir $(ProjectDir)files -cg AdminFilesGroup -gg -scom -sfrag -srd -dr INSTALLLOCATION -out $(ProjectDir)adminfiles.wxs -var var.AdminSource
+                                          </td>
+                                        </tr>
+                                      </table></div></div>
+                                    </p></div> </div></div> 
+                                    
+                                    <div class="gist-meta">
+                                      <a href="https://gist.github.com/anotherlab/4d08fcd3a8127d717f68/raw/1a92a047c48463ba9f5b5cd2e6c3e7ee24400e18/131205-prebuid" style="float:right">view raw</a><br /> <a href="https://gist.github.com/anotherlab/4d08fcd3a8127d717f68#file-131205-prebuid"><br /> 131205-prebuid<br /> </a><br /> hosted with &#10084; by <a href="https://github.com">GitHub</a>
+                                    </div></p></div> </div> 
+                                    
+                                    <p>
+                                      <span style="line-height: 1.5;">The 5th line is the heat command line. The various command line options are documented </span><a style="line-height: 1.5;" href="http://wixtoolset.org/documentation/manual/v3/overview/heat.html">here</a><span style="line-height: 1.5;">. This ran without any problems on my dev machine. </span><a style="line-height: 1.5;" href="http://en.wikipedia.org/wiki/Hindenburg_disaster">Hilarity ensued</a><span style="line-height: 1.5;"> when I tried to make a build from our </span><a style="line-height: 1.5;" href="http://msdn.microsoft.com/en-us/vstudio/ff637362.aspx">TFS</a><span style="line-height: 1.5;"> server.  I was getting build errors when it executed heat.exe</span>
+                                    </p>
+                                    
+                                    <p>
+                                      &nbsp;
+                                    </p>
+                                    
+                                    <pre>heat.exe: Access to the path 'C:\Builds\31\VSTancillary\FleetVision_Dev\Sources\WixSetupProject\adminfiles.wxs' is denied.</pre>
+                                    
+                                    <p>
+                                      That was annoying. During the build, heat was recreating the adminfiles.wxs file each time.  Since that file was in source control, it was set to read only on the build server.  That caused heat.exe to abort out since it couldn&#8217;t recreate that file. Our build engineer suggested using the attrib command to clear the read only bit. The light bulb (LED, should last longer than incandescent) flickered above my head and I realized that since that file was in source control, I didn&#8217;t need to created it on the build server.  I just needed to set the build so that heat didn&#8217;t run on the build server.
+                                    </p>
+                                    
+                                    <p>
+                                      There are probably a few ways of doing this, I went with setting it up so that heat would only get run for debug builds.  Our build server is only doing release builds, this would work for me. So I moved the prebuild code out of the project property settings and implemented them as individual MSBuild tasks.
+                                    </p>
+                                    
+                                    <p>
+                                      The first part of doing that was to install the <a href="https://msbuildextensionpack.codeplex.com/">MSBuild Extension Pack</a> from CodePlex. I did that to get a RoboCopy task for MSBuild.  Robocopy is very powerful tool for copying and synching up files, but has this one little quirk. It return 1 as a success code. Everything else on Planet DOS returns 0 for success and non-zero values to indicate an error.  The MSBuild.ExtensionPack.FileSystem.RoboCopy task knows about that quirk and prevents MSBuild from reporting a robocopy success code as an error.  Lots of good stuff in the Extension Pack, you&#8217;ll want to have one in your toolbelt.
+                                    </p>
+                                    
+                                    <p>
+                                      When you install WIX, you get WIX specific extensions for MSBuild.  The task for heat is called <a href="http://wixtoolset.org/documentation/manual/v3/msbuild/task_reference/heatdirectory.html">HeatDirectory</a>.  The HeatDirectory equivalent of the heat.exe command line that I was using looks like this:
+                                    </p>
+                                    
+                                    <div style="tab-size: 8" id="gist7810434" class="gist">
+                                      <div class="gist-file" translate="no">
+                                        <div class="gist-data">
+                                          <div class="js-gist-file-update-container js-task-list-container file-box">
+                                            <div id="file-gistfile1-xml" class="file my-2">
+                                              <div itemprop="text" class="Box-body p-0 blob-wrapper data type-xml  ">
+                                                <div class="js-check-bidi blob-code-content">
+                                                  <template class="js-file-alert-template"></p> 
+                                                  
+                                                  <div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+                                                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg></p> 
+                                                    
+                                                    <p>
+                                                      <span><br /> This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br /> <a href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br /> </span>
+                                                    </p>
+                                                    
+                                                    <div data-view-component="true" class="flash-action">
+                                                      <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn"></p> 
+                                                      
+                                                      <p>
+                                                        Show hidden characters
+                                                      </p>
+                                                      
+                                                      <p>
+                                                        </a> </div> </div> 
+                                                        
+                                                        <p>
+                                                          </template><br /> <template class="js-line-alert-template"><br /> <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="bidi-line-alert tooltipped tooltipped-e"><br /> <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg><br /> </span></template>
+                                                        </p>
+                                                        
+                                                        <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="XML" data-tagsearch-path="gistfile1.xml">
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC1" class="blob-code blob-code-inner js-file-line">
+                                                              <<span class="pl-ent">HeatDirectory</span>
+                                                            </td>
+                                                          </tr>
+                                                          
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC2" class="blob-code blob-code-inner js-file-line">
+                                                              Condition=<span class="pl-s"><span class="pl-pds">"</span> '$(Configuration)|$(Platform)' == 'Debug|x86' <span class="pl-pds">"</span></span>
+                                                            </td>
+                                                          </tr>
+                                                          
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC3" class="blob-code blob-code-inner js-file-line">
+                                                              ToolPath=<span class="pl-s"><span class="pl-pds">"</span>$(WixToolPath)<span class="pl-pds">"</span></span>
+                                                            </td>
+                                                          </tr>
+                                                          
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC4" class="blob-code blob-code-inner js-file-line">
+                                                              Directory=<span class="pl-s"><span class="pl-pds">"</span>$(ProjectDir)files<span class="pl-pds">"</span></span>
+                                                            </td>
+                                                          </tr>
+                                                          
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC5" class="blob-code blob-code-inner js-file-line">
+                                                              DirectoryRefId=<span class="pl-s"><span class="pl-pds">"</span>INSTALLLOCATION<span class="pl-pds">"</span></span>
+                                                            </td>
+                                                          </tr>
+                                                          
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC6" class="blob-code blob-code-inner js-file-line">
+                                                              OutputFile=<span class="pl-s"><span class="pl-pds">"</span>$(ProjectDir)adminfiles.wxs<span class="pl-pds">"</span></span>
+                                                            </td>
+                                                          </tr>
+                                                          
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC7" class="blob-code blob-code-inner js-file-line">
+                                                              ComponentGroupName=<span class="pl-s"><span class="pl-pds">"</span>AdminFilesGroup<span class="pl-pds">"</span></span>
+                                                            </td>
+                                                          </tr>
+                                                          
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L8" class="blob-num js-line-number js-code-nav-line-number" data-line-number="8">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC8" class="blob-code blob-code-inner js-file-line">
+                                                              GenerateGuidsNow=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+                                                            </td>
+                                                          </tr>
+                                                          
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L9" class="blob-num js-line-number js-code-nav-line-number" data-line-number="9">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC9" class="blob-code blob-code-inner js-file-line">
+                                                              SuppressCom=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+                                                            </td>
+                                                          </tr>
+                                                          
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L10" class="blob-num js-line-number js-code-nav-line-number" data-line-number="10">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC10" class="blob-code blob-code-inner js-file-line">
+                                                              SuppressFragments=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+                                                            </td>
+                                                          </tr>
+                                                          
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L11" class="blob-num js-line-number js-code-nav-line-number" data-line-number="11">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC11" class="blob-code blob-code-inner js-file-line">
+                                                              SuppressRootDirectory=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+                                                            </td>
+                                                          </tr>
+                                                          
+                                                          <tr>
+                                                            <td id="file-gistfile1-xml-L12" class="blob-num js-line-number js-code-nav-line-number" data-line-number="12">
+                                                            </td>
+                                                            
+                                                            <td id="file-gistfile1-xml-LC12" class="blob-code blob-code-inner js-file-line">
+                                                              PreprocessorVariable=<span class="pl-s"><span class="pl-pds">"</span>var.AdminSource<span class="pl-pds">"</span></span> />
+                                                            </td>
+                                                          </tr>
+                                                        </table></div></div>
+                                                      </p></div> </div></div> 
+                                                      
+                                                      <div class="gist-meta">
+                                                        <a href="https://gist.github.com/anotherlab/444f5efe8476df90f6fa/raw/171ebfb338ff5f707b66cba41223ad2a68606250/gistfile1.xml" style="float:right">view raw</a><br /> <a href="https://gist.github.com/anotherlab/444f5efe8476df90f6fa#file-gistfile1-xml"><br /> gistfile1.xml<br /> </a><br /> hosted with &#10084; by <a href="https://github.com">GitHub</a>
+                                                      </div></p></div> </div> 
+                                                      
+                                                      <p>
+                                                        The first element is <a href="http://msdn.microsoft.com/en-us/library/7szfhaft.aspx">Condition</a>, which is comes with MSBuild.  By setting the value to &#8221; &#8216;$(Configuration)|$(Platform)&#8217; == &#8216;Debug|x86&#8217; &#8220;, MSBuild will only execute that task when the condition evaluates to true.
+                                                      </p>
+                                                      
+                                                      <p>
+                                                        That worked perfectly, but only for the first time.  After doing one debug build, the next build bombed out on the RoboCopy task.  There was a problem with the files being in use.  If I restarted VS, I could do another build. If I commented out the HeatDirectory task, the build would work.  I went to the WIX site and sure enough, this was a <a href="http://wixtoolset.org/issues/2985/">known bug</a>. The heat.exe was keeping the file handles open for the files that it read.
+                                                      </p>
+                                                      
+                                                      <p>
+                                                        By default, HeatDirectory was running heat.exe from within the Visual Studio process. This was the fast way to execute heat, but you pick up any handle heaks from the heat.exe.  In one of the comments to the bug report, a work around was suggested.  Add RunAsSeparateProcess=&#8221;true&#8221; to HeatDirectory.  This forces heat.exe to be run as a separate process and the leaked handles get flushed when that process ends.
+                                                      </p>
+                                                      
+                                                      <p>
+                                                        That took care of the problem.  While this is a known bug, the comments associated with that bug made it clear that it&#8217;s not going toget addressed any time soon.
+                                                      </p>
+                                                      
+                                                      <p>
+                                                        So what is <a href="https://ctt.codeplex.com/">CTT</a>? It is a command line version of the XDT transform that Visual Studio uses when it transforms web.config from web.release.config and web.debug.config.  It&#8217;s another good tool.
+                                                      </p>
+                                                      
+                                                      <p>
+                                                        If you are still reading this, here is the final version of the prebuild events
+                                                      </p>
+                                                      
+                                                      <div style="tab-size: 8" id="gist7810858" class="gist">
+                                                        <div class="gist-file" translate="no">
+                                                          <div class="gist-data">
+                                                            <div class="js-gist-file-update-container js-task-list-container file-box">
+                                                              <div id="file-gistfile1-xml" class="file my-2">
+                                                                <div itemprop="text" class="Box-body p-0 blob-wrapper data type-xml  ">
+                                                                  <div class="js-check-bidi blob-code-content">
+                                                                    <template class="js-file-alert-template"></p> 
+                                                                    
+                                                                    <div data-view-component="true" class="flash flash-warn flash-full d-flex flex-items-center">
+                                                                      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg></p> 
+                                                                      
+                                                                      <p>
+                                                                        <span><br /> This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.<br /> <a href="https://github.co/hiddenchars" target="_blank">Learn more about bidirectional Unicode characters</a><br /> </span>
+                                                                      </p>
+                                                                      
+                                                                      <div data-view-component="true" class="flash-action">
+                                                                        <a href="{{ revealButtonHref }}" data-view-component="true" class="btn-sm btn"></p> 
+                                                                        
+                                                                        <p>
+                                                                          Show hidden characters
+                                                                        </p>
+                                                                        
+                                                                        <p>
+                                                                          </a> </div> </div> 
+                                                                          
+                                                                          <p>
+                                                                            </template><br /> <template class="js-line-alert-template"><br /> <span aria-label="This line has hidden Unicode characters" data-view-component="true" class="bidi-line-alert tooltipped tooltipped-e"><br /> <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-alert"> <path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path> </svg><br /> </span></template>
+                                                                          </p>
+                                                                          
+                                                                          <table class="highlight tab-size js-file-line-container js-code-nav-container js-tagsearch-file" data-tab-size="8" data-paste-markdown-skip data-tagsearch-lang="XML" data-tagsearch-path="gistfile1.xml">
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L1" class="blob-num js-line-number js-code-nav-line-number" data-line-number="1">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC1" class="blob-code blob-code-inner js-file-line">
+                                                                                <<span class="pl-ent">Import</span> <span class="pl-e">Project</span>=<span class="pl-s"><span class="pl-pds">"</span>$(MSBuildExtensionsPath)\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks<span class="pl-pds">"</span></span>/>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L2" class="blob-num js-line-number js-code-nav-line-number" data-line-number="2">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC2" class="blob-code blob-code-inner js-file-line">
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L3" class="blob-num js-line-number js-code-nav-line-number" data-line-number="3">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC3" class="blob-code blob-code-inner js-file-line">
+                                                                                <<span class="pl-ent">Target</span> <span class="pl-e">Name</span>=<span class="pl-s"><span class="pl-pds">"</span>BeforeBuild<span class="pl-pds">"</span></span>>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L4" class="blob-num js-line-number js-code-nav-line-number" data-line-number="4">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC4" class="blob-code blob-code-inner js-file-line">
+                                                                                <<span class="pl-ent">MSBuild</span>.ExtensionPack.FileSystem.Folder <span class="pl-e">TaskAction</span>=<span class="pl-s"><span class="pl-pds">"</span>RemoveContent<span class="pl-pds">"</span></span> <span class="pl-e">Path</span>=<span class="pl-s"><span class="pl-pds">"</span>$(ProjectDir)files<span class="pl-pds">"</span></span> />
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L5" class="blob-num js-line-number js-code-nav-line-number" data-line-number="5">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC5" class="blob-code blob-code-inner js-file-line">
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L6" class="blob-num js-line-number js-code-nav-line-number" data-line-number="6">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC6" class="blob-code blob-code-inner js-file-line">
+                                                                                <<span class="pl-ent">MSBuild</span>.ExtensionPack.FileSystem.RoboCopy <span class="pl-e">Source</span>=<span class="pl-s"><span class="pl-pds">"</span>$(ProjectDir)..\AdminConsole\bin\$(ConfigurationName)<span class="pl-pds">"</span></span> <span class="pl-e">Destination</span>=<span class="pl-s"><span class="pl-pds">"</span>$(ProjectDir)files\adminconsole<span class="pl-pds">"</span></span> <span class="pl-e">Files</span>=<span class="pl-s"><span class="pl-pds">"</span>*.*<span class="pl-pds">"</span></span> <span class="pl-e">Options</span>=<span class="pl-s"><span class="pl-pds">"</span>/s /XF *.pdb *avshost* *.xml<span class="pl-pds">"</span></span>>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L7" class="blob-num js-line-number js-code-nav-line-number" data-line-number="7">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC7" class="blob-code blob-code-inner js-file-line">
+                                                                                <<span class="pl-ent">Output</span> <span class="pl-e">TaskParameter</span>=<span class="pl-s"><span class="pl-pds">"</span>ExitCode<span class="pl-pds">"</span></span> <span class="pl-e">PropertyName</span>=<span class="pl-s"><span class="pl-pds">"</span>Exit<span class="pl-pds">"</span></span> />
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L8" class="blob-num js-line-number js-code-nav-line-number" data-line-number="8">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC8" class="blob-code blob-code-inner js-file-line">
+                                                                                <<span class="pl-ent">Output</span> <span class="pl-e">TaskParameter</span>=<span class="pl-s"><span class="pl-pds">"</span>ReturnCode<span class="pl-pds">"</span></span> <span class="pl-e">PropertyName</span>=<span class="pl-s"><span class="pl-pds">"</span>Return<span class="pl-pds">"</span></span> />
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L9" class="blob-num js-line-number js-code-nav-line-number" data-line-number="9">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC9" class="blob-code blob-code-inner js-file-line">
+                                                                                </<span class="pl-ent">MSBuild</span>.ExtensionPack.FileSystem.RoboCopy>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L10" class="blob-num js-line-number js-code-nav-line-number" data-line-number="10">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC10" class="blob-code blob-code-inner js-file-line">
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L11" class="blob-num js-line-number js-code-nav-line-number" data-line-number="11">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC11" class="blob-code blob-code-inner js-file-line">
+                                                                                <<span class="pl-ent">MSBuild</span>.ExtensionPack.FileSystem.RoboCopy <span class="pl-e">Source</span>=<span class="pl-s"><span class="pl-pds">"</span>$(ProjectDir)..\webapi<span class="pl-pds">"</span></span> <span class="pl-e">Destination</span>=<span class="pl-s"><span class="pl-pds">"</span>$(ProjectDir)\files<span class="pl-pds">"</span></span> <span class="pl-e">Files</span>=<span class="pl-s"><span class="pl-pds">"</span>*.*<span class="pl-pds">"</span></span> <span class="pl-e">Options</span>=<span class="pl-s"><span class="pl-pds">"</span>/s /XF *.pdb *avshost* *.xml %2a.cs *.user *.vspscc web.debug.config web.release.config *.layout *.csproj /XD obj properties<span class="pl-pds">"</span></span>>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L12" class="blob-num js-line-number js-code-nav-line-number" data-line-number="12">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC12" class="blob-code blob-code-inner js-file-line">
+                                                                                <<span class="pl-ent">Output</span> <span class="pl-e">TaskParameter</span>=<span class="pl-s"><span class="pl-pds">"</span>ExitCode<span class="pl-pds">"</span></span> <span class="pl-e">PropertyName</span>=<span class="pl-s"><span class="pl-pds">"</span>Exit<span class="pl-pds">"</span></span> />
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L13" class="blob-num js-line-number js-code-nav-line-number" data-line-number="13">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC13" class="blob-code blob-code-inner js-file-line">
+                                                                                <<span class="pl-ent">Output</span> <span class="pl-e">TaskParameter</span>=<span class="pl-s"><span class="pl-pds">"</span>ReturnCode<span class="pl-pds">"</span></span> <span class="pl-e">PropertyName</span>=<span class="pl-s"><span class="pl-pds">"</span>Return<span class="pl-pds">"</span></span> />
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L14" class="blob-num js-line-number js-code-nav-line-number" data-line-number="14">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC14" class="blob-code blob-code-inner js-file-line">
+                                                                                </<span class="pl-ent">MSBuild</span>.ExtensionPack.FileSystem.RoboCopy>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L15" class="blob-num js-line-number js-code-nav-line-number" data-line-number="15">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC15" class="blob-code blob-code-inner js-file-line">
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L16" class="blob-num js-line-number js-code-nav-line-number" data-line-number="16">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC16" class="blob-code blob-code-inner js-file-line">
+                                                                                <<span class="pl-ent">Exec</span> <span class="pl-e">Command</span>=<span class="pl-s"><span class="pl-pds">"</span>$(SolutionDir)ctt.exe s:$(ProjectDir)..\webapi\web.config t:$(ProjectDir)..\webapi\web.release.config d:$(ProjectDir)files\web.config pw v<span class="pl-pds">"</span></span>/>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L17" class="blob-num js-line-number js-code-nav-line-number" data-line-number="17">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC17" class="blob-code blob-code-inner js-file-line">
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L18" class="blob-num js-line-number js-code-nav-line-number" data-line-number="18">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC18" class="blob-code blob-code-inner js-file-line">
+                                                                                <<span class="pl-ent">HeatDirectory</span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L19" class="blob-num js-line-number js-code-nav-line-number" data-line-number="19">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC19" class="blob-code blob-code-inner js-file-line">
+                                                                                Condition=<span class="pl-s"><span class="pl-pds">"</span> '$(Configuration)|$(Platform)' == 'Debug|x86' <span class="pl-pds">"</span></span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L20" class="blob-num js-line-number js-code-nav-line-number" data-line-number="20">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC20" class="blob-code blob-code-inner js-file-line">
+                                                                                ToolPath=<span class="pl-s"><span class="pl-pds">"</span>$(WixToolPath)<span class="pl-pds">"</span></span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L21" class="blob-num js-line-number js-code-nav-line-number" data-line-number="21">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC21" class="blob-code blob-code-inner js-file-line">
+                                                                                Directory=<span class="pl-s"><span class="pl-pds">"</span>$(ProjectDir)files<span class="pl-pds">"</span></span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L22" class="blob-num js-line-number js-code-nav-line-number" data-line-number="22">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC22" class="blob-code blob-code-inner js-file-line">
+                                                                                DirectoryRefId=<span class="pl-s"><span class="pl-pds">"</span>INSTALLLOCATION<span class="pl-pds">"</span></span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L23" class="blob-num js-line-number js-code-nav-line-number" data-line-number="23">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC23" class="blob-code blob-code-inner js-file-line">
+                                                                                <span class="pl-e">OutputFile</span>=<span class="pl-s"><span class="pl-pds">"</span>$(ProjectDir)adminfiles.wxs<span class="pl-pds">"</span></span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L24" class="blob-num js-line-number js-code-nav-line-number" data-line-number="24">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC24" class="blob-code blob-code-inner js-file-line">
+                                                                                ComponentGroupName=<span class="pl-s"><span class="pl-pds">"</span>AdminFilesGroup<span class="pl-pds">"</span></span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L25" class="blob-num js-line-number js-code-nav-line-number" data-line-number="25">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC25" class="blob-code blob-code-inner js-file-line">
+                                                                                GenerateGuidsNow=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L26" class="blob-num js-line-number js-code-nav-line-number" data-line-number="26">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC26" class="blob-code blob-code-inner js-file-line">
+                                                                                SuppressCom=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L27" class="blob-num js-line-number js-code-nav-line-number" data-line-number="27">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC27" class="blob-code blob-code-inner js-file-line">
+                                                                                SuppressFragments=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L28" class="blob-num js-line-number js-code-nav-line-number" data-line-number="28">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC28" class="blob-code blob-code-inner js-file-line">
+                                                                                SuppressRootDirectory=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L29" class="blob-num js-line-number js-code-nav-line-number" data-line-number="29">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC29" class="blob-code blob-code-inner js-file-line">
+                                                                                RunAsSeparateProcess=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L30" class="blob-num js-line-number js-code-nav-line-number" data-line-number="30">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC30" class="blob-code blob-code-inner js-file-line">
+                                                                                <span class="pl-e">PreprocessorVariable</span>=<span class="pl-s"><span class="pl-pds">"</span>var.AdminSource<span class="pl-pds">"</span></span> />
+                                                                              </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+                                                                              <td id="file-gistfile1-xml-L31" class="blob-num js-line-number js-code-nav-line-number" data-line-number="31">
+                                                                              </td>
+                                                                              
+                                                                              <td id="file-gistfile1-xml-LC31" class="blob-code blob-code-inner js-file-line">
+                                                                                </<span class="pl-ent">Target</span>>
+                                                                              </td>
+                                                                            </tr>
+                                                                          </table></div></div>
+                                                                        </p></div> </div></div> 
+                                                                        
+                                                                        <div class="gist-meta">
+                                                                          <a href="https://gist.github.com/anotherlab/46609ea19e32f3ffc93f/raw/827d58c437866db57d4ae2b87fb9945575f78fc2/gistfile1.xml" style="float:right">view raw</a><br /> <a href="https://gist.github.com/anotherlab/46609ea19e32f3ffc93f#file-gistfile1-xml"><br /> gistfile1.xml<br /> </a><br /> hosted with &#10084; by <a href="https://github.com">GitHub</a>
+                                                                        </div></p></div> </div>

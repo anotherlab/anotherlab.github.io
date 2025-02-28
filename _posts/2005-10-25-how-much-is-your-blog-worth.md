@@ -1,10 +1,6 @@
 ---
-id: 390
 title: How much is your blog worth?
 date: 2005-10-25T15:14:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=390
-permalink: /2005/10/25/how-much-is-your-blog-worth/
 ---
 In my case [diddly squat](http://dictionary.laborlawtalk.com/diddly-squat "diddly squat")&#8230;.
 

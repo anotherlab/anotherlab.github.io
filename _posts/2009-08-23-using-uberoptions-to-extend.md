@@ -1,10 +1,6 @@
 ---
-id: 85
 title: Using uberOptions to extend the functionality of Logitech devices
 date: 2009-08-23T04:29:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=85
-permalink: /2009/08/23/using-uberoptions-to-extend/
 ---
 A few weeks ago, I picked up some Logitech mice that were on sale as “dented box” items on the Logitech site.  They were new mice, but their boxes had some minor damage and they were half off.  I grabbed a [VX Revolution](http://www.logitech.com/index.cfm/mice_pointers/mice/devices/165&cl=us,en) and a [MX Revolution](http://www.logitech.com/index.cfm/mice_pointers/mice/devices/130&cl=us,en).  The VX was for the family computer that the kids use, and the MX was for my home development machine.  The VX is a notebook model and it’s smaller size fits the kids hands quite nicely.
 

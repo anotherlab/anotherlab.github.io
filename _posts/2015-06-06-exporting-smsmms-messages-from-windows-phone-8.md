@@ -1,10 +1,6 @@
 ---
-id: 1288
 title: Exporting SMS/MMS messages from Windows Phone 8
 date: 2015-06-06T12:33:14-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1288
-permalink: /2015/06/06/exporting-smsmms-messages-from-windows-phone-8/
 ---
 <div style="width: 810px" class="wp-caption alignnone">
   <img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-9Sk9kxF/0/L/Windows%20Phone%20Message%20Backup-L.png?resize=680%2C383" alt="" width="680" height="383"  />

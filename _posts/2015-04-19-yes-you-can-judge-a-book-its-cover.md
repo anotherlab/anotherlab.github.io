@@ -1,10 +1,6 @@
 ---
-id: 1255
 title: 'Yes, you can judge a book it&#8217;s cover'
 date: 2015-04-19T11:01:32-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1255
-permalink: /2015/04/19/yes-you-can-judge-a-book-its-cover/
 ---
 <div class="getty embed image" style="background-color: #fff; display: inline-block; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; color: #a7a7a7; font-size: 11px; width: 100%; max-width: 486px;">
   <div style="overflow: hidden; position: relative; height: 0; padding: 72.427984% 0 0 0; width: 100%;">

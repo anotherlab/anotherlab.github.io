@@ -1,10 +1,6 @@
 ---
-id: 150
 title: 'Sign the &quot;danah boyd proper case&quot; petition'
 date: 2008-06-18T20:34:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=150
-permalink: /2008/06/18/sign-boyd-proper-case-petition/
 ---
 [Jeff Atwood](http://www.codinghorror.com/blog/) is on a [righteous crusade](http://twitter.com/codinghorror/statuses/838022398) against those who insist on using only lower case for their names.  He has [a petition and he wants you to sign it](http://www.ipetitions.com/petition/danahboydpropercase/index.html "danah boyd should start capitalizing her name").  It’s all in good fun, but it raises a subtle point.  There are times where you have to import data from one application to another and you may need to change the case of text coming.  You could data coming out of an old system written in COBOL, where everything was uppercase and the people using the data wants the text changed to mixed case.
 

@@ -1,10 +1,6 @@
 ---
-id: 272
 title: Ed Dague is more than a floating head
 date: 2007-01-03T06:09:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=272
-permalink: /2007/01/03/ed-dague-is-more-than-floating-head/
 ---
 I just came across Ed Dague&#8217;s [blog](http://middleofthings.blogspot.com/index.html). He&#8217;s much more than a [floating head](http://www.foamtotem.org/foamtotm/edshead/index.html) on a an obscure web site. His comments on local media and politics are both interesting and intelligent. His [take](http://middleofthings.blogspot.com/2006/12/how-political-was-spitzers-motive.html) on Spitzer&#8217;s naming of Michael Balboni as Deputy Secretary for Public Safety shows how 2 out of the three 3 local stations completely missed the [hidden implications](http://www.urbanelephants.com/nyc/node/6038) of that move.
 

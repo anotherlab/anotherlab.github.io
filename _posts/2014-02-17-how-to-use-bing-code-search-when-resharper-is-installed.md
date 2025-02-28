@@ -1,10 +1,6 @@
 ---
-id: 642
 title: How to use Bing Code Search when ReSharper is installed
 date: 2014-02-17T23:23:26-05:00
-layout: post
-guid: http://www.rajapet.com/?p=642
-permalink: /2014/02/17/how-to-use-bing-code-search-when-resharper-is-installed/
 ---
 Microsoft Research just released a cool add-in for Visual Studio 2013 called [Bing Code Search](http://visualstudiogallery.msdn.microsoft.com/a1166718-a2d9-4a48-a5fd-504ff4ad1b65 "Bing Code Search").  It allows you to search for code samples from with the IDE and has enough context awareness to use the variables from your code.
 

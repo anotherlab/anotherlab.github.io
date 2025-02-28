@@ -1,10 +1,6 @@
 ---
-id: 107
 title: Dealing with meetings that run late and run into your meeting
 date: 2008-12-03T15:36:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=107
-permalink: /2008/12/03/dealing-with-meetings-that-run-late-and/
 ---
 </p> 
 

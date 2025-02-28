@@ -1,10 +1,6 @@
 ---
-id: 215
 title: 'Thoughts on trading the Town &amp; Country for the Odyssey'
 date: 2007-12-30T18:45:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=215
-permalink: /2007/12/30/thoughts-on-trading-town-country-for/
 ---
 I was reading Steve Tibbett&#8217;s post about [trading in his Dodge Caravan for a Toyota RAV4](http://blog.stevex.net/index.php/2007/12/29/rav4-vs-grand-caravan-es/trackback/ "SteveX's blog") and I started thinking about the last trade in I did.  Back in August, we traded in our &#8217;03 Chrysler Town & Country in for a new &#8217;07 Honda Odyssey.
 

@@ -1,10 +1,6 @@
 ---
-id: 205
 title: Nvidia nForce network driver problem under Vista
 date: 2008-02-09T23:00:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=205
-permalink: /2008/02/09/nvidia-nforce-network-driver-problem/
 ---
 On my home machine, I rarely reboot it. If a software update requires a reboot, then I do it. otherwise it stays running for weeks at a time. Vista (32-bit) has been stable enough for me, where I don&#8217;t have to start the system or suffer system crashes.
 

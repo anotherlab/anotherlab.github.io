@@ -7,35 +7,29 @@
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
+
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
-title: Chris Miller's 4th Blog
+title: Chris Miller's 5th Blog
 locale: "en-US"
 email: chris@rajapet.net
 name: &name "Chris Miller"
 description: >- # this means to ignore newlines until "baseurl:"
-  My personal blog, 4th version
+  My personal blog, 5th version
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rajapet.com" # the base hostname & protocol for your site, e.g. http://example.com
 title_image:  "https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg"
 twitter_username: anotherlab
-github_username:  anotherlab
-search:           true
-words_per_minute: 200
+github_username: anotherlab
+minimal_mistakes_skin: sunrise
+search: true
 
 repository: "anotherlab/anotherlab.github.io"
 comments:
   provider: "giscus"
-#  provider: "utterances"
   giscus:
     repo:                "anotherlab/anotherlab.github.io"
     repo-id:             "R_kgDOGhtM_w"
@@ -50,32 +44,34 @@ comments:
     theme:               "github-light" # "github-dark"
     issue_term:          "pathname"
 
+
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes@4.26.2
-minimal_mistakes_skin: sunrise
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 
 # Outputting
+# permalink: /:categories/:title/
 permalink: /:year/:month/:day/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: US/Eastern
 
-# Social
-twitter:
-  username:         anotherlab
-github:             anotherlab
-stackoverflow:      206/chris-miller   #from a "http://stackoverflow.com/users/123456/username" link
-
-# Analytics
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: "UA-215918942-1"
-
 include:
   - _pages
 
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -83,19 +79,19 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-  - jekyll-remote-theme
 
-# Site Author
 author:
   name   : *name
-#  avatar : "/assets/images/bio-photo.jpg"
   avatar : "https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg"
   bio    : "I am a Microsoft MVP, a Pluralsight Author, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group."
   location : "Albany, NY"
-  email            :
+
   links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://"
     - label: "BlueSky"
-      icon: "fas fa-fw fa-bluesky"
+      icon: "fab fa-fw fa-bluesky"
       url: "https://bsky.app/profile/anotherlab.bsky.social"
     - label: "Pluralsight"
       icon: "fas fa-fw fa-chalkboard-teacher"
@@ -112,12 +108,25 @@ author:
     - label: "Microsoft MVP"
       icon: "fas fa-fw fa-award"
       url: "https://mvp.microsoft.com/en-us/PublicProfile/5000200"
+    - label: "Stack Overflow"
+      icon: "fab fa-fw fa-stack-overflow"
+      url: "https://stackoverflow.com/users/206/chris-miller"
+    - label: "Reddit"
+      icon: "fab fa-fw fa-reddit-alien"
+      url: "https://www.reddit.com/user/anotherlab/"
+
+# Social
+twitter:
+  username:         anotherlab
+github:             anotherlab
+stackoverflow:      206/chris-miller   #from a "http://stackoverflow.com/users/123456/username" link
+
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/anotherlab"
+    - label: "Bluesky"
+      icon: "fab fa-fw fa-bluesky"
+      url: "https://bsky.app/profile/anotherlab.bsky.social"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/anotherlab"
@@ -130,70 +139,6 @@ footer:
     - label: "Microsoft MVP"
       icon: "fas fa-fw fa-award"
       url: "https://mvp.microsoft.com/en-us/PublicProfile/5000200"
-
-
-# Reading Files
-include:
-  - .htaccess
-  - _pages      
-exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - vendor
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - assets/js/plugins
-  - assets/js/_main.js
-  - assets/js/vendor
-  - Capfile
-  - CHANGELOG
-  - config
-  - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE
-  - log
-  - node_modules
-  - package.json
-  - package-lock.json
-  - Rakefile
-  - README
-  - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
-keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/  
-
-# Conversion
-markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-
-# Markdown Processing
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false  
 
 defaults:
   # _posts
@@ -209,60 +154,15 @@ defaults:
       related: true
   # _pages
   - scope:
-      path: ""
+      path: "_pages"
       type: pages
     values:
       layout: single
       author_profile: true
-      show_date: true
 
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-# Plugins (previously gems:)
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-  - jekyll-twitter-plugin
-
-# mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-
-# HTML Compression
-# - http://jch.penibelst.de/
-compress_html:
-  clippings: all
-  ignore:
-    envs: development  
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/

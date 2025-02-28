@@ -1,10 +1,6 @@
 ---
-id: 395
 title: Regular Expression Tools
 date: 2005-10-24T14:35:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=395
-permalink: /2005/10/24/regular-expression-tools/
 ---
 I&#8217;m still at the point where I can use stuff like **^\d{3}[-| ]?\d{2}[-| ]?\d{4}$** and not fully understand the pieces. So i&#8217;m always looking for decent [RegEx](http://en.wikipedia.org/wiki/Regex "Regular Expression") tools. Eric Gunnerson had a good [post](http://blogs.msdn.com/ericgu/archive/2005/10/21/483571.aspx "Eric Gunnerson's C# Compendium") about suing RegEx to validate a SSN
 

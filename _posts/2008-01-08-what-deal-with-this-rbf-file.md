@@ -1,10 +1,6 @@
 ---
-id: 211
 title: 'What&#8217;s the deal with this .rbf file?'
 date: 2008-01-08T21:29:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=211
-permalink: /2008/01/08/what-deal-with-this-rbf-file/
 ---
 I was updating the installer to one of our applications and every time I ran it, it wanted to reboot at the end of the install.  This installer was installing a web application with some utility apps, nothing that should have forced a reboot.  I was running the installer inside a [VMWare](http://www.vmware.com/products/ws/) virtual machine of Windows 2003.
 

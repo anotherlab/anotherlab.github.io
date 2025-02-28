@@ -1,10 +1,6 @@
 ---
-id: 360
 title: Counterstrings
 date: 2005-11-28T14:59:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=360
-permalink: /2005/11/28/counterstrings/
 ---
 I was reading some of the older postings in James Bach&#8217;s excellent blog, [Training the minds of testers](http://blackbox.cs.fit.edu/blog/james/), when I found a little gem called &#8220;counterstrings&#8221;.
 

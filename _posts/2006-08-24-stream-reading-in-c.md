@@ -1,10 +1,6 @@
 ---
-id: 290
 title: 'Stream reading in C#'
 date: 2006-08-24T21:05:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=290
-permalink: /2006/08/24/stream-reading-in-c/
 ---
 I was banging my head against the wall with an odd stream reading problem.  I was making a web service call as straight http, no SOAP, when I hit a snag reading the response back.  I was making the request with a HttpWebRequest object and getting the HttpWebResponse response back by calling the HttpWebResponse GetResponse() method.  From the response object, I was using GetResponseStream() to get at the content.  The data coming back was of variable size.  You would get a fixed size header block, plus a number of fixed sized data entries.  The header block had a field to say how many data blocks there would be.
 

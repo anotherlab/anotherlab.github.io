@@ -1,10 +1,6 @@
 ---
-id: 406
 title: 'RE: Performance Analysis Tools from Microsoft (Free)'
 date: 2005-10-07T15:54:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=406
-permalink: /2005/10/07/re-performance-analysis-tools-from/
 ---
 You can never have enough tracing tools&#8230;..
 

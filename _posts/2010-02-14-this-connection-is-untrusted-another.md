@@ -1,10 +1,6 @@
 ---
-id: 68
 title: This connection is Untrusted (another ID10T error)
 date: 2010-02-14T19:10:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=68
-permalink: /2010/02/14/this-connection-is-untrusted-another/
 ---
 The other day, my PC died.  After some angst, I was able to [fix it by replacing the power supply](http://anotherlab.rajapet.net/2010/02/what-do-you-mean-computer-wont-turn-on.html "What do you mean the computer wont turn on?").  After starting the PC, I fired up Firefox to check my email.  That’s when the first error message popped up.  I was presented with this lovely error dialog.
 

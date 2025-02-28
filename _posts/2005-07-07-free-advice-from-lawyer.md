@@ -1,10 +1,6 @@
 ---
-id: 429
 title: Free advice from a lawyer
 date: 2005-07-07T03:15:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=429
-permalink: /2005/07/07/free-advice-from-lawyer/
 ---
 Handy advice from a lawyer who writes from his own experience, a passalong email. 
 

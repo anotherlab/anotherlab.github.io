@@ -1,10 +1,6 @@
 ---
-id: 1360
 title: Windows Live Writer is dead, Long Live Open Live Writer
 date: 2015-12-09T12:41:23-05:00
-layout: post
-guid: http://www.rajapet.com/?p=1360
-permalink: /2015/12/09/live-writer-is-dead-long-live-open-live-writer/
 ---
 <img src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-QnXkb6F/0/O/openlivewriter-purpleheader.png?w=680"  />
 

@@ -1,10 +1,6 @@
 ---
-id: 133
 title: Still time to enter the Darwin Race of Languages
 date: 2008-07-08T20:24:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=133
-permalink: /2008/07/08/still-time-to-enter-darwin-race-of/
 ---
 Do you think that hand tweaked C code runs circles around managed code (C#, Java, VB.NET)?  Or do you think that your Just In Time compiled managed code gets the job done more securely than those bit sniffing dinosaurs?  Anxious to prove that Delphi is still relevant?  Want to win some cutting edge component libraries from [DevExpress](http://www.devexpress.com/)?
 

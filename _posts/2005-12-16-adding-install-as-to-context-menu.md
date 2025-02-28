@@ -1,10 +1,6 @@
 ---
-id: 343
 title: 'Adding &quot;Install as&#8230;&quot; to context menu'
 date: 2005-12-16T17:18:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=343
-permalink: /2005/12/16/adding-install-as-to-context-menu/
 ---
 This comes from [Michael Willers](http://staff.newtelligence.net/michaelw/PermaLink.aspx?guid=99c458e6-b9cb-421a-b5f5-1ee744af457c), by way of [Dana Epp](http://silverstr.ufies.org/blog/archives/000889.html). This makes it easier to install .msi packages when logged in as a non-admin use. Too many home PC&#8217;s are running in Admin mode, one of the many reasons why we have so many virus attacks out there.
 

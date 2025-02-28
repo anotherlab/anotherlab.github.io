@@ -1,0 +1,14 @@
+---
+title: Get AMPed for faster page loading on mobile
+date: 2016-02-25
+---
+I just updated this blog to use the <a href="https://wordpress.org/plugins/amp/">Accelerated Mobile Pages (AMP) plugin</a> for WordPress.  <a href="https://www.ampproject.org/">AMP</a> is an open source project designed to optimize page content for mobile pages.  It uses a subset of HTML and some JavaScript to trim down the content of a web page.  <a href="https://amphtml.wordpress.com/2015/12/14/building-a-faster-mobile-web-experience-with-amp/">Early testing</a> has shown that AMP pages load four times faster and use eight times less data than a traditional web page.
+    
+AMP filters out 3rd party JavaScript code (aside from the AMP code), which basically takes out every analytics package.  Iframe and object tags are stripped out.  The HTML5 multimedia tags (img, video, audio) are replaced with custom elements (amp-img, amp-video, amp-audio).  On a page that uses the AMP runtime, a hidden link is added that provides the URL to AMP optimized version of the web page.  With the WordPress plugin, the AMP page is the original URL with “/amp” appended to it.  This will work on any hosted WordPress site.  Self hosted sites would need to add the plugin.
+
+For this blog post, if you want to see the AMP version, click <a href="http://www.rajapet.com/2016/02/get-amped-for-faster-page-loading-on-mobile.html/amp">here</a>.  It will load much faster, but without any special styling.  The banner image will be gone.  I like to use images from the Getty collection and as part of the terms of use, you have to embed the image with their custom template and that template puts the image in an iframe.  And since iframes are forbidden in AMP HTML, good bye image.
+
+The AMP runtime manages the amp-* HTML tags and can manage the loading and unloading of the resources. CSS is also limited for performance reasons.  That trade off gives you the performance boost on mobile.  AMP is already being used by sites like <a href="https://engineering.pinterest.com/blog/building-faster-mobile-web-experience-amp">Pinterest</a>, <a href="https://amp-by-example.appspot.com/amp-twitter.html">Twitter</a>, <a href="http://www.nytco.com/the-times-is-experimenting-with-google-amp-project/">New York Times</a>, <a href="http://www.theverge.com/2015/10/7/9467149/google-accelerated-mobile-pages-caching-preview">The Verge</a>.
+    
+AMP is not for everyone.  It is basically serving up a subset of your experience and you will lose custom animations, analytics, etc.  So where is it useful?  When you want a page to load as fast as it can.  Like a status page for service.  Google is already indexing AMP pages.  While it's not currently giving preference to AMP pages, it does rank pages by page load.  AMP is open source and you can view the code on GitHub in the <a href="https://github.com/ampproject/amphtml">ampproject</a> repository.
+

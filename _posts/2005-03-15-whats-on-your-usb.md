@@ -1,10 +1,6 @@
 ---
-id: 511
 title: 'What&#8217;s on your USB?'
 date: 2005-03-15T18:19:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=511
-permalink: /2005/03/15/whats-on-your-usb/
 ---
 As one of the duties that come with being the computer geek in the family, I get asked to check out the pc&#8217;s of friends and family. I usually bring a CD loaded with tools and various service packs. I have seen a few sites that list what they put on their USB memory stick. One I like is [What&#8217;s on my USB?](http://weblogs.asp.net/nleghari/articles/usb.aspx)
 

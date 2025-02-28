@@ -1,10 +1,6 @@
 ---
-id: 47
 title: Care and feeding of your wireless router
 date: 2010-09-28T15:34:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=47
-permalink: /2010/09/28/care-and-feeding-of-your-wireless/
 ---
 This morning I went to check my email from my iPad and had a unpleasant surprise.  No Internet.  I have the Wi-Fi only version of the iPad and it usually has a nice solid connection to my wireless router.  On the iPad, I fired up the Settings app and sure enough, under “Wi-Fi”, it displayed not connected. I tapped “Wi-Fi” and let it scan for networks.  No sign of mine.  I tried my iPod Touch, same thing.
 

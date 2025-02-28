@@ -1,10 +1,6 @@
 ---
-id: 471
 title: How Photoshop and copiers detect currency
 date: 2005-05-01T01:31:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=471
-permalink: /2005/05/01/how-photoshop-and-copiers-detect/
 ---
 [Tinotopia: Counterfeiting, Adobe Photoshop, Copyright, and the Future &#8211; Part I](http://www.tinotopia.com/log/archive/2004/01/12/counterfeiting_adobe_photoshop_copyright_and_the_future_part_i.htm)
 

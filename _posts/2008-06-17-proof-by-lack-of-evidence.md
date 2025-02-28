@@ -1,10 +1,6 @@
 ---
-id: 152
 title: Proof by lack of evidence
 date: 2008-06-17T04:00:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=152
-permalink: /2008/06/17/proof-by-lack-of-evidence/
 ---
 CNET’s Matt Asay wrote an article for CNET’s News.com that was just so bad, it gets the “[Epic](http://www.urbandictionary.com/define.php?term=epic+fail) [Fail](http://media.g4tv.com/images/blog/2007/12/06/633325462873135493.jpg)” [tag](http://images.google.com/images?q=epic+fail).  You can get the gist of how bad it is by the first few lines:
 

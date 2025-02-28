@@ -1,10 +1,6 @@
 ---
-id: 168
 title: IPv6 and Vista
 date: 2008-05-24T20:58:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=168
-permalink: /2008/05/24/ipv6-and-vista/
 ---
 The other day, I read a post that Carl Franklin had made on his blog about [a new Vista laptop that he had to buy on short notice](http://www.intellectualhedonism.com/2008/05/23/GoodVistaLaptopExperience.aspx "Intellectual Hedonism - Good Vista Laptop Experience").  The gist of his post that Vista ran pretty well, but he did tweak some of the settings.
 

@@ -1,10 +1,6 @@
 ---
-id: 241
 title: Why is this man laughing?
 date: 2007-05-18T16:37:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=241
-permalink: /2007/05/18/why-is-this-man-laughing/
 ---
   [<img alt="" src="https://i1.wp.com/2.bp.blogspot.com/_natoSxTaPFU/Rk3TFfq9V0I/AAAAAAAAAAg/KBX5zsjIaJM/s400/DaveAnthony.jpg?w=680" align="left" border="0"  />](https://i1.wp.com/2.bp.blogspot.com/_natoSxTaPFU/Rk3TFfq9V0I/AAAAAAAAAAg/KBX5zsjIaJM/s1600-h/DaveAnthony.jpg) 
 

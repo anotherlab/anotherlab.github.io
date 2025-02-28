@@ -1,10 +1,6 @@
 ---
-id: 291
 title: Vista performance (or lack of)
 date: 2006-08-24T16:28:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=291
-permalink: /2006/08/24/vista-performance-or-lack-of/
 ---
 I just installed the Beta 2 of Vista on one of my dev boxes.  It used to be my primary development box until I got a bright shiny new one last year.  About two weeks ago, the hard drive had a massive failure (it needs to be [defraggled](http://www.datadocktorn.nu/us_frag1.php) at this point) and I needed to rebuild the box.  Since we had the Vista DVD, I figured why not.  We set it up as a dual boot, with XP as the &#8220;other&#8221; OS.
 

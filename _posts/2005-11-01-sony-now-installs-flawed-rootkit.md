@@ -1,9 +1,5 @@
 ---
-id: 382
 title: Sony now installs a flawed rootkit
 date: 2005-11-01T15:54:00-05:00
-layout: post
-guid: http://www.rajapet.com/?p=382
-permalink: /2005/11/01/sony-now-installs-flawed-rootkit/
 ---
 This is lovely. Sony is now putting a rootkit installer on their Music CD&#8217;s. Mark Russinovich discovered a [root kit](http://en.wikipedia.org/wiki/Rootkit "Rootkit definition") on his machine while testing a rootkit detection tool ([RootKitRevealer](http://www.sysinternals.com/utilities/rootkitrevealer.html)   ) that is was working on. He [documented the process on his blog](http://www.sysinternals.com/blog/2005/10/sony-rootkits-and-digital-rights.htm "Sony root kits") and it&#8217;s required reading. He cleary documents what he found, how badly written it was, and what he had to go through to remove. The rootkit installed by Sony is a [Digital Right Management](http://en.wikipedia.org/wiki/Digital_rights_management "DRM definition") service, but is so badly written it will have all sorts of nasty side affects. This thing will really mess up your computer. If you don&#8217;t remove it correctly, you will lose access to the CD/DVD drive in your PC.
