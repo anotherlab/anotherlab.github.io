@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-28T04:25:17+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 5th Blog</title><subtitle>My personal blog, 5th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">You can find me on Bluesky</title><link href="http://localhost:4000/2025/02/06/bluesky/" rel="alternate" type="text/html" title="You can find me on Bluesky" /><published>2025-02-06T00:00:00+00:00</published><updated>2025-02-06T00:00:00+00:00</updated><id>http://localhost:4000/2025/02/06/bluesky</id><content type="html" xml:base="http://localhost:4000/2025/02/06/bluesky/"><![CDATA[<p><img loading="lazy" class="aligncenter size-medium" src="https://photos.smugmug.com/Blog/n-zwT5d/2025/i-8TCX2Qm/0/NQn4T72595x5vLgj8nvz3LtjNVjSLf5bqffPHMrcR/M/bluesky-M.jpg" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-04T05:08:26+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 5th Blog</title><subtitle>My personal blog, 5th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">Refresh of this blog</title><link href="http://localhost:4000/2025/03/04/blog-refresh/" rel="alternate" type="text/html" title="Refresh of this blog" /><published>2025-03-04T00:00:00+00:00</published><updated>2025-03-04T00:00:00+00:00</updated><id>http://localhost:4000/2025/03/04/blog-refresh</id><content type="html" xml:base="http://localhost:4000/2025/03/04/blog-refresh/"><![CDATA[<p><img src="/assets/images/pc_on_fire.jpg" alt="Not good" /></p>
+
+<p>The blog has been updated. Not just posts, all of the stuff that generates it. This wasn’t planned…</p>
+
+<p>About two weeks ago, the boot drive of my PC failed. The drive was a Samsung 980 Pro 2TB. I had two of them, one for the OS, the other for data. Went to my PC on a normal Sunday morning only to see the BIOS configuration screen. After a few failed reboots, I came to the conclusion that something was seriously not good with by boot drive.</p>
+
+<p><img src="/assets/images/uefi-bios-11.gif" alt="Rut ro" />
+<em><small>Not my motherboard, but close enough</small></em></p>
+
+<p>What I didn’t know was that this drive was shipped with a <a href="https://www.tomshardware.com/news/samsung-980-pro-ssd-failures-firmware-update">notorious firmware bug</a>. Eventually it would permanently lock itself into readonly mode.</p>
+
+<p>Most of my data is backed up on regular basis. I have a <a href="https://www.qnap.com/en-as/product/ts-464">QNAP server</a> with about 7 TB of RAID storage. Stuff that is important to me is backed up there. I have a healthy degree of paranoia about disk backups. I assume that it will all fail. I backup up documents to external USB drives and store them at my daughter’s house. I count on those drives failing after a few years and will rotate them out.</p>
+
+<p>I figure we’ll have USB around for a while longer. I use to burn documents to CD and the DVD. I don’t have any drives with spinning parts in this computer. USB is enough.</p>
+
+<p>I was a bit sloppy with backing up some of the stuff, so I had some code on the boot drive that I didn’t want to lose. I was able to make a Windows 11 boot USB stick and with that stick, I could open a CMD shell and read the data from the boot drive.  I copied to data drive and to an external drive.</p>
+
+<p>I made a few attempts to reinstall Windows, but that drive was locked into readonly mode. I ordered a new drive from a local BestBuy and picked it up.  All they had were Samsung 990 Pro drives in the 2 TB size. So that’s what I bought. I like the M.2 NVMe drives. They are fast and they just install on the motherboard. No power or data cables. When I assembled this <a href="https://pcpartpicker.com/list/BwHP6r">PC</a> 3 years ago, I did it without any SATA drives.</p>
+
+<p>Now it was time to get to work. I have a <a href="https://www.msi.com/Motherboard/MPG-Z690-EDGE-WIFI-DDR4">MSI Z690 Edge Wifi DD4 motherboard</a>. It’s nice, I like it. It has four M.2 slots. One of them is directly controlled by the CPU, the other 3 are controlled by the Z690 chipset. The one controlled by the CPU is where I have the boot drive. It’s located between the CPU and the first PCIe slot. All of the M.2 slots have heatsinks on them. Which have to be unscrewed to get at the slots</p>
+
+<p>I used a Fractal Desigm Torrent case for this PC. It’s fan cooled and very quiet. I have a massive Noctua CPU cooler. It partially covers the M.2 slot and I had to angle a screw driver in to get the heatsink off and swap the old drive with the new one. I had also had to remove the GPU to get at the M.2 slot. It’s always fiddly to swap stuff on the motherboard, but it wasn’t too bad.</p>
+
+<p>I booted from the Win11 stick and tried to install Windows. Here is where I shot myself in the foot. Windows numbers the drives, starting from 0. The boot drive was 0, the data was 1. For some reason, the data drive was now 0 and the new one was 1. I just assumed that because I was using the same slot for the new drive, the numbering would stay the same.I ended up deleting the partition on the good drive so the Win11 installer could start fresh.</p>
+
+<p>It rebooted and kept coming back to the installer on the USB stick. After a few attempts, I pulled the data drive out and with just one drive, Windows setup was able to install Windows. After Windows came up and updated itself, I powered down and installed the data drive. It came up and of course my data was gone. It was backed up, but I had some images and code that were only the data drive. I ended up buying <a href="https://www.anyrecover.com/">an app</a> that claimed to be able to recover data from a deleted partition.</p>
+
+<p>AnyRecover lived up to it’s claim. It wasn’t quick, but I recoved what I needed to a folder on the new boot drive. I then formatted the data drive and moved the data back. That’s when a friend told me that these 980 Pro drives had a firmware version that would eventually lock the drive into readonly. I bought the data drive a month after building the PC, the odds were high that it had the same firmware. Samssung has a handy <a href="https://semiconductor.samsung.com/consumer-storage/magician/">Magician</a> app. It can show the firmware and other settings and it can update the firmware.</p>
+
+<p>So I downloaded and installed the Magician app and then installed the broken drive to see what the Magician would say. It showed that the new 990 Pro had the current firmware, but both 980 Pro’s were on the bad firmware. It was able to update the firmware for the data drive, but failed on the old boot drive. It did allow me to access the serial number of the drive.</p>
+
+<p><img src="/assets/images/samsung-magician.png" alt="Samsung Magician" />
+<em><small>Screenshot of the Samsung Magician</small></em></p>
+
+<p>I went to the Samsung Support site and filed a warranty claim. They took the serial number and immediately gave me a RMA number and a label to print. I sent the failed 980 Pro in. A few days later, I received a new 990 Pro drive back. Now I had three M.2 drives of 2 TB capacity each, which more than I needed. I didn’t realize until I wrote this blog post that the QNAP box has two M.2 slots. I thought my PC was the only thing I had that could use the drive.</p>
+
+<p>So I added it as a new drive and formatted as a <a href="https://learn.microsoft.com/en-us/windows/dev-drive/">Windows Dev Drive</a>. Dev Drives use the <a href="https://learn.microsoft.com/en-us/windows-server/storage/refs/refs-overview">ReFS</a> file system instead of NTFS and they are treated as a “trusted drive” by the OS. The usual antivirus and other security policies are not applied to Dev Drives. So that’s where all of my source code lives now. It’s supposed to be faster, but it’s hard to to tell.</p>
+
+<p>Now that the PC was running again and my data was safe, I could start the long process of installing and configuring the apps that I use. That will be another blog post. There was a lot to install and I’m almost there. Some configuration was required to the the blog stuff working again and this post is more or less a validation check for that.</p>]]></content><author><name>anotherlab</name></author><category term="Jekyll Blog Ubuntu" /><category term="Samsung M.2" /><summary type="html"><![CDATA[The blog has been updated. Not just posts, all of the stuff that generates it. This wasn’t planned… About two weeks ago, the boot drive of my PC failed. The drive was a Samsung 980 Pro 2TB. I had two of them, one for the OS, the other for data. Went to my PC on a normal Sunday morning only to see the BIOS configuration screen. After a few failed reboots, I came to the conclusion that something was seriously not good with by boot drive. Not my motherboard, but close enough What I didn’t know was that this drive was shipped with a notorious firmware bug. Eventually it would permanently lock itself into readonly mode. Most of my data is backed up on regular basis. I have a QNAP server with about 7 TB of RAID storage. Stuff that is important to me is backed up there. I have a healthy degree of paranoia about disk backups. I assume that it will all fail. I backup up documents to external USB drives and store them at my daughter’s house. I count on those drives failing after a few years and will rotate them out. I figure we’ll have USB around for a while longer. I use to burn documents to CD and the DVD. I don’t have any drives with spinning parts in this computer. USB is enough. I was a bit sloppy with backing up some of the stuff, so I had some code on the boot drive that I didn’t want to lose. I was able to make a Windows 11 boot USB stick and with that stick, I could open a CMD shell and read the data from the boot drive. I copied to data drive and to an external drive. I made a few attempts to reinstall Windows, but that drive was locked into readonly mode. I ordered a new drive from a local BestBuy and picked it up. All they had were Samsung 990 Pro drives in the 2 TB size. So that’s what I bought. I like the M.2 NVMe drives. They are fast and they just install on the motherboard. No power or data cables. When I assembled this PC 3 years ago, I did it without any SATA drives. Now it was time to get to work. I have a MSI Z690 Edge Wifi DD4 motherboard. It’s nice, I like it. It has four M.2 slots. One of them is directly controlled by the CPU, the other 3 are controlled by the Z690 chipset. The one controlled by the CPU is where I have the boot drive. It’s located between the CPU and the first PCIe slot. All of the M.2 slots have heatsinks on them. Which have to be unscrewed to get at the slots I used a Fractal Desigm Torrent case for this PC. It’s fan cooled and very quiet. I have a massive Noctua CPU cooler. It partially covers the M.2 slot and I had to angle a screw driver in to get the heatsink off and swap the old drive with the new one. I had also had to remove the GPU to get at the M.2 slot. It’s always fiddly to swap stuff on the motherboard, but it wasn’t too bad. I booted from the Win11 stick and tried to install Windows. Here is where I shot myself in the foot. Windows numbers the drives, starting from 0. The boot drive was 0, the data was 1. For some reason, the data drive was now 0 and the new one was 1. I just assumed that because I was using the same slot for the new drive, the numbering would stay the same.I ended up deleting the partition on the good drive so the Win11 installer could start fresh. It rebooted and kept coming back to the installer on the USB stick. After a few attempts, I pulled the data drive out and with just one drive, Windows setup was able to install Windows. After Windows came up and updated itself, I powered down and installed the data drive. It came up and of course my data was gone. It was backed up, but I had some images and code that were only the data drive. I ended up buying an app that claimed to be able to recover data from a deleted partition. AnyRecover lived up to it’s claim. It wasn’t quick, but I recoved what I needed to a folder on the new boot drive. I then formatted the data drive and moved the data back. That’s when a friend told me that these 980 Pro drives had a firmware version that would eventually lock the drive into readonly. I bought the data drive a month after building the PC, the odds were high that it had the same firmware. Samssung has a handy Magician app. It can show the firmware and other settings and it can update the firmware. So I downloaded and installed the Magician app and then installed the broken drive to see what the Magician would say. It showed that the new 990 Pro had the current firmware, but both 980 Pro’s were on the bad firmware. It was able to update the firmware for the data drive, but failed on the old boot drive. It did allow me to access the serial number of the drive. Screenshot of the Samsung Magician I went to the Samsung Support site and filed a warranty claim. They took the serial number and immediately gave me a RMA number and a label to print. I sent the failed 980 Pro in. A few days later, I received a new 990 Pro drive back. Now I had three M.2 drives of 2 TB capacity each, which more than I needed. I didn’t realize until I wrote this blog post that the QNAP box has two M.2 slots. I thought my PC was the only thing I had that could use the drive. So I added it as a new drive and formatted as a Windows Dev Drive. Dev Drives use the ReFS file system instead of NTFS and they are treated as a “trusted drive” by the OS. The usual antivirus and other security policies are not applied to Dev Drives. So that’s where all of my source code lives now. It’s supposed to be faster, but it’s hard to to tell. Now that the PC was running again and my data was safe, I could start the long process of installing and configuring the apps that I use. That will be another blog post. There was a lot to install and I’m almost there. Some configuration was required to the the blog stuff working again and this post is more or less a validation check for that.]]></summary></entry><entry><title type="html">You can find me on Bluesky</title><link href="http://localhost:4000/2025/02/06/bluesky/" rel="alternate" type="text/html" title="You can find me on Bluesky" /><published>2025-02-06T00:00:00+00:00</published><updated>2025-02-06T00:00:00+00:00</updated><id>http://localhost:4000/2025/02/06/bluesky</id><content type="html" xml:base="http://localhost:4000/2025/02/06/bluesky/"><![CDATA[<p><img loading="lazy" class="aligncenter size-medium" src="https://photos.smugmug.com/Blog/n-zwT5d/2025/i-8TCX2Qm/0/NQn4T72595x5vLgj8nvz3LtjNVjSLf5bqffPHMrcR/M/bluesky-M.jpg" /></p>
 
 <p>I’ve been on <a href="https://bsky.app/">Bluesky</a> for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn billions of dollars. I never announced that I had quit that site, I just stopped using it. There are few technical sites that are there, so I kept my account active so that I could view their posts.</p>
 
@@ -490,94 +528,4 @@ Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-an
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- Versions --&gt;</span>
 <span class="nt">&lt;ApplicationVersion&gt;</span>1<span class="nt">&lt;/ApplicationVersion&gt;</span></code></pre></figure>
 
-<p>When I changed the “Versions” lines .csproj to match the single line used in the new .csproj Preview 6, the app compiled and deployed to Android. My best guess is that AndroidVersionCode was being used in Preview 4 and sometime after that, they made the breaking change to ApplicationVersion and jettisoned the AndroidVersionCode setting. It’s a preview release of Visual Studio and they are still baking .NET MAUI. This <a href="https://developercommunity.visualstudio.com/t/versioncode-10-is-invalid/1553498">kind of stuff happens</a> and the end result is a better product.</p>]]></content><author><name>Chris Miller</name></author><category term="Android" /><category term="MAUI" /><category term="android" /><category term="maui" /><summary type="html"><![CDATA[I hit the "VersionCode 1.0 is invalid" error with .NET MAUI and resolved it.]]></summary></entry><entry><title type="html">Controlling a WSL installation of redis-server from the Windows command line</title><link href="http://localhost:4000/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/" rel="alternate" type="text/html" title="Controlling a WSL installation of redis-server from the Windows command line" /><published>2021-10-19T04:53:13+00:00</published><updated>2021-10-19T04:53:13+00:00</updated><id>http://localhost:4000/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line</id><content type="html" xml:base="http://localhost:4000/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/"><![CDATA[<p>If you like using <a href="https://redis.io/">redis</a> for web site caching and you are writing and testing code locally from Windows, you’ll want to figure out how to run a local instance of redis-server. You have a few options. You can run it from another machine that’s running something vaguely Linux-like or MacOS. You can run it from a Docker container under Windows. Or you can run it directly from <a href="http://Windows SubSystem (WSL) for Linux" data-wplink-url-error="true">Windows SubSystem (WSL) for Linux</a>.</p>
-
-<p>For the last few years, Windows (10, 11, Server 2019) comes with a compatibility layer that lets you run Linux binary executables. The current version is WSL 2, but I’m just going to refer to it as WSL. If you don’t have installed already, just run the following command from an elevated shell (run as administrator)</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">wsl --install</code></pre></figure>
-
-<figure> 
-<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-pTtQzxz/0/0a5988c8/L/02%20-%20wsl-install-L.png" alt="Installing WSl via command line" /> <figcaption>Installing WSl via command line</figcaption></figure>
-
-<p>It will install the bits that you need and then ask you to reboot your machine. For more information about installing and configuring WSL, Microsoft has some really good documentation at <a href="https://docs.microsoft.com/en-us/windows/wsl/install">Install WSL</a>.</p>
-
-<p>The default Linux distribution for WSL is Ubuntu. After you reboot, you may see a Ubuntu shell for a while as Windows installs the bits that you need. It will churn for a bit and then ask you for a username and password. That password will be your sudo (user root) password. One that is done, you should see something like this.<figure></figure></p>
-
-<figure><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-43gLWHP/0/54984ae6/L/02%20-%20ubuntu-install-L.png" alt="Final step of installing WSL is configuring the default Linux distribution" /> <figcaption>Final step of installing WSL is configuring the default Linux distribution</figcaption></figure>
-
-<p>The next thing to do is to install redis-server. We can install redis vis <a href="https://en.wikipedia.org/wiki/APT_(software)">apt-get</a>, but before we do that, we need to update apt-get and remove some of the new install shininess off.</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get update
-sudo apt-get upgrade</code></pre></figure>
-
-<p>After updating apt-get, you’ll want to upgrade it. Confusing? Sort of. Update is updating the instance of apt-get, upgrade is updating all of the packages that were installed via apt-get. After that has finished, you can install redis-server</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo apt-get install redis-server</code></pre></figure>
-
-<p>There will be some churn and finally, it be installed. Out of the box, redis will not be running. My personal preference is to only run redis when I’m actually using it for development. So I Iike to start and stop it from the command line. Here are commands that you need to know:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo service redis-server status
-sudo service redis-server start
-sudo service redis-server stop</code></pre></figure>
-
-<p>I’ll start up redis with the service start command, and it will come back with a message that redis is starting. And you can use the service status command to verify that it’s running. The acid test is to connect to redis and see if it’s working. You can use the redis-cli tool to set and get a cache value. You should see something like this.</p>
-
-<figure><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-vLhVGKK/0/6aaf4c9d/O/04%20-%20redis-cli.png" alt="Running redis-cli from the Ubuntu shell" /> <figcaption>Running redis-cli from the Ubuntu shell</figcaption></figure>
-
-<p>So now redis-server is running. If you close the shell and open up a new one, it will still be running. If you restart WSL or Windows, then it wont be running. Now you can always pop open an Ubuntu shell and start redis-server, but you can do it from a Windows command line</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">wsl sudo service redis-server status</code></pre></figure>
-
-<figure><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-ffr3dZN/0/71f62819/O/05%20-%20redis-pwsh.png" alt="Running redis commands from PowerShell" /><figcaption>Running redis commands from PowerShell</figcaption></figure>
-
-<p>From the screenshot, you can see that WSL passed along the sudo service command to Ubunto. And because I used sudo, I was prompted for the root password. And it returned the same message that I would see from the Ubuntu shell. Since I only have Ubunto installed, that was the default Linux that received the command. If you have multiple distributions installed, you would use “wsl -d DistributionName”. You can get the names of the installed distributions with the “wsl -l” command. Unlike from the Linux shell, each time I invoke “sudo”, I’m prompted for the password. In the Linux shell, you are prompted just the first time you call sudo in a terminal session.</p>
-
-<p>Having to use the root password over and over again can be tedious on a development box. There is a way around that. You can add a file to the /etc/sudoers.d folder in the Linux distribution and remove the root password requirement for the redis-server service. From the Linux shell do the following</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">cd /etc/sudoers.d
-sudo sh
-echo "%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service redis-server *" &gt;&gt; allowed-services
-sudo chmod 0440 allowed-services
-exit</code></pre></figure>
-
-<figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-bdhLSQW/0/003b70be/O/06%20-%20sudoers.png" alt="" /> </figure>
-
-<p>The first thing we do is make /etc/sudoers.d the current folder. Then we use “sudo sh” to gain root access. You need root access to work with this folder. The echo line basically says that you can invoke sudo with no password for redis-server and writes that setting to a file named allowed-services. The file name allowed-services is arbitrary, I picked it because it made sense to me. There is a file in the sudoers.d folder named README, it will explain what the file name restrictions are.</p>
-
-<p>The chmod 0440 command sets the permissions to read-only for the root account and is required for sudoers.d. This allows us to remove the sudo password requirement for redis-server and only for redis-server. Now we can go back to the Windows shell and run the wsl commands without being prompted.</p>
-
-<p>You can even run the redis-cli tool from powershell…</p>
-
-<figure>
-<img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-5jWGFRF/0/c4e9ba5e/O/07%20-%20redis-pwsh.png" alt="Redis from PowerShell, no password" />
-<figcaption>Redis from PowerShell, no password</figcaption>
-</figure>
-
-<p>The Windows Subsystem for Linux is one of the hidden gems for developers. And this gem sparkles…</p>
-
-<p><strong>Bonus Round!</strong></p>
-
-<p>Because I’m lazy, I created shortcuts in my PowerShell profile. I added the following functions:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">function redstat {wsl sudo service redis-server status}
-function redstart {wsl sudo service redis-server start}</code></pre></figure>
-
-<p>And now I can just check the redis-server status via “redstat”</p>
-<figure>
-<img src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MBk5v8J/0/afa5b1b0/O/08-redstat.png" alt="" /> 
-</figure>
-<p><strong>Extra Bonus Round!</strong></p>
-
-<p>If you would like to have redis startup when Windows boots up, you just need a couple of extra steps. You just need to create a batch file that starts up redis.</p>
-
-<p>In your Windows startup folder, create a batch file. If you press Win+R and type shell:startup, that will open up and instance of Windows Explorer in the user startup foider.  From the command line the following will place you into the same folder.</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">  cd %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
-  </code></pre></figure>
-
-<p>Create a batch file in that folder. I used “start redis.cmd”, any name that the OS will recgize as a batch file will work. In that file, add the following line:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">  wsl sudo service redis-server start
-  </code></pre></figure>
-
-<p>The next time you reboot and then login, redis will be started. Because the commands that in the startup folder tend to get run later in the boot process, it may be available for a minute after you login to Windows.</p>]]></content><author><name>Chris Miller</name></author><category term="Coding" /><category term="Linux" /><category term="linux" /><category term="Powershell" /><category term="redis" /><category term="wsl" /><summary type="html"><![CDATA[Some shortcuts accessing redis-server running under WSL via PowerShell]]></summary></entry></feed>
+<p>When I changed the “Versions” lines .csproj to match the single line used in the new .csproj Preview 6, the app compiled and deployed to Android. My best guess is that AndroidVersionCode was being used in Preview 4 and sometime after that, they made the breaking change to ApplicationVersion and jettisoned the AndroidVersionCode setting. It’s a preview release of Visual Studio and they are still baking .NET MAUI. This <a href="https://developercommunity.visualstudio.com/t/versioncode-10-is-invalid/1553498">kind of stuff happens</a> and the end result is a better product.</p>]]></content><author><name>Chris Miller</name></author><category term="Android" /><category term="MAUI" /><category term="android" /><category term="maui" /><summary type="html"><![CDATA[I hit the "VersionCode 1.0 is invalid" error with .NET MAUI and resolved it.]]></summary></entry></feed>
