@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-04T05:08:26+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 5th Blog</title><subtitle>My personal blog, 5th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">Refresh of this blog</title><link href="http://localhost:4000/2025/03/04/blog-refresh/" rel="alternate" type="text/html" title="Refresh of this blog" /><published>2025-03-04T00:00:00+00:00</published><updated>2025-03-04T00:00:00+00:00</updated><id>http://localhost:4000/2025/03/04/blog-refresh</id><content type="html" xml:base="http://localhost:4000/2025/03/04/blog-refresh/"><![CDATA[<p><img src="/assets/images/pc_on_fire.jpg" alt="Not good" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-05T18:17:44+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 5th Blog</title><subtitle>My personal blog, 5th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">Poka-yoke</title><link href="http://localhost:4000/2025/03/05/poka-yoke/" rel="alternate" type="text/html" title="Poka-yoke" /><published>2025-03-05T00:00:00+00:00</published><updated>2025-03-05T00:00:00+00:00</updated><id>http://localhost:4000/2025/03/05/poka-yoke</id><content type="html" xml:base="http://localhost:4000/2025/03/05/poka-yoke/"><![CDATA[<p><img src="/assets/images/robots-poka-yoke.jpg" alt="Not good" /></p>
+
+<p>So I used poka-yoke (ポカヨケ) in a conversation yesterday. I am working on an update to an app that uses a web service. Under an extreme edge condition, the app would make an API call with a missing parameter that was required. This would error out on the service side and we caught it with the logs.</p>
+
+<p>The simple fix was to change the API call so it would check for missing data coming in and just return without doing anything. I went full poka-yoke and also changed the app so it wouldn’t make the call until it had the required information. Easy enough fixes. When I was chatting with my boss about the fixes, I dropped the term poka-yoke into the chat.</p>
+
+<p>Years ago, I worked on statistical process control (SPC) software for companies that made packaging material. The term poka-yoke was the buzzword of the day and it stuck in my brain. It’s a Japanese term to describe the methods used to prevent errors. If you can prevent your assembly line from making an error, your quality goes up.</p>
+
+<p>To implement poka-yoke, at each manufacturing stage, there is something in place that prevents a faulty output from going on to the next step. A part that is out of tolerance could be automatically redirected to a rejected parts bin. Or a part can’t be welded if it’s not correctly aligned. By doing these checks inline, problems can be addressed earlier in the process. This saves production time and production materials.</p>
+
+<p>An example would be a machine that cuts corugated cardboard sheets to make boxes. If the cardboard is not lined up correctly, you get box that doesn’t fold up correctly. We used an optical sensor to measure the position of the sheets as they went through the cutter to make sure they lined up correctly and then on the side to make sure that the cuts were in the right place and of the correct dimensions. Through software, we can check those sheets faster than the operator. If something was out of alignment, we could stop the machine before too many sheets were ruined.</p>
+
+<p>You have something in your kitchen that is an example of poke-yoke. Your microwave wont turn on unless the door is closed. That seems fairly obvious, but it’s a clear example of how poke-yoke can be implemented.</p>
+
+<p>To apply the principles of poka-yoke to software, one goal would be to prevent an error from propagating through multiple services. We have that old saying. “Garbage in, garbage out”. If you apply poka-yoke to that, it becomes “Garbage in, garbage rejected”. My change to the app to not allow an API call with invalid data is another example of poka-yoke.</p>
+
+<p>Poka-yoke was developed by an industrial engineer named <a href="https://en.wikipedia.org/wiki/Shigeo_Shingo">Shigeo Shingo</a> for the <a href="https://en.wikipedia.org/wiki/Toyota_Production_System">Toyota Production System</a> (TPS) back in the 1960s. If you ever heard the term “just-in-time” manufacturing, it came from TPS. A translation of poka-yoke means “error-proofing”, from the words “poka” meaning mistakes and “yokeru” meaning to avoid. Which is better than the first term that Shingo used, baka-yoke. That translates to “idiot-proofing”, which was less than popular with the machine operators.</p>]]></content><author><name>anotherlab</name></author><category term="quality code" /><category term="jargon" /><summary type="html"><![CDATA[So I used poka-yoke (ポカヨケ) in a conversation yesterday. I am working on an update to an app that uses a web service. Under an extreme edge condition, the app would make an API call with a missing parameter that was required. This would error out on the service side and we caught it with the logs. The simple fix was to change the API call so it would check for missing data coming in and just return without doing anything. I went full poka-yoke and also changed the app so it wouldn’t make the call until it had the required information. Easy enough fixes. When I was chatting with my boss about the fixes, I dropped the term poka-yoke into the chat. Years ago, I worked on statistical process control (SPC) software for companies that made packaging material. The term poka-yoke was the buzzword of the day and it stuck in my brain. It’s a Japanese term to describe the methods used to prevent errors. If you can prevent your assembly line from making an error, your quality goes up. To implement poka-yoke, at each manufacturing stage, there is something in place that prevents a faulty output from going on to the next step. A part that is out of tolerance could be automatically redirected to a rejected parts bin. Or a part can’t be welded if it’s not correctly aligned. By doing these checks inline, problems can be addressed earlier in the process. This saves production time and production materials. An example would be a machine that cuts corugated cardboard sheets to make boxes. If the cardboard is not lined up correctly, you get box that doesn’t fold up correctly. We used an optical sensor to measure the position of the sheets as they went through the cutter to make sure they lined up correctly and then on the side to make sure that the cuts were in the right place and of the correct dimensions. Through software, we can check those sheets faster than the operator. If something was out of alignment, we could stop the machine before too many sheets were ruined. You have something in your kitchen that is an example of poke-yoke. Your microwave wont turn on unless the door is closed. That seems fairly obvious, but it’s a clear example of how poke-yoke can be implemented. To apply the principles of poka-yoke to software, one goal would be to prevent an error from propagating through multiple services. We have that old saying. “Garbage in, garbage out”. If you apply poka-yoke to that, it becomes “Garbage in, garbage rejected”. My change to the app to not allow an API call with invalid data is another example of poka-yoke. Poka-yoke was developed by an industrial engineer named Shigeo Shingo for the Toyota Production System (TPS) back in the 1960s. If you ever heard the term “just-in-time” manufacturing, it came from TPS. A translation of poka-yoke means “error-proofing”, from the words “poka” meaning mistakes and “yokeru” meaning to avoid. Which is better than the first term that Shingo used, baka-yoke. That translates to “idiot-proofing”, which was less than popular with the machine operators.]]></summary></entry><entry><title type="html">Refresh of this blog</title><link href="http://localhost:4000/2025/03/04/blog-refresh/" rel="alternate" type="text/html" title="Refresh of this blog" /><published>2025-03-04T00:00:00+00:00</published><updated>2025-03-04T00:00:00+00:00</updated><id>http://localhost:4000/2025/03/04/blog-refresh</id><content type="html" xml:base="http://localhost:4000/2025/03/04/blog-refresh/"><![CDATA[<p><img src="/assets/images/pc_on_fire.jpg" alt="Not good" /></p>
 
 <p>The blog has been updated. Not just posts, all of the stuff that generates it. This wasn’t planned…</p>
 
@@ -408,124 +424,4 @@ I have a new course that was just published this week on Pluralsight, <a href="h
 
 <p>Then it takes a couple of minutes for GitHub Pages to run Jekyll on it’s end to render the pages.</p>
 
-<p>But I’m pleased with how it came out.</p>]]></content><author><name>Chris Miller</name></author><category term="Jekyll" /><category term="WordPress" /><category term="Blog" /><category term="Ubuntu" /><summary type="html"><![CDATA[First post under the new regime.]]></summary></entry><entry><title type="html">Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview</title><link href="http://localhost:4000/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/" rel="alternate" type="text/html" title="Resolving the .NET MAUI “VersionCode 1.0 is invalid. It must be an integer value.” error when updating Visual Studio 2022 Preview" /><published>2021-10-21T04:19:33+00:00</published><updated>2021-10-21T04:19:33+00:00</updated><id>http://localhost:4000/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview</id><content type="html" xml:base="http://localhost:4000/2021/10/21/resolving-the-net-maui-versioncode-1-0-is-invalid-it-must-be-an-integer-value-error-when-updating-visual-studio-2022-preview/"><![CDATA[<p>I installed the Visual Studio 2022 Preview 6 this evening. I had been using Preview 4. I installed Preview 5, but didn’t have a chance to play with it. I have a simple demo app that I have working with, a basic stopwatch type of app. That app had been created with Preview 4 and it more or less worked fine (unless you counted Mac Catalyst and Windows). After I installed Preview 6, I tried to run the project on Android. It failed to compile with the following error message:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">Severity	Code	Description	Project	File	Line	Suppression State
-Error	XA0003	VersionCode 1.0 is invalid. It must be an integer value.
-Parameter name: VersionCode	StopwatchMaui	....\StopwatchMaui\obj\Debug\net6.0-android\android\AndroidManifest.xml</code></pre></figure>
-
-<p>As a test, I created a new .NET MAUI app from Preview 6. It compiled and ran just fine.</p>
-
-<p>So who now, what now? When I first saw the error, I didn’t pay too much attention to the full path, just the file name. With .NET MAUI, there is an AndroidManifest.xml in the android platform folder.</p>
-
-<p><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-6fGFssK/0/fbc04600/O/01%20-%20Solution%20Explorer.png" alt="" /></p>
-
-<p>And we take a look at the file, it’s pretty standard, pretty boring AndroidManifest.xml</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
-	<span class="nt">&lt;uses-sdk</span> <span class="na">android:minSdkVersion=</span><span class="s">"21"</span> <span class="na">android:targetSdkVersion=</span><span class="s">"31"</span> <span class="nt">/&gt;</span>
-	<span class="nt">&lt;application</span> <span class="na">android:allowBackup=</span><span class="s">"true"</span> <span class="na">android:icon=</span><span class="s">"@mipmap/appicon"</span> <span class="na">android:roundIcon=</span><span class="s">"@mipmap/appicon_round"</span> <span class="na">android:supportsRtl=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/application&gt;</span>
-	<span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.ACCESS_NETWORK_STATE"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/manifest&gt;</span></code></pre></figure>
-
-<p>No versionCode there. What’s going on? So I went back and actually read the error message and it was complaining about a version of AndroidManifest.xml located in obj\Debug\net6.0-android. That little fellow looks like this:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-</pre></td><td class="code"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="c">&lt;!--
-    This code was generated by a tool.
-    It was generated from ....\StopwatchMaui\Platforms\Android\AndroidManifest.xml
-    Changes to this file may cause incorrect behavior and will be lost if
-    the contents are regenerated.
-    --&gt;</span>
-<span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">android:versionCode=</span><span class="s">"1.0"</span> <span class="na">package=</span><span class="s">"com.companyname.StopwatchMaui"</span> <span class="na">android:versionName=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;uses-sdk</span> <span class="na">android:minSdkVersion=</span><span class="s">"21"</span> <span class="na">android:targetSdkVersion=</span><span class="s">"31"</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.ACCESS_NETWORK_STATE"</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;application</span> <span class="na">android:allowBackup=</span><span class="s">"true"</span> <span class="na">android:icon=</span><span class="s">"@mipmap/appicon"</span> <span class="na">android:roundIcon=</span><span class="s">"@mipmap/appicon_round"</span> <span class="na">android:supportsRtl=</span><span class="s">"true"</span> <span class="na">android:name=</span><span class="s">"crc64c1104ba8f6ea44b3.MainApplication"</span> <span class="na">android:label=</span><span class="s">"StopwatchMaui"</span> <span class="na">android:debuggable=</span><span class="s">"true"</span> <span class="na">android:extractNativeLibs=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;activity</span> <span class="na">android:configChanges=</span><span class="s">"orientation|smallestScreenSize|screenLayout|screenSize|uiMode"</span> <span class="na">android:theme=</span><span class="s">"@style/Maui.SplashTheme"</span> <span class="na">android:name=</span><span class="s">"crc64c1104ba8f6ea44b3.MainActivity"</span> <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;intent-filter&gt;</span>
-        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;/intent-filter&gt;</span>
-    <span class="nt">&lt;/activity&gt;</span>
-    <span class="nt">&lt;receiver</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:label=</span><span class="s">"Essentials Battery Broadcast Receiver"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.BatteryBroadcastReceiver"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;receiver</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:label=</span><span class="s">"Essentials Energy Saver Broadcast Receiver"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.EnergySaverBroadcastReceiver"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;receiver</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:label=</span><span class="s">"Essentials Connectivity Broadcast Receiver"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.ConnectivityBroadcastReceiver"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;activity</span> <span class="na">android:configChanges=</span><span class="s">"orientation|screenSize"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.IntermediateActivity"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;provider</span> <span class="na">android:authorities=</span><span class="s">"com.companyname.StopwatchMaui.fileProvider"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:grantUriPermissions=</span><span class="s">"true"</span> <span class="na">android:name=</span><span class="s">"xamarin.essentials.fileProvider"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"android.support.FILE_PROVIDER_PATHS"</span> <span class="na">android:resource=</span><span class="s">"@xml/xamarin_essentials_fileprovider_file_paths"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/provider&gt;</span>
-    <span class="nt">&lt;activity</span> <span class="na">android:configChanges=</span><span class="s">"orientation|screenSize"</span> <span class="na">android:name=</span><span class="s">"crc64192d9de59b079c6d.WebAuthenticatorIntermediateActivity"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;service</span> <span class="na">android:name=</span><span class="s">"crc64396a3fe5f8138e3f.KeepAliveService"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;provider</span> <span class="na">android:name=</span><span class="s">"mono.MonoRuntimeProvider"</span> <span class="na">android:exported=</span><span class="s">"false"</span> <span class="na">android:initOrder=</span><span class="s">"1999999999"</span> <span class="na">android:authorities=</span><span class="s">"com.companyname.StopwatchMaui.mono.MonoRuntimeProvider.__mono_init__"</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;/application&gt;</span>
-<span class="nt">&lt;/manifest&gt;</span>
-</pre></td></tr></tbody></table></code></pre></figure>
-
-<p>If we look at line 8, we see the culprit</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> 
-    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> 
-    <span class="na">android:versionCode=</span><span class="s">"1.0"</span> 
-    <span class="na">package=</span><span class="s">"com.companyname.StopwatchMaui"</span> 
-    <span class="na">android:versionName=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span></code></pre></figure>
-
-<p>In the new app that was created in Preview 6, the same file had the following line:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> 
-    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> 
-    <span class="na">android:versionCode=</span><span class="s">"1"</span> 
-    <span class="na">package=</span><span class="s">"com.companyname.StopwatchMaui"</span> 
-    <span class="na">android:versionName=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span></code></pre></figure>
-
-<div class="wp-block-image">
-  <figure class="aligncenter size-large"><img src="https://i2.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-mF3bHJm/0/4ebec4dc/O/badgood.jpg?" alt="" /></figure>
-</div>
-
-<p>So why is the first one bad and the second one good? In the wacky world of Android, android:versionCode has to have an integer value. This is documented <a href="https://developer.android.com/guide/topics/manifest/manifest-element">here</a>. So now we know what is the actual error, the next question is why that error occurred.</p>
-
-<p>We can’t just edit the obj\Debug\net6.0-android\AndroidManifest.xml file and call it a day. The next time you rebuild the app, that file gets generated from Platforms\Android\AndroidManifest.xml. And apparently it pulls in information from somewhere else as well.</p>
-
-<p>So I took a look at the .csproj files for the working and non-working apps. In the .csproj file generated by Preview 4, the version information was defined with the following two lines</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- Versions --&gt;</span>
-<span class="nt">&lt;ApplicationVersion&gt;</span>1.0<span class="nt">&lt;/ApplicationVersion&gt;</span>
-<span class="nt">&lt;AndroidVersionCode&gt;</span>1<span class="nt">&lt;/AndroidVersionCode&gt;</span></code></pre></figure>
-
-<p>With the new project freshly generated by Release 6, the same two lines were now a single line, with the ApplicationVersion now set with an integer value.</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- Versions --&gt;</span>
-<span class="nt">&lt;ApplicationVersion&gt;</span>1<span class="nt">&lt;/ApplicationVersion&gt;</span></code></pre></figure>
-
-<p>When I changed the “Versions” lines .csproj to match the single line used in the new .csproj Preview 6, the app compiled and deployed to Android. My best guess is that AndroidVersionCode was being used in Preview 4 and sometime after that, they made the breaking change to ApplicationVersion and jettisoned the AndroidVersionCode setting. It’s a preview release of Visual Studio and they are still baking .NET MAUI. This <a href="https://developercommunity.visualstudio.com/t/versioncode-10-is-invalid/1553498">kind of stuff happens</a> and the end result is a better product.</p>]]></content><author><name>Chris Miller</name></author><category term="Android" /><category term="MAUI" /><category term="android" /><category term="maui" /><summary type="html"><![CDATA[I hit the "VersionCode 1.0 is invalid" error with .NET MAUI and resolved it.]]></summary></entry></feed>
+<p>But I’m pleased with how it came out.</p>]]></content><author><name>Chris Miller</name></author><category term="Jekyll" /><category term="WordPress" /><category term="Blog" /><category term="Ubuntu" /><summary type="html"><![CDATA[First post under the new regime.]]></summary></entry></feed>

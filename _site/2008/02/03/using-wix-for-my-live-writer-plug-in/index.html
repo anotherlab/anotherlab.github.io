@@ -1,0 +1,714 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Using Wix for my Live Writer Plug-in - Chris Miller’s 5th Blog</title>
+<meta name="description" content="I finally have version 1 of my Smugmug gallery plug-in completed. The next step is to do the installer. To get a plug-in up on the Windows Live Gallery, it must have an installer that meets the requirements on the Gallery Developer Center page. A content plug-in has to meet these requirements:">
+
+
+  <meta name="author" content="Chris Miller">
+  
+  <meta property="article:author" content="Chris Miller">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
+<meta property="og:title" content="Using Wix for my Live Writer Plug-in">
+<meta property="og:url" content="http://localhost:4000/2008/02/03/using-wix-for-my-live-writer-plug-in/">
+
+
+  <meta property="og:description" content="I finally have version 1 of my Smugmug gallery plug-in completed. The next step is to do the installer. To get a plug-in up on the Windows Live Gallery, it must have an installer that meets the requirements on the Gallery Developer Center page. A content plug-in has to meet these requirements:">
+
+
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="Using Wix for my Live Writer Plug-in">
+  <meta name="twitter:description" content="I finally have version 1 of my Smugmug gallery plug-in completed. The next step is to do the installer. To get a plug-in up on the Windows Live Gallery, it must have an installer that meets the requirements on the Gallery Developer Center page. A content plug-in has to meet these requirements:">
+  <meta name="twitter:url" content="http://localhost:4000/2008/02/03/using-wix-for-my-live-writer-plug-in/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2008-02-03T11:35:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2008/02/03/using-wix-for-my-live-writer-plug-in/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 5th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Chris Miller</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Microsoft MVP, a Pluralsight Author, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span class="label">BlueSky</span></a></li>
+          
+        
+          
+            <li><a href="https://app.pluralsight.com/profile/author/christopher-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-chalkboard-teacher" aria-hidden="true"></i><span class="label">Pluralsight</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+          
+            <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-award" aria-hidden="true"></i><span class="label">Microsoft MVP</span></a></li>
+          
+        
+          
+            <li><a href="https://stackoverflow.com/users/206/chris-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i><span class="label">Stack Overflow</span></a></li>
+          
+        
+          
+            <li><a href="https://www.reddit.com/user/anotherlab/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-reddit-alien" aria-hidden="true"></i><span class="label">Reddit</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Using Wix for my Live Writer Plug-in">
+    <meta itemprop="description" content="I finally have version 1 of my Smugmug gallery plug-in completed. The next step is to do the installer. To get a plug-in up on the Windows Live Gallery, it must have an installer that meets the requirements on the Gallery Developer Center page. A content plug-in has to meet these requirements:">
+    <meta itemprop="datePublished" content="2008-02-03T11:35:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2008/02/03/using-wix-for-my-live-writer-plug-in/" itemprop="url">Using Wix for my Live Writer Plug-in
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>I finally have version 1 of my Smugmug gallery plug-in completed. The next step is to do the installer. To get a plug-in up on the <a href="http://gallery.live.com/">Windows Live Gallery</a>, it must have an installer that meets the requirements on the Gallery Developer Center <a href="http://gallery.live.com/devcenter.aspx">page</a>. A content plug-in has to meet these requirements:</p>
+
+<ol>
+  <li>Content Plugins must be built using either the .NET 1.1 or .NET 2.0 frameworks.</li>
+  <li>Content Plugins must be packaged and submitted as a Microsoft Installer (*.msi).</li>
+  <li>If you use the .NET 2.0 framework, the installer must link to the .NET 2.0 download site or use the Visual Studio 2005 Bootstrapper. The Bootstrapper detects and downloads the correct .NET 2.0 framework.</li>
+  <li>Your installer must copy the assembly to the “Plug -ins” sub-directory of the Windows Live Writer installation directory.</li>
+</ol>
+
+<p>I have #1, my plug-in uses the .NET 2.0 framework. Number 2 is that it must be packaged using a Windows Installer .msi setup. I’m still figuring out the best way how to implement #3, but I’m not sweating it. With #4, I’m not doing it that way. The alternative method is to install the plug-in in your own folder and write a registry key to Software\Windows Live Writer\PluginAssemblies (HKLM or HKCU) with the name of your plugin and the path to it. That way you don’t have to worry about where Live Writer was installed to. In fact that page is probably obsolete, there is an MSDN <a href="http://msdn2.microsoft.com/en-us/library/aa738841.aspx" title="Distributing Plugins">article</a> that covers the registry method.</p>
+
+<p>Let’s start with the .msi requirement.</p>
+
+<p>I looked that the “Setup Project” template in VS 2008. Um, no thanks. After 30 minutes of playing with it, I started getting annoyed. It felt awkward and non-intuitive. Granted, most things with Windows Installer are awkward and non-intuitive, but I couldn’t get fast handle on “Setup Project” template. It was easy enough to get the files installed, but getting the registry written correctly was a task I just couldn’t figure out. After two years of doing .msi with Wise For Windows and now InstallAware, I have a pretty good idea of an .msi is supposed to work.</p>
+
+<p>I decided to knock out an setup with InstallAware. It took about 5 minutes and worked perfectly. But it was 1.2 MB in size. That seemed excessive to deploy 45K for two assemblies. Frankly any installer will be excessive, but I have to follow requirement #2. I have lots of love for InstallAware and it’s my tool of choice for application installs, but it still bothers me to have a setup that 26 times larger than the files being deployed.</p>
+
+<p>With VS’s “Setup Project” and InstallAware out of the picture, I decided to check out <a href="http://wix.sourceforge.net/index.html" title="Windows Installer XML (WiX) toolset">WiX</a>. WiX stands for WIndows Installer XML and is an open source toolkit for building .msi setups from an XML source file. The current version, 3, <a href="http://wix.sourceforge.net/votive.html" title="Votive is the Visual Studio package for WiX that lets you create and build WiX setup projects using the Visual Studio IDE. Votive supports syntax highlighting and IntelliSense for .wxs source files and adds a WiX setup project type to Visual Studio.">installs nicely into VS 2008</a>. It installed so nicely, I didn’t need to be concerned with how to run the <a href="http://wix.sourceforge.net/manual-wix2/candle.htm">Candle</a> (the WiX compiler) or <a href="http://wix.sourceforge.net/manual-wix2/light.htm">Light</a> (the WiX linker). There is also a .msi decompiler, named <a href="http://wix.sourceforge.net/manual-wix2/dark.htm">Dark</a>. It will emit Wix source code from a .MSI or .MSM file.</p>
+
+<p>WiX source code is pretty intimidating when you first look at it. if you have no experience with authoring Windows Installer, it will be hard to grasp at first. The WiX site has a nice <a href="http://www.tramontana.co.hu/wix/" title="ntroduction to the Windows Installer XML Toolset">tutorial</a>, but it’s for version 2 and uses syntax that’s deprecated in version 3. Fortunately, I was able to google the differences and I was able to get a working installer in about an hour. It’s not handling step 3 completely, but it is terminating the install if .NET 2.0 is not available.</p>
+
+<p>The size of the .msi is much smaller, about 220k. Still way too large, but it’s as about as small as I’m going to get for a .msi file. So far, I’m very impressed with WiX. Once you start getting the hang of the syntax, it’s very clear on how to setup a proper .msi file. There’s even a open source editor called <a href="http://wixedit.sourceforge.net/">WixEdit</a>. I didn’t need it for this task, but I think I make take at peek at it at another timer.</p>
+
+<p>Enough people are using it so that I was able to google for the bits I needed. Morten Lyhr had a great <a href="http://morten.lyhr.dk/2007/10/wix-v3-and-detection-of-iis-and-aspnet.html" title="WiX v3 and detection of IIS and ASP.NET">post</a> on how to detect the .NET Framework. I figured out how to write the registry key from a <a href="http://blogs.msdn.com/cjacks/archive/2008/01/03/stock-viewer-shim-demo-application.aspx" title="Stock Viewer Shim Demo Application">post</a> by Chris Jackson. Bonnie (one of the Live Writer developers) had a good sample <a href="http://bplo.spaces.live.com/blog/cns%21CF2831C0AE64E81B%21210.entry" title="Making an installer for your plugin">WiX file</a> for installing a plug-in. While I didn’t follow her pattern, it did give me a tour of the neighborhood. Mike Stall has a good <a href="http://blogs.msdn.com/jmstall/archive/2007/10/29/creating-msis-for-live-writer-plugins.aspx" title="Creating MSIs for Live Writer PlugIns">post</a> that covers the basics. I think I need to spend some time reading the blogs of the WiX developers, they have a build a really cool tool.</p>
+
+<div>
+  Tech Tags: <a href="http://technorati.com/tag/Windows+Live+Writer" rel="tag">Windows+Live+Writer</a> <a href="http://technorati.com/tag/plugin" rel="tag">plugin</a> <a href="http://technorati.com/tag/installer" rel="tag">installer</a> <a href="http://technorati.com/tag/msi" rel="tag">msi</a> <a href="http://technorati.com/tag/Wix" rel="tag">Wix</a>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2008-02-03T11:35:00+00:00">February 3, 2008</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Using+Wix+for+my+Live+Writer+Plug-in%20http%3A%2F%2Flocalhost%3A4000%2F2008%2F02%2F03%2Fusing-wix-for-my-live-writer-plug-in%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2008%2F02%2F03%2Fusing-wix-for-my-live-writer-plug-in%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2008/02/03/using-wix-for-my-live-writer-plug-in/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2008/01/30/when-clipboard-doesn-work-across-remote/" class="pagination--pager" title="When the clipboard doesn’t work across Remote Desktop
+">Previous</a>
+    
+    
+      <a href="/2008/02/10/nvidia-nforce-network-driver-problem/" class="pagination--pager" title="Nvidia nForce network driver problem under Vista
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/05/poka-yoke/" rel="permalink">Poka-yoke
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+So I used poka-yoke (ポカヨケ) in a conversation yesterday. I am working on an update to an app that uses a web service. Under an extreme edge condition, the a...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/04/blog-refresh/" rel="permalink">Refresh of this blog
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+The blog has been updated. Not just posts, all of the stuff that generates it. This wasn’t planned…
+
+About two weeks ago, the boot drive of my PC failed. T...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/02/06/bluesky/" rel="permalink">You can find me on Bluesky
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I’ve been on Bluesky for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn bil...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/08/27/apples-api-needs-to-be-sorted/" rel="permalink">Apple needs to sort out their API
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly sta...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
+    script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>
