@@ -1,0 +1,733 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Getting Hyper-V to work on a HP Envy23 - Chris Miller’s 5th Blog</title>
+<meta name="description" content="I finally got Hyper-V working on our HP Envy 23.  For Christmas, I had bought a new PC for our family.  We have a shared PC in a our family room that everyone uses for email, browsing, etc.  At the time I was working on a Windows Phone 8 project and I needed a machine that could handle that development.  My own PC was running Windows 7 and you need Windows 8 or better for Windows Phone development.">
+
+
+  <meta name="author" content="Chris Miller">
+  
+  <meta property="article:author" content="Chris Miller">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
+<meta property="og:title" content="Getting Hyper-V to work on a HP Envy23">
+<meta property="og:url" content="http://localhost:4000/2013/05/09/getting-hyper-v-to-work-on-hp-envy23/">
+
+
+  <meta property="og:description" content="I finally got Hyper-V working on our HP Envy 23.  For Christmas, I had bought a new PC for our family.  We have a shared PC in a our family room that everyone uses for email, browsing, etc.  At the time I was working on a Windows Phone 8 project and I needed a machine that could handle that development.  My own PC was running Windows 7 and you need Windows 8 or better for Windows Phone development.">
+
+
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="Getting Hyper-V to work on a HP Envy23">
+  <meta name="twitter:description" content="I finally got Hyper-V working on our HP Envy 23.  For Christmas, I had bought a new PC for our family.  We have a shared PC in a our family room that everyone uses for email, browsing, etc.  At the time I was working on a Windows Phone 8 project and I needed a machine that could handle that development.  My own PC was running Windows 7 and you need Windows 8 or better for Windows Phone development.">
+  <meta name="twitter:url" content="http://localhost:4000/2013/05/09/getting-hyper-v-to-work-on-hp-envy23/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2013-05-09T21:57:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2013/05/09/getting-hyper-v-to-work-on-hp-envy23/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 5th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Chris Miller</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Microsoft MVP, a Pluralsight Author, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span class="label">BlueSky</span></a></li>
+          
+        
+          
+            <li><a href="https://app.pluralsight.com/profile/author/christopher-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-chalkboard-teacher" aria-hidden="true"></i><span class="label">Pluralsight</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+          
+            <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-award" aria-hidden="true"></i><span class="label">Microsoft MVP</span></a></li>
+          
+        
+          
+            <li><a href="https://stackoverflow.com/users/206/chris-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i><span class="label">Stack Overflow</span></a></li>
+          
+        
+          
+            <li><a href="https://www.reddit.com/user/anotherlab/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-reddit-alien" aria-hidden="true"></i><span class="label">Reddit</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Getting Hyper-V to work on a HP Envy23">
+    <meta itemprop="description" content="I finally got Hyper-V working on our HP Envy 23.  For Christmas, I had bought a new PC for our family.  We have a shared PC in a our family room that everyone uses for email, browsing, etc.  At the time I was working on a Windows Phone 8 project and I needed a machine that could handle that development.  My own PC was running Windows 7 and you need Windows 8 or better for Windows Phone development.">
+    <meta itemprop="datePublished" content="2013-05-09T21:57:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2013/05/09/getting-hyper-v-to-work-on-hp-envy23/" itemprop="url">Getting Hyper-V to work on a HP Envy23
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>I finally got Hyper-V working on our HP Envy 23.  For Christmas, I had bought a new PC for our family.  We have a shared PC in a our family room that everyone uses for email, browsing, etc.  At the time I was working on a Windows Phone 8 project and I needed a machine that could handle that development.  My own PC was running Windows 7 and you need Windows 8 or better for Windows Phone development.</p>
+
+<p>Actually, you need better than Windows 8 for effective Windows Phone development.  To run the Windows Phone 8 emulator, you need to have <a href="http://blogs.msdn.com/b/olivnie/archive/2013/01/18/hyper-v-on-client-windows-8-pro.aspx">Hyper-V</a> installed, which requires Windows 8 Professional and a machine with the virtualization enabled in the chipset.</p>
+
+<p>We wanted an all-in-one PC.  It’s in a shared family space and a AIO will take up less room and generally look nicer.  Dell had some interesting models, but you couldn’t get one with Windows 8 Pro, just Windows 8.</p>
+
+<p>With HP, you could get a machine with Windows 8 Pro.  So I ordered an <a href="http://shopping.hp.com/en_US/home-office/-/products/Desktops/HP-ENVY-TouchSmart/C9D79AV?HP-ENVY-23-d140t-TouchSmart-All-in-One-Desktop-PC">Envy 23</a> with an i5, 6GB of RAM, and Windows 8 Pro.  It is a nice machine with a good 23” touchscreen.  We went from a huge mess of power cables, USB cables, and assorted wires, down to just a power cable and an Ethernet cable.</p>
+
+<table align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>
+      <a href="https://i2.wp.com/www.rajapet.net/photos/i-d8qNgKv/0/S/i-d8qNgKv-S.png" imageanchor="1"><img loading="lazy" border="0" height="240" src="https://i2.wp.com/www.rajapet.net/photos/i-d8qNgKv/0/S/i-d8qNgKv-S.png?resize=320%2C240" width="320" /></a>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      HP Envy 23
+    </td>
+  </tr>
+</table>
+
+<blockquote>
+  <p>As a side note, while this machine has decent WiFi built in.  I prefer that ancient Ethernet technology.  Our house has so many devices using WiFi, anything networkable that’s not mobile goes on Ethernet.  I had a few rooms wired for CAT-5e years ago and I use <a href="http://www.howstuffworks.com/power-network.htm">Powerline adapters</a> where the cables don’t reach.</p>
+</blockquote>
+
+<p>As typical of a new PC designed for home use, hardware virtualization was not enabled out of the box. I had to go into the BIOS screen and after a bit of searching, I found the virtualization setting under “Security”.  I don’t know why they put it there, but that’s where it was.  So I turned it on and booted up into Windows.  Since Hyper-V is not typically installed on a new machine, I had to install it.  Pretty easy to do and took less time than trying to find the virtualization setting in the BIOS.</p>
+
+<p>I rebooted the PC and it hung on the loading Windows screen.  Turned off the virtualization setting and it rebooted just fine.  Tried uninstalling and reinstalling Hyper-V, didn’t fix it.  After trying multiple combinations, it was obvious that virtualization and Hyper-V didn’t work.  I called HP support and they said that Hyper-V was supported on this hardware and that either I had installed something that conflicted with Hyper-V or I had a hardware fault.</p>
+
+<p>I didn’t agree with either assessment, but I had to follow along with HP’s support.  When I bought the machine, I had bought 3 years of priority support.  I usually don’t bother with extended support, but it was the cheapest way to buy this machine.  They shipped out a new machine and a week later it arrived.  Fired up the new machine and enabled Hyper-V and virtualization.  Same problem.  That both ruled out a machine specific hardware fault and ruled out the installation of another app being the root cause.</p>
+
+<p>At this point, I just wrote off the problem and sent back the new machine.  Other than the Hyper-V problem, the rest of my family was very happy with the Envy 23.  I ended up building a new machine from scratch that happily runs Hyper-V, so I no longer had the pressing need for Hyper-V on the this machine.</p>
+
+<p>But not being able to run Hyper-V on a machine with the CPU and OS that clearly support virtualization bugged me.  Last night, I did a quick search on “Envy23” and “Hyper-V” and saw a few hits.  I was not the only one with this problem.  The first match was on <a href="http://ocial.technet.microsoft.com/Forums/en-US/w8itprovirt/thread/80d1caf8-0c2e-427d-b246-4161aa176288">“Enabling Hyper-V and restarting results in a hung system…”</a>.  It was posted by another developer with a similar Envy 23 machine and was seeing the same problem.</p>
+
+<p>Someone had responded to that message that he had fixed the same problem on his HP laptop by updating the Bluetooth adapter’s driver.  He had included <a href="http://h30434.www3.hp.com/t5/Desktop-Lockups-Freezes-Hangs/Cannot-boot-if-HP-ENVY-Bios-Virtualization-enabled-for-Win8/m-p/2538189#M22348">a link to another message thread</a> in a HP forum with details about the version and where to get the file.</p>
+
+<p>The problem seemed to be with the Ralink Bluetooth 4.0 Adapter.  Various people had version 9.2.10.6 of the driver installed.  When they installed to version 9.2.10.10, the problem went away.  That sounded like an option worth pursuing.</p>
+
+<p>So I decided to roll the <a href="http://now%20normally%2C%20i%27m%20not%20a%20fan%20of%20installing%20hardware%20drivers%20unless%20i%20know%20that%20they%20are%20specifically%20for%20the%20machine%20that%20i%20own.%20%20it%27s%20a%20commodity%20part%20and%20most%20likely%20uses%20a%20driver%20for%20a%20family%20of%20related%20parts./">polyhedral dice</a> and try installing that driver.  Now normally, I’m not a fan of installing hardware drivers unless I know that they are specifically for the hardware that I own.  It’s a commodity part and most likely uses a driver for a family of related parts. Also, I back up my machines to a Windows Home Server box.  The worst thing that happens is that I hose the machine and have to do a bare metal restore.</p>
+
+<p>I downloaded the driver and starting installing it. As part of the install, it uninstalled the previous version and I had an “uh oh” moment.  My mouse and keyboard connect over Bluetooth, updating the driver could affect them.  Fortunately, they worked through the process.  After installing the update, I rebooted the PC and everything seemed to work just fine.  The mouse and keyboard still did mouse and keyboardy things, so I knew that Bluetooth was still operational.</p>
+
+<p>I rebooted one more time and enabled virtualization in the BIOS and booted up the machine.  This was <a href="http://www.youtube.com/watch?v=68N-Oopdtao">the moment of truth</a>.  The PC booted up normally and I was able to verify that Hyper-V was installed and functioning normally.</p>
+
+<p>So, that brings us back to why it failed with the original driver installed.  I don’t know why a Bluetooth driver would hose the operating system when Hyper-V was enabled.  That is so random, it’s not something that I would have considered as a the root cause.  From reading the messages on the HP forum, it looks like someone had reinstalled the OS and had needed to download the Bluetooth driver.  When they installed the latest version available, they were able to boot with Hyper-V and made the connection that the Ralink driver was the root cause.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2013-05-09T21:57:00+00:00">May 9, 2013</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Getting+Hyper-V+to+work+on+a+HP+Envy23%20http%3A%2F%2Flocalhost%3A4000%2F2013%2F05%2F09%2Fgetting-hyper-v-to-work-on-hp-envy23%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2013%2F05%2F09%2Fgetting-hyper-v-to-work-on-hp-envy23%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2013/05/09/getting-hyper-v-to-work-on-hp-envy23/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2013/05/06/my-journey-into-center-of-gravity/" class="pagination--pager" title="My journey into the Center of Gravity
+">Previous</a>
+    
+    
+      <a href="/2013/05/14/i-git-it-now/" class="pagination--pager" title="I git it now
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/05/poka-yoke/" rel="permalink">Poka-yoke
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+So I used poka-yoke (ポカヨケ) in a conversation yesterday. I am working on an update to an app that uses a web service. Under an extreme edge condition, the a...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/04/blog-refresh/" rel="permalink">Refresh of this blog
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+The blog has been updated. Not just posts, all of the stuff that generates it. This wasn’t planned…
+
+About two weeks ago, the boot drive of my PC failed. T...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/02/06/bluesky/" rel="permalink">You can find me on Bluesky
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I’ve been on Bluesky for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn bil...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/08/27/apples-api-needs-to-be-sorted/" rel="permalink">Apple needs to sort out their API
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly sta...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
+    script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,733 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Found the cause for ADB error message “Could not open interface: e00002c5” - Chris Miller’s 5th Blog</title>
+<meta name="description" content="Frustration by Peter Alfred Hess">
+
+
+  <meta name="author" content="Chris Miller">
+  
+  <meta property="article:author" content="Chris Miller">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
+<meta property="og:title" content="Found the cause for ADB error message “Could not open interface: e00002c5”">
+<meta property="og:url" content="http://localhost:4000/2016/05/06/found-the-cause-for-adb-error-message-could-not-open-interface-e00002c5/">
+
+
+  <meta property="og:description" content="Frustration by Peter Alfred Hess">
+
+
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="Found the cause for ADB error message “Could not open interface: e00002c5”">
+  <meta name="twitter:description" content="Frustration by Peter Alfred Hess">
+  <meta name="twitter:url" content="http://localhost:4000/2016/05/06/found-the-cause-for-adb-error-message-could-not-open-interface-e00002c5/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2016-05-06T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2016/05/06/found-the-cause-for-adb-error-message-could-not-open-interface-e00002c5/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 5th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Chris Miller</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Microsoft MVP, a Pluralsight Author, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span class="label">BlueSky</span></a></li>
+          
+        
+          
+            <li><a href="https://app.pluralsight.com/profile/author/christopher-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-chalkboard-teacher" aria-hidden="true"></i><span class="label">Pluralsight</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+          
+            <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-award" aria-hidden="true"></i><span class="label">Microsoft MVP</span></a></li>
+          
+        
+          
+            <li><a href="https://stackoverflow.com/users/206/chris-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i><span class="label">Stack Overflow</span></a></li>
+          
+        
+          
+            <li><a href="https://www.reddit.com/user/anotherlab/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-reddit-alien" aria-hidden="true"></i><span class="label">Reddit</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Found the cause for ADB error message “Could not open interface: e00002c5”">
+    <meta itemprop="description" content="Frustration by Peter Alfred Hess">
+    <meta itemprop="datePublished" content="2016-05-06T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2016/05/06/found-the-cause-for-adb-error-message-could-not-open-interface-e00002c5/" itemprop="url">Found the cause for ADB error message “Could not open interface: e00002c5”
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <figure>
+<a href="https://www.flickr.com/photos/peterhess/2976755407"><img loading="lazy" class="" src="https://i2.wp.com/photos.smugmug.com/photos/i-bX9mPQR/0/S/i-bX9mPQR-S.jpg" alt="Frustration with Computers" /></a>
+<figcaption><a href="https://www.flickr.com/photos/peterhess/2976755407">Frustration</a> by Peter Alfred Hess</figcaption></figure>
+
+<p>I spent way too much time tracking down a problem that prevented ADB on my Macbook from seeing my phone.  While at the <a href="https://evolve.xamarin.com/">Xamarin Evolve</a> conference last week, I hooked up my Nexus 6P to my Macbook Pro to try some Xamarin.Forms code.  I connected the phone and checked the box on the phone that prompted to allow debugging.  The Xamarin Studio IDE did not see the phone.</p>
+
+<p>So I opened up a terminal window and start issuing ADB commands.  If you don’t do Android development, <a href="http://developer.android.com/tools/help/adb.html">ADB stands for Android Debug Bridge</a> and it provides the communication channels that allow a development tool to talk to an Android device or emulator.</p>
+
+<p>I ran the command “adb devices” and it came back with “no devices”.  To get more information, I ran the command to stop the ADB service and restart it:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">adb kill-server <span class="p">;</span> adb devices</code></pre></figure>
+
+<p>That generated the following output</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">List of devices attached
+<span class="k">*</span> daemon not running. starting it now on port 5037 <span class="k">*</span>
+adb I 2192 55546 usb_osx.cpp:259] Found <span class="nv">vid</span><span class="o">=</span>18d1 <span class="nv">pid</span><span class="o">=</span>4ee2 <span class="nv">serial</span><span class="o">=</span>8XV7NXXXXXXXXXXX
+adb I 2192 55546 usb_osx.cpp:259]
+adb E 2192 55546 usb_osx.cpp:331] Could not open interface: e00002c5
+adb E 2192 55546 usb_osx.cpp:265] Could not find device interface
+<span class="k">*</span> daemon started successfully <span class="k">*</span></code></pre></figure>
+
+<p>The 8XV7NXXXXXXXXXXX is an obfuscated version of my phone’s serial number.  So ADB could see that I had a device connected.  The <a href="https://www.android.com/filetransfer/">Android File Transfer</a> app could also see the phone, so the connection was there.  Just something was interfering with ADB.</p>
+
+<p>Since I was at a Xamarin conference, I grabbed a Xamarin Android engineer and we started digging in.  First thing was to use his phone and cable, to rule out my phone and/or cable as being the problem.  We saw the same problem with his phone.   So we tried the obvious steps:</p>
+
+<ul>
+  <li>Rebooted the Macbook.  Nope</li>
+  <li>Used the other USB port. Nope</li>
+  <li>Downloaded a new copy of the Android SDK. Nope</li>
+  <li>Ran an Android emulator.  That worked, indicating the problem was between the USB port and ADB</li>
+  <li>Grabbed a more senior Android engineer who told us to go look at the ADB source code.</li>
+</ul>
+
+<p>The engineers had classes to assist with so it was down to just me.  I went and looked at the <a href="https://github.com/android/platform_system_core/blob/master/adb/usb_osx.cpp">source code to the usb_osx.cpp</a> unit from ADB on Github.  The line numbers didn’t match up exactly, but the error was that it literally could not open the USB port.  That meant another process had it’s <a href="http://www.ravelry.com/patterns/library/greedy-little-mitts">greedy little mitts</a> on my USB port</p>
+
+<p>I rebooted the Macbook in <a href="https://support.apple.com/kb/PH21875?locale=en_US">safe mode</a>.  That would run OS X with out the 3rd party apps.  Sure enough, ADB was able to connect just fine.  That was the first clue, then some people in real life and on the Internets suggested that it may be a tethering app.</p>
+
+<p>Apparently at some point last year, I installed <a href="http://www.mobile-stream.com/easytether/android.html">EasyTether</a>,  I don’t use it, but had neglected to uninstall it.  And it’s documented on the <a href="http://www.mobile-stream.com/easytether/android_faq.html#adbmacosx">EasyTether FAQ page</a> that it will break ADB’s connection with devices.  I pointed Finder to /System/Library/Extensions and sure enough, I had EasyTetherUSBEthernet.kext installed.  I could have used kextunload to just unload the EasyTether extension, but I decided to just yank it out.  I dragged it over to the Trashcan and rebooted.</p>
+
+<p>I plugged my phone in and ADB saw it.</p>
+
+<figure><img loading="lazy" class="" src="https://i1.wp.com/photos.smugmug.com/photos/i-6tx22wp/0/S/i-6tx22wp-S.png" /><figcaption>This made me happy</figcaption></figure>
+
+<p>I could use my phone for debugging again.  I use Android emulators about half of the time, but when I want to see how the app behaves on actual device, there’s no beating the real thing.  Plus, debugging touch on a Mac just plain sucks.</p>
+
+<p>I’ve been using <a href="http://www.vysor.io/">Vysor</a> to mirror the Android screen to the desktop and it works great.  I can use the actual device’s screen or control it from the Macbook.    If you are doing a presentation and want to show what is running on your Android device, get Vysor.  It’s a Chrome and and uses ADB, so it works on Mac, Windows, and probably Linux.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2016-05-06T00:00:00+00:00">May 6, 2016</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Found+the+cause+for+ADB+error+message+%E2%80%9CCould+not+open+interface%3A+e00002c5%E2%80%9D%20http%3A%2F%2Flocalhost%3A4000%2F2016%2F05%2F06%2Ffound-the-cause-for-adb-error-message-could-not-open-interface-e00002c5%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2016%2F05%2F06%2Ffound-the-cause-for-adb-error-message-could-not-open-interface-e00002c5%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2016/05/06/found-the-cause-for-adb-error-message-could-not-open-interface-e00002c5/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2016/03/16/adding-google-play-services-to-visual-studio-android-emulator/" class="pagination--pager" title="Adding Google Play Services to Visual Studio Android Emulator
+">Previous</a>
+    
+    
+      <a href="/2016/05/18/modifying-test-data-for-privacy/" class="pagination--pager" title="Modifying test data for privacy
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/05/poka-yoke/" rel="permalink">Poka-yoke
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+So I used poka-yoke (ポカヨケ) in a conversation yesterday. I am working on an update to an app that uses a web service. Under an extreme edge condition, the a...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/04/blog-refresh/" rel="permalink">Refresh of this blog
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+The blog has been updated. Not just posts, all of the stuff that generates it. This wasn’t planned…
+
+About two weeks ago, the boot drive of my PC failed. T...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/02/06/bluesky/" rel="permalink">You can find me on Bluesky
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I’ve been on Bluesky for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn bil...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/08/27/apples-api-needs-to-be-sorted/" rel="permalink">Apple needs to sort out their API
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly sta...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
+    script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>

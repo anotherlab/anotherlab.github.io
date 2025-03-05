@@ -1,0 +1,721 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Increasing the target area of a table’s DetailDisclose button with Xamarin.iOS - Chris Miller’s 5th Blog</title>
+<meta name="description" content="Can you make that button bigger? I went slightly under the hood in Xamarin.iOS to make an accessory button target area larger.">
+
+
+  <meta name="author" content="Chris Miller">
+  
+  <meta property="article:author" content="Chris Miller">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
+<meta property="og:title" content="Increasing the target area of a table’s DetailDisclose button with Xamarin.iOS">
+<meta property="og:url" content="http://localhost:4000/2013/08/24/increasing-target-area-of-tables/">
+
+
+  <meta property="og:description" content="Can you make that button bigger? I went slightly under the hood in Xamarin.iOS to make an accessory button target area larger.">
+
+
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="Increasing the target area of a table’s DetailDisclose button with Xamarin.iOS">
+  <meta name="twitter:description" content="Can you make that button bigger? I went slightly under the hood in Xamarin.iOS to make an accessory button target area larger.">
+  <meta name="twitter:url" content="http://localhost:4000/2013/08/24/increasing-target-area-of-tables/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2013-08-24T01:04:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2013/08/24/increasing-target-area-of-tables/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 5th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://assets.about.me/background/users/t/h/i/thisischrismiller_1488935098_536.jpg" alt="Chris Miller" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Chris Miller</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>I am a Microsoft MVP, a Pluralsight Author, a Xamarin Certified Mobile Developer for iOS and Android, and the leader of the Tech Valley .NET User Group.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Albany, NY</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="https://" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span class="label">BlueSky</span></a></li>
+          
+        
+          
+            <li><a href="https://app.pluralsight.com/profile/author/christopher-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-chalkboard-teacher" aria-hidden="true"></i><span class="label">Pluralsight</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+          
+            <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-award" aria-hidden="true"></i><span class="label">Microsoft MVP</span></a></li>
+          
+        
+          
+            <li><a href="https://stackoverflow.com/users/206/chris-miller" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i><span class="label">Stack Overflow</span></a></li>
+          
+        
+          
+            <li><a href="https://www.reddit.com/user/anotherlab/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-reddit-alien" aria-hidden="true"></i><span class="label">Reddit</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Increasing the target area of a table’s DetailDisclose button with Xamarin.iOS">
+    <meta itemprop="description" content="Can you make that button bigger? I went slightly under the hood in Xamarin.iOS to make an accessory button target area larger.">
+    <meta itemprop="datePublished" content="2013-08-24T01:04:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2013/08/24/increasing-target-area-of-tables/" itemprop="url">Increasing the target area of a table’s DetailDisclose button with Xamarin.iOS
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Can you make that button bigger? I went slightly under the hood in <a href="http://xamarin.com/monotouch">Xamarin.iOS</a> to make an accessory button target area larger.</p>
+
+<p>I’m finishing up an iPad app for our fall release schedule. One of the comments that came up in testing was that it was too hard for some people to hit the <a href="https://developer.apple.com/library/ios/documentation/userexperience/conceptual/mobilehig/UIElementGuidelines/UIElementGuidelines.html#//apple_ref/doc/uid/TP40006556-CH13-SW19">detail disclosure button</a> in the tables. I was asked to make the button larger.</p>
+
+<p>What we are talking about is the standard blue circle with a white “&gt;” in the center. Something like this:</p>
+
+<div>
+  <a href="https://i2.wp.com/3.bp.blogspot.com/-WqB3F0hGE5Q/UhemEMh4W_I/AAAAAAAAAIQ/zEGL6Ae8wSc/s1600/DetailDisclosureButton.png" imageanchor="1"><img loading="lazy" border="0" height="320" src="https://i2.wp.com/3.bp.blogspot.com/-WqB3F0hGE5Q/UhemEMh4W_I/AAAAAAAAAIQ/zEGL6Ae8wSc/s320/DetailDisclosureButton.png?resize=222%2C320" width="222" /></a>
+</div>
+
+<p>The target area that responds to finger touches is about 44×44 pixels, centered around the button. We wanted to increase that target area to make it easier to reach. My first pass was to create new button that was a larger size. That worked, but it didn’t look like the standard detail disclosure button (actually, it looked hideous, but that’s another story). I prefer to use the standard iOS imagery unless I have a good reason not to. If you have spent any amount of time with an iPhone or an iPad, you have seen that button before and you know that touching it will provide you with more details. The more familiar a UI is, the less training the user will need.</p>
+
+<blockquote>
+  <p>On a side note: If you want to create a custom button and want to use imagery that will scale between Retina and non-Retina displays, take a look at <a href="http://www.paintcodeapp.com/">PaintCode</a>. I was able to take my vector based image and convert it to code and created a button that drew the imagery at runtime at the device resolution. I don’t often need that tool, but I’m glad I have it.</p>
+</blockquote>
+
+<p>I decided to take another approach. Instead of changing the image, I would make the target area around the button wider. The button will look the same, but clicking more of the white area around that button would trigger the button. And it wasn’t hard to do.</p>
+
+<p>We are going to looking at some Xamarin.iOS C# code. This should also work with Objective-C, just with different syntax.</p>
+
+<p>I started out with a custom table cell</p>
+
+<pre>public class MyCustomCell : UITableViewCell<br />{<br /> public UIButton detailDisclosureButton;<br /><br /> public MyCustomCell (string Action, string Status, NSString identKey) : base (UITableViewCellStyle.Subtitle, identKey)<br /> {<br />  detailDisclosureButton = UIButton.FromType (UIButtonType.DetailDisclosure);<br />  detailDisclosureButton.Frame = new RectangleF (0f, 0f, 120f, 44f);<br />  detailDisclosureButton.ImageEdgeInsets = new UIEdgeInsets (0f, 120f - 44f, 0f, 0f);<br /><br />  AccessoryView = detailDisclosureButton;<br /><br />  UpdateCell (Action, Status);<br /> }<br /><br /> public void UpdateCell(string Action, string Status)<br /> {<br />  TextLabel.Text = Action;<br /><br />  DetailTextLabel.Text = Status;<br /> }<br />}<br /></pre>
+
+<p>The constructor creates a new SubTitle cell. I then add a UIButton of type DetailDisclosure. The button then gets a new Frame that is much wider, 120px, than the default size. That will give the user a wider target to hit. Since the default is to left align the image, we need to shift the image inside the frame. For that we add a new <a href="https://developer.apple.com/library/ios/documentation/uikit/reference/UIButton_Class/UIButton/UIButton.html#//apple_ref/occ/instp/UIButton/imageEdgeInsets">UIImageEdgeSets</a>, to set the margin on the drawing rectangle for the image. By setting the left inset to the new width minus the old width, we align the image to the right side of the frame.</p>
+
+<p>The last thing to do is to set the <a href="https://developer.apple.com/library/ios/documentation/userexperience/conceptual/tableview_iphone/tableviewstyles/tableviewcharacteristics.html">AccessoryView</a> property of the cell to the new button, that will let the default code draw the button in the right place and we do not need to know how wide the cell is at runtime. What you lose is the <a href="http://docs.xamarin.com/recipes/ios/content_controls/tables/add_a_cell_accessory">AccessoryButtonTapped</a> event is no longer called, we have to handle that functionality.</p>
+
+<p>The next step would be define the table. I’m using a <a href="http://docs.xamarin.com/guides/ios/user_interface/tables/part_2_-_populating_a_table_with_data">UITableViewSource</a> and I override the <a href="http://docs.xamarin.com/guides/ios/user_interface/tables/part_3_-_customizing_a_table's_appearance">GetCell</a> method to create the custom cell. In addition to creating the custom cell, I needed to assign a TouchUpInside event to the new button as the default accessory behavior will no longer handle that button.</p>
+
+<pre>public class MyCustomTableSource : UITableViewSource<br />{<br /> protected List&lt;mycustomitem&gt; tableItems = new List&lt;mycustomitem&gt;();<br /> protected string cellIdentifier = "myTableCell";<br /><br /> public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)<br /> {<br />  MyCustomCell cell = (MyCustomCell)(tableView.DequeueReusableCell (cellIdentifier));<br /><br />  var Action = SomeMethodToReturnTitle(tableItems [indexPath.Row]);<br />  var Status = SomeMethodToReturnSubTitle(tableItems [indexPath.Row]);<br /><br />  if (cell == null) {<br />   // Create our custom cell<br />   cell = new MyCustomCell(Action, Status, new NSString (cellIdentifier));<br /><br />   // Set the tag property of the button to the current row.<br />   // If you are doing sections and rows, then I would subclass the UIButton and<br />   // add Section and Row properties to make the code easier to work with<br />   cell.detailDisclosureButton.Tag = indexPath.Row;<br /><br />   // Set the TouchUpInside event to check the button's tag property to figure out<br />   // which row triggered the event.  And then do something<br />   cell.detailDisclosureButton.TouchUpInside += delegate(object sender, EventArgs e) {<br />    EditAction (tableItems[(sender as UIButton).Tag]);<br />   };<br />  }<br />  else {<br />   cell.UpdateCell(Action, Status);<br />  }<br /><br />  return cell;<br /> }<br /><br /> public void EditAction(MyCustomItem thisAction)<br /> {<br />  // Do something here<br /> }<br />}<br />&lt;/mycustomitem&gt;&lt;/mycustomitem&gt;</pre>
+
+<p>With GetCell, we create or update an instance of our custom cell. When the cell gets created, I assign the table row to the Tag property of the button. Since we are not using the default code for adding a DetailDisclosure button, we have to handle the touch event. Right after the cell is created, the TouchUpInside event of the custom button gets a new delegate assign to it. I cast the sender as the UIButton and access the Tag property to get the selected row.</p>
+
+<p>My code only had a single section in the table, so I only needed to track the table row. If I had needed to know the current section, I would have created a UIButton descendant and added Section and Row properties. That would make the code a little cleaner. The end result is the user gets the a button with the default look and feel, but with a larger target area.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2013-08-24T01:04:00+00:00">August 24, 2013</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Increasing+the+target+area+of+a+table%26%238217%3Bs+DetailDisclose+button+with+Xamarin.iOS%20http%3A%2F%2Flocalhost%3A4000%2F2013%2F08%2F24%2Fincreasing-target-area-of-tables%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2013%2F08%2F24%2Fincreasing-target-area-of-tables%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2013/08/24/increasing-target-area-of-tables/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2013/07/01/getting-around-0x80073cfb-errors-after/" class="pagination--pager" title="Getting around 0x80073cfb errors after installing Windows 8.1 Preview
+">Previous</a>
+    
+    
+      <a href="/2013/09/25/todays-lesson-in-voice-mail-etiquette/" class="pagination--pager" title="Today’s lesson in voice mail etiquette
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/05/poka-yoke/" rel="permalink">Poka-yoke
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+So I used poka-yoke (ポカヨケ) in a conversation yesterday. I am working on an update to an app that uses a web service. Under an extreme edge condition, the a...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/04/blog-refresh/" rel="permalink">Refresh of this blog
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+The blog has been updated. Not just posts, all of the stuff that generates it. This wasn’t planned…
+
+About two weeks ago, the boot drive of my PC failed. T...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/02/06/bluesky/" rel="permalink">You can find me on Bluesky
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I’ve been on Bluesky for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn bil...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2024/08/27/apples-api-needs-to-be-sorted/" rel="permalink">Apple needs to sort out their API
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I have some code that uses Apple’s AppConnect API to query App store related things. I wrote a C# script that I run from LINQPad that gives me a weekly sta...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
+    script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>
