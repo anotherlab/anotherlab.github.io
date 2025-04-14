@@ -3688,4 +3688,16 @@ var store = [{
         "tags": ["jargon"],
         "url": "/2025/03/05/poka-yoke/",
         "teaser": null
+      },{
+        "title": "Breaking and then fixing my app's CFBundleShortVersionString",
+        "excerpt":"So I had this bug reported where the app was reporting the wrong version number. Only for iOS, it was correct on Android. It’s an app created with .NET MAUI and it gets built as part of a GitHub workflow when the main branch is updated. The MAUI code that...","categories": ["versioning","ios","github"],
+        "tags": ["yaml","Info.plist"],
+        "url": "/2025/03/10/CFBundleShortVersionString/",
+        "teaser": null
+      },{
+        "title": "Command for keeping your phone awake while plugged in",
+        "excerpt":"Usually when I’m writing .NET MAUI code for Android, I use an emulator to test the code. It’s fast and there are fewer things that can go wrong. And most of time it’s good enough. When you need to access something hardware related, you want real hardware. I’m working on...","categories": ["powershell","abd","power"],
+        "tags": [],
+        "url": "/2025/04/13/adb-stay-on/",
+        "teaser": null
       }]

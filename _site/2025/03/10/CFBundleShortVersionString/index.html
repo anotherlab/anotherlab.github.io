@@ -1,0 +1,762 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Breaking and then fixing my app’s CFBundleShortVersionString - Chris Miller’s 5th Blog</title>
+<meta name="description" content="So I had this bug reported where the app was reporting the wrong version number. Only for iOS, it was correct on Android. It’s an app created with .NET MAUI and it gets built as part of a GitHub workflow when the main branch is updated. The MAUI code that shows the version number is the same for Android and iOS. That indicated the version information was not being set correctly.  We have two version numbers in the app. For iOS, they are named CFBundleVersion and CFBundleShortVersionString. CFBundleShortVersionString is supposed to be user-visible version of CFBundleVersion. If CFBundleVersion is set to “1.2.345”, then CFBundleShortVersionString could be set to “1.2 build 345”.  CFBundleVersion is the value that identifies the version of the build. Becareful when you set this. It can go up, but it can’t go back down. The original developer didn’t understand how this worked and when they first submitted the app to the Apple app store, they thought it had to be an integer. Instead of setting the value to “1.2.3456”, they set it to something like “1023456”. It got out of sync with CFBundleShortVersionString.  This was back when it was a Xamarin.Forms app. In Xamarin.Forms, we set CFBundleVersion and CFBundleShortVersionString in the Info.plist file. In .NET MAUI, you can set that in the .csproj project file. the Info.plist, or via command line parameters. I had placeholder values in the project file and used the command line parameters to set the version numbers as part of the build command.  I have a GitHub workflow set up for when the main branch is updated. It uses an open-source GutHub action named action-bumpr. This action-bumpr action can set all or part of semantic version number.   jobs:   bump-version:     runs-on: ubuntu-latest     outputs:       version: ${{ steps.clean_version.outputs.version }}       versioncode: ${{ steps.clean_version.outputs.versioncode }}     steps:       - uses: actions/checkout@v2       - uses: haya14busa/action-bumpr@v1         id: bumpr         with:           github_token: ${{ github.token }}           default_bump_level: &#39;patch&#39;       - name: clean version         id: clean_version         run: |           v=${{ steps.bumpr.outputs.next_version }}           v=${v:1}           echo &quot;version=$v&quot; &gt;&gt; $GITHUB_OUTPUT           count=$(git rev-list --count HEAD)           let &quot;count += 2100000&quot;           echo &quot;versioncode=$count&quot; &gt;&gt; $GITHUB_OUTPUT    The version variable ends up with “1.2.3456” and versioncount gets the build count with a “magic number” of 2100000 added to it. The versioncount variable is being set this way only because we had it wrong from day one and you can only go up in value.  The “jobs:” job is used by a job called “build-ios:”. After doing all of the setup stuff, it fires up the following command to build the app         - name: Publish iOS         run: dotnet publish -c Release -f:net9.0-ios /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:ApplicationDisplayVersion=${{ needs.bump-version.outputs.version }} /p:ApplicationVersion=${{ needs.bump-version.outputs.versioncode }}         working-directory: MyApp   YAML’s formatting makes that hard to read in a blog post. If we just look at the version parameters:  /p:ApplicationDisplayVersion=${{ needs.bump-version.outputs.version }} /p:ApplicationVersion=${{ needs.bump-version.outputs.versioncode }}    The p:ApplicationDisplayVersion parameter maps to CFBundleShortVersionString and /p:ApplicationVersion maps to CFBundleVersion. This is were the version values are passed. When I did the build, CFBundleShortVersionString was not being set correctly. So I had decided to cheat and set it in Info.plist before calling the Publish iOS step.         - name: Update CFBundleShortVersionString         run: /usr/libexec/PlistBuddy ${{ github.workspace }}/MyStop/Platforms/iOS/Info.plist -c &quot;set :CFBundleShortVersionString &#39;${{ needs.bump-version.outputs.versioncode }}&#39;&quot;;         working-directory: MyStop/Platforms/iOS    PlistBuddy is a tool that is part of MacOS. It lets you edit .plist files from the command line. You can give the “-h” parameter to some terse help. I found a nice guide here.  This was were I made the mistake. I was setting CFBundleShortVersionString to the version code and I should have used the version string. The root cause of the problem is that if you have CFBundleShortVersionString defined in Info.plist, that value take precedence over any value specified from the command line. It’s usually the other way around, the command line takes precedence.  I though the fix would be easy. Remove CFBundleShortVersionString from Info.plist and remove the Plistbuddy lines from the workflow. That did set the correct version number. It didn’t fix the problem with correct x.y.zzzz format version number being considered lower than XXXXXXXX by Apple. So time for a hack.  In the C# code that provides the version number in the App, the code will branch.  If the platform is Android, just return the version number. If it’s iOS, check for X.Y.Z format and if that matches return that. If it’s an integer value, we make some assumptions.  We take number and subtract the “magic number” that we had added to the git revision number that we had used in the bump-version: job.  let &quot;count += 2100000&quot;  To convert that hot mess of a int to a user-readable version number, you could implement something like this:  string GetVersionNumber(string someValue) { 	// Magic number and version prefix are hard coded 	// It is what it is 	const int MagicNumber = 2100000; 	const string prefix = &quot;1.2&quot;; 	 	// Sanity check on converting what we expect to get 	// to an int value 	if (int.TryParse(someValue, out int result)) 	{ 		result -= MagicNumber;  		// Format and return to the call 		return $&quot;{prefix}.{result}&quot;; 	}  	// If something wasn&#39;t correct, return something back 	return prefix; }  It’s a hack and it depends on the source code knowing what the X and Y are for the X.Y.ZZZZ parts of the version number. But it works.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
+<meta property="og:title" content="Breaking and then fixing my app’s CFBundleShortVersionString">
+<meta property="og:url" content="http://localhost:4000/2025/03/10/CFBundleShortVersionString/">
+
+
+  <meta property="og:description" content="So I had this bug reported where the app was reporting the wrong version number. Only for iOS, it was correct on Android. It’s an app created with .NET MAUI and it gets built as part of a GitHub workflow when the main branch is updated. The MAUI code that shows the version number is the same for Android and iOS. That indicated the version information was not being set correctly.  We have two version numbers in the app. For iOS, they are named CFBundleVersion and CFBundleShortVersionString. CFBundleShortVersionString is supposed to be user-visible version of CFBundleVersion. If CFBundleVersion is set to “1.2.345”, then CFBundleShortVersionString could be set to “1.2 build 345”.  CFBundleVersion is the value that identifies the version of the build. Becareful when you set this. It can go up, but it can’t go back down. The original developer didn’t understand how this worked and when they first submitted the app to the Apple app store, they thought it had to be an integer. Instead of setting the value to “1.2.3456”, they set it to something like “1023456”. It got out of sync with CFBundleShortVersionString.  This was back when it was a Xamarin.Forms app. In Xamarin.Forms, we set CFBundleVersion and CFBundleShortVersionString in the Info.plist file. In .NET MAUI, you can set that in the .csproj project file. the Info.plist, or via command line parameters. I had placeholder values in the project file and used the command line parameters to set the version numbers as part of the build command.  I have a GitHub workflow set up for when the main branch is updated. It uses an open-source GutHub action named action-bumpr. This action-bumpr action can set all or part of semantic version number.   jobs:   bump-version:     runs-on: ubuntu-latest     outputs:       version: ${{ steps.clean_version.outputs.version }}       versioncode: ${{ steps.clean_version.outputs.versioncode }}     steps:       - uses: actions/checkout@v2       - uses: haya14busa/action-bumpr@v1         id: bumpr         with:           github_token: ${{ github.token }}           default_bump_level: &#39;patch&#39;       - name: clean version         id: clean_version         run: |           v=${{ steps.bumpr.outputs.next_version }}           v=${v:1}           echo &quot;version=$v&quot; &gt;&gt; $GITHUB_OUTPUT           count=$(git rev-list --count HEAD)           let &quot;count += 2100000&quot;           echo &quot;versioncode=$count&quot; &gt;&gt; $GITHUB_OUTPUT    The version variable ends up with “1.2.3456” and versioncount gets the build count with a “magic number” of 2100000 added to it. The versioncount variable is being set this way only because we had it wrong from day one and you can only go up in value.  The “jobs:” job is used by a job called “build-ios:”. After doing all of the setup stuff, it fires up the following command to build the app         - name: Publish iOS         run: dotnet publish -c Release -f:net9.0-ios /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:ApplicationDisplayVersion=${{ needs.bump-version.outputs.version }} /p:ApplicationVersion=${{ needs.bump-version.outputs.versioncode }}         working-directory: MyApp   YAML’s formatting makes that hard to read in a blog post. If we just look at the version parameters:  /p:ApplicationDisplayVersion=${{ needs.bump-version.outputs.version }} /p:ApplicationVersion=${{ needs.bump-version.outputs.versioncode }}    The p:ApplicationDisplayVersion parameter maps to CFBundleShortVersionString and /p:ApplicationVersion maps to CFBundleVersion. This is were the version values are passed. When I did the build, CFBundleShortVersionString was not being set correctly. So I had decided to cheat and set it in Info.plist before calling the Publish iOS step.         - name: Update CFBundleShortVersionString         run: /usr/libexec/PlistBuddy ${{ github.workspace }}/MyStop/Platforms/iOS/Info.plist -c &quot;set :CFBundleShortVersionString &#39;${{ needs.bump-version.outputs.versioncode }}&#39;&quot;;         working-directory: MyStop/Platforms/iOS    PlistBuddy is a tool that is part of MacOS. It lets you edit .plist files from the command line. You can give the “-h” parameter to some terse help. I found a nice guide here.  This was were I made the mistake. I was setting CFBundleShortVersionString to the version code and I should have used the version string. The root cause of the problem is that if you have CFBundleShortVersionString defined in Info.plist, that value take precedence over any value specified from the command line. It’s usually the other way around, the command line takes precedence.  I though the fix would be easy. Remove CFBundleShortVersionString from Info.plist and remove the Plistbuddy lines from the workflow. That did set the correct version number. It didn’t fix the problem with correct x.y.zzzz format version number being considered lower than XXXXXXXX by Apple. So time for a hack.  In the C# code that provides the version number in the App, the code will branch.  If the platform is Android, just return the version number. If it’s iOS, check for X.Y.Z format and if that matches return that. If it’s an integer value, we make some assumptions.  We take number and subtract the “magic number” that we had added to the git revision number that we had used in the bump-version: job.  let &quot;count += 2100000&quot;  To convert that hot mess of a int to a user-readable version number, you could implement something like this:  string GetVersionNumber(string someValue) { 	// Magic number and version prefix are hard coded 	// It is what it is 	const int MagicNumber = 2100000; 	const string prefix = &quot;1.2&quot;; 	 	// Sanity check on converting what we expect to get 	// to an int value 	if (int.TryParse(someValue, out int result)) 	{ 		result -= MagicNumber;  		// Format and return to the call 		return $&quot;{prefix}.{result}&quot;; 	}  	// If something wasn&#39;t correct, return something back 	return prefix; }  It’s a hack and it depends on the source code knowing what the X and Y are for the X.Y.ZZZZ parts of the version number. But it works.">
+
+
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="Breaking and then fixing my app’s CFBundleShortVersionString">
+  <meta name="twitter:description" content="So I had this bug reported where the app was reporting the wrong version number. Only for iOS, it was correct on Android. It’s an app created with .NET MAUI and it gets built as part of a GitHub workflow when the main branch is updated. The MAUI code that shows the version number is the same for Android and iOS. That indicated the version information was not being set correctly.  We have two version numbers in the app. For iOS, they are named CFBundleVersion and CFBundleShortVersionString. CFBundleShortVersionString is supposed to be user-visible version of CFBundleVersion. If CFBundleVersion is set to “1.2.345”, then CFBundleShortVersionString could be set to “1.2 build 345”.  CFBundleVersion is the value that identifies the version of the build. Becareful when you set this. It can go up, but it can’t go back down. The original developer didn’t understand how this worked and when they first submitted the app to the Apple app store, they thought it had to be an integer. Instead of setting the value to “1.2.3456”, they set it to something like “1023456”. It got out of sync with CFBundleShortVersionString.  This was back when it was a Xamarin.Forms app. In Xamarin.Forms, we set CFBundleVersion and CFBundleShortVersionString in the Info.plist file. In .NET MAUI, you can set that in the .csproj project file. the Info.plist, or via command line parameters. I had placeholder values in the project file and used the command line parameters to set the version numbers as part of the build command.  I have a GitHub workflow set up for when the main branch is updated. It uses an open-source GutHub action named action-bumpr. This action-bumpr action can set all or part of semantic version number.   jobs:   bump-version:     runs-on: ubuntu-latest     outputs:       version: ${{ steps.clean_version.outputs.version }}       versioncode: ${{ steps.clean_version.outputs.versioncode }}     steps:       - uses: actions/checkout@v2       - uses: haya14busa/action-bumpr@v1         id: bumpr         with:           github_token: ${{ github.token }}           default_bump_level: &#39;patch&#39;       - name: clean version         id: clean_version         run: |           v=${{ steps.bumpr.outputs.next_version }}           v=${v:1}           echo &quot;version=$v&quot; &gt;&gt; $GITHUB_OUTPUT           count=$(git rev-list --count HEAD)           let &quot;count += 2100000&quot;           echo &quot;versioncode=$count&quot; &gt;&gt; $GITHUB_OUTPUT    The version variable ends up with “1.2.3456” and versioncount gets the build count with a “magic number” of 2100000 added to it. The versioncount variable is being set this way only because we had it wrong from day one and you can only go up in value.  The “jobs:” job is used by a job called “build-ios:”. After doing all of the setup stuff, it fires up the following command to build the app         - name: Publish iOS         run: dotnet publish -c Release -f:net9.0-ios /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:ApplicationDisplayVersion=${{ needs.bump-version.outputs.version }} /p:ApplicationVersion=${{ needs.bump-version.outputs.versioncode }}         working-directory: MyApp   YAML’s formatting makes that hard to read in a blog post. If we just look at the version parameters:  /p:ApplicationDisplayVersion=${{ needs.bump-version.outputs.version }} /p:ApplicationVersion=${{ needs.bump-version.outputs.versioncode }}    The p:ApplicationDisplayVersion parameter maps to CFBundleShortVersionString and /p:ApplicationVersion maps to CFBundleVersion. This is were the version values are passed. When I did the build, CFBundleShortVersionString was not being set correctly. So I had decided to cheat and set it in Info.plist before calling the Publish iOS step.         - name: Update CFBundleShortVersionString         run: /usr/libexec/PlistBuddy ${{ github.workspace }}/MyStop/Platforms/iOS/Info.plist -c &quot;set :CFBundleShortVersionString &#39;${{ needs.bump-version.outputs.versioncode }}&#39;&quot;;         working-directory: MyStop/Platforms/iOS    PlistBuddy is a tool that is part of MacOS. It lets you edit .plist files from the command line. You can give the “-h” parameter to some terse help. I found a nice guide here.  This was were I made the mistake. I was setting CFBundleShortVersionString to the version code and I should have used the version string. The root cause of the problem is that if you have CFBundleShortVersionString defined in Info.plist, that value take precedence over any value specified from the command line. It’s usually the other way around, the command line takes precedence.  I though the fix would be easy. Remove CFBundleShortVersionString from Info.plist and remove the Plistbuddy lines from the workflow. That did set the correct version number. It didn’t fix the problem with correct x.y.zzzz format version number being considered lower than XXXXXXXX by Apple. So time for a hack.  In the C# code that provides the version number in the App, the code will branch.  If the platform is Android, just return the version number. If it’s iOS, check for X.Y.Z format and if that matches return that. If it’s an integer value, we make some assumptions.  We take number and subtract the “magic number” that we had added to the git revision number that we had used in the bump-version: job.  let &quot;count += 2100000&quot;  To convert that hot mess of a int to a user-readable version number, you could implement something like this:  string GetVersionNumber(string someValue) { 	// Magic number and version prefix are hard coded 	// It is what it is 	const int MagicNumber = 2100000; 	const string prefix = &quot;1.2&quot;; 	 	// Sanity check on converting what we expect to get 	// to an int value 	if (int.TryParse(someValue, out int result)) 	{ 		result -= MagicNumber;  		// Format and return to the call 		return $&quot;{prefix}.{result}&quot;; 	}  	// If something wasn&#39;t correct, return something back 	return prefix; }  It’s a hack and it depends on the source code knowing what the X and Y are for the X.Y.ZZZZ parts of the version number. But it works.">
+  <meta name="twitter:url" content="http://localhost:4000/2025/03/10/CFBundleShortVersionString/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2025-03-10T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2025/03/10/CFBundleShortVersionString/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 5th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Breaking and then fixing my app’s CFBundleShortVersionString">
+    <meta itemprop="description" content="So I had this bug reported where the app was reporting the wrong version number. Only for iOS, it was correct on Android. It’s an app created with .NET MAUI and it gets built as part of a GitHub workflow when the main branch is updated. The MAUI code that shows the version number is the same for Android and iOS. That indicated the version information was not being set correctly.We have two version numbers in the app. For iOS, they are named CFBundleVersion and CFBundleShortVersionString. CFBundleShortVersionString is supposed to be user-visible version of CFBundleVersion. If CFBundleVersion is set to “1.2.345”, then CFBundleShortVersionString could be set to “1.2 build 345”.CFBundleVersion is the value that identifies the version of the build. Becareful when you set this. It can go up, but it can’t go back down. The original developer didn’t understand how this worked and when they first submitted the app to the Apple app store, they thought it had to be an integer. Instead of setting the value to “1.2.3456”, they set it to something like “1023456”. It got out of sync with CFBundleShortVersionString.This was back when it was a Xamarin.Forms app. In Xamarin.Forms, we set CFBundleVersion and CFBundleShortVersionString in the Info.plist file. In .NET MAUI, you can set that in the .csproj project file. the Info.plist, or via command line parameters. I had placeholder values in the project file and used the command line parameters to set the version numbers as part of the build command.I have a GitHub workflow set up for when the main branch is updated. It uses an open-source GutHub action named action-bumpr. This action-bumpr action can set all or part of semantic version number.jobs:  bump-version:    runs-on: ubuntu-latest    outputs:      version: ${{ steps.clean_version.outputs.version }}      versioncode: ${{ steps.clean_version.outputs.versioncode }}    steps:      - uses: actions/checkout@v2      - uses: haya14busa/action-bumpr@v1        id: bumpr        with:          github_token: ${{ github.token }}          default_bump_level: &#39;patch&#39;      - name: clean version        id: clean_version        run: |          v=${{ steps.bumpr.outputs.next_version }}          v=${v:1}          echo &quot;version=$v&quot; &gt;&gt; $GITHUB_OUTPUT          count=$(git rev-list --count HEAD)          let &quot;count += 2100000&quot;          echo &quot;versioncode=$count&quot; &gt;&gt; $GITHUB_OUTPUTThe version variable ends up with “1.2.3456” and versioncount gets the build count with a “magic number” of 2100000 added to it. The versioncount variable is being set this way only because we had it wrong from day one and you can only go up in value.The “jobs:” job is used by a job called “build-ios:”. After doing all of the setup stuff, it fires up the following command to build the app      - name: Publish iOS        run: dotnet publish -c Release -f:net9.0-ios /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:ApplicationDisplayVersion=${{ needs.bump-version.outputs.version }} /p:ApplicationVersion=${{ needs.bump-version.outputs.versioncode }}        working-directory: MyAppYAML’s formatting makes that hard to read in a blog post. If we just look at the version parameters:/p:ApplicationDisplayVersion=${{ needs.bump-version.outputs.version }}/p:ApplicationVersion=${{ needs.bump-version.outputs.versioncode }}The p:ApplicationDisplayVersion parameter maps to CFBundleShortVersionString and /p:ApplicationVersion maps to CFBundleVersion. This is were the version values are passed. When I did the build, CFBundleShortVersionString was not being set correctly. So I had decided to cheat and set it in Info.plist before calling the Publish iOS step.      - name: Update CFBundleShortVersionString        run: /usr/libexec/PlistBuddy ${{ github.workspace }}/MyStop/Platforms/iOS/Info.plist -c &quot;set :CFBundleShortVersionString &#39;${{ needs.bump-version.outputs.versioncode }}&#39;&quot;;        working-directory: MyStop/Platforms/iOSPlistBuddy is a tool that is part of MacOS. It lets you edit .plist files from the command line. You can give the “-h” parameter to some terse help. I found a nice guide here.This was were I made the mistake. I was setting CFBundleShortVersionString to the version code and I should have used the version string. The root cause of the problem is that if you have CFBundleShortVersionString defined in Info.plist, that value take precedence over any value specified from the command line. It’s usually the other way around, the command line takes precedence.I though the fix would be easy. Remove CFBundleShortVersionString from Info.plist and remove the Plistbuddy lines from the workflow. That did set the correct version number. It didn’t fix the problem with correct x.y.zzzz format version number being considered lower than XXXXXXXX by Apple. So time for a hack.In the C# code that provides the version number in the App, the code will branch.  If the platform is Android, just return the version number. If it’s iOS, check for X.Y.Z format and if that matches return that. If it’s an integer value, we make some assumptions.  We take number and subtract the “magic number” that we had added to the git revision number that we had used in the bump-version: job.let &quot;count += 2100000&quot;To convert that hot mess of a int to a user-readable version number, you could implement something like this:string GetVersionNumber(string someValue){	// Magic number and version prefix are hard coded	// It is what it is	const int MagicNumber = 2100000;	const string prefix = &quot;1.2&quot;;		// Sanity check on converting what we expect to get	// to an int value	if (int.TryParse(someValue, out int result))	{		result -= MagicNumber;		// Format and return to the call		return $&quot;{prefix}.{result}&quot;;	}	// If something wasn&#39;t correct, return something back	return prefix;}It’s a hack and it depends on the source code knowing what the X and Y are for the X.Y.ZZZZ parts of the version number. But it works.">
+    <meta itemprop="datePublished" content="2025-03-10T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2025/03/10/CFBundleShortVersionString/" itemprop="url">Breaking and then fixing my app’s CFBundleShortVersionString
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><img src="/assets/images/steampunk-mobile-app-assembly-line.jpg" alt="Made to order" /></p>
+
+<p>So I had this bug reported where the app was reporting the wrong version number. Only for iOS, it was correct on Android. It’s an app created with .NET MAUI and it gets built as part of a GitHub workflow when the main branch is updated. The MAUI code that shows the version number is the same for Android and iOS. That indicated the version information was not being set correctly.</p>
+
+<p>We have two version numbers in the app. For iOS, they are named <a href="https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundleversion">CFBundleVersion</a> and <a href="https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundleshortversionstring">CFBundleShortVersionString</a>. CFBundleShortVersionString is supposed to be user-visible version of CFBundleVersion. If CFBundleVersion is set to “1.2.345”, then CFBundleShortVersionString could be set to “1.2 build 345”.</p>
+
+<p><code class="language-plaintext highlighter-rouge">CFBundleVersion</code> is the value that identifies the version of the build. Becareful when you set this. It can go up, but it can’t go back down. The original developer didn’t understand how this worked and when they first submitted the app to the Apple app store, they thought it had to be an integer. Instead of setting the value to “1.2.3456”, they set it to something like “1023456”. It got out of sync with <code class="language-plaintext highlighter-rouge">CFBundleShortVersionString</code>.</p>
+
+<p>This was back when it was a Xamarin.Forms app. In Xamarin.Forms, we set <code class="language-plaintext highlighter-rouge">CFBundleVersion</code> and <code class="language-plaintext highlighter-rouge">CFBundleShortVersionString</code> in the <a href="https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html">Info.plist</a> file. In .NET MAUI, you can set that in the .csproj project file. the Info.plist, or via command line parameters. I had placeholder values in the project file and used the command line parameters to set the version numbers as part of the build command.</p>
+
+<p>I have a GitHub workflow set up for when the main branch is updated. It uses an open-source GutHub action named <a href="https://github.com/haya14busa/action-bumpr">action-bumpr</a>. This action-bumpr action can set all or part of semantic version number.</p>
+
+<!--  -->
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">bump-version</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">outputs</span><span class="pi">:</span>
+      <span class="na">version</span><span class="pi">:</span> <span class="s">${{ steps.clean_version.outputs.version }}</span>
+      <span class="na">versioncode</span><span class="pi">:</span> <span class="s">${{ steps.clean_version.outputs.versioncode }}</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">haya14busa/action-bumpr@v1</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">bumpr</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">github_token</span><span class="pi">:</span> <span class="s">${{ github.token }}</span>
+          <span class="na">default_bump_level</span><span class="pi">:</span> <span class="s1">'</span><span class="s">patch'</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">clean version</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">clean_version</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+          <span class="s">v=${{ steps.bumpr.outputs.next_version }}</span>
+          <span class="s">v=${v:1}</span>
+          <span class="s">echo "version=$v" &gt;&gt; $GITHUB_OUTPUT</span>
+          <span class="s">count=$(git rev-list --count HEAD)</span>
+          <span class="s">let "count += 2100000"</span>
+          <span class="s">echo "versioncode=$count" &gt;&gt; $GITHUB_OUTPUT</span>
+</code></pre></div></div>
+<!--  -->
+
+<p>The <code class="language-plaintext highlighter-rouge">version</code> variable ends up with “1.2.3456” and <code class="language-plaintext highlighter-rouge">versioncount</code> gets the build count with a “magic number” of 2100000 added to it. The versioncount variable is being set this way only because we had it wrong from day one and you can only go up in value.</p>
+
+<p>The “jobs:” job is used by a job called “build-ios:”. After doing all of the setup stuff, it fires up the following command to build the app</p>
+
+<!--  -->
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Publish iOS</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">dotnet publish -c Release -f:net9.0-ios /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:ApplicationDisplayVersion=${{ needs.bump-version.outputs.version }} /p:ApplicationVersion=${{ needs.bump-version.outputs.versioncode }}</span>
+        <span class="na">working-directory</span><span class="pi">:</span> <span class="s">MyApp</span>
+</code></pre></div></div>
+<!--  -->
+<p>YAML’s formatting makes that hard to read in a blog post. If we just look at the version parameters:
+<!--  --></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">/p:ApplicationDisplayVersion=${{ needs.bump-version.outputs.version }}</span>
+<span class="s">/p:ApplicationVersion=${{ needs.bump-version.outputs.versioncode }}</span>
+</code></pre></div></div>
+<!--  -->
+
+<p>The p:ApplicationDisplayVersion parameter maps to <code class="language-plaintext highlighter-rouge">CFBundleShortVersionString</code> and /p:ApplicationVersion maps to CFBundleVersion. This is were the version values are passed. When I did the build, <code class="language-plaintext highlighter-rouge">CFBundleShortVersionString</code> was not being set correctly. So I had decided to cheat and set it in Info.plist before calling the Publish iOS step.</p>
+
+<!--  -->
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Update CFBundleShortVersionString</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">/usr/libexec/PlistBuddy ${{ github.workspace }}/MyStop/Platforms/iOS/Info.plist -c "set :CFBundleShortVersionString '${{ needs.bump-version.outputs.versioncode }}'";</span>
+        <span class="na">working-directory</span><span class="pi">:</span> <span class="s">MyStop/Platforms/iOS</span>
+</code></pre></div></div>
+<!--  -->
+
+<p>PlistBuddy is a tool that is part of MacOS. It lets you edit .plist files from the command line. You can give the “-h” parameter to some terse help. I found a nice guide <a href="https://github.com/captam3rica/plistbuddy-guide">here</a>.</p>
+
+<p>This was were I made the mistake. I was setting <code class="language-plaintext highlighter-rouge">CFBundleShortVersionString</code> to the version code and I should have used the version string. The root cause of the problem is that if you have <code class="language-plaintext highlighter-rouge">CFBundleShortVersionString</code> defined in Info.plist, that value take precedence over any value specified from the command line. It’s usually the other way around, the command line takes precedence.</p>
+
+<p>I though the fix would be easy. Remove <code class="language-plaintext highlighter-rouge">CFBundleShortVersionString</code> from Info.plist and remove the Plistbuddy lines from the workflow. That did set the correct version number. It didn’t fix the problem with correct x.y.zzzz format version number being considered lower than XXXXXXXX by Apple. So time for a hack.</p>
+
+<p>In the C# code that provides the version number in the App, the code will branch.  If the platform is Android, just return the version number. If it’s iOS, check for X.Y.Z format and if that matches return that. If it’s an integer value, we make some assumptions.  We take number and subtract the “magic number” that we had added to the git revision number that we had used in the <code class="language-plaintext highlighter-rouge">bump-version:</code> job.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">let "count += 2100000"</span>
+</code></pre></div></div>
+<p>To convert that hot mess of a int to a user-readable version number, you could implement something like this:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">string</span> <span class="nf">GetVersionNumber</span><span class="p">(</span><span class="kt">string</span> <span class="n">someValue</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="c1">// Magic number and version prefix are hard coded</span>
+	<span class="c1">// It is what it is</span>
+	<span class="k">const</span> <span class="kt">int</span> <span class="n">MagicNumber</span> <span class="p">=</span> <span class="m">2100000</span><span class="p">;</span>
+	<span class="k">const</span> <span class="kt">string</span> <span class="n">prefix</span> <span class="p">=</span> <span class="s">"1.2"</span><span class="p">;</span>
+	
+	<span class="c1">// Sanity check on converting what we expect to get</span>
+	<span class="c1">// to an int value</span>
+	<span class="k">if</span> <span class="p">(</span><span class="kt">int</span><span class="p">.</span><span class="nf">TryParse</span><span class="p">(</span><span class="n">someValue</span><span class="p">,</span> <span class="k">out</span> <span class="kt">int</span> <span class="n">result</span><span class="p">))</span>
+	<span class="p">{</span>
+		<span class="n">result</span> <span class="p">-=</span> <span class="n">MagicNumber</span><span class="p">;</span>
+
+		<span class="c1">// Format and return to the call</span>
+		<span class="k">return</span> <span class="s">$"</span><span class="p">{</span><span class="n">prefix</span><span class="p">}</span><span class="s">.</span><span class="p">{</span><span class="n">result</span><span class="p">}</span><span class="s">"</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// If something wasn't correct, return something back</span>
+	<span class="k">return</span> <span class="n">prefix</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>It’s a hack and it depends on the source code knowing what the X and Y are for the X.Y.ZZZZ parts of the version number. But it works.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#info-plist" class="page__taxonomy-item p-category" rel="tag">Info.plist</a><span class="sep">, </span>
+    
+      <a href="/tags/#yaml" class="page__taxonomy-item p-category" rel="tag">yaml</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#github" class="page__taxonomy-item p-category" rel="tag">github</a><span class="sep">, </span>
+    
+      <a href="/categories/#ios" class="page__taxonomy-item p-category" rel="tag">ios</a><span class="sep">, </span>
+    
+      <a href="/categories/#versioning" class="page__taxonomy-item p-category" rel="tag">versioning</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-03-10T00:00:00+00:00">March 10, 2025</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Breaking+and+then+fixing+my+app%27s+CFBundleShortVersionString%20http%3A%2F%2Flocalhost%3A4000%2F2025%2F03%2F10%2FCFBundleShortVersionString%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2025%2F03%2F10%2FCFBundleShortVersionString%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2025/03/10/CFBundleShortVersionString/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2025/03/05/poka-yoke/" class="pagination--pager" title="Poka-yoke
+">Previous</a>
+    
+    
+      <a href="/2025/04/13/adb-stay-on/" class="pagination--pager" title="Command for keeping your phone awake while plugged in
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/04/13/adb-stay-on/" rel="permalink">Command for keeping your phone awake while plugged in
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+Usually when I’m writing .NET MAUI code for Android, I use an emulator to test the code. It’s fast and there are fewer things that can go wrong. And most o...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/05/poka-yoke/" rel="permalink">Poka-yoke
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+So I used poka-yoke (ポカヨケ) in a conversation yesterday. I am working on an update to an app that uses a web service. Under an extreme edge condition, the a...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/04/blog-refresh/" rel="permalink">Refresh of this blog
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+The blog has been updated. Not just posts, all of the stuff that generates it. This wasn’t planned…
+
+About two weeks ago, the boot drive of my PC failed. T...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/02/06/bluesky/" rel="permalink">You can find me on Bluesky
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+I’ve been on Bluesky for a while now. I still have my account on the dead bird site, but I haven’t posted to it in ages. Not since Musk decided to burn bil...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
+    script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>
