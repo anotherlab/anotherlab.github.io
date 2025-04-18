@@ -7,3 +7,16 @@ main:
     url: /tags/
   - title: "About"
     url: /about/
+
+
+author2:
+  - title: "Links"
+    children:
+    - title: "BlueSky"
+      url: "https://bsky.app/profile/anotherlab.bsky.social"
+    - title: "Pluralsight"
+      icon: "fas fa-fw fa-chalkboard-teacher"
+      url: "https://app.pluralsight.com/profile/author/christopher-miller"
+    - title: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/anotherlab"
