@@ -3700,4 +3700,10 @@ var store = [{
         "tags": [],
         "url": "/2025/04/13/adb-stay-on/",
         "teaser": null
+      },{
+        "title": "Using PowerShell to convert VTT to SRT",
+        "excerpt":"Converting between VTT and SRT So I have to convert between VTT and SRT a few times a year. I’m lazy and forgetful so I decided to script the tasks with PowerShell. We have a quarterly developer conference at work. With 7500+ employees, we do 4-5 tracks of 3-4 sessions...","categories": ["powershell"],
+        "tags": ["conversion"],
+        "url": "/2025/04/18/vtt-2-srt/",
+        "teaser": null
       }]

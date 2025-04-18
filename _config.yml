@@ -152,6 +152,8 @@ defaults:
       comments: true
       share: true
       related: true
+      sidebar:
+        nav: "author2"
   # _pages
   - scope:
       path: "_pages"
