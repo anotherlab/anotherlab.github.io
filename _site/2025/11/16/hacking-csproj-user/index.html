@@ -1,0 +1,879 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>How to force Visual Studio to update the debug device for a MAUI project - Chris Miller’s 5th Blog</title>
+<meta name="description" content="When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
+<meta property="og:title" content="How to force Visual Studio to update the debug device for a MAUI project">
+<meta property="og:url" content="http://localhost:4000/2025/11/16/hacking-csproj-user/">
+
+
+  <meta property="og:description" content="When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/PressTheButton.jpg">
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="How to force Visual Studio to update the debug device for a MAUI project">
+  <meta name="twitter:description" content="When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.">
+  <meta name="twitter:url" content="http://localhost:4000/2025/11/16/hacking-csproj-user/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/PressTheButton.jpg">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2025-11-16T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2025/11/16/hacking-csproj-user/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 5th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/PressTheButton.jpg" alt="How to force Visual Studio to update the debug device for a MAUI project" class="page__hero-image">
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <span class="nav__sub-title">Links</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="https://bsky.app/profile/anotherlab.bsky.social">BlueSky</a></li>
+            
+              <li><a href="https://app.pluralsight.com/profile/author/christopher-miller">Pluralsight</a></li>
+            
+              <li><a href="https://github.com/anotherlab">GitHub</a></li>
+            
+          </ul>
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="How to force Visual Studio to update the debug device for a MAUI project">
+    <meta itemprop="description" content="When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.">
+    <meta itemprop="datePublished" content="2025-11-16T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2025/11/16/hacking-csproj-user/" itemprop="url">How to force Visual Studio to update the debug device for a MAUI project
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#updates-are-live">Updates are live</a></li><li><a href="#hack-the-user-file">Hack the .user file</a></li><li><a href="#break-down-the-script">Break down the script</a></li><li><a href="#running-the-scripts">Running the scripts</a></li></ul>
+            </nav>
+          </aside>
+        
+        <p>When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.</p>
+
+<p>I’ll walk awa from my desk and I’ll take my phone with me. When I come back, I’ll plug the phone, but forget to change the device in Visual Studio back to my phone. I’ll make a code change and then start debugging the app. Cue up a <a href="https://screenrant.com/star-trek-tng-picard-riker-facepalm-popular-meme-why/">Picard facepalm</a> as Visual Studio starts up an Android emulator.</p>
+
+<p>I wanted to short circuit this behavior.</p>
+
+<p>The JetBrains IDEs like Android Studio and Rider will switch back to your device when you plug it back in. This is how it should be. I don’t know if this is a design decision by the VS team or just an ommision. I have <a href="https://developercommunity.visualstudio.com/t/Feature-Request:-Remember-Last-Selected/10933798">reported this to the VS team</a>, but that went nowhere.</p>
+
+<p>Visual Studio doesn’t provide a keyboard shortcut to quickly select the Android device for debugging. And I didn’t want to write a VS extension to go deep under the hood. Maybe someday, just not now. That would have been a little too much <a href="https://www.youtube.com/shorts/eDVsjUxaD6g">yak shaving</a> for this week.</p>
+
+<p>The setting of the current delected debug device is written to the csproj user file. This file has the same name as the project, but with “.user” tacked on the end.</p>
+
+<p>When my Samsung phone is attached and has been selected as the debug device, the project.csproj.user will look something like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;IsFirstTimeProjectOpen&gt;</span>False<span class="nt">&lt;/IsFirstTimeProjectOpen&gt;</span>
+    <span class="nt">&lt;ActiveDebugFramework&gt;</span>net10.0-android<span class="nt">&lt;/ActiveDebugFramework&gt;</span>
+    <span class="nt">&lt;ActiveDebugProfile&gt;</span>Samsung SM-S908U (Android 16.0 - API 36)<span class="nt">&lt;/ActiveDebugProfile&gt;</span>
+    <span class="nt">&lt;SelectedPlatformGroup&gt;</span>PhysicalDevice<span class="nt">&lt;/SelectedPlatformGroup&gt;</span>
+    <span class="nt">&lt;DefaultDevice&gt;</span>pixel_9_-_api_36<span class="nt">&lt;/DefaultDevice&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+  <span class="nt">&lt;PropertyGroup</span> <span class="na">Condition=</span><span class="s">"'$(TargetPlatformIdentifier)'=='iOS'"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;RuntimeIdentifier&gt;</span>iossimulator-x64<span class="nt">&lt;/RuntimeIdentifier&gt;</span>
+    <span class="nt">&lt;PlatformTarget&gt;</span>x64<span class="nt">&lt;/PlatformTarget&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+  <span class="nt">&lt;ItemGroup</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></div>
+
+<p>For the rest of this article, I’m only going to show the property group with the settings that we want work with. And Visual Studio 2026 is open for this project.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;ActiveDebugProfile&gt;</span>Samsung SM-S908U (Android 16.0 - API 36)<span class="nt">&lt;/ActiveDebugProfile&gt;</span>
+    <span class="nt">&lt;SelectedPlatformGroup&gt;</span>PhysicalDevice<span class="nt">&lt;/SelectedPlatformGroup&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></div>
+
+<p>When I unplug my phone, after a second or two, the values in the csproj.user change to this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;ActiveDebugProfile&gt;</span>Pixel 9 - API 36 (Android 16.0 - API 36)<span class="nt">&lt;/ActiveDebugProfile&gt;</span>
+    <span class="nt">&lt;SelectedPlatformGroup&gt;</span>Emulator<span class="nt">&lt;/SelectedPlatformGroup&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></div>
+<p>The “Pixel 9 - AP^ 36” is the name of the emulator image that I have been using lately.</p>
+
+<p>The value of the <code class="language-plaintext highlighter-rouge">ActiveDebugProfile</code> element is the device that we want to change. The <code class="language-plaintext highlighter-rouge">SelectedPlatformGroup element</code> tells us if this real or virtual device.</p>
+
+<h1 id="updates-are-live">Updates are live</h1>
+<p>I found that if I edited the csproj.user outside of Visual Studio, those changes would be recognized by Visual Studio witbin a second or two.</p>
+
+<p>Cool, I can work with that.</p>
+
+<h1 id="hack-the-user-file">Hack the .user file</h1>
+<p>There are any number of ways of making changes to an XML file.  I like PowerShell for this kind of stuff.  I wrote a little script named <a href="https://gist.github.com/anotherlab/57de44266e0b16f1987dd82d4bb5bcc5">update-phone.ps1</a> and it looks like this</p>
+
+<script src="https://gist.github.com/57de44266e0b16f1987dd82d4bb5bcc5.js"> </script>
+
+<h1 id="break-down-the-script">Break down the script</h1>
+<p>The first few lines are just the usual parameter stuff, nothing to explain here.</p>
+
+<p>Looking at the next block…</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Locate the .csproj.user file if not specified</span><span class="w">
+</span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="o">-not</span><span class="w"> </span><span class="nv">$CsprojUserFile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nv">$foundFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-ChildItem</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nt">-Filter</span><span class="w"> </span><span class="o">*.</span><span class="nf">csproj</span><span class="o">.</span><span class="nf">user</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Select-Object</span><span class="w"> </span><span class="nt">-First</span><span class="w"> </span><span class="nx">1</span><span class="w">
+    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="o">-not</span><span class="w"> </span><span class="nv">$foundFile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">Write-Error</span><span class="w"> </span><span class="s2">"❌ No .csproj.user file found in the current directory."</span><span class="w">
+        </span><span class="kr">exit</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="nv">$CsprojUserFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$foundFile</span><span class="o">.</span><span class="nf">FullName</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>If you don’t specify a .csproj.user file, the script will check the current folder and pick the first .csproj.user that it finds.</p>
+
+<p>Next, we resolve the full path to the file that was passed in or located.</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Resolve to an absolute, full path</span><span class="w">
+</span><span class="nv">$fullPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Resolve-Path</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="nv">$csprojUserFile</span><span class="p">)</span><span class="o">.</span><span class="nf">Path</span><span class="w">
+
+</span><span class="c"># Load XML</span><span class="w">
+</span><span class="nv">$xmlContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-Content</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="nv">$fullPath</span><span class="w"> </span><span class="nt">-Raw</span><span class="w">
+</span><span class="p">[</span><span class="n">xml</span><span class="p">]</span><span class="nv">$xml</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$xmlContent</span><span class="w">
+</span></code></pre></div></div>
+<p>PowerShell has a lovely little quirk where if you try to write to a file without a path or using a relative path, it will write to the “home” folder. By getting the full path to the file, you force it to write back to the correct folder.</p>
+
+<p>Then we read the file and cast it to a XML data type.</p>
+
+<p>Going back the original file, the XML is using a namespace and we need to account for it.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+<p>When you query XML with XPath, you need to factor in the namespace, so we’ll define it next:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Detect the MSBuild namespace if present</span><span class="w">
+</span><span class="nv">$nsUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$xml</span><span class="o">.</span><span class="nf">Project</span><span class="o">.</span><span class="nf">NamespaceURI</span><span class="w">
+</span><span class="nv">$hasNamespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-not</span><span class="w"> </span><span class="p">[</span><span class="n">string</span><span class="p">]::</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="nv">$nsUri</span><span class="p">)</span><span class="w">
+
+</span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$hasNamespace</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nv">$nsMgr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">New-Object</span><span class="w"> </span><span class="nx">System.Xml.XmlNamespaceManager</span><span class="p">(</span><span class="nv">$xml</span><span class="o">.</span><span class="nf">NameTable</span><span class="p">)</span><span class="w">
+    </span><span class="nv">$nsMgr</span><span class="o">.</span><span class="nf">AddNamespace</span><span class="p">(</span><span class="s2">"msb"</span><span class="p">,</span><span class="w"> </span><span class="nv">$nsUri</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>This reads in the URL of the namespace, “http://schemas.microsoft.com/developer/msbuild/2003”, and names it as “msb”.</p>
+
+<p>With the namespace defined, we can search for the  <code class="language-plaintext highlighter-rouge">ActiveDebugProfile</code> element with a nicely formatted XPath query string that incorporates the namespace.</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Find the ActiveDebugProfile element</span><span class="w">
+</span><span class="nv">$node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$xml</span><span class="o">.</span><span class="nf">SelectSingleNode</span><span class="p">(</span><span class="s2">"//msb:Project/msb:PropertyGroup/msb:ActiveDebugProfile"</span><span class="p">,</span><span class="w"> </span><span class="nv">$nsMgr</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If we find that element, we can update it and write it back out.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="c"># Set the device name</span><span class="w">
+    </span><span class="nv">$node</span><span class="o">.</span><span class="nf">InnerText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$NewProfileValue</span><span class="w">
+
+    </span><span class="c"># Then force it to physical device. If VS is open, it should do this anyways, but just in case.</span><span class="w">
+    </span><span class="nv">$node2</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+      </span><span class="nv">$xml</span><span class="o">.</span><span class="nf">SelectSingleNode</span><span class="p">(</span><span class="s2">"//msb:Project/msb:PropertyGroup/msb:SelectedPlatformGroup"</span><span class="p">,</span><span class="w"> </span><span class="nv">$nsMgr</span><span class="p">)</span><span class="w">
+    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$node2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nv">$node2</span><span class="o">.</span><span class="nf">InnerText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"PhysicalDevice"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="c"># Save back to file with UTF-8 encoding</span><span class="w">
+    </span><span class="nv">$utf8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">New-Object</span><span class="w"> </span><span class="nx">System.Text.UTF8Encoding</span><span class="p">(</span><span class="bp">$false</span><span class="p">)</span><span class="w">
+    </span><span class="nv">$writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">New-Object</span><span class="w"> </span><span class="nx">System.IO.StreamWriter</span><span class="p">(</span><span class="nv">$fullPath</span><span class="p">,</span><span class="w"> </span><span class="bp">$false</span><span class="p">,</span><span class="w"> </span><span class="nv">$utf8</span><span class="p">)</span><span class="w">
+    </span><span class="nv">$xml</span><span class="o">.</span><span class="nf">Save</span><span class="p">(</span><span class="nv">$writer</span><span class="p">)</span><span class="w">
+    </span><span class="nv">$writer</span><span class="o">.</span><span class="nf">Close</span><span class="p">()</span><span class="w">    
+
+    </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"ActiveDebugProfile updated to '</span><span class="nv">$NewProfileValue</span><span class="s2">'"</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nv">$csprojUserFile</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="kr">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"ActiveDebugProfile element not found in the XML."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>After updating ActiveDebugProfile, we then update <code class="language-plaintext highlighter-rouge">SelectedPlatformGroup</code>. While testing, updating <code class="language-plaintext highlighter-rouge">SelectedPlatformGroup</code> wasn’t needed. Visual Studio will update it on it’s own. So that code could probably be removed.</p>
+
+<p>Then we write it back to the original file. Forcing the UTF-8 encoding was a bit of overkill.  <code class="language-plaintext highlighter-rouge">$xml.Save($fullPatj)</code> probably would have been sufficient.</p>
+
+<h1 id="running-the-scripts">Running the scripts</h1>
+<p>To run the script you pass in the name of the device and the name of the .csproj file.</p>
+
+<p>If you have a PowerShell session open in the project folder, the following syntax will work:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d:\scripts\use-phone.ps1</span><span class="w"> </span><span class="s1">'Samsung SM-S908U'</span><span class="w">
+</span></code></pre></div></div>
+<p>Or use the full path:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d:\scripts\use-phone.ps1</span><span class="w"> </span><span class="s1">'Samsung SM-S908U'</span><span class="w"> </span><span class="nx">E:\path-to-my-project\MyProject.csproj.user</span><span class="w">
+</span></code></pre></div></div>
+<p>Replace <code class="language-plaintext highlighter-rouge">d:\scripts\</code> with the path to your copy of the script.</p>
+
+<p>I have a <a href="https://www.elgato.com/us/en/s/explore-stream-deck">Stream Deck</a> and I have a button mapped to run the script with the device and path. That allows me to just tap that button when I plug the phone in. If you want to easily run PowerShell scripts from a Stream Deck, take a look at the <a href="https://marketplace.elgato.com/product/scriptdeck-927e59aa-b42d-4da7-84cc-8c78f4dd7e18">ScriptDeck plugin</a>. I love the Stream Deck. It’s a giant macro pad that is application specific.</p>
+
+<p>I wrote these scripts for PowerShell 7.5, but it should work for most versions.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#hacks" class="page__taxonomy-item p-category" rel="tag">hacks</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#visualstudio-maui-android-powershell" class="page__taxonomy-item p-category" rel="tag">VisualStudio, MAUI, Android, PowerShell</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-11-16T00:00:00+00:00">November 16, 2025</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=How+to+force+Visual+Studio+to+update+the+debug+device+for+a+MAUI+project%20http%3A%2F%2Flocalhost%3A4000%2F2025%2F11%2F16%2Fhacking-csproj-user%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2025%2F11%2F16%2Fhacking-csproj-user%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2025/11/16/hacking-csproj-user/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2025/04/18/vtt-2-srt/" class="pagination--pager" title="Using PowerShell to convert VTT to SRT
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/04/18/vtt-2-srt/" rel="permalink">Using PowerShell to convert VTT to SRT
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Converting between VTT and SRT
+So I have to convert between VTT and SRT a few times a year. I’m lazy and forgetful so I decided to script the tasks with Powe...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/04/13/adb-stay-on/" rel="permalink">Command for keeping your phone awake while plugged in
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+Usually when I’m writing .NET MAUI code for Android, I use an emulator to test the code. It’s fast and there are fewer things that can go wrong. And most o...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/10/CFBundleShortVersionString/" rel="permalink">Breaking and then fixing my app’s CFBundleShortVersionString
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+So I had this bug reported where the app was reporting the wrong version number. Only for iOS, it was correct on Android. It’s an app created with .NET MAU...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/03/05/poka-yoke/" rel="permalink">Poka-yoke
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+So I used poka-yoke (ポカヨケ) in a conversation yesterday. I am working on an update to an app that uses a web service. Under an extreme edge condition, the a...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
+    script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>

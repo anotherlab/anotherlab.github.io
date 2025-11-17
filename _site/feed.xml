@@ -1,4 +1,162 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-04-18T20:08:53+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 5th Blog</title><subtitle>My personal blog, 5th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">Using PowerShell to convert VTT to SRT</title><link href="http://localhost:4000/2025/04/18/vtt-2-srt/" rel="alternate" type="text/html" title="Using PowerShell to convert VTT to SRT" /><published>2025-04-18T00:00:00+00:00</published><updated>2025-04-18T00:00:00+00:00</updated><id>http://localhost:4000/2025/04/18/vtt-2-srt</id><content type="html" xml:base="http://localhost:4000/2025/04/18/vtt-2-srt/"><![CDATA[<h1 id="converting-between-vtt-and-srt">Converting between VTT and SRT</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-11-17T02:55:43+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 5th Blog</title><subtitle>My personal blog, 5th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">How to force Visual Studio to update the debug device for a MAUI project</title><link href="http://localhost:4000/2025/11/16/hacking-csproj-user/" rel="alternate" type="text/html" title="How to force Visual Studio to update the debug device for a MAUI project" /><published>2025-11-16T00:00:00+00:00</published><updated>2025-11-16T00:00:00+00:00</updated><id>http://localhost:4000/2025/11/16/hacking-csproj-user</id><content type="html" xml:base="http://localhost:4000/2025/11/16/hacking-csproj-user/"><![CDATA[<p>When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.</p>
+
+<p>I’ll walk awa from my desk and I’ll take my phone with me. When I come back, I’ll plug the phone, but forget to change the device in Visual Studio back to my phone. I’ll make a code change and then start debugging the app. Cue up a <a href="https://screenrant.com/star-trek-tng-picard-riker-facepalm-popular-meme-why/">Picard facepalm</a> as Visual Studio starts up an Android emulator.</p>
+
+<p>I wanted to short circuit this behavior.</p>
+
+<p>The JetBrains IDEs like Android Studio and Rider will switch back to your device when you plug it back in. This is how it should be. I don’t know if this is a design decision by the VS team or just an ommision. I have <a href="https://developercommunity.visualstudio.com/t/Feature-Request:-Remember-Last-Selected/10933798">reported this to the VS team</a>, but that went nowhere.</p>
+
+<p>Visual Studio doesn’t provide a keyboard shortcut to quickly select the Android device for debugging. And I didn’t want to write a VS extension to go deep under the hood. Maybe someday, just not now. That would have been a little too much <a href="https://www.youtube.com/shorts/eDVsjUxaD6g">yak shaving</a> for this week.</p>
+
+<p>The setting of the current delected debug device is written to the csproj user file. This file has the same name as the project, but with “.user” tacked on the end.</p>
+
+<p>When my Samsung phone is attached and has been selected as the debug device, the project.csproj.user will look something like this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;IsFirstTimeProjectOpen&gt;</span>False<span class="nt">&lt;/IsFirstTimeProjectOpen&gt;</span>
+    <span class="nt">&lt;ActiveDebugFramework&gt;</span>net10.0-android<span class="nt">&lt;/ActiveDebugFramework&gt;</span>
+    <span class="nt">&lt;ActiveDebugProfile&gt;</span>Samsung SM-S908U (Android 16.0 - API 36)<span class="nt">&lt;/ActiveDebugProfile&gt;</span>
+    <span class="nt">&lt;SelectedPlatformGroup&gt;</span>PhysicalDevice<span class="nt">&lt;/SelectedPlatformGroup&gt;</span>
+    <span class="nt">&lt;DefaultDevice&gt;</span>pixel_9_-_api_36<span class="nt">&lt;/DefaultDevice&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+  <span class="nt">&lt;PropertyGroup</span> <span class="na">Condition=</span><span class="s">"'$(TargetPlatformIdentifier)'=='iOS'"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;RuntimeIdentifier&gt;</span>iossimulator-x64<span class="nt">&lt;/RuntimeIdentifier&gt;</span>
+    <span class="nt">&lt;PlatformTarget&gt;</span>x64<span class="nt">&lt;/PlatformTarget&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+  <span class="nt">&lt;ItemGroup</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></div>
+
+<p>For the rest of this article, I’m only going to show the property group with the settings that we want work with. And Visual Studio 2026 is open for this project.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;ActiveDebugProfile&gt;</span>Samsung SM-S908U (Android 16.0 - API 36)<span class="nt">&lt;/ActiveDebugProfile&gt;</span>
+    <span class="nt">&lt;SelectedPlatformGroup&gt;</span>PhysicalDevice<span class="nt">&lt;/SelectedPlatformGroup&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></div>
+
+<p>When I unplug my phone, after a second or two, the values in the csproj.user change to this:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;ActiveDebugProfile&gt;</span>Pixel 9 - API 36 (Android 16.0 - API 36)<span class="nt">&lt;/ActiveDebugProfile&gt;</span>
+    <span class="nt">&lt;SelectedPlatformGroup&gt;</span>Emulator<span class="nt">&lt;/SelectedPlatformGroup&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></div>
+<p>The “Pixel 9 - AP^ 36” is the name of the emulator image that I have been using lately.</p>
+
+<p>The value of the <code class="language-plaintext highlighter-rouge">ActiveDebugProfile</code> element is the device that we want to change. The <code class="language-plaintext highlighter-rouge">SelectedPlatformGroup element</code> tells us if this real or virtual device.</p>
+
+<h1 id="updates-are-live">Updates are live</h1>
+<p>I found that if I edited the csproj.user outside of Visual Studio, those changes would be recognized by Visual Studio witbin a second or two.</p>
+
+<p>Cool, I can work with that.</p>
+
+<h1 id="hack-the-user-file">Hack the .user file</h1>
+<p>There are any number of ways of making changes to an XML file.  I like PowerShell for this kind of stuff.  I wrote a little script named <a href="https://gist.github.com/anotherlab/57de44266e0b16f1987dd82d4bb5bcc5">update-phone.ps1</a> and it looks like this</p>
+
+<script src="https://gist.github.com/57de44266e0b16f1987dd82d4bb5bcc5.js"> </script>
+
+<h1 id="break-down-the-script">Break down the script</h1>
+<p>The first few lines are just the usual parameter stuff, nothing to explain here.</p>
+
+<p>Looking at the next block…</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Locate the .csproj.user file if not specified</span><span class="w">
+</span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="o">-not</span><span class="w"> </span><span class="nv">$CsprojUserFile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nv">$foundFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-ChildItem</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nt">-Filter</span><span class="w"> </span><span class="o">*.</span><span class="nf">csproj</span><span class="o">.</span><span class="nf">user</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Select-Object</span><span class="w"> </span><span class="nt">-First</span><span class="w"> </span><span class="nx">1</span><span class="w">
+    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="o">-not</span><span class="w"> </span><span class="nv">$foundFile</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">Write-Error</span><span class="w"> </span><span class="s2">"❌ No .csproj.user file found in the current directory."</span><span class="w">
+        </span><span class="kr">exit</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="nv">$CsprojUserFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$foundFile</span><span class="o">.</span><span class="nf">FullName</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>If you don’t specify a .csproj.user file, the script will check the current folder and pick the first .csproj.user that it finds.</p>
+
+<p>Next, we resolve the full path to the file that was passed in or located.</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Resolve to an absolute, full path</span><span class="w">
+</span><span class="nv">$fullPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Resolve-Path</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="nv">$csprojUserFile</span><span class="p">)</span><span class="o">.</span><span class="nf">Path</span><span class="w">
+
+</span><span class="c"># Load XML</span><span class="w">
+</span><span class="nv">$xmlContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-Content</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="nv">$fullPath</span><span class="w"> </span><span class="nt">-Raw</span><span class="w">
+</span><span class="p">[</span><span class="n">xml</span><span class="p">]</span><span class="nv">$xml</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$xmlContent</span><span class="w">
+</span></code></pre></div></div>
+<p>PowerShell has a lovely little quirk where if you try to write to a file without a path or using a relative path, it will write to the “home” folder. By getting the full path to the file, you force it to write back to the correct folder.</p>
+
+<p>Then we read the file and cast it to a XML data type.</p>
+
+<p>Going back the original file, the XML is using a namespace and we need to account for it.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+<p>When you query XML with XPath, you need to factor in the namespace, so we’ll define it next:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Detect the MSBuild namespace if present</span><span class="w">
+</span><span class="nv">$nsUri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$xml</span><span class="o">.</span><span class="nf">Project</span><span class="o">.</span><span class="nf">NamespaceURI</span><span class="w">
+</span><span class="nv">$hasNamespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-not</span><span class="w"> </span><span class="p">[</span><span class="n">string</span><span class="p">]::</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="nv">$nsUri</span><span class="p">)</span><span class="w">
+
+</span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$hasNamespace</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nv">$nsMgr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">New-Object</span><span class="w"> </span><span class="nx">System.Xml.XmlNamespaceManager</span><span class="p">(</span><span class="nv">$xml</span><span class="o">.</span><span class="nf">NameTable</span><span class="p">)</span><span class="w">
+    </span><span class="nv">$nsMgr</span><span class="o">.</span><span class="nf">AddNamespace</span><span class="p">(</span><span class="s2">"msb"</span><span class="p">,</span><span class="w"> </span><span class="nv">$nsUri</span><span class="p">)</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>This reads in the URL of the namespace, “http://schemas.microsoft.com/developer/msbuild/2003”, and names it as “msb”.</p>
+
+<p>With the namespace defined, we can search for the  <code class="language-plaintext highlighter-rouge">ActiveDebugProfile</code> element with a nicely formatted XPath query string that incorporates the namespace.</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Find the ActiveDebugProfile element</span><span class="w">
+</span><span class="nv">$node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$xml</span><span class="o">.</span><span class="nf">SelectSingleNode</span><span class="p">(</span><span class="s2">"//msb:Project/msb:PropertyGroup/msb:ActiveDebugProfile"</span><span class="p">,</span><span class="w"> </span><span class="nv">$nsMgr</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If we find that element, we can update it and write it back out.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="c"># Set the device name</span><span class="w">
+    </span><span class="nv">$node</span><span class="o">.</span><span class="nf">InnerText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$NewProfileValue</span><span class="w">
+
+    </span><span class="c"># Then force it to physical device. If VS is open, it should do this anyways, but just in case.</span><span class="w">
+    </span><span class="nv">$node2</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+      </span><span class="nv">$xml</span><span class="o">.</span><span class="nf">SelectSingleNode</span><span class="p">(</span><span class="s2">"//msb:Project/msb:PropertyGroup/msb:SelectedPlatformGroup"</span><span class="p">,</span><span class="w"> </span><span class="nv">$nsMgr</span><span class="p">)</span><span class="w">
+    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$node2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nv">$node2</span><span class="o">.</span><span class="nf">InnerText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"PhysicalDevice"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="c"># Save back to file with UTF-8 encoding</span><span class="w">
+    </span><span class="nv">$utf8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">New-Object</span><span class="w"> </span><span class="nx">System.Text.UTF8Encoding</span><span class="p">(</span><span class="bp">$false</span><span class="p">)</span><span class="w">
+    </span><span class="nv">$writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">New-Object</span><span class="w"> </span><span class="nx">System.IO.StreamWriter</span><span class="p">(</span><span class="nv">$fullPath</span><span class="p">,</span><span class="w"> </span><span class="bp">$false</span><span class="p">,</span><span class="w"> </span><span class="nv">$utf8</span><span class="p">)</span><span class="w">
+    </span><span class="nv">$xml</span><span class="o">.</span><span class="nf">Save</span><span class="p">(</span><span class="nv">$writer</span><span class="p">)</span><span class="w">
+    </span><span class="nv">$writer</span><span class="o">.</span><span class="nf">Close</span><span class="p">()</span><span class="w">    
+
+    </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"ActiveDebugProfile updated to '</span><span class="nv">$NewProfileValue</span><span class="s2">'"</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nv">$csprojUserFile</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="kr">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"ActiveDebugProfile element not found in the XML."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>After updating ActiveDebugProfile, we then update <code class="language-plaintext highlighter-rouge">SelectedPlatformGroup</code>. While testing, updating <code class="language-plaintext highlighter-rouge">SelectedPlatformGroup</code> wasn’t needed. Visual Studio will update it on it’s own. So that code could probably be removed.</p>
+
+<p>Then we write it back to the original file. Forcing the UTF-8 encoding was a bit of overkill.  <code class="language-plaintext highlighter-rouge">$xml.Save($fullPatj)</code> probably would have been sufficient.</p>
+
+<h1 id="running-the-scripts">Running the scripts</h1>
+<p>To run the script you pass in the name of the device and the name of the .csproj file.</p>
+
+<p>If you have a PowerShell session open in the project folder, the following syntax will work:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d:\scripts\use-phone.ps1</span><span class="w"> </span><span class="s1">'Samsung SM-S908U'</span><span class="w">
+</span></code></pre></div></div>
+<p>Or use the full path:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">d:\scripts\use-phone.ps1</span><span class="w"> </span><span class="s1">'Samsung SM-S908U'</span><span class="w"> </span><span class="nx">E:\path-to-my-project\MyProject.csproj.user</span><span class="w">
+</span></code></pre></div></div>
+<p>Replace <code class="language-plaintext highlighter-rouge">d:\scripts\</code> with the path to your copy of the script.</p>
+
+<p>I have a <a href="https://www.elgato.com/us/en/s/explore-stream-deck">Stream Deck</a> and I have a button mapped to run the script with the device and path. That allows me to just tap that button when I plug the phone in. If you want to easily run PowerShell scripts from a Stream Deck, take a look at the <a href="https://marketplace.elgato.com/product/scriptdeck-927e59aa-b42d-4da7-84cc-8c78f4dd7e18">ScriptDeck plugin</a>. I love the Stream Deck. It’s a giant macro pad that is application specific.</p>
+
+<p>I wrote these scripts for PowerShell 7.5, but it should work for most versions.</p>]]></content><author><name>anotherlab</name></author><category term="VisualStudio, MAUI, Android, PowerShell" /><category term="hacks" /><summary type="html"><![CDATA[When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.]]></summary></entry><entry><title type="html">Using PowerShell to convert VTT to SRT</title><link href="http://localhost:4000/2025/04/18/vtt-2-srt/" rel="alternate" type="text/html" title="Using PowerShell to convert VTT to SRT" /><published>2025-04-18T00:00:00+00:00</published><updated>2025-04-18T00:00:00+00:00</updated><id>http://localhost:4000/2025/04/18/vtt-2-srt</id><content type="html" xml:base="http://localhost:4000/2025/04/18/vtt-2-srt/"><![CDATA[<h1 id="converting-between-vtt-and-srt">Converting between VTT and SRT</h1>
 <p>So I have to convert between VTT and SRT a few times a year. I’m lazy and forgetful so I decided to script the tasks with PowerShell.</p>
 
 <p>We have a quarterly developer conference at work. With 7500+ employees, we do 4-5 tracks of 3-4 sessions each. Like everything else these days, it’s a virtual conference and is presented through Microsoft Teams. The sessions are recorded and we are building up a library as a reference. And yes, <a href="https://www.tylertech.com/careers/job-openings">we are hiring</a>.</p>
@@ -512,41 +670,4 @@ I have a new course that was just published this week on Pluralsight, <a href="h
 
 <p>If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course.</p>
 
-<p>If you are working with <a href="https://learn.microsoft.com/en-us/dotnet/maui?WT.mc_id=DT-MVP-5000200">Maui</a>, a lot of this will still be applicable. The parts that are different, well, stay tuned.</p>]]></content><author><name>anotherlab</name></author><category term="Pluralsight" /><category term="Visual Studio" /><category term="Xamarin" /><category term="Xamarin" /><category term="Maui" /><summary type="html"><![CDATA[I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms. From my own product blurb: You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications. If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course. If you are working with Maui, a lot of this will still be applicable. The parts that are different, well, stay tuned.]]></summary></entry><entry><title type="html">Running the iOS simulators after updating to Xcode 14</title><link href="http://localhost:4000/2022/09/17/Visual-Studio-New-Xcode/" rel="alternate" type="text/html" title="Running the iOS simulators after updating to Xcode 14" /><published>2022-09-17T00:00:00+00:00</published><updated>2022-09-17T00:00:00+00:00</updated><id>http://localhost:4000/2022/09/17/Visual-Studio-New-Xcode</id><content type="html" xml:base="http://localhost:4000/2022/09/17/Visual-Studio-New-Xcode/"><![CDATA[<p style="text-align: center;"><img src="/assets/giger-dev-001.png" alt="Deployment Target" /></p>
-<p>So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or even the version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or the Mac, it was broken.</p>
-
-<p>From the Mac, when I went to pick a simulator for a Maui project, this happened with <a href="https://learn.microsoft.com/en-us/visualstudio/releases/2022/mac-release-notes-preview#17.4.0-pre.2?WT.mc_id=DT-MVP-5000200">Visual Studio 2022 17.4, Preview 2</a>.</p>
-
-<p style="text-align: center;"><img src="/assets/no_sim_edit.png" alt="Lower the 'Deployment Target'?" /></p>
-
-<p>That “Lower the ‘Deployment Target’ to see the older simulators or check your Apple SDK path” message was somewhat less than helpful. I couldn’t figure out where to even set the Deployment target in Dotnet Maui.</p>
-
-<p>I then loaded up a Xamarin.Forms app that was working fine a few days ago and saw the same results. I guess at this moment in time, Xcode 14 is not fully suppported. At some point it will all line up again, but in the meantime I need some iOS simulation. This wasn’t a regression in VS 17.4, this was Apple. Time to rollback Xcode and give that a shot.</p>
-
-<p>Xcode is actually pretty decent about handling this. You can have multiple versions of Xcode installed and change up which one is the one that answers the call to duty. If you trying out Xcode betas, this is the way. All you need is gigabytes of disk storage and the patience to download and install the Xcode bits.</p>
-
-<p>The first thing that you need to do is to download the version of Xcode to install. You can get every release of Xcode from xcodereleases.com. While that site is not Apple affiliated with Apple, all of the download links are from developer.appple.com. They are the official releases. I grabbed the final the Xcode 13 release, 13.4.1 from <a href="https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_13.4.1/Xcode_13.4.1.xip">here</a>.</p>
-
-<p><a href="https://osxdaily.com/2018/11/02/open-extract-xip-file-mac/#:~:text=Assuming%20you%20haven't%20associated,the%20Finder%20of%20Mac%20OS.">Extract</a> the contents of the .xip file. It will be named Xcode.app. Since you already have an Xcode.app in the Applications folder, you’ll need to rename it. My preference is to name it with version. In this case, Xcode13_4_1.app. Then drag it to the Applications folder.</p>
-
-<p>And then make it the default Xcode. From a shell, run the following</p>
-
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>xcode-select <span class="nt">-s</span> /Applications/Xcode13_4_1.app</code></pre></figure>
-
-<p>To verify that this is now the current version of Xcode, run the following</p>
-
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>xcode-select <span class="nt">-p</span></code></pre></figure>
-
-<p>That should come back with something like</p>
-
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell">/Applications/Xcode13_4_1.app/Contents/Developer</code></pre></figure>
-
-<p>After doing that, I restarted Visual Studio and I had the simulators back</p>
-
-<p style="text-align: center;"><img src="/assets/yes_sim_edit.png" alt="Thar be simulators'?" /></p>
-
-<p>To switch back to latest version, just run xcode-select again</p>
-
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>xcode-select <span class="nt">-s</span> /Applications/Xcode</code></pre></figure>
-
-<p>After posting this, a friend <a href="https://twitter.com/BiloganSteve/status/1571477869817204738">posted</a> with a link to where this issue was raised.  It’s posted as an issue in the <a href="https://github.com/xamarin/xamarin-macios/issues/15954">xamarin/xamrin-macios</a> repo.</p>]]></content><author><name>anotherlab</name></author><category term="Coding" /><category term="Visual Studio" /><category term="Xcode" /><category term="Xamarin" /><category term="Maui" /><category term="xcode-select" /><summary type="html"><![CDATA[So Apple updated Xcode on my Macbook from 13.4.1 to 14. I wasn’t paying much attention to the prompts or even the version numbers. After doing so, I could not longer access the iOS Simulators from Visual Studio. This happened for both Xamarin.Forms projects and for Maui. From Windows or the Mac, it was broken. From the Mac, when I went to pick a simulator for a Maui project, this happened with Visual Studio 2022 17.4, Preview 2. That “Lower the ‘Deployment Target’ to see the older simulators or check your Apple SDK path” message was somewhat less than helpful. I couldn’t figure out where to even set the Deployment target in Dotnet Maui. I then loaded up a Xamarin.Forms app that was working fine a few days ago and saw the same results. I guess at this moment in time, Xcode 14 is not fully suppported. At some point it will all line up again, but in the meantime I need some iOS simulation. This wasn’t a regression in VS 17.4, this was Apple. Time to rollback Xcode and give that a shot. Xcode is actually pretty decent about handling this. You can have multiple versions of Xcode installed and change up which one is the one that answers the call to duty. If you trying out Xcode betas, this is the way. All you need is gigabytes of disk storage and the patience to download and install the Xcode bits. The first thing that you need to do is to download the version of Xcode to install. You can get every release of Xcode from xcodereleases.com. While that site is not Apple affiliated with Apple, all of the download links are from developer.appple.com. They are the official releases. I grabbed the final the Xcode 13 release, 13.4.1 from here. Extract the contents of the .xip file. It will be named Xcode.app. Since you already have an Xcode.app in the Applications folder, you’ll need to rename it. My preference is to name it with version. In this case, Xcode13_4_1.app. Then drag it to the Applications folder. And then make it the default Xcode. From a shell, run the following sudo xcode-select -s /Applications/Xcode13_4_1.app To verify that this is now the current version of Xcode, run the following sudo xcode-select -p That should come back with something like /Applications/Xcode13_4_1.app/Contents/Developer After doing that, I restarted Visual Studio and I had the simulators back To switch back to latest version, just run xcode-select again sudo xcode-select -s /Applications/Xcode After posting this, a friend posted with a link to where this issue was raised. It’s posted as an issue in the xamarin/xamrin-macios repo.]]></summary></entry></feed>
+<p>If you are working with <a href="https://learn.microsoft.com/en-us/dotnet/maui?WT.mc_id=DT-MVP-5000200">Maui</a>, a lot of this will still be applicable. The parts that are different, well, stay tuned.</p>]]></content><author><name>anotherlab</name></author><category term="Pluralsight" /><category term="Visual Studio" /><category term="Xamarin" /><category term="Xamarin" /><category term="Maui" /><summary type="html"><![CDATA[I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms. From my own product blurb: You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications. If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course. If you are working with Maui, a lot of this will still be applicable. The parts that are different, well, stay tuned.]]></summary></entry></feed>

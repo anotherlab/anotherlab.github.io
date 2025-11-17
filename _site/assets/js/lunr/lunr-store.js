@@ -3706,4 +3706,10 @@ var store = [{
         "tags": ["conversion"],
         "url": "/2025/04/18/vtt-2-srt/",
         "teaser": null
+      },{
+        "title": "How to force Visual Studio to update the debug device for a MAUI project",
+        "excerpt":"When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS...","categories": ["VisualStudio, MAUI, Android, PowerShell"],
+        "tags": ["hacks"],
+        "url": "/2025/11/16/hacking-csproj-user/",
+        "teaser": null
       }]
