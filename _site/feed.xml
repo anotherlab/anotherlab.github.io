@@ -1,4 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-11-17T02:55:43+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 5th Blog</title><subtitle>My personal blog, 5th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">How to force Visual Studio to update the debug device for a MAUI project</title><link href="http://localhost:4000/2025/11/16/hacking-csproj-user/" rel="alternate" type="text/html" title="How to force Visual Studio to update the debug device for a MAUI project" /><published>2025-11-16T00:00:00+00:00</published><updated>2025-11-16T00:00:00+00:00</updated><id>http://localhost:4000/2025/11/16/hacking-csproj-user</id><content type="html" xml:base="http://localhost:4000/2025/11/16/hacking-csproj-user/"><![CDATA[<p>When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-01-06T05:34:16+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 5th Blog</title><subtitle>My personal blog, 5th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">UsbSerialForAndroid: Recent Updates and Improvements</title><link href="http://localhost:4000/2026/01/05/UsbSerialForAndroid-updates/" rel="alternate" type="text/html" title="UsbSerialForAndroid: Recent Updates and Improvements" /><published>2026-01-05T00:00:00+00:00</published><updated>2026-01-05T00:00:00+00:00</updated><id>http://localhost:4000/2026/01/05/UsbSerialForAndroid-updates</id><content type="html" xml:base="http://localhost:4000/2026/01/05/UsbSerialForAndroid-updates/"><![CDATA[<p>I’ve pushed a new round of updates to <strong><a href="https://github.com/anotherlab/UsbSerialForAndroid">UsbSerialForAndroid</a></strong>, the open-source .NET / C# library that provides USB serial support for Android, including .NET MAUI and Xamarin-based projects.</p>
+
+<p>These changes focus on improving reliability, maintainability, and compatibility with modern .NET and Android tooling.</p>
+
+<h2 id="whats-new">What’s New</h2>
+
+<p>Recent updates include:</p>
+
+<ul>
+  <li>
+    <p><strong>General code cleanup and modernization</strong><br />
+The codebase has been updated to better align with current .NET and Android best practices, making it easier to maintain and extend.</p>
+  </li>
+  <li>
+    <p><strong>Improved stability and error handling</strong><br />
+Several edge cases around device connection, disconnection, and serial communication have been tightened up to reduce unexpected failures.</p>
+  </li>
+  <li>
+    <p><strong>Compatibility improvements</strong><br />
+Updates were made to ensure smoother integration with current versions of .NET for Android and .NET MAUI.</p>
+  </li>
+  <li>
+    <p><strong>Documentation and project maintenance</strong><br />
+README updates and project metadata improvements to make it clearer how to use the library and what environments are supported.</p>
+  </li>
+  <li>
+    <p><strong>Nuget</strong><br />
+Updates are now available on nuget. You no longer have to build the library to use it.</p>
+  </li>
+</ul>
+
+<h2 id="breaking-changes">Breaking Changes</h2>
+<p>This release supports .NET and drops support for previous versions. Including Xamarin. The last supported SDK by Xamarinwas API 34. As of August 31, 2025, the minimum API level allowed for Google Play apps is now API 35. If someone really wants to use this library with Xamarin.Android, they’ll have to use a <a href="https://github.com/anotherlab/UsbSerialForAndroid/releases/tag/v1.1.1">previous release</a>.</p>
+
+<p>The code should work with .NET 8 or .NET 9, but I haven’t tested this update with the older versions. If you need to support .NET 8, the <a href="https://github.com/anotherlab/UsbSerialForAndroid/releases/tag/v1.1.1">previous release</a> should work.</p>
+
+<p>With the release to nuget, I made a change the default namespace for the library. Someone created a nuget package based on a two year old version of this code base and published to nuget under their own name (and without credit to the original authors). I changed the root namespace from <code class="language-plaintext highlighter-rouge">Hoho.Android.UsbSerial</code> to <code class="language-plaintext highlighter-rouge">Anotherlab.UsbSerialForAndroid</code> to make it easier to manage on nuget.</p>
+
+<p>The “Hoho” namespace came from original Java library package name, <a href="https://github.com/mik3y/usb-serial-for-android">usb-serial-for-android</a>, and while I based this code from that library, they are separate.</p>
+
+<h2 id="what-can-you-do-with-this-library">What can you do with this library?</h2>
+
+<p>UsbSerialForAndroid is often used in scenarios involving:</p>
+
+<ul>
+  <li>Hardware integration</li>
+  <li>Industrial or diagnostic tools</li>
+  <li>Embedded devices connected via USB OTG</li>
+  <li>Cross-platform .NET applications targeting Android</li>
+</ul>
+
+<p>These updates aim to make those scenarios more reliable while keeping the API familiar for existing users.</p>
+
+<h2 id="net-maui">.NET MAUI</h2>
+<p>While this code is Android specific, it should work just fine for the Android target of a .NET MAUI app.</p>
+
+<h2 id="get-the-updates">Get the Updates</h2>
+
+<p>If you’re already using the library, I recommend pulling the latest changes or updating to the newest package version.</p>
+
+<ul>
+  <li>
+    <p><strong>GitHub repository:</strong><br />
+<a href="https://github.com/anotherlab/UsbSerialForAndroid">https://github.com/anotherlab/UsbSerialForAndroid</a></p>
+  </li>
+  <li>
+    <p><strong>Issues and feedback:</strong><br />
+Bug reports, feature requests, and pull requests are always welcome.</p>
+  </li>
+</ul>
+
+<h2 id="nuget-package-availability">NuGet Package Availability</h2>
+<p><img src="https://github.com/anotherlab/UsbSerialForAndroid/raw/main/UsbSerialForAndroid/icon.png" alt="Logo" /></p>
+
+<p><a href="https://www.nuget.org/packages/UsbSerialForAndroid"><img src="https://img.shields.io/nuget/v/usbserialforandroid?style=flat-square" alt="NuGet version (usbserialforandroid)" /></a></p>
+
+<p>The library can now be added directly via <a href="https://www.nuget.org/packages/UsbSerialForAndroid">NuGet</a>, eliminating the need to manually reference source projects or maintain forks.</p>
+
+<p>This improves:</p>
+
+<ul>
+  <li>Dependency management</li>
+  <li>Versioning and upgrades</li>
+  <li>CI/CD and reproducible builds</li>
+  <li>Integration with .NET MAUI and modern SDK-style projects</li>
+</ul>
+
+<p>NuGet availability also makes it easier to consume UsbSerialForAndroid alongside other Android and cross-platform dependencies.</p>
+
+<h2 id="background">Background</h2>
+<p>This is a project that I have been maintaining on and off for a number of years. We have an application that runs on Android and it needed to communicate with an RFID reader. The reader supports serial communication over USB. At the time, our application was written with Xamarin.Android and it didn’t have much for USB Serial communnication support.</p>
+
+<p>I found a really good open soource library written in Java called <a href="https://github.com/mik3y/usb-serial-for-android">usb-serial-for-android</a>. I ported it to C# more or less line by line. There are differences in the code bases, Java and C# are similar, but not identical. After completing the port from Java to C#, I obtained permission from my employer to make this an open-source library.</p>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>Thanks to everyone who has starred the repo, filed issues, or contributed fixes. Open-source feedback is what keeps this project useful and moving forward.</p>
+
+<p>If you’re using UsbSerialForAndroid in a project, I’d love to hear how it’s working for you.</p>]]></content><author><name>anotherlab</name></author><category term=".NET, Android, Hardware" /><category term=".NET" /><category term="Android" /><category term=".NET MAUI" /><category term="USB" /><category term="Open Source" /><summary type="html"><![CDATA[I’ve pushed a new round of updates to UsbSerialForAndroid, the open-source .NET / C# library that provides USB serial support for Android, including .NET MAUI and Xamarin-based projects.]]></summary></entry><entry><title type="html">How to force Visual Studio to update the debug device for a MAUI project</title><link href="http://localhost:4000/2025/11/16/hacking-csproj-user/" rel="alternate" type="text/html" title="How to force Visual Studio to update the debug device for a MAUI project" /><published>2025-11-16T00:00:00+00:00</published><updated>2025-11-16T00:00:00+00:00</updated><id>http://localhost:4000/2025/11/16/hacking-csproj-user</id><content type="html" xml:base="http://localhost:4000/2025/11/16/hacking-csproj-user/"><![CDATA[<p>When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.</p>
 
 <p>I’ll walk awa from my desk and I’ll take my phone with me. When I come back, I’ll plug the phone, but forget to change the device in Visual Studio back to my phone. I’ll make a code change and then start debugging the app. Cue up a <a href="https://screenrant.com/star-trek-tng-picard-riker-facepalm-popular-meme-why/">Picard facepalm</a> as Visual Studio starts up an Android emulator.</p>
 
@@ -156,7 +254,7 @@
 
 <p>I have a <a href="https://www.elgato.com/us/en/s/explore-stream-deck">Stream Deck</a> and I have a button mapped to run the script with the device and path. That allows me to just tap that button when I plug the phone in. If you want to easily run PowerShell scripts from a Stream Deck, take a look at the <a href="https://marketplace.elgato.com/product/scriptdeck-927e59aa-b42d-4da7-84cc-8c78f4dd7e18">ScriptDeck plugin</a>. I love the Stream Deck. It’s a giant macro pad that is application specific.</p>
 
-<p>I wrote these scripts for PowerShell 7.5, but it should work for most versions.</p>]]></content><author><name>anotherlab</name></author><category term="VisualStudio, MAUI, Android, PowerShell" /><category term="hacks" /><summary type="html"><![CDATA[When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.]]></summary></entry><entry><title type="html">Using PowerShell to convert VTT to SRT</title><link href="http://localhost:4000/2025/04/18/vtt-2-srt/" rel="alternate" type="text/html" title="Using PowerShell to convert VTT to SRT" /><published>2025-04-18T00:00:00+00:00</published><updated>2025-04-18T00:00:00+00:00</updated><id>http://localhost:4000/2025/04/18/vtt-2-srt</id><content type="html" xml:base="http://localhost:4000/2025/04/18/vtt-2-srt/"><![CDATA[<h1 id="converting-between-vtt-and-srt">Converting between VTT and SRT</h1>
+<p>I wrote these scripts for PowerShell 7.5, but it should work for most versions.</p>]]></content><author><name>anotherlab</name></author><category term="VisualStudio, MAUI, Android, PowerShell" /><category term="hacks, XML" /><summary type="html"><![CDATA[When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.]]></summary></entry><entry><title type="html">Using PowerShell to convert VTT to SRT</title><link href="http://localhost:4000/2025/04/18/vtt-2-srt/" rel="alternate" type="text/html" title="Using PowerShell to convert VTT to SRT" /><published>2025-04-18T00:00:00+00:00</published><updated>2025-04-18T00:00:00+00:00</updated><id>http://localhost:4000/2025/04/18/vtt-2-srt</id><content type="html" xml:base="http://localhost:4000/2025/04/18/vtt-2-srt/"><![CDATA[<h1 id="converting-between-vtt-and-srt">Converting between VTT and SRT</h1>
 <p>So I have to convert between VTT and SRT a few times a year. I’m lazy and forgetful so I decided to script the tasks with PowerShell.</p>
 
 <p>We have a quarterly developer conference at work. With 7500+ employees, we do 4-5 tracks of 3-4 sessions each. Like everything else these days, it’s a virtual conference and is presented through Microsoft Teams. The sessions are recorded and we are building up a library as a reference. And yes, <a href="https://www.tylertech.com/careers/job-openings">we are hiring</a>.</p>
@@ -659,15 +757,4 @@ I have a new course that was just published this week on Pluralsight, <a href="h
 
 <p>If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course.</p>
 
-<p>If you are working with <a href="https://learn.microsoft.com/en-us/dotnet/maui?WT.mc_id=DT-MVP-5000200">Maui</a>, a lot of this will still be applicable. The parts that are different, well, stay tuned.</p>]]></content><author><name>anotherlab</name></author><category term="Android" /><category term="Xamarin" /><category term="Xamarin" /><category term="Android" /><category term="API" /><summary type="html"><![CDATA[I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the app store. And was immediately rejected by Google. Our app was targetting API level 30 and the Google now requires API level 31 or later. The app is a Xamarin.Forms app and I opened up the Android project and changed changed android:targetSdkVersion in the manifest from 30 to 31. And then the app stopped building. I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms. From my own product blurb: You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications. If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course. If you are working with Maui, a lot of this will still be applicable. The parts that are different, well, stay tuned.]]></summary></entry><entry><title type="html">My new Xamarin.Forms 5 Pluralsight course is out</title><link href="http://localhost:4000/2022/09/21/psc-xf5-fundamentals/" rel="alternate" type="text/html" title="My new Xamarin.Forms 5 Pluralsight course is out" /><published>2022-09-21T00:00:00+00:00</published><updated>2022-09-21T00:00:00+00:00</updated><id>http://localhost:4000/2022/09/21/psc-xf5-fundamentals</id><content type="html" xml:base="http://localhost:4000/2022/09/21/psc-xf5-fundamentals/"><![CDATA[<p style="text-align: center;"><img src="/assets/cyberpunk3.jpg" alt="School is in session'?" /></p>
-
-<p>I have a new course that was just published this week on Pluralsight, <a href="http://www.pluralsight.com/courses/xamarin-forms-5-fundamentals.">“Xamarin.Forms 5 Fundamentals”</a>. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms.</p>
-
-<p>From my own product blurb:</p>
-<blockquote>
-  <p>You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications.</p>
-</blockquote>
-
-<p>If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course.</p>
-
-<p>If you are working with <a href="https://learn.microsoft.com/en-us/dotnet/maui?WT.mc_id=DT-MVP-5000200">Maui</a>, a lot of this will still be applicable. The parts that are different, well, stay tuned.</p>]]></content><author><name>anotherlab</name></author><category term="Pluralsight" /><category term="Visual Studio" /><category term="Xamarin" /><category term="Xamarin" /><category term="Maui" /><summary type="html"><![CDATA[I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms. From my own product blurb: You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications. If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course. If you are working with Maui, a lot of this will still be applicable. The parts that are different, well, stay tuned.]]></summary></entry></feed>
+<p>If you are working with <a href="https://learn.microsoft.com/en-us/dotnet/maui?WT.mc_id=DT-MVP-5000200">Maui</a>, a lot of this will still be applicable. The parts that are different, well, stay tuned.</p>]]></content><author><name>anotherlab</name></author><category term="Android" /><category term="Xamarin" /><category term="Xamarin" /><category term="Android" /><category term="API" /><summary type="html"><![CDATA[I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the app store. And was immediately rejected by Google. Our app was targetting API level 30 and the Google now requires API level 31 or later. The app is a Xamarin.Forms app and I opened up the Android project and changed changed android:targetSdkVersion in the manifest from 30 to 31. And then the app stopped building. I have a new course that was just published this week on Pluralsight, “Xamarin.Forms 5 Fundamentals”. It’s seven hours of tutorials and demos for the developer new to Xamarin.Forms. From my own product blurb: You will learn how to set up a Xamarin.Forms development environment and get started building apps. First, you will gain the knowledge of the basic structure. Next, you will understand how to use data binding to wire the data to the UI. Finally, you will know how to customize the UI with styling and theming. When you are finished with this course, you will have the skills and knowledge of the Xamarin.Forms framework to get started building cross-platform, native mobile applications. If you want to learn about how to use MVVM, Maps, localization, styling, etc; please check the course. If you are working with Maui, a lot of this will still be applicable. The parts that are different, well, stay tuned.]]></summary></entry></feed>

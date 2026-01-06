@@ -3709,7 +3709,13 @@ var store = [{
       },{
         "title": "How to force Visual Studio to update the debug device for a MAUI project",
         "excerpt":"When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS...","categories": ["VisualStudio, MAUI, Android, PowerShell"],
-        "tags": ["hacks"],
+        "tags": ["hacks, XML"],
         "url": "/2025/11/16/hacking-csproj-user/",
+        "teaser": null
+      },{
+        "title": "UsbSerialForAndroid: Recent Updates and Improvements",
+        "excerpt":"I’ve pushed a new round of updates to UsbSerialForAndroid, the open-source .NET / C# library that provides USB serial support for Android, including .NET MAUI and Xamarin-based projects. These changes focus on improving reliability, maintainability, and compatibility with modern .NET and Android tooling. What’s New Recent updates include: General code...","categories": [".NET, Android, Hardware"],
+        "tags": [".NET","Android",".NET MAUI","USB","Open Source"],
+        "url": "/2026/01/05/UsbSerialForAndroid-updates/",
         "teaser": null
       }]
