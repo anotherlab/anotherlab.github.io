@@ -6,7 +6,10 @@ toc: true
 header:
   image: /assets/images/PressTheButton.jpg
 categories: 
-  - VisualStudio, MAUI, Android, PowerShell
+  - VisualStudio
+  - MAUI
+  - Android
+  - PowerShell
 tags:
   - hacks, XML
 ---

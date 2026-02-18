@@ -6,7 +6,9 @@ toc: true
 header:
   image: /assets/images/usbserialforandroid-steampunk.jpg
 categories: 
-  - .NET, Android, Hardware
+  - .NET
+  - Android
+  - Hardware
 tags:
   - .NET
   - Android
