@@ -1,0 +1,1113 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Backing up my main WSL2 Linux session - Chris Miller’s 5th Blog</title>
+<meta name="description" content="Backing up my main Linux session TL;DR: I wrote a PowerShell script named backup-wsl2.ps1 to backup a Linux distribution. You can run like this: .\backup-wsl2.ps1 -Destination &quot;C:\Backups&quot;  You can grab it from here. It’s pretty long so I wont display it, but I will do a mini-teardown.  [System.IO.Compression.ZipFile]::CreateFromDirectory($src, $dest, ‘Fastest’, $false)">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
+<meta property="og:title" content="Backing up my main WSL2 Linux session">
+<meta property="og:url" content="http://localhost:4000/2026/02/17/backing-up-wsl2/">
+
+
+  <meta property="og:description" content="Backing up my main Linux session TL;DR: I wrote a PowerShell script named backup-wsl2.ps1 to backup a Linux distribution. You can run like this: .\backup-wsl2.ps1 -Destination &quot;C:\Backups&quot;  You can grab it from here. It’s pretty long so I wont display it, but I will do a mini-teardown.  [System.IO.Compression.ZipFile]::CreateFromDirectory($src, $dest, ‘Fastest’, $false)">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/backing-up-wsl2.jpg">
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="Backing up my main WSL2 Linux session">
+  <meta name="twitter:description" content="Backing up my main Linux session TL;DR: I wrote a PowerShell script named backup-wsl2.ps1 to backup a Linux distribution. You can run like this: .\backup-wsl2.ps1 -Destination &quot;C:\Backups&quot;  You can grab it from here. It’s pretty long so I wont display it, but I will do a mini-teardown.  [System.IO.Compression.ZipFile]::CreateFromDirectory($src, $dest, ‘Fastest’, $false)">
+  <meta name="twitter:url" content="http://localhost:4000/2026/02/17/backing-up-wsl2/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/backing-up-wsl2.jpg">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2026-02-17T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2026/02/17/backing-up-wsl2/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 5th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/backing-up-wsl2.jpg" alt="Backing up my main WSL2 Linux session" class="page__hero-image">
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <span class="nav__sub-title">Links</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="https://bsky.app/profile/anotherlab.bsky.social">BlueSky</a></li>
+            
+              <li><a href="https://app.pluralsight.com/profile/author/christopher-miller">Pluralsight</a></li>
+            
+              <li><a href="https://github.com/anotherlab">GitHub</a></li>
+            
+          </ul>
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Backing up my main WSL2 Linux session">
+    <meta itemprop="description" content="Backing up my main Linux sessionTL;DR: I wrote a PowerShell script named backup-wsl2.ps1 to backup a Linux distribution.You can run like this:.\backup-wsl2.ps1 -Destination &quot;C:\Backups&quot;You can grab it from here. It’s pretty long so I wont display it, but I will do a mini-teardown.[System.IO.Compression.ZipFile]::CreateFromDirectory($src, $dest, ‘Fastest’, $false)">
+    <meta itemprop="datePublished" content="2026-02-17T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2026/02/17/backing-up-wsl2/" itemprop="url">Backing up my main WSL2 Linux session
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#backing-up-my-main-linux-session">Backing up my main Linux session</a></li><li><a href="#steps-to-back-up-a-wsl-linux-session">Steps to back up a WSL Linux session</a><ul><li><a href="#script-all-the-things">Script all the things</a><ul><li><a href="#getting-the-distribution-name">Getting the Distribution Name</a></li><li><a href="#getting-the-tar-name">Getting the TAR Name</a></li><li><a href="#generating-the-tar-file">Generating the TAR file</a></li><li><a href="#compressing-the-tar-name">Compressing the TAR Name</a></li><li><a href="#copying-the-compressed-file">Copying the compressed file</a></li><li><a href="#cleanup">Cleanup</a></li></ul></li><li><a href="#bonus-round-so-why-7-zip">Bonus Round: So why 7-ZIP?</a><ul><li><a href="#some-background">Some background</a></li><li><a href="#compressing-files-in-powershell">Compressing files in PowerShell</a></li><li><a href="#comparing-the-compression-options">Comparing the compression options</a></li></ul></li></ul></li></ul>
+            </nav>
+          </aside>
+        
+        <h1 id="backing-up-my-main-linux-session">Backing up my main Linux session</h1>
+<p>TL;DR: I wrote a PowerShell script named backup-wsl2.ps1 to backup a Linux distribution.
+You can run like this:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">.</span><span class="n">\backup-wsl2.ps1</span><span class="w"> </span><span class="nt">-Destination</span><span class="w"> </span><span class="s2">"C:\Backups"</span><span class="w">
+</span></code></pre></div></div>
+<p>You can grab it from <a href="https://gist.github.com/anotherlab/0bfae255f41f87a83e31ec077bf3f606">here</a>. It’s pretty long so I wont display it, but I will do a mini-teardown.</p>
+
+<p>I have a UBuntu session on my main Windows box, running under WSL2. I use it whenever I need to try something vaguely *ix like. I run <a href="https://rajapet.com/2021/10/19/controlling-a-wsl-installation-of-redis-server-from-the-windows-command-line/">redis</a> on it. And I generate the pages for this blog via <a href="https://rajapet.com/2021/12/15/Migrated-to-jekyll/">Jekyll</a>.</p>
+
+<p>But I don’t have a backup for the Ubuntu session. My blog is literally a GitHub repo, but the files needed to run Jekyll are not.</p>
+
+<p>About a year ago, the primary drive on my Windows box abruptly failed. It was a Sumsung 980 Pro 2 TB. That model and size had an issue with the firmware that would brick the drive. Long story short, Samsung replaced the drive under warranty with a 990 Pro and I reinstalled Windows.</p>
+
+<p>I have a <a href="https://www.qnap.com/en-us/product/ts-464">QNap TS-464 NAS</a> that I use for backing up stuff. All of my files were backed up to it. I like the 464, it does exactly what I need and emails me when it needs something. I named it “swan” because it was a short name that I would remember.</p>
+
+<p>I don’t backup OS images. When push comes to shove, I repave with the latest and greatest, then copy the files back down from swan.</p>
+
+<p>I had to reinstall WSl2 and create a new Ubuntu image and then pull my blog files back down off of GitHub. But I had to reinstall Jekyll and get that mess running again.</p>
+
+<p>So now I want to back up my Linux session to swan.</p>
+
+<h1 id="steps-to-back-up-a-wsl-linux-session">Steps to back up a WSL Linux session</h1>
+<p>It’s pretty easy. Run the following command</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wsl <span class="nt">--export</span> NameOfImage NameOfTarFile
+</code></pre></div></div>
+<p>If you want to restore from a TAR file, it works like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wsl <span class="nt">--import</span> &lt;NewDistroName&gt; &lt;InstallLocation&gt; &lt;Path<span class="se">\t</span>o<span class="se">\B</span>ackup.tar&gt;
+</code></pre></div></div>
+
+<h2 id="script-all-the-things">Script all the things</h2>
+<p>I just needed to create a <a href="https://learn.microsoft.com/en-us/powershell/scripting/overview">PowerShell</a> script to create the TAR file and copy it to swan.</p>
+
+<p><img src="/assets/images/script-all-the-things.jpg" alt="Yak Shaving" title="Yak shaving (again)" /></p>
+
+<h3 id="getting-the-distribution-name">Getting the Distribution Name</h3>
+<p>I could have hardcoded the name of the image, but where’s the fun in that? There are few ways of querying for the name of the image. My friend <a href="https://www.anthropic.com/news/claude-sonnet-4-5">Claude</a> suggested the following code:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">function</span><span class="w"> </span><span class="nf">Get-DefaultWSLDistribution</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nv">$default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">wsl</span><span class="w"> </span><span class="nx">echo</span><span class="w"> </span><span class="s1">'$WSL_DISTRO_NAME'</span><span class="p">)</span><span class="o">.</span><span class="nf">Trim</span><span class="p">()</span><span class="w">
+
+    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="o">-not</span><span class="w"> </span><span class="nv">$default</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="kr">throw</span><span class="w"> </span><span class="s2">"No default WSL distribution found."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="kr">return</span><span class="w"> </span><span class="nv">$default</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>The way this works is that when you invoke the <code class="language-plaintext highlighter-rouge">wsl</code>.exe<code class="language-plaintext highlighter-rouge"> command, it sets </code>$WSL_DISTRO_NAME` to the default distribution. It works but there is a delay in wsl being invoked with nothing to do. Ignoring the advice from the AI overlords, I came up with this instead:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">function</span><span class="w"> </span><span class="nf">Get-DefaultWSLDistributionQuick</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nv">$results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wsl</span><span class="w"> </span><span class="nt">--list</span><span class="w"> </span><span class="nt">--all</span><span class="w"> </span><span class="nx">2</span><span class="err">&gt;</span><span class="bp">$null</span><span class="w">
+
+    </span><span class="kr">foreach</span><span class="w"> </span><span class="p">(</span><span class="nv">$p</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nv">$results</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nv">$line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$p</span><span class="o">.</span><span class="nf">Trim</span><span class="p">()</span><span class="w">
+        </span><span class="nv">$len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">$line</span><span class="o">.</span><span class="nf">IndexOf</span><span class="p">(</span><span class="s1">' (Default)'</span><span class="p">)</span><span class="w">
+        </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$len</span><span class="w"> </span><span class="o">-ge</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="kr">return</span><span class="w"> </span><span class="nv">$line</span><span class="o">.</span><span class="nf">Substring</span><span class="p">(</span><span class="nx">0</span><span class="p">,</span><span class="w"> </span><span class="nv">$len</span><span class="p">)</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+
+    </span><span class="kr">return</span><span class="w"> </span><span class="bp">$null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>When you run <code class="language-plaintext highlighter-rouge">wsl --list --all</code>, you’ll get (or at least I got) something like this:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Windows Subsystem for Linux Distributions:
+Ubuntu-24.04 (Default)
+</code></pre></div></div>
+<p>There be dragons here, but we’ll get to that in a minute.</p>
+
+<p>Right now, I only have a single Linux instance defined. And WSL was good enough to tag it with “(Default)”. The <code class="language-plaintext highlighter-rouge">foreach</code> walks through each line and returns the first session tagged with “(Default)” and then returns the text to the left of “ (Default)”.</p>
+
+<p>With that, we can use this line to get the name of the Linux distribition to back up.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$defaultDistro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-DefaultWSLDistributionQuick</span><span class="w">
+</span></code></pre></div></div>
+<p>The $defaultDistro variable will contain the content “Ubuntu-24.04”. Here be dragons. Take this variable assignment:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$sampleDistro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Ubuntu-24.04"</span><span class="w">
+</span></code></pre></div></div>
+<p>You would think that $defaultDistro and $sampleDistro have the same values. They don’t. The variable $defaultDistro will contain UTF-16 characters and $sampleDistro will have UTF-8 characters. The wsl command will return UTF-16 and will error out unless you use UTF-8. You can see the difference by piping each one into <code class="language-plaintext highlighter-rouge">Format-Hex</code> like this</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$sampleDistro</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Format-Hex</span><span class="w">
+
+   </span><span class="n">Label:</span><span class="w"> </span><span class="nx">String</span><span class="w"> </span><span class="p">(</span><span class="n">System.String</span><span class="p">)</span><span class="w"> </span><span class="err">&lt;</span><span class="mi">3</span><span class="n">B9579CC</span><span class="err">&gt;</span><span class="w">
+
+          </span><span class="n">Offset</span><span class="w"> </span><span class="nx">Bytes</span><span class="w">                                           </span><span class="nx">Ascii</span><span class="w">
+                 </span><span class="mi">00</span><span class="w"> </span><span class="mi">01</span><span class="w"> </span><span class="mi">02</span><span class="w"> </span><span class="mi">03</span><span class="w"> </span><span class="mi">04</span><span class="w"> </span><span class="mi">05</span><span class="w"> </span><span class="mi">06</span><span class="w"> </span><span class="mi">07</span><span class="w"> </span><span class="mi">08</span><span class="w"> </span><span class="mi">09</span><span class="w"> </span><span class="mi">0</span><span class="n">A</span><span class="w"> </span><span class="nx">0B</span><span class="w"> </span><span class="nx">0C</span><span class="w"> </span><span class="nx">0D</span><span class="w"> </span><span class="nx">0E</span><span class="w"> </span><span class="nx">0F</span><span class="w">
+          </span><span class="o">------</span><span class="w"> </span><span class="o">-----------------------------------------------</span><span class="w"> </span><span class="o">-----</span><span class="w">
+</span><span class="mi">0000000000000000</span><span class="w"> </span><span class="mi">55</span><span class="w"> </span><span class="mi">62</span><span class="w"> </span><span class="mi">75</span><span class="w"> </span><span class="mi">6</span><span class="n">E</span><span class="w"> </span><span class="nx">74</span><span class="w"> </span><span class="nx">75</span><span class="w"> </span><span class="nx">2D</span><span class="w"> </span><span class="nx">32</span><span class="w"> </span><span class="nx">34</span><span class="w"> </span><span class="nx">2E</span><span class="w"> </span><span class="nx">30</span><span class="w"> </span><span class="nx">34</span><span class="w">             </span><span class="nx">Ubuntu-24.04</span><span class="w">
+
+</span><span class="nv">$defaultDistro</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Format-Hex</span><span class="w">
+
+   </span><span class="n">Label:</span><span class="w"> </span><span class="nx">String</span><span class="w"> </span><span class="p">(</span><span class="n">System.String</span><span class="p">)</span><span class="w"> </span><span class="err">&lt;</span><span class="mi">45133834</span><span class="err">&gt;</span><span class="w">
+
+          </span><span class="n">Offset</span><span class="w"> </span><span class="nx">Bytes</span><span class="w">                                           </span><span class="nx">Ascii</span><span class="w">
+                 </span><span class="mi">00</span><span class="w"> </span><span class="mi">01</span><span class="w"> </span><span class="mi">02</span><span class="w"> </span><span class="mi">03</span><span class="w"> </span><span class="mi">04</span><span class="w"> </span><span class="mi">05</span><span class="w"> </span><span class="mi">06</span><span class="w"> </span><span class="mi">07</span><span class="w"> </span><span class="mi">08</span><span class="w"> </span><span class="mi">09</span><span class="w"> </span><span class="mi">0</span><span class="n">A</span><span class="w"> </span><span class="nx">0B</span><span class="w"> </span><span class="nx">0C</span><span class="w"> </span><span class="nx">0D</span><span class="w"> </span><span class="nx">0E</span><span class="w"> </span><span class="nx">0F</span><span class="w">
+          </span><span class="o">------</span><span class="w"> </span><span class="o">-----------------------------------------------</span><span class="w"> </span><span class="o">-----</span><span class="w">
+</span><span class="mi">0000000000000000</span><span class="w"> </span><span class="mi">00</span><span class="w"> </span><span class="mi">55</span><span class="w"> </span><span class="mi">00</span><span class="w"> </span><span class="mi">62</span><span class="w"> </span><span class="mi">00</span><span class="w"> </span><span class="mi">75</span><span class="w"> </span><span class="mi">00</span><span class="w"> </span><span class="mi">6</span><span class="n">E</span><span class="w"> </span><span class="nx">00</span><span class="w"> </span><span class="nx">74</span><span class="w"> </span><span class="nx">00</span><span class="w"> </span><span class="nx">75</span><span class="w"> </span><span class="nx">00</span><span class="w"> </span><span class="nx">2D</span><span class="w"> </span><span class="nx">00</span><span class="w"> </span><span class="nx">32</span><span class="w">  </span><span class="nx">U</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="nx">u</span><span class="w"> </span><span class="nx">n</span><span class="w"> </span><span class="nx">t</span><span class="w"> </span><span class="nx">u</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">2</span><span class="w">
+</span><span class="mi">0000000000000010</span><span class="w"> </span><span class="mi">00</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">00</span><span class="w"> </span><span class="mi">2</span><span class="n">E</span><span class="w"> </span><span class="nx">00</span><span class="w"> </span><span class="nx">30</span><span class="w"> </span><span class="nx">00</span><span class="w"> </span><span class="nx">34</span><span class="w"> </span><span class="nx">00</span><span class="w">                       </span><span class="nx">4</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="nx">0</span><span class="w"> </span><span class="nx">4</span><span class="w">
+</span></code></pre></div></div>
+
+<p>They look the same on the outside, but not on the inside. The following will do a brute force string replace to drop from UTF-16 to UTF-8</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$defaultDistro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">$defaultDistro</span><span class="w"> </span><span class="o">-replace</span><span class="w"> </span><span class="s1">'[\x00-\x1F\x7F-\x9F]'</span><span class="p">,</span><span class="w"> </span><span class="s1">''</span><span class="w"> </span><span class="o">-replace</span><span class="w"> </span><span class="s1">'\s+'</span><span class="p">,</span><span class="w"> </span><span class="s1">' '</span><span class="p">)</span><span class="o">.</span><span class="nf">Trim</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+<p>In theory, uses UTF8.GetString would do the conversion, with syntax like this:</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$rawBytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">System.Text.Encoding</span><span class="p">]::</span><span class="n">Default.GetBytes</span><span class="p">(</span><span class="nv">$defaultDistro</span><span class="p">)</span><span class="w">
+</span><span class="nv">$defaultDistro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">System.Text.Encoding</span><span class="p">]::</span><span class="n">UTF8.GetString</span><span class="p">(</span><span class="nv">$rawBytes</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<p>But the null bytes remained, using <code class="language-plaintext highlighter-rouge">-replace</code> worked for me.</p>
+
+<h3 id="getting-the-tar-name">Getting the TAR Name</h3>
+<p>Now that we have the distro name all cleaned up, we need the name of the TAR file to be created. First we’ll create a function to make the name of the TAR file.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">function</span><span class="w"> </span><span class="nf">Get-ArchiveFileName</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="kr">param</span><span class="p">(</span><span class="w">
+        </span><span class="p">[</span><span class="n">Parameter</span><span class="p">(</span><span class="n">Mandatory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$true</span><span class="p">)]</span><span class="w">
+        </span><span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span><span class="w">
+        </span><span class="p">[</span><span class="n">string</span><span class="p">]</span><span class="nv">$DistroName</span><span class="w">
+    </span><span class="p">)</span><span class="w">
+
+    </span><span class="c"># Get current date, formatted as YYYY-MM, and combine with distribution name</span><span class="w">
+    </span><span class="kr">return</span><span class="w"> </span><span class="p">(</span><span class="n">Get-Date</span><span class="p">)</span><span class="o">.</span><span class="nf">ToString</span><span class="p">(</span><span class="s2">"yyyy-MM"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"-"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">$DistroName</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>Most of the code just validates that we passed in a non-empty value for <code class="language-plaintext highlighter-rouge">$DistroName</code> and the prepends the year and month. I’m not doing daily backups of the OS image, the data that changes is backed up.</p>
+
+<p>Next, we’ll add a function to get a full path for the TAR file.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">function</span><span class="w"> </span><span class="nf">Get-TarArchivePath</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="kr">param</span><span class="p">(</span><span class="w">
+        </span><span class="p">[</span><span class="n">Parameter</span><span class="p">(</span><span class="n">Mandatory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$true</span><span class="p">)]</span><span class="w">
+        </span><span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span><span class="w">
+        </span><span class="p">[</span><span class="n">string</span><span class="p">]</span><span class="nv">$ArchiveName</span><span class="w">
+    </span><span class="p">)</span><span class="w">
+    
+    </span><span class="c"># Get the temp folder path and combine with archive name and .tar extension</span><span class="w">
+    </span><span class="kr">return</span><span class="w"> </span><span class="n">Join-Path</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="nv">$</span><span class="nn">env</span><span class="p">:</span><span class="nv">TEMP</span><span class="w"> </span><span class="nt">-ChildPath</span><span class="w"> </span><span class="s2">"</span><span class="nv">$ArchiveName</span><span class="s2">.tar"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>That will take the name, put in the user temp folder, and add the “.tar” extension.</p>
+
+<h3 id="generating-the-tar-file">Generating the TAR file</h3>
+<p>Now we can add a function to export the distro to a TAR file</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">function</span><span class="w"> </span><span class="nf">Export-WSLDistribution</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="kr">param</span><span class="p">(</span><span class="w">
+        </span><span class="p">[</span><span class="n">Parameter</span><span class="p">(</span><span class="n">Mandatory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$true</span><span class="p">)]</span><span class="w">
+        </span><span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span><span class="w">
+        </span><span class="p">[</span><span class="n">string</span><span class="p">]</span><span class="nv">$DistributionName</span><span class="p">,</span><span class="w">
+        
+        </span><span class="p">[</span><span class="n">Parameter</span><span class="p">(</span><span class="n">Mandatory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$true</span><span class="p">)]</span><span class="w">
+        </span><span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span><span class="w">
+        </span><span class="p">[</span><span class="n">string</span><span class="p">]</span><span class="nv">$ArchiveName</span><span class="w">
+    </span><span class="p">)</span><span class="w">
+    
+    </span><span class="kr">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="c"># Get the full tar path using the existing function</span><span class="w">
+        </span><span class="nv">$tarPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-TarArchivePath</span><span class="w"> </span><span class="nt">-ArchiveName</span><span class="w"> </span><span class="nv">$ArchiveName</span><span class="w">
+        
+        </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"Exporting WSL distribution '</span><span class="nv">$DistributionName</span><span class="s2">' to '</span><span class="nv">$tarPath</span><span class="s2">'..."</span><span class="w">
+        
+        </span><span class="c"># Execute wsl --export command</span><span class="w">
+        </span><span class="nv">$result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wsl</span><span class="w"> </span><span class="nt">--export</span><span class="w"> </span><span class="nv">$DistributionName</span><span class="w"> </span><span class="nv">$tarPath</span><span class="w"> </span><span class="nx">2</span><span class="err">&gt;</span><span class="o">&amp;</span><span class="nx">1</span><span class="w">
+        
+        </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$LASTEXITCODE</span><span class="w"> </span><span class="o">-ne</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="kr">throw</span><span class="w"> </span><span class="s2">"WSL export for '</span><span class="nv">$DistributionName</span><span class="s2">' to '</span><span class="nv">$tarPath</span><span class="s2">' failed with exit code </span><span class="nv">$LASTEXITCODE</span><span class="s2">. Error: </span><span class="nv">$result</span><span class="s2">"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        
+        </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">Test-Path</span><span class="w"> </span><span class="nv">$tarPath</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"Export completed successfully: </span><span class="nv">$tarPath</span><span class="s2">"</span><span class="w">
+            </span><span class="kr">return</span><span class="w"> </span><span class="nv">$tarPath</span><span class="w">
+        </span><span class="p">}</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="kr">throw</span><span class="w"> </span><span class="s2">"Export appeared to succeed but tar file was not created at: </span><span class="nv">$tarPath</span><span class="s2">"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="kr">catch</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">Write-Error</span><span class="w"> </span><span class="s2">"Failed to export WSL distribution '</span><span class="nv">$DistributionName</span><span class="s2">': </span><span class="si">$(</span><span class="bp">$_</span><span class="o">.</span><span class="nf">Exception</span><span class="o">.</span><span class="nf">Message</span><span class="si">)</span><span class="s2">"</span><span class="w">
+        </span><span class="kr">throw</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p>That code will call <code class="language-plaintext highlighter-rouge">Get-TarArchivePath</code> to get the full name of the TAR file and then call <code class="language-plaintext highlighter-rouge">wsl --export</code>. If successful, it will return the name of the TAR file.</p>
+
+<h3 id="compressing-the-tar-name">Compressing the TAR Name</h3>
+<p>The next step is to compress that TAR file. We don’t need a big uncompressed file, when a smaller one will do.  We have a function to do that as well.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">function</span><span class="w"> </span><span class="nf">Compress-WSLBackup</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="kr">param</span><span class="p">(</span><span class="w">
+        </span><span class="p">[</span><span class="n">Parameter</span><span class="p">(</span><span class="n">Mandatory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$true</span><span class="p">)]</span><span class="w">
+        </span><span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span><span class="w">
+        </span><span class="p">[</span><span class="n">string</span><span class="p">]</span><span class="nv">$TarPath</span><span class="w">
+    </span><span class="p">)</span><span class="w">
+    
+    </span><span class="kr">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="c"># Get the zip path by changing the extension of the tar path to .7z</span><span class="w">
+        </span><span class="nv">$zipPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">System.IO.Path</span><span class="p">]::</span><span class="n">ChangeExtension</span><span class="p">(</span><span class="nv">$TarPath</span><span class="p">,</span><span class="w"> </span><span class="s2">".7z"</span><span class="p">)</span><span class="w">
+        
+        </span><span class="c"># Need to use Start-Process to call 7z.exe, and wait for it to finish before checking if the file was created</span><span class="w">
+        </span><span class="n">start-Process</span><span class="w"> </span><span class="nt">-FilePath</span><span class="w"> </span><span class="s2">"C:\Program Files\7-Zip\7z.exe"</span><span class="w"> </span><span class="nt">-ArgumentList</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"-t7z"</span><span class="p">,</span><span class="w"> </span><span class="nv">$zipPath</span><span class="p">,</span><span class="w"> </span><span class="nv">$TarPath</span><span class="w"> </span><span class="nt">-Wait</span><span class="w"> </span><span class="nt">-NoNewWindow</span><span class="w">
+        
+        </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="n">Test-Path</span><span class="w"> </span><span class="nv">$zipPath</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"Compression completed successfully: </span><span class="nv">$zipPath</span><span class="s2">"</span><span class="w">
+            </span><span class="kr">return</span><span class="w"> </span><span class="nv">$zipPath</span><span class="w">
+        </span><span class="p">}</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="kr">throw</span><span class="w"> </span><span class="s2">"Compression appeared to succeed but 7-Zip file was not created at: </span><span class="nv">$zipPath</span><span class="s2">"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="kr">catch</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">Write-Error</span><span class="w"> </span><span class="s2">"Failed to compress WSL backup: </span><span class="si">$(</span><span class="bp">$_</span><span class="o">.</span><span class="nf">Exception</span><span class="o">.</span><span class="nf">Message</span><span class="si">)</span><span class="s2">"</span><span class="w">
+        </span><span class="kr">throw</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="copying-the-compressed-file">Copying the compressed file</h3>
+<p>If the compression works, the function will return the name of the compressed file. And we’ll use that file name to copy the file with the <code class="language-plaintext highlighter-rouge">Copy-Item</code> command</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$zipPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Compress-WSLBackup</span><span class="w"> </span><span class="nt">-TarPath</span><span class="w"> </span><span class="nv">$tarPath</span><span class="w">
+
+</span><span class="n">Copy-Item</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="nv">$zipPath</span><span class="w"> </span><span class="nt">-Destination</span><span class="w"> </span><span class="nv">$Destination</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="cleanup">Cleanup</h3>
+<p>The last thing to add is some cleanup code to remove the files out of the temp folder.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">function</span><span class="w"> </span><span class="nf">Remove-OldWSLBackups</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="kr">param</span><span class="p">(</span><span class="w">
+        </span><span class="p">[</span><span class="n">Parameter</span><span class="p">(</span><span class="n">Mandatory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">$true</span><span class="p">)]</span><span class="w">
+        </span><span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span><span class="w">
+        </span><span class="p">[</span><span class="n">string</span><span class="p">]</span><span class="nv">$DistributionName</span><span class="w">
+    </span><span class="p">)</span><span class="w">
+    
+    </span><span class="kr">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="c"># Get first 2 digits of current year</span><span class="w">
+        </span><span class="nv">$yearPrefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Get-Date</span><span class="p">)</span><span class="o">.</span><span class="nf">Year</span><span class="o">.</span><span class="nf">ToString</span><span class="p">()</span><span class="o">.</span><span class="nf">Substring</span><span class="p">(</span><span class="nx">0</span><span class="p">,</span><span class="w"> </span><span class="nx">2</span><span class="p">)</span><span class="w">
+        
+        </span><span class="c"># Build search patterns for both .tar and .7z files</span><span class="w">
+        </span><span class="nv">$tarPattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="nv">$yearPrefix</span><span class="s2">*</span><span class="nv">$DistributionName</span><span class="s2">*.tar"</span><span class="w">
+        </span><span class="nv">$zipPattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="nv">$yearPrefix</span><span class="s2">*</span><span class="nv">$DistributionName</span><span class="s2">*.7z"</span><span class="w">
+        
+        </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"Searching for old backups matching patterns: </span><span class="nv">$tarPattern</span><span class="s2">, </span><span class="nv">$zipPattern</span><span class="s2">"</span><span class="w">
+        
+        </span><span class="c"># Get matching files in temp directory for both extensions</span><span class="w">
+        </span><span class="nv">$tarBackups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-ChildItem</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="nv">$</span><span class="nn">env</span><span class="p">:</span><span class="nv">TEMP</span><span class="w"> </span><span class="nt">-Filter</span><span class="w"> </span><span class="nv">$tarPattern</span><span class="w"> </span><span class="nt">-File</span><span class="w"> </span><span class="nt">-ErrorAction</span><span class="w"> </span><span class="nx">SilentlyContinue</span><span class="w">
+        </span><span class="nv">$zipBackups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-ChildItem</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="nv">$</span><span class="nn">env</span><span class="p">:</span><span class="nv">TEMP</span><span class="w"> </span><span class="nt">-Filter</span><span class="w"> </span><span class="nv">$zipPattern</span><span class="w"> </span><span class="nt">-File</span><span class="w"> </span><span class="nt">-ErrorAction</span><span class="w"> </span><span class="nx">SilentlyContinue</span><span class="w">
+        
+        </span><span class="c"># Combine both results</span><span class="w">
+        </span><span class="nv">$oldBackups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">@(</span><span class="nv">$tarBackups</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">@(</span><span class="nv">$zipBackups</span><span class="p">)</span><span class="w">
+        
+        </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$oldBackups</span><span class="o">.</span><span class="nf">Count</span><span class="w"> </span><span class="o">-eq</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"No old backup files found to delete."</span><span class="w">
+            </span><span class="kr">return</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        
+        </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"Found </span><span class="si">$(</span><span class="nv">$oldBackups</span><span class="o">.</span><span class="nf">Count</span><span class="si">)</span><span class="s2"> old backup file(s) to delete:"</span><span class="w">
+        
+        </span><span class="kr">foreach</span><span class="w"> </span><span class="p">(</span><span class="nv">$file</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nv">$oldBackups</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"  Deleting: </span><span class="si">$(</span><span class="nv">$file</span><span class="o">.</span><span class="nf">FullName</span><span class="si">)</span><span class="s2">"</span><span class="w">
+            </span><span class="n">Remove-Item</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="nv">$file</span><span class="o">.</span><span class="nf">FullName</span><span class="w"> </span><span class="nt">-Force</span><span class="w"> </span><span class="nt">-ErrorAction</span><span class="w"> </span><span class="nx">Stop</span><span class="w">
+            </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"  Successfully deleted: </span><span class="si">$(</span><span class="nv">$file</span><span class="o">.</span><span class="nf">Name</span><span class="si">)</span><span class="s2">"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        
+        </span><span class="n">Write-Host</span><span class="w"> </span><span class="s2">"Cleanup completed successfully."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="kr">catch</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="n">Write-Error</span><span class="w"> </span><span class="s2">"Failed to remove old WSL backups: </span><span class="si">$(</span><span class="bp">$_</span><span class="o">.</span><span class="nf">Exception</span><span class="o">.</span><span class="nf">Message</span><span class="si">)</span><span class="s2">"</span><span class="w">
+        </span><span class="kr">throw</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>And we call it with</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Remove-OldWSLBackups</span><span class="w"> </span><span class="nt">-DistributionName</span><span class="w"> </span><span class="nv">$defaultDistro</span><span class="w">
+</span></code></pre></div></div>
+
+<p>You can the entire PowerShell script from <a href="https://gist.github.com/anotherlab/0bfae255f41f87a83e31ec077bf3f606">here</a>. It has detailed comments to explain how to use it. It was tested on Windows 11, with PowerShell 7.5.4.  It does require 7-Zip, you can get that from <a href="https://www.7-zip.org/download.html">7-zip.org</a>. At the time this was written, there is a malware site masqurading as the official 7-Zip site.  Only use 7-zip.org. <a href="https://www.malwarebytes.com/blog/threat-intel/2026/02/fake-7-zip-downloads-are-turning-home-pcs-into-proxy-nodes">More info</a> about that malware.</p>
+
+<h2 id="bonus-round-so-why-7-zip">Bonus Round: So why 7-ZIP?</h2>
+
+<h3 id="some-background">Some background</h3>
+<p>When you export a WSL image, you get a TAR file. TAR stands for <strong>T</strong>ape <strong>AR</strong>chive and is only of the oldest file archive formats. It’s how UNIX systems backed up data to tape. Ubuntu is a Linux distribution. While Linux is not Unix, it is a “Unix-like” operating system and implemented many of the Unix tools from teh dark times.</p>
+
+<p>TAR does not compress the data. Tape was cheaper than memory, it was faster just stream the data to tape without compressing it. And it’s a standard format.</p>
+
+<p>What TAR does do is backup Linux file permissions, symlinks, and metadata. You wont get that with Zip, RAR, or 7-Zip. To get the compression, you want to compress the data after the TAR file has been generated.</p>
+
+<h3 id="compressing-files-in-powershell">Compressing files in PowerShell</h3>
+
+<p>I played around with the usual suspects for compression. PowerShell has a <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.archive/compress-archive">Compress-Archive</a> command that will generate a zip.  For compressing a TAR file, that would look like this</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"'</span><span class="nv">$</span><span class="nn">ENV</span><span class="p">:</span><span class="nv">TEMP</span><span class="s2">'\something.tar"</span><span class="w">
+</span><span class="nv">$dest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"'</span><span class="nv">$</span><span class="nn">ENV</span><span class="p">:</span><span class="nv">TEMP</span><span class="s2">'\something.zip"</span><span class="w">
+</span><span class="n">Compress-Archive</span><span class="w"> </span><span class="nt">-Path</span><span class="w"> </span><span class="nv">$src</span><span class="w"> </span><span class="nt">-DestinationPath</span><span class="w"> </span><span class="nv">$dest</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Another way to create ZIP files in PowerShell is making a .NET Framework call.  It’s usually a little faster than <code class="language-plaintext highlighter-rouge">Compress-Archive</code>.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Add-Type</span><span class="w"> </span><span class="nt">-Assembly</span><span class="w"> </span><span class="s2">"System.IO.Compression.FileSystem"</span><span class="w">
+</span><span class="p">[</span><span class="n">System.IO.Compression.ZipFile</span><span class="p">]::</span><span class="n">CreateFromDirectory</span><span class="p">(</span><span class="nv">$src</span><span class="p">,</span><span class="w"> </span><span class="nv">$dest</span><span class="p">,</span><span class="w"> </span><span class="s1">'Fastest'</span><span class="p">,</span><span class="w"> </span><span class="bp">$false</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>They worked, but there are better alternatives. My file archive tool of choice is <a href="https://www.7-zip.org/">7-Zip</a>. It gives you multiple compression options for the zip file format.  I used the best level of the faster compression settings, <code class="language-plaintext highlighter-rouge">-mx4</code>.  The better compression settings took so long, I canceled them.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">-mx4</code> setting was fast enough and produced smaller. zip files than <code class="language-plaintext highlighter-rouge">Compress-Archive</code> and <code class="language-plaintext highlighter-rouge">System.IO.Compression.ZipFile</code>. Not by a large amount, maybe 5% smaller for my stuff.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Set-Alias</span><span class="w"> </span><span class="nx">sz</span><span class="w"> </span><span class="s2">"C:\Program Files\7-Zip\7z.exe"</span><span class="w">
+</span><span class="n">sz</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nt">-mx</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="nv">$dest</span><span class="w"> </span><span class="nv">$src</span><span class="w">
+</span></code></pre></div></div>
+
+<p>I then tried <a href="https://www.win-rar.com/">WinRAR</a> for both Zip and RAR formats. WinRAR is a great tool, but it’s not free.  If you own WinRAR and want to use it</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">set-alias</span><span class="w"> </span><span class="nx">sr</span><span class="w"> </span><span class="s2">"C:\Program Files\WinRAR\Rar.exe"</span><span class="w">
+</span><span class="nv">$dest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"'</span><span class="nv">$</span><span class="nn">ENV</span><span class="p">:</span><span class="nv">TEMP</span><span class="s2">'\something.rar"</span><span class="w">
+</span><span class="n">sr</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nv">$dest</span><span class="w"> </span><span class="nv">$src</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Since I’m using 7-ZIP, I decided to use it’s best format, the 7Zip format. At this point, as of 22H2 even Windows 11 can natively read 7Zip (in addition to Zip, RAR, TAR, and GZ) files.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Set-Alias</span><span class="w"> </span><span class="nx">sz</span><span class="w"> </span><span class="s2">"C:\Program Files\7-Zip\7z.exe"</span><span class="w">
+</span><span class="nv">$dest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"'</span><span class="nv">$</span><span class="nn">ENV</span><span class="p">:</span><span class="nv">TEMP</span><span class="s2">'\something.7z"</span><span class="w">
+</span><span class="n">sz</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nt">-t7z</span><span class="w"> </span><span class="nv">$dest</span><span class="w"> </span><span class="nv">$src</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="comparing-the-compression-options">Comparing the compression options</h3>
+
+<p>The 7zip format had much better compression and speed than the Zip and RAR formats. My WSL image is named Ubuntu-24.04 and I ran this on February 17th. This table shows the files, sizes, and compression compared to the TAR file.  I didn’t need to set the <code class="language-plaintext highlighter-rouge">-mx</code> option.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th style="text-align: right">Size (GB)</th>
+      <th style="text-align: right">Percent from Largest</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2026-02-Ubuntu-24.04.tar</td>
+      <td style="text-align: right">6.23</td>
+      <td style="text-align: right">100.00%</td>
+    </tr>
+    <tr>
+      <td>2026-02-Ubuntu-24.04.zip</td>
+      <td style="text-align: right">2.15</td>
+      <td style="text-align: right">34.57%</td>
+    </tr>
+    <tr>
+      <td>2026-02-Ubuntu-24.04.rar</td>
+      <td style="text-align: right">2.07</td>
+      <td style="text-align: right">33.20%</td>
+    </tr>
+    <tr>
+      <td>2026-02-Ubuntu-24.04.7z</td>
+      <td style="text-align: right">1.51</td>
+      <td style="text-align: right">24.21%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ZIP and RAR went down to a third of the TAR size and were pretty close. The 7Z file was less a quarter of the original.</p>
+
+<p>The PowerShell to generate that table was pretty simple:</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Get the matching files</span><span class="w">
+</span><span class="nv">$files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Get-ChildItem</span><span class="w"> </span><span class="nv">$</span><span class="nn">env</span><span class="p">:</span><span class="nv">TEMP</span><span class="w"> </span><span class="nt">-File</span><span class="w"> </span><span class="nt">-Filter</span><span class="w"> </span><span class="s2">"2026-*"</span><span class="w">
+
+</span><span class="c"># Get the size of the largest file</span><span class="w">
+</span><span class="nv">$maxLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nv">$files</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Sort-Object</span><span class="w"> </span><span class="nx">Length</span><span class="w"> </span><span class="nt">-Descending</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Select-Object</span><span class="w"> </span><span class="nt">-First</span><span class="w"> </span><span class="nx">1</span><span class="p">)</span><span class="o">.</span><span class="nf">Length</span><span class="w">
+
+</span><span class="c"># Display as a table</span><span class="w">
+</span><span class="nv">$files</span><span class="w"> </span><span class="o">|</span><span class="w">
+  </span><span class="n">Sort-Object</span><span class="w"> </span><span class="nx">Length</span><span class="w"> </span><span class="nt">-Descending</span><span class="w"> </span><span class="o">|</span><span class="w">
+  </span><span class="n">Select-Object</span><span class="w"> </span><span class="nx">Name</span><span class="p">,</span><span class="w">
+    </span><span class="p">@{</span><span class="nx">Name</span><span class="o">=</span><span class="s2">"SizeGB"</span><span class="p">;</span><span class="nx">Expression</span><span class="o">=</span><span class="p">{[</span><span class="n">math</span><span class="p">]::</span><span class="n">Round</span><span class="p">(</span><span class="bp">$_</span><span class="o">.</span><span class="nf">Length</span><span class="w"> </span><span class="n">/</span><span class="w"> </span><span class="nx">1GB</span><span class="p">,</span><span class="w"> </span><span class="nx">2</span><span class="p">)}},</span><span class="w">
+    </span><span class="p">@{</span><span class="nx">Name</span><span class="o">=</span><span class="s2">"PercentOfLargest"</span><span class="p">;</span><span class="nx">Expression</span><span class="o">=</span><span class="p">{</span><span class="w">
+      </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nv">$maxLength</span><span class="w"> </span><span class="o">-gt</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"{0:N2}%"</span><span class="w"> </span><span class="nt">-f</span><span class="w"> </span><span class="p">((</span><span class="bp">$_</span><span class="o">.</span><span class="nf">Length</span><span class="w"> </span><span class="n">/</span><span class="w"> </span><span class="nv">$maxLength</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}}</span><span class="w"> </span><span class="o">|</span><span class="w">
+  </span><span class="n">Format-Table</span><span class="w"> </span><span class="nt">-AutoSize</span><span class="w">
+</span></code></pre></div></div>
+
+<p>That made the choice of the 7Z format a non-brainer.  Even with today’s large drives, saving 4.5 GB is a lot.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#backups" class="page__taxonomy-item p-category" rel="tag">Backups</a><span class="sep">, </span>
+    
+      <a href="/tags/#linux" class="page__taxonomy-item p-category" rel="tag">Linux</a><span class="sep">, </span>
+    
+      <a href="/tags/#powershell" class="page__taxonomy-item p-category" rel="tag">PowerShell</a><span class="sep">, </span>
+    
+      <a href="/tags/#ubuntu" class="page__taxonomy-item p-category" rel="tag">Ubuntu</a><span class="sep">, </span>
+    
+      <a href="/tags/#wsl2" class="page__taxonomy-item p-category" rel="tag">WSL2</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#backups" class="page__taxonomy-item p-category" rel="tag">Backups</a><span class="sep">, </span>
+    
+      <a href="/categories/#powershell" class="page__taxonomy-item p-category" rel="tag">PowerShell</a><span class="sep">, </span>
+    
+      <a href="/categories/#wsl2" class="page__taxonomy-item p-category" rel="tag">WSL2</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-02-17T00:00:00+00:00">February 17, 2026</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Backing+up+my+main+WSL2+Linux+session%20http%3A%2F%2Flocalhost%3A4000%2F2026%2F02%2F17%2Fbacking-up-wsl2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2026%2F02%2F17%2Fbacking-up-wsl2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2026/02/17/backing-up-wsl2/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2026/01/05/UsbSerialForAndroid-updates/" class="pagination--pager" title="UsbSerialForAndroid: Recent Updates and Improvements
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2026/01/05/UsbSerialForAndroid-updates/" rel="permalink">UsbSerialForAndroid: Recent Updates and Improvements
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I’ve pushed a new round of updates to UsbSerialForAndroid, the open-source .NET / C# library that provides USB serial support for Android, including .NET MAU...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/11/16/hacking-csproj-user/" rel="permalink">How to force Visual Studio to update the debug device for a MAUI project
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an e...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/04/18/vtt-2-srt/" rel="permalink">Using PowerShell to convert VTT to SRT
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Converting between VTT and SRT
+So I have to convert between VTT and SRT a few times a year. I’m lazy and forgetful so I decided to script the tasks with Powe...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/04/13/adb-stay-on/" rel="permalink">Command for keeping your phone awake while plugged in
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+Usually when I’m writing .NET MAUI code for Android, I use an emulator to test the code. It’s fast and there are fewer things that can go wrong. And most o...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
+    script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>

@@ -2481,6 +2481,10 @@
 <lastmod>2026-01-05T00:00:00+00:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/2026/02/17/backing-up-wsl2/</loc>
+<lastmod>2026-02-17T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/about/</loc>
 </url>
 <url>
@@ -2863,5 +2867,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page124/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page125/</loc>
 </url>
 </urlset>
