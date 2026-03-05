@@ -1,0 +1,866 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Generating a dynamic background on .NET MAUI - Chris Miller’s 5th Blog</title>
+<meta name="description" content="Introduction I’m going to show a way to generate a random background for .NET MAUI ContentPage. It uses Skia to handle the heavy lifting and should work with any version of .NET MAUI. I used .NET 10.  There is a sample repo with the awe inspiring name, DynamicBackground.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
+<meta property="og:title" content="Generating a dynamic background on .NET MAUI">
+<meta property="og:url" content="http://localhost:4000/2026/03/05/dynamicbackground/">
+
+
+  <meta property="og:description" content="Introduction I’m going to show a way to generate a random background for .NET MAUI ContentPage. It uses Skia to handle the heavy lifting and should work with any version of .NET MAUI. I used .NET 10.  There is a sample repo with the awe inspiring name, DynamicBackground.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/robot-painting.jpg">
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="Generating a dynamic background on .NET MAUI">
+  <meta name="twitter:description" content="Introduction I’m going to show a way to generate a random background for .NET MAUI ContentPage. It uses Skia to handle the heavy lifting and should work with any version of .NET MAUI. I used .NET 10.  There is a sample repo with the awe inspiring name, DynamicBackground.">
+  <meta name="twitter:url" content="http://localhost:4000/2026/03/05/dynamicbackground/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/robot-painting.jpg">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2026-03-05T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2026/03/05/dynamicbackground/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 5th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/robot-painting.jpg" alt="Generating a dynamic background on .NET MAUI" class="page__hero-image">
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <span class="nav__sub-title">Links</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="https://bsky.app/profile/anotherlab.bsky.social">BlueSky</a></li>
+            
+              <li><a href="https://app.pluralsight.com/profile/author/christopher-miller">Pluralsight</a></li>
+            
+              <li><a href="https://github.com/anotherlab">GitHub</a></li>
+            
+          </ul>
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Generating a dynamic background on .NET MAUI">
+    <meta itemprop="description" content="IntroductionI’m going to show a way to generate a random background for .NET MAUI ContentPage. It uses Skia to handle the heavy lifting and should work with any version of .NET MAUI. I used .NET 10.  There is a sample repo with the awe inspiring name, DynamicBackground.">
+    <meta itemprop="datePublished" content="2026-03-05T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2026/03/05/dynamicbackground/" itemprop="url">Generating a dynamic background on .NET MAUI
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#introduction">Introduction</a></li><li><a href="#what-we-need-to-do">What we need to do</a></li><li><a href="#skia">Skia</a></li><li><a href="#maui-stuff">MAUI stuff</a></li><li><a href="#seeing-it-in-action">Seeing it in action.</a></li></ul>
+            </nav>
+          </aside>
+        
+        <h1 id="introduction">Introduction</h1>
+<p>I’m going to show a way to generate a random background for .NET MAUI ContentPage. It uses Skia to handle the heavy lifting and should work with any version of .NET MAUI. I used .NET 10.  There is a sample repo with the awe inspiring name, <a href="https://github.com/anotherlab/dynamicbackground">DynamicBackground</a>.</p>
+
+<p>I have an app that has a bunch of controls on the page and I wanted to have something different as the background. I was bored with gradients, so I decided to do some drawing. The actual drawing code was generated by AI, but I did some tweaking here and there.</p>
+
+<h1 id="what-we-need-to-do">What we need to do</h1>
+<p>I used Skia for the drawing. With Skia, I generate a PNG bitmap image using Skia and assign that bitmap to the <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.page.backgroundimagesource"><code class="language-plaintext highlighter-rouge">BackgroundImageSource</code></a> of the ContentPage. That puts the image at the back of the screen and it’s not tied to any layout control.</p>
+
+<p>We’ll start with the default MAUI template. Create a new MAUI app through the IDE of your choice or with <code class="language-plaintext highlighter-rouge">dotnet new maui -n "MyMauiApp"</code> On top of that, I’ll add the drawing code.</p>
+
+<h1 id="skia">Skia</h1>
+<p>We need to install a Skia NuGet package. I used <code class="language-plaintext highlighter-rouge">SkiaSharp.Extended.UI.Maui</code>, that brought enough of Skia to allow the code to work.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install-package</span><span class="w"> </span><span class="nx">SkiaSharp.Extended.UI.Maui</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If you are not familair with <a href="https://skia.org/">Skia</a>, it’s an open source 2D graphics library that is written in C++. <a href="https://github.com/mono/SkiaSharp">SkiaSharp</a> is a set of .NET wrappers for the C++ code. It’s platform independent, so this will work on Android, iOS, and Windows.</p>
+
+<h1 id="maui-stuff">MAUI stuff</h1>
+
+<p>We’ll add the following method. It gets passed a canvas to draw on and struct with the size of the drawing area.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">DrawAbstractShapes</span><span class="p">(</span><span class="n">SKCanvas</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">SKImageInfo</span> <span class="n">info</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Determine how many layers of blur to add</span>
+    <span class="kt">int</span> <span class="n">numShapes</span> <span class="p">=</span> <span class="n">_random</span><span class="p">.</span><span class="nf">Next</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">7</span><span class="p">);</span> <span class="c1">// More shapes = more complexity</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">numShapes</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+    <span class="p">{</span>
+        <span class="c1">// -- 1. Create a random Color for the shape --</span>
+        <span class="c1">// We focus on bright blues, greens, or cyans to stand out from dark background.</span>
+        <span class="c1">// We keep alpha (transparency) low so shapes overlay softly.</span>
+        <span class="kt">byte</span> <span class="n">red</span> <span class="p">=</span> <span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="n">_random</span><span class="p">.</span><span class="nf">Next</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">50</span><span class="p">);</span> <span class="c1">// Keep red low for a blue vibe</span>
+        <span class="kt">byte</span> <span class="n">green</span> <span class="p">=</span> <span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="n">_random</span><span class="p">.</span><span class="nf">Next</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
+        <span class="kt">byte</span> <span class="n">blue</span> <span class="p">=</span> <span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="n">_random</span><span class="p">.</span><span class="nf">Next</span><span class="p">(</span><span class="m">150</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
+        <span class="kt">byte</span> <span class="n">alpha</span> <span class="p">=</span> <span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="n">_random</span><span class="p">.</span><span class="nf">Next</span><span class="p">(</span><span class="m">30</span><span class="p">,</span> <span class="m">80</span><span class="p">);</span> <span class="c1">// 30-80 out of 255 is quite translucent</span>
+
+        <span class="n">SKColor</span> <span class="n">shapeColor</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SKColor</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">alpha</span><span class="p">);</span>
+
+        <span class="c1">// -- 2. Create the blur effect --</span>
+        <span class="c1">// The blur sigma controls how hazy the edge is. High values give that "misty" look.</span>
+        <span class="c1">// We scale it based on the screen size so it looks right on all devices.</span>
+        <span class="kt">float</span> <span class="n">baseBlurSigma</span> <span class="p">=</span> <span class="n">Math</span><span class="p">.</span><span class="nf">Max</span><span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span> <span class="n">info</span><span class="p">.</span><span class="n">Height</span><span class="p">)</span> <span class="p">/</span> <span class="m">10f</span><span class="p">;</span> <span class="c1">// Scale factor</span>
+        <span class="kt">float</span> <span class="n">blurSigma</span> <span class="p">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">_random</span><span class="p">.</span><span class="nf">NextDouble</span><span class="p">()</span> <span class="p">*</span> <span class="n">baseBlurSigma</span> <span class="p">+</span> <span class="p">(</span><span class="n">baseBlurSigma</span> <span class="p">*</span> <span class="m">0.5f</span><span class="p">);</span>
+
+        <span class="c1">// Use an Outer blur to fade the edge of the shape completely</span>
+        <span class="k">using</span> <span class="p">(</span><span class="n">SKPaint</span> <span class="n">blurPaint</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SKPaint</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">blurPaint</span><span class="p">.</span><span class="n">IsAntialias</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+            <span class="n">blurPaint</span><span class="p">.</span><span class="n">Color</span> <span class="p">=</span> <span class="n">shapeColor</span><span class="p">;</span>
+            <span class="n">blurPaint</span><span class="p">.</span><span class="n">Style</span> <span class="p">=</span> <span class="n">SKPaintStyle</span><span class="p">.</span><span class="n">Fill</span><span class="p">;</span>
+
+            <span class="c1">// This is the magic line that creates the softness</span>
+            <span class="n">blurPaint</span><span class="p">.</span><span class="n">MaskFilter</span> <span class="p">=</span> <span class="n">SKMaskFilter</span><span class="p">.</span><span class="nf">CreateBlur</span><span class="p">(</span><span class="n">SKBlurStyle</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span> <span class="n">blurSigma</span><span class="p">);</span>
+
+            <span class="c1">// -- 3. Define the Shape Geometry --</span>
+            <span class="c1">// We draw large, soft, overlapping circles/ovals.</span>
+            <span class="kt">float</span> <span class="n">maxWidth</span> <span class="p">=</span> <span class="n">info</span><span class="p">.</span><span class="n">Width</span> <span class="p">*</span> <span class="m">1.5f</span><span class="p">;</span> <span class="c1">// Can go off screen</span>
+            <span class="kt">float</span> <span class="n">maxHeight</span> <span class="p">=</span> <span class="n">info</span><span class="p">.</span><span class="n">Height</span> <span class="p">*</span> <span class="m">1.5f</span><span class="p">;</span>
+
+            <span class="kt">float</span> <span class="n">radiusX</span> <span class="p">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">_random</span><span class="p">.</span><span class="nf">NextDouble</span><span class="p">()</span> <span class="p">*</span> <span class="p">(</span><span class="n">maxWidth</span> <span class="p">*</span> <span class="m">0.6f</span><span class="p">)</span> <span class="p">+</span> <span class="p">(</span><span class="n">maxWidth</span> <span class="p">*</span> <span class="m">0.2f</span><span class="p">);</span>
+            <span class="kt">float</span> <span class="n">radiusY</span> <span class="p">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">_random</span><span class="p">.</span><span class="nf">NextDouble</span><span class="p">()</span> <span class="p">*</span> <span class="p">(</span><span class="n">maxHeight</span> <span class="p">*</span> <span class="m">0.6f</span><span class="p">)</span> <span class="p">+</span> <span class="p">(</span><span class="n">maxHeight</span> <span class="p">*</span> <span class="m">0.2f</span><span class="p">);</span>
+
+            <span class="c1">// Random position, often near the center or edges to overlay</span>
+            <span class="kt">float</span> <span class="n">centerX</span> <span class="p">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">_random</span><span class="p">.</span><span class="nf">NextDouble</span><span class="p">()</span> <span class="p">*</span> <span class="n">info</span><span class="p">.</span><span class="n">Width</span><span class="p">;</span>
+            <span class="kt">float</span> <span class="n">centerY</span> <span class="p">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">_random</span><span class="p">.</span><span class="nf">NextDouble</span><span class="p">()</span> <span class="p">*</span> <span class="n">info</span><span class="p">.</span><span class="n">Height</span><span class="p">;</span>
+
+            <span class="n">SKRect</span> <span class="n">ovalRect</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SKRect</span><span class="p">(</span>
+                <span class="n">centerX</span> <span class="p">-</span> <span class="n">radiusX</span><span class="p">,</span>
+                <span class="n">centerY</span> <span class="p">-</span> <span class="n">radiusY</span><span class="p">,</span>
+                <span class="n">centerX</span> <span class="p">+</span> <span class="n">radiusX</span><span class="p">,</span>
+                <span class="n">centerY</span> <span class="p">+</span> <span class="n">radiusY</span>
+            <span class="p">);</span>
+
+            <span class="c1">// -- 4. Draw the blurred shape onto the canvas --</span>
+            <span class="n">canvas</span><span class="p">.</span><span class="nf">DrawOval</span><span class="p">(</span><span class="n">ovalRect</span><span class="p">,</span> <span class="n">blurPaint</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The code is pretty well commented. We generate a random number of shapes, with some random colors, and draw them on a canvas with some blurring.</p>
+
+<p>The canvas and image dimensions come from a method named <code class="language-plaintext highlighter-rouge">GenerateBackgroundImage()</code>. And it does exactly what it says on the tin.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">ImageSource</span> <span class="nf">GenerateBackgroundImage</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 1. Get dimensions (defaulting to 1080x2400 if the page isn't layouted yet)</span>
+    <span class="kt">int</span> <span class="n">width</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="k">this</span><span class="p">.</span><span class="n">Width</span> <span class="p">&gt;</span> <span class="m">0</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="n">Width</span> <span class="p">:</span> <span class="m">1080</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">height</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="k">this</span><span class="p">.</span><span class="n">Height</span> <span class="p">&gt;</span> <span class="m">0</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="n">Height</span> <span class="p">:</span> <span class="m">2400</span><span class="p">);</span>
+
+    <span class="c1">// 2. Create the info struct (No 'using' here!)</span>
+    <span class="n">SKImageInfo</span> <span class="n">info</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SKImageInfo</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+
+    <span class="c1">// 3. Create an off-screen surface (This DOES need 'using')</span>
+    <span class="k">using</span> <span class="p">(</span><span class="n">SKSurface</span> <span class="n">surface</span> <span class="p">=</span> <span class="n">SKSurface</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">info</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">SKCanvas</span> <span class="n">canvas</span> <span class="p">=</span> <span class="n">surface</span><span class="p">.</span><span class="n">Canvas</span><span class="p">;</span>
+
+        <span class="c1">// --- DRAWING LOGIC ---</span>
+        <span class="n">canvas</span><span class="p">.</span><span class="nf">Clear</span><span class="p">(</span><span class="n">SKColors</span><span class="p">.</span><span class="n">Black</span><span class="p">);</span>
+        <span class="nf">DrawAbstractShapes</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">info</span><span class="p">);</span> <span class="c1">// Use the logic from our previous step</span>
+                                            <span class="c1">// ---------------------</span>
+
+        <span class="c1">// 4. Snapshot the surface into an image and encode to PNG</span>
+        <span class="k">using</span> <span class="p">(</span><span class="n">SKImage</span> <span class="n">image</span> <span class="p">=</span> <span class="n">surface</span><span class="p">.</span><span class="nf">Snapshot</span><span class="p">())</span>
+        <span class="k">using</span> <span class="p">(</span><span class="n">SKData</span> <span class="n">data</span> <span class="p">=</span> <span class="n">image</span><span class="p">.</span><span class="nf">Encode</span><span class="p">(</span><span class="n">SKEncodedImageFormat</span><span class="p">.</span><span class="n">Png</span><span class="p">,</span> <span class="m">100</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="c1">// 5. Convert to a stream for MAUI</span>
+            <span class="kt">var</span> <span class="n">ms</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MemoryStream</span><span class="p">();</span>
+            <span class="n">data</span><span class="p">.</span><span class="nf">SaveTo</span><span class="p">(</span><span class="n">ms</span><span class="p">);</span>
+            <span class="n">ms</span><span class="p">.</span><span class="nf">Seek</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">SeekOrigin</span><span class="p">.</span><span class="n">Begin</span><span class="p">);</span>
+
+            <span class="k">return</span> <span class="n">ImageSource</span><span class="p">.</span><span class="nf">FromStream</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="n">ms</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>We create a <a href="https://learn.microsoft.com/en-us/dotnet/api/skiasharp.sksurface"><code class="language-plaintext highlighter-rouge">SKSurface</code></a> instance to contain our drawing canvas.  We create a <a href="https://learn.microsoft.com/en-us/dotnet/api/skiasharp.skimageinfo"><code class="language-plaintext highlighter-rouge">SKImageInfo</code></a> object to define the size of the canvas.  We call <code class="language-plaintext highlighter-rouge">DrawAbstractShapes()</code> to draw a randomized bunch of shapes.</p>
+
+<p>Then we get an <a href="https://learn.microsoft.com/en-us/dotnet/api/skiasharp.skimage"><code class="language-plaintext highlighter-rouge">SKImage</code></a> from the surface, encode it as a PNG image in a memorystream, and finally return it as an ImageSource.</p>
+
+<p>To execute it at runtime, we use the <a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.visualelement.onsizeallocated"><code class="language-plaintext highlighter-rouge">OnSizeAllocated()</code></a> method of the page. That will fire any time the page size changes or the orientation changes.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnSizeAllocated</span><span class="p">(</span><span class="kt">double</span> <span class="n">width</span><span class="p">,</span> <span class="kt">double</span> <span class="n">height</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">base</span><span class="p">.</span><span class="nf">OnSizeAllocated</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+
+    <span class="c1">// This does the magic</span>
+    <span class="k">this</span><span class="p">.</span><span class="n">BackgroundImageSource</span> <span class="p">=</span> <span class="nf">GenerateBackgroundImage</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="seeing-it-in-action">Seeing it in action.</h1>
+<p>I ran the app as Windows app and took a couple of screenshots</p>
+
+<p><img src="/assets/images/202603-wpf-1.jpg" alt="Sample 1" title="Sample 1" />
+<img src="/assets/images/202603-wpf-2.jpg" alt="Sample 2" title="Sample 2" /></p>
+
+<p>To change the image, all I did was resize the image. You don’t see a dramatic difference between the image renderings. That’s totally, it’s just supposed to be the background.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#graphics" class="page__taxonomy-item p-category" rel="tag">graphics</a><span class="sep">, </span>
+    
+      <a href="/tags/#maui" class="page__taxonomy-item p-category" rel="tag">maui</a><span class="sep">, </span>
+    
+      <a href="/tags/#skia" class="page__taxonomy-item p-category" rel="tag">skia</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#coding" class="page__taxonomy-item p-category" rel="tag">coding</a><span class="sep">, </span>
+    
+      <a href="/categories/#dotnet" class="page__taxonomy-item p-category" rel="tag">dotnet</a><span class="sep">, </span>
+    
+      <a href="/categories/#maui" class="page__taxonomy-item p-category" rel="tag">maui</a><span class="sep">, </span>
+    
+      <a href="/categories/#skia" class="page__taxonomy-item p-category" rel="tag">skia</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-03-05T00:00:00+00:00">March 5, 2026</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=Generating+a+dynamic+background+on+.NET+MAUI%20http%3A%2F%2Flocalhost%3A4000%2F2026%2F03%2F05%2Fdynamicbackground%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2026%2F03%2F05%2Fdynamicbackground%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2026/03/05/dynamicbackground/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2026/02/17/backing-up-wsl2/" class="pagination--pager" title="Backing up my main WSL2 Linux session
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2026/02/17/backing-up-wsl2/" rel="permalink">Backing up my main WSL2 Linux session
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Backing up my main Linux session
+TL;DR: I wrote a PowerShell script named backup-wsl2.ps1 to backup a Linux distribution.
+You can run like this:
+.\backup-wsl...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2026/01/05/UsbSerialForAndroid-updates/" rel="permalink">UsbSerialForAndroid: Recent Updates and Improvements
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I’ve pushed a new round of updates to UsbSerialForAndroid, the open-source .NET / C# library that provides USB serial support for Android, including .NET MAU...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/11/16/hacking-csproj-user/" rel="permalink">How to force Visual Studio to update the debug device for a MAUI project
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">When I’m writing code for .NET MAUI in Visual Studio, I often use actual devices. I’m working on a app that uses BLE and you really can’t test that with an e...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2025/04/18/vtt-2-srt/" rel="permalink">Using PowerShell to convert VTT to SRT
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Converting between VTT and SRT
+So I have to convert between VTT and SRT a few times a year. I’m lazy and forgetful so I decided to script the tasks with Powe...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
+    script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>

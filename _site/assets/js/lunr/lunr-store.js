@@ -3724,4 +3724,10 @@ var store = [{
         "tags": ["WSL2","Ubuntu","PowerShell","Backups","Linux"],
         "url": "/2026/02/17/backing-up-wsl2/",
         "teaser": null
+      },{
+        "title": "Generating a dynamic background on .NET MAUI",
+        "excerpt":"Introduction I’m going to show a way to generate a random background for .NET MAUI ContentPage. It uses Skia to handle the heavy lifting and should work with any version of .NET MAUI. I used .NET 10. There is a sample repo with the awe inspiring name, DynamicBackground. I have...","categories": ["coding","dotnet","maui","skia"],
+        "tags": ["skia","maui","graphics"],
+        "url": "/2026/03/05/dynamicbackground/",
+        "teaser": null
       }]
