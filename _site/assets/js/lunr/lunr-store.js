@@ -3730,4 +3730,10 @@ var store = [{
         "tags": ["skia","maui","graphics"],
         "url": "/2026/03/05/dynamicbackground/",
         "teaser": null
+      },{
+        "title": "Using the 3-2-1 strategy for digital backups",
+        "excerpt":"Introduction I take hundreds of photos every month on my camera and phone, and over the years I’ve learned the importance of reliable photo backup strategies. In this guide, I’ll cover local storage, NAS devices, cloud storage, and the 3-2-1 backup rule to make sure your pictures are safe no...","categories": ["life","backups"],
+        "tags": ["backups","photos","cloud","nas","qnap"],
+        "url": "/2026/03/10/backup/",
+        "teaser": null
       }]
