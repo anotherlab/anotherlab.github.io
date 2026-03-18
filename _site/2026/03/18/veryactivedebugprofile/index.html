@@ -1,0 +1,1369 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>When Visual Studio Forgets Your Phone: Building an Automated Solution - Chris Miller’s 5th Blog</title>
+<meta name="description" content="Introduction This is how I resolved one of my pet peeves with Visual Studio. When I am working on a .NET MAUI application, when I unplug my phone, Visual Studio changes debug target to the default emulator. When I plug the phone back in, it doesn’t set it back. That drives me crazy. So I over-engineered a solution.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Chris Miller's 5th Blog">
+<meta property="og:title" content="When Visual Studio Forgets Your Phone: Building an Automated Solution">
+<meta property="og:url" content="http://localhost:4000/2026/03/18/veryactivedebugprofile/">
+
+
+  <meta property="og:description" content="Introduction This is how I resolved one of my pet peeves with Visual Studio. When I am working on a .NET MAUI application, when I unplug my phone, Visual Studio changes debug target to the default emulator. When I plug the phone back in, it doesn’t set it back. That drives me crazy. So I over-engineered a solution.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/robot-connecting-phone.jpg">
+
+
+
+  <meta name="twitter:site" content="@anotherlab">
+  <meta name="twitter:title" content="When Visual Studio Forgets Your Phone: Building an Automated Solution">
+  <meta name="twitter:description" content="Introduction This is how I resolved one of my pet peeves with Visual Studio. When I am working on a .NET MAUI application, when I unplug my phone, Visual Studio changes debug target to the default emulator. When I plug the phone back in, it doesn’t set it back. That drives me crazy. So I over-engineered a solution.">
+  <meta name="twitter:url" content="http://localhost:4000/2026/03/18/veryactivedebugprofile/">
+
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/robot-connecting-phone.jpg">
+  
+
+  
+
+
+
+  <meta property="article:published_time" content="2026-03-18T00:00:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/2026/03/18/veryactivedebugprofile/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Chris Miller's 5th Blog Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Chris Miller's 5th Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=" background-image: url('');"
+>
+  
+    <img src="/assets/images/robot-connecting-phone.jpg" alt="When Visual Studio Forgets Your Phone: Building an Automated Solution" class="page__hero-image">
+  
+  
+</div>
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
+    </h3>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      <nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      
+      
+        <li>
+          
+            <span class="nav__sub-title">Links</span>
+          
+
+          
+          <ul>
+            
+              <li><a href="https://bsky.app/profile/anotherlab.bsky.social">BlueSky</a></li>
+            
+              <li><a href="https://app.pluralsight.com/profile/author/christopher-miller">Pluralsight</a></li>
+            
+              <li><a href="https://github.com/anotherlab">GitHub</a></li>
+            
+          </ul>
+          
+        </li>
+      
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="When Visual Studio Forgets Your Phone: Building an Automated Solution">
+    <meta itemprop="description" content="IntroductionThis is how I resolved one of my pet peeves with Visual Studio. When I am working on a .NET MAUI application, when I unplug my phone, Visual Studio changes debug target to the default emulator. When I plug the phone back in, it doesn’t set it back. That drives me crazy. So I over-engineered a solution.">
+    <meta itemprop="datePublished" content="2026-03-18T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/2026/03/18/veryactivedebugprofile/" itemprop="url">When Visual Studio Forgets Your Phone: Building an Automated Solution
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          17 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#introduction">Introduction</a><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#what-needs-to-get-updated">What needs to get updated.</a></li></ul></li><li><a href="#detecting-when-my-phone-was-plugged-in-or-removed">Detecting when my phone was plugged in or removed</a><ul><li><a href="#registering-for-device-events">Registering for device events</a></li><li><a href="#getting-the-device-path-of-the-connected-device">Getting the Device Path of the connected device</a></li><li><a href="#identifying-the-android-device">Identifying the Android device</a><ul><li><a href="#using-powershell-to-test-wmi-queries">Using PowerShell to test WMI queries</a></li></ul></li></ul></li><li><a href="#finding-the-open-intances-of-visual-studio">Finding the open intances of Visual Studio</a><ul><li><a href="#updating-the-user-project-file">Updating the user project file</a></li><li><a href="#performance-concerns">Performance concerns</a></li></ul></li><li><a href="#wpf">WPF</a><ul><li><a href="#weakreferencemessenger">WeakReferenceMessenger</a></li><li><a href="#let-there-be-toast">Let there be Toast</a></li><li><a href="#winui">WinUI</a></li></ul></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#is-this-overkill">Is this overkill?</a></li><li><a href="#future-improvments">Future improvments</a></li></ul>
+            </nav>
+          </aside>
+        
+        <h1 id="introduction">Introduction</h1>
+<p>This is how I resolved one of my pet peeves with Visual Studio. When I am working on a .NET MAUI application, when I unplug my phone, Visual Studio changes debug target to the default emulator. When I plug the phone back in, it doesn’t set it back. That drives me crazy. So I over-engineered a solution.</p>
+
+<p>In a previous episode, I wrote a <a href="/2025/11/16/hacking-csproj-user/">PowerShell script</a>, to set it back. That had some limitations.</p>
+
+<ol>
+  <li>I had to remember to run the script</li>
+  <li>I needed to pass in the of the user project file</li>
+  <li>I needed to pass in the name of the device.</li>
+</ol>
+
+<p>The last one doesn’t change much. But I did get a new phone last week, so it does change. The first two were the pain points.</p>
+
+<p>So I decided to go for some premium yak shaving and decided to write an app to do this for me. This is what it looks like when it’s running.</p>
+
+<p><img src="https://github.com/anotherlab/VeryActiveDebugProfile/raw/main/Images/VeryActiveDebugProfile.gif" alt="Very Active Debug Profile" /></p>
+
+<p>You can find the repo for the source code at <a href="https://github.com/anotherlab/VeryActiveDebugProfile/">VeryActiveDebugProfile</a> on GitHub.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ol>
+  <li>Windows 10 or 11.</li>
+  <li>Visual Studio 2022 or 2026. I am using VS 2026. Rider doesn’t need have this problem.</li>
+  <li>The MAUI workloads for .NET 10. The code should work with .NET 8 or 9, but it may need some minor changes.</li>
+</ol>
+
+<p>A small number of nuget packages were used.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package Name</th>
+      <th>What It’s Used For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CommunityToolkit.Mvvm</td>
+      <td>Lightweight MVVM framework for .NET apps; provides observable objects, commands, and messaging.</td>
+    </tr>
+    <tr>
+      <td>EnvDTE</td>
+      <td>Visual Studio automation model; used to interact with and control the Visual Studio IDE (extensions, macros, tooling).</td>
+    </tr>
+    <tr>
+      <td>Hardcodet.NotifyIcon.Wpf</td>
+      <td>Adds system tray (notification area) icon support to WPF apps, including context menus and balloon tips.</td>
+    </tr>
+    <tr>
+      <td>Microsoft.Toolkit.Uwp.Notifications</td>
+      <td>Enables sending Windows toast notifications from desktop apps (WPF, WinForms, console).</td>
+    </tr>
+    <tr>
+      <td>System.Management</td>
+      <td>Provides access to Windows Management Instrumentation (WMI) for querying system info like hardware, processes, and services.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="language-plaintext highlighter-rouge">Hardcodet.NotifyIcon.Wpf</code> is part of some code that is not functional at this time.</p>
+
+<h2 id="what-needs-to-get-updated">What needs to get updated.</h2>
+<p>In Visual Studio, the selection of the current device for a MAUI project is stored in the user project file. This is a file with the same name of the csproj project file, but with “.user” tacked on the end.</p>
+
+<p>Here is a sample user project file that is using my Samsung phone for debugging:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;IsFirstTimeProjectOpen&gt;</span>False<span class="nt">&lt;/IsFirstTimeProjectOpen&gt;</span>
+    <span class="nt">&lt;ActiveDebugFramework&gt;</span>net10.0-android<span class="nt">&lt;/ActiveDebugFramework&gt;</span>
+    <span class="nt">&lt;ActiveDebugProfile&gt;</span>Samsung SM-S948U (Android 16.0 - API 36)<span class="nt">&lt;/ActiveDebugProfile&gt;</span>
+    <span class="nt">&lt;SelectedPlatformGroup&gt;</span>PhysicalDevice<span class="nt">&lt;/SelectedPlatformGroup&gt;</span>
+    <span class="nt">&lt;DefaultDevice&gt;</span>pixel_9_-_api_36<span class="nt">&lt;/DefaultDevice&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></div>
+<p>If I disconnect my phone, on my machine Visual Studio detects that the physical device is gone and switches over to an emulator image</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;IsFirstTimeProjectOpen&gt;</span>False<span class="nt">&lt;/IsFirstTimeProjectOpen&gt;</span>
+    <span class="nt">&lt;ActiveDebugFramework&gt;</span>net10.0-android<span class="nt">&lt;/ActiveDebugFramework&gt;</span>
+    <span class="nt">&lt;ActiveDebugProfile&gt;</span>Pixel 9 - API 36 (Android 16.0 - API 36)<span class="nt">&lt;/ActiveDebugProfile&gt;</span>
+    <span class="nt">&lt;SelectedPlatformGroup&gt;</span>Emulator<span class="nt">&lt;/SelectedPlatformGroup&gt;</span>
+    <span class="nt">&lt;DefaultDevice&gt;</span>pixel_9_-_api_36<span class="nt">&lt;/DefaultDevice&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">ActiveDebugProfile</code> changes from “Samsung SM-S948U (Android 16.0 - API 36)” to “Pixel 9 - API 36 (Android 16.0 - API 36)”. <code class="language-plaintext highlighter-rouge">SelectedPlatformGroup</code> changes from “PhysicalDevice” to “Emulator”, but we can ignore that.</p>
+
+<p>Because this app will update <code class="language-plaintext highlighter-rouge">ActiveDebugProfile</code>, I named it “VeryActiveDebugProfile”. Not very exciting, but the name on the tin tells you what is inside.  For short, I’ll call it VADP</p>
+
+<h1 id="detecting-when-my-phone-was-plugged-in-or-removed">Detecting when my phone was plugged in or removed</h1>
+
+<p>This is where code starts.</p>
+
+<h2 id="registering-for-device-events">Registering for device events</h2>
+
+<p>We start off by detecting USB device connect and disconnect events.  I’ll walk through some of the code.  It’s pretty well commented, but I’ll show where the heavy lifting was done.</p>
+
+<p>Using WPF’s Windows Interop, we register an event that will be called when a USB device is connected or disconnected. That event gets wired up using OnSourceInitialized like this. In a WPF app, the OnSourceInitialized event is the first time that you can get access to the handle of the WPF window. We need that handle to register for Windows events. We also register for USB notifications to ensure that we get connection and disconnection notices.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnSourceInitialized</span><span class="p">(</span><span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">base</span><span class="p">.</span><span class="nf">OnSourceInitialized</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+
+    <span class="c1">// Get the window handle and add a hook to listen for Windows messages</span>
+    <span class="n">HwndSource</span> <span class="n">source</span> <span class="p">=</span> <span class="n">HwndSource</span><span class="p">.</span><span class="nf">FromHwnd</span><span class="p">(</span><span class="k">new</span> <span class="nf">WindowInteropHelper</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="n">Handle</span><span class="p">);</span>
+    <span class="n">source</span><span class="p">.</span><span class="nf">AddHook</span><span class="p">(</span><span class="n">WndProc</span><span class="p">);</span>
+
+    <span class="c1">// Register for USB device notifications</span>
+    <span class="nf">RegisterForDeviceNotifications</span><span class="p">(</span><span class="n">source</span><span class="p">.</span><span class="n">Handle</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The WndProc method is defined as</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">IntPtr</span> <span class="nf">WndProc</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">hwnd</span><span class="p">,</span> <span class="kt">int</span> <span class="n">msg</span><span class="p">,</span> <span class="n">IntPtr</span> <span class="n">wParam</span><span class="p">,</span> <span class="n">IntPtr</span> <span class="n">lParam</span><span class="p">,</span> <span class="k">ref</span> <span class="kt">bool</span> <span class="n">handled</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// If a USB device is connected or disconnected, wParam will indicate the event type (arrival or removal)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">msg</span> <span class="p">==</span> <span class="n">WM_DEVICECHANGE</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">eventType</span> <span class="p">=</span> <span class="n">wParam</span><span class="p">.</span><span class="nf">ToInt32</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">eventType</span> <span class="p">==</span> <span class="n">DBT_DEVICEARRIVAL</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// When a device is connected, lParam points to a structure with details about the device.</span>
+            <span class="c1">// We can extract the device path from it.</span>
+            <span class="kt">string</span> <span class="n">devicePath</span> <span class="p">=</span> <span class="nf">GetDeviceInterfacePath</span><span class="p">(</span><span class="n">lParam</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">devicePath</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="c1">// Notify the UI about the new device.  Not all of them will be Android devices, but it's useful to see all device connections in the log.</span>
+                <span class="nf">SendMessage</span><span class="p">(</span><span class="s">$"Device connected: </span><span class="p">{</span><span class="n">devicePath</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+                <span class="kt">var</span> <span class="n">vid</span> <span class="p">=</span> <span class="n">PnpHelper</span><span class="p">.</span><span class="nf">GetVendorAndProductfromPath</span><span class="p">(</span><span class="n">devicePath</span><span class="p">);</span>
+
+                <span class="c1">// Next check to see if we have an Android device.</span>
+                <span class="kt">var</span> <span class="n">manufacturer</span> <span class="p">=</span> <span class="n">AndroidDeviceHelper</span><span class="p">.</span><span class="nf">GetManufacturerFromHardwareId</span><span class="p">(</span><span class="n">vid</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">manufacturer</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">_connectedAndroidPaths</span><span class="p">[</span><span class="n">devicePath</span><span class="p">]</span> <span class="p">=</span> <span class="n">vid</span><span class="p">;</span>
+                    <span class="nf">SendMessage</span><span class="p">(</span><span class="s">$"</span><span class="p">{</span><span class="n">manufacturer</span><span class="p">}</span><span class="s"> device detected "</span><span class="p">);</span>
+
+                    <span class="c1">// Add a slight delay before updating the status to ensure the device is fully recognized by the system and PnP queries will succeed.</span>
+                    <span class="c1">// This can help with cases where the device information isn't immediately available.</span>
+                    <span class="n">Dispatcher</span><span class="p">.</span><span class="nf">InvokeAsync</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                        <span class="k">await</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Tasks</span><span class="p">.</span><span class="n">Task</span><span class="p">.</span><span class="nf">Delay</span><span class="p">(</span><span class="m">100</span><span class="p">);</span>
+                        <span class="nf">UpdateAndroidStatus</span><span class="p">(</span><span class="n">vid</span><span class="p">);</span>
+                    <span class="p">});</span>
+
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="c1">// no device path means we can't identify the device, but we know something was connected</span>
+                <span class="c1">// It wont be an Android device and we can ignore it</span>
+                <span class="k">return</span> <span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">eventType</span> <span class="p">==</span> <span class="n">DBT_DEVICEREMOVECOMPLETE</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">string</span> <span class="n">devicePath</span> <span class="p">=</span> <span class="nf">GetDeviceInterfacePath</span><span class="p">(</span><span class="n">lParam</span><span class="p">);</span>
+
+            <span class="c1">// We only need to update the status if an Android device was removed, so we check</span>
+            <span class="c1">// if the device path is in our list of connected Android devices. If it is, we</span>
+            <span class="c1">// remove it and update the status accordingly.</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">devicePath</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">_connectedAndroidPaths</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="n">devicePath</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="nf">SendMessage</span><span class="p">(</span><span class="s">$"Device disconnected: </span><span class="p">{</span><span class="n">devicePath</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">_connectedAndroidPaths</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="nf">UpdateAndroidStatus</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="nf">UpdateAndroidStatus</span><span class="p">(</span><span class="n">_connectedAndroidPaths</span><span class="p">.</span><span class="n">Values</span><span class="p">.</span><span class="nf">Last</span><span class="p">());</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The RegisterForDeviceNotifications method is what tells Windows that we want to receive the connection events</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">RegisterForDeviceNotifications</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">windowHandle</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">filterUsb</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DEV_BROADCAST_DEVICEINTERFACE</span>
+    <span class="p">{</span>
+        <span class="n">dbcc_size</span> <span class="p">=</span> <span class="n">Marshal</span><span class="p">.</span><span class="n">SizeOf</span><span class="p">&lt;</span><span class="n">DEV_BROADCAST_DEVICEINTERFACE</span><span class="p">&gt;(),</span>
+        <span class="n">dbcc_devicetype</span> <span class="p">=</span> <span class="n">DBT_DEVTYP_DEVICEINTERFACE</span><span class="p">,</span>
+        <span class="n">dbcc_reserved</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
+        <span class="n">dbcc_classguid</span> <span class="p">=</span> <span class="n">GUID_DEVINTERFACE_USB_DEVICE</span><span class="p">,</span>
+        <span class="n">dbcc_name</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span>
+    <span class="p">};</span>
+
+    <span class="n">IntPtr</span> <span class="n">bufferUsb</span> <span class="p">=</span> <span class="n">Marshal</span><span class="p">.</span><span class="nf">AllocHGlobal</span><span class="p">(</span><span class="n">filterUsb</span><span class="p">.</span><span class="n">dbcc_size</span><span class="p">);</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="n">Marshal</span><span class="p">.</span><span class="nf">StructureToPtr</span><span class="p">(</span><span class="n">filterUsb</span><span class="p">,</span> <span class="n">bufferUsb</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+        <span class="n">_deviceNotifyHandle</span> <span class="p">=</span> <span class="n">NativeMethods</span><span class="p">.</span><span class="nf">RegisterDeviceNotification</span><span class="p">(</span><span class="n">windowHandle</span><span class="p">,</span> <span class="n">bufferUsb</span><span class="p">,</span> <span class="n">DEVICE_NOTIFY_WINDOW_HANDLE</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_deviceNotifyHandle</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">_deviceNotifyHandle</span><span class="p">.</span><span class="n">IsInvalid</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">SendMessage</span><span class="p">(</span><span class="s">"Failed to register for USB device notifications"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">finally</span>
+    <span class="p">{</span>
+        <span class="n">Marshal</span><span class="p">.</span><span class="nf">FreeHGlobal</span><span class="p">(</span><span class="n">bufferUsb</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>You’ll see a call to <code class="language-plaintext highlighter-rouge">NativeMethods.RegisterDeviceNotification()</code>. That’s a wrapper for the P/Invoke methods.  P/Invoke or Platform Invoke is the way that managed code like C# can call unmanaged code.  That wrapper looks like this</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">SafeDeviceNotificationHandle</span> <span class="p">:</span> <span class="n">SafeHandleZeroOrMinusOneIsInvalid</span>
+<span class="p">{</span>
+    <span class="c1">// The constructor must be public for the P/Invoke marshaller</span>
+    <span class="k">public</span> <span class="nf">SafeDeviceNotificationHandle</span><span class="p">()</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="k">true</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">override</span> <span class="kt">bool</span> <span class="nf">ReleaseHandle</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// This is called automatically by the GC/Finalizer</span>
+        <span class="k">return</span> <span class="n">NativeMethods</span><span class="p">.</span><span class="nf">UnregisterDeviceNotification</span><span class="p">(</span><span class="n">handle</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">static</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">NativeMethods</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="nf">StructLayout</span><span class="p">(</span><span class="n">LayoutKind</span><span class="p">.</span><span class="n">Sequential</span><span class="p">)]</span>
+    <span class="k">internal</span> <span class="k">struct</span> <span class="nc">RECT</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">Left</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">Top</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">Right</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">Bottom</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">internal</span> <span class="k">delegate</span> <span class="kt">bool</span> <span class="nf">MonitorEnumProc</span><span class="p">(</span>
+        <span class="n">IntPtr</span> <span class="n">hMonitor</span><span class="p">,</span>
+        <span class="n">IntPtr</span> <span class="n">hdcMonitor</span><span class="p">,</span>
+        <span class="k">ref</span> <span class="n">RECT</span> <span class="n">lprcMonitor</span><span class="p">,</span>
+        <span class="n">IntPtr</span> <span class="n">dwData</span><span class="p">);</span>
+
+    <span class="p">[</span><span class="nf">LibraryImport</span><span class="p">(</span><span class="s">"user32.dll"</span><span class="p">,</span> <span class="n">EntryPoint</span> <span class="p">=</span> <span class="s">"RegisterDeviceNotificationW"</span><span class="p">,</span> <span class="n">SetLastError</span> <span class="p">=</span> <span class="k">true</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">partial</span> <span class="n">SafeDeviceNotificationHandle</span> <span class="nf">RegisterDeviceNotification</span><span class="p">(</span>
+        <span class="n">IntPtr</span> <span class="n">hRecipient</span><span class="p">,</span>
+        <span class="n">IntPtr</span> <span class="n">notificationFilter</span><span class="p">,</span>
+        <span class="kt">uint</span> <span class="n">flags</span><span class="p">);</span>
+
+    <span class="c1">// Unregister is usually fine, but it's good practice to be explicit</span>
+    <span class="p">[</span><span class="nf">LibraryImport</span><span class="p">(</span><span class="s">"user32.dll"</span><span class="p">,</span> <span class="n">EntryPoint</span> <span class="p">=</span> <span class="s">"UnregisterDeviceNotification"</span><span class="p">,</span> <span class="n">SetLastError</span> <span class="p">=</span> <span class="k">true</span><span class="p">)]</span>
+    <span class="p">[</span><span class="k">return</span><span class="p">:</span> <span class="nf">MarshalAs</span><span class="p">(</span><span class="n">UnmanagedType</span><span class="p">.</span><span class="n">Bool</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">partial</span> <span class="kt">bool</span> <span class="nf">UnregisterDeviceNotification</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">handle</span><span class="p">);</span>
+
+    <span class="p">[</span><span class="nf">LibraryImport</span><span class="p">(</span><span class="s">"user32.dll"</span><span class="p">,</span> <span class="n">EntryPoint</span> <span class="p">=</span> <span class="s">"EnumDisplayMonitors"</span><span class="p">)]</span>
+    <span class="p">[</span><span class="k">return</span><span class="p">:</span> <span class="nf">MarshalAs</span><span class="p">(</span><span class="n">UnmanagedType</span><span class="p">.</span><span class="n">Bool</span><span class="p">)]</span>
+    <span class="k">internal</span> <span class="k">static</span> <span class="k">partial</span> <span class="kt">bool</span> <span class="nf">EnumDisplayMonitors</span><span class="p">(</span>
+        <span class="n">IntPtr</span> <span class="n">hdc</span><span class="p">,</span>
+        <span class="n">IntPtr</span> <span class="n">lprcClip</span><span class="p">,</span>
+        <span class="n">MonitorEnumProc</span> <span class="n">lpfnEnum</span><span class="p">,</span>
+        <span class="n">IntPtr</span> <span class="n">dwData</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The old way to call unamanaged code was with <code class="language-plaintext highlighter-rouge">DllImport</code>.  It’s been around since the dawn of .NET.  It uses runtime marshalling to manage the call to the unmanaged functions. This is done at runtime and uses reflection to generate the code.</p>
+
+<p>Starting in .NET 7, we gained <code class="language-plaintext highlighter-rouge">LibraryImport</code>. The P/Invoke code is generated at compile time. This is much more efficient. The <code class="language-plaintext highlighter-rouge">SafeDeviceNotificationHandle</code> class provides for automatic release of the P/Invoke method, which makes the code a little cleaner.</p>
+
+<h2 id="getting-the-device-path-of-the-connected-device">Getting the Device Path of the connected device</h2>
+
+<p>In <code class="language-plaintext highlighter-rouge">WndProc()</code>, we have this code</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">eventType</span> <span class="p">==</span> <span class="n">DBT_DEVICEARRIVAL</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// When a device is connected, lParam points to a structure with details about the device.</span>
+    <span class="c1">// We can extract the device path from it.</span>
+    <span class="kt">string</span> <span class="n">devicePath</span> <span class="p">=</span> <span class="nf">GetDeviceInterfacePath</span><span class="p">(</span><span class="n">lParam</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">GetDeviceInterfacePath</code> takes <code class="language-plaintext highlighter-rouge">lParam</code> and marshalls into to a structure that will have the device class name. That identifies the USB device.</p>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">GetDeviceInterfacePath</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">lParam</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">lParam</span> <span class="p">==</span> <span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">hdr</span> <span class="p">=</span> <span class="n">Marshal</span><span class="p">.</span><span class="n">PtrToStructure</span><span class="p">&lt;</span><span class="n">DEV_BROADCAST_HDR</span><span class="p">&gt;(</span><span class="n">lParam</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">hdr</span><span class="p">.</span><span class="n">dbch_devicetype</span> <span class="p">==</span> <span class="n">DBT_DEVTYP_DEVICEINTERFACE</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">deviceInterface</span> <span class="p">=</span> <span class="n">Marshal</span><span class="p">.</span><span class="n">PtrToStructure</span><span class="p">&lt;</span><span class="n">DEV_BROADCAST_DEVICEINTERFACE</span><span class="p">&gt;(</span><span class="n">lParam</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">deviceInterface</span><span class="p">.</span><span class="n">dbcc_name</span><span class="p">?.</span><span class="nf">TrimEnd</span><span class="p">(</span><span class="sc">'\0'</span><span class="p">)</span> <span class="p">??</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">catch</span>
+    <span class="p">{</span>
+        <span class="c1">// Ignore marshaling errors</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>For my phone that comes over as <code class="language-plaintext highlighter-rouge">\\?\USB#VID_04E8&amp;PID_6860#R3GL108K8GE#{a5dcbf10-6530-11d2-901f-00c04fb951ed}</code>.</p>
+
+<p>There is a lot to unpack from that value, but we only need to care about this portion of the value: <code class="language-plaintext highlighter-rouge">VID_04E8&amp;PID_6860</code>. That is the Vendor ID (VID) and the Product ID (PID). With those two values, we can ignore connection events for non-Android devices. We really only care about VID.</p>
+
+<h2 id="identifying-the-android-device">Identifying the Android device</h2>
+
+<p>The next part of WndProc does this:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">vid</span> <span class="p">=</span> <span class="n">PnpHelper</span><span class="p">.</span><span class="nf">GetVendorAndProductfromPath</span><span class="p">(</span><span class="n">devicePath</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>That calls some simple code to return the VID/PID from the device name.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">GetVendorAndProductfromPath</span><span class="p">(</span><span class="kt">string</span> <span class="n">devicePath</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">string</span> <span class="n">cleanPath</span> <span class="p">=</span> <span class="n">devicePath</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">@"\\?\"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+
+    <span class="c1">// 2. Split by '#' to isolate the components</span>
+    <span class="kt">string</span><span class="p">[]</span> <span class="n">parts</span> <span class="p">=</span> <span class="n">cleanPath</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="sc">'#'</span><span class="p">);</span>
+
+    <span class="c1">// 3. Return the vendor and product id</span>
+    <span class="kt">string</span> <span class="n">result</span> <span class="p">=</span> <span class="s">$"</span><span class="p">{</span><span class="n">parts</span><span class="p">[</span><span class="m">1</span><span class="p">]}</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>That would return <code class="language-plaintext highlighter-rouge">VID_04E8&amp;PID_6860</code> from the class name shown above.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">manufacturer</span> <span class="p">=</span> <span class="n">AndroidDeviceHelper</span><span class="p">.</span><span class="nf">GetManufacturerFromHardwareId</span><span class="p">(</span><span class="n">vid</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>That takes us to the next line in <code class="language-plaintext highlighter-rouge">WndProc</code>, which will use a WMI query to get the name of the Android device</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="kt">string</span><span class="p">?</span> <span class="nf">GetDeviceName</span><span class="p">(</span><span class="kt">string</span> <span class="n">ThisDevice</span> <span class="p">=</span>  <span class="s">"VID"</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">query</span> <span class="p">=</span> <span class="s">$"SELECT Description, Service, PNPDeviceID, Present FROM Win32_PnPEntity "</span> <span class="p">+</span>
+                    <span class="s">"WHERE Service='WUDFWpdMtp' "</span> <span class="p">+</span>
+                    <span class="s">"AND PNPDeviceID LIKE '%"</span> <span class="p">+</span> <span class="n">ThisDevice</span> <span class="p">+</span> <span class="s">"%'"</span> <span class="p">+</span>
+                    <span class="s">"AND Present = True"</span><span class="p">;</span>
+
+        <span class="c1">// Walk through the results and return the description of the first matching device</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">mo</span> <span class="k">in</span> <span class="k">new</span> <span class="nf">ManagementObjectSearcher</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="n">query</span><span class="p">).</span><span class="nf">Get</span><span class="p">().</span><span class="n">OfType</span><span class="p">&lt;</span><span class="n">ManagementObject</span><span class="p">&gt;())</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">mo</span><span class="p">.</span><span class="n">Properties</span><span class="p">[</span><span class="s">"Description"</span><span class="p">].</span><span class="n">Value</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="n">InvalidCastException</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Some property couldn't be cast. This can happen when no rows are returned</span>
+        <span class="c1">// Just ignore it</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We can use WMI to query the system for detailed information, using a <a href="https://learn.microsoft.com/en-us/windows/win32/wmisdk/querying-with-wql">SQL-like</a> syntax.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">Description</span><span class="p">,</span> <span class="n">Service</span><span class="p">,</span> <span class="n">PNPDeviceID</span><span class="p">,</span> <span class="n">Present</span> <span class="k">FROM</span> <span class="n">Win32_PnPEntity</span>
+<span class="k">WHERE</span> <span class="n">Service</span><span class="o">=</span><span class="s1">'WUDFWpdMtp'</span>
+<span class="k">AND</span> <span class="n">PNPDeviceID</span> <span class="k">LIKE</span> <span class="s1">'%" + ThisDevice + "%'</span>
+<span class="k">AND</span> <span class="n">Present</span> <span class="o">=</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<p>Give us the Description, Service, PNPDeviceID, and Present fields from Win32_PnPEntity where Service is ‘WUDFWpdMtp’, PNPDeviceID matches a wildcard string for our VID/PID, and present is true. <a href="https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-pnpentity">Win32_PnPEntity</a> is a class that represents the properties of a Plug and Play device. This query is a quick and easy to get details about plugged in devices.</p>
+
+<p>We execute the query and return the Description field for the first matching row.</p>
+
+<p>In short, this will return the device name for the first Android device that matches that vendor and product ids.</p>
+
+<p>We match on <code class="language-plaintext highlighter-rouge">Service='WUDFWpdMtp'</code> because that returns th WMI row with the name that we need. When you plug an Android device in, it shows up as multiple devices. WUDFWpdMtp is the driver in Windows that handles removabe storage devices.</p>
+
+<p>If we were to change that WMI query to this</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">Description</span><span class="p">,</span> <span class="n">Manufacturer</span><span class="p">,</span> <span class="n">Name</span><span class="p">,</span> <span class="n">PNPDeviceID</span><span class="p">,</span> <span class="n">Service</span>
+<span class="k">FROM</span> <span class="n">Win32_PnPEntity</span>
+<span class="k">WHERE</span> <span class="n">PNPDeviceID</span> <span class="k">LIKE</span> <span class="s1">'%" + ThisDevice + "%'</span>
+<span class="k">AND</span> <span class="n">Present</span> <span class="o">=</span> <span class="k">True</span>
+</code></pre></div></div>
+<p>We would get following result set back</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Manufacturer</th>
+      <th>Name</th>
+      <th>PNPDeviceID</th>
+      <th>Service</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SAMSUNG Android ADB Interface</td>
+      <td>SAMSUNG Electronics Co., Ltd.</td>
+      <td>SAMSUNG Android ADB Interface</td>
+      <td>USB\VID_04E8&amp;PID_6860&amp;ADB\A&amp;1CEC0697&amp;0&amp;0003</td>
+      <td>WINUSB</td>
+    </tr>
+    <tr>
+      <td>SM-S948U</td>
+      <td>samsung</td>
+      <td>Chris’s S26 Ultra</td>
+      <td>USB\VID_04E8&amp;PID_6860&amp;MS_COMP_MTP&amp;SAMSUNG_ANDROID\A&amp;1CEC0697&amp;0&amp;0000</td>
+      <td>WUDFWpdMtp</td>
+    </tr>
+    <tr>
+      <td>SAMSUNG Mobile USB Composite Device</td>
+      <td>SAMSUNG Electronics Co., Ltd.</td>
+      <td>SAMSUNG Mobile USB Composite Device</td>
+      <td>USB\VID_04E8&amp;PID_6860\R3GL108K8GE</td>
+      <td>dg_ssudbus</td>
+    </tr>
+    <tr>
+      <td>SAMSUNG Mobile USB Modem</td>
+      <td>SAMSUNG Electronics Co., Ltd.</td>
+      <td>SAMSUNG Mobile USB Modem #2</td>
+      <td>USB\VID_04E8&amp;PID_6860&amp;MODEM\A&amp;1CEC0697&amp;0&amp;0001</td>
+      <td>Modem</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We want the row that returns “SM-S948U” as the Description. We only get that when we filter on <code class="language-plaintext highlighter-rouge">Service='WUDFWpdMtp'</code>.</p>
+
+<h3 id="using-powershell-to-test-wmi-queries">Using PowerShell to test WMI queries</h3>
+<p>You can check WMI through PowerShell if you need to confirm what your device would return. These PowerShell commands use WMI calls.</p>
+
+<div class="language-posh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get-PnpDevice</span><span class="w"> </span><span class="nt">-FriendlyName</span><span class="w"> </span><span class="s2">"*Android*"</span><span class="w"> </span><span class="nt">-Status</span><span class="w"> </span><span class="nx">OK</span><span class="w"> </span><span class="o">|</span><span class="w">
+  </span><span class="n">Select-Object</span><span class="w"> </span><span class="nt">-Property</span><span class="w"> </span><span class="nx">FriendlyName</span><span class="p">,</span><span class="w"> </span><span class="nx">Service</span><span class="p">,</span><span class="w"> </span><span class="nx">PNPDeviceID</span><span class="w">
+
+</span><span class="n">Get-CimInstance</span><span class="w"> </span><span class="nt">-ClassName</span><span class="w"> </span><span class="nx">Win32_PnPEntity</span><span class="w"> </span><span class="o">|</span><span class="w">
+  </span><span class="n">Where-Object</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="bp">$_</span><span class="o">.</span><span class="nf">Service</span><span class="w"> </span><span class="o">-eq</span><span class="w"> </span><span class="s1">'WUDFWpdMtp'</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">|</span><span class="w">
+  </span><span class="n">Select-Object</span><span class="w"> </span><span class="nx">Description</span><span class="p">,</span><span class="w"> </span><span class="nx">DeviceID</span><span class="p">,</span><span class="w"> </span><span class="nx">PNPDeviceID</span><span class="p">,</span><span class="w"> </span><span class="nx">Manufacturer</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If we have a match, the device description will be the name of the Android device. And that will be what we need to update Visual Studio.</p>
+
+<p>We set the device name in the viewmodel to the name of the connected device.  That calls a method named <code class="language-plaintext highlighter-rouge">RefreshVs()</code>.  This method will collect the filename of all open MAUI projects and update the ActiveDebugProfile field in the user project file to the device name.</p>
+
+<h1 id="finding-the-open-intances-of-visual-studio">Finding the open intances of Visual Studio</h1>
+<p>We look at the running processes and collect the ones running Visual Studio.  We only care about the current user, so we don’t need elevated privileges.  This is wrapped up in the <code class="language-plaintext highlighter-rouge">VsProjectService</code> service in VsProjectService.cs</p>
+
+<p>We install the <a href="https://www.nuget.org/packages/envdte">EnvDTE NuGet</a> package. This is a wrapper for the COM library containing the objects and members for Visual Studio core automation.</p>
+
+<p>The methods that we calling are COM methods from ole32.dll. Unlike the plain native API methods that we used for getting the USB information, there is no benefit to use LibraryImport.</p>
+
+<p>The reason is that these signatures marshal COM interfaces (IRunningObjectTable, IBindCtx) through out parameters. LibraryImport is a great fit for simple P/Invokes like the ones in NativeMethods.cs, where the parameters are IntPtr, SafeHandle, and primitive types. It is not a clean drop-in replacement for these COM-heavy ole32 calls.</p>
+
+<p>If you really wanted to convert them, you’d usually need to change the signatures to use raw IntPtr and then manually turn those pointers into COM objects, which is more code and more fragile for no real benefit here.</p>
+
+<p>This code will get the <a href="https://learn.microsoft.com/en-us/windows/win32/api/objidl/nn-objidl-irunningobjecttable">Running Object Table</a> for the current user:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get the ROT and enumerate running objects</span>
+<span class="n">_</span> <span class="p">=</span> <span class="nf">GetRunningObjectTable</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="k">out</span> <span class="n">IRunningObjectTable</span> <span class="n">rot</span><span class="p">);</span>
+<span class="n">_</span> <span class="p">=</span> <span class="nf">CreateBindCtx</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="k">out</span> <span class="n">IBindCtx</span> <span class="n">ctx</span><span class="p">);</span>
+
+<span class="c1">// Get the list of running objects from the ROT and walks through the list</span>
+<span class="n">rot</span><span class="p">.</span><span class="nf">EnumRunning</span><span class="p">(</span><span class="k">out</span> <span class="n">IEnumMoniker</span> <span class="n">enumMoniker</span><span class="p">);</span>
+<span class="n">IMoniker</span><span class="p">[]</span> <span class="n">monikers</span> <span class="p">=</span> <span class="k">new</span> <span class="n">IMoniker</span><span class="p">[</span><span class="m">1</span><span class="p">];</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">enumMoniker</span><span class="p">.</span><span class="nf">Next</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">monikers</span><span class="p">,</span> <span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Get the display name of the running object</span>
+        <span class="n">monikers</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="nf">GetDisplayName</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">out</span> <span class="kt">string</span> <span class="n">displayName</span><span class="p">);</span>
+
+</code></pre></div></div>
+<p>We then look only at the running instances of Visual Studio by matching on the display name of the process.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">displayName</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="s">"VisualStudio.DTE"</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">CurrentCulture</span><span class="p">))</span>
+</code></pre></div></div>
+<p>Through the magic (or mystery) of COM, we get the running object and access it through the <a href="https://learn.microsoft.com/en-us/dotnet/api/envdte.dte">DTE interface</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rot</span><span class="p">.</span><span class="nf">GetObject</span><span class="p">(</span><span class="n">monikers</span><span class="p">[</span><span class="m">0</span><span class="p">],</span> <span class="k">out</span> <span class="kt">object</span> <span class="n">obj</span><span class="p">);</span>
+
+<span class="kt">dynamic</span> <span class="n">dte</span> <span class="p">=</span> <span class="n">obj</span><span class="p">;</span>
+
+<span class="kt">string</span> <span class="n">solution</span> <span class="p">=</span> <span class="n">dte</span><span class="p">.</span><span class="n">Solution</span><span class="p">.</span><span class="n">FullName</span><span class="p">;</span>
+</code></pre></div></div>
+<p>If we have a solution or at least one project, we new up an instance of a VsInstance class and then call a method named EnumerateProjects.  This method will recursively walk through the solutions and collect the paths to any project that is a MAUI project. The code to see if the project is pretty simple</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">bool</span> <span class="nf">IsMauiProject</span><span class="p">(</span><span class="n">Project</span> <span class="n">project</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">filePath</span> <span class="p">=</span> <span class="n">project</span><span class="p">.</span><span class="n">FullName</span><span class="p">;</span>
+
+    <span class="kt">var</span> <span class="n">doc</span> <span class="p">=</span> <span class="n">XDocument</span><span class="p">.</span><span class="nf">Load</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+
+    <span class="kt">var</span> <span class="n">useMaui</span> <span class="p">=</span> <span class="n">doc</span>
+        <span class="p">.</span><span class="nf">Descendants</span><span class="p">(</span><span class="s">"UseMaui"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">FirstOrDefault</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="n">useMaui</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span>
+            <span class="kt">bool</span><span class="p">.</span><span class="nf">TryParse</span><span class="p">(</span><span class="n">useMaui</span><span class="p">.</span><span class="n">Value</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">result</span><span class="p">)</span> <span class="p">&amp;&amp;</span>
+            <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We load the project as an XML document and look for the existence of <code class="language-plaintext highlighter-rouge">UseMaui</code> element.  If the element exists and the value is <code class="language-plaintext highlighter-rouge">true</code>, then this is a MAUI project.</p>
+
+<h2 id="updating-the-user-project-file">Updating the user project file</h2>
+
+<p>In RefreshVs, we collect the filenames of every open MAUI project</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">service</span> <span class="p">=</span> <span class="nf">GetService</span><span class="p">();</span>
+<span class="kt">var</span> <span class="n">instances</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">GetVsInstances</span><span class="p">();</span>
+
+<span class="kt">var</span> <span class="n">mauiProjects</span> <span class="p">=</span> <span class="n">VsProjectService</span><span class="p">.</span><span class="nf">GetMauiProjectsByInstances</span><span class="p">(</span><span class="n">instances</span><span class="p">);</span>
+
+<span class="nf">AddLog</span><span class="p">(</span><span class="s">$"Found </span><span class="p">{</span><span class="n">mauiProjects</span><span class="p">.</span><span class="n">Count</span><span class="p">}</span><span class="s"> MAUI projects."</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">UpdateCount</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">project</span> <span class="k">in</span> <span class="n">mauiProjects</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">thisUpdate</span> <span class="p">=</span> <span class="nf">UpdateProjectFile</span><span class="p">(</span><span class="n">project</span><span class="p">);</span>
+    <span class="n">UpdateCount</span> <span class="p">+=</span> <span class="n">thisUpdate</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">thisUpdate</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+        <span class="nf">AddLog</span><span class="p">(</span><span class="s">$"☑️ Updated </span><span class="p">{</span><span class="n">project</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">else</span>
+        <span class="nf">AddLog</span><span class="p">(</span><span class="s">$"Skipped </span><span class="p">{</span><span class="n">project</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">UpdateProjectFile</code> method in the viewmodel calls the <code class="language-plaintext highlighter-rouge">UpdateProjectFile</code> method of the VsProjectService and passes the filename and the device name.  The following is the logic of that method. I removed the error handling to just show the highlights.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Load the .csproj.user file</span>
+<span class="n">doc</span> <span class="p">=</span> <span class="n">XDocument</span><span class="p">.</span><span class="nf">Load</span><span class="p">(</span><span class="n">userFilePath</span><span class="p">);</span>
+
+<span class="c1">// We need to set the namespace</span>
+<span class="n">ns</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">Root</span><span class="p">?.</span><span class="n">Name</span><span class="p">.</span><span class="n">Namespace</span> <span class="p">??</span> <span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="p">;</span>
+
+<span class="c1">// Get the root</span>
+<span class="kt">var</span> <span class="n">root</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">Root</span> <span class="p">??</span> <span class="k">throw</span> <span class="k">new</span> <span class="nf">InvalidOperationException</span><span class="p">(</span><span class="s">"Invalid .user file structure."</span><span class="p">);</span>
+
+<span class="c1">// Then PropertyGroup</span>
+<span class="kt">var</span> <span class="n">propertyGroup</span> <span class="p">=</span> <span class="n">root</span><span class="p">.</span><span class="nf">Elements</span><span class="p">(</span><span class="n">ns</span> <span class="p">+</span> <span class="s">"PropertyGroup"</span><span class="p">).</span><span class="nf">FirstOrDefault</span><span class="p">();</span>
+
+<span class="c1">// Then ActiveDebugProfile</span>
+<span class="kt">var</span> <span class="n">activeDebugProfileElement</span> <span class="p">=</span> <span class="n">propertyGroup</span>
+    <span class="p">.</span><span class="nf">Elements</span><span class="p">(</span><span class="n">ns</span> <span class="p">+</span> <span class="s">"ActiveDebugProfile"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">FirstOrDefault</span><span class="p">();</span>
+
+<span class="c1">// Update value</span>
+<span class="n">activeDebugProfileElement</span><span class="p">.</span><span class="n">Value</span> <span class="p">=</span> <span class="n">activeDebugProfile</span><span class="p">;</span>
+
+<span class="c1">// Save the changes</span>
+<span class="n">doc</span><span class="p">.</span><span class="nf">Save</span><span class="p">(</span><span class="n">userFilePath</span><span class="p">);</span>
+</code></pre></div></div>
+<p>Visual Studio will watch for changes to the .csprj.user file. If you modify the file outside the IDE, the IDE will see the changes update the IDE accordingly. This is one of those things that just works.</p>
+
+<h2 id="performance-concerns">Performance concerns</h2>
+<p>When the app is running, it detects when a new device has been plugged fairly quickly. Usually within a second or two. Enumerating the running instances of Visual Studio and updating any open MAUI projects takes another second or so.</p>
+
+<p>There was alternate way of detecting new device using WMI queries. You can use ManagementEventWatcher to subscribe to changes to a WMI table.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The WITHIN 2 means to rerun this query every 2 seconds</span>
+<span class="kt">var</span> <span class="n">query</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">WqlEventQuery</span><span class="p">(</span>
+    <span class="s">"SELECT * FROM __InstanceCreationEvent WITHIN 2 "</span> <span class="p">+</span>
+    <span class="s">"WHERE TargetInstance ISA 'Win32_PnPEntity'"</span><span class="p">);</span>
+
+<span class="c1">// Create an event that will be called</span>
+<span class="n">_watcher</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ManagementEventWatcher</span><span class="p">(</span><span class="n">query</span><span class="p">);</span>
+<span class="n">_watcher</span><span class="p">.</span><span class="n">EventArrived</span> <span class="p">+=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">device</span> <span class="p">=</span> <span class="p">(</span><span class="n">ManagementBaseObject</span><span class="p">)</span><span class="n">e</span><span class="p">.</span><span class="n">NewEvent</span><span class="p">[</span><span class="s">"TargetInstance"</span><span class="p">];</span>
+    <span class="kt">var</span> <span class="n">name</span> <span class="p">=</span> <span class="n">device</span><span class="p">[</span><span class="s">"Name"</span><span class="p">]?.</span><span class="nf">ToString</span><span class="p">();</span>
+
+    <span class="c1">// Do something here</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">&amp;&amp;</span>
+        <span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="s">"Android"</span><span class="p">)</span> <span class="p">||</span> <span class="n">name</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="s">"ADB"</span><span class="p">)))</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Android device connected: </span><span class="p">{</span><span class="n">name</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p>While a variation of that could work, it’s pretty heavy handed. It takes less resources to listen to device connection events, collect the vendor and product, and then run a WMI query.</p>
+
+<h1 id="wpf">WPF</h1>
+<p>I wrote this using WPF because that is the desktop framework that I am used it. I never liked WinForms and I know how to write apps that use XAML. Most of the code is separate from the UI. The code that handles the USB events is tied to the UI, the rest follows a MVVM and service model.</p>
+
+<p>I didn’t cover the nuts and bolts of how to build a WPF app. It has some of the usual stuff like detecting light and dark mode or saving/restoring the position of the window. There’s code to scroll the datagrid to the end whenever it’s updated. Nothing fancy and all is commented in the code.</p>
+
+<p>No additional permissions should be needed by the app. It should just work with the same rights that you used to run Visual Studio.</p>
+
+<h2 id="weakreferencemessenger">WeakReferenceMessenger</h2>
+<p>To update the UI, I write log entries to an observable collection in the viewmodel. I use the WeakReferenceMessenger messaging to send messages to update that collection from vaious parts of the applicatioos.  That collection is bound to a DataGrid in the MainWindow.</p>
+
+<h2 id="let-there-be-toast">Let there be Toast</h2>
+<p>I use the Microsoft.Toolkit.Uwp.Notifications nuget package to display a toast message if any projects are updated. The eventual goal is have the app run in the tool tray and the toast will let me know when projects have been updated. It’s overkill eyecandy, but it was to add.</p>
+
+<h2 id="winui">WinUI</h2>
+<p>I don’t write much for Windows Desktop and WPF has always had enough functionality for what I needed. I pretty much ignored UWP and WinUI when they came out. It just seemed to me as more the of the same, yet different. And harder to install on other people’s computers.</p>
+
+<p>After I had VADP mostly working, I decided to see how long it would take to port to WinUI.  It didn’t take long. The code was pretty much detached from the UI. Using MVVM made it easy to wire up new views to the existing viewmodels. The code to wire up the events to listen to USB connect/disconnects was probably the biggest change to the code.</p>
+
+<p>There were some minor changes to the UI, most of the actual code just worked. The XAML was less polished. There was no benefit for this app to use WinUI over WPF. But I can check “wrote a WinUI app” off my bucket list.</p>
+
+<p>Since this app was Windows only, there wasn’t any point in writing it with MAUI or Avalonia.</p>
+
+<h1 id="troubleshooting">Troubleshooting</h1>
+<p>For the toast message popup to work, you need to compile for x64, it doesn’t seem to work for AnyCpu. It should work for arm64, but I haven’t tested it. The TargetFramework in the the csproj needs to be set to include a TFM with a minium version of Windows. I used <code class="language-plaintext highlighter-rouge">net10.0-windows10.0.22621.0</code></p>
+
+<p>If the WMI query doesn’t return a product name for your phone, you may need to tweak the query. The PowerShell commands listed above will help return the right data.</p>
+
+<h1 id="is-this-overkill">Is this overkill?</h1>
+<p>This app is more or less overkill. If I use a wireless ADB connection, then Visual Studio tends to keep the connection. When it doesn’t, a have a slightly different problem to solve. I also tend to keep my phone plugged in when I’m using all day.</p>
+
+<p>While I use this app everyday, I wrote it to see how hard it would be. I already knew that updating a user csproj outside of Visual Studio would work. My PowerShell script showed that it work.</p>
+
+<p>It then became a task of identifying when a USB device was connected and how to get that device name. That was fairly easy to do. It took a little longer to learn how to make the COM calls to get the open solution files.  A lot of that code was vibe-coded using a mixture of Claude and Gemini. It’s 2026, the various AI options make grunt work like that much easier to accomplish.</p>
+
+<h1 id="future-improvments">Future improvments</h1>
+<p>Right now this app just sits on the desktop, waiting for some action. I have multiple monitors, it doesn’t bother me to have running that way. But it would be nice to have it run minimized in the system tray. I started that code, but it’s not done yet.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#android-debugging" class="page__taxonomy-item p-category" rel="tag">android-debugging</a><span class="sep">, </span>
+    
+      <a href="/tags/#com-automation" class="page__taxonomy-item p-category" rel="tag">com-automation</a><span class="sep">, </span>
+    
+      <a href="/tags/#developer-tools" class="page__taxonomy-item p-category" rel="tag">developer-tools</a><span class="sep">, </span>
+    
+      <a href="/tags/#developer-workflow" class="page__taxonomy-item p-category" rel="tag">developer-workflow</a><span class="sep">, </span>
+    
+      <a href="/tags/#device-detection" class="page__taxonomy-item p-category" rel="tag">device-detection</a><span class="sep">, </span>
+    
+      <a href="/tags/#pinvoke" class="page__taxonomy-item p-category" rel="tag">pinvoke</a><span class="sep">, </span>
+    
+      <a href="/tags/#usb-devices" class="page__taxonomy-item p-category" rel="tag">usb-devices</a><span class="sep">, </span>
+    
+      <a href="/tags/#visual-studio-extensions" class="page__taxonomy-item p-category" rel="tag">visual-studio-extensions</a><span class="sep">, </span>
+    
+      <a href="/tags/#windows-interop" class="page__taxonomy-item p-category" rel="tag">windows-interop</a><span class="sep">, </span>
+    
+      <a href="/tags/#wmi" class="page__taxonomy-item p-category" rel="tag">wmi</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#automation" class="page__taxonomy-item p-category" rel="tag">automation</a><span class="sep">, </span>
+    
+      <a href="/categories/#maui" class="page__taxonomy-item p-category" rel="tag">maui</a><span class="sep">, </span>
+    
+      <a href="/categories/#visualstudio" class="page__taxonomy-item p-category" rel="tag">visualstudio</a><span class="sep">, </span>
+    
+      <a href="/categories/#wpf" class="page__taxonomy-item p-category" rel="tag">wpf</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2026-03-18T00:00:00+00:00">March 18, 2026</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?via=anotherlab&text=When+Visual+Studio+Forgets+Your+Phone%3A+Building+an+Automated+Solution%20http%3A%2F%2Flocalhost%3A4000%2F2026%2F03%2F18%2Fveryactivedebugprofile%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2026%2F03%2F18%2Fveryactivedebugprofile%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/2026/03/18/veryactivedebugprofile/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/2026/03/10/backup/" class="pagination--pager" title="Using the 3-2-1 strategy for digital backups
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2026/03/10/backup/" rel="permalink">Using the 3-2-1 strategy for digital backups
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Introduction
+I take hundreds of photos every month on my camera and phone, and over the years I’ve learned the importance of reliable photo backup strategies...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2026/03/05/dynamicbackground/" rel="permalink">Generating a dynamic background on .NET MAUI
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Introduction
+I’m going to show a way to generate a random background for .NET MAUI ContentPage. It uses Skia to handle the heavy lifting and should work with...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2026/02/17/backing-up-wsl2/" rel="permalink">Backing up my main WSL2 Linux session
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Backing up my main Linux session
+TL;DR: I wrote a PowerShell script named backup-wsl2.ps1 to backup a Linux distribution.
+You can run like this:
+.\backup-wsl...</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2026/01/05/UsbSerialForAndroid-updates/" rel="permalink">UsbSerialForAndroid: Recent Updates and Improvements
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">I’ve pushed a new round of updates to UsbSerialForAndroid, the open-source .NET / C# library that provides USB serial support for Android, including .NET MAU...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://bsky.app/profile/anotherlab.bsky.social" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bluesky" aria-hidden="true"></i> Bluesky</a></li>
+        
+      
+        
+          <li><a href="https://github.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/christophermiller/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/anotherlab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://mvp.microsoft.com/en-us/PublicProfile/5000200" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-award" aria-hidden="true"></i> Microsoft MVP</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 <a href="http://localhost:4000">Chris Miller's 5th Blog</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function () {
+    var commentContainer = document.querySelector('#giscus-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    script.setAttribute('data-repo', 'anotherlab/anotherlab.github.io');
+    script.setAttribute('data-repo-id', '');
+    script.setAttribute('data-category', '');
+    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang',  'en');
+    
+    script.setAttribute('crossorigin', 'anonymous');
+
+    script.setAttribute('async', '');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>
