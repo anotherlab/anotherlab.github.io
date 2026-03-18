@@ -1,4 +1,630 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-03-10T04:55:55+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 5th Blog</title><subtitle>My personal blog, 5th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">Using the 3-2-1 strategy for digital backups</title><link href="http://localhost:4000/2026/03/10/backup/" rel="alternate" type="text/html" title="Using the 3-2-1 strategy for digital backups" /><published>2026-03-10T00:00:00+00:00</published><updated>2026-03-10T00:00:00+00:00</updated><id>http://localhost:4000/2026/03/10/backup</id><content type="html" xml:base="http://localhost:4000/2026/03/10/backup/"><![CDATA[<h1 id="introduction">Introduction</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-03-18T04:20:41+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Chris Miller’s 5th Blog</title><subtitle>My personal blog, 5th version</subtitle><author><name>Chris Miller</name></author><entry><title type="html">When Visual Studio Forgets Your Phone: Building an Automated Solution</title><link href="http://localhost:4000/2026/03/18/veryactivedebugprofile/" rel="alternate" type="text/html" title="When Visual Studio Forgets Your Phone: Building an Automated Solution" /><published>2026-03-18T00:00:00+00:00</published><updated>2026-03-18T00:00:00+00:00</updated><id>http://localhost:4000/2026/03/18/veryactivedebugprofile</id><content type="html" xml:base="http://localhost:4000/2026/03/18/veryactivedebugprofile/"><![CDATA[<h1 id="introduction">Introduction</h1>
+<p>This is how I resolved one of my pet peeves with Visual Studio. When I am working on a .NET MAUI application, when I unplug my phone, Visual Studio changes debug target to the default emulator. When I plug the phone back in, it doesn’t set it back. That drives me crazy. So I over-engineered a solution.</p>
+
+<p>In a previous episode, I wrote a <a href="/2025/11/16/hacking-csproj-user/">PowerShell script</a>, to set it back. That had some limitations.</p>
+
+<ol>
+  <li>I had to remember to run the script</li>
+  <li>I needed to pass in the of the user project file</li>
+  <li>I needed to pass in the name of the device.</li>
+</ol>
+
+<p>The last one doesn’t change much. But I did get a new phone last week, so it does change. The first two were the pain points.</p>
+
+<p>So I decided to go for some premium yak shaving and decided to write an app to do this for me. This is what it looks like when it’s running.</p>
+
+<p><img src="https://github.com/anotherlab/VeryActiveDebugProfile/raw/main/Images/VeryActiveDebugProfile.gif" alt="Very Active Debug Profile" /></p>
+
+<p>You can find the repo for the source code at <a href="https://github.com/anotherlab/VeryActiveDebugProfile/">VeryActiveDebugProfile</a> on GitHub.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ol>
+  <li>Windows 10 or 11.</li>
+  <li>Visual Studio 2022 or 2026. I am using VS 2026. Rider doesn’t need have this problem.</li>
+  <li>The MAUI workloads for .NET 10. The code should work with .NET 8 or 9, but it may need some minor changes.</li>
+</ol>
+
+<p>A small number of nuget packages were used.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Package Name</th>
+      <th>What It’s Used For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CommunityToolkit.Mvvm</td>
+      <td>Lightweight MVVM framework for .NET apps; provides observable objects, commands, and messaging.</td>
+    </tr>
+    <tr>
+      <td>EnvDTE</td>
+      <td>Visual Studio automation model; used to interact with and control the Visual Studio IDE (extensions, macros, tooling).</td>
+    </tr>
+    <tr>
+      <td>Hardcodet.NotifyIcon.Wpf</td>
+      <td>Adds system tray (notification area) icon support to WPF apps, including context menus and balloon tips.</td>
+    </tr>
+    <tr>
+      <td>Microsoft.Toolkit.Uwp.Notifications</td>
+      <td>Enables sending Windows toast notifications from desktop apps (WPF, WinForms, console).</td>
+    </tr>
+    <tr>
+      <td>System.Management</td>
+      <td>Provides access to Windows Management Instrumentation (WMI) for querying system info like hardware, processes, and services.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="language-plaintext highlighter-rouge">Hardcodet.NotifyIcon.Wpf</code> is part of some code that is not functional at this time.</p>
+
+<h2 id="what-needs-to-get-updated">What needs to get updated.</h2>
+<p>In Visual Studio, the selection of the current device for a MAUI project is stored in the user project file. This is a file with the same name of the csproj project file, but with “.user” tacked on the end.</p>
+
+<p>Here is a sample user project file that is using my Samsung phone for debugging:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;IsFirstTimeProjectOpen&gt;</span>False<span class="nt">&lt;/IsFirstTimeProjectOpen&gt;</span>
+    <span class="nt">&lt;ActiveDebugFramework&gt;</span>net10.0-android<span class="nt">&lt;/ActiveDebugFramework&gt;</span>
+    <span class="nt">&lt;ActiveDebugProfile&gt;</span>Samsung SM-S948U (Android 16.0 - API 36)<span class="nt">&lt;/ActiveDebugProfile&gt;</span>
+    <span class="nt">&lt;SelectedPlatformGroup&gt;</span>PhysicalDevice<span class="nt">&lt;/SelectedPlatformGroup&gt;</span>
+    <span class="nt">&lt;DefaultDevice&gt;</span>pixel_9_-_api_36<span class="nt">&lt;/DefaultDevice&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></div>
+<p>If I disconnect my phone, on my machine Visual Studio detects that the physical device is gone and switches over to an emulator image</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;Project</span> <span class="na">ToolsVersion=</span><span class="s">"Current"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;PropertyGroup&gt;</span>
+    <span class="nt">&lt;IsFirstTimeProjectOpen&gt;</span>False<span class="nt">&lt;/IsFirstTimeProjectOpen&gt;</span>
+    <span class="nt">&lt;ActiveDebugFramework&gt;</span>net10.0-android<span class="nt">&lt;/ActiveDebugFramework&gt;</span>
+    <span class="nt">&lt;ActiveDebugProfile&gt;</span>Pixel 9 - API 36 (Android 16.0 - API 36)<span class="nt">&lt;/ActiveDebugProfile&gt;</span>
+    <span class="nt">&lt;SelectedPlatformGroup&gt;</span>Emulator<span class="nt">&lt;/SelectedPlatformGroup&gt;</span>
+    <span class="nt">&lt;DefaultDevice&gt;</span>pixel_9_-_api_36<span class="nt">&lt;/DefaultDevice&gt;</span>
+  <span class="nt">&lt;/PropertyGroup&gt;</span>
+<span class="nt">&lt;/Project&gt;</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">ActiveDebugProfile</code> changes from “Samsung SM-S948U (Android 16.0 - API 36)” to “Pixel 9 - API 36 (Android 16.0 - API 36)”. <code class="language-plaintext highlighter-rouge">SelectedPlatformGroup</code> changes from “PhysicalDevice” to “Emulator”, but we can ignore that.</p>
+
+<p>Because this app will update <code class="language-plaintext highlighter-rouge">ActiveDebugProfile</code>, I named it “VeryActiveDebugProfile”. Not very exciting, but the name on the tin tells you what is inside.  For short, I’ll call it VADP</p>
+
+<h1 id="detecting-when-my-phone-was-plugged-in-or-removed">Detecting when my phone was plugged in or removed</h1>
+
+<p>This is where code starts.</p>
+
+<h2 id="registering-for-device-events">Registering for device events</h2>
+
+<p>We start off by detecting USB device connect and disconnect events.  I’ll walk through some of the code.  It’s pretty well commented, but I’ll show where the heavy lifting was done.</p>
+
+<p>Using WPF’s Windows Interop, we register an event that will be called when a USB device is connected or disconnected. That event gets wired up using OnSourceInitialized like this. In a WPF app, the OnSourceInitialized event is the first time that you can get access to the handle of the WPF window. We need that handle to register for Windows events. We also register for USB notifications to ensure that we get connection and disconnection notices.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnSourceInitialized</span><span class="p">(</span><span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">base</span><span class="p">.</span><span class="nf">OnSourceInitialized</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+
+    <span class="c1">// Get the window handle and add a hook to listen for Windows messages</span>
+    <span class="n">HwndSource</span> <span class="n">source</span> <span class="p">=</span> <span class="n">HwndSource</span><span class="p">.</span><span class="nf">FromHwnd</span><span class="p">(</span><span class="k">new</span> <span class="nf">WindowInteropHelper</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="n">Handle</span><span class="p">);</span>
+    <span class="n">source</span><span class="p">.</span><span class="nf">AddHook</span><span class="p">(</span><span class="n">WndProc</span><span class="p">);</span>
+
+    <span class="c1">// Register for USB device notifications</span>
+    <span class="nf">RegisterForDeviceNotifications</span><span class="p">(</span><span class="n">source</span><span class="p">.</span><span class="n">Handle</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The WndProc method is defined as</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="n">IntPtr</span> <span class="nf">WndProc</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">hwnd</span><span class="p">,</span> <span class="kt">int</span> <span class="n">msg</span><span class="p">,</span> <span class="n">IntPtr</span> <span class="n">wParam</span><span class="p">,</span> <span class="n">IntPtr</span> <span class="n">lParam</span><span class="p">,</span> <span class="k">ref</span> <span class="kt">bool</span> <span class="n">handled</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// If a USB device is connected or disconnected, wParam will indicate the event type (arrival or removal)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">msg</span> <span class="p">==</span> <span class="n">WM_DEVICECHANGE</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">eventType</span> <span class="p">=</span> <span class="n">wParam</span><span class="p">.</span><span class="nf">ToInt32</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">eventType</span> <span class="p">==</span> <span class="n">DBT_DEVICEARRIVAL</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// When a device is connected, lParam points to a structure with details about the device.</span>
+            <span class="c1">// We can extract the device path from it.</span>
+            <span class="kt">string</span> <span class="n">devicePath</span> <span class="p">=</span> <span class="nf">GetDeviceInterfacePath</span><span class="p">(</span><span class="n">lParam</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">devicePath</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="c1">// Notify the UI about the new device.  Not all of them will be Android devices, but it's useful to see all device connections in the log.</span>
+                <span class="nf">SendMessage</span><span class="p">(</span><span class="s">$"Device connected: </span><span class="p">{</span><span class="n">devicePath</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+                <span class="kt">var</span> <span class="n">vid</span> <span class="p">=</span> <span class="n">PnpHelper</span><span class="p">.</span><span class="nf">GetVendorAndProductfromPath</span><span class="p">(</span><span class="n">devicePath</span><span class="p">);</span>
+
+                <span class="c1">// Next check to see if we have an Android device.</span>
+                <span class="kt">var</span> <span class="n">manufacturer</span> <span class="p">=</span> <span class="n">AndroidDeviceHelper</span><span class="p">.</span><span class="nf">GetManufacturerFromHardwareId</span><span class="p">(</span><span class="n">vid</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">manufacturer</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">_connectedAndroidPaths</span><span class="p">[</span><span class="n">devicePath</span><span class="p">]</span> <span class="p">=</span> <span class="n">vid</span><span class="p">;</span>
+                    <span class="nf">SendMessage</span><span class="p">(</span><span class="s">$"</span><span class="p">{</span><span class="n">manufacturer</span><span class="p">}</span><span class="s"> device detected "</span><span class="p">);</span>
+
+                    <span class="c1">// Add a slight delay before updating the status to ensure the device is fully recognized by the system and PnP queries will succeed.</span>
+                    <span class="c1">// This can help with cases where the device information isn't immediately available.</span>
+                    <span class="n">Dispatcher</span><span class="p">.</span><span class="nf">InvokeAsync</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                        <span class="k">await</span> <span class="n">System</span><span class="p">.</span><span class="n">Threading</span><span class="p">.</span><span class="n">Tasks</span><span class="p">.</span><span class="n">Task</span><span class="p">.</span><span class="nf">Delay</span><span class="p">(</span><span class="m">100</span><span class="p">);</span>
+                        <span class="nf">UpdateAndroidStatus</span><span class="p">(</span><span class="n">vid</span><span class="p">);</span>
+                    <span class="p">});</span>
+
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="c1">// no device path means we can't identify the device, but we know something was connected</span>
+                <span class="c1">// It wont be an Android device and we can ignore it</span>
+                <span class="k">return</span> <span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">eventType</span> <span class="p">==</span> <span class="n">DBT_DEVICEREMOVECOMPLETE</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">string</span> <span class="n">devicePath</span> <span class="p">=</span> <span class="nf">GetDeviceInterfacePath</span><span class="p">(</span><span class="n">lParam</span><span class="p">);</span>
+
+            <span class="c1">// We only need to update the status if an Android device was removed, so we check</span>
+            <span class="c1">// if the device path is in our list of connected Android devices. If it is, we</span>
+            <span class="c1">// remove it and update the status accordingly.</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">devicePath</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">_connectedAndroidPaths</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="n">devicePath</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="nf">SendMessage</span><span class="p">(</span><span class="s">$"Device disconnected: </span><span class="p">{</span><span class="n">devicePath</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">_connectedAndroidPaths</span><span class="p">.</span><span class="n">Count</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="nf">UpdateAndroidStatus</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="nf">UpdateAndroidStatus</span><span class="p">(</span><span class="n">_connectedAndroidPaths</span><span class="p">.</span><span class="n">Values</span><span class="p">.</span><span class="nf">Last</span><span class="p">());</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The RegisterForDeviceNotifications method is what tells Windows that we want to receive the connection events</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">RegisterForDeviceNotifications</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">windowHandle</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">filterUsb</span> <span class="p">=</span> <span class="k">new</span> <span class="n">DEV_BROADCAST_DEVICEINTERFACE</span>
+    <span class="p">{</span>
+        <span class="n">dbcc_size</span> <span class="p">=</span> <span class="n">Marshal</span><span class="p">.</span><span class="n">SizeOf</span><span class="p">&lt;</span><span class="n">DEV_BROADCAST_DEVICEINTERFACE</span><span class="p">&gt;(),</span>
+        <span class="n">dbcc_devicetype</span> <span class="p">=</span> <span class="n">DBT_DEVTYP_DEVICEINTERFACE</span><span class="p">,</span>
+        <span class="n">dbcc_reserved</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
+        <span class="n">dbcc_classguid</span> <span class="p">=</span> <span class="n">GUID_DEVINTERFACE_USB_DEVICE</span><span class="p">,</span>
+        <span class="n">dbcc_name</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span>
+    <span class="p">};</span>
+
+    <span class="n">IntPtr</span> <span class="n">bufferUsb</span> <span class="p">=</span> <span class="n">Marshal</span><span class="p">.</span><span class="nf">AllocHGlobal</span><span class="p">(</span><span class="n">filterUsb</span><span class="p">.</span><span class="n">dbcc_size</span><span class="p">);</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="n">Marshal</span><span class="p">.</span><span class="nf">StructureToPtr</span><span class="p">(</span><span class="n">filterUsb</span><span class="p">,</span> <span class="n">bufferUsb</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+        <span class="n">_deviceNotifyHandle</span> <span class="p">=</span> <span class="n">NativeMethods</span><span class="p">.</span><span class="nf">RegisterDeviceNotification</span><span class="p">(</span><span class="n">windowHandle</span><span class="p">,</span> <span class="n">bufferUsb</span><span class="p">,</span> <span class="n">DEVICE_NOTIFY_WINDOW_HANDLE</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">_deviceNotifyHandle</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">_deviceNotifyHandle</span><span class="p">.</span><span class="n">IsInvalid</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">SendMessage</span><span class="p">(</span><span class="s">"Failed to register for USB device notifications"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">finally</span>
+    <span class="p">{</span>
+        <span class="n">Marshal</span><span class="p">.</span><span class="nf">FreeHGlobal</span><span class="p">(</span><span class="n">bufferUsb</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>You’ll see a call to <code class="language-plaintext highlighter-rouge">NativeMethods.RegisterDeviceNotification()</code>. That’s a wrapper for the P/Invoke methods.  P/Invoke or Platform Invoke is the way that managed code like C# can call unmanaged code.  That wrapper looks like this</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">sealed</span> <span class="k">class</span> <span class="nc">SafeDeviceNotificationHandle</span> <span class="p">:</span> <span class="n">SafeHandleZeroOrMinusOneIsInvalid</span>
+<span class="p">{</span>
+    <span class="c1">// The constructor must be public for the P/Invoke marshaller</span>
+    <span class="k">public</span> <span class="nf">SafeDeviceNotificationHandle</span><span class="p">()</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="k">true</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">override</span> <span class="kt">bool</span> <span class="nf">ReleaseHandle</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// This is called automatically by the GC/Finalizer</span>
+        <span class="k">return</span> <span class="n">NativeMethods</span><span class="p">.</span><span class="nf">UnregisterDeviceNotification</span><span class="p">(</span><span class="n">handle</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="k">static</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">NativeMethods</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="nf">StructLayout</span><span class="p">(</span><span class="n">LayoutKind</span><span class="p">.</span><span class="n">Sequential</span><span class="p">)]</span>
+    <span class="k">internal</span> <span class="k">struct</span> <span class="nc">RECT</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">Left</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">Top</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">Right</span><span class="p">;</span>
+        <span class="k">public</span> <span class="kt">int</span> <span class="n">Bottom</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">internal</span> <span class="k">delegate</span> <span class="kt">bool</span> <span class="nf">MonitorEnumProc</span><span class="p">(</span>
+        <span class="n">IntPtr</span> <span class="n">hMonitor</span><span class="p">,</span>
+        <span class="n">IntPtr</span> <span class="n">hdcMonitor</span><span class="p">,</span>
+        <span class="k">ref</span> <span class="n">RECT</span> <span class="n">lprcMonitor</span><span class="p">,</span>
+        <span class="n">IntPtr</span> <span class="n">dwData</span><span class="p">);</span>
+
+    <span class="p">[</span><span class="nf">LibraryImport</span><span class="p">(</span><span class="s">"user32.dll"</span><span class="p">,</span> <span class="n">EntryPoint</span> <span class="p">=</span> <span class="s">"RegisterDeviceNotificationW"</span><span class="p">,</span> <span class="n">SetLastError</span> <span class="p">=</span> <span class="k">true</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">partial</span> <span class="n">SafeDeviceNotificationHandle</span> <span class="nf">RegisterDeviceNotification</span><span class="p">(</span>
+        <span class="n">IntPtr</span> <span class="n">hRecipient</span><span class="p">,</span>
+        <span class="n">IntPtr</span> <span class="n">notificationFilter</span><span class="p">,</span>
+        <span class="kt">uint</span> <span class="n">flags</span><span class="p">);</span>
+
+    <span class="c1">// Unregister is usually fine, but it's good practice to be explicit</span>
+    <span class="p">[</span><span class="nf">LibraryImport</span><span class="p">(</span><span class="s">"user32.dll"</span><span class="p">,</span> <span class="n">EntryPoint</span> <span class="p">=</span> <span class="s">"UnregisterDeviceNotification"</span><span class="p">,</span> <span class="n">SetLastError</span> <span class="p">=</span> <span class="k">true</span><span class="p">)]</span>
+    <span class="p">[</span><span class="k">return</span><span class="p">:</span> <span class="nf">MarshalAs</span><span class="p">(</span><span class="n">UnmanagedType</span><span class="p">.</span><span class="n">Bool</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">partial</span> <span class="kt">bool</span> <span class="nf">UnregisterDeviceNotification</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">handle</span><span class="p">);</span>
+
+    <span class="p">[</span><span class="nf">LibraryImport</span><span class="p">(</span><span class="s">"user32.dll"</span><span class="p">,</span> <span class="n">EntryPoint</span> <span class="p">=</span> <span class="s">"EnumDisplayMonitors"</span><span class="p">)]</span>
+    <span class="p">[</span><span class="k">return</span><span class="p">:</span> <span class="nf">MarshalAs</span><span class="p">(</span><span class="n">UnmanagedType</span><span class="p">.</span><span class="n">Bool</span><span class="p">)]</span>
+    <span class="k">internal</span> <span class="k">static</span> <span class="k">partial</span> <span class="kt">bool</span> <span class="nf">EnumDisplayMonitors</span><span class="p">(</span>
+        <span class="n">IntPtr</span> <span class="n">hdc</span><span class="p">,</span>
+        <span class="n">IntPtr</span> <span class="n">lprcClip</span><span class="p">,</span>
+        <span class="n">MonitorEnumProc</span> <span class="n">lpfnEnum</span><span class="p">,</span>
+        <span class="n">IntPtr</span> <span class="n">dwData</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The old way to call unamanaged code was with <code class="language-plaintext highlighter-rouge">DllImport</code>.  It’s been around since the dawn of .NET.  It uses runtime marshalling to manage the call to the unmanaged functions. This is done at runtime and uses reflection to generate the code.</p>
+
+<p>Starting in .NET 7, we gained <code class="language-plaintext highlighter-rouge">LibraryImport</code>. The P/Invoke code is generated at compile time. This is much more efficient. The <code class="language-plaintext highlighter-rouge">SafeDeviceNotificationHandle</code> class provides for automatic release of the P/Invoke method, which makes the code a little cleaner.</p>
+
+<h2 id="getting-the-device-path-of-the-connected-device">Getting the Device Path of the connected device</h2>
+
+<p>In <code class="language-plaintext highlighter-rouge">WndProc()</code>, we have this code</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">eventType</span> <span class="p">==</span> <span class="n">DBT_DEVICEARRIVAL</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// When a device is connected, lParam points to a structure with details about the device.</span>
+    <span class="c1">// We can extract the device path from it.</span>
+    <span class="kt">string</span> <span class="n">devicePath</span> <span class="p">=</span> <span class="nf">GetDeviceInterfacePath</span><span class="p">(</span><span class="n">lParam</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">GetDeviceInterfacePath</code> takes <code class="language-plaintext highlighter-rouge">lParam</code> and marshalls into to a structure that will have the device class name. That identifies the USB device.</p>
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">GetDeviceInterfacePath</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">lParam</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">lParam</span> <span class="p">==</span> <span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">hdr</span> <span class="p">=</span> <span class="n">Marshal</span><span class="p">.</span><span class="n">PtrToStructure</span><span class="p">&lt;</span><span class="n">DEV_BROADCAST_HDR</span><span class="p">&gt;(</span><span class="n">lParam</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">hdr</span><span class="p">.</span><span class="n">dbch_devicetype</span> <span class="p">==</span> <span class="n">DBT_DEVTYP_DEVICEINTERFACE</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">deviceInterface</span> <span class="p">=</span> <span class="n">Marshal</span><span class="p">.</span><span class="n">PtrToStructure</span><span class="p">&lt;</span><span class="n">DEV_BROADCAST_DEVICEINTERFACE</span><span class="p">&gt;(</span><span class="n">lParam</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">deviceInterface</span><span class="p">.</span><span class="n">dbcc_name</span><span class="p">?.</span><span class="nf">TrimEnd</span><span class="p">(</span><span class="sc">'\0'</span><span class="p">)</span> <span class="p">??</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">catch</span>
+    <span class="p">{</span>
+        <span class="c1">// Ignore marshaling errors</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>For my phone that comes over as <code class="language-plaintext highlighter-rouge">\\?\USB#VID_04E8&amp;PID_6860#R3GL108K8GE#{a5dcbf10-6530-11d2-901f-00c04fb951ed}</code>.</p>
+
+<p>There is a lot to unpack from that value, but we only need to care about this portion of the value: <code class="language-plaintext highlighter-rouge">VID_04E8&amp;PID_6860</code>. That is the Vendor ID (VID) and the Product ID (PID). With those two values, we can ignore connection events for non-Android devices. We really only care about VID.</p>
+
+<h2 id="identifying-the-android-device">Identifying the Android device</h2>
+
+<p>The next part of WndProc does this:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">vid</span> <span class="p">=</span> <span class="n">PnpHelper</span><span class="p">.</span><span class="nf">GetVendorAndProductfromPath</span><span class="p">(</span><span class="n">devicePath</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>That calls some simple code to return the VID/PID from the device name.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">GetVendorAndProductfromPath</span><span class="p">(</span><span class="kt">string</span> <span class="n">devicePath</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">string</span> <span class="n">cleanPath</span> <span class="p">=</span> <span class="n">devicePath</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">@"\\?\"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+
+    <span class="c1">// 2. Split by '#' to isolate the components</span>
+    <span class="kt">string</span><span class="p">[]</span> <span class="n">parts</span> <span class="p">=</span> <span class="n">cleanPath</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="sc">'#'</span><span class="p">);</span>
+
+    <span class="c1">// 3. Return the vendor and product id</span>
+    <span class="kt">string</span> <span class="n">result</span> <span class="p">=</span> <span class="s">$"</span><span class="p">{</span><span class="n">parts</span><span class="p">[</span><span class="m">1</span><span class="p">]}</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>That would return <code class="language-plaintext highlighter-rouge">VID_04E8&amp;PID_6860</code> from the class name shown above.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">manufacturer</span> <span class="p">=</span> <span class="n">AndroidDeviceHelper</span><span class="p">.</span><span class="nf">GetManufacturerFromHardwareId</span><span class="p">(</span><span class="n">vid</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>That takes us to the next line in <code class="language-plaintext highlighter-rouge">WndProc</code>, which will use a WMI query to get the name of the Android device</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="kt">string</span><span class="p">?</span> <span class="nf">GetDeviceName</span><span class="p">(</span><span class="kt">string</span> <span class="n">ThisDevice</span> <span class="p">=</span>  <span class="s">"VID"</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">try</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">query</span> <span class="p">=</span> <span class="s">$"SELECT Description, Service, PNPDeviceID, Present FROM Win32_PnPEntity "</span> <span class="p">+</span>
+                    <span class="s">"WHERE Service='WUDFWpdMtp' "</span> <span class="p">+</span>
+                    <span class="s">"AND PNPDeviceID LIKE '%"</span> <span class="p">+</span> <span class="n">ThisDevice</span> <span class="p">+</span> <span class="s">"%'"</span> <span class="p">+</span>
+                    <span class="s">"AND Present = True"</span><span class="p">;</span>
+
+        <span class="c1">// Walk through the results and return the description of the first matching device</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">mo</span> <span class="k">in</span> <span class="k">new</span> <span class="nf">ManagementObjectSearcher</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="n">query</span><span class="p">).</span><span class="nf">Get</span><span class="p">().</span><span class="n">OfType</span><span class="p">&lt;</span><span class="n">ManagementObject</span><span class="p">&gt;())</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">mo</span><span class="p">.</span><span class="n">Properties</span><span class="p">[</span><span class="s">"Description"</span><span class="p">].</span><span class="n">Value</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="n">InvalidCastException</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Some property couldn't be cast. This can happen when no rows are returned</span>
+        <span class="c1">// Just ignore it</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We can use WMI to query the system for detailed information, using a <a href="https://learn.microsoft.com/en-us/windows/win32/wmisdk/querying-with-wql">SQL-like</a> syntax.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">Description</span><span class="p">,</span> <span class="n">Service</span><span class="p">,</span> <span class="n">PNPDeviceID</span><span class="p">,</span> <span class="n">Present</span> <span class="k">FROM</span> <span class="n">Win32_PnPEntity</span>
+<span class="k">WHERE</span> <span class="n">Service</span><span class="o">=</span><span class="s1">'WUDFWpdMtp'</span>
+<span class="k">AND</span> <span class="n">PNPDeviceID</span> <span class="k">LIKE</span> <span class="s1">'%" + ThisDevice + "%'</span>
+<span class="k">AND</span> <span class="n">Present</span> <span class="o">=</span> <span class="k">True</span>
+</code></pre></div></div>
+
+<p>Give us the Description, Service, PNPDeviceID, and Present fields from Win32_PnPEntity where Service is ‘WUDFWpdMtp’, PNPDeviceID matches a wildcard string for our VID/PID, and present is true. <a href="https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-pnpentity">Win32_PnPEntity</a> is a class that represents the properties of a Plug and Play device. This query is a quick and easy to get details about plugged in devices.</p>
+
+<p>We execute the query and return the Description field for the first matching row.</p>
+
+<p>In short, this will return the device name for the first Android device that matches that vendor and product ids.</p>
+
+<p>We match on <code class="language-plaintext highlighter-rouge">Service='WUDFWpdMtp'</code> because that returns th WMI row with the name that we need. When you plug an Android device in, it shows up as multiple devices. WUDFWpdMtp is the driver in Windows that handles removabe storage devices.</p>
+
+<p>If we were to change that WMI query to this</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">Description</span><span class="p">,</span> <span class="n">Manufacturer</span><span class="p">,</span> <span class="n">Name</span><span class="p">,</span> <span class="n">PNPDeviceID</span><span class="p">,</span> <span class="n">Service</span>
+<span class="k">FROM</span> <span class="n">Win32_PnPEntity</span>
+<span class="k">WHERE</span> <span class="n">PNPDeviceID</span> <span class="k">LIKE</span> <span class="s1">'%" + ThisDevice + "%'</span>
+<span class="k">AND</span> <span class="n">Present</span> <span class="o">=</span> <span class="k">True</span>
+</code></pre></div></div>
+<p>We would get following result set back</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Manufacturer</th>
+      <th>Name</th>
+      <th>PNPDeviceID</th>
+      <th>Service</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SAMSUNG Android ADB Interface</td>
+      <td>SAMSUNG Electronics Co., Ltd.</td>
+      <td>SAMSUNG Android ADB Interface</td>
+      <td>USB\VID_04E8&amp;PID_6860&amp;ADB\A&amp;1CEC0697&amp;0&amp;0003</td>
+      <td>WINUSB</td>
+    </tr>
+    <tr>
+      <td>SM-S948U</td>
+      <td>samsung</td>
+      <td>Chris’s S26 Ultra</td>
+      <td>USB\VID_04E8&amp;PID_6860&amp;MS_COMP_MTP&amp;SAMSUNG_ANDROID\A&amp;1CEC0697&amp;0&amp;0000</td>
+      <td>WUDFWpdMtp</td>
+    </tr>
+    <tr>
+      <td>SAMSUNG Mobile USB Composite Device</td>
+      <td>SAMSUNG Electronics Co., Ltd.</td>
+      <td>SAMSUNG Mobile USB Composite Device</td>
+      <td>USB\VID_04E8&amp;PID_6860\R3GL108K8GE</td>
+      <td>dg_ssudbus</td>
+    </tr>
+    <tr>
+      <td>SAMSUNG Mobile USB Modem</td>
+      <td>SAMSUNG Electronics Co., Ltd.</td>
+      <td>SAMSUNG Mobile USB Modem #2</td>
+      <td>USB\VID_04E8&amp;PID_6860&amp;MODEM\A&amp;1CEC0697&amp;0&amp;0001</td>
+      <td>Modem</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We want the row that returns “SM-S948U” as the Description. We only get that when we filter on <code class="language-plaintext highlighter-rouge">Service='WUDFWpdMtp'</code>.</p>
+
+<h3 id="using-powershell-to-test-wmi-queries">Using PowerShell to test WMI queries</h3>
+<p>You can check WMI through PowerShell if you need to confirm what your device would return. These PowerShell commands use WMI calls.</p>
+
+<div class="language-posh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get-PnpDevice</span><span class="w"> </span><span class="nt">-FriendlyName</span><span class="w"> </span><span class="s2">"*Android*"</span><span class="w"> </span><span class="nt">-Status</span><span class="w"> </span><span class="nx">OK</span><span class="w"> </span><span class="o">|</span><span class="w">
+  </span><span class="n">Select-Object</span><span class="w"> </span><span class="nt">-Property</span><span class="w"> </span><span class="nx">FriendlyName</span><span class="p">,</span><span class="w"> </span><span class="nx">Service</span><span class="p">,</span><span class="w"> </span><span class="nx">PNPDeviceID</span><span class="w">
+
+</span><span class="n">Get-CimInstance</span><span class="w"> </span><span class="nt">-ClassName</span><span class="w"> </span><span class="nx">Win32_PnPEntity</span><span class="w"> </span><span class="o">|</span><span class="w">
+  </span><span class="n">Where-Object</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="bp">$_</span><span class="o">.</span><span class="nf">Service</span><span class="w"> </span><span class="o">-eq</span><span class="w"> </span><span class="s1">'WUDFWpdMtp'</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">|</span><span class="w">
+  </span><span class="n">Select-Object</span><span class="w"> </span><span class="nx">Description</span><span class="p">,</span><span class="w"> </span><span class="nx">DeviceID</span><span class="p">,</span><span class="w"> </span><span class="nx">PNPDeviceID</span><span class="p">,</span><span class="w"> </span><span class="nx">Manufacturer</span><span class="w">
+</span></code></pre></div></div>
+
+<p>If we have a match, the device description will be the name of the Android device. And that will be what we need to update Visual Studio.</p>
+
+<p>We set the device name in the viewmodel to the name of the connected device.  That calls a method named <code class="language-plaintext highlighter-rouge">RefreshVs()</code>.  This method will collect the filename of all open MAUI projects and update the ActiveDebugProfile field in the user project file to the device name.</p>
+
+<h1 id="finding-the-open-intances-of-visual-studio">Finding the open intances of Visual Studio</h1>
+<p>We look at the running processes and collect the ones running Visual Studio.  We only care about the current user, so we don’t need elevated privileges.  This is wrapped up in the <code class="language-plaintext highlighter-rouge">VsProjectService</code> service in VsProjectService.cs</p>
+
+<p>We install the <a href="https://www.nuget.org/packages/envdte">EnvDTE NuGet</a> package. This is a wrapper for the COM library containing the objects and members for Visual Studio core automation.</p>
+
+<p>The methods that we calling are COM methods from ole32.dll. Unlike the plain native API methods that we used for getting the USB information, there is no benefit to use LibraryImport.</p>
+
+<p>The reason is that these signatures marshal COM interfaces (IRunningObjectTable, IBindCtx) through out parameters. LibraryImport is a great fit for simple P/Invokes like the ones in NativeMethods.cs, where the parameters are IntPtr, SafeHandle, and primitive types. It is not a clean drop-in replacement for these COM-heavy ole32 calls.</p>
+
+<p>If you really wanted to convert them, you’d usually need to change the signatures to use raw IntPtr and then manually turn those pointers into COM objects, which is more code and more fragile for no real benefit here.</p>
+
+<p>This code will get the <a href="https://learn.microsoft.com/en-us/windows/win32/api/objidl/nn-objidl-irunningobjecttable">Running Object Table</a> for the current user:</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get the ROT and enumerate running objects</span>
+<span class="n">_</span> <span class="p">=</span> <span class="nf">GetRunningObjectTable</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="k">out</span> <span class="n">IRunningObjectTable</span> <span class="n">rot</span><span class="p">);</span>
+<span class="n">_</span> <span class="p">=</span> <span class="nf">CreateBindCtx</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="k">out</span> <span class="n">IBindCtx</span> <span class="n">ctx</span><span class="p">);</span>
+
+<span class="c1">// Get the list of running objects from the ROT and walks through the list</span>
+<span class="n">rot</span><span class="p">.</span><span class="nf">EnumRunning</span><span class="p">(</span><span class="k">out</span> <span class="n">IEnumMoniker</span> <span class="n">enumMoniker</span><span class="p">);</span>
+<span class="n">IMoniker</span><span class="p">[]</span> <span class="n">monikers</span> <span class="p">=</span> <span class="k">new</span> <span class="n">IMoniker</span><span class="p">[</span><span class="m">1</span><span class="p">];</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">enumMoniker</span><span class="p">.</span><span class="nf">Next</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="n">monikers</span><span class="p">,</span> <span class="n">IntPtr</span><span class="p">.</span><span class="n">Zero</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Get the display name of the running object</span>
+        <span class="n">monikers</span><span class="p">[</span><span class="m">0</span><span class="p">].</span><span class="nf">GetDisplayName</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">out</span> <span class="kt">string</span> <span class="n">displayName</span><span class="p">);</span>
+
+</code></pre></div></div>
+<p>We then look only at the running instances of Visual Studio by matching on the display name of the process.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">displayName</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="s">"VisualStudio.DTE"</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">CurrentCulture</span><span class="p">))</span>
+</code></pre></div></div>
+<p>Through the magic (or mystery) of COM, we get the running object and access it through the <a href="https://learn.microsoft.com/en-us/dotnet/api/envdte.dte">DTE interface</a>.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rot</span><span class="p">.</span><span class="nf">GetObject</span><span class="p">(</span><span class="n">monikers</span><span class="p">[</span><span class="m">0</span><span class="p">],</span> <span class="k">out</span> <span class="kt">object</span> <span class="n">obj</span><span class="p">);</span>
+
+<span class="kt">dynamic</span> <span class="n">dte</span> <span class="p">=</span> <span class="n">obj</span><span class="p">;</span>
+
+<span class="kt">string</span> <span class="n">solution</span> <span class="p">=</span> <span class="n">dte</span><span class="p">.</span><span class="n">Solution</span><span class="p">.</span><span class="n">FullName</span><span class="p">;</span>
+</code></pre></div></div>
+<p>If we have a solution or at least one project, we new up an instance of a VsInstance class and then call a method named EnumerateProjects.  This method will recursively walk through the solutions and collect the paths to any project that is a MAUI project. The code to see if the project is pretty simple</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">bool</span> <span class="nf">IsMauiProject</span><span class="p">(</span><span class="n">Project</span> <span class="n">project</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">filePath</span> <span class="p">=</span> <span class="n">project</span><span class="p">.</span><span class="n">FullName</span><span class="p">;</span>
+
+    <span class="kt">var</span> <span class="n">doc</span> <span class="p">=</span> <span class="n">XDocument</span><span class="p">.</span><span class="nf">Load</span><span class="p">(</span><span class="n">filePath</span><span class="p">);</span>
+
+    <span class="kt">var</span> <span class="n">useMaui</span> <span class="p">=</span> <span class="n">doc</span>
+        <span class="p">.</span><span class="nf">Descendants</span><span class="p">(</span><span class="s">"UseMaui"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nf">FirstOrDefault</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="n">useMaui</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span>
+            <span class="kt">bool</span><span class="p">.</span><span class="nf">TryParse</span><span class="p">(</span><span class="n">useMaui</span><span class="p">.</span><span class="n">Value</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">result</span><span class="p">)</span> <span class="p">&amp;&amp;</span>
+            <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We load the project as an XML document and look for the existence of <code class="language-plaintext highlighter-rouge">UseMaui</code> element.  If the element exists and the value is <code class="language-plaintext highlighter-rouge">true</code>, then this is a MAUI project.</p>
+
+<h2 id="updating-the-user-project-file">Updating the user project file</h2>
+
+<p>In RefreshVs, we collect the filenames of every open MAUI project</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">service</span> <span class="p">=</span> <span class="nf">GetService</span><span class="p">();</span>
+<span class="kt">var</span> <span class="n">instances</span> <span class="p">=</span> <span class="n">service</span><span class="p">.</span><span class="nf">GetVsInstances</span><span class="p">();</span>
+
+<span class="kt">var</span> <span class="n">mauiProjects</span> <span class="p">=</span> <span class="n">VsProjectService</span><span class="p">.</span><span class="nf">GetMauiProjectsByInstances</span><span class="p">(</span><span class="n">instances</span><span class="p">);</span>
+
+<span class="nf">AddLog</span><span class="p">(</span><span class="s">$"Found </span><span class="p">{</span><span class="n">mauiProjects</span><span class="p">.</span><span class="n">Count</span><span class="p">}</span><span class="s"> MAUI projects."</span><span class="p">);</span>
+
+<span class="kt">var</span> <span class="n">UpdateCount</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">project</span> <span class="k">in</span> <span class="n">mauiProjects</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">thisUpdate</span> <span class="p">=</span> <span class="nf">UpdateProjectFile</span><span class="p">(</span><span class="n">project</span><span class="p">);</span>
+    <span class="n">UpdateCount</span> <span class="p">+=</span> <span class="n">thisUpdate</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">thisUpdate</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+        <span class="nf">AddLog</span><span class="p">(</span><span class="s">$"☑️ Updated </span><span class="p">{</span><span class="n">project</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">else</span>
+        <span class="nf">AddLog</span><span class="p">(</span><span class="s">$"Skipped </span><span class="p">{</span><span class="n">project</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">UpdateProjectFile</code> method in the viewmodel calls the <code class="language-plaintext highlighter-rouge">UpdateProjectFile</code> method of the VsProjectService and passes the filename and the device name.  The following is the logic of that method. I removed the error handling to just show the highlights.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Load the .csproj.user file</span>
+<span class="n">doc</span> <span class="p">=</span> <span class="n">XDocument</span><span class="p">.</span><span class="nf">Load</span><span class="p">(</span><span class="n">userFilePath</span><span class="p">);</span>
+
+<span class="c1">// We need to set the namespace</span>
+<span class="n">ns</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">Root</span><span class="p">?.</span><span class="n">Name</span><span class="p">.</span><span class="n">Namespace</span> <span class="p">??</span> <span class="s">"http://schemas.microsoft.com/developer/msbuild/2003"</span><span class="p">;</span>
+
+<span class="c1">// Get the root</span>
+<span class="kt">var</span> <span class="n">root</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">Root</span> <span class="p">??</span> <span class="k">throw</span> <span class="k">new</span> <span class="nf">InvalidOperationException</span><span class="p">(</span><span class="s">"Invalid .user file structure."</span><span class="p">);</span>
+
+<span class="c1">// Then PropertyGroup</span>
+<span class="kt">var</span> <span class="n">propertyGroup</span> <span class="p">=</span> <span class="n">root</span><span class="p">.</span><span class="nf">Elements</span><span class="p">(</span><span class="n">ns</span> <span class="p">+</span> <span class="s">"PropertyGroup"</span><span class="p">).</span><span class="nf">FirstOrDefault</span><span class="p">();</span>
+
+<span class="c1">// Then ActiveDebugProfile</span>
+<span class="kt">var</span> <span class="n">activeDebugProfileElement</span> <span class="p">=</span> <span class="n">propertyGroup</span>
+    <span class="p">.</span><span class="nf">Elements</span><span class="p">(</span><span class="n">ns</span> <span class="p">+</span> <span class="s">"ActiveDebugProfile"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">FirstOrDefault</span><span class="p">();</span>
+
+<span class="c1">// Update value</span>
+<span class="n">activeDebugProfileElement</span><span class="p">.</span><span class="n">Value</span> <span class="p">=</span> <span class="n">activeDebugProfile</span><span class="p">;</span>
+
+<span class="c1">// Save the changes</span>
+<span class="n">doc</span><span class="p">.</span><span class="nf">Save</span><span class="p">(</span><span class="n">userFilePath</span><span class="p">);</span>
+</code></pre></div></div>
+<p>Visual Studio will watch for changes to the .csprj.user file. If you modify the file outside the IDE, the IDE will see the changes update the IDE accordingly. This is one of those things that just works.</p>
+
+<h2 id="performance-concerns">Performance concerns</h2>
+<p>When the app is running, it detects when a new device has been plugged fairly quickly. Usually within a second or two. Enumerating the running instances of Visual Studio and updating any open MAUI projects takes another second or so.</p>
+
+<p>There was alternate way of detecting new device using WMI queries. You can use ManagementEventWatcher to subscribe to changes to a WMI table.</p>
+
+<div class="language-cs highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The WITHIN 2 means to rerun this query every 2 seconds</span>
+<span class="kt">var</span> <span class="n">query</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">WqlEventQuery</span><span class="p">(</span>
+    <span class="s">"SELECT * FROM __InstanceCreationEvent WITHIN 2 "</span> <span class="p">+</span>
+    <span class="s">"WHERE TargetInstance ISA 'Win32_PnPEntity'"</span><span class="p">);</span>
+
+<span class="c1">// Create an event that will be called</span>
+<span class="n">_watcher</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ManagementEventWatcher</span><span class="p">(</span><span class="n">query</span><span class="p">);</span>
+<span class="n">_watcher</span><span class="p">.</span><span class="n">EventArrived</span> <span class="p">+=</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">device</span> <span class="p">=</span> <span class="p">(</span><span class="n">ManagementBaseObject</span><span class="p">)</span><span class="n">e</span><span class="p">.</span><span class="n">NewEvent</span><span class="p">[</span><span class="s">"TargetInstance"</span><span class="p">];</span>
+    <span class="kt">var</span> <span class="n">name</span> <span class="p">=</span> <span class="n">device</span><span class="p">[</span><span class="s">"Name"</span><span class="p">]?.</span><span class="nf">ToString</span><span class="p">();</span>
+
+    <span class="c1">// Do something here</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">&amp;&amp;</span>
+        <span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="s">"Android"</span><span class="p">)</span> <span class="p">||</span> <span class="n">name</span><span class="p">.</span><span class="nf">Contains</span><span class="p">(</span><span class="s">"ADB"</span><span class="p">)))</span>
+    <span class="p">{</span>
+        <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Android device connected: </span><span class="p">{</span><span class="n">name</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p>While a variation of that could work, it’s pretty heavy handed. It takes less resources to listen to device connection events, collect the vendor and product, and then run a WMI query.</p>
+
+<h1 id="wpf">WPF</h1>
+<p>I wrote this using WPF because that is the desktop framework that I am used it. I never liked WinForms and I know how to write apps that use XAML. Most of the code is separate from the UI. The code that handles the USB events is tied to the UI, the rest follows a MVVM and service model.</p>
+
+<p>I didn’t cover the nuts and bolts of how to build a WPF app. It has some of the usual stuff like detecting light and dark mode or saving/restoring the position of the window. There’s code to scroll the datagrid to the end whenever it’s updated. Nothing fancy and all is commented in the code.</p>
+
+<p>No additional permissions should be needed by the app. It should just work with the same rights that you used to run Visual Studio.</p>
+
+<h2 id="weakreferencemessenger">WeakReferenceMessenger</h2>
+<p>To update the UI, I write log entries to an observable collection in the viewmodel. I use the WeakReferenceMessenger messaging to send messages to update that collection from vaious parts of the applicatioos.  That collection is bound to a DataGrid in the MainWindow.</p>
+
+<h2 id="let-there-be-toast">Let there be Toast</h2>
+<p>I use the Microsoft.Toolkit.Uwp.Notifications nuget package to display a toast message if any projects are updated. The eventual goal is have the app run in the tool tray and the toast will let me know when projects have been updated. It’s overkill eyecandy, but it was to add.</p>
+
+<h2 id="winui">WinUI</h2>
+<p>I don’t write much for Windows Desktop and WPF has always had enough functionality for what I needed. I pretty much ignored UWP and WinUI when they came out. It just seemed to me as more the of the same, yet different. And harder to install on other people’s computers.</p>
+
+<p>After I had VADP mostly working, I decided to see how long it would take to port to WinUI.  It didn’t take long. The code was pretty much detached from the UI. Using MVVM made it easy to wire up new views to the existing viewmodels. The code to wire up the events to listen to USB connect/disconnects was probably the biggest change to the code.</p>
+
+<p>There were some minor changes to the UI, most of the actual code just worked. The XAML was less polished. There was no benefit for this app to use WinUI over WPF. But I can check “wrote a WinUI app” off my bucket list.</p>
+
+<p>Since this app was Windows only, there wasn’t any point in writing it with MAUI or Avalonia.</p>
+
+<h1 id="troubleshooting">Troubleshooting</h1>
+<p>For the toast message popup to work, you need to compile for x64, it doesn’t seem to work for AnyCpu. It should work for arm64, but I haven’t tested it. The TargetFramework in the the csproj needs to be set to include a TFM with a minium version of Windows. I used <code class="language-plaintext highlighter-rouge">net10.0-windows10.0.22621.0</code></p>
+
+<p>If the WMI query doesn’t return a product name for your phone, you may need to tweak the query. The PowerShell commands listed above will help return the right data.</p>
+
+<h1 id="is-this-overkill">Is this overkill?</h1>
+<p>This app is more or less overkill. If I use a wireless ADB connection, then Visual Studio tends to keep the connection. When it doesn’t, a have a slightly different problem to solve. I also tend to keep my phone plugged in when I’m using all day.</p>
+
+<p>While I use this app everyday, I wrote it to see how hard it would be. I already knew that updating a user csproj outside of Visual Studio would work. My PowerShell script showed that it work.</p>
+
+<p>It then became a task of identifying when a USB device was connected and how to get that device name. That was fairly easy to do. It took a little longer to learn how to make the COM calls to get the open solution files.  A lot of that code was vibe-coded using a mixture of Claude and Gemini. It’s 2026, the various AI options make grunt work like that much easier to accomplish.</p>
+
+<h1 id="future-improvments">Future improvments</h1>
+<p>Right now this app just sits on the desktop, waiting for some action. I have multiple monitors, it doesn’t bother me to have running that way. But it would be nice to have it run minimized in the system tray. I started that code, but it’s not done yet.</p>]]></content><author><name>anotherlab</name></author><category term="visualstudio" /><category term="maui" /><category term="wpf" /><category term="automation" /><category term="android-debugging" /><category term="device-detection" /><category term="usb-devices" /><category term="com-automation" /><category term="wmi" /><category term="developer-workflow" /><category term="pinvoke" /><category term="windows-interop" /><category term="developer-tools" /><category term="visual-studio-extensions" /><summary type="html"><![CDATA[Introduction This is how I resolved one of my pet peeves with Visual Studio. When I am working on a .NET MAUI application, when I unplug my phone, Visual Studio changes debug target to the default emulator. When I plug the phone back in, it doesn’t set it back. That drives me crazy. So I over-engineered a solution.]]></summary></entry><entry><title type="html">Using the 3-2-1 strategy for digital backups</title><link href="http://localhost:4000/2026/03/10/backup/" rel="alternate" type="text/html" title="Using the 3-2-1 strategy for digital backups" /><published>2026-03-10T00:00:00+00:00</published><updated>2026-03-10T00:00:00+00:00</updated><id>http://localhost:4000/2026/03/10/backup</id><content type="html" xml:base="http://localhost:4000/2026/03/10/backup/"><![CDATA[<h1 id="introduction">Introduction</h1>
 <p>I take hundreds of photos every month on my camera and phone, and over the years I’ve learned the importance of reliable photo backup strategies. In this guide, I’ll cover local storage, NAS devices, cloud storage, and the 3-2-1 backup rule to make sure your pictures are safe no matter what happens.</p>
 
 <p>I assume that every backup will eventually fail, so I keep multiple copies of anything I want to keep. I’ve mentioned how I had my boot drive <a href="/2026/02/17/backing-up-wsl2/">just fail without warning</a>.</p>
@@ -1195,42 +1821,4 @@ Firstname Lastname: Spoken dialog goes here, could have a comma and the &amp; wo
 
 <p>To apply the principles of poka-yoke to software, one goal would be to prevent an error from propagating through multiple services. We have that old saying. “Garbage in, garbage out”. If you apply poka-yoke to that, it becomes “Garbage in, garbage rejected”. My change to the app to not allow an API call with invalid data is another example of poka-yoke.</p>
 
-<p>Poka-yoke was developed by an industrial engineer named <a href="https://en.wikipedia.org/wiki/Shigeo_Shingo">Shigeo Shingo</a> for the <a href="https://en.wikipedia.org/wiki/Toyota_Production_System">Toyota Production System</a> (TPS) back in the 1960s. If you ever heard the term “just-in-time” manufacturing, it came from TPS. A translation of poka-yoke means “error-proofing”, from the words “poka” meaning mistakes and “yokeru” meaning to avoid. Which is better than the first term that Shingo used, baka-yoke. That translates to “idiot-proofing”, which was less than popular with the machine operators.</p>]]></content><author><name>anotherlab</name></author><category term="quality code" /><category term="jargon" /><summary type="html"><![CDATA[So I used poka-yoke (ポカヨケ) in a conversation yesterday. I am working on an update to an app that uses a web service. Under an extreme edge condition, the app would make an API call with a missing parameter that was required. This would error out on the service side and we caught it with the logs. The simple fix was to change the API call so it would check for missing data coming in and just return without doing anything. I went full poka-yoke and also changed the app so it wouldn’t make the call until it had the required information. Easy enough fixes. When I was chatting with my boss about the fixes, I dropped the term poka-yoke into the chat. Years ago, I worked on statistical process control (SPC) software for companies that made packaging material. The term poka-yoke was the buzzword of the day and it stuck in my brain. It’s a Japanese term to describe the methods used to prevent errors. If you can prevent your assembly line from making an error, your quality goes up. To implement poka-yoke, at each manufacturing stage, there is something in place that prevents a faulty output from going on to the next step. A part that is out of tolerance could be automatically redirected to a rejected parts bin. Or a part can’t be welded if it’s not correctly aligned. By doing these checks inline, problems can be addressed earlier in the process. This saves production time and production materials. An example would be a machine that cuts corugated cardboard sheets to make boxes. If the cardboard is not lined up correctly, you get box that doesn’t fold up correctly. We used an optical sensor to measure the position of the sheets as they went through the cutter to make sure they lined up correctly and then on the side to make sure that the cuts were in the right place and of the correct dimensions. Through software, we can check those sheets faster than the operator. If something was out of alignment, we could stop the machine before too many sheets were ruined. We helped our clients reduce the amount of downtime and saved them a lot of money. You have something in your kitchen that is an example of poke-yoke. Your microwave wont turn on unless the door is closed. That seems fairly obvious, but it’s a clear example of how poke-yoke can be implemented. To apply the principles of poka-yoke to software, one goal would be to prevent an error from propagating through multiple services. We have that old saying. “Garbage in, garbage out”. If you apply poka-yoke to that, it becomes “Garbage in, garbage rejected”. My change to the app to not allow an API call with invalid data is another example of poka-yoke. Poka-yoke was developed by an industrial engineer named Shigeo Shingo for the Toyota Production System (TPS) back in the 1960s. If you ever heard the term “just-in-time” manufacturing, it came from TPS. A translation of poka-yoke means “error-proofing”, from the words “poka” meaning mistakes and “yokeru” meaning to avoid. Which is better than the first term that Shingo used, baka-yoke. That translates to “idiot-proofing”, which was less than popular with the machine operators.]]></summary></entry><entry><title type="html">Refresh of this blog</title><link href="http://localhost:4000/2025/03/04/blog-refresh/" rel="alternate" type="text/html" title="Refresh of this blog" /><published>2025-03-04T00:00:00+00:00</published><updated>2025-03-04T00:00:00+00:00</updated><id>http://localhost:4000/2025/03/04/blog-refresh</id><content type="html" xml:base="http://localhost:4000/2025/03/04/blog-refresh/"><![CDATA[<p><img src="/assets/images/pc_on_fire.jpg" alt="Not good" /></p>
-
-<p>The blog has been updated. Not just posts, all of the stuff that generates it. This wasn’t planned…</p>
-
-<p>About two weeks ago, the boot drive of my PC failed. The drive was a Samsung 980 Pro 2TB. I had two of them, one for the OS, the other for data. Went to my PC on a normal Sunday morning only to see the BIOS configuration screen. After a few failed reboots, I came to the conclusion that something was seriously not good with by boot drive.</p>
-
-<p><img src="/assets/images/uefi-bios-11.gif" alt="Rut ro" />
-<em><small>Not my motherboard, but close enough</small></em></p>
-
-<p>What I didn’t know was that this drive was shipped with a <a href="https://www.tomshardware.com/news/samsung-980-pro-ssd-failures-firmware-update">notorious firmware bug</a>. Eventually it would permanently lock itself into readonly mode.</p>
-
-<p>Most of my data is backed up on regular basis. I have a <a href="https://www.qnap.com/en-as/product/ts-464">QNAP server</a> with about 7 TB of RAID storage. Stuff that is important to me is backed up there. I have a healthy degree of paranoia about disk backups. I assume that it will all fail. I backup up documents to external USB drives and store them at my daughter’s house. I count on those drives failing after a few years and will rotate them out.</p>
-
-<p>I figure we’ll have USB around for a while longer. I use to burn documents to CD and the DVD. I don’t have any drives with spinning parts in this computer. USB is enough.</p>
-
-<p>I was a bit sloppy with backing up some of the stuff, so I had some code on the boot drive that I didn’t want to lose. I was able to make a Windows 11 boot USB stick and with that stick, I could open a CMD shell and read the data from the boot drive.  I copied to data drive and to an external drive.</p>
-
-<p>I made a few attempts to reinstall Windows, but that drive was locked into readonly mode. I ordered a new drive from a local BestBuy and picked it up.  All they had were Samsung 990 Pro drives in the 2 TB size. So that’s what I bought. I like the M.2 NVMe drives. They are fast and they just install on the motherboard. No power or data cables. When I assembled this <a href="https://pcpartpicker.com/list/BwHP6r">PC</a> 3 years ago, I did it without any SATA drives.</p>
-
-<p>Now it was time to get to work. I have a <a href="https://www.msi.com/Motherboard/MPG-Z690-EDGE-WIFI-DDR4">MSI Z690 Edge Wifi DD4 motherboard</a>. It’s nice, I like it. It has four M.2 slots. One of them is directly controlled by the CPU, the other 3 are controlled by the Z690 chipset. The one controlled by the CPU is where I have the boot drive. It’s located between the CPU and the first PCIe slot. All of the M.2 slots have heatsinks on them. Which have to be unscrewed to get at the slots</p>
-
-<p>I used a Fractal Desigm Torrent case for this PC. It’s fan cooled and very quiet. I have a massive Noctua CPU cooler. It partially covers the M.2 slot and I had to angle a screw driver in to get the heatsink off and swap the old drive with the new one. I had also had to remove the GPU to get at the M.2 slot. It’s always fiddly to swap stuff on the motherboard, but it wasn’t too bad.</p>
-
-<p>I booted from the Win11 stick and tried to install Windows. Here is where I shot myself in the foot. Windows numbers the drives, starting from 0. The boot drive was 0, the data was 1. For some reason, the data drive was now 0 and the new one was 1. I just assumed that because I was using the same slot for the new drive, the numbering would stay the same.I ended up deleting the partition on the good drive so the Win11 installer could start fresh.</p>
-
-<p>It rebooted and kept coming back to the installer on the USB stick. After a few attempts, I pulled the data drive out and with just one drive, Windows setup was able to install Windows. After Windows came up and updated itself, I powered down and installed the data drive. It came up and of course my data was gone. It was backed up, but I had some images and code that were only the data drive. I ended up buying <a href="https://www.anyrecover.com/">an app</a> that claimed to be able to recover data from a deleted partition.</p>
-
-<p>AnyRecover lived up to it’s claim. It wasn’t quick, but I recoved what I needed to a folder on the new boot drive. I then formatted the data drive and moved the data back. That’s when a friend told me that these 980 Pro drives had a firmware version that would eventually lock the drive into readonly. I bought the data drive a month after building the PC, the odds were high that it had the same firmware. Samssung has a handy <a href="https://semiconductor.samsung.com/consumer-storage/magician/">Magician</a> app. It can show the firmware and other settings and it can update the firmware.</p>
-
-<p>So I downloaded and installed the Magician app and then installed the broken drive to see what the Magician would say. It showed that the new 990 Pro had the current firmware, but both 980 Pro’s were on the bad firmware. It was able to update the firmware for the data drive, but failed on the old boot drive. It did allow me to access the serial number of the drive.</p>
-
-<p><img src="/assets/images/samsung-magician.png" alt="Samsung Magician" />
-<em><small>Screenshot of the Samsung Magician</small></em></p>
-
-<p>I went to the Samsung Support site and filed a warranty claim. They took the serial number and immediately gave me a RMA number and a label to print. I sent the failed 980 Pro in. A few days later, I received a new 990 Pro drive back. Now I had three M.2 drives of 2 TB capacity each, which more than I needed. I didn’t realize until I wrote this blog post that the QNAP box has two M.2 slots. I thought my PC was the only thing I had that could use the drive.</p>
-
-<p>So I added it as a new drive and formatted as a <a href="https://learn.microsoft.com/en-us/windows/dev-drive/">Windows Dev Drive</a>. Dev Drives use the <a href="https://learn.microsoft.com/en-us/windows-server/storage/refs/refs-overview">ReFS</a> file system instead of NTFS and they are treated as a “trusted drive” by the OS. The usual antivirus and other security policies are not applied to Dev Drives. So that’s where all of my source code lives now. It’s supposed to be faster, but it’s hard to to tell.</p>
-
-<p>Now that the PC was running again and my data was safe, I could start the long process of installing and configuring the apps that I use. That will be another blog post. There was a lot to install and I’m almost there. Some configuration was required to the the blog stuff working again and this post is more or less a validation check for that.</p>]]></content><author><name>anotherlab</name></author><category term="Jekyll Blog Ubuntu" /><category term="Samsung M.2" /><summary type="html"><![CDATA[The blog has been updated. Not just posts, all of the stuff that generates it. This wasn’t planned… About two weeks ago, the boot drive of my PC failed. The drive was a Samsung 980 Pro 2TB. I had two of them, one for the OS, the other for data. Went to my PC on a normal Sunday morning only to see the BIOS configuration screen. After a few failed reboots, I came to the conclusion that something was seriously not good with by boot drive. Not my motherboard, but close enough What I didn’t know was that this drive was shipped with a notorious firmware bug. Eventually it would permanently lock itself into readonly mode. Most of my data is backed up on regular basis. I have a QNAP server with about 7 TB of RAID storage. Stuff that is important to me is backed up there. I have a healthy degree of paranoia about disk backups. I assume that it will all fail. I backup up documents to external USB drives and store them at my daughter’s house. I count on those drives failing after a few years and will rotate them out. I figure we’ll have USB around for a while longer. I use to burn documents to CD and the DVD. I don’t have any drives with spinning parts in this computer. USB is enough. I was a bit sloppy with backing up some of the stuff, so I had some code on the boot drive that I didn’t want to lose. I was able to make a Windows 11 boot USB stick and with that stick, I could open a CMD shell and read the data from the boot drive. I copied to data drive and to an external drive. I made a few attempts to reinstall Windows, but that drive was locked into readonly mode. I ordered a new drive from a local BestBuy and picked it up. All they had were Samsung 990 Pro drives in the 2 TB size. So that’s what I bought. I like the M.2 NVMe drives. They are fast and they just install on the motherboard. No power or data cables. When I assembled this PC 3 years ago, I did it without any SATA drives. Now it was time to get to work. I have a MSI Z690 Edge Wifi DD4 motherboard. It’s nice, I like it. It has four M.2 slots. One of them is directly controlled by the CPU, the other 3 are controlled by the Z690 chipset. The one controlled by the CPU is where I have the boot drive. It’s located between the CPU and the first PCIe slot. All of the M.2 slots have heatsinks on them. Which have to be unscrewed to get at the slots I used a Fractal Desigm Torrent case for this PC. It’s fan cooled and very quiet. I have a massive Noctua CPU cooler. It partially covers the M.2 slot and I had to angle a screw driver in to get the heatsink off and swap the old drive with the new one. I had also had to remove the GPU to get at the M.2 slot. It’s always fiddly to swap stuff on the motherboard, but it wasn’t too bad. I booted from the Win11 stick and tried to install Windows. Here is where I shot myself in the foot. Windows numbers the drives, starting from 0. The boot drive was 0, the data was 1. For some reason, the data drive was now 0 and the new one was 1. I just assumed that because I was using the same slot for the new drive, the numbering would stay the same.I ended up deleting the partition on the good drive so the Win11 installer could start fresh. It rebooted and kept coming back to the installer on the USB stick. After a few attempts, I pulled the data drive out and with just one drive, Windows setup was able to install Windows. After Windows came up and updated itself, I powered down and installed the data drive. It came up and of course my data was gone. It was backed up, but I had some images and code that were only the data drive. I ended up buying an app that claimed to be able to recover data from a deleted partition. AnyRecover lived up to it’s claim. It wasn’t quick, but I recoved what I needed to a folder on the new boot drive. I then formatted the data drive and moved the data back. That’s when a friend told me that these 980 Pro drives had a firmware version that would eventually lock the drive into readonly. I bought the data drive a month after building the PC, the odds were high that it had the same firmware. Samssung has a handy Magician app. It can show the firmware and other settings and it can update the firmware. So I downloaded and installed the Magician app and then installed the broken drive to see what the Magician would say. It showed that the new 990 Pro had the current firmware, but both 980 Pro’s were on the bad firmware. It was able to update the firmware for the data drive, but failed on the old boot drive. It did allow me to access the serial number of the drive. Screenshot of the Samsung Magician I went to the Samsung Support site and filed a warranty claim. They took the serial number and immediately gave me a RMA number and a label to print. I sent the failed 980 Pro in. A few days later, I received a new 990 Pro drive back. Now I had three M.2 drives of 2 TB capacity each, which more than I needed. I didn’t realize until I wrote this blog post that the QNAP box has two M.2 slots. I thought my PC was the only thing I had that could use the drive. So I added it as a new drive and formatted as a Windows Dev Drive. Dev Drives use the ReFS file system instead of NTFS and they are treated as a “trusted drive” by the OS. The usual antivirus and other security policies are not applied to Dev Drives. So that’s where all of my source code lives now. It’s supposed to be faster, but it’s hard to to tell. Now that the PC was running again and my data was safe, I could start the long process of installing and configuring the apps that I use. That will be another blog post. There was a lot to install and I’m almost there. Some configuration was required to the the blog stuff working again and this post is more or less a validation check for that.]]></summary></entry></feed>
+<p>Poka-yoke was developed by an industrial engineer named <a href="https://en.wikipedia.org/wiki/Shigeo_Shingo">Shigeo Shingo</a> for the <a href="https://en.wikipedia.org/wiki/Toyota_Production_System">Toyota Production System</a> (TPS) back in the 1960s. If you ever heard the term “just-in-time” manufacturing, it came from TPS. A translation of poka-yoke means “error-proofing”, from the words “poka” meaning mistakes and “yokeru” meaning to avoid. Which is better than the first term that Shingo used, baka-yoke. That translates to “idiot-proofing”, which was less than popular with the machine operators.</p>]]></content><author><name>anotherlab</name></author><category term="quality code" /><category term="jargon" /><summary type="html"><![CDATA[So I used poka-yoke (ポカヨケ) in a conversation yesterday. I am working on an update to an app that uses a web service. Under an extreme edge condition, the app would make an API call with a missing parameter that was required. This would error out on the service side and we caught it with the logs. The simple fix was to change the API call so it would check for missing data coming in and just return without doing anything. I went full poka-yoke and also changed the app so it wouldn’t make the call until it had the required information. Easy enough fixes. When I was chatting with my boss about the fixes, I dropped the term poka-yoke into the chat. Years ago, I worked on statistical process control (SPC) software for companies that made packaging material. The term poka-yoke was the buzzword of the day and it stuck in my brain. It’s a Japanese term to describe the methods used to prevent errors. If you can prevent your assembly line from making an error, your quality goes up. To implement poka-yoke, at each manufacturing stage, there is something in place that prevents a faulty output from going on to the next step. A part that is out of tolerance could be automatically redirected to a rejected parts bin. Or a part can’t be welded if it’s not correctly aligned. By doing these checks inline, problems can be addressed earlier in the process. This saves production time and production materials. An example would be a machine that cuts corugated cardboard sheets to make boxes. If the cardboard is not lined up correctly, you get box that doesn’t fold up correctly. We used an optical sensor to measure the position of the sheets as they went through the cutter to make sure they lined up correctly and then on the side to make sure that the cuts were in the right place and of the correct dimensions. Through software, we can check those sheets faster than the operator. If something was out of alignment, we could stop the machine before too many sheets were ruined. We helped our clients reduce the amount of downtime and saved them a lot of money. You have something in your kitchen that is an example of poke-yoke. Your microwave wont turn on unless the door is closed. That seems fairly obvious, but it’s a clear example of how poke-yoke can be implemented. To apply the principles of poka-yoke to software, one goal would be to prevent an error from propagating through multiple services. We have that old saying. “Garbage in, garbage out”. If you apply poka-yoke to that, it becomes “Garbage in, garbage rejected”. My change to the app to not allow an API call with invalid data is another example of poka-yoke. Poka-yoke was developed by an industrial engineer named Shigeo Shingo for the Toyota Production System (TPS) back in the 1960s. If you ever heard the term “just-in-time” manufacturing, it came from TPS. A translation of poka-yoke means “error-proofing”, from the words “poka” meaning mistakes and “yokeru” meaning to avoid. Which is better than the first term that Shingo used, baka-yoke. That translates to “idiot-proofing”, which was less than popular with the machine operators.]]></summary></entry></feed>
