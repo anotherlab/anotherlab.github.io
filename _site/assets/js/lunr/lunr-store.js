@@ -282,7 +282,7 @@ var store = [{
         "teaser": null
       },{
         "title": "A letter to Doctor Laura&#8230; (plasticbag.org)",
-        "excerpt":"Tom Coates’s letter to Doctor Laura is the best response that I have seen to people who declare that homosexual behavior is described as an abomination in the Bible. _&lt;/p&gt; _Dear Dr. Laura,&lt;/p&gt; Thank you for doing so much to educate people regarding God’s law. I have learned a great...","categories": [],
+        "excerpt":"Tom Coates’s letter to Doctor Laura is the best response that I have seen to people who declare that homosexual behavior is described as an abomination in the Bible. Dear Dr. Laura, Thank you for doing so much to educate people regarding God’s law. I have learned a great deal...","categories": [],
         "tags": [],
         "url": "/2005/05/08/letter-to-doctor-laura-plasticbagorg/",
         "teaser": null
@@ -3741,5 +3741,17 @@ var store = [{
         "excerpt":"Introduction This is how I resolved one of my pet peeves with Visual Studio. When I am working on a .NET MAUI application, when I unplug my phone, Visual Studio changes debug target to the default emulator. When I plug the phone back in, it doesn’t set it back. That...","categories": ["visualstudio","maui","wpf","automation"],
         "tags": ["android-debugging","device-detection","usb-devices","com-automation","wmi","developer-workflow","pinvoke","windows-interop","developer-tools","visual-studio-extensions"],
         "url": "/2026/03/18/veryactivedebugprofile/",
+        "teaser": null
+      },{
+        "title": "When Visual Studio Forgets Your Phone: Building an Automated Solution",
+        "excerpt":"# Introduction This is how I resolved one of my pet peeves with Visual Studio. When I am working on a .NET MAUI application, when I unplug my phone, Visual Studio changes debug target to the default emulator. When I plug the phone back in, it doesn't set it back....","categories": ["visualstudio","maui","wpf","automation"],
+        "tags": ["android-debugging","device-detection","usb-devices","com-automation","wmi","developer-workflow","pinvoke","windows-interop","developer-tools","visual-studio-extensions"],
+        "url": "/2026/04/21/adaadb/",
+        "teaser": null
+      },{
+        "title": "Some thoughts on AI assets when blogging",
+        "excerpt":"A few weeks back, I was in an online conversation about the use of AI generated images in blog posts. The prevailing opinion was that if they saw an AI generated image, they stopped reading. The assumption that the rest of the article was AI slop. I disagreed. I have...","categories": ["blogging","AI"],
+        "tags": ["blogging","AI"],
+        "url": "/2026/09/25/on-ai-images/",
         "teaser": null
       }]
