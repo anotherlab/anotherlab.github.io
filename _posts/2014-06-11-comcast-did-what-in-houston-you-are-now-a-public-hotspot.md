@@ -7,7 +7,7 @@ date: 2014-06-11T12:09:24-05:00
   </div>
   
   <div style="padding: 0; margin: 0 0 0 10px; text-align: left;">
-    <a style="color: #a7a7a7; text-decoration: none; font-weight: normal !important; border: none;" href="http://www.gettyimages.com/detail/481207079" target="_blank">#481207079</a> / <a style="color: #a7a7a7; text-decoration: none; font-weight: normal !important; border: none;" href="http://www.gettyimages.com" target="_blank">gettyimages.com</a>
+    <a style="color: #a7a7a7; text-decoration: none; font-weight: normal !important; border: none;" href="http://www.gettyimages.com/detail/481207079"" target="_blank">#481207079</a> / <a style="color: #a7a7a7; text-decoration: none; font-weight: normal !important; border: none;" href="http://www.gettyimages.com"" target="_blank">gettyimages.com</a>
   </div>
 </div>
 

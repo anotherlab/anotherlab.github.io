@@ -3,7 +3,7 @@ title: 'Why the Virtual Keyboard on the Microsoft Band doesn&#8217;t work with A
 date: 2015-06-24T10:21:52-05:00
 ---
 <div id="attachment_1294" style="width: 335px" class="wp-caption alignnone">
-  <a href="https://i1.wp.com/www.rajapet.com/wp-content/uploads/2015/06/BandVirtualKeyboard.gif"><img aria-describedby="caption-attachment-1294" loading="lazy" class="size-full wp-image-1294" src="https://i1.wp.com/www.rajapet.com/wp-content/uploads/2015/06/BandVirtualKeyboard.gif?resize=325%2C106" alt="Microsoft Band's Virtual Keyboard" width="325" height="106"  /></a>
+  <a href="https://i1.wp.com/www.rajapet.com/wp-content/uploads/2015/06/BandVirtualKeyboard.gif""><img aria-describedby="caption-attachment-1294" loading="lazy" class="size-full wp-image-1294" src="https://i1.wp.com/www.rajapet.com/wp-content/uploads/2015/06/BandVirtualKeyboard.gif?resize=325%2C106" alt="Microsoft Band's Virtual Keyboard" width="325" height="106"  /></a>
   
   <p id="caption-attachment-1294" class="wp-caption-text">
     Microsoft Band&#8217;s Virtual Keyboard (image from Microsoft)

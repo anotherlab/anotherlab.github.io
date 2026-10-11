@@ -1,21 +1,19 @@
 ---
-title: "Backing up my main WSL2 Linux session"
+title: Backing up my main WSL2 Linux session
 author: anotherlab
 classes: wide
 toc: true
-header:
-  image: /assets/images/backing-up-wsl2.jpg
-categories: 
-  - WSL2
-  - PowerShell
-  - Backups
+categories:
+- WSL2
+- PowerShell
+- Backups
 tags:
-  - WSL2
-  - Ubuntu
-  - PowerShell
-  - Backups
-  - Linux
-
+- WSL2
+- Ubuntu
+- PowerShell
+- Backups
+- Linux
+image: /assets/images/backing-up-wsl2.jpg
 ---
 # Backing up my main Linux session
 TL;DR: I wrote a PowerShell script named backup-wsl2.ps1 to backup a Linux distribution.

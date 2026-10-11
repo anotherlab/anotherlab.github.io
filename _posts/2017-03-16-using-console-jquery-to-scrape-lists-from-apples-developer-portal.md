@@ -7,7 +7,7 @@ categories:
   - Javascript
   - jQuery
 ---
-<a data-flickr-embed="true"  href="https://www.flickr.com/photos/sdfriend/4330975151/in/photolist-7AHo2n-5tBuY2-5nG9d6-6Cu6n2-7T7QyJ-nD838F-7MyVgs-pzHMvF-7ysfhx-9b3ShZ-7MyWku-pt1PC3-qSaNvv-JuyvL-mX572e-sFXPqw-fHoVpn-RxGQmA-3RHmqY-77JVVD-EJZUa-a7JZpq-pozp7V-8K6ixq-aE2eAY-89tkSQ-ehKgsz-6FDYaR-6EXDzC-4SEsTq-aE2eQu-9w4UWt-m28vsm-4mEXi1-6gtnrL-5TNHYc-6Ebjgh-4Etf7H-5XMUDS-sqw1z-5NB7fm-6Vwq72-sajUjG-4meALm-5pUpzM-43q6v9-7Nn6La-6vR16J-y2jVx-Mg8u" title="Scrape"><img loading="lazy" src="https://i2.wp.com/c1.staticflickr.com/5/4049/4330975151_b96ab89fc1_z.jpg?resize=640%2C426&#038;ssl=1" width="640" height="426" alt="Scrape"  /></a>  
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/sdfriend/4330975151/in/photolist-7AHo2n-5tBuY2-5nG9d6-6Cu6n2-7T7QyJ-nD838F-7MyVgs-pzHMvF-7ysfhx-9b3ShZ-7MyWku-pt1PC3-qSaNvv-JuyvL-mX572e-sFXPqw-fHoVpn-RxGQmA-3RHmqY-77JVVD-EJZUa-a7JZpq-pozp7V-8K6ixq-aE2eAY-89tkSQ-ehKgsz-6FDYaR-6EXDzC-4SEsTq-aE2eQu-9w4UWt-m28vsm-4mEXi1-6gtnrL-5TNHYc-6Ebjgh-4Etf7H-5XMUDS-sqw1z-5NB7fm-6Vwq72-sajUjG-4meALm-5pUpzM-43q6v9-7Nn6La-6vR16J-y2jVx-Mg8u"" title="Scrape"><img loading="lazy" src="https://i2.wp.com/c1.staticflickr.com/5/4049/4330975151_b96ab89fc1_z.jpg?resize=640%2C426&#038;ssl=1" width="640" height="426" alt="Scrape"  /></a>  
 I needed to grab the lists of registered devices and developers from our company's Apple Developer portal. Unless I'm being particularly obtuse (an outcome that I never rule out), Apple does not provide any means of exporting the lists.
 
 _2021 Update_  
@@ -66,14 +66,14 @@ I also needed to the email addresses of all of our registered developers. The em
   <p ng-bind="::person.fullName" class="ng-binding">First Last</p>
   <a class="smaller ng-binding" 
     ng-bind="::person.email" 
-    ng-href="mailto:first.last@yourcompany.com" 
+    ng-href="mailto:first.last@yourcompany.com"" 
     href="mailto:first.last@yourcompany.com">
     first.last@yourcompany.com
   </a>
 </section>
 {% endhighlight %}
 
-I just needed the text part from the <a/> element. Getting the email addresses was a simpler version of the code to get the devices. I just a jQuery select on the ng-bind attribute and matched on the value &#8220;::person.email&#8221;. That ended up being a single line of code to run in the browser's developer console
+I just needed the text part from the `<a/>` element. Getting the email addresses was a simpler version of the code to get the devices. I just a jQuery select on the ng-bind attribute and matched on the value &#8220;::person.email&#8221;. That ended up being a single line of code to run in the browser's developer console
 
 {% highlight javascript %}
 $('a[ng-bind="::person.email"]').each(function(){

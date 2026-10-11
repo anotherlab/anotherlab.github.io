@@ -13,7 +13,7 @@ tags:
   - API
 ---
 {:refdef: style="text-align: center;"}
-![Changing the API](//assets/steam_punk_beker.jpg)
+![Changing the API](/assets/steam_punk_beaker.jpg)
 {: refdef}
 
 I needed to make a small change to an Android apop that we have in the Google Play store. I made the change, generated a new apk and we submitted to the app store. And was immediately rejected by Google. Our app was targetting API level 30 and the Google now requires API level 31 or later.

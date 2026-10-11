@@ -11,5 +11,5 @@ That seems a bit steep for a head-less device.  I&#8217;m running FreeNAS on a 
 FreeNAS is working just fine, I think I&#8217;ll leave it alone.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/FreeNAS" rel="tag">FreeNAS</a> <a href="http://technorati.com/tag/Windows+Home+Server" rel="tag">Windows+Home+Server</a>
+  Tech Tags: <a href="http://technorati.com/tag/FreeNAS"" rel="tag">FreeNAS</a> <a href="http://technorati.com/tag/Windows+Home+Server"" rel="tag">Windows+Home+Server</a>
 </div>

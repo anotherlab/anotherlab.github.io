@@ -80,11 +80,11 @@ In addition to my session, I was the moderator the Microsoft Band session presen
 
 <blockquote class="twitter-tweet" lang="en" data-conversation="none">
   <p dir="ltr" lang="en">
-    Want to find out what&#8217;s behind this tile? Sign up for my session to find out. <a href="http://t.co/slhmCDNSXw">http://t.co/slhmCDNSXw</a> <a href="https://twitter.com/hashtag/MVPvConf?src=hash">#MVPvConf</a> <a href="http://t.co/sCPlmWMblQ">pic.twitter.com/sCPlmWMblQ</a>
+    Want to find out what&#8217;s behind this tile? Sign up for my session to find out. <a href="http://t.co/slhmCDNSXw"">http://t.co/slhmCDNSXw</a> <a href="https://twitter.com/hashtag/MVPvConf?src=hash"">#MVPvConf</a> <a href="http://t.co/sCPlmWMblQ"">pic.twitter.com/sCPlmWMblQ</a>
   </p>
   
   <p>
-    — Christine Flora (@velvetdagger) <a href="https://twitter.com/velvetdagger/status/597928323696623616">May 12, 2015</a>
+    — Christine Flora (@velvetdagger) <a href="https://twitter.com/velvetdagger/status/597928323696623616"">May 12, 2015</a>
   </p>
 </blockquote>
 

@@ -4,7 +4,7 @@ date: 2007-12-18T16:49:00-05:00
 ---
 I had a problem with applying an [Authenticode](http://www.iss.net/security_center/advice/Countermeasures/Authentication/Authenticode/default.htm) digital signature to installer that I had created with [Wise Installation System 9.02](http://www.wise.com/Products/Installations.aspx).  Basically, it was failing with the lovely message:
 
-<a href="https://i0.wp.com/1.bp.blogspot.com/_natoSxTaPFU/R2f8ya7uenI/AAAAAAAAACY/ACIjygQfb5k/s1600-h/ole0.png" target="_blank"><img alt="Could not initialize installation. File size expected=3258503, size returned=3263976" src="https://i2.wp.com/1.bp.blogspot.com/_natoSxTaPFU/R2f8ya7uenI/AAAAAAAAACY/ACIjygQfb5k/s400/ole0.png?w=680" border="0"  /></a> 
+<a href="https://i0.wp.com/1.bp.blogspot.com/_natoSxTaPFU/R2f8ya7uenI/AAAAAAAAACY/ACIjygQfb5k/s1600-h/ole0.png"" target="_blank"><img alt="Could not initialize installation. File size expected=3258503, size returned=3263976" src="https://i2.wp.com/1.bp.blogspot.com/_natoSxTaPFU/R2f8ya7uenI/AAAAAAAAACY/ACIjygQfb5k/s400/ole0.png?w=680" border="0"  /></a> 
 
 The signature was being applied outside of Wise, through our build process.  We use [FinalBuilder](http://www.finalbuilder.com/finalbuilder.aspx) to build all of our applications and it has a handy Authenticode action for applying an Authenticode signature to the target you specify.  If I disabled that action, the installer worked.
 

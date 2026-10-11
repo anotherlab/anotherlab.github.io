@@ -1,17 +1,17 @@
 ---
 title: Controlling a WSL installation of redis-server from the Windows command line
-date: 2021-10-18T23:53:13-05:00
+date: 2021-10-18 23:53:13-05:00
 excerpt: Some shortcuts accessing redis-server running under WSL via PowerShell
 categories:
-  - Coding
-  - Linux
+- Coding
+- Linux
 tags:
-  - linux
-  - Powershell
-  - redis
-  - wsl
+- Linux
+- PowerShell
+- redis
+- wsl
 ---
-If you like using [redis](https://redis.io/) for web site caching and you are writing and testing code locally from Windows, you&#8217;ll want to figure out how to run a local instance of redis-server. You have a few options. You can run it from another machine that&#8217;s running something vaguely Linux-like or MacOS. You can run it from a Docker container under Windows. Or you can run it directly from <a href="http://Windows SubSystem (WSL) for Linux" data-wplink-url-error="true">Windows SubSystem (WSL) for Linux</a>.
+If you like using [redis](https://redis.io/) for web site caching and you are writing and testing code locally from Windows, you&#8217;ll want to figure out how to run a local instance of redis-server. You have a few options. You can run it from another machine that&#8217;s running something vaguely Linux-like or MacOS. You can run it from a Docker container under Windows. Or you can run it directly from Windows SubSystem (WSL) for Linux.
 
 For the last few years, Windows (10, 11, Server 2019) comes with a compatibility layer that lets you run Linux binary executables. The current version is WSL 2, but I&#8217;m just going to refer to it as WSL. If you don&#8217;t have installed already, just run the following command from an elevated shell (run as administrator)
 

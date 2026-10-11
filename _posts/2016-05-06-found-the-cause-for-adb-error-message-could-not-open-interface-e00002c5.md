@@ -3,8 +3,8 @@ title: "Found the cause for ADB error message “Could not open interface: e0000
 date: 2016-05-06
 ---
 <figure>
-<a href="https://www.flickr.com/photos/peterhess/2976755407"><img loading="lazy" class="" src="https://i2.wp.com/photos.smugmug.com/photos/i-bX9mPQR/0/S/i-bX9mPQR-S.jpg" alt="Frustration with Computers" /></a>
-<figcaption><a href="https://www.flickr.com/photos/peterhess/2976755407">Frustration</a> by Peter Alfred Hess</figcaption></figure>
+<a href="https://www.flickr.com/photos/peterhess/2976755407""><img loading="lazy" class="" src="https://i2.wp.com/photos.smugmug.com/photos/i-bX9mPQR/0/S/i-bX9mPQR-S.jpg" alt="Frustration with Computers" /></a>
+<figcaption><a href="https://www.flickr.com/photos/peterhess/2976755407"">Frustration</a> by Peter Alfred Hess</figcaption></figure>
 
 I spent way too much time tracking down a problem that prevented ADB on my Macbook from seeing my phone.  While at the [Xamarin Evolve](https://evolve.xamarin.com/) conference last week, I hooked up my Nexus 6P to my Macbook Pro to try some Xamarin.Forms code.  I connected the phone and checked the box on the phone that prompted to allow debugging.  The Xamarin Studio IDE did not see the phone.
 

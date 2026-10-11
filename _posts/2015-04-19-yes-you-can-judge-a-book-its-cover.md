@@ -7,7 +7,7 @@ date: 2015-04-19T11:01:32-05:00
   </div>
   
   <div style="padding: 0; margin: 0 0 0 10px; text-align: left;">
-    <a style="color: #a7a7a7; text-decoration: none; font-weight: normal !important; border: none; display: inline-block;" href="http://www.gettyimages.com/detail/79365920" target="_blank">View image</a> | <a style="color: #a7a7a7; text-decoration: none; font-weight: normal !important; border: none; display: inline-block;" href="http://www.gettyimages.com" target="_blank">gettyimages.com</a>
+    <a style="color: #a7a7a7; text-decoration: none; font-weight: normal !important; border: none; display: inline-block;" href="http://www.gettyimages.com/detail/79365920"" target="_blank">View image</a> | <a style="color: #a7a7a7; text-decoration: none; font-weight: normal !important; border: none; display: inline-block;" href="http://www.gettyimages.com"" target="_blank">gettyimages.com</a>
   </div>
 </div>
 
@@ -18,7 +18,7 @@ By Bentivegna&#8217;s account, the interview went well and she expected to recei
 Bentivegna then vented about not getting the job on her Facebook account. Her opinion is that OnShift had made a mistake and she was being held to a different standard because she is female. She has a friend that works for Buzzfeed, Alanna Bennett, who tweeted a picture of Bentivegna&#8217;s Facebook post with the text &#8220;So my friend got rejected from a programming job today because she was wearing too much makeup.&#8221;
 
 <div style="width: 425px" class="wp-caption aligncenter">
-  <a href="https://twitter.com/AlannaBennett/status/588430226935435264"><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-mb3FB85/0/X3/job-X3.png?resize=415%2C600" alt="So my friend got rejected from a programming job today because she was wearing too much makeup. " width="415" height="600"  /></a>
+  <a href="https://twitter.com/AlannaBennett/status/588430226935435264""><img loading="lazy" class="" src="https://i0.wp.com/www.rajapet.net/Other/2015-Blog/i-mb3FB85/0/X3/job-X3.png?resize=415%2C600" alt="So my friend got rejected from a programming job today because she was wearing too much makeup. " width="415" height="600"  /></a>
   
   <p class="wp-caption-text">
     So my friend got rejected from a programming job today because she was wearing too much makeup.

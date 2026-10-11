@@ -1,14 +1,14 @@
 ---
-title:  Apple needs to sort out their API
-date:   2024-08-27
+title: Apple needs to sort out their API
+date: 2024-08-27
 author: anotherlab
 summary: Apple changed the how the AppConnect API worked with paged results
 largeimage: /assets/steam-punk-scientist.jpg
 categories:
-  - Apple
+- Apple
 tags:
-  - Apple
-  - 'C#'
+- Apple
+- CSharp
 ---
 {:refdef: style="text-align: center;"}
 ![Who broke the API?](/assets/steam-punk-scientist.jpg)

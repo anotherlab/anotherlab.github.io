@@ -17,5 +17,5 @@ At runtime, the first three actions inside the block were executed, but not the 
 Programmers are used to seeing procedural code in a script. Wise does a pretty good job of abstracting out database rules to pseudo scripts, but it&#8217;s not a perfect abstraction. Unless you ran the installer through the debugger, and examine conditions at thing 3 and then at thing4, you would never see what was going on.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Wise+For+Windows" rel="tag">Wise For Windows</a> <a href="http://technorati.com/tag/Leaky+Abstractions" rel="tag">Leaky Abstractions</a> <a href="http://technorati.com/tag/MSI" rel="tag">MSI</a>
+  Tech Tags: <a href="http://technorati.com/tag/Wise+For+Windows"" rel="tag">Wise For Windows</a> <a href="http://technorati.com/tag/Leaky+Abstractions"" rel="tag">Leaky Abstractions</a> <a href="http://technorati.com/tag/MSI"" rel="tag">MSI</a>
 </div>

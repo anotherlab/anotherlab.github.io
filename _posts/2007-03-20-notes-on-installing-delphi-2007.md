@@ -15,5 +15,5 @@ Then I was prompted for what features to install. I have the Enterprise version,
 It was done after 90 minutes. Now comes the fun part. How many of the Delphi 2006 components will work as advertised?
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Codegear" rel="tag">Codegear</a> <a href="http://technorati.com/tag/Delphi+2007" rel="tag">Delphi+2007</a> <a href="http://technorati.com/tag/Sonicwall" rel="tag">Sonicwall</a> <a href="http://technorati.com/tag/Vista" rel="tag">Vista</a>
+  Tech Tags: <a href="http://technorati.com/tag/Codegear"" rel="tag">Codegear</a> <a href="http://technorati.com/tag/Delphi+2007"" rel="tag">Delphi+2007</a> <a href="http://technorati.com/tag/Sonicwall"" rel="tag">Sonicwall</a> <a href="http://technorati.com/tag/Vista"" rel="tag">Vista</a>
 </div>

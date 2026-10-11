@@ -33,5 +33,5 @@ If you install Service Pack 1 (SP1) after making this change, you&#8217;ll need 
 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Vista+Home%20Password%20Sharing%20Printing%20gpedit.msc%20LimitBlankPasswordUse" rel="tag">Vista+Home Password Sharing Printing gpedit.msc LimitBlankPasswordUse</a>
+  Tech Tags: <a href="http://technorati.com/tag/Vista+Home%20Password%20Sharing%20Printing%20gpedit.msc%20LimitBlankPasswordUse"" rel="tag">Vista+Home Password Sharing Printing gpedit.msc LimitBlankPasswordUse</a>
 </div>

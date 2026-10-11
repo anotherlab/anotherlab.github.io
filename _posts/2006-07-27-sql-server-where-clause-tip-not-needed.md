@@ -19,8 +19,8 @@ When I did the same evaluation on SQL Server 2000, I saw different results.  Th
 
 It&#8217;s pretty cool that the SQL Server 2005 parser is smart enough to optimize code and recognize a constant expression when it sees it.  My code would have seen a nice little performance boost by moving from SQL Server 2000 to SQL Server 2005.  It&#8217;s still a better thing to pull constant expressions out of the WHERE clause when you can do that.
 
-SQL formatting courtesy of [<span>The Simple-Talk SQL Prettifier</span>](http://www.simple-talk.com/prettifier/Default.aspx) <span><a href="http://www.simple-talk.com/prettifier/Default.aspx">for SQL Server</a>.</span>
+SQL formatting courtesy of [<span>The Simple-Talk SQL Prettifier</span>](http://www.simple-talk.com/prettifier/Default.aspx) <span><a href="http://www.simple-talk.com/prettifier/Default.aspx"">for SQL Server</a>.</span>
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/SQL" rel="tag">SQL</a> <a href="http://technorati.com/tag/SQL+Server" rel="tag">SQL Server</a> <a href="http://technorati.com/tag/SQL+Server+2005" rel="tag">SQL Server 2005</a> <a href="http://technorati.com/tag/DateAdd" rel="tag">DateAdd</a> <a href="http://technorati.com/tag/GetDate" rel="tag">GetDate</a> <a href="http://technorati.com/tag/DateDiff" rel="tag">DateDiff</a> <a href="http://technorati.com/tag/Execution+Plan" rel="tag">Execution Plan</a>
+  Tech Tags: <a href="http://technorati.com/tag/SQL"" rel="tag">SQL</a> <a href="http://technorati.com/tag/SQL+Server"" rel="tag">SQL Server</a> <a href="http://technorati.com/tag/SQL+Server+2005"" rel="tag">SQL Server 2005</a> <a href="http://technorati.com/tag/DateAdd"" rel="tag">DateAdd</a> <a href="http://technorati.com/tag/GetDate"" rel="tag">GetDate</a> <a href="http://technorati.com/tag/DateDiff"" rel="tag">DateDiff</a> <a href="http://technorati.com/tag/Execution+Plan"" rel="tag">Execution Plan</a>
 </div>

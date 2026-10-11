@@ -13,5 +13,5 @@ The 1899 date was define by Microsoft when they defined their [OLE Automation](h
 The way we usually pass in datetime variables in non-parameterized INSERT statements is to encode the datetime variable as a string in the standard SQL-92 format (yyyy-mm-dd hh:mm:ss).</p> 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/SQL" rel="tag">SQL</a> <a href="http://technorati.com/tag/Delphi" rel="tag">Delphi</a> <a href="http://technorati.com/tag/.NET" rel="tag">.NET</a> <a href="http://technorati.com/tag/DateTime" rel="tag">DateTime</a> <a href="http://technorati.com/tag/Numbers" rel="tag">Numbers</a> <a href="http://technorati.com/tag/1899" rel="tag">1899</a> <a href="http://technorati.com/tag/1900" rel="tag">1900</a> <a href="http://technorati.com/tag/timestamps" rel="tag">timestamps</a>
+  Tech Tags: <a href="http://technorati.com/tag/SQL"" rel="tag">SQL</a> <a href="http://technorati.com/tag/Delphi"" rel="tag">Delphi</a> <a href="http://technorati.com/tag/.NET"" rel="tag">.NET</a> <a href="http://technorati.com/tag/DateTime"" rel="tag">DateTime</a> <a href="http://technorati.com/tag/Numbers"" rel="tag">Numbers</a> <a href="http://technorati.com/tag/1899"" rel="tag">1899</a> <a href="http://technorati.com/tag/1900"" rel="tag">1900</a> <a href="http://technorati.com/tag/timestamps"" rel="tag">timestamps</a>
 </div>

@@ -39,5 +39,5 @@ Now, any developer can remotely connect to the buildbox and start the build proc
 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Delphi" rel="tag">Delphi</a> <a href="http://technorati.com/tag/VS+Studio" rel="tag">VS+Studio</a> <a href="http://technorati.com/tag/FinalBuilder" rel="tag">FinalBuilder</a> <a href="http://technorati.com/tag/Build+Box" rel="tag">Build+Box</a> <a href="http://technorati.com/tag/Vault" rel="tag">Vault</a> <a href="http://technorati.com/tag/Wise" rel="tag">Wise</a>
+  Tech Tags: <a href="http://technorati.com/tag/Delphi"" rel="tag">Delphi</a> <a href="http://technorati.com/tag/VS+Studio"" rel="tag">VS+Studio</a> <a href="http://technorati.com/tag/FinalBuilder"" rel="tag">FinalBuilder</a> <a href="http://technorati.com/tag/Build+Box"" rel="tag">Build+Box</a> <a href="http://technorati.com/tag/Vault"" rel="tag">Vault</a> <a href="http://technorati.com/tag/Wise"" rel="tag">Wise</a>
 </div>

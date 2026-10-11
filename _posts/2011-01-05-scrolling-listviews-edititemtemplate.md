@@ -55,7 +55,7 @@ This EditItemTemplate has a nest ListView to associate other items to item curre
 All of the controls in the EditeItemTemplate are wrapped inside a 
 
 <div>
-  , with the CSS class name set to “MyEditItemTemplate”.  Defining a CSS class is great for styling, it also makes it very easy to locate controls using jQuery. Also notice the last control in the template, the ImageButton with the ID of “UsedForScrolling”.  It uses an image of an <a href="http://lh6.ggpht.com/_natoSxTaPFU/TSTG0xf-wyI/AAAAAAAAAf0/6yndaOnuAXY/s1600-h/0%5B2%5D.gif">invisible GIF file</a>.  It’s a 1&#215;1 image, with the single pixel set to the transparent color.  The browser will render it (briefly), but it wont be visible.  You can download the GIF from <a href="http://lh6.ggpht.com/_natoSxTaPFU/TSTG0xf-wyI/AAAAAAAAAf0/6yndaOnuAXY/s1600-h/0%5B2%5D.gif">invisible GIF file</a> link.  I had obtained it from <a href="http://www.maproom.co.uk/invis0.htm">a page</a> by Nick Webb.</p> 
+  , with the CSS class name set to “MyEditItemTemplate”.  Defining a CSS class is great for styling, it also makes it very easy to locate controls using jQuery. Also notice the last control in the template, the ImageButton with the ID of “UsedForScrolling”.  It uses an image of an <a href="http://lh6.ggpht.com/_natoSxTaPFU/TSTG0xf-wyI/AAAAAAAAAf0/6yndaOnuAXY/s1600-h/0%5B2%5D.gif"">invisible GIF file</a>.  It’s a 1&#215;1 image, with the single pixel set to the transparent color.  The browser will render it (briefly), but it wont be visible.  You can download the GIF from <a href="http://lh6.ggpht.com/_natoSxTaPFU/TSTG0xf-wyI/AAAAAAAAAf0/6yndaOnuAXY/s1600-h/0%5B2%5D.gif"">invisible GIF file</a> link.  I had obtained it from <a href="http://www.maproom.co.uk/invis0.htm"">a page</a> by Nick Webb.</p> 
   
   <p>
     You can use the HTML input control instead of an ImageButton, it will not matter too much.  You want to avoid using a control that will render on the screen as a visible item, like a text input control or a check box.  While the code will hide the control after the page has loaded, there would be a flash as the control is rendered, and then removed from the page,  With the invisible GIF, you avoid the brief flash on the page.
@@ -84,7 +84,7 @@ All of the controls in the EditeItemTemplate are wrapped inside a
   </ol>
   
   <p>
-    We implement this with some jQuery code that will do all 4 four steps.  I put the code in a javascript function that I named “ScrollIntoView()” and called that function from the jQuery <a href="http://docs.jquery.com/How_jQuery_Works#Launching_Code_on_Document_Ready" title="Launching Code on Document Ready">ready event</a>.
+    We implement this with some jQuery code that will do all 4 four steps.  I put the code in a javascript function that I named “ScrollIntoView()” and called that function from the jQuery <a href="http://docs.jquery.com/How_jQuery_Works#Launching_Code_on_Document_Ready"" title="Launching Code on Document Ready">ready event</a>.
   </p>
   
   <p>
@@ -93,7 +93,7 @@ All of the controls in the EditeItemTemplate are wrapped inside a
   <pre>$(function () {<br />ScrollIntoView();<br />});<br /><br />function ScrollIntoView()<br />{<br />    var TempInputControlForScrolling = $(".UsedForScrolling:input:visible:first");<br />    var FirstEditControl = $(".MyEditItemTemplate input:text:visible:first");<br /><br />if (TempInputControlForScrolling.length)<br />{<br />TempInputControlForScrolling.focus();<br />FirstEditControl.focus();<br />TempInputControlForScrolling.hide();<br />}<br />else {<br />$("input:text:visible:first").focus();<br />}<br />}</pre>
   
   <p>
-    The first line in ScrollIntoView() uses a jQuery <a href="http://api.jquery.com/category/selectors/">Selector</a> to match the first visible input control with a CSS class of “UsedForScrolling”.  The next line matches the first visible text input control that is a child of the control with the CSS class of “MyEditItemTemplate”.
+    The first line in ScrollIntoView() uses a jQuery <a href="http://api.jquery.com/category/selectors/"">Selector</a> to match the first visible input control with a CSS class of “UsedForScrolling”.  The next line matches the first visible text input control that is a child of the control with the CSS class of “MyEditItemTemplate”.
   </p>
   
   <p>

@@ -7,7 +7,7 @@ Hmm, I can use this for a service testing application that I&#8217;m working on&
 > 
 > 
 > <div>
->   One of the nice new features you get in .NET 2.0 Winforms is the new BackgroundWorker component. It allows safely executing long tasks in a different thread than the GUI, while allowing an easy event-driven interface to perform the task and respond to events (such as detecting work progress). There are even <a href="http://weblogs.asp.net/rosherove/archive/2004/06/16/156948.aspx">versions of this for .NET 1.1</a> courtesy of <a href="http://www.idesign.net/">Juval Lowy</a>.
+>   One of the nice new features you get in .NET 2.0 Winforms is the new BackgroundWorker component. It allows safely executing long tasks in a different thread than the GUI, while allowing an easy event-driven interface to perform the task and respond to events (such as detecting work progress). There are even <a href="http://weblogs.asp.net/rosherove/archive/2004/06/16/156948.aspx"">versions of this for .NET 1.1</a> courtesy of <a href="http://www.idesign.net/"">Juval Lowy</a>.
 > </div>
 > 
 > <div>
@@ -23,7 +23,7 @@ Hmm, I can use this for a service testing application that I&#8217;m working on&
 > </div>
 > 
 > <div>
->   <a href="http://weblogs.asp.net/rosherove/articles/BackgroundWorkerEx.aspx">Creating a better BackgroundWorker: CancelImmediately and other goodies</a>
+>   <a href="http://weblogs.asp.net/rosherove/articles/BackgroundWorkerEx.aspx"">Creating a better BackgroundWorker: CancelImmediately and other goodies</a>
 > </div>
 > 
 > [[ISerializable &#8211; Roy Osherove&#8217;s Blog]](http://weblogs.asp.net/rosherove/archive/2005/11/09/430086.aspx "A better BackgroundWorker : CancelImmediately and other goodies")

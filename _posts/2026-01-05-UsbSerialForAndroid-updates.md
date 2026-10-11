@@ -1,21 +1,19 @@
 ---
-title: "UsbSerialForAndroid: Recent Updates and Improvements"
+title: 'UsbSerialForAndroid: Recent Updates and Improvements'
 author: anotherlab
 classes: wide
 toc: true
-header:
-  image: /assets/images/usbserialforandroid-steampunk.jpg
-categories: 
-  - .NET
-  - Android
-  - Hardware
+categories:
+- .NET
+- Android
+- Hardware
 tags:
-  - .NET
-  - Android
-  - .NET MAUI
-  - USB
-  - Open Source
-
+- .NET
+- Android
+- .NET MAUI
+- USB
+- Open Source
+image: /assets/images/usbserialforandroid-steampunk.jpg
 ---
 I’ve pushed a new round of updates to **[UsbSerialForAndroid](https://github.com/anotherlab/UsbSerialForAndroid)**, the open-source .NET / C# library that provides USB serial support for Android, including .NET MAUI and Xamarin-based projects.
 

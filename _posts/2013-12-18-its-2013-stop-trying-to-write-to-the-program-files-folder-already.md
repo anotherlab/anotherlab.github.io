@@ -3,7 +3,7 @@ title: 'It&#8217;s 2013, stop trying to write to the Program Files folder alread
 date: 2013-12-18T00:12:31-05:00
 ---
 <div style="width: 235px" class="wp-caption alignleft">
-  <a href="http://ttl4.sunburst.com/"><img loading="lazy" class=" " alt="Type To Learn" src="https://i2.wp.com/www.rajapet.net/photos/i-Hxz98hj/0/S/i-Hxz98hj-S.jpg?resize=225%2C180" width="225" height="180"  /></a>
+  <a href="http://ttl4.sunburst.com/""><img loading="lazy" class=" " alt="Type To Learn" src="https://i2.wp.com/www.rajapet.net/photos/i-Hxz98hj/0/S/i-Hxz98hj-S.jpg?resize=225%2C180" width="225" height="180"  /></a>
   
   <p class="wp-caption-text">
     Type to Learn&#8217;s login screen
@@ -15,7 +15,7 @@ My daughter asked if I could install [Type to Learn 4](http://ttl4.sunburst.com/
 She, of course, had not told me any of this.  I went to the web site for Type To Learn and saw that there were two versions.  A School Login Portal, and the home version.  So I clicked on the home version which took me to Amazon.
 
 <div style="width: 129px" class="wp-caption alignleft">
-  <a href="http://www.amazon.com/dp/B004LC3VCW"><img loading="lazy" alt="" src="https://i0.wp.com/www.rajapet.net/photos/i-GsjhW8Z/0/O/i-GsjhW8Z.png?resize=119%2C121" width="119" height="121"  /></a>
+  <a href="http://www.amazon.com/dp/B004LC3VCW""><img loading="lazy" alt="" src="https://i0.wp.com/www.rajapet.net/photos/i-GsjhW8Z/0/O/i-GsjhW8Z.png?resize=119%2C121" width="119" height="121"  /></a>
   
   <p class="wp-caption-text">
     No middle ground

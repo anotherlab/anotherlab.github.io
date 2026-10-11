@@ -14,7 +14,7 @@ I submitted a SmugMug plug-in a couple of years ago.  It will need to be resubm
 >   </p>
 >   
 >   <p>
->     We’re writing to let you know that Writer’s plug-in hosting and submission processes are changing.  <b>Note: Existing plug-ins currently hosted on <a href="http://gallery.live.com/default.aspx?pl=8">Windows Live Gallery</a> will need to be resubmitted using the new process outlined below.</b>  In the future, should you wish to provide additional plug-ins for Writer, we request that you also submit your plug-ins using this process.
+>     We’re writing to let you know that Writer’s plug-in hosting and submission processes are changing.  <b>Note: Existing plug-ins currently hosted on <a href="http://gallery.live.com/default.aspx?pl=8"">Windows Live Gallery</a> will need to be resubmitted using the new process outlined below.</b>  In the future, should you wish to provide additional plug-ins for Writer, we request that you also submit your plug-ins using this process.
 >   </p>
 >   
 >   <p>
@@ -23,10 +23,10 @@ I submitted a SmugMug plug-in a couple of years ago.  It will need to be resubm
 >   
 >   <ol>
 >     <li>
->       Author uploads plug-in MSI installer to <a href="http://skydrive.live.com/">Windows Live SkyDrive</a> using his/her Windows Live ID (email address).
+>       Author uploads plug-in MSI installer to <a href="http://skydrive.live.com/"">Windows Live SkyDrive</a> using his/her Windows Live ID (email address).
 >     </li>
 >     <li>
->       Author emails <a href="mailto:wleplugins@microsoft.com">wleplugins@microsoft.com</a> (Windows Live Essentials Plug-ins) including the following information: <ul type="disc">
+>       Author emails <a href="mailto:wleplugins@microsoft.com"">wleplugins@microsoft.com</a> (Windows Live Essentials Plug-ins) including the following information: <ul type="disc">
 >         <li>
 >           Author name
 >         </li>
@@ -87,7 +87,7 @@ I submitted a SmugMug plug-in a couple of years ago.  It will need to be resubm
 >   </p>
 >   
 >   <p>
->     Please email us with any questions or concerns about the new plug-in submission process at <a href="mailto:wleplugins@microsoft.com">wleplugins@microsoft.com</a>. Other support requests should be directed to the <a href="http://www.windowslivehelp.com/product.aspx?productid=9">Windows Live Solution Center</a>.
+>     Please email us with any questions or concerns about the new plug-in submission process at <a href="mailto:wleplugins@microsoft.com"">wleplugins@microsoft.com</a>. Other support requests should be directed to the <a href="http://www.windowslivehelp.com/product.aspx?productid=9"">Windows Live Solution Center</a>.
 >   </p>
 >   
 >   <p>

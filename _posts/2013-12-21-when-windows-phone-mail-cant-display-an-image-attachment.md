@@ -22,7 +22,7 @@ And I couldn&#8217;t open the picture from Windows Phone Mail.  I could create 
   <img loading="lazy" alt="" src="https://i1.wp.com/www.rajapet.net/photos/i-vXzzQMW/0/O/i-vXzzQMW.png?resize=200%2C193" width="200" height="193"  />
   
   <p class="wp-caption-text">
-    Image from the <a href="http://www.codinghorror.com/blog/2007/03/the-works-on-my-machine-certification-program.html">Coding Horror</a>
+    Image from the <a href="http://www.codinghorror.com/blog/2007/03/the-works-on-my-machine-certification-program.html"">Coding Horror</a>
   </p>
 </div>
 

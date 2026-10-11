@@ -1,13 +1,13 @@
 ---
 title: How to access Apple's App Connect API from C#, Python, and Go. - Part 2
-date: 2021-07-12T08:02:52-05:00
+date: 2021-07-12 08:02:52-05:00
 categories:
-  - Apple
+- Apple
 tags:
-  - Apple
-  - 'C#'
-  - Go
-  - Python
+- Apple
+- CSharp
+- Go
+- Python
 ---
 <div class="wp-block-image">
   <figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-rMG2ZL4/0/c712e41f/L/Apple%20Lock%20Green-L.jpg?resize=680%2C510&#038;ssl=1" alt="" width="680" height="510"  /></figure>
@@ -198,5 +198,5 @@ Coming up next will be the Go version of this script.
 <hr class="wp-block-separator" />
 
 <p class="has-small-font-size">
-  <em data-rich-text-format-boundary="true">About the image: <br data-rich-text-line-break="true" />This image was derived from some open-source images. The image of the wall comes from <a href="https://unsplash.com/@impatrickt">Patrick Tomasso via Unsplash</a>. The Apple lock logo comes from Apple, which retains all rights to its artwork. The people icon was created by <a href="https://thenounproject.com/search/?q=people&i=165313">Monika from the Noun Project</a>.</em>
+  <em data-rich-text-format-boundary="true">About the image: <br data-rich-text-line-break="true" />This image was derived from some open-source images. The image of the wall comes from <a href="https://unsplash.com/@impatrickt"">Patrick Tomasso via Unsplash</a>. The Apple lock logo comes from Apple, which retains all rights to its artwork. The people icon was created by <a href="https://thenounproject.com/search/?q=people&i=165313"">Monika from the Noun Project</a>.</em>
 </p>

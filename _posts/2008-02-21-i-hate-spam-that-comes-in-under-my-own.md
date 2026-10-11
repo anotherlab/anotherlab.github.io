@@ -22,7 +22,7 @@ That tells us a couple of things.  One, the website is registered by a Chinese 
 
 
 
-<pre>Registrar Name: XIN NET TECHNOLOGY CORPORATION<br />   Address: 1st Floor,2nd Building Section A,BDA BeiGongD, Beijing, China 100176, CN<br />   Phone Number: 86.1058022118<br />   Email: <a href="mailto:domainadmin@xinnet.com">domainadmin@xinnet.com</a><br />   Whois Server: whois.paycenter.com.cn<br />   Referral URL: <a href="http://www.xinnet.com/">www.xinnet.com</a><br />   Admin Contact: cody zhou<br />   Phone Number: +86.10.58.22266-551<br />   Email: <a href="mailto:tech@xinnet.com">tech@xinnet.com</a><br />   Admin Contact: xiaorui wang<br />   Phone Number: +86.1058022118-205<br />   Email: <a href="mailto:admin2@xinnet.com">admin2@xinnet.com</a><br />   Admin Contact: Baosheng Jiang<br />   Phone Number: +86.1058022118-623<br />   Email: <a href="mailto:admin1@xinnet.com">admin1@xinnet.com</a><br /></pre>
+<pre>Registrar Name: XIN NET TECHNOLOGY CORPORATION<br />   Address: 1st Floor,2nd Building Section A,BDA BeiGongD, Beijing, China 100176, CN<br />   Phone Number: 86.1058022118<br />   Email: <a href="mailto:domainadmin@xinnet.com"">domainadmin@xinnet.com</a><br />   Whois Server: whois.paycenter.com.cn<br />   Referral URL: <a href="http://www.xinnet.com/"">www.xinnet.com</a><br />   Admin Contact: cody zhou<br />   Phone Number: +86.10.58.22266-551<br />   Email: <a href="mailto:tech@xinnet.com"">tech@xinnet.com</a><br />   Admin Contact: xiaorui wang<br />   Phone Number: +86.1058022118-205<br />   Email: <a href="mailto:admin2@xinnet.com"">admin2@xinnet.com</a><br />   Admin Contact: Baosheng Jiang<br />   Phone Number: +86.1058022118-623<br />   Email: <a href="mailto:admin1@xinnet.com"">admin1@xinnet.com</a><br /></pre>
 
 
 

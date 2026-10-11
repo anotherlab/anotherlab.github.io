@@ -49,7 +49,7 @@ The trick is to get access to a private property.  The way to do this is by cre
         </p>
         
         <p>
-          With access to the internal list, it becomes a simple task to provide the ability to the sort the list.  A public Sort method will call an internal method that runs a <a href="http://en.wikipedia.org/wiki/Quicksort">Quicksort</a> across the list.  The Quicksort code will process the list obtained by casting itself as TShadowedCollection, allowing access to FItems and then call a Compare() function to compare items in the FItems list.  The collection will provide a &#8220;do nothing&#8221; Compare() function.  It will be up to the descendant class to override that function and implement the actual comparision code.  The full source code for the class would look something like this:
+          With access to the internal list, it becomes a simple task to provide the ability to the sort the list.  A public Sort method will call an internal method that runs a <a href="http://en.wikipedia.org/wiki/Quicksort"">Quicksort</a> across the list.  The Quicksort code will process the list obtained by casting itself as TShadowedCollection, allowing access to FItems and then call a Compare() function to compare items in the FItems list.  The collection will provide a &#8220;do nothing&#8221; Compare() function.  It will be up to the descendant class to override that function and implement the actual comparision code.  The full source code for the class would look something like this:
         </p>
         
         <p>
@@ -69,5 +69,5 @@ The trick is to get access to a private property.  The way to do this is by cre
             </p>
             
             <div>
-              Tech Tags: <a href="http://technorati.com/tag/Delphi" rel="tag">Delphi</a> <a href="http://technorati.com/tag/TCollection" rel="tag">TCollection</a> <a href="http://technorati.com/tag/Sort" rel="tag">Sort</a>
+              Tech Tags: <a href="http://technorati.com/tag/Delphi"" rel="tag">Delphi</a> <a href="http://technorati.com/tag/TCollection"" rel="tag">TCollection</a> <a href="http://technorati.com/tag/Sort"" rel="tag">Sort</a>
             </div>

@@ -2,7 +2,7 @@
 title: Validating a GUID input, TryParse vs RegEx
 date: 2014-03-11T00:03:12-05:00
 ---
-Once again I&#8217;m validating some text inputs, this time I need [to verify that a user has entered a GUID](#fortherecord20141103) in a valid format.  While I can&#8217;t verify that the user has entered the correct [GUID](http://en.wikipedia.org/wiki/Globally_unique_identifier), I can check to make sure that I have the right characters in the string.
+Once again I&#8217;m validating some text inputs, this time I need to verify that a user has entered a GUID in a valid format.  While I can&#8217;t verify that the user has entered the correct [GUID](http://en.wikipedia.org/wiki/Globally_unique_identifier), I can check to make sure that I have the right characters in the string.
 
 The choice is between a method in the .Net Framework for parsing GUID values or using a regular expression. The commonly accepted formats for a GUI are the following
 
@@ -67,9 +67,6 @@ The last two sample strings should fail the parsing. The last one only is short 
 <pre>^[{|\(]?[0-9a-fA-F]{8}[-]([0-9a-fA-F]{4}[-]){3}[0-9a-fA-F]{12}[\)|}]?|[{|\(]?[0-9a-fA-F]{8}([0-9a-fA-F]{4}){3}[0-9a-fA-F]{12}[\)|}]?$</pre>
 
 For C# code, I&#8217;ll stick with TryParse(). The RegEx version, I&#8217;ll save for Javascript.  If you wanted to validate GUID text entry in a browser, the same expression can be used.  
-<a name="fortherecord20141103"></a>
-
-
 
 For the record, having the user enter in GUID values is a mind boggling UX failure. In this case, this is for an admin tool where the admin user would be copying and pasting in the GUID value from an email.
 

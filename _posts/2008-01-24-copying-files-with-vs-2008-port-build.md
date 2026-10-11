@@ -24,5 +24,5 @@ To get around this, I decided to punch a hole through Vista&#8217;s default righ
 That fixed it. VS2008 was able xcopy my plugin without any errors. 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/vs2008" rel="tag">vs2008</a> <a href="http://technorati.com/tag/post+build+event" rel="tag">post+build+event</a> <a href="http://technorati.com/tag/Code+4" rel="tag">Code+4</a> <a href="http://technorati.com/tag/xcopy" rel="tag">xcopy</a> <a href="http://technorati.com/tag/Vista" rel="tag">Vista</a> <a href="http://technorati.com/tag/icacls" rel="tag">icacls</a>
+  Tech Tags: <a href="http://technorati.com/tag/vs2008"" rel="tag">vs2008</a> <a href="http://technorati.com/tag/post+build+event"" rel="tag">post+build+event</a> <a href="http://technorati.com/tag/Code+4"" rel="tag">Code+4</a> <a href="http://technorati.com/tag/xcopy"" rel="tag">xcopy</a> <a href="http://technorati.com/tag/Vista"" rel="tag">Vista</a> <a href="http://technorati.com/tag/icacls"" rel="tag">icacls</a>
 </div>

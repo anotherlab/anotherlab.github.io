@@ -1,17 +1,16 @@
 ---
-title:  How to force Visual Studio to update the debug device for a MAUI project
+title: How to force Visual Studio to update the debug device for a MAUI project
 author: anotherlab
 classes: wide
 toc: true
-header:
-  image: /assets/images/PressTheButton.jpg
-categories: 
-  - VisualStudio
-  - MAUI
-  - Android
-  - PowerShell
+categories:
+- VisualStudio
+- MAUI
+- Android
+- PowerShell
 tags:
-  - hacks, XML
+- hacks, XML
+image: /assets/images/PressTheButton.jpg
 ---
 When I'm writing code for .NET MAUI in Visual Studio, I often use actual devices. I'm working on a app that uses BLE and you really can't test that with an emulator. And I usually test with a wired ADB connection. If you in the middle of working in VS and you unplug your Android device, VS will change the current debugging target from your device to the last used emulator. When you plug your device back in, it does not switch back to your device.
 
@@ -80,7 +79,7 @@ Cool, I can work with that.
 # Hack the .user file
 There are any number of ways of making changes to an XML file.  I like PowerShell for this kind of stuff.  I wrote a little script named [update-phone.ps1](https://gist.github.com/anotherlab/57de44266e0b16f1987dd82d4bb5bcc5) and it looks like this 
 
-{% gist 57de44266e0b16f1987dd82d4bb5bcc5 %}
+<script src="https://gist.github.com/anotherlab/57de44266e0b16f1987dd82d4bb5bcc5.js"></script>
 
 # Break down the script
 The first few lines are just the usual parameter stuff, nothing to explain here.

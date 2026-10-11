@@ -11,5 +11,5 @@ Joel adds the astute observation that allowing comments and lead to childish fla
 I can see that point.  But there is another side to blog commenting.  It allows the blog reader to correct or enhance positions posted by the author.  I have also seen plenty of blog postings where the author invited comments.  He/She was trying to solve a problem and was soliciting feedbacks.  As long as you can reasonably block comment spam, I&#8217;m in favor of allowing comments.  No one is forcing you to read them.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Blog+Commenting" rel="tag">Blog+Commenting</a> <a href="http://technorati.com/tag/Dave+Winer" rel="tag">Dave+Winer</a> <a href="http://technorati.com/tag/Joel+Spolsky" rel="tag">Joel+Spolsky</a>
+  Tech Tags: <a href="http://technorati.com/tag/Blog+Commenting"" rel="tag">Blog+Commenting</a> <a href="http://technorati.com/tag/Dave+Winer"" rel="tag">Dave+Winer</a> <a href="http://technorati.com/tag/Joel+Spolsky"" rel="tag">Joel+Spolsky</a>
 </div>

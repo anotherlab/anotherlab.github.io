@@ -15,5 +15,5 @@ They could have mentioned which car the tag was for.  The only way to tell was 
 More companies should study how the E-ZPass program is run.  The hardware just [works](http://auto.howstuffworks.com/e-zpass.htm), no fuss or muss.  We recentl;y drove from Albany NY, to Corolla, NC and just about every toll bridge and road accepted the E-ZPass.  The only exception was the Chesapeake Bay Bridge-Tunnel, and they are in the process of [implementing an electronic toll collection system](http://www.cbbt.com/ezpass.html) (E-ZPass).
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/E-ZPass" rel="tag">E-ZPass</a> <a href="http://technorati.com/tag/electronic+toll+collection" rel="tag">electronic toll collection</a> <a href="http://technorati.com/tag/It+Just+Works" rel="tag">It Just Works</a>
+  Tech Tags: <a href="http://technorati.com/tag/E-ZPass"" rel="tag">E-ZPass</a> <a href="http://technorati.com/tag/electronic+toll+collection"" rel="tag">electronic toll collection</a> <a href="http://technorati.com/tag/It+Just+Works"" rel="tag">It Just Works</a>
 </div>

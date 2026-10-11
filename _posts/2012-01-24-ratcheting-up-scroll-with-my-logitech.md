@@ -20,7 +20,7 @@ When in doubt, RTFM.  I took a peek at the user guide for the VX, from the Logi
   <tr>
     <td valign="top" width="400">
       <p align="center">
-        <a href="https://i1.wp.com/lh6.ggpht.com/-mLMUvihYVME/Tx4xETCWJQI/AAAAAAAAAks/6OzgjdGm7-s/s1600-h/OddlyShaped%25255B4%25255D.png"><img loading="lazy" title="OddlyShaped" border="0" alt="OddlyShaped" src="https://i1.wp.com/lh5.ggpht.com/-yCOxCH7ZPc8/Tx4xEiykf5I/AAAAAAAAAk0/HhFZkP1iJLI/OddlyShaped_thumb%25255B2%25255D.png?resize=198%2C244" width="198" height="244"   /></a>Figure 1 – An oddly shaped control
+        <a href="https://i1.wp.com/lh6.ggpht.com/-mLMUvihYVME/Tx4xETCWJQI/AAAAAAAAAks/6OzgjdGm7-s/s1600-h/OddlyShaped%25255B4%25255D.png""><img loading="lazy" title="OddlyShaped" border="0" alt="OddlyShaped" src="https://i1.wp.com/lh5.ggpht.com/-yCOxCH7ZPc8/Tx4xEiykf5I/AAAAAAAAAk0/HhFZkP1iJLI/OddlyShaped_thumb%25255B2%25255D.png?resize=198%2C244" width="198" height="244"   /></a>Figure 1 – An oddly shaped control
       </p>
     </td>
   </tr>

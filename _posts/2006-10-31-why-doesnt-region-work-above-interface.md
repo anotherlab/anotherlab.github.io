@@ -9,5 +9,5 @@ So I figured since we moved to Delphi 2006, I could wrap those comments inside a
 It turns out that $REGION only collapses after the **interface** line.  I moved **interface** to above the {$REGION} line and all was good.  I couldn&#8217;t find that factoid documented anywhere.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/BDS" rel="tag">BDS</a> <a href="http://technorati.com/tag/Delphi+2006" rel="tag">Delphi+2006</a> <a href="http://technorati.com/tag/Region" rel="tag">Region</a> <a href="http://technorati.com/tag/Folding" rel="tag">Folding</a> <a href="http://technorati.com/tag/Interface" rel="tag">Interface</a>
+  Tech Tags: <a href="http://technorati.com/tag/BDS"" rel="tag">BDS</a> <a href="http://technorati.com/tag/Delphi+2006"" rel="tag">Delphi+2006</a> <a href="http://technorati.com/tag/Region"" rel="tag">Region</a> <a href="http://technorati.com/tag/Folding"" rel="tag">Folding</a> <a href="http://technorati.com/tag/Interface"" rel="tag">Interface</a>
 </div>

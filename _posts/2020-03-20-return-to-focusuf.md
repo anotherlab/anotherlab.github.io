@@ -1,10 +1,10 @@
 ---
 title: Return to FocusUF
-date: 2020-03-20T22:49:29-05:00
+date: 2020-03-20 22:49:29-05:00
 categories:
-  - Hardware
+- Hardware
 tags:
-  - webcam
+- Webcam
 ---
 A while back, I [blogged](/2018/04/05/focusuf-or-how-to-turn-off-the-autofocus-setting-of-the-lifecam-hd-5000-webcam/) about a command line hack to set the focus for a web cam. I was using a Microsoft LifeCam HD-5000 and it has the annoying habit of refocusing if you move around in your seat.
 

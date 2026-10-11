@@ -18,5 +18,5 @@ This was completely copied from [here](http://www.dtdn.com/blog/2004/12/removing
  
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Language+ToolBar" rel="tag">Language+ToolBar</a> <a href="http://technorati.com/tag/Windows+XP" rel="tag">Windows+XP</a> <a href="http://technorati.com/tag/XP+Annoyance" rel="tag">XP+Annoyance</a>
+  Tech Tags: <a href="http://technorati.com/tag/Language+ToolBar"" rel="tag">Language+ToolBar</a> <a href="http://technorati.com/tag/Windows+XP"" rel="tag">Windows+XP</a> <a href="http://technorati.com/tag/XP+Annoyance"" rel="tag">XP+Annoyance</a>
 </div>

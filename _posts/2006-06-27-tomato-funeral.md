@@ -22,7 +22,7 @@ I saw a reference to “tomato funeral” on a .Net developer’s [blog](http://
   </p>
   
   <p>
-    <em>Points are awarded for creativity and quickness of response.<br /><a href="http://www.wilwheaton.net/mt/archives/001827.php#c109100">http://www.wilwheaton.net/mt/archives/001827.php#c109100</a></em>
+    <em>Points are awarded for creativity and quickness of response.<br /><a href="http://www.wilwheaton.net/mt/archives/001827.php#c109100"">http://www.wilwheaton.net/mt/archives/001827.php#c109100</a></em>
   </p>
 </blockquote>
 

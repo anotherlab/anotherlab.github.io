@@ -22,5 +22,5 @@ There is a command line way of resetting rdpclip, so you can roll up both steps 
 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Terminal+Services" rel="tag">Terminal+Services</a> <a href="http://technorati.com/tag/Remote+Desktop" rel="tag">Remote+Desktop</a> <a href="http://technorati.com/tag/rdp" rel="tag">rdp</a> <a href="http://technorati.com/tag/clipboard" rel="tag">clipboard</a> <a href="http://technorati.com/tag/rdpclip" rel="tag">rdpclip</a>
+  Tech Tags: <a href="http://technorati.com/tag/Terminal+Services"" rel="tag">Terminal+Services</a> <a href="http://technorati.com/tag/Remote+Desktop"" rel="tag">Remote+Desktop</a> <a href="http://technorati.com/tag/rdp"" rel="tag">rdp</a> <a href="http://technorati.com/tag/clipboard"" rel="tag">clipboard</a> <a href="http://technorati.com/tag/rdpclip"" rel="tag">rdpclip</a>
 </div>

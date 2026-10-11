@@ -1,13 +1,13 @@
 ---
 title: How to access Apple's App Connect API from C#, Python, and Go. - Part 4
-date: 2021-09-01T06:56:57-05:00
+date: 2021-09-01 06:56:57-05:00
 categories:
-  - Apple
+- Apple
 tags:
-  - Apple
-  - C
-  - 'C#'
-  - Python
+- Apple
+- C
+- CSharp
+- Python
 ---
 Welcome to Part 4 of a three part series. Last month, I did a series of posts on how to use Apple&#8217;s App Connect API to query the team membership list using [C#](/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/), [Go](/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/), and [Python](/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/). This was code I was actually using myself and after I wrote it, it stopped working. The API calls were returning an HTTP 401 error. But only on Windows, on the Mac the code worked.
 

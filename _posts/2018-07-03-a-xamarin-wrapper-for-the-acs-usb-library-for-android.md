@@ -5,7 +5,7 @@ categories:
   - Uncategorized
   - Xamarin
 ---
-<figure><a href="https://www.acs.com.hk/en/products/3/acr122u-usb-nfc-reader/"><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-g4GgjFj/0/fa5e2c6c/S/i-g4GgjFj-S.png?resize=300%2C300&#038;ssl=1" alt="ACS ACR122U USB NFC Reader" width="300" height="300"  /></a><figcaption>ACS ACR122U USB NFC Reader</figcaption></figure>
+<figure><a href="https://www.acs.com.hk/en/products/3/acr122u-usb-nfc-reader/""><img loading="lazy" class="size-medium" src="https://i1.wp.com/photos.smugmug.com/photos/i-g4GgjFj/0/fa5e2c6c/S/i-g4GgjFj-S.png?resize=300%2C300&#038;ssl=1" alt="ACS ACR122U USB NFC Reader" width="300" height="300"  /></a><figcaption>ACS ACR122U USB NFC Reader</figcaption></figure>
 
 A while back, we were using RFID readers made by ACS. They make a number of decent readers and we used one of the USB models, [ACR1220U](https://www.acs.com.hk/en/products/3/acr122u-usb-nfc-reader/), with our bespoke Android tablet. To communicate to the reader, ACS provides libraries for Windows and Android. The Android library comes with a .jar file and some sample (but very limited) code. The demo showed how to connect to the reader, but didn&#8217;t have that much for getting information from the reader.
 
@@ -23,7 +23,7 @@ And that&#8217;s just to get the UID from a card. If you are trying to read a [N
 
 For the last .5 decade, we&#8217;ve been using Xamarin for our Android coding. To use the ACS reader, I created a Xamarin wrapper library for their Java library. It basically takes and embeds the .jar file and provides a nice .NET API to their library. I then took their sample library and did a more or less straight port from Java to C#. If you grab that repo from Github, you&#8217;ll get the library and and the demo app. It was created with Visual Studio on Windows, but should work on the Mac. Should being the code word for &#8220;I didn&#8217;t do anything that was platform specific, but I didn&#8217;t test it on the Mac.&#8221;
 
-The results of that wrapper/conversion are up on Github. You can grab it [here](https://github.com/anotherlab/Xamarin-ACS-Smartcard-USB). The .jar file that the library is compiled with is included in the repository. It is part of an API kit that should be downloaded from <a href="https://www.acs.com.hk/en/mobile-support/" rel="nofollow">https://www.acs.com.hk/en/mobile-support/</a>. The API kit includes the API documentation in HTML format.
+The results of that wrapper/conversion are up on Github. You can grab it [here](https://github.com/anotherlab/Xamarin-ACS-Smartcard-USB). The .jar file that the library is compiled with is included in the repository. It is part of an API kit that should be downloaded from <a href="https://www.acs.com.hk/en/mobile-support/"" rel="nofollow">https://www.acs.com.hk/en/mobile-support/</a>. The API kit includes the API documentation in HTML format.
 
 The library does not have the APDU code to get the data from a RFID card. I do have that code, but at the moment it&#8217;s part of some code that I can&#8217;t share. I&#8217;ll pull the APDU code from our business code and post it later. In the meantime, this is the code from the OnStateChange event that gets assigned to the reader.
 

@@ -25,5 +25,5 @@ So I made that the first line of code and removed the reference to forms.pas.  
 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Delphi" rel="tag">Delphi</a> <a href="http://technorati.com/tag/COM" rel="tag">COM</a> <a href="http://technorati.com/tag/CoInitialize" rel="tag">CoInitialize</a> <a href="http://technorati.com/tag/InitProc" rel="tag">InitProc</a> <a href="http://technorati.com/tag/Windows+Installer" rel="tag">Windows+Installer</a> <a href="http://technorati.com/tag/Upgrade+In+Place" rel="tag">Upgrade+In+Place</a> <a href="http://technorati.com/tag/.NET" rel="tag">.NET</a>
+  Tech Tags: <a href="http://technorati.com/tag/Delphi"" rel="tag">Delphi</a> <a href="http://technorati.com/tag/COM"" rel="tag">COM</a> <a href="http://technorati.com/tag/CoInitialize"" rel="tag">CoInitialize</a> <a href="http://technorati.com/tag/InitProc"" rel="tag">InitProc</a> <a href="http://technorati.com/tag/Windows+Installer"" rel="tag">Windows+Installer</a> <a href="http://technorati.com/tag/Upgrade+In+Place"" rel="tag">Upgrade+In+Place</a> <a href="http://technorati.com/tag/.NET"" rel="tag">.NET</a>
 </div>

@@ -1,17 +1,17 @@
 ---
-title:  Running the iOS simulators after updating to Xcode 14
-date:   2022-09-17
+title: Running the iOS simulators after updating to Xcode 14
+date: 2022-09-17
 author: anotherlab
 summary: How to enable older versions of Xcode when the current one doesn't with Xamarin or Maui
 largeimage: /assets/giger-dev-001.png
-categories: 
-  - Coding
-  - Visual Studio
-  - Xcode
-tags: 
-  - Xamarin
-  - Maui
-  - xcode-select  
+categories:
+- Coding
+- Visual Studio
+- Xcode
+tags:
+- Xamarin
+- MAUI
+- xcode-select
 ---
 {:refdef: style="text-align: center;"}
 ![Deployment Target](/assets/giger-dev-001.png)

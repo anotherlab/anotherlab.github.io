@@ -17,5 +17,5 @@ This was Wise 9&#8217;s attempt to mimic the self-repair feature of Microsoft&#8
 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Vista" rel="tag">Vista</a> <a href="http://technorati.com/tag/Wise+Installation+System" rel="tag">Wise+Installation+System</a> <a href="http://technorati.com/tag/User+Account+Control" rel="tag">User+Account+Control</a> <a href="http://technorati.com/tag/Shortcut" rel="tag">Shortcut</a> <a href="http://technorati.com/tag/unwise.exe" rel="tag">unwise.exe</a>
+  Tech Tags: <a href="http://technorati.com/tag/Vista"" rel="tag">Vista</a> <a href="http://technorati.com/tag/Wise+Installation+System"" rel="tag">Wise+Installation+System</a> <a href="http://technorati.com/tag/User+Account+Control"" rel="tag">User+Account+Control</a> <a href="http://technorati.com/tag/Shortcut"" rel="tag">Shortcut</a> <a href="http://technorati.com/tag/unwise.exe"" rel="tag">unwise.exe</a>
 </div>

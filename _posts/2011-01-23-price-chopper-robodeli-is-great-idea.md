@@ -3,7 +3,7 @@ title: 'Price Chopper&#8217;s RoboDeli is great idea, but flawed'
 date: 2011-01-23T21:57:00-05:00
 ---
 <p align="left">
-  I just did some Sunday shopping at a local <a href="http://www.pricechopper.com/">Price Chopper</a> <a href="http://twitter.com/#!/PriceChopperNY">supermarket</a>.  It was pretty busy and there was a long line at the deli counter.  With in the last few months, they implemented a computerized ticket system.  Instead of grabbing a ticket and waiting for a number to be called, you pushed a button on a touch screen and a numbered ticket was printed out for you.  On a large TV screen above the deli, the ticket numbers currently being served and tickets to be served were listed, along with their approximate wait times.
+  I just did some Sunday shopping at a local <a href="http://www.pricechopper.com/"">Price Chopper</a> <a href="http://twitter.com/#!/PriceChopperNY"">supermarket</a>.  It was pretty busy and there was a long line at the deli counter.  With in the last few months, they implemented a computerized ticket system.  Instead of grabbing a ticket and waiting for a number to be called, you pushed a button on a touch screen and a numbered ticket was printed out for you.  On a large TV screen above the deli, the ticket numbers currently being served and tickets to be served were listed, along with their approximate wait times.
 </p>
 
 Knowing the wait time is handy, it gives you a better idea of how long you will be waiting before you be served..  They also have a touch screen set up to allow you to place your order and come back later to get it.  Since the wait time was up to 20 minutes, I decided to give the &#8220;RoboDeli&#8221; a shot.

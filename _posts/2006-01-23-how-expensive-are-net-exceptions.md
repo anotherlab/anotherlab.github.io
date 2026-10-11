@@ -8,4 +8,4 @@ But how expensive are they?  It’s all relative, but it turns out that it’s 
 
 There are some caveats with Jon’s example. He calls the same exception repeatedly, it may be more expensive to call many different examples than the same one over and over.  His example was in the Main() function, it wasn’t nested at all.  The deeper, you nest the code, the more expensive the hit is.
 
-Technorati Tags: <a href="http://technorati.com/tag/C%23" rel="tag">C#</a> <a href="http://technorati.com/tag/.NET" rel="tag">.NET</a> <a href="http://technorati.com/tag/exceptions" rel="tag">exceptions</a>
+Technorati Tags: <a href="http://technorati.com/tag/C%23"" rel="tag">C#</a> <a href="http://technorati.com/tag/.NET"" rel="tag">.NET</a> <a href="http://technorati.com/tag/exceptions"" rel="tag">exceptions</a>

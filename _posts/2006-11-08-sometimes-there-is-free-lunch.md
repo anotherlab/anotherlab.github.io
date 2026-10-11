@@ -10,5 +10,5 @@ With FinalBuilder, I can create a new build of one our applications from source 
 Automise is basically FinalBuilder, but without the compiler specific tools. If you have a batch process that uses a motley collection of batch files and command line tools, then Automise will make your life simpler.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/FinalBuilder" rel="tag">FinalBuilder</a> <a href="http://technorati.com/tag/Automise" rel="tag">Automise</a>
+  Tech Tags: <a href="http://technorati.com/tag/FinalBuilder"" rel="tag">FinalBuilder</a> <a href="http://technorati.com/tag/Automise"" rel="tag">Automise</a>
 </div>

@@ -14,12 +14,11 @@ During these work from home times, on the [darkest timeline](https://tenor.com/E
 
 When you are connected to a remote machine and you press the Num Lock key on your keyboard, it toggles the Num Lock state for both the client and guest machine. Which can get confusing if you are working with apps on both machines and the Num Lock state is different between the machines. Ideally, you want the Num Lock state to be the same on both machines.
 
-For me, the preference was a command-line <span style="font-size: inherit;">option for setting Num Lock. My shell of choice on Windows is </span><a style="font-size: inherit;" href="https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7">PowerShell</a><span style="font-size: inherit;">, so I decided to write a PowerShell script to set the Num Lock Status. The Num Lock key is a toggle switch, press once to turn on, press again to turn off. The script needed to be able to check the current state to be able to set a specified state correctly.</span>
+For me, the preference was a command-line <span style="font-size: inherit;">option for setting Num Lock. My shell of choice on Windows is </span><a style="font-size: inherit;" href="https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7"">PowerShell</a><span style="font-size: inherit;">, so I decided to write a PowerShell script to set the Num Lock Status. The Num Lock key is a toggle switch, press once to turn on, press again to turn off. The script needed to be able to check the current state to be able to set a specified state correctly.</span>
 
 With a little trial and error, I came up with the following script. I put it on gist to make it easier to grab and make your own:
 
-{% gist 863fc3f60379c29b2ebb8478859754c8 %}
-
+<script src="https://gist.github.com/anotherlab/863fc3f60379c29b2ebb8478859754c8.js"></script>
 
 I put the comments inline, it should be pretty self-explanatory with the comments. While PowerShell is supported on macOS and Linux now, this is a Windows only script. The `[console]::NumberLock`{:.powershell} expression returns the following error message:
 

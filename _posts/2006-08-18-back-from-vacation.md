@@ -17,5 +17,5 @@ We spent a week down on the Outer Banks in North Carolina.  We have been going 
 The house in the lower left corner is where we stayed.  I tell you the name, but I want to rent it next year&#8230;
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Pine+Island" rel="tag">Pine Island</a> <a href="http://technorati.com/tag/Corolla" rel="tag">Corolla</a> <a href="http://technorati.com/tag/Outer+Banks" rel="tag">Outer Banks</a> <a href="http://technorati.com/tag/Windows+Live+Writer" rel="tag">Windows Live Writer</a> <a href="http://technorati.com/tag/Vista" rel="tag">Vista</a>
+  Tech Tags: <a href="http://technorati.com/tag/Pine+Island"" rel="tag">Pine Island</a> <a href="http://technorati.com/tag/Corolla"" rel="tag">Corolla</a> <a href="http://technorati.com/tag/Outer+Banks"" rel="tag">Outer Banks</a> <a href="http://technorati.com/tag/Windows+Live+Writer"" rel="tag">Windows Live Writer</a> <a href="http://technorati.com/tag/Vista"" rel="tag">Vista</a>
 </div>

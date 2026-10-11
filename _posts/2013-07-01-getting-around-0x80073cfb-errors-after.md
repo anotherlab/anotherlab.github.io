@@ -35,7 +35,7 @@ Each one reported reported the same error code 0x80073cfb. That error code is de
   <table align="center" cellpadding="0" cellspacing="0">
     <tr>
       <td>
-        <a href="http://www.rajapet.net/Other/blog/4420877_ZCzCW6#!i=2607508140&#038;k=VbhsGTf&#038;lb=1&#038;s=A" title=""><img alt="" src="https://i0.wp.com/www.rajapet.net/photos/i-VbhsGTf/0/L/i-VbhsGTf-L.jpg?w=680" title=""  /></a>
+        <a href="http://www.rajapet.net/Other/blog/4420877_ZCzCW6#!i=2607508140&k=VbhsGTf&lb=1&s=A"" title=""><img alt="" src="https://i0.wp.com/www.rajapet.net/photos/i-VbhsGTf/0/L/i-VbhsGTf-L.jpg?w=680" title=""  /></a>
       </td>
     </tr>
     
@@ -72,7 +72,7 @@ Each one reported reported the same error code 0x80073cfb. That error code is de
   </ol>
   
   <p>
-    I would love to find a way to script this with Power Shell. What would be nice would be if the Windows Store app would give you an uninstall/reinstall option when it encounters 0x80073cfb errors. I&#8217;m <a href="http://answers.microsoft.com/en-us/windows/forum/windows8_1_pr-windows_store/app-store-error-0x80073cfb-w-81-preview/e9dcdbc6-b618-4e4b-83c7-81229927ab0d" target="">not the only person</a> <a href="http://qnundrum.com/answer.php?q=715994">seeing this</a> and it&#8217;s happening with the Acer, just with a different set of apps. On Acer, it gets that error with these apps:
+    I would love to find a way to script this with Power Shell. What would be nice would be if the Windows Store app would give you an uninstall/reinstall option when it encounters 0x80073cfb errors. I&#8217;m <a href="http://answers.microsoft.com/en-us/windows/forum/windows8_1_pr-windows_store/app-store-error-0x80073cfb-w-81-preview/e9dcdbc6-b618-4e4b-83c7-81229927ab0d"" target="">not the only person</a> <a href="http://qnundrum.com/answer.php?q=715994"">seeing this</a> and it&#8217;s happening with the Acer, just with a different set of apps. On Acer, it gets that error with these apps:
   </p>
   
   <p>
@@ -101,4 +101,4 @@ Each one reported reported the same error code 0x80073cfb. That error code is de
   </p>
   
   <p>
-    The burning village image comes from <a href="http://www.flickr.com/photos/stillgray/sets/72157632889684726/with/8517902677/" target="_blank">The Witcher 3 Set</a>, from the Flickr feed of <a href="http://www.flickr.com/photos/stillgray/">Gameranx</a>.</div>
+    The burning village image comes from <a href="http://www.flickr.com/photos/stillgray/sets/72157632889684726/with/8517902677/"" target="_blank">The Witcher 3 Set</a>, from the Flickr feed of <a href="http://www.flickr.com/photos/stillgray/"">Gameranx</a>.</div>

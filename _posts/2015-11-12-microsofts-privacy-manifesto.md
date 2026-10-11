@@ -3,7 +3,7 @@ title: 'Microsoft&#8217;s Privacy Manifesto'
 date: 2015-11-12T21:01:29-05:00
 ---
 <div style="width: 610px" class="wp-caption aligncenter">
-  <a href="http://news.microsoft.com/stories/inthecloudwetrust/"><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-fRLdMMK/0/M/InTheCloudWeTrust-M.png?resize=600%2C250" alt="" width="600" height="250"  /></a>
+  <a href="http://news.microsoft.com/stories/inthecloudwetrust/""><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-fRLdMMK/0/M/InTheCloudWeTrust-M.png?resize=600%2C250" alt="" width="600" height="250"  /></a>
   
   <p class="wp-caption-text">
     In the Cloud We Trust

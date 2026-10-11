@@ -34,5 +34,5 @@ This looks like a logical way to handle command line parameters while still foll
 >         </p></blockquote> 
 >         
 >         <p>
->           <i>[via <a title="Yet another command line parsing system" href="http://weblogs.asp.net/jgalloway/archive/2005/10/24/428269.aspx">[JonGalloway.ToString()]</a>]</i>
+>           <i>[via <a title="Yet another command line parsing system" href="http://weblogs.asp.net/jgalloway/archive/2005/10/24/428269.aspx"">[JonGalloway.ToString()]</a>]</i>
 >         </p>

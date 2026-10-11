@@ -8,11 +8,11 @@ The question of how sync music from a Mac to a Windows Phone comes up in the fo
 
 <blockquote class="twitter-tweet" lang="en">
   <p dir="ltr" lang="en">
-    <a href="https://twitter.com/LumiaHelp">@LumiaHelp</a> Is there a version of the Windows Phone Connector for Mac that works with El Capitan?
+    <a href="https://twitter.com/LumiaHelp"">@LumiaHelp</a> Is there a version of the Windows Phone Connector for Mac that works with El Capitan?
   </p>
   
   <p>
-    — Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/654368326236438528">October 14, 2015</a>
+    — Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/654368326236438528"">October 14, 2015</a>
   </p>
 </blockquote>
 
@@ -20,11 +20,11 @@ The question of how sync music from a Mac to a Windows Phone comes up in the fo
 
 <blockquote class="twitter-tweet" lang="en" data-conversation="none">
   <p>
-    <a href="https://twitter.com/anotherlab">@anotherlab</a> 1/2 Windows Phone customers are still able to sync with their Mac by using third-party​ cloud services. We removed
+    <a href="https://twitter.com/anotherlab"">@anotherlab</a> 1/2 Windows Phone customers are still able to sync with their Mac by using third-party​ cloud services. We removed
   </p>
   
   <p>
-    — Lumia Help (@LumiaHelp) <a href="https://twitter.com/LumiaHelp/status/656180841542868992">October 19, 2015</a>
+    — Lumia Help (@LumiaHelp) <a href="https://twitter.com/LumiaHelp/status/656180841542868992"">October 19, 2015</a>
   </p>
 </blockquote>
 
@@ -32,11 +32,11 @@ The question of how sync music from a Mac to a Windows Phone comes up in the fo
 
 <blockquote class="twitter-tweet" lang="en" data-conversation="none">
   <p dir="ltr" lang="en">
-    <a href="https://twitter.com/anotherlab">@anotherlab</a> 2/2 the app so we could focus our resources elsewhere. ^JR
+    <a href="https://twitter.com/anotherlab"">@anotherlab</a> 2/2 the app so we could focus our resources elsewhere. ^JR
   </p>
   
   <p>
-    — Lumia Help (@LumiaHelp) <a href="https://twitter.com/LumiaHelp/status/656180889123028992">October 19, 2015</a>
+    — Lumia Help (@LumiaHelp) <a href="https://twitter.com/LumiaHelp/status/656180889123028992"">October 19, 2015</a>
   </p>
 </blockquote>
 

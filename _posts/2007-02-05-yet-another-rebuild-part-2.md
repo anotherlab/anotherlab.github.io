@@ -9,5 +9,5 @@ I&#8217;m not installing Opera this time.  I&#8217;ve been an [Opera](http://ww
 After having to rebuild my PC twice now in the last month, I&#8217;m tired of losing bookmarks and other settings.  With Google Browser Sync, my bookmarks are synched up across machines.  It adds so much value to me, that I&#8217;m giving up the faster performance, the better security, and the smaller footprint of Opera.  Of course, I&#8217;m going to make Firefox behave like Opera as much as [possible](http://firefox.exxile.net/aios/).
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Repave" rel="tag">Repave</a> <a href="http://technorati.com/tag/Reinstall" rel="tag">Reinstall</a> <a href="http://technorati.com/tag/Firefox" rel="tag">Firefox</a> <a href="http://technorati.com/tag/Opera" rel="tag">Opera</a> <a href="http://technorati.com/tag/Google+Browser+Sync" rel="tag">Google+Browser+Sync</a>
+  Tech Tags: <a href="http://technorati.com/tag/Repave"" rel="tag">Repave</a> <a href="http://technorati.com/tag/Reinstall"" rel="tag">Reinstall</a> <a href="http://technorati.com/tag/Firefox"" rel="tag">Firefox</a> <a href="http://technorati.com/tag/Opera"" rel="tag">Opera</a> <a href="http://technorati.com/tag/Google+Browser+Sync"" rel="tag">Google+Browser+Sync</a>
 </div>

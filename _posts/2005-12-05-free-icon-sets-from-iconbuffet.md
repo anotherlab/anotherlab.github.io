@@ -30,4 +30,4 @@ I just got my first deliveries (thanks Dan!).  It’s the Shanghai Tech Vector 
   * Taipei Buddies 2, 3 deliveries remaining
   * Taipei Night Market, 3 deliveries remaining
 
-Technorati tag: <a href="http://technorati.com/tag/iconbuffet" rel="tag">iconbuffet</a>
+Technorati tag: <a href="http://technorati.com/tag/iconbuffet"" rel="tag">iconbuffet</a>

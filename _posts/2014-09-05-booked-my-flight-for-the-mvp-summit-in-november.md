@@ -6,10 +6,10 @@ I finally got around to booking my flights to the [MVP Summit](http://mvp.micros
 
 <blockquote class="twitter-tweet" lang="en">
   <p>
-    Registered for the 2014 <a href="https://twitter.com/hashtag/MVPSummit?src=hash">#MVPSummit</a>, staying in the <a href="https://twitter.com/hashtag/Hyatt?src=hash">#Hyatt</a>. Looking forward to the <a href="https://twitter.com/hashtag/MVPBuzz?src=hash">#MVPBuzz</a>
+    Registered for the 2014 <a href="https://twitter.com/hashtag/MVPSummit?src=hash"">#MVPSummit</a>, staying in the <a href="https://twitter.com/hashtag/Hyatt?src=hash"">#Hyatt</a>. Looking forward to the <a href="https://twitter.com/hashtag/MVPBuzz?src=hash"">#MVPBuzz</a>
   </p>
   
   <p>
-    — Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/504711796893446145">August 27, 2014</a>
+    — Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/504711796893446145"">August 27, 2014</a>
   </p>
 </blockquote>

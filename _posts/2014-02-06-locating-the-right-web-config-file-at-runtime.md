@@ -75,5 +75,5 @@ Let&#8217;s take a look at IsWebApiFolder()
 The first thing it does is to look for a file with an uncommon name.  It doesn&#8217;t matter which file you  pick, just make it fairly unique to your app.  It could even be an empty text file named &#8220;ThisIsTheFooBar.txt&#8221;.  After finding a folder that has what could be my app&#8217;s files, I parse the web.config and look for a specific setting.  If it has that setting, then I&#8217;m pretty confident that I have found the right file. When I find the right file, I return true back to the caller, which then adds that file to the list of web.config files that can be edited.
 
 <p style="font-size: smaller;">
-  Screaming Man image By Crosa (Flickr: Scream) [<a href="http://creativecommons.org/licenses/by/2.0">CC-BY-2.0</a>], <a href="http://commons.wikimedia.org/wiki/File%3AScream_crosathorian.jpg">via Wikimedia Commons</a>
+  Screaming Man image By Crosa (Flickr: Scream) [<a href="http://creativecommons.org/licenses/by/2.0"">CC-BY-2.0</a>], <a href="http://commons.wikimedia.org/wiki/File%3AScream_crosathorian.jpg"">via Wikimedia Commons</a>
 </p>

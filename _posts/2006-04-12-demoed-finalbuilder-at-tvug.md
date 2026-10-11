@@ -24,5 +24,5 @@ I emailed the FinalBuilder people and told them I was doing a presentation and a
 The group. This was not a well attended presentation. I believe that there may have been nearly 10 people total. Of that 10, maybe 5 people had any real interest or understanding of what they could use FinalBuilder for. That was kind of a letdown. I don&#8217;t know if that was just a bad month or if the people that usually come had no interest in a build tool.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/FinalBuilder" rel="tag">FinalBuilder</a> <a href="http://technorati.com/tag/TVUG" rel="tag">TVUG</a> <a href="http://technorati.com/tag/Vault" rel="tag">Vault</a> <a href="http://technorati.com/tag/VSS" rel="tag">VSS</a> <a href="http://technorati.com/tag/Delphi" rel="tag">Delphi</a> <a href="http://technorati.com/tag/WFW" rel="tag">WFW</a>
+  Tech Tags: <a href="http://technorati.com/tag/FinalBuilder"" rel="tag">FinalBuilder</a> <a href="http://technorati.com/tag/TVUG"" rel="tag">TVUG</a> <a href="http://technorati.com/tag/Vault"" rel="tag">Vault</a> <a href="http://technorati.com/tag/VSS"" rel="tag">VSS</a> <a href="http://technorati.com/tag/Delphi"" rel="tag">Delphi</a> <a href="http://technorati.com/tag/WFW"" rel="tag">WFW</a>
 </div>

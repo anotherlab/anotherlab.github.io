@@ -35,5 +35,5 @@ At this point, I have better than an hour and half sunk into this phone call. I 
 At this point I have a lot of respect for Verizon FiOS tech support and almost none for McAfee. I pretty much got what I paid for, no question about that.</p> 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/FiOS%20Thunderbird%20McAfee%20Support" rel="tag">FiOS Thunderbird McAfee Support</a>
+  Tech Tags: <a href="http://technorati.com/tag/FiOS%20Thunderbird%20McAfee%20Support"" rel="tag">FiOS Thunderbird McAfee Support</a>
 </div>

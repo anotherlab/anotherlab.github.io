@@ -6,4 +6,4 @@ One the [Albany Aqua Ducks](http://www.albanyaquaducks.com/) entering into the H
 
 It was pretty cool. The Aqua Duck came to Anne&#8217;s school to pick up the kids. We then drove through downtown Albany to Quakenbush Square, and the kids were able to participate in some nature activities. We then got back on the vehicle and made the short trip down to the [Corning](http://webhome.idirect.com/~boweevil/corning1.html) [Preserve](http://www.portofalbany.com/pages03/waterfront.html). As we pulled up, another Aqua Duck was getting ready to launch into the river. That&#8217;s the vehicle in the picture above. It was pretty cool driving into the river, it was a very comfortable ride. 
 
-<a href="http://www.hello.com/" target="ext"><img alt="Posted by Hello" src="https://i0.wp.com/photos1.blogger.com/pbh.gif?w=680" align="absMiddle" border="0"  /></a>
+<a href="http://www.hello.com/"" target="ext"><img alt="Posted by Hello" src="https://i0.wp.com/photos1.blogger.com/pbh.gif?w=680" align="absMiddle" border="0"  /></a>

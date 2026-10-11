@@ -15,7 +15,7 @@ The following could have been coming from my desk (but didn&#8217;t)
 >   </p>
 >   
 >   <p>
->     &#8220;It&#8217;s <a href="http://www.wise.com/Wise/Products/Installations/WiseforWindowsInstaller/Overview.aspx">Wise</a>, so I really don&#8217;t ask questions. I just work around it.&#8221; — <a href="http://www.alieniloquent.com/">Sam Tesla</a>, 7/12/2006
+>     &#8220;It&#8217;s <a href="http://www.wise.com/Wise/Products/Installations/WiseforWindowsInstaller/Overview.aspx"">Wise</a>, so I really don&#8217;t ask questions. I just work around it.&#8221; — <a href="http://www.alieniloquent.com/"">Sam Tesla</a>, 7/12/2006
 >   </p>
 > </blockquote>
 > 

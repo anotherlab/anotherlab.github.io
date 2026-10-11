@@ -9,7 +9,7 @@ For the most part, I just need to replace the first and last names from student 
 What I end up is writing some sort of reubenizer code.  The reubenizer changes the first and last names to some variation of “Reuben”.
 
 <figure>
-<a href="https://en.wikipedia.org/wiki/Dave_Madden"><img loading="lazy" class="" src="https://i0.wp.com/photos.smugmug.com/photos/i-jQWQ4m4/0/Th/i-jQWQ4m4-Th.jpg" /></a>
+<a href="https://en.wikipedia.org/wiki/Dave_Madden""><img loading="lazy" class="" src="https://i0.wp.com/photos.smugmug.com/photos/i-jQWQ4m4/0/Th/i-jQWQ4m4-Th.jpg" /></a>
 <figcaption>The Patron Saint of all that is Reuben</figcaption></figure>
 
 Let's create a fake table to represent the student data to modify.

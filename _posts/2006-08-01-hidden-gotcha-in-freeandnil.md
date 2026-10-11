@@ -21,5 +21,5 @@ The FreeAndNil() procedure was added back around Delphi 3 or so. You pass in an 
 It&#8217;s setting the variable to nil before it free&#8217;s it. It&#8217;s not how it&#8217;s documented and it caused my code to fail. There&#8217;s nothing wrong with how FreeAndNil is coded, by setting the variable to nil first, other objects can check to see if it still exists and not try to access that object while it&#8217;s being destroyed. I just would preferred that the documentation more accurately described the actual functionality.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Delphi" rel="tag">Delphi</a> <a href="http://technorati.com/tag/AutomatedQA" rel="tag">AutomatedQA</a> <a href="http://technorati.com/tag/AQTime" rel="tag">AQTime</a> <a href="http://technorati.com/tag/FreeAndNil" rel="tag">FreeAndNil</a> <a href="http://technorati.com/tag/Fredo" rel="tag">Fredo</a>
+  Tech Tags: <a href="http://technorati.com/tag/Delphi"" rel="tag">Delphi</a> <a href="http://technorati.com/tag/AutomatedQA"" rel="tag">AutomatedQA</a> <a href="http://technorati.com/tag/AQTime"" rel="tag">AQTime</a> <a href="http://technorati.com/tag/FreeAndNil"" rel="tag">FreeAndNil</a> <a href="http://technorati.com/tag/Fredo"" rel="tag">Fredo</a>
 </div>

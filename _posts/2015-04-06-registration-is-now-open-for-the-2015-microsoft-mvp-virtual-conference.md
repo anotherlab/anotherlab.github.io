@@ -3,7 +3,7 @@ title: Registration is now open for the 2015 Microsoft MVP Virtual Conference.
 date: 2015-04-06T20:55:22-05:00
 ---
 <div style="width: 610px" class="wp-caption alignnone">
-  <a href="http://mvp.microsoft.com/en-us/virtualconference.aspx"><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-GfCkZ2P/0/M/image005-M.jpg?resize=600%2C262" alt="2015 Microsoft MVP Virtual Conference" width="600" height="262"  /></a>
+  <a href="http://mvp.microsoft.com/en-us/virtualconference.aspx""><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-GfCkZ2P/0/M/image005-M.jpg?resize=600%2C262" alt="2015 Microsoft MVP Virtual Conference" width="600" height="262"  /></a>
   
   <p class="wp-caption-text">
     2015 Microsoft MVP Virtual Conference

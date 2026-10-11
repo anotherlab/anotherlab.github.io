@@ -13,6 +13,6 @@ This tip just popped in my email as part of the [TiVo](http://www.tivo.com/) New
 >   * Scroll down to find _AFI, 100 Years…_ 
 >   * Movies will magically appear on your Now Playing List, just like regular TiVo recordings. 
 > 
-> Note: You must be broadband-connected to get a Guru Guide using your TiVo remote. Alternatively, try browsing the guide and <a href="http://mkmail.tivo.com/a/hBIaVixAtz1FXB7R5IsAxQ8Nvvv/tivo5" target="_blank">scheduling recordings online</a>. 
+> Note: You must be broadband-connected to get a Guru Guide using your TiVo remote. Alternatively, try browsing the guide and <a href="http://mkmail.tivo.com/a/hBIaVixAtz1FXB7R5IsAxQ8Nvvv/tivo5"" target="_blank">scheduling recordings online</a>. 
 
 Being able to do stuff like that is one of the reasons I love having TiVo in the house.
