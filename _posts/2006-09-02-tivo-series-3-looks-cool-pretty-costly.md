@@ -23,5 +23,5 @@ The Linksys/SMC combination worked very well, I never had any problems.  I had 
 I ended up running CAT5e cable through the house when I swtched to FiOS and now the TiVos are wired to the network. If you can do that, life is much easier.  With each TiVo directly on the network, I can transfer shows between the TiVos in real time.  I&#8217;m still hobbled by the Series 2 USB speed (or lack thereof), the Series built in Ethernet adapter would be cool to have.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/TiVo" rel="tag">TiVo</a> <a href="http://technorati.com/tag/Series+3" rel="tag">Series 3</a> <a href="http://technorati.com/tag/SMC2870W" rel="tag">SMC2870W</a> <a href="http://technorati.com/tag/WPA" rel="tag">WPA</a> <a href="http://technorati.com/tag/WEB" rel="tag">WEB</a> <a href="http://technorati.com/tag/802.11g" rel="tag">802.11g</a>
+  Tech Tags: <a href="http://technorati.com/tag/TiVo"" rel="tag">TiVo</a> <a href="http://technorati.com/tag/Series+3"" rel="tag">Series 3</a> <a href="http://technorati.com/tag/SMC2870W"" rel="tag">SMC2870W</a> <a href="http://technorati.com/tag/WPA"" rel="tag">WPA</a> <a href="http://technorati.com/tag/WEB"" rel="tag">WEB</a> <a href="http://technorati.com/tag/802.11g"" rel="tag">802.11g</a>
 </div>

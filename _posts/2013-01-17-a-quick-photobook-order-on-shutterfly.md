@@ -8,11 +8,11 @@ So I decided to do a picture book.  I went into [Picasa](http://picasa.google.c
 
 
 <div>
-  <a href="http://share.shutterfly.com/action/welcome?sid=0AZNGrhkzZtGTqw&#038;cid=SFLYOCWIDGET&#038;eid=118">Click here to view this photo book larger</a>
+  <a href="http://share.shutterfly.com/action/welcome?sid=0AZNGrhkzZtGTqw&cid=SFLYOCWIDGET&eid=118"">Click here to view this photo book larger</a>
 </div>
 
 <div>
-  Shutterfly allowed me to customize my <a href="http://www.shutterfly.com/photo-books/custom-path">photo book</a> just the way I wanted.
+  Shutterfly allowed me to customize my <a href="http://www.shutterfly.com/photo-books/custom-path"">photo book</a> just the way I wanted.
 </div>
 
 I like using Shutterfly.  It&#8217;s one of those services that just plain works and I can upload my photos directly from Picasa without having to think about it.

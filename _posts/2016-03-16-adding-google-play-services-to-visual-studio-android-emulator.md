@@ -84,7 +84,7 @@ If a newer version is a available, you'll see a dialog with that information.
 
 At that point, your Android VM will support push notifications.  You can install of Google Play apps like the Maps application.  These steps were tested with Visual Studio Android Emulator but they should work more or less in the same way with the Genymotion and Xamarin emulators.
 
-<span style="line-height: 1.5;">The </span><a style="line-height: 1.5;" href="http://opengapps.org/.">Open GApps</a> <span style="line-height: 1.5;">page looks like it is a promising location to get GApp packages, they have a list of variants.  Basically each variant has more or less of the Google Apps.  To keep things simple, I wanted to use the stock version.  There is a naming scheme for gapps distributions.  It follows the pattern DistName-abi-version-variant-date.zip or a subset of that pattern</span>
+<span style="line-height: 1.5;">The </span><a style="line-height: 1.5;" href="http://opengapps.org/."">Open GApps</a> <span style="line-height: 1.5;">page looks like it is a promising location to get GApp packages, they have a list of variants.  Basically each variant has more or less of the Google Apps.  To keep things simple, I wanted to use the stock version.  There is a naming scheme for gapps distributions.  It follows the pattern DistName-abi-version-variant-date.zip or a subset of that pattern</span>
 
 For this example, I had downloaded the full version of the x86 Android 6.0 GApps.  that came down with the following command line.
 

@@ -31,5 +31,5 @@ The sp_dbcmptlevel is documented [here](http://msdn2.microsoft.com/en-us/library
 After doing all of that, I really disliked the look of the tables in the database diagram.  It looked like the tabled editor from Access &#8217;97.  So I ended up doing what I should have done in the first place, created a database diagram in Visio and copied that into my spec document.</p> 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/sp_dbcmptlevel" rel="tag">sp_dbcmptlevel</a> &#8211; <a href="http://technorati.com/tag/Database%20Diagram" rel="tag">Database Diagram</a> &#8211; <a href="http://technorati.com/tag/%20Visio" rel="tag">Visio</a> &#8211; <a href="http://technorati.com/tag/%20SQL%20Server" rel="tag">SQL Server</a>
+  Tech Tags: <a href="http://technorati.com/tag/sp_dbcmptlevel"" rel="tag">sp_dbcmptlevel</a> &#8211; <a href="http://technorati.com/tag/Database%20Diagram"" rel="tag">Database Diagram</a> &#8211; <a href="http://technorati.com/tag/%20Visio"" rel="tag">Visio</a> &#8211; <a href="http://technorati.com/tag/%20SQL%20Server"" rel="tag">SQL Server</a>
 </div>

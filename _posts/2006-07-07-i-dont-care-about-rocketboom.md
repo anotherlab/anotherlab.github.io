@@ -1,4 +1,5 @@
 ---
+permalink: /2006/07/08/i-dont-care-about-rocketboom/
 title: 'I don&#8217;t care about RocketBoom'
 date: 2006-07-07T21:03:00-05:00
 ---
@@ -9,5 +10,5 @@ I first heard about RocketBoom when it became [available](http://research.tivo.c
 In the end, it will probably work out well for both partners. Congdon has been getting plenty of job offers and RocketBoom has had tons of free publicity.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/RocketBoom" rel="tag">RocketBoom</a> <a href="http://technorati.com/tag/Unboomed" rel="tag">Unboomed</a> <a href="http://technorati.com/tag/TiVo" rel="tag">TiVo</a> <a href="http://technorati.com/tag/Ze+Frank" rel="tag">Ze Frank</a> <a href="http://technorati.com/tag/Amanda+Congdon" rel="tag">Amanda Congdon</a>
+  Tech Tags: <a href="http://technorati.com/tag/RocketBoom"" rel="tag">RocketBoom</a> <a href="http://technorati.com/tag/Unboomed"" rel="tag">Unboomed</a> <a href="http://technorati.com/tag/TiVo"" rel="tag">TiVo</a> <a href="http://technorati.com/tag/Ze+Frank"" rel="tag">Ze Frank</a> <a href="http://technorati.com/tag/Amanda+Congdon"" rel="tag">Amanda Congdon</a>
 </div>

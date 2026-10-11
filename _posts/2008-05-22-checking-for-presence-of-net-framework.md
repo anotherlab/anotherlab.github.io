@@ -1,4 +1,5 @@
 ---
+permalink: /2008/05/23/checking-for-presence-of-net-framework/
 title: Checking for the presence of .Net Framework 2.0 SP1
 date: 2008-05-22T20:31:00-05:00
 ---

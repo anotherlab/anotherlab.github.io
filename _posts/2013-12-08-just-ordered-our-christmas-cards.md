@@ -14,7 +14,7 @@ I finally got around to ordering our Christmas cards.  We&#8217;ve been using [
     </div>
     
     <div class="sflyProductPreviewContainer" style="height: 350px; text-align: center; padding: 0;">
-      <a href="http://share.shutterfly.com/action/welcome?sid=0AZNGrhkzZtGTso&cid=SFLYOCWIDGET&eid=118" rel="nofollow"><img style="padding: 0; background: #ffffff; border: none; box-shadow: none;" alt="" src="http://images-community.shutterfly.com/prs/v1/0AZNGrhkzZtGSA/0AZNGrhkzZtGSOwg/p/67b0de21b3127d902548/JPEG/1386473508000/0/" /></a>
+      <a href="http://share.shutterfly.com/action/welcome?sid=0AZNGrhkzZtGTso&cid=SFLYOCWIDGET&eid=118"" rel="nofollow"><img style="padding: 0; background: #ffffff; border: none; box-shadow: none;" alt="" src="http://images-community.shutterfly.com/prs/v1/0AZNGrhkzZtGSA/0AZNGrhkzZtGSOwg/p/67b0de21b3127d902548/JPEG/1386473508000/0/" /></a>
     </div>
     
     <div class="sflyProductPreviewMessageContainer" style="height: 55px; background-color: #f4f4e9; text-align: center; padding: 15px 0 15px 0; line-height: 19px;">
@@ -23,7 +23,7 @@ I finally got around to ordering our Christmas cards.  We&#8217;ve been using [
       </div>
       
       <div class="sflyProductPreviewViewCollection" style="font-family: arial, sans-seris; font-size: 13px; color: #333333;">
-        View the entire <a style="color: #6666cc;" href="http://www.shutterfly.com/cards-stationery" rel="nofollow">collection</a> of cards.
+        View the entire <a style="color: #6666cc;" href="http://www.shutterfly.com/cards-stationery"" rel="nofollow">collection</a> of cards.
       </div>
     </div>
   </div>

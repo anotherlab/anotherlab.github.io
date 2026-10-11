@@ -1,4 +1,5 @@
 ---
+permalink: /2008/06/06/displaying-what-your-tivo-recorded-as/
 title: Displaying what your TiVo recorded as a blog badge
 date: 2008-06-05T19:16:00-05:00
 ---

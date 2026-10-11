@@ -18,7 +18,7 @@ We got one of the old school salesmen, the ones that use the sale tactics that m
 
 I gave him an absurdly high number, $10,000, and he smiled and said that was a  good starting point.  He gave us the keys to the Odyssey that we liked the most and Anne and I took it out for a drive.  While driving I told Anne that I was going to play hard ball with the salesman and to be prepared to walk out with out buying a vehicle.
 
-When we got back and sat down with the salesman, he asked if we were ready to make an offer.  I said &#8220;yes&#8221; and he then presented to us a sheet with the <a title="Dealerships Rip You Off With The "Four-Square," Here's How To Beat It" href="http://consumerist.com/consumer/four-square/dealerships-rip-you-off-with-the-four+square-heres-how-to-beat-it-248445.php">four squares</a> on it.  The &#8220;4-square&#8221;  is the how the dealer tries to get you to pay the highest price for the vehicle.
+When we got back and sat down with the salesman, he asked if we were ready to make an offer.  I said &#8220;yes&#8221; and he then presented to us a sheet with the <a title="Dealerships Rip You Off With The "Four-Square," Here's How To Beat It" href="http://consumerist.com/consumer/four-square/dealerships-rip-you-off-with-the-four+square-heres-how-to-beat-it-248445.php"">four squares</a> on it.  The &#8220;4-square&#8221;  is the how the dealer tries to get you to pay the highest price for the vehicle.
 
 Each square has a number in it.  The first number has the purchase price of the new vehicle, the trade in value of the current vehicle, the down payment, and the monthly payment.  Basically they make it difficult to see how much you are actually paying until you agree the sign the paper work.
 

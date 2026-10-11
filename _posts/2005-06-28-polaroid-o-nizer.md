@@ -1,4 +1,5 @@
 ---
+permalink: /2005/06/29/polaroid-o-nizer/
 title: The Polaroid-o-nizer™
 date: 2005-06-28T20:04:00-05:00
 ---

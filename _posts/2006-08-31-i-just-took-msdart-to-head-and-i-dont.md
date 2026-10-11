@@ -1,4 +1,5 @@
 ---
+permalink: /2006/09/01/i-just-took-msdart-to-head-and-i-dont/
 title: 'I just took a MSDart to the head and I don&#8217;t feel so well right now.'
 date: 2006-08-31T20:35:00-05:00
 ---
@@ -11,5 +12,5 @@ Not a very helpful message. It happens when we access an ADO object within our c
 The question now is how to resolve this issue. How many ways can SP1 be installed on Windows Server 2003? Our boxes got SP1 through Windows Update and they have the right version of Msdat.dll.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/msdart.dll" rel="tag">msdart.dll</a> <a href="http://technorati.com/tag/Windows+Server+2003" rel="tag">Windows Server 2003</a> <a href="http://technorati.com/tag/SP1" rel="tag">SP1</a> <a href="http://technorati.com/tag/DefWindowProcI" rel="tag">DefWindowProcI</a> <a href="http://technorati.com/tag/889114" rel="tag">889114</a> <a href="http://technorati.com/tag/892500" rel="tag">892500</a> <a href="http://technorati.com/tag/ADO" rel="tag">ADO</a> <a href="http://technorati.com/tag/OLE+DB" rel="tag">OLE DB</a>
+  Tech Tags: <a href="http://technorati.com/tag/msdart.dll"" rel="tag">msdart.dll</a> <a href="http://technorati.com/tag/Windows+Server+2003"" rel="tag">Windows Server 2003</a> <a href="http://technorati.com/tag/SP1"" rel="tag">SP1</a> <a href="http://technorati.com/tag/DefWindowProcI"" rel="tag">DefWindowProcI</a> <a href="http://technorati.com/tag/889114"" rel="tag">889114</a> <a href="http://technorati.com/tag/892500"" rel="tag">892500</a> <a href="http://technorati.com/tag/ADO"" rel="tag">ADO</a> <a href="http://technorati.com/tag/OLE+DB"" rel="tag">OLE DB</a>
 </div>

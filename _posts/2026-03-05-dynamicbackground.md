@@ -1,20 +1,18 @@
 ---
-title: "Generating a dynamic background on .NET MAUI"
+title: Generating a dynamic background on .NET MAUI
 author: anotherlab
 classes: wide
 toc: true
-header:
-  image: /assets/images/robot-painting.jpg
-categories: 
-  - coding
-  - dotnet
-  - maui
-  - skia
+categories:
+- Coding
+- dotnet
+- MAUI
+- skia
 tags:
-  - skia
-  - maui
-  - graphics
-
+- skia
+- MAUI
+- graphics
+image: /assets/images/robot-painting.jpg
 ---
 # Introduction
 I'm going to show a way to generate a random background for .NET MAUI ContentPage. It uses Skia to handle the heavy lifting and should work with any version of .NET MAUI. I used .NET 10.  There is a sample repo with the awe inspiring name, [DynamicBackground](https://github.com/anotherlab/dynamicbackground).

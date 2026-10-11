@@ -1,4 +1,5 @@
 ---
+permalink: /2014/05/12/this-one-is-for-your-grandparents-aka-im-calling-you-from-windows-and-you-a-have-virus/
 title: 'This one is for your grandparents (aka &#8220;I&#8217;m calling you from Windows and you a have virus&#8221;'
 date: 2014-05-11T22:44:16-05:00
 ---

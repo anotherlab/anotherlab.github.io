@@ -13,7 +13,7 @@ Install-Package jQuery
 You should see something like this:
 
 <div class="imgwrapper" style="width: 600px; text-align: center; float: left; margin: 0px 5px 5px 0px;">
-  <a href="https://i1.wp.com/www.rajapet.net/photos/i-F99phJw/0/L/i-F99phJw-L.png"><img loading="lazy" alt="Package Manager Console" src="https://i1.wp.com/www.rajapet.net/photos/i-F99phJw/0/M/i-F99phJw-M.png?resize=600%2C175" width="600" height="175"  /></a>
+  <a href="https://i1.wp.com/www.rajapet.net/photos/i-F99phJw/0/L/i-F99phJw-L.png""><img loading="lazy" alt="Package Manager Console" src="https://i1.wp.com/www.rajapet.net/photos/i-F99phJw/0/M/i-F99phJw-M.png?resize=600%2C175" width="600" height="175"  /></a>
 </div>
 
 <div class="imgwrapper" style="width: 600px; text-align: center; float: left; margin: 0px 5px 5px 0px;">
@@ -89,4 +89,4 @@ With this line, IE 5-9 (and 10 in compatibility view) will treat this as the sta
 
 With this block, we are saying if IE is greater than or equal to version 9, to use this block. The &#8220;<!&#8211;>&#8221; on that line tells IE 10 and the other browsers to close out this comment block which makes that block of code available to the browser. This will allow you to stay current by letting NuGet updating jQuery, while still keeping some level of compatibility with older versions. This is one of the times where IE extending HTML in a proprietary way is useful.
 
-<small><em>The fork in the road image was modified from an creative commons licensed image posted by <a href="http://www.flickr.com/photos/ehamiter/4607728796/">Eric Hamiter</a> to his Flickr collection.</em></small>
+<small><em>The fork in the road image was modified from an creative commons licensed image posted by <a href="http://www.flickr.com/photos/ehamiter/4607728796/"">Eric Hamiter</a> to his Flickr collection.</em></small>

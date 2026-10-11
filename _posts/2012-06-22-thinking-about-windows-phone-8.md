@@ -1,4 +1,5 @@
 ---
+permalink: /2012/06/23/thinking-about-windows-phone-8/
 title: Thinking about Windows Phone 8
 date: 2012-06-22T19:03:00-05:00
 ---

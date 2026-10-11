@@ -15,5 +15,5 @@ It gets better with the [followup story](http://seattlepi.nwsource.com/local/tru
 Courtesy of [Raymond Chen](http://en.wikipedia.org/wiki/Raymond_Chen "Wikipedia Bio") from [The Old New Thing](http://blogs.msdn.com/oldnewthing/archive/2007/05/18/2702989.aspx "Raymond's Blog").
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Beer" rel="tag">Beer</a> <a href="http://technorati.com/tag/Morons" rel="tag">Morons</a>
+  Tech Tags: <a href="http://technorati.com/tag/Beer"" rel="tag">Beer</a> <a href="http://technorati.com/tag/Morons"" rel="tag">Morons</a>
 </div>

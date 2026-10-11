@@ -39,5 +39,5 @@ Every now and then, I need to send stuff from SQL to Excel&#8230;.
 > </p></blockquote> 
 > 
 > <p>
->   <i>[Via <a href="http://sqljunkies.com/WebLog/madhivanan/archive/2005/07/27/16233.aspx">SQLJunkies Blogs</a>]</i>
+>   <i>[Via <a href="http://sqljunkies.com/WebLog/madhivanan/archive/2005/07/27/16233.aspx"">SQLJunkies Blogs</a>]</i>
 > </p>

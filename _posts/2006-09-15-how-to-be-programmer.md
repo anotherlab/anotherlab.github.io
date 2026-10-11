@@ -15,5 +15,5 @@ I have days where this is my programming model.
 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/secretGeek" rel="tag">secretGeek</a> <a href="http://technorati.com/tag/How+to+be+a+programmer" rel="tag">How+to+be+a+programmer</a> <a href="http://technorati.com/tag/cut+n+paste" rel="tag">cut+n+paste</a> <a href="http://technorati.com/tag/intellisense" rel="tag">intellisense</a> <a href="http://technorati.com/tag/Google" rel="tag">Google</a>
+  Tech Tags: <a href="http://technorati.com/tag/secretGeek"" rel="tag">secretGeek</a> <a href="http://technorati.com/tag/How+to+be+a+programmer"" rel="tag">How+to+be+a+programmer</a> <a href="http://technorati.com/tag/cut+n+paste"" rel="tag">cut+n+paste</a> <a href="http://technorati.com/tag/intellisense"" rel="tag">intellisense</a> <a href="http://technorati.com/tag/Google"" rel="tag">Google</a>
 </div>

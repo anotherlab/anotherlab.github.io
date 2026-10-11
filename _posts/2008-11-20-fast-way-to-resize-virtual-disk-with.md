@@ -1,4 +1,5 @@
 ---
+permalink: /2008/11/21/fast-way-to-resize-virtual-disk-with/
 title: Fast way to resize a virtual disk with VMware ESX Server
 date: 2008-11-20T21:22:00-05:00
 ---

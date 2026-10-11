@@ -1,13 +1,14 @@
 ---
+permalink: /2021/07/10/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/
 title: How to access Apple's App Connect API from C#, Python, and Go. - Part 1
-date: 2021-07-09T19:04:41-05:00
+date: 2021-07-09 19:04:41-05:00
 categories:
-  - Apple
+- Apple
 tags:
-  - Apple
-  - 'C#'
-  - Go
-  - Python
+- Apple
+- CSharp
+- Go
+- Python
 ---
 <img loading="lazy" class="aligncenter size-medium" src="https://i0.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-CrcmsQz/0/311d8c2f/L/Apple%20Lock-L.jpg?resize=680%2C510&#038;ssl=1" width="680" height="510"   />
 
@@ -122,7 +123,7 @@ That file will not be in the repo, you&#8217;ll have to create that one yourself
   2. Create the JWT payload
   3. Sign the JWT
 
-For the .NET version, we are going to use a nuget package, [jose-jwt](https://github.com/dvsekhvalnov/jose-jwt), to create and sign the JWT. In the repo for this version of the applet, the code for generated the signed JWT is <a href="https://github.com/anotherlab/IsUserinApple-dotnet/blob/main/AppleJWT.cs" target="_blank" rel="noopener">AppleJWT.cs</a>. The full method is short and we can quickly go over what it does here.
+For the .NET version, we are going to use a nuget package, [jose-jwt](https://github.com/dvsekhvalnov/jose-jwt), to create and sign the JWT. In the repo for this version of the applet, the code for generated the signed JWT is <a href="https://github.com/anotherlab/IsUserinApple-dotnet/blob/main/AppleJWT.cs"" target="_blank" rel="noopener">AppleJWT.cs</a>. The full method is short and we can quickly go over what it does here.
 
 {% highlight csharp linenos %}
 /// <summary>
@@ -322,5 +323,5 @@ Coming next will be the Python and Go versions of the code.
 <hr class="wp-block-separator" />
 
 <p class="has-small-font-size">
-  <em>About the image: <br />This image was derived from some open-source images. The image of the wall comes from <a href="https://unsplash.com/@impatrickt">Patrick Tomasso via Unsplash</a>. The Apple lock logo comes from Apple, which retains all rights to its artwork. The people icon was created by <a href="https://thenounproject.com/search/?q=people&i=165313">Monika from the Noun Project</a>.</em>
+  <em>About the image: <br />This image was derived from some open-source images. The image of the wall comes from <a href="https://unsplash.com/@impatrickt"">Patrick Tomasso via Unsplash</a>. The Apple lock logo comes from Apple, which retains all rights to its artwork. The people icon was created by <a href="https://thenounproject.com/search/?q=people&i=165313"">Monika from the Noun Project</a>.</em>
 </p>

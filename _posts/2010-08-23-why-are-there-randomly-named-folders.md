@@ -25,12 +25,12 @@ I was looking for a folder on a PC at home (Vista, 32 bit) when I saw a bunch of
         
         
         <p>
-          <a href="https://i1.wp.com/lh3.ggpht.com/_natoSxTaPFU/THHxJ-9OeYI/AAAAAAAAAd8/FSsTkSA1ndg/s1600-h/YouDontHaveAccess%5B2%5D.png"><img loading="lazy" alt="You don't currently have permission to access this folder" border="0" height="118" src="https://i2.wp.com/lh5.ggpht.com/_natoSxTaPFU/THHxKLQvsHI/AAAAAAAAAeA/MzgzYAF9Lho/YouDontHaveAccess_thumb.png?resize=244%2C118" title="You don't currently have permission to access this folder" width="244"   /></a> 
+          <a href="https://i1.wp.com/lh3.ggpht.com/_natoSxTaPFU/THHxJ-9OeYI/AAAAAAAAAd8/FSsTkSA1ndg/s1600-h/YouDontHaveAccess%5B2%5D.png""><img loading="lazy" alt="You don't currently have permission to access this folder" border="0" height="118" src="https://i2.wp.com/lh5.ggpht.com/_natoSxTaPFU/THHxKLQvsHI/AAAAAAAAAeA/MzgzYAF9Lho/YouDontHaveAccess_thumb.png?resize=244%2C118" title="You don't currently have permission to access this folder" width="244"   /></a> 
         </p>
         
         
         <p>
-          I would press the “Continue” button and would have to answer “Continue” to the <a href="http://en.wikipedia.org/wiki/User_Account_Control" title="User Access Control dialog">UAC dialog</a> that would pop up on the screen.
+          I would press the “Continue” button and would have to answer “Continue” to the <a href="http://en.wikipedia.org/wiki/User_Account_Control"" title="User Access Control dialog">UAC dialog</a> that would pop up on the screen.
         </p>
         
         
@@ -40,7 +40,7 @@ I was looking for a folder on a PC at home (Vista, 32 bit) when I saw a bunch of
         
         
         <p>
-          After a bit of searching, <a href="http://social.answers.microsoft.com/Forums/en-US/mseupdate/thread/63d01661-fec4-4a0d-a5d4-8daa62ca6718" title="Microsoft Security Essentials - Protect Your PC Forums - Microsoft Security Essentials Forums - Microsoft Security Essentials: Updating Virus and Spyware Definitions - mpasdlta.vdm">I found that they are the AntiSpyware definition files</a> from the <a href="http://www.microsoft.com/security_essentials/">Microsoft Security Essentials</a> antivirus application.  That answered the first question.  More precisely, they are the delta files for the antivirus definitions.  There is also a mpvabase.vdm, which is the base signature file.  The mpavdlta has all of the changes since the last mpvabase was downloaded. Gilham Consulting has a nice <a href="http://www.gilham.org/Blog/Lists/Posts/Post.aspx?List=aab85845-88d2-4091-8088-a6bbce0a4304&#038;ID=457" title="nderstanding Forefront Client Security (FCS) Definition Files - Gilham Consulting">blog post</a> that describes the various AV definition files that come with MSE.
+          After a bit of searching, <a href="http://social.answers.microsoft.com/Forums/en-US/mseupdate/thread/63d01661-fec4-4a0d-a5d4-8daa62ca6718"" title="Microsoft Security Essentials - Protect Your PC Forums - Microsoft Security Essentials Forums - Microsoft Security Essentials: Updating Virus and Spyware Definitions - mpasdlta.vdm">I found that they are the AntiSpyware definition files</a> from the <a href="http://www.microsoft.com/security_essentials/"">Microsoft Security Essentials</a> antivirus application.  That answered the first question.  More precisely, they are the delta files for the antivirus definitions.  There is also a mpvabase.vdm, which is the base signature file.  The mpavdlta has all of the changes since the last mpvabase was downloaded. Gilham Consulting has a nice <a href="http://www.gilham.org/Blog/Lists/Posts/Post.aspx?List=aab85845-88d2-4091-8088-a6bbce0a4304&ID=457"" title="nderstanding Forefront Client Security (FCS) Definition Files - Gilham Consulting">blog post</a> that describes the various AV definition files that come with MSE.
         </p>
         
         
@@ -50,7 +50,7 @@ I was looking for a folder on a PC at home (Vista, 32 bit) when I saw a bunch of
         
         
         <p>
-          <a href="https://i2.wp.com/lh3.ggpht.com/_natoSxTaPFU/THHxKtGXSBI/AAAAAAAAAeE/RAL5Q3HJoBA/s1600-h/mse%5B2%5D.png"><img loading="lazy" alt="mse" border="0" height="172" src="https://i0.wp.com/lh5.ggpht.com/_natoSxTaPFU/THHxK1D8N0I/AAAAAAAAAeI/fAhCB_fEJbc/mse_thumb.png?resize=244%2C172" title="mse" width="244"   /></a> 
+          <a href="https://i2.wp.com/lh3.ggpht.com/_natoSxTaPFU/THHxKtGXSBI/AAAAAAAAAeE/RAL5Q3HJoBA/s1600-h/mse%5B2%5D.png""><img loading="lazy" alt="mse" border="0" height="172" src="https://i0.wp.com/lh5.ggpht.com/_natoSxTaPFU/THHxK1D8N0I/AAAAAAAAAeI/fAhCB_fEJbc/mse_thumb.png?resize=244%2C172" title="mse" width="244"   /></a> 
         </p>
         
         
@@ -60,5 +60,5 @@ I was looking for a folder on a PC at home (Vista, 32 bit) when I saw a bunch of
         
         
         <p>
-          I think it’s a bit odd that MSE is storing the AV definition files in this manner.  I’ve been pretty happy with how MSE is protecting my PC from virus attacks.  I wouldn’t call it perfect, but it’s more than good enough for my needs.  It’s a much lighter load on the system than the commercial AV solutions.  I can put up with a few randomly named folders for the protection that it provides, but I would be more comfortable of the files had been shoved in a folder under <a href="http://en.wikipedia.org/wiki/Environment_variable#User_management_variables" title="C:\ProgramData under Vista and Windows 7">%ALLUSERSPROFILE%</a> as a default location.  I’ll file this under <a href="http://southpark.wikia.com/wiki/Officer_Barbrady">“Nothing to see here, move along”</a>.
+          I think it’s a bit odd that MSE is storing the AV definition files in this manner.  I’ve been pretty happy with how MSE is protecting my PC from virus attacks.  I wouldn’t call it perfect, but it’s more than good enough for my needs.  It’s a much lighter load on the system than the commercial AV solutions.  I can put up with a few randomly named folders for the protection that it provides, but I would be more comfortable of the files had been shoved in a folder under <a href="http://en.wikipedia.org/wiki/Environment_variable#User_management_variables"" title="C:\ProgramData under Vista and Windows 7">%ALLUSERSPROFILE%</a> as a default location.  I’ll file this under <a href="http://southpark.wikia.com/wiki/Officer_Barbrady"">“Nothing to see here, move along”</a>.
         </p>

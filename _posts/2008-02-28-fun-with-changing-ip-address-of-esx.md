@@ -1,4 +1,5 @@
 ---
+permalink: /2008/02/29/fun-with-changing-ip-address-of-esx/
 title: Fun with changing the IP address of ESX Server 3.5
 date: 2008-02-28T21:56:00-05:00
 ---

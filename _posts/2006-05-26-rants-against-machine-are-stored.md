@@ -15,5 +15,5 @@ There are performance considerations to consider as well. Once you get past the 
 I think we are seeing the swinging of the pendulum from everything must be in a sproc to &#8220;sprocs bad, code good&#8221;. As with most things, I think there&#8217;s some point in between that has your comfort zone. I&#8217;m quite content letting the database layer du jour (ADO/ADO.NET/Code generator) handle the CRUD tasks. When I feel the need for speed, I have no qualms against using &#8220;CREATE PROCEDURE&#8221;.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/CRUD" rel="tag">CRUD</a> <a href="http://technorati.com/tag/SQL" rel="tag">SQL</a> <a href="http://technorati.com/tag/T-SQL" rel="tag">T-SQL</a> <a href="http://technorati.com/tag/Sprocs" rel="tag">Sprocs</a> <a href="http://technorati.com/tag/Delphi" rel="tag">Delphi</a> <a href="http://technorati.com/tag/C#" rel="tag">C#</a>
+  Tech Tags: <a href="http://technorati.com/tag/CRUD"" rel="tag">CRUD</a> <a href="http://technorati.com/tag/SQL"" rel="tag">SQL</a> <a href="http://technorati.com/tag/T-SQL"" rel="tag">T-SQL</a> <a href="http://technorati.com/tag/Sprocs"" rel="tag">Sprocs</a> <a href="http://technorati.com/tag/Delphi"" rel="tag">Delphi</a> <a href="http://technorati.com/tag/C#"" rel="tag">C#</a>
 </div>

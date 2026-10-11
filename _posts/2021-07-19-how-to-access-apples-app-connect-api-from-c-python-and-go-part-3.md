@@ -1,17 +1,17 @@
 ---
 title: How to access Apple's App Connect API from C#, Python, and Go. - Part 3
-date: 2021-07-19T08:28:15-05:00
+date: 2021-07-19 08:28:15-05:00
 categories:
-  - Apple
+- Apple
 tags:
-  - Apple
-  - 'C#'
-  - Go
-  - Python
+- Apple
+- CSharp
+- Go
+- Python
 ---
 <figure><img src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-MdwkwLM/0/e733f438/L/Apple%20Lock%20Purple-L.jpg?" alt=""  /></figure> 
 
-In my [first post](/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/), I wrote about a need to query my company&#8217;s membership list from our Apple app store development account. In that post, I used C# to query Apple&#8217;s API. [Part 2](/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/) covered the Python version. For our final installment, we&#8217;ll cover how to accomplish the same task with [Go](https://golang.org/).
+In my [first post](/2021/07/10/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/), I wrote about a need to query my company&#8217;s membership list from our Apple app store development account. In that post, I used C# to query Apple&#8217;s API. [Part 2](/2021/07/12/how-to-access-apples-app-connect-api-from-c-python-and-go-part-2/) covered the Python version. For our final installment, we&#8217;ll cover how to accomplish the same task with [Go](https://golang.org/).
 
 As with the C# and Python versions, we&#8217;ll need to create a signed Javascript Web Token (JWT) and then make some API calls. I have the code in a Github repository. You can clone it from [here](https://github.com/anotherlab/IsUserInApple-golang). As with the C# project, the code is spread over a couple of modules. 
 
@@ -196,7 +196,7 @@ type AppConnectErrors struct {
 }
 {% endhighlight %}
 
-The AppConnectUsers, Datum, Attributes, and AppConnectUsersLinks structs define the JSON data that is returned by the List Users API call. If you look back at [Part 1](/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/), the JSON document returned by List Users has a lot more in it. We only need to define structs to use the data members that we actually care about. Since this is a read only API call, we can let Unmarshall deserialize only the fields that we will use and it will discard the rest.
+The AppConnectUsers, Datum, Attributes, and AppConnectUsersLinks structs define the JSON data that is returned by the List Users API call. If you look back at [Part 1](/2021/07/10/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/), the JSON document returned by List Users has a lot more in it. We only need to define structs to use the data members that we actually care about. Since this is a read only API call, we can let Unmarshall deserialize only the fields that we will use and it will discard the rest.
 
 We have a second object called AppConnectErrors, with a very different structure. If the API call fails from something happening on Apple&#8217;s end, the API will send back a very different JSON document. The following is an example of the JSON that Apple sends back when the API is not available:
 
@@ -364,7 +364,7 @@ As with the error struct, we new up a AppConnectUsers struct named appConnectUse
 
 Next we break out of the forever loop if we have a match. Otherwise we check to see if we have a next link. If we do, we keep looping, otherwise we are done looping. And we end with an message if we didn&#8217;t have a match. 
 
-If you cloned the code from the repo and created your own config file (refer back to [Part 1](/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/) for that part), you can now compile and run the code. You would compile the applet from your terminal of choice with the following command:
+If you cloned the code from the repo and created your own config file (refer back to [Part 1](/2021/07/10/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/) for that part), you can now compile and run the code. You would compile the applet from your terminal of choice with the following command:
 
 {% highlight plain %}
 go build .

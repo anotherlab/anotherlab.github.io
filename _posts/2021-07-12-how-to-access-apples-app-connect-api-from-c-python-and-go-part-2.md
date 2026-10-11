@@ -1,19 +1,19 @@
 ---
 title: How to access Apple's App Connect API from C#, Python, and Go. - Part 2
-date: 2021-07-12T08:02:52-05:00
+date: 2021-07-12 08:02:52-05:00
 categories:
-  - Apple
+- Apple
 tags:
-  - Apple
-  - 'C#'
-  - Go
-  - Python
+- Apple
+- CSharp
+- Go
+- Python
 ---
 <div class="wp-block-image">
   <figure class="aligncenter size-large is-resized"><img loading="lazy" src="https://i1.wp.com/photos.smugmug.com/Blog/n-zwT5d/2021/i-rMG2ZL4/0/c712e41f/L/Apple%20Lock%20Green-L.jpg?resize=680%2C510&#038;ssl=1" alt="" width="680" height="510"  /></figure>
 </div>
 
-In my [previous post](/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/), I wrote about a need to query my company&#8217;s membership list from our Apple app store development account. In that post, I used C# to query Apple&#8217;s API. In this installment, we&#8217;ll cover how to accomplish the same task with Python. The [final post](/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/) will cover a Go version.
+In my [previous post](/2021/07/10/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/), I wrote about a need to query my company&#8217;s membership list from our Apple app store development account. In that post, I used C# to query Apple&#8217;s API. In this installment, we&#8217;ll cover how to accomplish the same task with Python. The [final post](/2021/07/19/how-to-access-apples-app-connect-api-from-c-python-and-go-part-3/) will cover a Go version.
 
 As with the C# version, we&#8217;ll need to create a signed Javascript Web Token (JWT) and then make some API calls. As with the C# version, I have the code in a Github repository. You can clone it from [here](https://github.com/anotherlab/IsUserInApple-python). The code is in a script named [IsUserInApple.py](https://github.com/anotherlab/IsUserInApple-python/blob/main/IsUserInApple.py). You can name your script anything that the OS and Python allows, I&#8217;ll be referring to my script as IsUserInApple.py.
 
@@ -30,7 +30,7 @@ pip install requests authlib
 
 If you are not familar with pip. it&#8217;s the package manager for Python and will be installed when you install Python. If you already have Python installed, then you already have pip installed.
 
-In the folder that you will have the Python script, you will need a configuration file. It performs the same function as the IsUserInApple.json file did in the C# code. It will contain the path to your private key file, the key id, and the issuer id for your account. Please refer back to [Part 1](/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/) for how to define these values. Instead of using JSON, I used a simple key/value file and it&#8217;s named IsUserInApple.config. It should use the following format:
+In the folder that you will have the Python script, you will need a configuration file. It performs the same function as the IsUserInApple.json file did in the C# code. It will contain the path to your private key file, the key id, and the issuer id for your account. Please refer back to [Part 1](/2021/07/10/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/) for how to define these values. Instead of using JSON, I used a simple key/value file and it&#8217;s named IsUserInApple.config. It should use the following format:
 
 {% highlight ini linenos %}
 [settings]
@@ -198,5 +198,5 @@ Coming up next will be the Go version of this script.
 <hr class="wp-block-separator" />
 
 <p class="has-small-font-size">
-  <em data-rich-text-format-boundary="true">About the image: <br data-rich-text-line-break="true" />This image was derived from some open-source images. The image of the wall comes from <a href="https://unsplash.com/@impatrickt">Patrick Tomasso via Unsplash</a>. The Apple lock logo comes from Apple, which retains all rights to its artwork. The people icon was created by <a href="https://thenounproject.com/search/?q=people&i=165313">Monika from the Noun Project</a>.</em>
+  <em data-rich-text-format-boundary="true">About the image: <br data-rich-text-line-break="true" />This image was derived from some open-source images. The image of the wall comes from <a href="https://unsplash.com/@impatrickt"">Patrick Tomasso via Unsplash</a>. The Apple lock logo comes from Apple, which retains all rights to its artwork. The people icon was created by <a href="https://thenounproject.com/search/?q=people&i=165313"">Monika from the Noun Project</a>.</em>
 </p>

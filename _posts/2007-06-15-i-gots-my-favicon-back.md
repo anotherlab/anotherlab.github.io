@@ -7,5 +7,5 @@ A while back, this blog was updated to the new Blogger and I was the custom icon
 They made it pretty simple.  You register for an account, upload an image, and they create the .ico file from the image.  They even provide the html to enable [favicons](http://en.wikipedia.org/wiki/Favicons) in your blog.</p> 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/favicon" rel="tag">favicon</a> &#8211; <a href="http://technorati.com/tag/blogger" rel="tag">blogger</a> &#8211; <a href="http://technorati.com/tag/blogspot" rel="tag">blogspot</a> &#8211; <a href="http://technorati.com/tag/MyFavatar" rel="tag">MyFavatar</a>
+  Tech Tags: <a href="http://technorati.com/tag/favicon"" rel="tag">favicon</a> &#8211; <a href="http://technorati.com/tag/blogger"" rel="tag">blogger</a> &#8211; <a href="http://technorati.com/tag/blogspot"" rel="tag">blogspot</a> &#8211; <a href="http://technorati.com/tag/MyFavatar"" rel="tag">MyFavatar</a>
 </div>

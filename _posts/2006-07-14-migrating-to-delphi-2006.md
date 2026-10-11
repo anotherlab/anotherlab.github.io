@@ -1,4 +1,5 @@
 ---
+permalink: /2006/07/15/migrating-to-delphi-2006/
 title: Migrating to Delphi 2006
 date: 2006-07-14T20:01:00-05:00
 ---
@@ -15,5 +16,5 @@ I also changed the file paths around.  There is a source folder and a packages 
 So I figured I could just add the path to DesignEditors.pas to the package search path.  Just add the path and [Bob&#8217;s your uncle](http://www.jerrypournelle.com/reports/jerryp/bobs.html).  Nope, didn&#8217;t work.  DesignEditors.pas has a typo in it. It&#8217;s missing a comma in the uses clause of the implementation section.  My first inclination was to just add the [idiot comma](http://adamsmedia.stores.yahoo.net/cosupoyofors.html), but it seemed like other things would have failed if that was the case.  I was doing it wrong.  Instead of adding the source path, I&#8217;m supposed to have added the [.dcp](http://delphi.about.com/od/beginners/a/aa032800a.htm) compiled package, which is in DesignIDE.dcp.  Once I added that unit to the package&#8217;s requires list, everything was [good to go](http://www.nasa.gov/images/content/105540main_image_feature_248a_ajh4.jpg).
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Delphi+2006" rel="tag">Delphi 2006</a> <a href="http://technorati.com/tag/Delphi+7" rel="tag">Delphi 7</a> <a href="http://technorati.com/tag/Delphi+5" rel="tag">Delphi 5</a> <a href="http://technorati.com/tag/Delphi" rel="tag">Delphi</a> <a href="http://technorati.com/tag/Abbrevia" rel="tag">Abbrevia</a> <a href="http://technorati.com/tag/TurboPower" rel="tag">TurboPower</a> <a href="http://technorati.com/tag/Open+Source" rel="tag">Open Source</a> <a href="http://technorati.com/tag/Code+migration" rel="tag">Code migration</a>
+  Tech Tags: <a href="http://technorati.com/tag/Delphi+2006"" rel="tag">Delphi 2006</a> <a href="http://technorati.com/tag/Delphi+7"" rel="tag">Delphi 7</a> <a href="http://technorati.com/tag/Delphi+5"" rel="tag">Delphi 5</a> <a href="http://technorati.com/tag/Delphi"" rel="tag">Delphi</a> <a href="http://technorati.com/tag/Abbrevia"" rel="tag">Abbrevia</a> <a href="http://technorati.com/tag/TurboPower"" rel="tag">TurboPower</a> <a href="http://technorati.com/tag/Open+Source"" rel="tag">Open Source</a> <a href="http://technorati.com/tag/Code+migration"" rel="tag">Code migration</a>
 </div>

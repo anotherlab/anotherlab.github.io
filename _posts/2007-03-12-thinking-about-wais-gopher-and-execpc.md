@@ -17,5 +17,5 @@ I had that CRIS account so long ago, they didn&#8217;t offer a [PPP](http://en.w
 It&#8217;s kind of funny what pops out of the deep recesses of memory by the reference of an archaic acronym.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/WAIS" rel="tag">WAIS</a> <a href="http://technorati.com/tag/FTP" rel="tag">FTP</a> <a href="http://technorati.com/tag/Gopher" rel="tag">Gopher</a> <a href="http://technorati.com/tag/HST" rel="tag">HST</a> <a href="http://technorati.com/tag/Dual+Standard" rel="tag">Dual+Standard</a> <a href="http://technorati.com/tag/ExecPC" rel="tag">ExecPC</a> <a href="http://technorati.com/tag/Trumpet+Winsock" rel="tag">Trumpet+Winsock</a> <a href="http://technorati.com/tag/Concentric.Net" rel="tag">Concentric.Net</a>
+  Tech Tags: <a href="http://technorati.com/tag/WAIS"" rel="tag">WAIS</a> <a href="http://technorati.com/tag/FTP"" rel="tag">FTP</a> <a href="http://technorati.com/tag/Gopher"" rel="tag">Gopher</a> <a href="http://technorati.com/tag/HST"" rel="tag">HST</a> <a href="http://technorati.com/tag/Dual+Standard"" rel="tag">Dual+Standard</a> <a href="http://technorati.com/tag/ExecPC"" rel="tag">ExecPC</a> <a href="http://technorati.com/tag/Trumpet+Winsock"" rel="tag">Trumpet+Winsock</a> <a href="http://technorati.com/tag/Concentric.Net"" rel="tag">Concentric.Net</a>
 </div>

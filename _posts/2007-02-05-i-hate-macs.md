@@ -1,4 +1,5 @@
 ---
+permalink: /2007/02/06/i-hate-macs/
 title: I hate Macs
 date: 2007-02-05T21:09:00-05:00
 ---

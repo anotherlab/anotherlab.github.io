@@ -3,7 +3,7 @@ title: 'Been reading &#8220;iOS Development with Xamarin Cookbook&#8221;'
 date: 2014-06-09T08:36:21-05:00
 ---
 <div style="width: 250px" class="wp-caption alignnone">
-  <a href="http://bit.ly/1tnxmGX"><img loading="lazy" src="https://i2.wp.com/www.rajapet.net/photos/i-4FTpLnQ/0/S/i-4FTpLnQ-S.jpg?resize=240%2C300" alt="iOS Development with Xamarin Cookbook" width="240" height="300"  /></a>
+  <a href="http://bit.ly/1tnxmGX""><img loading="lazy" src="https://i2.wp.com/www.rajapet.net/photos/i-4FTpLnQ/0/S/i-4FTpLnQ-S.jpg?resize=240%2C300" alt="iOS Development with Xamarin Cookbook" width="240" height="300"  /></a>
   
   <p class="wp-caption-text">
     iOS Development with Xamarin Cookbook

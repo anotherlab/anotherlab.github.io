@@ -8,7 +8,7 @@ The other day, I got an email from Twitter announcing that someone new is follow
 > 
 > Check out SIOOMA!&#8217;s profile here:
 > 
->  <a href="http://twitter.com/Siooma" target="_blank">http://twitter.com/Siooma</a>
+>  <a href="http://twitter.com/Siooma"" target="_blank">http://twitter.com/Siooma</a>
 > 
 > You may follow SIOOMA! as well by clicking on the &#8220;follow&#8221; button.
 > 

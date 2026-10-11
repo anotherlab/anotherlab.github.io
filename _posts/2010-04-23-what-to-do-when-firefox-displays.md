@@ -54,7 +54,7 @@ On my XP machine, a listing of that folder displayed the following:
                     
                     
                     <p>
-                      From this listing, the multiple Java Console entries jump out as because of the multiple folder names that start with “{CAFEEFAC-0016”.  The folder names are <a title="Globally Unique Identifier" href="http://en.wikipedia.org/wiki/Globally_Unique_Identifier">GUIDs</a>, and it looks like Sun has embedded the version number in to the GUID name.
+                      From this listing, the multiple Java Console entries jump out as because of the multiple folder names that start with “{CAFEEFAC-0016”.  The folder names are <a title="Globally Unique Identifier" href="http://en.wikipedia.org/wiki/Globally_Unique_Identifier"">GUIDs</a>, and it looks like Sun has embedded the version number in to the GUID name.
                     </p>
                     
                     
@@ -63,7 +63,7 @@ On my XP machine, a listing of that folder displayed the following:
                     </p>
                     
                     
-                    <pre><RDF xmlns="<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns">http://www.w3.org/1999/02/22-rdf-syntax-ns</a>#"<br />     xmlns:em="<a href="http://www.mozilla.org/2004/em-rdf">http://www.mozilla.org/2004/em-rdf</a>#"><br />  <Description about="urn:mozilla:install-manifest"><br />    <strong><em:name>Java Console</em:name><br /></strong>    <em:id>{CAFEEFAC-0016-0000-0010-ABCDEFFEDCBA}</em:id> <br />    <strong><em:version>6.0.10</em:version><br /></strong>    <em:type>2</em:type> <br />    <em:hidden>true</em:hidden><br />    <em:targetApplication><br />      <Description><br />        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id><br />        <em:minVersion>1.0</em:minVersion><br />        <em:maxVersion>5.0+</em:maxVersion><br />      </Description><br />    </em:targetApplication><br />  </Description>      <br /></RDF></pre>
+                    <pre><RDF xmlns="<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns"">http://www.w3.org/1999/02/22-rdf-syntax-ns</a>#"<br />     xmlns:em="<a href="http://www.mozilla.org/2004/em-rdf"">http://www.mozilla.org/2004/em-rdf</a>#"><br />  <Description about="urn:mozilla:install-manifest"><br />    <strong><em:name>Java Console</em:name><br /></strong>    <em:id>{CAFEEFAC-0016-0000-0010-ABCDEFFEDCBA}</em:id> <br />    <strong><em:version>6.0.10</em:version><br /></strong>    <em:type>2</em:type> <br />    <em:hidden>true</em:hidden><br />    <em:targetApplication><br />      <Description><br />        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id><br />        <em:minVersion>1.0</em:minVersion><br />        <em:maxVersion>5.0+</em:maxVersion><br />      </Description><br />    </em:targetApplication><br />  </Description>      <br /></RDF></pre>
 
 
 <p>

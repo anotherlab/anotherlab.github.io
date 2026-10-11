@@ -1,4 +1,5 @@
 ---
+permalink: /2005/12/07/vmware-authdexe-slowing-down-my-pc/
 title: VMware-authd.exe slowing down my PC
 date: 2005-12-06T22:00:00-05:00
 ---

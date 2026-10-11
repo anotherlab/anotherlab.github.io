@@ -1,4 +1,5 @@
 ---
+permalink: /2005/11/03/chinas-little-green-book/
 title: 'China&#8217;s Little Green Book'
 date: 2005-11-02T20:27:00-05:00
 ---

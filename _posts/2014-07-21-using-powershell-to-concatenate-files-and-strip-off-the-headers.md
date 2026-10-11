@@ -8,7 +8,7 @@ date: 2014-07-21T11:52:32-05:00
   
   <p style="margin:0;">
     <div style="padding:0;margin:4px 0 0 10px;text-align:left;">
-      <a href="http://www.gettyimages.com/detail/185282284" target="_blank" style="color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;">#185282284</a> / <a href="http://www.gettyimages.com" target="_blank" style="color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;">gettyimages.com</a>
+      <a href="http://www.gettyimages.com/detail/185282284"" target="_blank" style="color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;">#185282284</a> / <a href="http://www.gettyimages.com"" target="_blank" style="color:#a7a7a7;text-decoration:none;font-weight:normal !important;border:none;display:inline-block;">gettyimages.com</a>
     </div></div> 
     
     <p>
@@ -20,7 +20,7 @@ date: 2014-07-21T11:52:32-05:00
     </p>
     
     <p>
-      I&#8217;ve been doing a lot of <a href="http://technet.microsoft.com/en-us/scriptcenter/powershell.aspx">Powershell</a> lately, so it made sense with me to continue with that Swiss Army knife of scripting languages.  I ended up with the following script:
+      I&#8217;ve been doing a lot of <a href="http://technet.microsoft.com/en-us/scriptcenter/powershell.aspx"">Powershell</a> lately, so it made sense with me to continue with that Swiss Army knife of scripting languages.  I ended up with the following script:
     </p>
     
     <pre class="brush:ps">
@@ -65,7 +65,7 @@ begin {
 </pre>
     
     <p>
-      We are using <a href="http://technet.microsoft.com/en-us/library/hh849800.aspx">Get-ChildItem</a> to get all of the files that match $Pattern and then call <a href="http://technet.microsoft.com/en-us/library/hh849731.aspx">ForEach-Object</a> to iterate through that list.
+      We are using <a href="http://technet.microsoft.com/en-us/library/hh849800.aspx"">Get-ChildItem</a> to get all of the files that match $Pattern and then call <a href="http://technet.microsoft.com/en-us/library/hh849731.aspx"">ForEach-Object</a> to iterate through that list.
     </p>
     
     <pre class="brush:ps">

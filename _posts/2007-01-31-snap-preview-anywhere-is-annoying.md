@@ -15,5 +15,5 @@ The good news, it&#8217;s pretty easy to fix.  You can disable the popup by goi
 If you are using FireFox, you can really take the snap out by installing [AdBlock Pro](https://addons.mozilla.org/firefox/1865/) and adding snap.com to the list of blocked sites.  That works very nice.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Snap" rel="tag">Snap</a> <a href="http://technorati.com/tag/AdBlock" rel="tag">AdBlock</a>
+  Tech Tags: <a href="http://technorati.com/tag/Snap"" rel="tag">Snap</a> <a href="http://technorati.com/tag/AdBlock"" rel="tag">AdBlock</a>
 </div>

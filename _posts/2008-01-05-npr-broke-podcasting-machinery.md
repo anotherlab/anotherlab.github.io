@@ -9,5 +9,5 @@ Sometime in December, [NPR](http://www.npr.org/rss/podcast/podcast_directory.php
 Can someone from NPR please this?  I miss my [Fresh Air](http://www.npr.org/programs/fa/about/) and [Car Talk](http://www.cartalk.com/index.html) shows.
 
 <div>
-  Technorati Tags: <a href="http://technorati.com/tags/NPR" rel="tag">NPR</a>,<a href="http://technorati.com/tags/Car+Talk" rel="tag">Car+Talk</a>,<a href="http://technorati.com/tags/Fresh+Air" rel="tag">Fresh+Air</a>,<a href="http://technorati.com/tags/Zencast" rel="tag">Zencast</a>,<a href="http://technorati.com/tags/podcast" rel="tag">podcast</a>
+  Technorati Tags: <a href="http://technorati.com/tags/NPR"" rel="tag">NPR</a>,<a href="http://technorati.com/tags/Car+Talk"" rel="tag">Car+Talk</a>,<a href="http://technorati.com/tags/Fresh+Air"" rel="tag">Fresh+Air</a>,<a href="http://technorati.com/tags/Zencast"" rel="tag">Zencast</a>,<a href="http://technorati.com/tags/podcast"" rel="tag">podcast</a>
 </div>

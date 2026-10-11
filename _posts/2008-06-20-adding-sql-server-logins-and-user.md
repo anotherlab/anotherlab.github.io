@@ -101,7 +101,7 @@ We have a few applications that include bits that are service applications.  Th
         </p>
         
         <p>
-          Lines 4-5 will create the login if it does not already exist.  The Check_Expiration option is set to “OFF” to verify that password expiration policy will not be applied to this login account.  The BOL for SQL Server 2005 states that <a title="CREATE LOGIN (Transact-SQL)" href="http://msdn.microsoft.com/en-us/library/ms189751.aspx">this option defaults to “OFF”</a>, but I like to explicitly set that option for a couple of reasons.  One reason is that it stands out when you read the script.  Another reason would be that a future service pack or later version of SQL Server could default that setting to on.
+          Lines 4-5 will create the login if it does not already exist.  The Check_Expiration option is set to “OFF” to verify that password expiration policy will not be applied to this login account.  The BOL for SQL Server 2005 states that <a title="CREATE LOGIN (Transact-SQL)" href="http://msdn.microsoft.com/en-us/library/ms189751.aspx"">this option defaults to “OFF”</a>, but I like to explicitly set that option for a couple of reasons.  One reason is that it stands out when you read the script.  Another reason would be that a future service pack or later version of SQL Server could default that setting to on.
         </p>
         
         <p>
@@ -182,5 +182,5 @@ We have a few applications that include bits that are service applications.  Th
                     </ol> 
                     
                     <p>
-                      We do give our customers the ability to run with just Windows Authentication, but configuring services to run under domain accounts is an additional set of steps that most of our customers prefer not to use.  It’s a much simpler <a href="http://en.wikipedia.org/wiki/Out-Of-Box_Experience">OOBE</a> if the services use SQL Server authentication.
+                      We do give our customers the ability to run with just Windows Authentication, but configuring services to run under domain accounts is an additional set of steps that most of our customers prefer not to use.  It’s a much simpler <a href="http://en.wikipedia.org/wiki/Out-Of-Box_Experience"">OOBE</a> if the services use SQL Server authentication.
                     </p>

@@ -11,13 +11,13 @@ tags:
 ---
 <figure><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-BgcrnZW/0/7d3ad5c8/S/i-BgcrnZW-S.jpg?resize=399%2C225&#038;ssl=1"<figcaption>Welcome to the FuzzyCam</figcaption></figure>
 
-Note from the future: I updated the code and blogged about it [here](/2020/03/20/return-to-focusuf/).
+Note from the future: I updated the code and blogged about it [here](/2020/03/21/return-to-focusuf/).
 
 Why am I out of focus? It&#8217;s because I have a Microsoft LifeCam HD-5000 and I&#8217;m running Windows 10. The LifeCam HD-5000 webcam is a decent webcam with an annoying feature. The autofocus keeps shifting the focus around if you move your head slightly. It goes in and out of focus and locks in after a second or two. When you are in a video chat, this can get very annoying (very quickly) for the other viewers. Your face will shift in and out of focus and it&#8217;s just a distraction. Microsoft used to supply drivers for the HD-5000 and it had a control app where you could adjust the focus settings. Since Windows 8, they stopped as the OS directly supported the webcam.
 
 I&#8217;m not able to sit motionless while on a webcam. I needed a work around. There is a registry hack that lets you turn off autofocus. I prefer to avoid hacks like that when it&#8217;s something that I could code around. So after seeing [some stuff on StackOverflow](https://stackoverflow.com/questions/18124646/manually-focus-camera-in-emgu-cv/18189027#18189027) on how to use the IAMCameraControl interface in DirectShow, I wrote a tiny command line app called FocusUF.
 
-FocusUF uses the <a href="https://www.nuget.org/packages/DirectShowLib/" rel="nofollow">DirectShowLib library</a> library to provide nice, friendly C# access to DirectShow. The DirectShowLib library maps the DirectShow Interfaces for use from a .NET app. With that library, it was little more than a handful of lines of code to access webcam controls. The app is hard coded to connect to a LifeCam HD-5000, but it would be easy enough to change the code for other webcam.
+FocusUF uses the <a href="https://www.nuget.org/packages/DirectShowLib/"" rel="nofollow">DirectShowLib library</a> library to provide nice, friendly C# access to DirectShow. The DirectShowLib library maps the DirectShow Interfaces for use from a .NET app. With that library, it was little more than a handful of lines of code to access webcam controls. The app is hard coded to connect to a LifeCam HD-5000, but it would be easy enough to change the code for other webcam.
 
 The code was written with Visual Studio 2017, it has not been tested with any other compiler. The source code is up on GitHub via this [handy little URL](https://github.com/anotherlab/FocusUF).
 
@@ -37,10 +37,10 @@ Now that I have a DirectShow  sDevice that represents the webcam, I create a fi
 
 
 
-## <a id="user-content-how-to-use" class="anchor" href="https://github.com/anotherlab/FocusUF/blob/master/README.md#how-to-use" aria-hidden="true"></a>How to use
+## <a id="user-content-how-to-use" class="anchor" href="https://github.com/anotherlab/FocusUF/blob/master/README.md#how-to-use"" aria-hidden="true"></a>How to use
 
 Launch the app that will be using the webcam. Wait until it is in focus and then run FocusUF. It will detect the webcam and flip the autofocus setting to manual and lock it to the current focus setting. The setting will persist until the webcam is reset or another app changes the focus setting.
 
 <figure><img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-8ZMBJkS/0/07d4a10a/S/i-8ZMBJkS-S.jpg?resize=399%2C225&#038;ssl=1" width="399" height="225"  /><figcaption>I probably looked better out of focus</figcaption></figure>
 
-The name &#8220;FocusUF&#8221; is a tip of the hat to the YouTube channel <a href="https://www.youtube.com/user/arduinoversusevil/featured" rel="nofollow">AvE</a>, where the host uses the phrase &#8220;Focus You F@*&&#8221; whenever his video camera loses focus.
+The name &#8220;FocusUF&#8221; is a tip of the hat to the YouTube channel <a href="https://www.youtube.com/user/arduinoversusevil/featured"" rel="nofollow">AvE</a>, where the host uses the phrase &#8220;Focus You F@*&&#8221; whenever his video camera loses focus.

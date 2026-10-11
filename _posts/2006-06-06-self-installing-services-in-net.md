@@ -1,4 +1,5 @@
 ---
+permalink: /2006/06/07/self-installing-services-in-net/
 title: Self installing services in .NET
 date: 2006-06-06T21:01:00-05:00
 ---
@@ -134,5 +135,5 @@ After a few go arounds with Wise Technical Support, I sent them a sample install
 The MyService object in the above code is an instance of a System.ServiceProcess.ServiceBase descendant class that I created in my code.  The descendant class opens up access to the protecteded OnStart() method.  I had created a descendant to ServiceBase and had assumed that was the standard pattern.  I should have been more clear about that part.  This is one of the many reasons why I abandoned Wise for InstallAware.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Wise+For+Windows" rel="tag">Wise For Windows</a> <a href="http://technorati.com/tag/InstallUtil.exe" rel="tag">InstallUtil.exe</a> <a href="http://technorati.com/tag/InstallHelper" rel="tag">InstallHelper</a> <a href="http://technorati.com/tag/ManagedInstallerClass" rel="tag">ManagedInstallerClass</a> <a href="http://technorati.com/tag/C#" rel="tag">C#</a> <a href="http://technorati.com/tag/Visual+Studio+2005" rel="tag">Visual Studio 2005</a>
+  Tech Tags: <a href="http://technorati.com/tag/Wise+For+Windows"" rel="tag">Wise For Windows</a> <a href="http://technorati.com/tag/InstallUtil.exe"" rel="tag">InstallUtil.exe</a> <a href="http://technorati.com/tag/InstallHelper"" rel="tag">InstallHelper</a> <a href="http://technorati.com/tag/ManagedInstallerClass"" rel="tag">ManagedInstallerClass</a> <a href="http://technorati.com/tag/C#"" rel="tag">C#</a> <a href="http://technorati.com/tag/Visual+Studio+2005"" rel="tag">Visual Studio 2005</a>
 </div>

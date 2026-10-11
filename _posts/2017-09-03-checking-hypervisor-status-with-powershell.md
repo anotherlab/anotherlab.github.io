@@ -2,17 +2,17 @@
 title: Checking Hypervisor status with PowerShell
 date: 2017-09-03
 categories:
-  - Virtualization
+- Virtualization
 tags:
-  - HAXM
-  - Hyper-V
-  - Powershell
+- HAXM
+- Hyper-V
+- PowerShell
 ---
 <div style="width: 610px" class="wp-caption alignnone">
   <img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-Gg6pZTX/0/2727179c/M/i-Gg6pZTX-M.jpg?resize=600%2C368&#038;ssl=1" width="600" height="368"  />
   
   <p class="wp-caption-text">
-    Image courtesy of <a href="https://www.flickr.com/photos/sergemelki/4662832317">Serge Melki</a>
+    Image courtesy of <a href="https://www.flickr.com/photos/sergemelki/4662832317"">Serge Melki</a>
   </p>
 </div>
 

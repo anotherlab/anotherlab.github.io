@@ -1,4 +1,5 @@
 ---
+permalink: /2008/04/17/handy-tip-for-debugging-windows-service/
 title: Handy tip for debugging a Windows Service
 date: 2008-04-16T20:21:00-05:00
 ---

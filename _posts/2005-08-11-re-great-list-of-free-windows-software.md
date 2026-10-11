@@ -1,4 +1,5 @@
 ---
+permalink: /2005/08/12/re-great-list-of-free-windows-software/
 title: 'RE: Great List of Free Windows Software'
 date: 2005-08-11T20:54:00-05:00
 ---

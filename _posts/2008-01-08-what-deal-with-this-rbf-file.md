@@ -1,4 +1,5 @@
 ---
+permalink: /2008/01/09/what-deal-with-this-rbf-file/
 title: 'What&#8217;s the deal with this .rbf file?'
 date: 2008-01-08T21:29:00-05:00
 ---
@@ -37,5 +38,5 @@ I did have a work around.  With the Install File MsiCode command, the dialog bo
 
 
 <div>
-  Technorati Tags: <a href="http://technorati.com/tags/rbf" rel="tag">rbf</a>,<a href="http://technorati.com/tags/InstallAware" rel="tag">InstallAware</a>,<a href="http://technorati.com/tags/Windows+Installer" rel="tag">Windows+Installer</a>,<a href="http://technorati.com/tags/reboot" rel="tag">reboot</a>,<a href="http://technorati.com/tags/msvcr71.dll" rel="tag">msvcr71.dll</a>
+  Technorati Tags: <a href="http://technorati.com/tags/rbf"" rel="tag">rbf</a>,<a href="http://technorati.com/tags/InstallAware"" rel="tag">InstallAware</a>,<a href="http://technorati.com/tags/Windows+Installer"" rel="tag">Windows+Installer</a>,<a href="http://technorati.com/tags/reboot"" rel="tag">reboot</a>,<a href="http://technorati.com/tags/msvcr71.dll"" rel="tag">msvcr71.dll</a>
 </div>

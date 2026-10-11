@@ -1,4 +1,5 @@
 ---
+permalink: /2013/12/12/moved-this-blog-from-blogger-to-an-azure-colored-wordpress/
 title: Moved this blog from Blogger to an Azure colored WordPress
 date: 2013-12-11T22:51:50-05:00
 ---

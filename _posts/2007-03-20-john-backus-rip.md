@@ -9,5 +9,5 @@ date: 2007-03-20T12:23:00-05:00
 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/John+Backus+Fortran+Turing+Award+Winner+Algol+Functional-Programming" rel="tag">John+Backus+Fortran+Turing+Award+Winner+Algol+Functional-Programming</a>
+  Tech Tags: <a href="http://technorati.com/tag/John+Backus+Fortran+Turing+Award+Winner+Algol+Functional-Programming"" rel="tag">John+Backus+Fortran+Turing+Award+Winner+Algol+Functional-Programming</a>
 </div>

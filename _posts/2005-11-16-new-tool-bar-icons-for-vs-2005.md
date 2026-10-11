@@ -1,4 +1,5 @@
 ---
+permalink: /2005/11/17/new-tool-bar-icons-for-vs-2005/
 title: New tool bar icons for VS 2005
 date: 2005-11-16T19:56:00-05:00
 ---

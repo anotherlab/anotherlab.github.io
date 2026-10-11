@@ -17,5 +17,5 @@ I think you are going to see some form of collaboration between the advertisers 
 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/tivo" rel="tag">tivo</a> <a href="http://technorati.com/tag/commercials" rel="tag">commercials</a> <a href="http://technorati.com/tag/product+placement" rel="tag">product+placement</a> <a href="http://technorati.com/tag/treo" rel="tag">treo</a> <a href="http://technorati.com/tag/Jack+Bauer" rel="tag">Jack+Bauer</a> <a href="http://technorati.com/tag/Cisco" rel="tag">Cisco</a>
+  Tech Tags: <a href="http://technorati.com/tag/tivo"" rel="tag">tivo</a> <a href="http://technorati.com/tag/commercials"" rel="tag">commercials</a> <a href="http://technorati.com/tag/product+placement"" rel="tag">product+placement</a> <a href="http://technorati.com/tag/treo"" rel="tag">treo</a> <a href="http://technorati.com/tag/Jack+Bauer"" rel="tag">Jack+Bauer</a> <a href="http://technorati.com/tag/Cisco"" rel="tag">Cisco</a>
 </div>

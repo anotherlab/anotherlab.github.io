@@ -33,5 +33,5 @@ This is pretty cool. A lot of the stuff that I write is low level admin type of 
 >     </p>
 >     
 >     <p>
->       from <a title="How to determine if the current user is an administrator" href="http://davidkean.net/archive/2005/11/23/1214.aspx">[Managed from down under]</a>
+>       from <a title="How to determine if the current user is an administrator" href="http://davidkean.net/archive/2005/11/23/1214.aspx"">[Managed from down under]</a>
 >     </p></blockquote>

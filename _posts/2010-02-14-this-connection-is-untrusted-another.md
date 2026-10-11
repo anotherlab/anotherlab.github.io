@@ -1,4 +1,5 @@
 ---
+permalink: /2010/02/15/this-connection-is-untrusted-another/
 title: This connection is Untrusted (another ID10T error)
 date: 2010-02-14T19:10:00-05:00
 ---

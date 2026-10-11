@@ -28,5 +28,5 @@ Since I declined to uninstall the driver, Stan&#8217;s demeanor and he basically
 This card is being sent back and I doubt that I would ever buy another Diamond Multimedia product. The BFG card is on order, hopefully that will be a better experience.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/BGF" rel="tag">BGF</a> <a href="http://technorati.com/tag/NVidia" rel="tag">NVidia</a> <a href="http://technorati.com/tag/DiamondMM" rel="tag">DiamondMM</a> <a href="http://technorati.com/tag/AGP" rel="tag">AGP</a> <a href="http://technorati.com/tag/PCI" rel="tag">PCI</a> <a href="http://technorati.com/tag/Vista" rel="tag">Vista</a> <a href="http://technorati.com/tag/Aero+Glass" rel="tag">Aero+Glass</a> <a href="http://technorati.com/tag/Poor+Support" rel="tag">Poor+Support</a>
+  Tech Tags: <a href="http://technorati.com/tag/BGF"" rel="tag">BGF</a> <a href="http://technorati.com/tag/NVidia"" rel="tag">NVidia</a> <a href="http://technorati.com/tag/DiamondMM"" rel="tag">DiamondMM</a> <a href="http://technorati.com/tag/AGP"" rel="tag">AGP</a> <a href="http://technorati.com/tag/PCI"" rel="tag">PCI</a> <a href="http://technorati.com/tag/Vista"" rel="tag">Vista</a> <a href="http://technorati.com/tag/Aero+Glass"" rel="tag">Aero+Glass</a> <a href="http://technorati.com/tag/Poor+Support"" rel="tag">Poor+Support</a>
 </div>

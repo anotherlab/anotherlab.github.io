@@ -1,4 +1,5 @@
 ---
+permalink: /2015/08/20/send-your-name-to-mars/
 title: Send your name to Mars
 date: 2015-08-19T19:18:22-05:00
 ---

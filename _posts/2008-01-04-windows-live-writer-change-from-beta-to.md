@@ -11,5 +11,5 @@ If you were using the Post-build event command line to deploy your plugin for te
 The [SmugMug API](http://wiki.smugmug.com/display/SmugMug/API) rocks.  Having written and consumed various web services in different incarnations, I&#8217;ve very impressed with the layout and functionality exposed by the SmugMug API.</p> 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/SmugMug%20API%20Windows+Live+Writer%20plugin" rel="tag">SmugMug API Windows+Live+Writer plugin</a>
+  Tech Tags: <a href="http://technorati.com/tag/SmugMug%20API%20Windows+Live+Writer%20plugin"" rel="tag">SmugMug API Windows+Live+Writer plugin</a>
 </div>

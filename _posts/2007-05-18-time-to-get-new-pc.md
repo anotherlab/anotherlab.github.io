@@ -23,5 +23,5 @@ This is what I ordered:
 Fortunately, the important files have been backed up. I put together a [FreeNAS](http://www.freenas.org/ "FreeNAS: The Free NAS Server") box [a couple of months ago](http://anotherlab.rajapet.net/2007/02/windows-home-server-goes-beta-2.html) and I&#8217;ve been backing up source code and documents to it. The next time you buy a new PC, take the old one and toss FreeNAS on it. It just works.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Antec" rel="tag">Antec</a> <a href="http://technorati.com/tag/New+PC" rel="tag">New+PC</a> <a href="http://technorati.com/tag/AMD" rel="tag">AMD</a> <a href="http://technorati.com/tag/Geforce" rel="tag">Geforce</a> <a href="http://technorati.com/tag/ASUS" rel="tag">ASUS</a> <a href="http://technorati.com/tag/FreeNAS" rel="tag">FreeNAS</a>
+  Tech Tags: <a href="http://technorati.com/tag/Antec"" rel="tag">Antec</a> <a href="http://technorati.com/tag/New+PC"" rel="tag">New+PC</a> <a href="http://technorati.com/tag/AMD"" rel="tag">AMD</a> <a href="http://technorati.com/tag/Geforce"" rel="tag">Geforce</a> <a href="http://technorati.com/tag/ASUS"" rel="tag">ASUS</a> <a href="http://technorati.com/tag/FreeNAS"" rel="tag">FreeNAS</a>
 </div>

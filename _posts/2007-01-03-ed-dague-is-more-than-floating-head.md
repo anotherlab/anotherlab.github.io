@@ -7,5 +7,5 @@ I just came across Ed Dague&#8217;s [blog](http://middleofthings.blogspot.com/in
 He had to retire too soon from local [TV](http://en.wikipedia.org/wiki/WNYT) for [health reasons](http://www.hempevolution.org/media/troy_record/tr0411013.htm), but I&#8217;m glad to see that he has a forum for sharing his thoughts.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Ed+Dague" rel="tag">Ed+Dague</a> <a href="http://technorati.com/tag/WNYT" rel="tag">WNYT</a> <a href="http://technorati.com/tag/Albany+Eye" rel="tag">Albany+Eye</a> <a href="http://technorati.com/tag/Albany" rel="tag">Albany</a> <a href="http://technorati.com/tag/political+commentary" rel="tag">political+commentary</a> <a href="http://technorati.com/tag/RPI+Alumuni" rel="tag">RPI+Alumuni</a>
+  Tech Tags: <a href="http://technorati.com/tag/Ed+Dague"" rel="tag">Ed+Dague</a> <a href="http://technorati.com/tag/WNYT"" rel="tag">WNYT</a> <a href="http://technorati.com/tag/Albany+Eye"" rel="tag">Albany+Eye</a> <a href="http://technorati.com/tag/Albany"" rel="tag">Albany</a> <a href="http://technorati.com/tag/political+commentary"" rel="tag">political+commentary</a> <a href="http://technorati.com/tag/RPI+Alumuni"" rel="tag">RPI+Alumuni</a>
 </div>

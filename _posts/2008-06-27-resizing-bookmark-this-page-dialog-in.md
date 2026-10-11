@@ -1,4 +1,5 @@
 ---
+permalink: /2008/06/28/resizing-bookmark-this-page-dialog-in/
 title: Resizing the “Bookmark this page” dialog in Firefox 3
 date: 2008-06-27T20:38:00-05:00
 ---

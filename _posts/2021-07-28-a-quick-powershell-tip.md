@@ -1,12 +1,12 @@
 ---
 title: A quick PowerShell tip
-date: 2021-07-28T15:19:08-05:00
+date: 2021-07-28 15:19:08-05:00
 excerpt: Simple tip for adding your own memory aid to your PowerShell profile.
 categories:
-  - PowerShell
+- PowerShell
 tags:
-  - Powershell
-  - tips
+- PowerShell
+- tips
 ---
 I have a bunch of PowerShell functions that I stick in my $profile file. Simple stuff, things to make my day to day development work easier. With my sieve-like memory, I need a quick way to see the functions. So I wrote a script named &#8220;mine.ps1&#8221; and it&#8217;s basically a tiny help file. It has stuff like this
 

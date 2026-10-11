@@ -11,7 +11,7 @@ There are some really good Windows Installer guidelines up on the [Windows Insta
   
   <blockquote dir="ltr">
     <p>
-      This is key.  I picked up a lot from Wise’s support forums.  A really good book is <a href="http://www.amazon.com/gp/product/1590592972/qid=1147455507">The Definitive Guide to Windows Installer</a> by Phil Wilson (ISBN: 1590592972)
+      This is key.  I picked up a lot from Wise’s support forums.  A really good book is <a href="http://www.amazon.com/gp/product/1590592972/qid=1147455507"">The Definitive Guide to Windows Installer</a> by Phil Wilson (ISBN: 1590592972)
     </p>
   </blockquote>
   
@@ -51,7 +51,7 @@ There are some really good Windows Installer guidelines up on the [Windows Insta
   
   <blockquote dir="ltr">
     <p>
-      Simply the best tool for diagnosing problems with a .msi file.  You can get from the Windows Server Software Development Kit.  The current version is the “<a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=0BAF2B35-C656-4969-ACE8-E4C0C0716ADB&#038;displaylang=en">Windows® Server 2003 R2 Platform SDK</a>”.
+      Simply the best tool for diagnosing problems with a .msi file.  You can get from the Windows Server Software Development Kit.  The current version is the “<a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=0BAF2B35-C656-4969-ACE8-E4C0C0716ADB&displaylang=en"">Windows® Server 2003 R2 Platform SDK</a>”.
     </p>
   </blockquote>
   
@@ -71,7 +71,7 @@ There are some really good Windows Installer guidelines up on the [Windows Insta
   
   <blockquote dir="ltr">
     <p>
-      I never knew about that one.  With installer tool that I’m using (<a href="http://www.wise.com/wfwi.asp">Wise</a>), I don’t see that is being a real issue.
+      I never knew about that one.  With installer tool that I’m using (<a href="http://www.wise.com/wfwi.asp"">Wise</a>), I don’t see that is being a real issue.
     </p>
   </blockquote>
   
@@ -156,7 +156,7 @@ There are some really good Windows Installer guidelines up on the [Windows Insta
   </p>
   
   <p>
-    Having one .msi calling another .msi is something I seriously plan on avoiding.  Just follow Spengler’s warning and <a href="http://en.wikiquote.org/wiki/Ghostbusters">don’t cross the streams</a>.
+    Having one .msi calling another .msi is something I seriously plan on avoiding.  Just follow Spengler’s warning and <a href="http://en.wikiquote.org/wiki/Ghostbusters"">don’t cross the streams</a>.
   </p>
   
   <p>
@@ -174,7 +174,7 @@ There are some really good Windows Installer guidelines up on the [Windows Insta
   </p>
   
   <p>
-    I need to look into that more.  I wonder how that would play with installers for web sites.  I could toss all of the .ascx files into a .cab file and the assemblys as separate files.  For Win32 executables, I usually pre-compress them using <a href="http://upx.sourceforge.net/">UPX</a> as part of the <a href="http://www.finalbuilder.com/finalbuilder/">build process</a>, putting them into .cab files would gain nothing.
+    I need to look into that more.  I wonder how that would play with installers for web sites.  I could toss all of the .ascx files into a .cab file and the assemblys as separate files.  For Win32 executables, I usually pre-compress them using <a href="http://upx.sourceforge.net/"">UPX</a> as part of the <a href="http://www.finalbuilder.com/finalbuilder/"">build process</a>, putting them into .cab files would gain nothing.
   </p>
   
   <p>
@@ -203,7 +203,7 @@ There are some really good Windows Installer guidelines up on the [Windows Insta
   
   <blockquote dir="ltr">
     <p>
-      I would to be able to do this with Wise’s .wsi files.  The problem is that the .wsi is actually a .msi file, and I have yet to see a tool that will reliably convert a .wsi/.msi file to text and back again. I tried <a href="http://users.cyberone.com.au/dbareis/msidiff.htm">MSIDIFF</a>, but something always gets mangled and when you convert a file from one to the other and back again, you don’t always get the same file back.  That’s not a good thing.
+      I would to be able to do this with Wise’s .wsi files.  The problem is that the .wsi is actually a .msi file, and I have yet to see a tool that will reliably convert a .wsi/.msi file to text and back again. I tried <a href="http://users.cyberone.com.au/dbareis/msidiff.htm"">MSIDIFF</a>, but something always gets mangled and when you convert a file from one to the other and back again, you don’t always get the same file back.  That’s not a good thing.
     </p>
   </blockquote>
   
@@ -229,5 +229,5 @@ There are some really good Windows Installer guidelines up on the [Windows Insta
 </blockquote>
 
 <p dir="ltr">
-  Tags: <a href="http://technorati.com/tag/Ghostbusters" rel="tag">Ghostbusters</a> <a href="http://technorati.com/tag/Wise" rel="tag">Wise</a> <a href="http://technorati.com/tag/Windows+Installer" rel="tag">Windows Installer</a> <a href="http://technorati.com/tag/Orca" rel="tag">Orca</a> <a href="http://technorati.com/tag/msi" rel="tag">msi</a> <a href="http://technorati.com/tag/upx" rel="tag">upx</a> <a href="http://technorati.com/tag/msidiff" rel="tag">msidiff</a>
+  Tags: <a href="http://technorati.com/tag/Ghostbusters"" rel="tag">Ghostbusters</a> <a href="http://technorati.com/tag/Wise"" rel="tag">Wise</a> <a href="http://technorati.com/tag/Windows+Installer"" rel="tag">Windows Installer</a> <a href="http://technorati.com/tag/Orca"" rel="tag">Orca</a> <a href="http://technorati.com/tag/msi"" rel="tag">msi</a> <a href="http://technorati.com/tag/upx"" rel="tag">upx</a> <a href="http://technorati.com/tag/msidiff"" rel="tag">msidiff</a>
 </p>

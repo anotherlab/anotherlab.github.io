@@ -1,4 +1,5 @@
 ---
+permalink: /2012/09/15/the-hp-printer-display-hack-with_14/
 title: The HP Printer Display Hack (with financial goodness)
 date: 2012-09-14T21:19:00-05:00
 ---

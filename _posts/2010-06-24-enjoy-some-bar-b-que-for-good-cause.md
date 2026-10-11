@@ -1,4 +1,5 @@
 ---
+permalink: /2010/06/25/enjoy-some-bar-b-que-for-good-cause/
 title: Enjoy some Bar-B-Que for a good cause
 date: 2010-06-24T20:25:00-05:00
 ---
@@ -7,7 +8,7 @@ There’s a flyer floating around in the office and it’s worth sharing the det
 This will be from 3:30 to 6:30pm and will be located at the [COINS building](http://www.coins-global.com/usa/h/Home/Company/1/) at 6 Airport Park Blvd, Latham NY 12110.  I ordered dinners for my family at last year’s fund raiser and the food is really good.</p> 
 
 <div>
-  <a href="http://www.bing.com/maps/default.aspx?v=2&#038;cp=r3sfr38vfmgj&#038;lvl=1&#038;style=o&#038;scene=18507239&#038;mkt=en-us&#038;FORM=LLWR" alt="View map" title="View map"><img loading="lazy" src="https://i2.wp.com/lh5.ggpht.com/_natoSxTaPFU/TCO_JRL8zyI/AAAAAAAAAc8/08txgr2uvaI/map-45bf5a78a4d8.jpg?resize=320%2C240" width="320" height="240" alt="Map picture"  /></a>
+  <a href="http://www.bing.com/maps/default.aspx?v=2&cp=r3sfr38vfmgj&lvl=1&style=o&scene=18507239&mkt=en-us&FORM=LLWR"" alt="View map" title="View map"><img loading="lazy" src="https://i2.wp.com/lh5.ggpht.com/_natoSxTaPFU/TCO_JRL8zyI/AAAAAAAAAc8/08txgr2uvaI/map-45bf5a78a4d8.jpg?resize=320%2C240" width="320" height="240" alt="Map picture"  /></a>
 </div></p> 
 
 You can preorder tickets starting on July 6th or buy them at the door.  Call COINS at 518-242-7200 for more information.

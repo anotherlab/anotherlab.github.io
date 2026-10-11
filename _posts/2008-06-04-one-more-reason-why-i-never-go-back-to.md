@@ -1,4 +1,5 @@
 ---
+permalink: /2008/06/05/one-more-reason-why-i-never-go-back-to/
 title: 'One more reason why I&#8217;ll never go back to Time Warner Road Runner'
 date: 2008-06-04T20:51:00-05:00
 ---

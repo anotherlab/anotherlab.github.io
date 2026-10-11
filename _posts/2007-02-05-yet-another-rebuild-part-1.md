@@ -23,5 +23,5 @@ The next thing I always disable is the Language Bar toolbar.  Even though you c
 Then I add Administrative Tools to the Start Menu.   I use that enough so it&#8217;s handy being able to get in quick.   Now the OS is functional, I can start loading up the tools.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Repave" rel="tag">Repave</a> <a href="http://technorati.com/tag/Reinstall" rel="tag">Reinstall</a> <a href="http://technorati.com/tag/Language+Bar" rel="tag">Language+Bar</a>
+  Tech Tags: <a href="http://technorati.com/tag/Repave"" rel="tag">Repave</a> <a href="http://technorati.com/tag/Reinstall"" rel="tag">Reinstall</a> <a href="http://technorati.com/tag/Language+Bar"" rel="tag">Language+Bar</a>
 </div>

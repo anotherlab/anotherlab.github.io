@@ -47,5 +47,5 @@ Sahil has a good post that explains why you should use StringBuilder to concaten
 > </p></blockquote> 
 > 
 > <p>
->   <i>[Via <a href="http://codebetter.com/blogs/sahil.malik/archive/2005/08/24/131114.aspx">Sahil Malik [MVP C#]</a>]</i>
+>   <i>[Via <a href="http://codebetter.com/blogs/sahil.malik/archive/2005/08/24/131114.aspx"">Sahil Malik [MVP C#]</a>]</i>
 > </p>

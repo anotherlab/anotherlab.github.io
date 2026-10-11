@@ -1,4 +1,5 @@
 ---
+permalink: /2005/12/22/joy-of-editing-mac-os-x-hosts-file/
 title: The joy of editing the Mac OS X hosts file
 date: 2005-12-21T21:41:00-05:00
 ---

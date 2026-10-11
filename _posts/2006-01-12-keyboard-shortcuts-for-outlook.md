@@ -1,4 +1,5 @@
 ---
+permalink: /2006/01/13/keyboard-shortcuts-for-outlook/
 title: Keyboard shortcuts for Outlook
 date: 2006-01-12T19:58:00-05:00
 ---

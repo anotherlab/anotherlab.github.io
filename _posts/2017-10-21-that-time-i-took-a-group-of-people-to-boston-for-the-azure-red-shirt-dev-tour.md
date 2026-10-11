@@ -22,11 +22,11 @@ It was a pleasant ride on the Mass Turnpike. The sun was coming up, the leaves w
 
 <blockquote class="twitter-tweet" data-width="550" data-dnt="true">
   <p lang="en" dir="ltr">
-    Good morning MA! <a href="https://twitter.com/hashtag/BostonOrBust?src=hash&ref_src=twsrc%5Etfw">#BostonOrBust</a> <a href="https://t.co/zoCVAVCblR">pic.twitter.com/zoCVAVCblR</a>
+    Good morning MA! <a href="https://twitter.com/hashtag/BostonOrBust?src=hash&ref_src=twsrc%5Etfw"">#BostonOrBust</a> <a href="https://t.co/zoCVAVCblR"">pic.twitter.com/zoCVAVCblR</a>
   </p>
   
   <p>
-    &mdash; Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/920968622742343681?ref_src=twsrc%5Etfw">October 19, 2017</a>
+    &mdash; Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/920968622742343681?ref_src=twsrc%5Etfw"">October 19, 2017</a>
   </p>
 </blockquote>
 
@@ -36,11 +36,11 @@ After a couple of hours, we were about 40 miles out from Boston and the engine t
 
 <blockquote class="twitter-tweet" data-width="550" data-dnt="true">
   <p lang="en" dir="ltr">
-    So much for an on-time arrival for the <a href="https://twitter.com/hashtag/RedShirtDevTour?src=hash&ref_src=twsrc%5Etfw">#RedShirtDevTour</a>. <a href="https://t.co/0NN9o34YmE">pic.twitter.com/0NN9o34YmE</a>
+    So much for an on-time arrival for the <a href="https://twitter.com/hashtag/RedShirtDevTour?src=hash&ref_src=twsrc%5Etfw"">#RedShirtDevTour</a>. <a href="https://t.co/0NN9o34YmE"">pic.twitter.com/0NN9o34YmE</a>
   </p>
   
   <p>
-    &mdash; Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/921008207841103882?ref_src=twsrc%5Etfw">October 19, 2017</a>
+    &mdash; Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/921008207841103882?ref_src=twsrc%5Etfw"">October 19, 2017</a>
   </p>
 </blockquote>
 
@@ -83,7 +83,7 @@ We had a nice lunch and we had a couple of hours more of Good Stuff. Seriously, 
 At the very end, we were brought up to the stage to meet the [Man in the Red Shirt](https://twitter.com/scottgu). This was actually a really big deal as he had to leave right after the Boston event to fly to NYC for the next day's event. The one that I keep telling you to watch. Scott Guthrie was very gracious and took the time to greet each one of us and then we posed for pictures.
 
 <div style="width: 610px" class="wp-caption aligncenter">
-  <a href="https://i2.wp.com/photos.smugmug.com/photos/i-FqmcPdd/0/31f184ac/X3/i-FqmcPdd-X3.jpg?ssl=1"><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-FqmcPdd/0/31f184ac/M/i-FqmcPdd-M.jpg?resize=600%2C450&#038;ssl=1" width="600" height="450"  /></a>
+  <a href="https://i2.wp.com/photos.smugmug.com/photos/i-FqmcPdd/0/31f184ac/X3/i-FqmcPdd-X3.jpg?ssl=1""><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-FqmcPdd/0/31f184ac/M/i-FqmcPdd-M.jpg?resize=600%2C450&#038;ssl=1" width="600" height="450"  /></a>
   
   <p class="wp-caption-text">
     Scott Guthrie with the Lost Bus Riders
@@ -93,7 +93,7 @@ At the very end, we were brought up to the stage to meet the [Man in the Red Shi
 After taking the pictures, the Microsoft event crew gave us some cool swag to take back home. They also arranged for a better ride home. We went back in a nice luxurious Mercedes Sprinter passenger van. This met with the general approval of the group.
 
 <div style="width: 410px" class="wp-caption aligncenter">
-  <a href="https://i0.wp.com/photos.smugmug.com/photos/i-S8Z5BW2/0/2bb233c8/X3/i-S8Z5BW2-X3.jpg?ssl=1"><img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-S8Z5BW2/0/2bb233c8/S/i-S8Z5BW2-S.jpg?resize=400%2C271&#038;ssl=1" width="400" height="271"  /></a>
+  <a href="https://i0.wp.com/photos.smugmug.com/photos/i-S8Z5BW2/0/2bb233c8/X3/i-S8Z5BW2-X3.jpg?ssl=1""><img loading="lazy" class="size-medium" src="https://i2.wp.com/photos.smugmug.com/photos/i-S8Z5BW2/0/2bb233c8/S/i-S8Z5BW2-S.jpg?resize=400%2C271&#038;ssl=1" width="400" height="271"  /></a>
   
   <p class="wp-caption-text">
     Riding home in the rich lap of luxury. It lived up to the M-B motto, &#8220;The Best or Nothing&#8221;

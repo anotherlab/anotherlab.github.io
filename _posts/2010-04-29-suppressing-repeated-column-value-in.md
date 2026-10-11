@@ -1,4 +1,5 @@
 ---
+permalink: /2010/04/30/suppressing-repeated-column-value-in/
 title: Suppressing a repeated column value in SQL
 date: 2010-04-29T20:37:00-05:00
 ---

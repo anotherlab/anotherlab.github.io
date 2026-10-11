@@ -1,4 +1,5 @@
 ---
+permalink: /2008/06/13/at-least-i-passed-robot-test/
 title: At least I passed the robot test
 date: 2008-06-12T20:13:00-05:00
 ---

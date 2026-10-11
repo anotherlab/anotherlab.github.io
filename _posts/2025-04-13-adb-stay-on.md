@@ -1,10 +1,10 @@
 ---
-title:  Command for keeping your phone awake while plugged in
+title: Command for keeping your phone awake while plugged in
 author: anotherlab
-categories: 
-  - powershell
-  - abd
-  - power
+categories:
+- PowerShell
+- abd
+- power
 ---
 ![Automating the settings](/assets/images/steampunk-robot-with-phone.jpg)
 

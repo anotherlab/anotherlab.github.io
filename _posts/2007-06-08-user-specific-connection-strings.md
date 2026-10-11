@@ -1,4 +1,5 @@
 ---
+permalink: /2007/06/09/user-specific-connection-strings/
 title: User specific connection strings
 date: 2007-06-08T19:31:00-05:00
 ---

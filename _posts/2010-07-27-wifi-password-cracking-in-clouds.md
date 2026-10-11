@@ -1,4 +1,5 @@
 ---
+permalink: /2010/07/28/wifi-password-cracking-in-clouds/
 title: Wifi password cracking in the clouds
 date: 2010-07-27T21:02:00-05:00
 ---

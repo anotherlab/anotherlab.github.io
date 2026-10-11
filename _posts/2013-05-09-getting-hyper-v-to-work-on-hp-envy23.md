@@ -13,7 +13,7 @@ With HP, you could get a machine with Windows 8 Pro.  So I ordered an [Envy 23]
 <table align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td>
-      <a href="https://i2.wp.com/www.rajapet.net/photos/i-d8qNgKv/0/S/i-d8qNgKv-S.png" imageanchor="1"><img loading="lazy" border="0" height="240" src="https://i2.wp.com/www.rajapet.net/photos/i-d8qNgKv/0/S/i-d8qNgKv-S.png?resize=320%2C240" width="320"   /></a>
+      <a href="https://i2.wp.com/www.rajapet.net/photos/i-d8qNgKv/0/S/i-d8qNgKv-S.png"" imageanchor="1"><img loading="lazy" border="0" height="240" src="https://i2.wp.com/www.rajapet.net/photos/i-d8qNgKv/0/S/i-d8qNgKv-S.png?resize=320%2C240" width="320"   /></a>
     </td>
   </tr>
   

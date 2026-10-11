@@ -1,4 +1,5 @@
 ---
+permalink: /2009/05/12/tag-your-junk-mail-before-it-gets-sent/
 title: Tag your junk mail before it gets sent to you.
 date: 2009-05-11T20:00:00-05:00
 ---

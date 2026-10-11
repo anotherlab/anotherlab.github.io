@@ -1,4 +1,5 @@
 ---
+permalink: /2009/12/19/getting-list-of-databases-that-user-has/
 title: Getting the list of databases that a user has rights to from SQL Server
 date: 2009-12-18T20:53:00-05:00
 ---

@@ -21,7 +21,7 @@ For what I needed to try, Sketches would work just fine.  I created a new Sketc
 I created a string variable with some text and included the unicode escape sequence &#8220;\u25BE&#8221;.  That is code for something called [&#8220;BLACK DOWN-POINTING TRIANGLE&#8221;](http://www.fileformat.info/info/unicode/char/25bc/index.htm).  I then created a UILabel and set the text to my string variable.  That was enough to generate the proof of concept that I needed:
 
 <div style="width: 410px" class="wp-caption alignnone">
-  <a href="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-86f6jG4/0/XL/Sketches-XL.png"><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-86f6jG4/0/S/Sketches-S.png?resize=400%2C202" alt="" width="400" height="202"  /></a>
+  <a href="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-86f6jG4/0/XL/Sketches-XL.png""><img loading="lazy" class="" src="https://i1.wp.com/www.rajapet.net/Other/2015-Blog/i-86f6jG4/0/S/Sketches-S.png?resize=400%2C202" alt="" width="400" height="202"  /></a>
   
   <p class="wp-caption-text">
     Xamarin Sketches (click the picture to embiggen it)
@@ -34,11 +34,11 @@ You can do more complicated things in Sketches.  During the [Evolve Keynote](ht
 
 <blockquote class="twitter-tweet" lang="en">
   <p>
-    &#8220;Not everyone gets a chance to slap a salmon&#8221; &#8211; <a href="https://twitter.com/migueldeicaza">@migueldeicaza</a> showing an iOS game written in Sketches <a href="https://twitter.com/hashtag/Evolve2014?src=hash">#Evolve2014</a> <a href="http://t.co/6YuHbm2PEE">pic.twitter.com/6YuHbm2PEE</a>
+    &#8220;Not everyone gets a chance to slap a salmon&#8221; &#8211; <a href="https://twitter.com/migueldeicaza"">@migueldeicaza</a> showing an iOS game written in Sketches <a href="https://twitter.com/hashtag/Evolve2014?src=hash"">#Evolve2014</a> <a href="http://t.co/6YuHbm2PEE"">pic.twitter.com/6YuHbm2PEE</a>
   </p>
   
   <p>
-    — Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/519856063668314112">October 8, 2014</a>
+    — Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/519856063668314112"">October 8, 2014</a>
   </p>
 </blockquote>
 
@@ -46,7 +46,7 @@ And then did a simple Xamarin.Forms apps: 
 
 <blockquote class="twitter-tweet" lang="en">
   <p>
-    Showing how to write a Xamarin.Forms interactively with Sketeches <a href="https://twitter.com/hashtag/Evolve2014?src=hash">#Evolve2014</a> <a href="http://t.co/hd391sQkhT">pic.twitter.com/hd391sQkhT</a> — Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/519856779258503168">October 8, 2014</a>
+    Showing how to write a Xamarin.Forms interactively with Sketeches <a href="https://twitter.com/hashtag/Evolve2014?src=hash"">#Evolve2014</a> <a href="http://t.co/hd391sQkhT"">pic.twitter.com/hd391sQkhT</a> — Chris Miller (@anotherlab) <a href="https://twitter.com/anotherlab/status/519856779258503168"">October 8, 2014</a>
   </p>
 </blockquote>
 

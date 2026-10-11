@@ -1,4 +1,5 @@
 ---
+permalink: /2009/08/20/work-around-for-delphi-20072009-with/
 title: A work around for Delphi 2007/2009 with Windows 7 64 bit
 date: 2009-08-19T20:20:00-05:00
 ---

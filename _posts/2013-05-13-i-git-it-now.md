@@ -1,4 +1,5 @@
 ---
+permalink: /2013/05/14/i-git-it-now/
 title: I git it now
 date: 2013-05-13T20:40:00-05:00
 ---

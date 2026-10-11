@@ -1,16 +1,14 @@
 ---
 title: Resolving the .NET MAUI "VersionCode 1.0 is invalid. It must be an integer value." error when updating Visual Studio 2022 Preview
-date: 2021-10-20T23:19:33-05:00
+date: 2021-10-20 23:19:33-05:00
 excerpt: I hit the "VersionCode 1.0 is invalid" error with .NET MAUI and resolved it.
 categories:
-  - Android
-  - MAUI
+- Android
+- MAUI
 tags:
-  - android
-  - maui
+- Android
+- MAUI
 ---
- 
-
 I installed the Visual Studio 2022 Preview 6 this evening. I had been using Preview 4. I installed Preview 5, but didn't have a chance to play with it. I have a simple demo app that I have working with, a basic stopwatch type of app. That app had been created with Preview 4 and it more or less worked fine (unless you counted Mac Catalyst and Windows). After I installed Preview 6, I tried to run the project on Android. It failed to compile with the following error message:
 
 {% highlight text %}

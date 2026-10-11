@@ -9,7 +9,7 @@ While testing my configuration editor app, one of the QA guys asked if it made a
 In prehistoric times, VMS would [automagically](http://en.wikipedia.org/wiki/Versioning_file_system#Files-11_.28RSX-11_and_OpenVMS.29) version your files when you saved them.  When you saved a file, the file system  would append a version number starting at 1.  You could open any version of a file by including the version number.  If you left out the version number, you got the latest version.  This goes back to the days when monitors supported both colors, green and not green.  To clear out older versions, you would periodically need to run the [purge](http://h71000.www7.hp.com/doc/84final/9996/9996pro_159.html "HP OpenVMS Systems Documentation") command.
 
 <div style="width: 650px" class="wp-caption alignnone">
-  <a href="http://siarchives.si.edu/collections/siris_arc_308433?back=%2Fcollections%2Fsiris_arc_308433"><img loading="lazy" title="Prehistoric times for web developers" src="http://ids.si.edu/ids/deliveryService?id=http://sirismm.si.edu/SPI/5696_Image_85-725.18.jpg" alt="Prehistoric times for web developers" width="640" height="419" /></a>
+  <a href="http://siarchives.si.edu/collections/siris_arc_308433?back=%2Fcollections%2Fsiris_arc_308433""><img loading="lazy" title="Prehistoric times for web developers" src="http://ids.si.edu/ids/deliveryService?id=http://sirismm.si.edu/SPI/5696_Image_85-725.18.jpg" alt="Prehistoric times for web developers" width="640" height="419" /></a>
   
   <p class="wp-caption-text">
     Prehistoric times for web developers

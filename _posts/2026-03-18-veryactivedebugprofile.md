@@ -1,26 +1,25 @@
 ---
-title: "When Visual Studio Forgets Your Phone: Building an Automated Solution"
+title: 'When Visual Studio Forgets Your Phone: Building an Automated Solution'
 author: anotherlab
 classes: wide
 toc: true
-header:
-  image: /assets/images/robot-connecting-phone.jpg
-categories: 
-  - visualstudio
-  - maui
-  - wpf
-  - automation
+categories:
+- VisualStudio
+- MAUI
+- wpf
+- automation
 tags:
-  - android-debugging
-  - device-detection
-  - usb-devices
-  - com-automation
-  - wmi
-  - developer-workflow
-  - pinvoke
-  - windows-interop
-  - developer-tools
-  - visual-studio-extensions
+- android-debugging
+- device-detection
+- usb-devices
+- com-automation
+- wmi
+- developer-workflow
+- pinvoke
+- windows-interop
+- developer-tools
+- visual-studio-extensions
+image: /assets/images/robot-connecting-phone.jpg
 ---
 # Introduction
 This is how I resolved one of my pet peeves with Visual Studio. When I am working on a .NET MAUI application, when I unplug my phone, Visual Studio changes debug target to the default emulator. When I plug the phone back in, it doesn't set it back. That drives me crazy. So I over-engineered a solution.

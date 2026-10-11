@@ -13,5 +13,5 @@ The moral of today&#8217;s story is &#8220;**Set up your threads at normal prior
  
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/e-link" rel="tag">e-link</a> <a href="http://technorati.com/tag/thread" rel="tag">thread</a> <a href="http://technorati.com/tag/priority" rel="tag">priority</a> <a href="http://technorati.com/tag/BelowNormal" rel="tag">BelowNormal</a> <a href="http://technorati.com/tag/evil" rel="tag">evil</a> <a href="http://technorati.com/tag/Win32" rel="tag">Win32</a> <a href="http://technorati.com/tag/Delphi" rel="tag">Delphi</a> <a href="http://technorati.com/tag/C#" rel="tag">C#</a> <a href="http://technorati.com/tag/Coding+Horror" rel="tag">Coding Horror</a>
+  Tech Tags: <a href="http://technorati.com/tag/e-link"" rel="tag">e-link</a> <a href="http://technorati.com/tag/thread"" rel="tag">thread</a> <a href="http://technorati.com/tag/priority"" rel="tag">priority</a> <a href="http://technorati.com/tag/BelowNormal"" rel="tag">BelowNormal</a> <a href="http://technorati.com/tag/evil"" rel="tag">evil</a> <a href="http://technorati.com/tag/Win32"" rel="tag">Win32</a> <a href="http://technorati.com/tag/Delphi"" rel="tag">Delphi</a> <a href="http://technorati.com/tag/C#"" rel="tag">C#</a> <a href="http://technorati.com/tag/Coding+Horror"" rel="tag">Coding Horror</a>
 </div>

@@ -22,5 +22,5 @@ Since I&#8217;m using the Vista Boot Loader, I&#8217;ll need to remember to rest
 Lifehacker has some tips on how to setup the dual boot [here](http://www.lifehacker.com/software/top/windows-vista-beta-how-to-dual-boot-windows-xp-and-windows-vista-179906.php).</p> 
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Vista" rel="tag">Vista</a> <a href="http://technorati.com/tag/Repave" rel="tag">Repave</a> <a href="http://technorati.com/tag/bcdedit" rel="tag">bcdedit</a> <a href="http://technorati.com/tag/Defraggle" rel="tag">Defraggle</a> <a href="http://technorati.com/tag/Tech-Recipes" rel="tag">Tech-Recipes</a> <a href="http://technorati.com/tag/Recovery+Console" rel="tag">Recovery+Console</a> <a href="http://technorati.com/tag/Lifehacker" rel="tag">Lifehacker</a>
+  Tech Tags: <a href="http://technorati.com/tag/Vista"" rel="tag">Vista</a> <a href="http://technorati.com/tag/Repave"" rel="tag">Repave</a> <a href="http://technorati.com/tag/bcdedit"" rel="tag">bcdedit</a> <a href="http://technorati.com/tag/Defraggle"" rel="tag">Defraggle</a> <a href="http://technorati.com/tag/Tech-Recipes"" rel="tag">Tech-Recipes</a> <a href="http://technorati.com/tag/Recovery+Console"" rel="tag">Recovery+Console</a> <a href="http://technorati.com/tag/Lifehacker"" rel="tag">Lifehacker</a>
 </div>

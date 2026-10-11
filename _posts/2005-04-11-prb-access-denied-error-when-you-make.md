@@ -1,4 +1,5 @@
 ---
+permalink: /2005/04/12/prb-access-denied-error-when-you-make/
 title: 'PRB: Access Denied Error When You Make Code Modifications with Index Services Running'
 date: 2005-04-11T19:06:00-05:00
 ---

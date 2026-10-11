@@ -13,5 +13,5 @@ This is what I ended up using:
 The table and field names have been changed to protect the innocent.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Celko" rel="tag">Celko</a> <a href="http://technorati.com/tag/Update" rel="tag">Update</a> <a href="http://technorati.com/tag/self+join" rel="tag">self+join</a> <a href="http://technorati.com/tag/SQL" rel="tag">SQL</a> <a href="http://technorati.com/tag/SQL+Server" rel="tag">SQL+Server</a>
+  Tech Tags: <a href="http://technorati.com/tag/Celko"" rel="tag">Celko</a> <a href="http://technorati.com/tag/Update"" rel="tag">Update</a> <a href="http://technorati.com/tag/self+join"" rel="tag">self+join</a> <a href="http://technorati.com/tag/SQL"" rel="tag">SQL</a> <a href="http://technorati.com/tag/SQL+Server"" rel="tag">SQL+Server</a>
 </div>

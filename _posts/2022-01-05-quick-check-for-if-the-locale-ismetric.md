@@ -1,14 +1,14 @@
 ---
-title:  A quick check to see if the user's locale is metric or imperial
-date:   2022-01-05
-categories: 
-  - Coding
-  - Localization
-  - Globalization
-tags: 
-  - C#
-  - CultureInfo
-  - RegionInfo  
+title: A quick check to see if the user's locale is metric or imperial
+date: 2022-01-05
+categories:
+- Coding
+- Localization
+- Globalization
+tags:
+- CSharp
+- CultureInfo
+- RegionInfo
 ---
 While working on a demo mobile app for a course, I needed to know if the units of measurement on the app would be in [Imperial](https://en.wikipedia.org/wiki/Imperial_units) units or [Metric](https://en.wikipedia.org/wiki/Metric_system) units. Since I'm using C#, the tools are in the framework.
 

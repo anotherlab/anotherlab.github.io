@@ -1,4 +1,5 @@
 ---
+permalink: /2005/06/29/soda-blew-out-of-nose-while-reading/
 title: 'The soda blew out of nose while reading this&#8230;'
 date: 2005-06-28T20:58:00-05:00
 ---

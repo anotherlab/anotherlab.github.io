@@ -1,4 +1,5 @@
 ---
+permalink: /2014/04/14/resolving-the-the-cctsharedpackage-package-did-not-load-correctly-error-message/
 title: 'Resolving the &#8220;The &#8216;CctSharedPackage&#8217; package did not load correctly.&#8221; error message'
 date: 2014-04-13T22:35:41-05:00
 ---
@@ -47,4 +48,4 @@ I chose the self repair option of the Azure Tools installer, because I had no id
 
 Once I got that straightened out, I checked to see if there was a later version. I was at v2.2 and v2.3 was released during //Build. So I grabbed that and installed. I probably could have just upgraded straight from 2.2 to 2.3 without repairing the v2.3, but I did this way with out any problems.
 
-<small><em>*The <a href="https://flic.kr/p/4pfyqX">&#8220;a&#8221; is for headache image</a> is from Eduardo Ortiz&#8217;s <a href="https://www.flickr.com/photos/eduardoo/">collection</a> on Flickr</em></small>
+<small><em>*The <a href="https://flic.kr/p/4pfyqX"">&#8220;a&#8221; is for headache image</a> is from Eduardo Ortiz&#8217;s <a href="https://www.flickr.com/photos/eduardoo/"">collection</a> on Flickr</em></small>

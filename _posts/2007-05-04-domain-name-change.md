@@ -15,5 +15,5 @@ My blog is run on Google (Blogger).  I have a [GMail](http://mail.google.com/) 
  
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Google+Apps" rel="tag">Google+Apps</a> <a href="http://technorati.com/tag/GoDaddy" rel="tag">GoDaddy</a> <a href="http://technorati.com/tag/Blogger" rel="tag">Blogger</a> <a href="http://technorati.com/tag/CNAME" rel="tag">CNAME</a>
+  Tech Tags: <a href="http://technorati.com/tag/Google+Apps"" rel="tag">Google+Apps</a> <a href="http://technorati.com/tag/GoDaddy"" rel="tag">GoDaddy</a> <a href="http://technorati.com/tag/Blogger"" rel="tag">Blogger</a> <a href="http://technorati.com/tag/CNAME"" rel="tag">CNAME</a>
 </div>

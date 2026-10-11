@@ -7,5 +7,5 @@ Samsung has a cell phone with a 8gb hard drive (form musinc playing) and they ha
 Update: Techdirt has a better article [here](http://techdirt.com/articles/20060526/0236259.shtml).
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Samsung" rel="tag">Samsung</a> <a href="http://technorati.com/tag/ironic" rel="tag">ironic</a> <a href="http://technorati.com/tag/SCH-B570" rel="tag">SCH-B570</a> <a href="http://technorati.com/tag/data+theft" rel="tag">data theft</a>
+  Tech Tags: <a href="http://technorati.com/tag/Samsung"" rel="tag">Samsung</a> <a href="http://technorati.com/tag/ironic"" rel="tag">ironic</a> <a href="http://technorati.com/tag/SCH-B570"" rel="tag">SCH-B570</a> <a href="http://technorati.com/tag/data+theft"" rel="tag">data theft</a>
 </div>

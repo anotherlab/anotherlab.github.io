@@ -1,8 +1,9 @@
 ---
+permalink: /2008/10/18/strange-64-bit-error-with/
 title: Strange 64-bit error with LayoutKind.Explicit
 date: 2008-10-17T20:34:00-05:00
 ---
-I have a C# service that collects data from another company that we do business with.  They send the data in a binary format from one of their C++ applications.  To read their data with .NET, I needed to <a href="http://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">marshal</a> their data to a set of structs defined in C#.  I created a structure that looked something like this.  
+I have a C# service that collects data from another company that we do business with.  They send the data in a binary format from one of their C++ applications.  To read their data with .NET, I needed to <a href="http://en.wikipedia.org/wiki/Marshalling_(computer_science)"" target="_blank">marshal</a> their data to a set of structs defined in C#.  I created a structure that looked something like this.  
 
 <pre>[StructLayout(LayoutKind.Explicit, Size = 48)]<br /><span>public</span> <span>struct</span> SampleHeader<br />    {<br />        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]<br />        [FieldOffset(0)]<br /><span>public</span> <span>byte</span>[] RecordType;<br /><br />        [MarshalAs(UnmanagedType.U4)]<br />        [FieldOffset(8)]<br /><span>public</span> <span>uint</span> Version;<br /><br />        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]<br />        [FieldOffset(12)]<br /><span>public</span> <span>byte</span>[] SystemCode;<br /><br />        [MarshalAs(UnmanagedType.U4)]<br />        [FieldOffset(20)]<br /><span>public</span> <span>uint</span> LocalID;<br /><br />        [MarshalAs(UnmanagedType.U4)]<br />        [FieldOffset(24)]<br /><span>public</span> <span>uint</span> HostID;<br />    }</pre>
 

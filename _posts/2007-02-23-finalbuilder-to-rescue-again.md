@@ -1,4 +1,5 @@
 ---
+permalink: /2007/02/24/finalbuilder-to-rescue-again/
 title: FinalBuilder to the rescue (again)
 date: 2007-02-23T20:05:00-05:00
 ---
@@ -13,5 +14,5 @@ We have been invoking FinalBuilder from a script and that prevents the Wise dial
 That&#8217;s annoying.  However, using FinalBuilder makes problems like this trivial to fix.  I added a Copy File action to the FinalBuilder build script to copy the install script to a second file.  That would allow us to pick up any changes that QA makes to the script.  I then added a Text Replace action that did a search and replace on &#8220;D:\PROGRA~1\WISEIN~1&#8221; with &#8220;C:\Program Files\Wise Installation System&#8221;.  And our builds are back in business.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Wise" rel="tag">Wise</a> <a href="http://technorati.com/tag/InstallBuilder" rel="tag">InstallBuilder</a> <a href="http://technorati.com/tag/FinalBuilder" rel="tag">FinalBuilder</a> <a href="http://technorati.com/tag/Automated+Builds" rel="tag">Automated+Builds</a>
+  Tech Tags: <a href="http://technorati.com/tag/Wise"" rel="tag">Wise</a> <a href="http://technorati.com/tag/InstallBuilder"" rel="tag">InstallBuilder</a> <a href="http://technorati.com/tag/FinalBuilder"" rel="tag">FinalBuilder</a> <a href="http://technorati.com/tag/Automated+Builds"" rel="tag">Automated+Builds</a>
 </div>

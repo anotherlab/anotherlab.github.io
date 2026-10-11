@@ -1,4 +1,5 @@
 ---
+permalink: /2013/12/15/cross-platform-localization-for-mobile-apps-in-code-magazine/
 title: Cross-Platform Localization for Mobile Apps in CODE Magazine
 date: 2013-12-14T21:09:39-05:00
 ---

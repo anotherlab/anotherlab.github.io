@@ -5,7 +5,7 @@ categories:
   - Annoyances
   - Coding
 ---
-About a month ago, I blogged about [an update to a webcam hack](/2020/03/20/return-to-focusuf/) that I did called FocusUF. There wasn&#8217;t much to the code and I put it all up on GitHub. Someone came along and submitted a pull request that added some cool functionality.  
+About a month ago, I blogged about [an update to a webcam hack](/2020/03/21/return-to-focusuf/) that I did called FocusUF. There wasn&#8217;t much to the code and I put it all up on GitHub. Someone came along and submitted a pull request that added some cool functionality.  
 
 My version was hardcoded to a single webcam. Because that&#8217;s all I need it for. At the time, I was using a Microsoft LifeCam HD-5000. Someone else created an issue on my GitHub repo asking if I could add support for the HD-6000, which apparently suffers from the same annoyances with focus.
 

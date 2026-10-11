@@ -1,4 +1,5 @@
 ---
+permalink: /2014/02/18/how-to-use-bing-code-search-when-resharper-is-installed/
 title: How to use Bing Code Search when ReSharper is installed
 date: 2014-02-17T23:23:26-05:00
 ---
@@ -29,7 +30,7 @@ End Class</pre>
 The text that you enter in the name field will be what shows up as the caption of the button on the tool bar. You can test the command by clicking on the Run button.  You should the Resharper menu disappear from the IDE.  Press Run again to bring it back,
 
 <p style="text-align: center;">
-  <a href="https://i2.wp.com/www.rajapet.net/photos/i-9XSq458/0/O/i-9XSq458.png"><img loading="lazy" class="aligncenter" style="margin-top: 0px; margin-bottom: 5px;" alt="" src="https://i1.wp.com/www.rajapet.net/photos/i-9XSq458/0/S/i-9XSq458-S.png?resize=400%2C148" width="400" height="148"  /></a>
+  <a href="https://i2.wp.com/www.rajapet.net/photos/i-9XSq458/0/O/i-9XSq458.png""><img loading="lazy" class="aligncenter" style="margin-top: 0px; margin-bottom: 5px;" alt="" src="https://i1.wp.com/www.rajapet.net/photos/i-9XSq458/0/S/i-9XSq458-S.png?resize=400%2C148" width="400" height="148"  /></a>
 </p>
 
 After saving the command, you can add it to a toolbar. I placed it on the standard toolbar, so I would know where it was at all times.  Select **Tools->Customize&#8230;**, then click the Commands tab.  You can put this button anywhere, but I placed it on the Standard menu.  Click the **Add Command&#8230;** button.  Then scroll down the Categories list and click on **VCmd**.  Select the Command you had entered, if it&#8217;s the first one then it will be Command01.  Press the **OK** button to add the command as a toolbar button, then press **Close** to close the Customize dialog.

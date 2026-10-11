@@ -15,5 +15,5 @@ Scott also has a good example of how to use LINQ Extension Methods to query an 
 [Automatic properties](http://community.bartdesmet.net/blogs/bart/archive/2007/03/03/c-3-0-automatic-properties-explained.aspx) look pretty cool.  It&#8217;s just syntactical sugar, but it goes down pretty good.  I have always been in the habit of creating properties for the public variables of a class in C# and Delphi, this makes it a little quicker write on the C# side.
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/Orcas" rel="tag">Orcas</a> <a href="http://technorati.com/tag/Extension+Methods" rel="tag">Extension+Methods</a> <a href="http://technorati.com/tag/LINQ" rel="tag">LINQ</a> <a href="http://technorati.com/tag/Automatic+Properties" rel="tag">Automatic+Properties</a>
+  Tech Tags: <a href="http://technorati.com/tag/Orcas"" rel="tag">Orcas</a> <a href="http://technorati.com/tag/Extension+Methods"" rel="tag">Extension+Methods</a> <a href="http://technorati.com/tag/LINQ"" rel="tag">LINQ</a> <a href="http://technorati.com/tag/Automatic+Properties"" rel="tag">Automatic+Properties</a>
 </div>

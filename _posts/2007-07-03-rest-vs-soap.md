@@ -13,5 +13,5 @@ The drawback with SOAP is that there is more overhead in the construction of the
 For web services that have relatively simple data types, using REST can provide the functionality that is needed.  You also get the advantage of testing individual method requests from a browser as the method request is basic URL.  
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/REST" rel="tag">REST</a> <a href="http://technorati.com/tag/SOAP" rel="tag">SOAP</a> <a href="http://technorati.com/tag/REST+vs+SOAP" rel="tag">REST+vs+SOAP</a> <a href="http://technorati.com/tag/XML-RPC" rel="tag">XML-RPC</a>
+  Tech Tags: <a href="http://technorati.com/tag/REST"" rel="tag">REST</a> <a href="http://technorati.com/tag/SOAP"" rel="tag">SOAP</a> <a href="http://technorati.com/tag/REST+vs+SOAP"" rel="tag">REST+vs+SOAP</a> <a href="http://technorati.com/tag/XML-RPC"" rel="tag">XML-RPC</a>
 </div>

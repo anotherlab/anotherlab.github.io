@@ -1,4 +1,5 @@
 ---
+permalink: /2005/08/12/string-formatting-in-c/
 title: 'String formatting in C#'
 date: 2005-08-11T20:52:00-05:00
 ---

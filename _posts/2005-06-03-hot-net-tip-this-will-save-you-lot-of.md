@@ -1,4 +1,5 @@
 ---
+permalink: /2005/06/04/hot-net-tip-this-will-save-you-lot-of/
 title: 'Hot .Net Tip: This will save you a lot of time'
 date: 2005-06-03T19:34:00-05:00
 ---

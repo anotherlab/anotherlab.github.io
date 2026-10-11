@@ -1,10 +1,10 @@
 ---
 title: "Some thoughts on AI assets when blogging"
 author: anotherlab
-classes: wide
 toc: true
-header:
-  image: /assets/images/sulley-bloop.jpg
+image:
+  path: /assets/images/sulley-bloop.jpg
+  alt: "Sulley the dog"
 categories: 
   - blogging
   - AI

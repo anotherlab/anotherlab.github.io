@@ -1,8 +1,9 @@
 ---
+permalink: /2005/10/21/just-say-no-to-clr-udts/
 title: Just say no to CLR UDTs
 date: 2005-10-20T20:21:00-05:00
 ---
-Alex Papadimoulis is pretty adamant about <a href="http://weblogs.asp.net/alex_papadimoulis/archive/2005/10/20/428014.aspx" title="" when should i use sql-server clr user definied types>not using CLR UDTs in SQL Server 2005</a>.
+Alex Papadimoulis is pretty adamant about <a href="http://weblogs.asp.net/alex_papadimoulis/archive/2005/10/20/428014.aspx"" title="" when should i use sql-server clr user definied types>not using CLR UDTs in SQL Server 2005</a>.
 
 > 
 > 
@@ -16,6 +17,6 @@ Alex Papadimoulis is pretty adamant about <a href="http://weblogs.asp.net/alex_p
 > 
 > 
 
-The full article can be read <a href="http://weblogs.asp.net/alex_papadimoulis/archive/2005/10/20/428014.aspx" title="" when should i use sql-server clr user definied types>here</a>. Another reason to take a pass on CLR UDTs is that it ties your database to SQL Server 2005. If you are doing an app that can run on SQL Server 2000, you [just shot yourself in the foot](http://www.m5p.com/~pravn/foot.html).
+The full article can be read <a href="http://weblogs.asp.net/alex_papadimoulis/archive/2005/10/20/428014.aspx"" title="" when should i use sql-server clr user definied types>here</a>. Another reason to take a pass on CLR UDTs is that it ties your database to SQL Server 2005. If you are doing an app that can run on SQL Server 2000, you [just shot yourself in the foot](http://www.m5p.com/~pravn/foot.html).
 
 Another reason to avoid CLR UDTs? Eliminating error messages like  [&#8220;File or assembly name udtname, Version=1.2.0.0, Culture=neutral, PublicKeyToken=389619d4c1235f8a, or one of its dependencies, was not found.&#8221;](http://blogs.msdn.com/angelsb/archive/2004/09/09/227713.aspx)

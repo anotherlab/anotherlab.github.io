@@ -12,7 +12,7 @@ tags:
   <img loading="lazy" class="size-medium" src="https://upload.wikimedia.org/wikipedia/commons/0/01/Dog-biscuit.jpg" width="1000" height="570" />
   
   <p class="wp-caption-text">
-    <span style="font-size: 8pt;">Image by FiveRings [<a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>], <a href="https://commons.wikimedia.org/wiki/File:Dog-biscuit.jpg">from Wikimedia Commons</a></span>
+    <span style="font-size: 8pt;">Image by FiveRings [<a href="https://creativecommons.org/licenses/by/3.0"">CC BY 3.0</a>], <a href="https://commons.wikimedia.org/wiki/File:Dog-biscuit.jpg"">from Wikimedia Commons</a></span>
   </p>
 </div>Many, many years ago, I used to work with Jack*. Jack is a musician and at the time was in band with two other guys. Jack was renting this little cottage and that was where the band would rehearse.
 

@@ -160,5 +160,5 @@ courtesy of [Craig A. Finseth](http://www.finseth.com/parts/ipod.php)
  
 
 <div>
-  Tech Tags: <a href="http://technorati.com/tag/iPod" rel="tag">iPod</a> <a href="http://technorati.com/tag/Shuffle" rel="tag">Shuffle</a> <a href="http://technorati.com/tag/Shuffle+Lights" rel="tag">Shuffle+Lights</a>
+  Tech Tags: <a href="http://technorati.com/tag/iPod"" rel="tag">iPod</a> <a href="http://technorati.com/tag/Shuffle"" rel="tag">Shuffle</a> <a href="http://technorati.com/tag/Shuffle+Lights"" rel="tag">Shuffle+Lights</a>
 </div>
