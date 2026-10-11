@@ -1,4 +1,5 @@
 ---
+permalink: /2008/07/09/still-time-to-enter-darwin-race-of/
 title: Still time to enter the Darwin Race of Languages
 date: 2008-07-08T20:24:00-05:00
 ---

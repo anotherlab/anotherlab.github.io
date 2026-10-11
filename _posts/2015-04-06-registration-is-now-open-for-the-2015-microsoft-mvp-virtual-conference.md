@@ -1,4 +1,5 @@
 ---
+permalink: /2015/04/07/registration-is-now-open-for-the-2015-microsoft-mvp-virtual-conference/
 title: Registration is now open for the 2015 Microsoft MVP Virtual Conference.
 date: 2015-04-06T20:55:22-05:00
 ---

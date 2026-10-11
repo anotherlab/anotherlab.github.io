@@ -1,4 +1,5 @@
 ---
+permalink: /2007/06/06/testdrivennet-and-visual-studio-express/
 title: TestDriven.NET and Visual Studio Express
 date: 2007-06-05T21:08:00-05:00
 ---

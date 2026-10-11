@@ -1,4 +1,5 @@
 ---
+permalink: /2007/02/24/finalbuilder-to-rescue-again/
 title: FinalBuilder to the rescue (again)
 date: 2007-02-23T20:05:00-05:00
 ---

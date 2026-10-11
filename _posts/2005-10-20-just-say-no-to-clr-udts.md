@@ -1,4 +1,5 @@
 ---
+permalink: /2005/10/21/just-say-no-to-clr-udts/
 title: Just say no to CLR UDTs
 date: 2005-10-20T20:21:00-05:00
 ---

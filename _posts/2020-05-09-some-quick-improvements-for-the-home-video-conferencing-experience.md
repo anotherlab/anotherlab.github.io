@@ -1,4 +1,5 @@
 ---
+permalink: /2020/05/10/some-quick-improvements-for-the-home-video-conferencing-experience/
 title: Some quick improvements for the home video conferencing experience
 date: 2020-05-09T21:15:30-05:00
 excerpt: A few things that I have done to improve video conferencing from home.
@@ -12,7 +13,7 @@ After a few months of full time working from home, there are a couple of things 
 
 Having a decent webcam will be a big improvement in the quality of your video. And it can give you some added flexibility with positioning over the webcams that are built into laptops. Even though they are hard to get now, they are well worth the money.
 
-For a long time, I used a Microsoft LifeCam. It was more or less fine, but every time I sat back in my chair, it would hunt for focus. That&#8217;s an unnecessary distraction. I [wrote some code](/2018/04/05/focusuf-or-how-to-turn-off-the-autofocus-setting-of-the-lifecam-hd-5000-webcam/) to deal with that. And that became a [project](/2020/03/20/return-to-focusuf/) that still [lives on](/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/). But I no longer use that webcam.
+For a long time, I used a Microsoft LifeCam. It was more or less fine, but every time I sat back in my chair, it would hunt for focus. That&#8217;s an unnecessary distraction. I [wrote some code](/2018/04/05/focusuf-or-how-to-turn-off-the-autofocus-setting-of-the-lifecam-hd-5000-webcam/) to deal with that. And that became a [project](/2020/03/21/return-to-focusuf/) that still [lives on](/2020/04/26/why-i-like-working-on-open-source-back-to-focusuf/). But I no longer use that webcam.
 
 I bought a Logitech (sorry, I refuse to say &#8220;logi&#8221;) [c922 webcam](https://www.logitech.com/en-us/product/c922-pro-stream-webcam). It had the resolution that I wanted and a tripod mount on the base. It tilts up and down but oddly doesn&#8217;t adjust from side to side.
 

@@ -1,4 +1,5 @@
 ---
+permalink: /2006/08/19/back-from-vacation/
 title: Back from vacation
 date: 2006-08-18T19:59:00-05:00
 ---

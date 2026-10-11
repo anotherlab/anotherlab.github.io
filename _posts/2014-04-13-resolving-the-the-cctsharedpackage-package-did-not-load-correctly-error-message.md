@@ -1,4 +1,5 @@
 ---
+permalink: /2014/04/14/resolving-the-the-cctsharedpackage-package-did-not-load-correctly-error-message/
 title: 'Resolving the &#8220;The &#8216;CctSharedPackage&#8217; package did not load correctly.&#8221; error message'
 date: 2014-04-13T22:35:41-05:00
 ---

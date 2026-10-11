@@ -1,4 +1,5 @@
 ---
+permalink: /2008/05/25/ipv6-and-vista/
 title: IPv6 and Vista
 date: 2008-05-24T20:58:00-05:00
 ---

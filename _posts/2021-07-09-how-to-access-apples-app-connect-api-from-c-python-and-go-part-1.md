@@ -1,4 +1,5 @@
 ---
+permalink: /2021/07/10/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/
 title: How to access Apple's App Connect API from C#, Python, and Go. - Part 1
 date: 2021-07-09 19:04:41-05:00
 categories:

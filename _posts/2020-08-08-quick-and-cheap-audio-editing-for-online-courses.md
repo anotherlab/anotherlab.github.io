@@ -1,4 +1,5 @@
 ---
+permalink: /2020/08/09/quick-and-cheap-audio-editing-for-online-courses/
 title: Quick and cheap audio editing for online courses
 date: 2020-08-08T21:57:16-05:00
 excerpt: Some quick and cheap tips to cleaning up the audio for video training courses

@@ -1,4 +1,5 @@
 ---
+permalink: /2008/04/17/microsoft-admits-that-kb-938371-kills/
 title: Microsoft admits that KB 938371 kills USB Devices
 date: 2008-04-16T20:06:00-05:00
 ---

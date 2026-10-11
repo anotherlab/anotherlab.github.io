@@ -1,4 +1,5 @@
 ---
+permalink: /2006/03/02/my-web-application-is-running-at-98-of/
 title: 'My web application is running at 98% of the CPU'
 date: 2006-03-01T21:10:00-05:00
 ---

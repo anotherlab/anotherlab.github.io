@@ -1,4 +1,5 @@
 ---
+permalink: /2008/07/10/nice-article-about-using-custom/
 title: A nice article about using Custom Attributes in your own code
 date: 2008-07-09T20:36:00-05:00
 ---

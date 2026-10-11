@@ -1,4 +1,5 @@
 ---
+permalink: /2008/07/02/i-see-cylons-found-twitter/
 title: I see the Cylons found Twitter
 date: 2008-07-01T19:56:00-05:00
 ---

@@ -1,4 +1,5 @@
 ---
+permalink: /2008/08/08/how-to-log-tidsmtp-component/
 title: How to log the TIDSmtp component
 date: 2008-08-07T20:23:00-05:00
 ---

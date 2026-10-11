@@ -1,4 +1,5 @@
 ---
+permalink: /2008/05/28/does-knowing-c-make-you-better/
 title: Does knowing C make you a better programmer?
 date: 2008-05-27T20:26:00-05:00
 ---

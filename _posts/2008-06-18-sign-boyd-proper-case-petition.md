@@ -1,4 +1,5 @@
 ---
+permalink: /2008/06/19/sign-boyd-proper-case-petition/
 title: 'Sign the &quot;danah boyd proper case&quot; petition'
 date: 2008-06-18T20:34:00-05:00
 ---

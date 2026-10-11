@@ -1,4 +1,5 @@
 ---
+permalink: /2006/08/25/stream-reading-in-c/
 title: 'Stream reading in C#'
 date: 2006-08-24T21:05:00-05:00
 ---

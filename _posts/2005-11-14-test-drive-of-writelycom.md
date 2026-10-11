@@ -1,4 +1,5 @@
 ---
+permalink: /2005/11/15/test-drive-of-writelycom/
 title: Test drive of writely.com
 date: 2005-11-14T19:45:00-05:00
 ---

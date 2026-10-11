@@ -1,4 +1,5 @@
 ---
+permalink: /2007/03/21/notes-on-installing-delphi-2007/
 title: Notes on installing Delphi 2007
 date: 2007-03-20T20:58:00-05:00
 ---

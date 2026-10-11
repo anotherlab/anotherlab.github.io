@@ -1,4 +1,5 @@
 ---
+permalink: /2008/10/18/strange-64-bit-error-with/
 title: Strange 64-bit error with LayoutKind.Explicit
 date: 2008-10-17T20:34:00-05:00
 ---

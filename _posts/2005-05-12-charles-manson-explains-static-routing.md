@@ -1,4 +1,5 @@
 ---
+permalink: /2005/05/13/charles-manson-explains-static-routing/
 title: Charles Manson explains static routing
 date: 2005-05-12T19:37:00-05:00
 ---

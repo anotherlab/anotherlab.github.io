@@ -163,6 +163,8 @@ paginate: 5
 # The base URL of your site
 baseurl: ""
 
+permalink: /:year/:month/:day/:title/
+
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:

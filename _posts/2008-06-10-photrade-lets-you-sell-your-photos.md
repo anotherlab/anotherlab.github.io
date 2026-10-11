@@ -1,4 +1,5 @@
 ---
+permalink: /2008/06/11/photrade-lets-you-sell-your-photos/
 title: Photrade lets you sell your photos online but retains perpetual and royalty-free license to your images
 date: 2008-06-10T20:13:00-05:00
 ---

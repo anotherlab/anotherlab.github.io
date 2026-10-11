@@ -1,4 +1,5 @@
 ---
+permalink: /2007/07/21/allowing-comments-on-blogs/
 title: Allowing Comments on Blogs
 date: 2007-07-20T19:16:00-05:00
 ---

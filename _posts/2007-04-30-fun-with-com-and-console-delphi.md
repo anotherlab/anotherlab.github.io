@@ -1,4 +1,5 @@
 ---
+permalink: /2007/05/01/fun-with-com-and-console-delphi/
 title: Fun with COM and console Delphi applications
 date: 2007-04-30T20:50:00-05:00
 ---

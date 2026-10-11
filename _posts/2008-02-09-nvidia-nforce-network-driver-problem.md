@@ -1,4 +1,5 @@
 ---
+permalink: /2008/02/10/nvidia-nforce-network-driver-problem/
 title: Nvidia nForce network driver problem under Vista
 date: 2008-02-09T23:00:00-05:00
 ---

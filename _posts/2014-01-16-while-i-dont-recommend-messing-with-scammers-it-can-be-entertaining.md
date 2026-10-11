@@ -1,4 +1,5 @@
 ---
+permalink: /2014/01/17/while-i-dont-recommend-messing-with-scammers-it-can-be-entertaining/
 title: 'While I don&#8217;t recommend messing with scammers, it can be entertaining'
 date: 2014-01-16T20:17:33-05:00
 ---

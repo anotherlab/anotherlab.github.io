@@ -1,4 +1,5 @@
 ---
+permalink: /2013/08/24/increasing-target-area-of-tables/
 title: 'Increasing the target area of a table&#8217;s DetailDisclose button with Xamarin.iOS'
 date: 2013-08-23T20:04:00-05:00
 ---

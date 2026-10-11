@@ -1,4 +1,5 @@
 ---
+permalink: /2010/06/25/enjoy-some-bar-b-que-for-good-cause/
 title: Enjoy some Bar-B-Que for a good cause
 date: 2010-06-24T20:25:00-05:00
 ---

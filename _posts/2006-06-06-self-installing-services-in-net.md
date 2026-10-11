@@ -1,4 +1,5 @@
 ---
+permalink: /2006/06/07/self-installing-services-in-net/
 title: Self installing services in .NET
 date: 2006-06-06T21:01:00-05:00
 ---

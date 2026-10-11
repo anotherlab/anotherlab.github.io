@@ -1,4 +1,5 @@
 ---
+permalink: /2013/12/22/when-windows-phone-mail-cant-display-an-image-attachment/
 title: 'When Windows Phone Mail can&#8217;t display an image attachment'
 date: 2013-12-21T19:54:48-05:00
 ---

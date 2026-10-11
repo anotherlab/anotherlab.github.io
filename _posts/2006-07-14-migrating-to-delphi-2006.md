@@ -1,4 +1,5 @@
 ---
+permalink: /2006/07/15/migrating-to-delphi-2006/
 title: Migrating to Delphi 2006
 date: 2006-07-14T20:01:00-05:00
 ---

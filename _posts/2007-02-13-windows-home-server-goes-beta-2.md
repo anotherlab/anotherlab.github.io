@@ -1,4 +1,5 @@
 ---
+permalink: /2007/02/14/windows-home-server-goes-beta-2/
 title: Windows Home Server goes Beta 2
 date: 2007-02-13T22:53:00-05:00
 ---

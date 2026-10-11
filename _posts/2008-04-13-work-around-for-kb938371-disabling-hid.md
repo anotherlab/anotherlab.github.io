@@ -1,4 +1,5 @@
 ---
+permalink: /2008/04/14/work-around-for-kb938371-disabling-hid/
 title: Work around for KB938371 disabling HID-compliant input devices
 date: 2008-04-13T20:23:00-05:00
 ---

@@ -1,4 +1,5 @@
 ---
+permalink: /2006/09/01/i-just-took-msdart-to-head-and-i-dont/
 title: 'I just took a MSDart to the head and I don&#8217;t feel so well right now.'
 date: 2006-08-31T20:35:00-05:00
 ---

@@ -1,4 +1,5 @@
 ---
+permalink: /2007/03/08/where-is-putersoftcom/
 title: Where is puterSoft.com?
 date: 2007-03-07T19:55:00-05:00
 ---

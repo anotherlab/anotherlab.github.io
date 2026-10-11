@@ -1,4 +1,5 @@
 ---
+permalink: /2010/08/28/dyndns-is-making-making-changes-to/
 title: DynDNS is making making changes to their free Dynamic DNS accounts
 date: 2010-08-27T20:51:00-05:00
 ---

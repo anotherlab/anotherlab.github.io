@@ -1,4 +1,5 @@
 ---
+permalink: /2013/10/08/taking-acer-w3-from-preview-to-rtm/
 title: Taking the Acer W3 from Preview to RTM
 date: 2013-10-07T20:28:00-05:00
 categories:

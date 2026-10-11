@@ -1,4 +1,5 @@
 ---
+permalink: /2006/01/18/repaving-xp-box/
 title: Repaving an XP box
 date: 2006-01-17T19:52:00-05:00
 ---

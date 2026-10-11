@@ -1,4 +1,5 @@
 ---
+permalink: /2010/02/26/what-to-do-when-windows-7-desktop-icon/
 title: What to do when a Windows 7 desktop icon has the wrong image
 date: 2010-02-25T21:58:00-05:00
 ---

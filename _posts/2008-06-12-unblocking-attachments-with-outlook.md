@@ -1,4 +1,5 @@
 ---
+permalink: /2008/06/13/unblocking-attachments-with-outlook/
 title: Unblocking attachments with Outlook
 date: 2008-06-12T19:14:00-05:00
 ---

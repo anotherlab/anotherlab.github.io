@@ -1,4 +1,5 @@
 ---
+permalink: /2008/10/21/installation-is-not-configuration/
 title: Installation is not configuration
 date: 2008-10-20T19:43:00-05:00
 ---

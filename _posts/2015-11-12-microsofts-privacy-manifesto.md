@@ -1,4 +1,5 @@
 ---
+permalink: /2015/11/13/microsofts-privacy-manifesto/
 title: 'Microsoft&#8217;s Privacy Manifesto'
 date: 2015-11-12T21:01:29-05:00
 ---

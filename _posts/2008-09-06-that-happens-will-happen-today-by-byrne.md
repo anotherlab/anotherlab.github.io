@@ -1,4 +1,5 @@
 ---
+permalink: /2008/09/07/that-happens-will-happen-today-by-byrne/
 title: '&quot;Everything That Happens Will Happen Today&quot; by Byrne and Eno'
 date: 2008-09-06T21:30:00-05:00
 ---

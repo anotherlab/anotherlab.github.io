@@ -1,4 +1,5 @@
 ---
+permalink: /2006/06/28/what-do-following-have-in-common/
 title: What do the following have in common?
 date: 2006-06-27T19:08:00-05:00
 ---

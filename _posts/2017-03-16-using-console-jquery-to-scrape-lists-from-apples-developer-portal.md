@@ -11,7 +11,7 @@ categories:
 I needed to grab the lists of registered devices and developers from our company's Apple Developer portal. Unless I'm being particularly obtuse (an outcome that I never rule out), Apple does not provide any means of exporting the lists.
 
 _2021 Update_  
-Before you read any further, since I first wrote this post, Apple changed the way they render the pages and none of the following will work correctly. I wrote [some code](/2021/07/09/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/) to show to use Apple's App Store Connect API to query the data for users.
+Before you read any further, since I first wrote this post, Apple changed the way they render the pages and none of the following will work correctly. I wrote [some code](/2021/07/10/how-to-access-apples-app-connect-api-from-c-python-and-go-part-1/) to show to use Apple's App Store Connect API to query the data for users.
 
 Apple only allows 100 devices of each type (iPhone, iPad, iWhatever) to be registered as development devices. No matter how many iOS developers that you have at your company, 100 is the limit. And if you remove a device from that list, it still counts towards that total.  Once a year, you can reset the list and carry over the devices that you still need and drop off the ones that are not needed.  To make this easier to manage, I wanted to get a list of the devices and their ids and have the developers pick the ones that they still need.
 

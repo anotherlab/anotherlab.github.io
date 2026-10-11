@@ -1,4 +1,5 @@
 ---
+permalink: /2020/03/21/return-to-focusuf/
 title: Return to FocusUF
 date: 2020-03-20 22:49:29-05:00
 categories:

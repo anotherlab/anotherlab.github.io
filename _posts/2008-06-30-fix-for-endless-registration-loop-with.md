@@ -1,4 +1,5 @@
 ---
+permalink: /2008/07/01/fix-for-endless-registration-loop-with/
 title: Fix for endless registration loop with Delphi 2006
 date: 2008-06-30T19:54:00-05:00
 ---

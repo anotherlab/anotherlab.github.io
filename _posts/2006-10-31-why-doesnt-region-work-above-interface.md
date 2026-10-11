@@ -1,4 +1,5 @@
 ---
+permalink: /2006/11/01/why-doesnt-region-work-above-interface/
 title: 'Why doesn&#8217;t {$REGION} work above the interface?'
 date: 2006-10-31T20:29:00-05:00
 ---

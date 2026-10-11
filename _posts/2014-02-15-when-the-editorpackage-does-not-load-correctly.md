@@ -1,4 +1,5 @@
 ---
+permalink: /2014/02/16/when-the-editorpackage-does-not-load-correctly/
 title: When the EditorPackage does not load correctly
 date: 2014-02-15T22:09:59-05:00
 ---

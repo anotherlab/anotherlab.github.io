@@ -1,4 +1,5 @@
 ---
+permalink: /2007/01/06/blog-tagged/
 title: Blog Tagged
 date: 2007-01-05T20:14:00-05:00
 categories:

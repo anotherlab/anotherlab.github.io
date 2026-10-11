@@ -1,4 +1,5 @@
 ---
+permalink: /2011/01/24/price-chopper-robodeli-is-great-idea/
 title: 'Price Chopper&#8217;s RoboDeli is great idea, but flawed'
 date: 2011-01-23T21:57:00-05:00
 ---

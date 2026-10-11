@@ -1,4 +1,5 @@
 ---
+permalink: /2006/08/19/dates-are-not-numbers/
 title: Dates are not numbers
 date: 2006-08-18T19:18:00-05:00
 ---

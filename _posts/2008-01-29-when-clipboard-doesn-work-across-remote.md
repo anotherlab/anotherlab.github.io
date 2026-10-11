@@ -1,4 +1,5 @@
 ---
+permalink: /2008/01/30/when-clipboard-doesn-work-across-remote/
 title: 'When the clipboard doesn&#8217;t work across Remote Desktop'
 date: 2008-01-29T20:10:00-05:00
 ---

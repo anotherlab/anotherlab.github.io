@@ -1,4 +1,5 @@
 ---
+permalink: /2010/08/11/how-to-shoot-yourself-in-foot-writing/
 title: How to shoot yourself in the foot writing installer upgrades
 date: 2010-08-10T21:23:00-05:00
 ---

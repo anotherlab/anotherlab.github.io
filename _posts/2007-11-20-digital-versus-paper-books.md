@@ -1,4 +1,5 @@
 ---
+permalink: /2007/11/21/digital-versus-paper-books/
 title: Digital versus paper books
 date: 2007-11-20T22:04:00-05:00
 ---

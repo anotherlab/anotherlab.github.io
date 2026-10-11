@@ -1,4 +1,5 @@
 ---
+permalink: /2007/01/05/removing-language-toolbar-in-windows-xp/
 title: Removing the Language Toolbar in Windows XP
 date: 2007-01-04T21:47:00-05:00
 ---

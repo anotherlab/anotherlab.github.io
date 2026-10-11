@@ -1,4 +1,5 @@
 ---
+permalink: /2009/08/23/offload-tcp-processing-to-network/
 title: Offload TCP processing to the network controllers under Vista, Server 2008, and Windows 7
 date: 2009-08-22T20:28:00-05:00
 ---

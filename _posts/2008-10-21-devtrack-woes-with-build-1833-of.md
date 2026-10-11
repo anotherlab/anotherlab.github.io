@@ -1,4 +1,5 @@
 ---
+permalink: /2008/10/22/devtrack-woes-with-build-1833-of/
 title: DevTrack woes with build 1833 of mfc80.dll
 date: 2008-10-21T19:05:00-05:00
 ---

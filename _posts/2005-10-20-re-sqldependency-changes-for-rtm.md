@@ -1,4 +1,5 @@
 ---
+permalink: /2005/10/21/re-sqldependency-changes-for-rtm/
 title: 'RE: SqlDependency changes for RTM [Sushil Chordia]'
 date: 2005-10-20T20:52:00-05:00
 ---

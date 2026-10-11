@@ -1,4 +1,5 @@
 ---
+permalink: /2008/07/11/handling-collation-sequences-with/
 title: Handling collation sequences with temporary tables and table variables with SQL Server
 date: 2008-07-10T19:42:00-05:00
 ---

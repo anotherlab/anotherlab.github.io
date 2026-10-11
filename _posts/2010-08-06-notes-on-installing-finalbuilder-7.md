@@ -1,4 +1,5 @@
 ---
+permalink: /2010/08/07/notes-on-installing-finalbuilder-7/
 title: Notes on installing FinalBuilder 7
 date: 2010-08-06T20:50:00-05:00
 ---

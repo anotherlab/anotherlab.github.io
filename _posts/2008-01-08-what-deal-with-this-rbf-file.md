@@ -1,4 +1,5 @@
 ---
+permalink: /2008/01/09/what-deal-with-this-rbf-file/
 title: 'What&#8217;s the deal with this .rbf file?'
 date: 2008-01-08T21:29:00-05:00
 ---

@@ -1,4 +1,5 @@
 ---
+permalink: /2006/01/05/paged-recordsets-from-sql-server-for/
 title: Paged recordsets from SQL Server for web pages
 date: 2006-01-04T21:15:00-05:00
 ---

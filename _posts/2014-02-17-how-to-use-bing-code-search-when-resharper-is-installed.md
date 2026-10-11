@@ -1,4 +1,5 @@
 ---
+permalink: /2014/02/18/how-to-use-bing-code-search-when-resharper-is-installed/
 title: How to use Bing Code Search when ReSharper is installed
 date: 2014-02-17T23:23:26-05:00
 ---

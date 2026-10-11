@@ -1,4 +1,5 @@
 ---
+permalink: /2008/07/24/playing-with-new-toy-gps-device/
 title: Playing with a new toy, a GPS device
 date: 2008-07-23T21:35:00-05:00
 ---

@@ -11,7 +11,7 @@ tags:
 ---
 <figure><img loading="lazy" class="size-medium" src="https://i0.wp.com/photos.smugmug.com/photos/i-BgcrnZW/0/7d3ad5c8/S/i-BgcrnZW-S.jpg?resize=399%2C225&#038;ssl=1"<figcaption>Welcome to the FuzzyCam</figcaption></figure>
 
-Note from the future: I updated the code and blogged about it [here](/2020/03/20/return-to-focusuf/).
+Note from the future: I updated the code and blogged about it [here](/2020/03/21/return-to-focusuf/).
 
 Why am I out of focus? It&#8217;s because I have a Microsoft LifeCam HD-5000 and I&#8217;m running Windows 10. The LifeCam HD-5000 webcam is a decent webcam with an annoying feature. The autofocus keeps shifting the focus around if you move your head slightly. It goes in and out of focus and locks in after a second or two. When you are in a video chat, this can get very annoying (very quickly) for the other viewers. Your face will shift in and out of focus and it&#8217;s just a distraction. Microsoft used to supply drivers for the HD-5000 and it had a control app where you could adjust the focus settings. Since Windows 8, they stopped as the OS directly supported the webcam.
 

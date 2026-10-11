@@ -1,4 +1,5 @@
 ---
+permalink: /2008/07/03/its-not-tivo-its-just-dvr/
 title: It’s not a TiVo, it’s just a DVR
 date: 2008-07-02T21:03:00-05:00
 ---

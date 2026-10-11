@@ -1,4 +1,5 @@
 ---
+permalink: /2006/07/08/i-dont-care-about-rocketboom/
 title: 'I don&#8217;t care about RocketBoom'
 date: 2006-07-07T21:03:00-05:00
 ---

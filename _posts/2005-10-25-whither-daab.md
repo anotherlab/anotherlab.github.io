@@ -1,4 +1,5 @@
 ---
+permalink: /2005/10/26/whither-daab/
 title: Whither DAAB?
 date: 2005-10-25T19:19:00-05:00
 ---

@@ -1,4 +1,5 @@
 ---
+permalink: /2008/08/12/why-doesnt-os-that-backs-your-os-have/
 title: Why doesn’t an OS that backs your OS have any means of backing itself up?
 date: 2008-08-11T21:07:00-05:00
 ---

@@ -1,4 +1,5 @@
 ---
+permalink: /2005/11/17/that-pesky-sql-server-express/
 date: 2005-11-16T20:18:00-05:00
 ---
 That pesky SQL Server Express. I&#8217;m going to have to support it, it&#8217;s time to start collecting tips from the veterans&#8230;. 

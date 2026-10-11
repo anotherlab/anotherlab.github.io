@@ -1,4 +1,5 @@
 ---
+permalink: /2005/11/04/arrival-of-delphi-man-and-doctor/
 title: The arrival of Delphi Man and Doctor Deadline
 date: 2005-11-03T20:23:00-05:00
 ---

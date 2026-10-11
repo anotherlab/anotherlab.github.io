@@ -1,4 +1,5 @@
 ---
+permalink: /2011/01/06/scrolling-listviews-edititemtemplate/
 title: Scrolling a ListView’s EditItemTemplate with some help from jQuery
 date: 2011-01-05T19:30:00-05:00
 ---

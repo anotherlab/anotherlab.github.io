@@ -1,4 +1,5 @@
 ---
+permalink: /2010/05/27/using-robocopy-with-visual-studio-2008/
 title: Using robocopy with Visual Studio 2008 Post-build events
 date: 2010-05-26T19:11:00-05:00
 ---
